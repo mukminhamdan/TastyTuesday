@@ -1,0 +1,5 @@
+# Footage excerpts are regenerated from the raw recording by tools/build.py
+projects/*/assets/footage/
+projects/*/renders/
+projects/*/.hyperframes/
+renders/

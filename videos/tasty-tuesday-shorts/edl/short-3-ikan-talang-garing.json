@@ -1,0 +1,35 @@
+{
+  "id": "short-3-ikan-talang-garing",
+  "title": "Ikan Talang Goreng Garing Ala Mak",
+  "hook": {"kicker": "TIPS MAK", "lines": ["Ikan goreng", "garing", "tak hancur"], "accent_line": 1, "dur": 2.4},
+  "headline": "Ikan talang goreng garing, minyak sikit je",
+  "segments": [
+    {"in": 4718.95, "out": 4720.85, "cap": "Crispy, crispy, crispy!"},
+    {"in": 2704.55, "out": 2706.25, "cap": "Okey Mak, baru je settle ni.", "sfx": [["whoosh", -0.15, 0.5]]},
+    {"in": 2709.65, "out": 2712.55, "cap": "Ikan talang ya? Ya, ikan talang seekor.", "hot": ["talang"], "zoom": {"from": 1.0, "to": 1.12, "origin": "30% 70%"}},
+    {"in": 2720.95, "out": 2724.95, "cap": "Ni macam kepala, ekor, lepas tu badan dia tiga."},
+    {"in": 2761.75, "out": 2762.95, "cap": "Dua ekor sepuluh ringgit lah.", "hot": ["sepuluh", "ringgit"]},
+    {"in": 2785.15, "out": 2788.05, "cap": "Ini setting dia, ni apa semua? Deep fry.", "hot": ["deep", "fry"], "zoom": {"punch": true, "from": 1, "to": 1.2, "origin": "25% 70%", "at": 1.9}},
+    {"in": 3038.0, "out": 3042.35, "cap": "Dia nampak sayur, itu kita goreng ikan talang.", "zoom": {"from": 1.15, "to": 1.25, "origin": "25% 75%"}},
+    {"in": 3042.45, "out": 3044.95, "cap": "Walaupun kita guna mode deep fry,"},
+    {"in": 3045.35, "out": 3048.25, "cap": "tapi minyak kita shallow sahaja.", "hot": ["shallow"]},
+    {"in": 3050.8, "out": 3052.85, "cap": "Tak perlu pun minyak banyak-banyak."},
+    {"in": 3057.05, "out": 3060.35, "cap": "Kalau minyak sedikit, dia automatik pre-heat sekejap je.", "hot": ["sekejap"]},
+    {"in": 3358.65, "out": 3360.6, "cap": "Dah siap ikan goreng!", "hot": ["siap"], "sfx": [["sparkle", 0, 0.6]]},
+    {"in": 3360.6, "out": 3364.25, "cap": "Screenshot, screenshot! Mana Mukmin? Mukmin, screenshot!", "zoom": {"from": 1.05, "to": 1.18, "origin": "40% 70%"}},
+    {"in": 4686.35, "out": 4688.45, "cap": "Kalau goreng garing, lagi sedap.", "hot": ["garing"], "sfx": [["whoosh", -0.15, 0.5]]},
+    {"in": 4702.0, "out": 4705.05, "cap": "Makan sambal, tapi asinglah sambal itu. Tak gaulkan dengan ikan.", "hot": ["asinglah"]},
+    {"in": 4714.05, "out": 4718.15, "cap": "Bila kita goreng garing, kita rasa kulit dia macam crispy.", "hot": ["crispy"]},
+    {"in": 4752.4, "out": 4754.35, "cap": "Sebab isinya tak hancur.", "hot": ["hancur"]},
+    {"in": 4755.95, "out": 4760.15, "cap": "Ini lagi sedap daripada ikan tenggiri!", "hot": ["tenggiri"]}
+  ],
+  "overlays": [
+    {"type": "stamp", "seg": 4, "t": 0.1, "dur": 2.2, "text": "RM10", "small": "2 EKOR", "x": 680, "y": 360},
+    {"type": "chip", "seg": 5, "t": 0.3, "dur": 2.6, "tag": "MODE", "text": "Deep fry", "y": 330},
+    {"type": "chip", "seg": 8, "t": 0.0, "dur": 4.6, "tag": "TIP #1", "text": "Minyak sikit je", "y": 330},
+    {"type": "flash", "seg": 11, "t": 0.0},
+    {"type": "chip", "seg": 14, "t": 0.0, "dur": 3.0, "tag": "TIP #2", "text": "Sambal asingkan", "y": 330},
+    {"type": "shout", "seg": 15, "t": 3.2, "dur": 1.6, "text": "Crispy!", "y": 380, "sfx": "pop"}
+  ],
+  "end": {"title": "Ikan talang goreng garing", "cta": "Follow untuk tips Mak seterusnya", "dur": 2.4}
+}

@@ -1,0 +1,31 @@
+{
+  "id": "short-4-sambal-kurang-gula",
+  "title": "Rahsia Sambal Mak",
+  "hook": {"kicker": "TIPS SAMBAL", "lines": ["Sambal sedap?", "Kurangkan", "gula!"], "accent_line": 2, "dur": 2.4},
+  "headline": "Rahsia sambal Mak: rasa manis bawang",
+  "segments": [
+    {"in": 3831.3, "out": 3832.95, "cap": "cuma saya kurangkan gula je."},
+    {"in": 3669.95, "out": 3673.25, "cap": "Okey, ni bawang yang tadi Mak tinggalkan sambil masak,", "hot": ["bawang"], "sfx": [["whoosh", -0.15, 0.5]], "zoom": {"from": 1.0, "to": 1.12, "origin": "25% 75%"}},
+    {"in": 3677.7, "out": 3680.25, "cap": "sambil pergi cuci, nampak kan dia tak hangus pun.", "hot": ["hangus"]},
+    {"in": 3681.55, "out": 3682.55, "cap": "Sebab dia dekat suhu"},
+    {"in": 3683.65, "out": 3684.5, "cap": "140,", "hot": ["140"]},
+    {"in": 3688.05, "out": 3694.9, "rate": 1.25, "mute": false, "cap": "masak garing tanpa hangit, walaupun kita tinggalkan untuk pergi basuh-basuh.", "hot": ["hangit"]},
+    {"in": 3794.5, "out": 3798.85, "cap": "Lepas tu kita masukkan paste... ibu sambal.", "hot": ["sambal"], "sfx": [["whoosh", -0.15, 0.5]], "zoom": {"from": 1.05, "to": 1.15, "origin": "25% 75%"}},
+    {"in": 3802.7, "out": 3804.55, "cap": "Jadi ibu sambal ni dah berbulan-bulan korang."},
+    {"in": 3807.1, "out": 3809.75, "cap": "Ibu sambal mana? Awak buat sendiri ke apa?"},
+    {"in": 3823.8, "out": 3825.35, "cap": "Sebab dia guna bawang dengan cili je.", "hot": ["bawang", "cili"]},
+    {"in": 3829.8, "out": 3832.95, "cap": "Saya suka resipi tu, cuma saya kurangkan gula je.", "hot": ["gula"], "zoom": {"punch": true, "from": 1, "to": 1.15, "origin": "60% 40%", "at": 1.9}},
+    {"in": 3836.5, "out": 3837.65, "cap": "Gula dia banyak sangat."},
+    {"in": 3842.65, "out": 3846.65, "rate": 1.25, "mute": false, "cap": "Macam overpower manis bawang.", "hot": ["overpower"]},
+    {"in": 3849.8, "out": 3851.25, "cap": "Mak kurangkan separuh pun kot.", "hot": ["separuh"]},
+    {"in": 3864.9, "out": 3870.2, "rate": 1.2, "mute": false, "cap": "Kita cair dulu, lepas tu kita masuk air asam sikit.", "hot": ["asam"]},
+    {"in": 3870.2, "out": 3872.6, "vol": 0.35}
+  ],
+  "overlays": [
+    {"type": "stamp", "seg": 4, "t": 0.0, "dur": 2.6, "text": "140°", "small": "CELSIUS", "x": 680, "y": 360},
+    {"type": "chip", "seg": 9, "t": 0.0, "dur": 2.8, "tag": "RESIPI", "text": "Bawang + cili je", "y": 330},
+    {"type": "chip", "seg": 12, "t": 0.0, "dur": 4.6, "tag": "TIP", "text": "Gula kurang separuh", "y": 330},
+    {"type": "shout", "seg": 11, "t": 0.2, "dur": 1.2, "text": "Manis sangat!", "y": 380, "sfx": "pop"}
+  ],
+  "end": {"title": "Sambal manis bawang", "cta": "Follow untuk tips Mak seterusnya", "dur": 2.4}
+}

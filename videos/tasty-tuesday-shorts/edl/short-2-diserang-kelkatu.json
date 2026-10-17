@@ -1,0 +1,167 @@
+{
+  "id": "short-2-diserang-kelkatu",
+  "title": "Diserang Kelkatu Masa Masak",
+  "hook": {
+    "kicker": "TENGAH MASAK...",
+    "lines": [
+      "Tiba-tiba",
+      "diserang",
+      "kelkatu!"
+    ],
+    "accent_line": 1,
+    "dur": 2.4
+  },
+  "headline": "Live masak, tapi kelkatu join sekali",
+  "segments": [
+    {
+      "in": 1365.9,
+      "out": 1367.2,
+      "cap": "Saya diserang!",
+      "hot": [
+        "diserang"
+      ]
+    },
+    {
+      "in": 1276.05,
+      "out": 1279.0,
+      "cap": "Dah ada terlalu banyak kelkatu lah pula.",
+      "hot": [
+        "kelkatu"
+      ],
+      "sfx": [
+        [
+          "whoosh",
+          -0.15,
+          0.5
+        ]
+      ]
+    },
+    {
+      "in": 1287.2,
+      "out": 1289.0,
+      "cap": "Nak hujan ke malam ni?"
+    },
+    {
+      "in": 1289.65,
+      "out": 1292.0,
+      "cap": "Dia muncul kelkatu sebelum hujan.",
+      "hot": [
+        "kelkatu"
+      ]
+    },
+    {
+      "in": 1321.0,
+      "out": 1325.15,
+      "cap": "Inilah risikonya duduk dalam hutan. Lampu beli hari tu tak boleh pasang ni.",
+      "hot": [
+        "hutan"
+      ],
+      "zoom": {
+        "from": 1.0,
+        "to": 1.15,
+        "origin": "60% 35%"
+      }
+    },
+    {
+      "in": 1327.85,
+      "out": 1329.05,
+      "cap": "Oh, banyaknya kelkatu!",
+      "hot": [
+        "kelkatu"
+      ]
+    },
+    {
+      "in": 1361.6,
+      "out": 1365.85,
+      "zoom": {
+        "punch": true,
+        "from": 1,
+        "to": 1.22,
+        "origin": "45% 30%",
+        "at": 1.8
+      }
+    },
+    {
+      "in": 1365.85,
+      "out": 1367.2,
+      "cap": "Saya diserang!",
+      "hot": [
+        "diserang"
+      ],
+      "zoom": {
+        "from": 1.22,
+        "to": 1.26,
+        "origin": "45% 30%"
+      }
+    },
+    {
+      "in": 1369.0,
+      "out": 1371.1,
+      "cap": "Saya diserang kelkatu!",
+      "hot": [
+        "kelkatu"
+      ]
+    },
+    {
+      "in": 1403.25,
+      "out": 1404.4,
+      "cap": "Itu banyaknya!",
+      "sfx": [
+        [
+          "pop",
+          0,
+          0.5
+        ]
+      ]
+    },
+    {
+      "in": 1409.25,
+      "out": 1412.95,
+      "cap": "Kenapa tiba-tiba banyak kelkatu? Sebelum ni tak pernah kan?",
+      "hot": [
+        "kelkatu"
+      ]
+    },
+    {
+      "in": 1416.75,
+      "out": 1421.3,
+      "cap": "Tak tahu. Sebab hujan ni.",
+      "hot": [
+        "hujan"
+      ]
+    }
+  ],
+  "overlays": [
+    {
+      "type": "shout",
+      "seg": 4,
+      "t": 1.0,
+      "dur": 1.6,
+      "text": "Hutan?!",
+      "y": 360,
+      "sfx": "pop"
+    },
+    {
+      "type": "shout",
+      "seg": 6,
+      "t": 1.8,
+      "dur": 2.3,
+      "text": "Diserang!",
+      "y": 360
+    },
+    {
+      "type": "chip",
+      "seg": 10,
+      "t": 0.0,
+      "dur": 3.6,
+      "tag": "FAKTA",
+      "text": "Kelkatu keluar bila nak hujan",
+      "y": 330
+    }
+  ],
+  "end": {
+    "title": "Episod kelkatu",
+    "cta": "Follow untuk episod seterusnya",
+    "dur": 2.4
+  }
+}
