@@ -197,10 +197,11 @@ def build(edl, source, words):
             for j, l in enumerate(hook["lines"]))
         ov_html.append(f'<section id="hook" class="clip ov" data-start="0" data-duration="{hd}" data-track-index="5">'
                        f'<div class="hook-dim" id="hook-dim"></div><div class="hook-card" id="hook-card">'
-                       f'<div class="hook-kicker" id="hook-kicker">{esc(hook.get("kicker", "TASTY TUESDAY"))}</div>'
-                       f'{lines}</div></section>')
+                       + (f'<div class="hook-kicker" id="hook-kicker">{esc(hook["kicker"])}</div>' if hook.get("kicker") else "")
+                       + f'{lines}</div></section>')
         gtw.append('tl.fromTo("#hook-dim", {opacity:0}, {opacity:1, duration:0.25, ease:"power1.out"}, 0);')
-        gtw.append('tl.fromTo("#hook-kicker", {y:-40, opacity:0}, {y:0, opacity:1, duration:0.35, ease:"power3.out"}, 0.05);')
+        if hook.get("kicker"):
+            gtw.append('tl.fromTo("#hook-kicker", {y:-40, opacity:0}, {y:0, opacity:1, duration:0.35, ease:"power3.out"}, 0.05);')
         gtw.append('tl.fromTo("#hook-card .hook-line", {scale:1.9, opacity:0, rotation:-4}, '
                       '{scale:1, opacity:1, rotation:0, duration:0.38, ease:"back.out(2.2)", stagger:0.16}, 0.12);')
         gtw.append(f'tl.to("#hook-card", {{scale:0.92, opacity:0, duration:0.28, ease:"power2.in"}}, {hd - 0.3:.3f});')
@@ -259,8 +260,8 @@ def build(edl, source, words):
         es = total - end_dur
         ov_html.append(f'<section id="endcard" class="clip ov" data-start="{es:.3f}" data-duration="{end_dur}" data-track-index="9">'
                        f'<div class="end-dim" id="end-dim"></div><div class="end-box" id="end-box">'
-                       f'<div class="end-kicker">{esc(end.get("kicker", "TASTY TUESDAY"))}</div>'
-                       f'<div class="end-title">{esc(end["title"])}</div>'
+                       + (f'<div class="end-kicker">{esc(end["kicker"])}</div>' if end.get("kicker") else "")
+                       + f'<div class="end-title">{esc(end["title"])}</div>'
                        f'<div class="end-cta" id="end-cta">{esc(end.get("cta", "Follow untuk episod seterusnya"))}</div>'
                        f'</div></section>')
         gtw.append(f'tl.fromTo("#end-dim", {{opacity:0}}, {{opacity:1, duration:0.35, ease:"power1.out"}}, {es:.3f});')
@@ -430,8 +431,6 @@ TEMPLATE = """<!doctype html>
       .vwrap.full video { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
       .vwrap.tile video { position: absolute; }
       %%TILE_CSS%%
-      .brand { position: absolute; left: 60px; top: 1740px; font-weight: 900; font-size: 26px; letter-spacing: 0.3em;
-        color: #1E0F0A; background: #FFD23F; padding: 8px 14px 6px 18px; border-radius: 6px; }
     </style>
   </head>
   <body>
@@ -439,7 +438,6 @@ TEMPLATE = """<!doctype html>
       <div class="accent" style="top:%%ACC1%%px"></div>
       <div class="accent" style="top:%%ACC2%%px"></div>
       %%VIDEOS%%
-      <div class="brand">TASTY TUESDAY</div>
       <div id="captions" data-track-kind="captions" data-composition-id="captions" data-composition-src="compositions/captions.html"
         data-start="0" data-duration="%%DUR%%" data-track-index="4" data-width="1080" data-height="1920"></div>
       <div id="graphics" data-composition-id="graphics" data-composition-src="compositions/graphics.html"
