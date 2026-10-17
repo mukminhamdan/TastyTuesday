@@ -19,7 +19,7 @@ FIXES = [
     (r"\bechips\b", "air crisp"),
     (r"\b(perihid|pre-hit|free hit|free-kan|perihik|perihitkan|free-hit|pre-heat)\b", "preheat"),
     (r"\b(cukur duduk|cukur duk|cengkut|cikodong|cikodok|skuruh pisang)\b", "cekodok"),
-    (r"\b(abu-abu|abut-abut|abuk-abuk|kebab-babuk|babut|kui abo abo|keribu-keribu)\b", "abuk-abuk"),
+    (r"\b(abu-abu|abut-abut|abuk-abuk|abok-abok|kebab-babuk|babut|kui abo abo|keribu-keribu)\b", "abok-abok"),
     (r"\b(kui|kuih-kuih)\b", "kuih"),
     (r"\b(syaf|syah|syabir)\b", "chef"),
     (r"\b(di fry|di-fry|defry|di frai)\b", "deep fry"),
