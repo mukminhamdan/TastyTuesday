@@ -1,0 +1,6 @@
+# Source footage and derived audio are large; keep them out of git.
+videos/*/assets/source.mp4
+videos/*/assets/source_audio.m4a
+videos/*/renders/
+videos/*/.hyperframes/
+node_modules/
