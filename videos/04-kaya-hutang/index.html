@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ms">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Orang Kaya Lah Hutang</title>
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Archivo Black"; src: url("assets/ArchivoBlack-Regular.ttf"); font-weight: 400; }
+      @font-face { font-family: "Space Mono"; src: url("assets/SpaceMono-Bold.ttf"); font-weight: 700; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #2b130b; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #2b130b; }
+      .vw { position: absolute; inset: 0; transform-origin: 58% 34%; }
+      .vw video { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+      #grade { position: absolute; inset: 0; pointer-events: none;
+               background: radial-gradient(120% 80% at 50% 40%, rgba(0,0,0,0) 55%, rgba(43,19,11,0.45) 100%); }
+      #topfade { position: absolute; left: 0; right: 0; top: 0; height: 360px;
+                 background: linear-gradient(rgba(43,19,11,0.55), rgba(43,19,11,0)); }
+      #graphics, #captions { position: absolute; inset: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="30.0667" data-width="1080" data-height="1920" data-fps="30">
+        <div id="vw0" class="vw"><video id="v0" class="clip src" src="assets/selects.mp4" data-start="0.0000" data-duration="2.0999" data-media-start="30.2293" data-track-index="0" playsinline data-has-audio="true"></video></div>
+        <div id="vw1" class="vw"><video id="v1" class="clip src" src="assets/selects.mp4" data-start="2.1000" data-duration="1.5666" data-media-start="3.9600" data-track-index="0" playsinline data-has-audio="true"></video></div>
+        <div id="vw2" class="vw"><video id="v2" class="clip src" src="assets/selects.mp4" data-start="3.6667" data-duration="2.1999" data-media-start="0.6000" data-track-index="0" playsinline data-has-audio="true"></video></div>
+        <div id="vw3" class="vw"><video id="v3" class="clip src" src="assets/selects.mp4" data-start="5.8667" data-duration="1.3332" data-media-start="6.7333" data-track-index="0" playsinline data-has-audio="true"></video></div>
+        <div id="vw4" class="vw"><video id="v4" class="clip src" src="assets/selects.mp4" data-start="7.2000" data-duration="1.6999" data-media-start="8.5733" data-track-index="0" playsinline data-has-audio="true"></video></div>
+        <div id="vw5" class="vw"><video id="v5" class="clip src" src="assets/selects.mp4" data-start="8.9000" data-duration="2.1666" data-media-start="11.4693" data-track-index="0" playsinline data-has-audio="true"></video></div>
+        <div id="vw6" class="vw"><video id="v6" class="clip src" src="assets/selects.mp4" data-start="11.0667" data-duration="0.3665" data-media-start="14.8693" data-track-index="0" playsinline data-has-audio="true"></video></div>
+        <div id="vw7" class="vw"><video id="v7" class="clip src" src="assets/selects.mp4" data-start="11.4333" data-duration="0.7333" data-media-start="16.4493" data-track-index="0" playsinline data-has-audio="true"></video></div>
+        <div id="vw8" class="vw"><video id="v8" class="clip src" src="assets/selects.mp4" data-start="12.1667" data-duration="3.0665" data-media-start="18.5893" data-track-index="0" playsinline data-has-audio="true"></video></div>
+        <div id="vw9" class="vw"><video id="v9" class="clip src" src="assets/selects.mp4" data-start="15.2333" data-duration="1.8666" data-media-start="22.8693" data-track-index="0" playsinline data-has-audio="true"></video></div>
+        <div id="vw10" class="vw"><video id="v10" class="clip src" src="assets/selects.mp4" data-start="17.1000" data-duration="1.7332" data-media-start="25.1293" data-track-index="0" playsinline data-has-audio="true"></video></div>
+        <div id="vw11" class="vw"><video id="v11" class="clip src" src="assets/selects.mp4" data-start="18.8333" data-duration="0.8999" data-media-start="28.9293" data-track-index="0" playsinline data-has-audio="true"></video></div>
+        <div id="vw12" class="vw"><video id="v12" class="clip src" src="assets/selects.mp4" data-start="19.7333" data-duration="2.0999" data-media-start="30.2293" data-track-index="0" playsinline data-has-audio="true"></video></div>
+        <div id="vw13" class="vw"><video id="v13" class="clip src" src="assets/selects.mp4" data-start="21.8333" data-duration="2.8999" data-media-start="33.5693" data-track-index="0" playsinline data-has-audio="true"></video></div>
+        <div id="vw14" class="vw"><video id="v14" class="clip src" src="assets/selects.mp4" data-start="24.7333" data-duration="5.3333" data-media-start="37.6693" data-track-index="0" playsinline data-has-audio="true"></video></div>
+        <audio id="sfx0" class="clip" src="assets/sfx/whoosh-cinematic.mp3" data-start="0.0000" data-duration="5.544" data-track-index="100" data-volume="0.45"></audio>
+        <audio id="sfx1" class="clip" src="assets/sfx/impact-bass-1.mp3" data-start="0.0400" data-duration="2.116" data-track-index="101" data-volume="0.5"></audio>
+        <audio id="sfx2" class="clip" src="assets/sfx/glitch-1.mp3" data-start="2.1000" data-duration="2.638" data-track-index="102" data-volume="0.35"></audio>
+        <audio id="sfx3" class="clip" src="assets/sfx/notification.mp3" data-start="2.1400" data-duration="2.455" data-track-index="103" data-volume="0.3"></audio>
+        <audio id="sfx4" class="clip" src="assets/sfx/notification.mp3" data-start="5.9067" data-duration="2.455" data-track-index="104" data-volume="0.3"></audio>
+        <audio id="sfx5" class="clip" src="assets/sfx/impact-bass-2.mp3" data-start="8.2800" data-duration="2.592" data-track-index="105" data-volume="0.5"></audio>
+        <audio id="sfx6" class="clip" src="assets/sfx/sparkle.mp3" data-start="10.3400" data-duration="1.802" data-track-index="106" data-volume="0.35"></audio>
+        <audio id="sfx7" class="clip" src="assets/sfx/error.mp3" data-start="12.1667" data-duration="1.620" data-track-index="107" data-volume="0.3"></audio>
+        <audio id="sfx8" class="clip" src="assets/sfx/impact-bass-1.mp3" data-start="13.6667" data-duration="2.116" data-track-index="108" data-volume="0.4"></audio>
+        <audio id="sfx9" class="clip" src="assets/sfx/riser.mp3" data-start="18.8333" data-duration="10.032" data-track-index="109" data-volume="0.3"></audio>
+        <audio id="sfx10" class="clip" src="assets/sfx/impact-bass-2.mp3" data-start="20.3133" data-duration="2.592" data-track-index="110" data-volume="0.55"></audio>
+        <audio id="sfx11" class="clip" src="assets/sfx/chime.mp3" data-start="24.7333" data-duration="2.544" data-track-index="111" data-volume="0.4"></audio>
+      <div id="grade"></div>
+      <div id="topfade"></div>
+      <div id="graphics" data-composition-id="graphics" data-composition-src="compositions/graphics.html"
+           data-start="0" data-duration="30.0667" data-track-index="2" data-width="1080" data-height="1920"></div>
+      <div id="captions" data-track-kind="captions" data-composition-id="captions" data-composition-src="compositions/captions.html"
+           data-start="0" data-duration="30.0667" data-track-index="1" data-width="1080" data-height="1920"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+        tl.set("#vw0",{scale:1.0},0);
+        tl.set("#vw1",{scale:1.12},0);
+        tl.set("#vw2",{scale:1.0},0);
+        tl.set("#vw3",{scale:1.12},0);
+        tl.set("#vw4",{scale:1.0},0);
+        tl.set("#vw5",{scale:1.12},0);
+        tl.set("#vw6",{scale:1.0},0);
+        tl.set("#vw7",{scale:1.12},0);
+        tl.set("#vw8",{scale:1.0},0);
+        tl.set("#vw9",{scale:1.12},0);
+        tl.set("#vw10",{scale:1.0},0);
+        tl.set("#vw11",{scale:1.12},0);
+        tl.set("#vw12",{scale:1.0},0);
+        tl.set("#vw13",{scale:1.12},0);
+        tl.set("#vw14",{scale:1.0},0);
+        tl.to("#vw0",{scale:1.140,duration:0.16,ease:"power3.out"},1.120);
+        tl.to("#vw0",{scale:1.0,duration:0.90,ease:"sine.inOut"},1.280);
+        tl.to("#vw4",{scale:1.160,duration:0.16,ease:"power3.out"},8.280);
+        tl.to("#vw4",{scale:1.0,duration:0.90,ease:"sine.inOut"},8.440);
+        tl.to("#vw5",{scale:1.240,duration:0.16,ease:"power3.out"},10.340);
+        tl.to("#vw5",{scale:1.12,duration:0.90,ease:"sine.inOut"},10.500);
+        tl.to("#vw8",{scale:1.160,duration:0.16,ease:"power3.out"},13.667);
+        tl.to("#vw8",{scale:1.0,duration:0.90,ease:"sine.inOut"},13.827);
+        tl.to("#vw12",{scale:1.180,duration:0.16,ease:"power3.out"},20.853);
+        tl.to("#vw12",{scale:1.0,duration:1.00,ease:"sine.inOut"},21.013);
+        tl.to("#vw14",{scale:1.120,duration:0.16,ease:"power3.out"},29.033);
+        tl.to("#vw14",{scale:1.0,duration:0.90,ease:"sine.inOut"},29.193);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

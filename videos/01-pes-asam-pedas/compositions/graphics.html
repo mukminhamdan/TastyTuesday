@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ms">
+  <head><meta charset="UTF-8" /><title>Pes Asam Pedas 2kg = 10x Makan · graphics</title></head>
+  <body>
+    <template>
+      <style>
+      @font-face { font-family: "Archivo Black"; src: url("assets/ArchivoBlack-Regular.ttf"); font-weight: 400; }
+      @font-face { font-family: "Space Mono"; src: url("assets/SpaceMono-Bold.ttf"); font-weight: 700; }
+      #root { --chili: #e2361b; --turmeric: #ffc93c; --cream: #fff3e0; --ink: #2b130b; --leaf: #2f6b3a;
+              position: absolute; inset: 0; overflow: hidden; font-family: "Archivo Black", sans-serif; }
+      /* progress + tag */
+      #progwrap { position: absolute; left: 0; right: 0; top: 0; height: 10px; background: rgba(255,243,224,0.18); }
+      #prog { position: absolute; inset: 0; background: var(--turmeric); transform-origin: 0 50%; }
+      #tag { position: absolute; left: 56px; top: 150px; display: flex; gap: 12px; align-items: center;
+             background: rgba(43,19,11,0.82); padding: 8px 10px 8px 16px; border-radius: 10px;
+             font-family: "Space Mono", monospace; font-weight: 700; font-size: 26px; letter-spacing: 0.08em; color: var(--cream); }
+      #tag .dot { width: 18px; height: 18px; border-radius: 50%; background: var(--chili); box-shadow: 0 0 0 5px rgba(226,54,27,0.3); }
+      #tag .ep { background: var(--cream); color: var(--ink); padding: 4px 12px; border-radius: 6px; }
+      /* overlays */
+      .ov { position: absolute; inset: 0; pointer-events: none; }
+      .hook-inner { position: absolute; left: 60px; right: 60px; top: 300px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+      .hook-kicker { font-family: "Space Mono", monospace; font-weight: 700; font-size: 32px; letter-spacing: 0.1em;
+                     color: var(--ink); background: var(--turmeric); padding: 6px 18px; border-radius: 8px; }
+      .hook-line { display: block; }
+      .hook-line span { display: inline-block; white-space: nowrap; font-size: 104px; line-height: 1; letter-spacing: -0.03em; text-transform: uppercase;
+                        padding: 16px 28px 20px; background: var(--chili); color: var(--cream); border-radius: 14px;
+                        box-shadow: 0 14px 0 var(--ink); }
+      .hook-line.hl1 span { background: var(--cream); color: var(--ink); box-shadow: 0 14px 0 var(--chili); }
+      .hook-line.hl2 span { background: var(--turmeric); color: var(--ink); }
+      .chips-inner { position: absolute; left: 50px; top: 330px; width: 600px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+      .chips-title { font-family: "Space Mono", monospace; font-weight: 700; font-size: 30px; letter-spacing: 0.08em;
+                     color: var(--ink); background: var(--turmeric); padding: 6px 16px; border-radius: 8px; }
+      .chip { display: flex; align-items: baseline; gap: 14px; background: var(--cream); color: var(--ink);
+              padding: 12px 24px 14px; border-radius: 999px; box-shadow: 0 8px 0 rgba(43,19,11,0.5); }
+      .chip b { font-weight: 400; font-size: 46px; letter-spacing: -0.01em; }
+      .chip i { font-style: normal; font-family: "Space Mono", monospace; font-weight: 700; font-size: 28px; color: var(--chili); }
+      .stat-inner { position: absolute; left: 60px; top: 320px; width: 560px; padding: 26px 34px 30px; background: var(--chili);
+                    border-radius: 26px; box-shadow: 0 16px 0 var(--ink); color: var(--cream); transform-origin: 0 0; }
+      .stat-label { font-family: "Space Mono", monospace; font-weight: 700; font-size: 30px; letter-spacing: 0.08em; }
+      .stat-num { display: flex; align-items: baseline; gap: 14px; }
+      .stat-val { font-size: 190px; line-height: 0.95; letter-spacing: -0.04em; color: var(--turmeric); }
+      .stat-unit { font-size: 70px; }
+      .stat-sub { font-size: 44px; line-height: 1.05; }
+      .vs-inner { position: absolute; left: 50px; right: 50px; top: 230px; display: flex; flex-direction: column; align-items: center; gap: 22px; }
+      .vs-title { font-family: "Space Mono", monospace; font-weight: 700; font-size: 34px; letter-spacing: 0.08em; color: var(--ink);
+                  background: var(--turmeric); padding: 6px 18px; border-radius: 8px; }
+      .vs-row { display: flex; gap: 18px; align-items: center; }
+      .vs-side { position: relative; width: 420px; height: 290px; border-radius: 28px; padding: 26px 30px; display: flex; flex-direction: column; gap: 6px; box-shadow: 0 14px 0 var(--ink); }
+      .vs-l { background: var(--cream); color: var(--ink); }
+      .vs-r { background: var(--ink); color: var(--cream); border: 6px solid var(--cream); }
+      .vs-where { font-family: "Space Mono", monospace; font-weight: 700; font-size: 34px; letter-spacing: 0.04em; }
+      .vs-price { font-size: 100px; line-height: 1; letter-spacing: -0.04em; color: var(--chili); }
+      .vs-r .vs-price { color: var(--turmeric); }
+      .vs-get { font-size: 40px; line-height: 1.05; }
+      .vs-badge { position: absolute; right: -16px; bottom: -22px; font-size: 40px; padding: 8px 18px; border-radius: 12px; }
+      .vs-l .vs-badge { background: var(--leaf); color: var(--cream); }
+      .vs-r .vs-badge { background: var(--chili); color: var(--cream); }
+      .vs-mid { font-size: 56px; color: var(--turmeric); -webkit-text-stroke: 10px var(--ink); paint-order: stroke fill; }
+      .label-inner { position: absolute; left: 0; top: 360px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px;
+                     background: var(--cream); padding: 22px 40px 26px 56px; border-radius: 0 26px 26px 0; box-shadow: 0 12px 0 var(--chili); max-width: 860px; }
+      .label-tag { font-family: "Space Mono", monospace; font-weight: 700; font-size: 28px; letter-spacing: 0.08em; color: var(--chili); }
+      .label-text { font-size: 62px; line-height: 1.02; letter-spacing: -0.02em; color: var(--ink); }
+      .stamp-inner { position: absolute; left: 90px; top: 420px; font-size: 96px; letter-spacing: -0.02em; text-transform: uppercase;
+                     color: var(--chili); border: 10px solid var(--chili); border-radius: 18px; padding: 10px 30px 16px;
+                     background: var(--cream); box-shadow: 0 12px 0 rgba(43,19,11,0.6); }
+      .steps-inner, .list-inner { position: absolute; left: 50px; top: 320px; width: 760px; display: flex; flex-direction: column; gap: 14px; }
+      .steps-title, .list-title { align-self: flex-start; font-family: "Space Mono", monospace; font-weight: 700; font-size: 30px; letter-spacing: 0.08em;
+                                  color: var(--ink); background: var(--turmeric); padding: 6px 16px; border-radius: 8px; }
+      .step, .li { display: flex; align-items: center; gap: 18px; background: var(--ink); color: var(--cream);
+                   padding: 14px 26px 16px 16px; border-radius: 20px; align-self: flex-start; }
+      .step-n { width: 64px; height: 64px; border-radius: 50%; background: var(--chili); display: flex; align-items: center; justify-content: center; font-size: 36px; }
+      .step-t, .li-t { font-size: 46px; letter-spacing: -0.01em; }
+      .li { padding: 10px 22px 12px 10px; border-radius: 16px; }
+      .li-t { font-size: 40px; }
+      .list-inner { gap: 10px; }
+      .li-dot { width: 22px; height: 22px; border-radius: 50%; background: var(--turmeric); margin-left: 12px; }
+      .cta-inner { position: absolute; left: 80px; right: 80px; top: 360px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+      .cta-top { font-family: "Space Mono", monospace; font-weight: 700; font-size: 30px; letter-spacing: 0.08em; color: var(--ink);
+                 background: var(--turmeric); padding: 6px 18px; border-radius: 8px; }
+      .cta-main { font-size: 78px; line-height: 1.02; text-align: center; letter-spacing: -0.02em; color: var(--cream);
+                  background: var(--chili); padding: 18px 34px 22px; border-radius: 18px; box-shadow: 0 12px 0 var(--ink); }
+
+      </style>
+      <div data-hf-id="hf-wo5g" id="root" data-composition-id="graphics" data-start="0" data-duration="47.4667" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-9y2n" id="ov0" class="clip ov ov-hook" data-start="0.000" data-duration="3.087" data-track-index="40"><div data-hf-id="hf-lcze" class="hook-inner"><div data-hf-id="hf-n3lr" class="hook-kicker">RESEPI DARI LIVE</div><div data-hf-id="hf-mgg8" class="hook-line hl0"><span data-hf-id="hf-7j1c" style="font-size:84px">Pes asam pedas</span></div><div data-hf-id="hf-n841" class="hook-line hl1"><span data-hf-id="hf-i1el" style="font-size:79px">2kg = 10x makan</span></div></div></div>
+        <div data-hf-id="hf-0pka" id="ov1" class="clip ov ov-chips" data-start="3.220" data-duration="9.913" data-track-index="41"><div data-hf-id="hf-7zsu" class="chips-inner"><div data-hf-id="hf-p8df" class="chips-title">BAHAN BLEND</div><div data-hf-id="hf-u7rj" class="chip c0"><b data-hf-id="hf-a5a3">Cili boh</b><i data-hf-id="hf-bj94">1.5 kg</i></div><div data-hf-id="hf-q9ni" class="chip c1"><b data-hf-id="hf-4jb2">Daun kesum</b></div><div data-hf-id="hf-mbjh" class="chip c2"><b data-hf-id="hf-bdlz">Bunga kantan</b></div><div data-hf-id="hf-jc9w" class="chip c3"><b data-hf-id="hf-kdh3">Bawang</b></div><div data-hf-id="hf-6trf" class="chip c4"><b data-hf-id="hf-lqko">Halia</b></div></div></div>
+        <div data-hf-id="hf-bqmz" id="ov2" class="clip ov ov-chips" data-start="14.720" data-duration="3.780" data-track-index="42"><div data-hf-id="hf-nz6q" class="chips-inner"><div data-hf-id="hf-woye" class="chips-title">TUMIS DULU</div><div data-hf-id="hf-57u7" class="chip c0"><b data-hf-id="hf-u52v">Bawang</b></div><div data-hf-id="hf-n6te" class="chip c1"><b data-hf-id="hf-e96v">Bawang putih</b></div><div data-hf-id="hf-crdt" class="chip c2"><b data-hf-id="hf-8gen">Serai</b></div><div data-hf-id="hf-hfoc" class="chip c3"><b data-hf-id="hf-8fgg">Halia</b></div><div data-hf-id="hf-5o23" class="chip c4"><b data-hf-id="hf-mm31">Kunyit</b></div></div></div>
+        <div data-hf-id="hf-6c2k" id="ov3" class="clip ov ov-chips" data-start="21.133" data-duration="2.890" data-track-index="43"><div data-hf-id="hf-odhr" class="chips-inner"><div data-hf-id="hf-uti2" class="chips-title">MASUK SEKALI</div><div data-hf-id="hf-4tj6" class="chip c0"><b data-hf-id="hf-1nzv">Air asam</b></div><div data-hf-id="hf-nl4f" class="chip c1"><b data-hf-id="hf-3pob">Halba</b></div><div data-hf-id="hf-i0a0" class="chip c2"><b data-hf-id="hf-9lvj">Perasa</b><i data-hf-id="hf-co4b">garam, gula</i></div></div></div>
+        <div data-hf-id="hf-aid7" id="ov4" class="clip ov ov-label" data-start="24.053" data-duration="3.400" data-track-index="44"><div data-hf-id="hf-4hip" class="label-inner"><span data-hf-id="hf-qtx7" class="label-tag">TIP</span><span data-hf-id="hf-v7ti" class="label-text">Jangan blend hancur. Biar ada tekstur.</span></div></div>
+        <div data-hf-id="hf-0edl" id="ov5" class="clip ov ov-stamp" data-start="27.487" data-duration="2.213" data-track-index="45"><div data-hf-id="hf-1lms" class="stamp-inner">Campak-campak je</div></div>
+        <div data-hf-id="hf-aszw" id="ov6" class="clip ov ov-steps" data-start="29.740" data-duration="5.860" data-track-index="46"><div data-hf-id="hf-frd2" class="steps-inner"><div data-hf-id="hf-m9w2" class="steps-title">CARA MASAK</div><div data-hf-id="hf-gesn" class="step s0"><span data-hf-id="hf-rcr1" class="step-n">1</span><span data-hf-id="hf-ewuq" class="step-t">Tumis semua sekali</span></div><div data-hf-id="hf-cgom" class="step s1"><span data-hf-id="hf-sjo4" class="step-n">2</span><span data-hf-id="hf-c8cu" class="step-t">Masak sampai pecah minyak</span></div><div data-hf-id="hf-6ayt" class="step s2"><span data-hf-id="hf-s5d3" class="step-n">3</span><span data-hf-id="hf-93ig" class="step-t">Siap. Simpan dalam bekas</span></div></div></div>
+        <div data-hf-id="hf-6s2k" id="ov7" class="clip ov ov-stat" data-start="35.640" data-duration="1.793" data-track-index="47"><div data-hf-id="hf-333p" class="stat-inner"><div data-hf-id="hf-h46w" class="stat-label">HASIL 2KG</div><div data-hf-id="hf-j9ht" class="stat-num"><span data-hf-id="hf-h9p1" class="stat-val" data-to="10">0</span><span data-hf-id="hf-uwyk" class="stat-unit">BEKAS</span></div><div data-hf-id="hf-tt49" class="stat-sub">simpan dalam freezer</div></div></div>
+        <div data-hf-id="hf-fyvw" id="ov8" class="clip ov ov-label" data-start="37.453" data-duration="5.780" data-track-index="48"><div data-hf-id="hf-cbl1" class="label-inner"><span data-hf-id="hf-23ii" class="label-tag">BIASANYA</span><span data-hf-id="hf-rntv" class="label-text">Buat 5kg. Kali ni 2kg je, freezer dah penuh.</span></div></div>
+        <div data-hf-id="hf-gmuj" id="ov9" class="clip ov ov-cta" data-start="43.253" data-duration="4.213" data-track-index="49"><div data-hf-id="hf-ylxh" class="cta-inner"><div data-hf-id="hf-a6uf" class="cta-top">NAK RESEPI PENUH?</div><div data-hf-id="hf-664b" class="cta-main">Komen &quot;NAK&quot; kat bawah</div></div></div>
+        <div data-hf-id="hf-1g6x" id="progwrap"><div data-hf-id="hf-bsq9" id="prog"></div></div>
+        <div data-hf-id="hf-9607" id="tag"><span data-hf-id="hf-9gry" class="dot"></span><span data-hf-id="hf-sqeb">TASTY TUESDAY</span><span data-hf-id="hf-niwm" class="ep">EP 01</span></div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#ov0 .hook-kicker",{y:-30,opacity:1},{y:0,opacity:1,duration:0.3,ease:"power3.out"},0.000);
+        tl.fromTo("#ov0 .hl0",{scale:1.08,opacity:1,rotation:-4},{scale:1,opacity:1,rotation:-2,duration:0.32,ease:"back.out(2.2)"},0.000);
+        tl.fromTo("#ov0 .hl1",{scale:1.08,opacity:1,rotation:3},{scale:1,opacity:1,rotation:1.5,duration:0.32,ease:"back.out(2.2)"},0.120);
+        tl.to("#ov0 .hook-inner",{y:-14,duration:2.09,ease:"sine.inOut"},0.600);
+        tl.to("#ov0 .hook-inner",{scale:0.4,y:-260,opacity:0,duration:0.3,ease:"power2.in"},2.787);
+        tl.fromTo("#ov1 .chips-title",{x:-60,opacity:0},{x:0,opacity:1,duration:0.3,ease:"power3.out"},3.220);
+        tl.fromTo("#ov1 .c0",{x:-80,scale:0.6,opacity:0},{x:0,scale:1,opacity:1,duration:0.28,ease:"back.out(2)"},4.880);
+        tl.fromTo("#ov1 .c1",{x:-80,scale:0.6,opacity:0},{x:0,scale:1,opacity:1,duration:0.28,ease:"back.out(2)"},8.347);
+        tl.fromTo("#ov1 .c2",{x:-80,scale:0.6,opacity:0},{x:0,scale:1,opacity:1,duration:0.28,ease:"back.out(2)"},9.307);
+        tl.fromTo("#ov1 .c3",{x:-80,scale:0.6,opacity:0},{x:0,scale:1,opacity:1,duration:0.28,ease:"back.out(2)"},10.487);
+        tl.fromTo("#ov1 .c4",{x:-80,scale:0.6,opacity:0},{x:0,scale:1,opacity:1,duration:0.28,ease:"back.out(2)"},11.307);
+        tl.to("#ov1 .chips-inner",{x:-120,opacity:0,duration:0.28,ease:"power2.in"},12.853);
+        tl.fromTo("#ov2 .chips-title",{x:-60,opacity:0},{x:0,opacity:1,duration:0.3,ease:"power3.out"},14.720);
+        tl.fromTo("#ov2 .c0",{x:-80,scale:0.6,opacity:0},{x:0,scale:1,opacity:1,duration:0.28,ease:"back.out(2)"},15.560);
+        tl.fromTo("#ov2 .c1",{x:-80,scale:0.6,opacity:0},{x:0,scale:1,opacity:1,duration:0.28,ease:"back.out(2)"},16.140);
+        tl.fromTo("#ov2 .c2",{x:-80,scale:0.6,opacity:0},{x:0,scale:1,opacity:1,duration:0.28,ease:"back.out(2)"},17.020);
+        tl.fromTo("#ov2 .c3",{x:-80,scale:0.6,opacity:0},{x:0,scale:1,opacity:1,duration:0.28,ease:"back.out(2)"},17.453);
+        tl.fromTo("#ov2 .c4",{x:-80,scale:0.6,opacity:0},{x:0,scale:1,opacity:1,duration:0.28,ease:"back.out(2)"},17.920);
+        tl.to("#ov2 .chips-inner",{x:-120,opacity:0,duration:0.28,ease:"power2.in"},18.220);
+        tl.fromTo("#ov3 .chips-title",{x:-60,opacity:0},{x:0,opacity:1,duration:0.3,ease:"power3.out"},21.133);
+        tl.fromTo("#ov3 .c0",{x:-80,scale:0.6,opacity:0},{x:0,scale:1,opacity:1,duration:0.28,ease:"back.out(2)"},21.153);
+        tl.fromTo("#ov3 .c1",{x:-80,scale:0.6,opacity:0},{x:0,scale:1,opacity:1,duration:0.28,ease:"back.out(2)"},22.127);
+        tl.fromTo("#ov3 .c2",{x:-80,scale:0.6,opacity:0},{x:0,scale:1,opacity:1,duration:0.28,ease:"back.out(2)"},22.653);
+        tl.to("#ov3 .chips-inner",{x:-120,opacity:0,duration:0.28,ease:"power2.in"},23.743);
+        tl.fromTo("#ov4 .label-inner",{x:-420,opacity:0},{x:0,opacity:1,duration:0.35,ease:"power3.out"},24.053);
+        tl.to("#ov4 .label-inner",{x:-420,opacity:0,duration:0.28,ease:"power2.in"},27.173);
+        tl.fromTo("#ov5 .stamp-inner",{scale:2.6,opacity:0,rotation:-18},{scale:1,opacity:1,rotation:-9,duration:0.25,ease:"power4.out"},27.487);
+        tl.to("#ov5 .stamp-inner",{scale:1.06,duration:0.12,yoyo:true,repeat:1,ease:"sine.inOut"},27.767);
+        tl.to("#ov5 .stamp-inner",{opacity:0,scale:0.8,duration:0.2},29.500);
+        tl.fromTo("#ov6 .steps-title",{y:-30,opacity:0},{y:0,opacity:1,duration:0.3,ease:"power3.out"},29.740);
+        tl.fromTo("#ov6 .s0",{x:-60,opacity:0},{x:0,opacity:1,duration:0.28,ease:"power3.out"},29.740);
+        tl.fromTo("#ov6 .s1",{x:-60,opacity:0},{x:0,opacity:1,duration:0.28,ease:"power3.out"},30.880);
+        tl.fromTo("#ov6 .s2",{x:-60,opacity:0},{x:0,opacity:1,duration:0.28,ease:"power3.out"},34.553);
+        tl.to("#ov6 .steps-inner",{opacity:0,x:-80,duration:0.28,ease:"power2.in"},35.320);
+        tl.fromTo("#ov7 .stat-inner",{scale:0.5,opacity:0,rotation:-4},{scale:1,opacity:1,rotation:-2,duration:0.35,ease:"back.out(2)"},35.640);
+        (function(){var el=document.querySelector("#ov7 .stat-val");var o={v:0};tl.to(o,{v:10,duration:0.9,ease:"power2.out",onUpdate:function(){el.textContent=Math.round(o.v);}},35.890);})();
+        tl.to("#ov7 .stat-inner",{scale:0.7,opacity:0,duration:0.25,ease:"power2.in"},37.183);
+        tl.fromTo("#ov8 .label-inner",{x:-420,opacity:0},{x:0,opacity:1,duration:0.35,ease:"power3.out"},37.453);
+        tl.to("#ov8 .label-inner",{x:-420,opacity:0,duration:0.28,ease:"power2.in"},42.953);
+        tl.fromTo("#ov9 .cta-inner",{y:120,opacity:0},{y:0,opacity:1,duration:0.4,ease:"back.out(1.6)"},43.253);
+        tl.to("#ov9 .cta-main",{scale:1.05,duration:0.4,yoyo:true,repeat:4,ease:"sine.inOut"},43.703);
+        tl.fromTo("#prog",{scaleX:0},{scaleX:1,duration:47.467,ease:"none"},0);
+        window.__timelines["graphics"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

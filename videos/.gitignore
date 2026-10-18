@@ -1,0 +1,11 @@
+# heavy / regenerable media
+*/assets/selects.mp4
+*/assets/selects.json
+previews/
+renders/
+*/renders/
+# tool state
+*/.hyperframes/
+node_modules/
+_scratch-test/
+__pycache__/

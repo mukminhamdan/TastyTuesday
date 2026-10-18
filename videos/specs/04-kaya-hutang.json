@@ -1,0 +1,330 @@
+{
+ "id": "04-kaya-hutang",
+ "title": "Orang Kaya Lah Hutang",
+ "ep": "EP 04",
+ "words_file": "words.json",
+ "keeps": [
+  [
+   1691.9,
+   1694.0
+  ],
+  [
+   1633.6,
+   1635.15
+  ],
+  [
+   1630.24,
+   1632.45
+  ],
+  [
+   1640.76,
+   1642.1
+  ],
+  [
+   1642.6,
+   1644.3
+  ],
+  [
+   1658.32,
+   1660.5
+  ],
+  [
+   1670.22,
+   1670.6
+  ],
+  [
+   1671.8,
+   1672.55
+  ],
+  [
+   1673.94,
+   1677.0
+  ],
+  [
+   1684.54,
+   1686.4
+  ],
+  [
+   1686.8,
+   1688.55
+  ],
+  [
+   1690.6,
+   1691.5
+  ],
+  [
+   1691.9,
+   1694.0
+  ],
+  [
+   1720.64,
+   1723.55
+  ],
+  [
+   1731.86,
+   1737.2
+  ]
+ ],
+ "captions": [
+  {
+   "s": 1691.94,
+   "e": 1693.9,
+   "t": "Haa, orang kaya lah hutang.",
+   "hi": [
+    "hutang."
+   ]
+  },
+  {
+   "s": 1633.64,
+   "e": 1634.9,
+   "who": "Tetamu live",
+   "t": "Pes asam tak nak jual ke?"
+  },
+  {
+   "s": 1630.28,
+   "e": 1632.4,
+   "t": "Tak nak jual, tak kuasa lah nak jual.",
+   "hi": [
+    "kuasa"
+   ]
+  },
+  {
+   "s": 1640.8,
+   "e": 1641.94,
+   "who": "Tetamu live",
+   "t": "Lepas tu sekarang tak nak jual?"
+  },
+  {
+   "s": 1642.64,
+   "e": 1644.0,
+   "t": "Memang tak nak jual, dah kaya.",
+   "hi": [
+    "kaya."
+   ]
+  },
+  {
+   "s": 1658.36,
+   "e": 1660.45,
+   "t": "Haa, senang jawab, dah kaya lah.",
+   "hi": [
+    "kaya"
+   ]
+  },
+  {
+   "s": 1670.26,
+   "e": 1672.5,
+   "t": "Eh, Cik Pia."
+  },
+  {
+   "s": 1673.98,
+   "e": 1676.9,
+   "t": "Ya Allah, aku ada hutang kau, baru teringat lah!",
+   "hi": [
+    "hutang"
+   ]
+  },
+  {
+   "s": 1684.58,
+   "e": 1686.3,
+   "t": "Sebut pasal kaya-kaya, teringat lah.",
+   "hi": [
+    "kaya-kaya,"
+   ]
+  },
+  {
+   "s": 1686.84,
+   "e": 1688.5,
+   "t": "Kalau kaya-kaya pun hutang orang lah.",
+   "hi": [
+    "hutang"
+   ]
+  },
+  {
+   "s": 1690.64,
+   "e": 1691.4,
+   "t": "Ni orang kaya tak hutang.",
+   "k": 11
+  },
+  {
+   "s": 1691.94,
+   "e": 1693.9,
+   "t": "Haa, orang kaya lah hutang!",
+   "k": 12,
+   "hi": [
+    "hutang!"
+   ]
+  },
+  {
+   "s": 1720.68,
+   "e": 1723.4,
+   "t": "Eh, tapi memang terlupa betul lah.",
+   "hi": [
+    "terlupa"
+   ]
+  },
+  {
+   "s": 1731.9,
+   "e": 1734.2,
+   "t": "Eh, ni main hutang aje kerja ni.",
+   "hi": [
+    "hutang"
+   ]
+  },
+  {
+   "s": 1734.52,
+   "e": 1735.9,
+   "t": "Asal jumpa je, kira hutang.",
+   "hi": [
+    "hutang."
+   ]
+  },
+  {
+   "s": 1736.16,
+   "e": 1737.1,
+   "t": "Hahaha!"
+  }
+ ],
+ "overlays": [
+  {
+   "type": "hook",
+   "s": 1691.9,
+   "e": 1694.0,
+   "kicker": "PLOT TWIST",
+   "lines": [
+    "Orang kaya",
+    "lah hutang"
+   ]
+  },
+  {
+   "type": "label",
+   "s": 1633.6,
+   "e": 1635.15,
+   "tag": "SOALAN DARI LIVE",
+   "text": "Kenapa tak jual pes asam?"
+  },
+  {
+   "type": "stamp",
+   "s": 1643.68,
+   "text": "Dah kaya",
+   "dur": 1.3
+  },
+  {
+   "type": "stamp",
+   "s": 1659.76,
+   "text": "Dah kaya lah",
+   "dur": 1.3
+  },
+  {
+   "type": "label",
+   "s": 1673.94,
+   "e": 1677.0,
+   "tag": "TIBA-TIBA TERINGAT",
+   "text": "Ada hutang Cik Pia"
+  },
+  {
+   "type": "stamp",
+   "s": 1692.48,
+   "e": 1694.0,
+   "k": 12,
+   "text": "Kaya pun hutang"
+  },
+  {
+   "type": "cta",
+   "s": 1731.86,
+   "top": "TAG KAWAN",
+   "text": "Yang selalu lupa bayar hutang"
+  }
+ ],
+ "punches": [
+  {
+   "s": 1693.02,
+   "amt": 0.14
+  },
+  {
+   "s": 1643.68,
+   "amt": 0.16
+  },
+  {
+   "s": 1659.76,
+   "amt": 0.12
+  },
+  {
+   "s": 1675.44,
+   "amt": 0.16
+  },
+  {
+   "s": 1693.02,
+   "amt": 0.18,
+   "k": 12,
+   "hold": 1.0
+  },
+  {
+   "s": 1736.16,
+   "amt": 0.12
+  }
+ ],
+ "sfx": [
+  {
+   "s": 1691.9,
+   "f": "whoosh-cinematic",
+   "vol": 0.45
+  },
+  {
+   "s": 1691.94,
+   "f": "impact-bass-1",
+   "vol": 0.5
+  },
+  {
+   "s": 1633.6,
+   "f": "glitch-1",
+   "vol": 0.35
+  },
+  {
+   "s": 1633.64,
+   "f": "notification",
+   "vol": 0.3
+  },
+  {
+   "s": 1640.8,
+   "f": "notification",
+   "vol": 0.3
+  },
+  {
+   "s": 1643.68,
+   "f": "impact-bass-2",
+   "vol": 0.5
+  },
+  {
+   "s": 1659.76,
+   "f": "sparkle",
+   "vol": 0.35
+  },
+  {
+   "s": 1673.94,
+   "f": "error",
+   "vol": 0.3
+  },
+  {
+   "s": 1675.44,
+   "f": "impact-bass-1",
+   "vol": 0.4
+  },
+  {
+   "s": 1690.6,
+   "f": "riser",
+   "vol": 0.3,
+   "k": 11
+  },
+  {
+   "s": 1692.48,
+   "f": "impact-bass-2",
+   "vol": 0.55,
+   "k": 12
+  },
+  {
+   "s": 1731.86,
+   "f": "chime",
+   "vol": 0.4
+  }
+ ]
+}

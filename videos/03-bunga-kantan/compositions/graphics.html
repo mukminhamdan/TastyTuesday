@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ms">
+  <head><meta charset="UTF-8" /><title>Bunga Kantan RM3 Dapat 2 Kuntum · graphics</title></head>
+  <body>
+    <template>
+      <style>
+      @font-face { font-family: "Archivo Black"; src: url("assets/ArchivoBlack-Regular.ttf"); font-weight: 400; }
+      @font-face { font-family: "Space Mono"; src: url("assets/SpaceMono-Bold.ttf"); font-weight: 700; }
+      #root { --chili: #e2361b; --turmeric: #ffc93c; --cream: #fff3e0; --ink: #2b130b; --leaf: #2f6b3a;
+              position: absolute; inset: 0; overflow: hidden; font-family: "Archivo Black", sans-serif; }
+      /* progress + tag */
+      #progwrap { position: absolute; left: 0; right: 0; top: 0; height: 10px; background: rgba(255,243,224,0.18); }
+      #prog { position: absolute; inset: 0; background: var(--turmeric); transform-origin: 0 50%; }
+      #tag { position: absolute; left: 56px; top: 150px; display: flex; gap: 12px; align-items: center;
+             background: rgba(43,19,11,0.82); padding: 8px 10px 8px 16px; border-radius: 10px;
+             font-family: "Space Mono", monospace; font-weight: 700; font-size: 26px; letter-spacing: 0.08em; color: var(--cream); }
+      #tag .dot { width: 18px; height: 18px; border-radius: 50%; background: var(--chili); box-shadow: 0 0 0 5px rgba(226,54,27,0.3); }
+      #tag .ep { background: var(--cream); color: var(--ink); padding: 4px 12px; border-radius: 6px; }
+      /* overlays */
+      .ov { position: absolute; inset: 0; pointer-events: none; }
+      .hook-inner { position: absolute; left: 60px; right: 60px; top: 300px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+      .hook-kicker { font-family: "Space Mono", monospace; font-weight: 700; font-size: 32px; letter-spacing: 0.1em;
+                     color: var(--ink); background: var(--turmeric); padding: 6px 18px; border-radius: 8px; }
+      .hook-line { display: block; }
+      .hook-line span { display: inline-block; white-space: nowrap; font-size: 104px; line-height: 1; letter-spacing: -0.03em; text-transform: uppercase;
+                        padding: 16px 28px 20px; background: var(--chili); color: var(--cream); border-radius: 14px;
+                        box-shadow: 0 14px 0 var(--ink); }
+      .hook-line.hl1 span { background: var(--cream); color: var(--ink); box-shadow: 0 14px 0 var(--chili); }
+      .hook-line.hl2 span { background: var(--turmeric); color: var(--ink); }
+      .chips-inner { position: absolute; left: 50px; top: 330px; width: 600px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+      .chips-title { font-family: "Space Mono", monospace; font-weight: 700; font-size: 30px; letter-spacing: 0.08em;
+                     color: var(--ink); background: var(--turmeric); padding: 6px 16px; border-radius: 8px; }
+      .chip { display: flex; align-items: baseline; gap: 14px; background: var(--cream); color: var(--ink);
+              padding: 12px 24px 14px; border-radius: 999px; box-shadow: 0 8px 0 rgba(43,19,11,0.5); }
+      .chip b { font-weight: 400; font-size: 46px; letter-spacing: -0.01em; }
+      .chip i { font-style: normal; font-family: "Space Mono", monospace; font-weight: 700; font-size: 28px; color: var(--chili); }
+      .stat-inner { position: absolute; left: 60px; top: 320px; width: 560px; padding: 26px 34px 30px; background: var(--chili);
+                    border-radius: 26px; box-shadow: 0 16px 0 var(--ink); color: var(--cream); transform-origin: 0 0; }
+      .stat-label { font-family: "Space Mono", monospace; font-weight: 700; font-size: 30px; letter-spacing: 0.08em; }
+      .stat-num { display: flex; align-items: baseline; gap: 14px; }
+      .stat-val { font-size: 190px; line-height: 0.95; letter-spacing: -0.04em; color: var(--turmeric); }
+      .stat-unit { font-size: 70px; }
+      .stat-sub { font-size: 44px; line-height: 1.05; }
+      .vs-inner { position: absolute; left: 50px; right: 50px; top: 230px; display: flex; flex-direction: column; align-items: center; gap: 22px; }
+      .vs-title { font-family: "Space Mono", monospace; font-weight: 700; font-size: 34px; letter-spacing: 0.08em; color: var(--ink);
+                  background: var(--turmeric); padding: 6px 18px; border-radius: 8px; }
+      .vs-row { display: flex; gap: 18px; align-items: center; }
+      .vs-side { position: relative; width: 420px; height: 290px; border-radius: 28px; padding: 26px 30px; display: flex; flex-direction: column; gap: 6px; box-shadow: 0 14px 0 var(--ink); }
+      .vs-l { background: var(--cream); color: var(--ink); }
+      .vs-r { background: var(--ink); color: var(--cream); border: 6px solid var(--cream); }
+      .vs-where { font-family: "Space Mono", monospace; font-weight: 700; font-size: 34px; letter-spacing: 0.04em; }
+      .vs-price { font-size: 100px; line-height: 1; letter-spacing: -0.04em; color: var(--chili); }
+      .vs-r .vs-price { color: var(--turmeric); }
+      .vs-get { font-size: 40px; line-height: 1.05; }
+      .vs-badge { position: absolute; right: -16px; bottom: -22px; font-size: 40px; padding: 8px 18px; border-radius: 12px; }
+      .vs-l .vs-badge { background: var(--leaf); color: var(--cream); }
+      .vs-r .vs-badge { background: var(--chili); color: var(--cream); }
+      .vs-mid { font-size: 56px; color: var(--turmeric); -webkit-text-stroke: 10px var(--ink); paint-order: stroke fill; }
+      .label-inner { position: absolute; left: 0; top: 360px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px;
+                     background: var(--cream); padding: 22px 40px 26px 56px; border-radius: 0 26px 26px 0; box-shadow: 0 12px 0 var(--chili); max-width: 860px; }
+      .label-tag { font-family: "Space Mono", monospace; font-weight: 700; font-size: 28px; letter-spacing: 0.08em; color: var(--chili); }
+      .label-text { font-size: 62px; line-height: 1.02; letter-spacing: -0.02em; color: var(--ink); }
+      .stamp-inner { position: absolute; left: 90px; top: 420px; font-size: 96px; letter-spacing: -0.02em; text-transform: uppercase;
+                     color: var(--chili); border: 10px solid var(--chili); border-radius: 18px; padding: 10px 30px 16px;
+                     background: var(--cream); box-shadow: 0 12px 0 rgba(43,19,11,0.6); }
+      .steps-inner, .list-inner { position: absolute; left: 50px; top: 320px; width: 760px; display: flex; flex-direction: column; gap: 14px; }
+      .steps-title, .list-title { align-self: flex-start; font-family: "Space Mono", monospace; font-weight: 700; font-size: 30px; letter-spacing: 0.08em;
+                                  color: var(--ink); background: var(--turmeric); padding: 6px 16px; border-radius: 8px; }
+      .step, .li { display: flex; align-items: center; gap: 18px; background: var(--ink); color: var(--cream);
+                   padding: 14px 26px 16px 16px; border-radius: 20px; align-self: flex-start; }
+      .step-n { width: 64px; height: 64px; border-radius: 50%; background: var(--chili); display: flex; align-items: center; justify-content: center; font-size: 36px; }
+      .step-t, .li-t { font-size: 46px; letter-spacing: -0.01em; }
+      .li { padding: 10px 22px 12px 10px; border-radius: 16px; }
+      .li-t { font-size: 40px; }
+      .list-inner { gap: 10px; }
+      .li-dot { width: 22px; height: 22px; border-radius: 50%; background: var(--turmeric); margin-left: 12px; }
+      .cta-inner { position: absolute; left: 80px; right: 80px; top: 360px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+      .cta-top { font-family: "Space Mono", monospace; font-weight: 700; font-size: 30px; letter-spacing: 0.08em; color: var(--ink);
+                 background: var(--turmeric); padding: 6px 18px; border-radius: 8px; }
+      .cta-main { font-size: 78px; line-height: 1.02; text-align: center; letter-spacing: -0.02em; color: var(--cream);
+                  background: var(--chili); padding: 18px 34px 22px; border-radius: 18px; box-shadow: 0 12px 0 var(--ink); }
+
+      </style>
+      <div id="root" data-composition-id="graphics" data-start="0" data-duration="38.9333" data-width="1080" data-height="1920">
+        <div id="ov0" class="clip ov ov-hook" data-start="0.000" data-duration="4.040" data-track-index="40"><div class="hook-inner"><div class="hook-kicker">HARGA BUNGA KANTAN</div><div class="hook-line hl0"><span style="font-size:104px">RM3</span></div><div class="hook-line hl1"><span style="font-size:62px">dapat 2 kuntum je?!</span></div></div></div>
+        <div id="ov1" class="clip ov ov-label" data-start="5.540" data-duration="4.860" data-track-index="41"><div class="label-inner"><span class="label-tag">TIP SIMPAN</span><span class="label-text">Beli banyak, blend siap-siap, frozen.</span></div></div>
+        <div id="ov2" class="clip ov ov-versus" data-start="16.407" data-duration="16.587" data-track-index="42"><div class="vs-inner"><div class="vs-title">MANA LAGI BERBALOI?</div><div class="vs-row"><div class="vs-side vs-l"><div class="vs-where">NSK</div><div class="vs-price">1 IKAT</div><div class="vs-get">dapat selambak!</div><div class="vs-badge">BERBALOI</div></div><div class="vs-mid">VS</div><div class="vs-side vs-r"><div class="vs-where">LOTUS&#x27;S</div><div class="vs-price">RM3</div><div class="vs-get">dapat 2 kuntum je</div><div class="vs-badge">MAHAL</div></div></div></div></div>
+        <div id="ov3" class="clip ov ov-stamp" data-start="33.040" data-duration="3.160" data-track-index="43"><div class="stamp-inner">Pergi pagi-pagi!</div></div>
+        <div id="ov4" class="clip ov ov-cta" data-start="36.200" data-duration="2.733" data-track-index="44"><div class="cta-inner"><div class="cta-top">KORANG BELI KAT MANA?</div><div class="cta-main">Share port murah kat komen</div></div></div>
+        <div id="progwrap"><div id="prog"></div></div>
+        <div id="tag"><span class="dot"></span><span>TASTY TUESDAY</span><span class="ep">EP 03</span></div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#ov0 .hook-kicker",{y:-30,opacity:1},{y:0,opacity:1,duration:0.3,ease:"power3.out"},0.000);
+        tl.fromTo("#ov0 .hl0",{scale:1.08,opacity:1,rotation:-4},{scale:1,opacity:1,rotation:-2,duration:0.32,ease:"back.out(2.2)"},0.000);
+        tl.fromTo("#ov0 .hl1",{scale:1.08,opacity:1,rotation:3},{scale:1,opacity:1,rotation:1.5,duration:0.32,ease:"back.out(2.2)"},0.120);
+        tl.to("#ov0 .hook-inner",{y:-14,duration:3.04,ease:"sine.inOut"},0.600);
+        tl.to("#ov0 .hook-inner",{scale:0.4,y:-260,opacity:0,duration:0.3,ease:"power2.in"},3.740);
+        tl.fromTo("#ov1 .label-inner",{x:-420,opacity:0},{x:0,opacity:1,duration:0.35,ease:"power3.out"},5.540);
+        tl.to("#ov1 .label-inner",{x:-420,opacity:0,duration:0.28,ease:"power2.in"},10.120);
+        tl.fromTo("#ov2 .vs-title",{y:-40,opacity:0},{y:0,opacity:1,duration:0.3,ease:"power3.out"},16.407);
+        tl.fromTo("#ov2 .vs-l",{x:-200,opacity:0},{x:0,opacity:1,duration:0.35,ease:"power3.out"},16.407);
+        tl.fromTo("#ov2 .vs-mid",{scale:0,opacity:0},{scale:1,opacity:1,duration:0.3,ease:"back.out(3)"},16.657);
+        tl.fromTo("#ov2 .vs-r",{x:200,opacity:0},{x:0,opacity:1,duration:0.35,ease:"power3.out"},24.240);
+        tl.fromTo("#ov2 .vs-l .vs-badge",{scale:2.2,opacity:0,rotation:-14},{scale:1,opacity:1,rotation:-8,duration:0.3,ease:"back.out(2)"},26.373);
+        tl.fromTo("#ov2 .vs-r .vs-badge",{scale:2.2,opacity:0,rotation:14},{scale:1,opacity:1,rotation:8,duration:0.3,ease:"back.out(2)"},26.573);
+        tl.to("#ov2 .vs-inner",{y:-60,opacity:0,duration:0.3,ease:"power2.in"},32.693);
+        tl.fromTo("#ov3 .stamp-inner",{scale:2.6,opacity:0,rotation:-18},{scale:1,opacity:1,rotation:-9,duration:0.25,ease:"power4.out"},33.040);
+        tl.to("#ov3 .stamp-inner",{scale:1.06,duration:0.12,yoyo:true,repeat:1,ease:"sine.inOut"},33.320);
+        tl.to("#ov3 .stamp-inner",{opacity:0,scale:0.8,duration:0.2},36.000);
+        tl.fromTo("#ov4 .cta-inner",{y:120,opacity:0},{y:0,opacity:1,duration:0.4,ease:"back.out(1.6)"},36.200);
+        tl.to("#ov4 .cta-main",{scale:1.05,duration:0.4,yoyo:true,repeat:2,ease:"sine.inOut"},36.650);
+        tl.fromTo("#prog",{scaleX:0},{scaleX:1,duration:38.933,ease:"none"},0);
+        window.__timelines["graphics"] = tl;
+      </script>
+    </template>
+  </body>
+</html>
