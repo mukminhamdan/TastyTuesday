@@ -12,14 +12,9 @@ Six vertical (1080x1920, 30fps) shorts cut from the 74-minute live recording, bu
 | 5 | `05-ikan-bakar` | "Dua orang makan, terkejut I boleh habis semua." | 35.2s | Ikan bakar Kuala Perlis order list; "wajib nasi baru puas" |
 | 6 | `06-mantau-buttermilk` | "Eh, sedapnya mantau goreng cecah dengan buttermilk!" | 54.7s | Guest's lazy udang buttermilk ("buat sebelah-sebelah"), mantau goreng dipped in it, kuah buttermilk can be frozen and reused |
 
-## Suggested TikTok captions
+## TikTok captions
 
-1. Pes asam pedas sekali buat, 10 kali makan 🌶️ Komen "NAK" untuk resepi penuh #asampedas #resepimudah #masakanmelayu #mealprep
-2. Setahun pindah rumah… baru tahu dapur gas boleh guna 😭 #ceritalive #dapur #lawak #ibuibu
-3. RM3 dapat 2 kuntum je bunga kantan?! Beli kat mana lagi murah? #bungakantan #jimatbelanja #tipsdapur
-4. Orang kaya lah hutang 😂 #lawakmelayu #live #asampedas
-5. Ikan bakar Kuala Perlis, 2 orang, licin 🐟 #ikanbakar #kualaperlis #makanmakan
-6. Mantau goreng cecah kuah buttermilk 🤤 Kuah lebih? Frozen je! #buttermilk #mantaugoreng #udangbuttermilk #resepimalas
+Ready-to-paste post descriptions and hashtags: [`tiktok_captions.md`](tiktok_captions.md).
 
 ## How it is built
 
