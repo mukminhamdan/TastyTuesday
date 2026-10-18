@@ -8,7 +8,7 @@ Nak resepi penuh? Komen "NAK" 👇
 ## 2. Dapur Gas (`02-dapur-gas`)
 Setahun pindah rumah... baru tahu dapur gas tu boleh guna 😭 Induction cooker letak atas, terus lupa ada gas bawah. Anak pula stress tak boleh masak telur 🍳😂
 Korang pernah jadi macam ni? Cerita kat komen!
-#ceritalive #lawakmelayu #dapur #pindahrumah #maknyah #kisahrumahtangga #fyp
+#ceritalive #lawakmelayu #dapur #pindahrumah #ibuibu #kisahrumahtangga #fyp
 
 ## 3. Bunga Kantan (`03-bunga-kantan`)
 RM3 dapat 2 kuntum je bunga kantan?! 😳 Kat NSK satu ikat dapat selambak. Tip: beli banyak, blend siap-siap, frozen, senang nak masak bila-bila.
