@@ -355,7 +355,6 @@ def build(spec, raw, proj, skip_media=False):
     def fill(tpl, b, j):
         return tpl.replace("__TITLE__", esc(spec["title"])).replace("__DUR__", f"{total:.4f}") \
             .replace("__BODY__", "\n        ".join(b)).replace("__JS__", "\n        ".join(j)) \
-            .replace("__TAG__", esc(spec.get("tag", "TASTY TUESDAY"))).replace("__EP__", esc(spec.get("ep", ""))) \
             .replace("__FONTS__", FONTS).replace("__TOKENS__", TOKENS)
     os.makedirs(os.path.join(proj, "compositions"), exist_ok=True)
     with open(os.path.join(proj, "index.html"), "w") as f:
@@ -462,15 +461,9 @@ CAPTIONS_TPL = SUB_TPL.replace("__ID__", "captions").replace("__EXTRA__", "").re
                     background: var(--chili); padding: 2px 10px; border-radius: 6px; }
       .guest-text { font-size: 50px; line-height: 1.08; letter-spacing: -0.01em; }
 """)
-GRAPHICS_TPL = SUB_TPL.replace("__ID__", "graphics").replace("__EXTRA__", """        <div id="progwrap"><div id="prog"></div></div>
-        <div id="tag"><span class="dot"></span><span>__TAG__</span><span class="ep">__EP__</span></div>""").replace("__CSS__", r"""      /* progress + tag */
+GRAPHICS_TPL = SUB_TPL.replace("__ID__", "graphics").replace("__EXTRA__", """        <div id="progwrap"><div id="prog"></div></div>""").replace("__CSS__", r"""      /* progress + tag */
       #progwrap { position: absolute; left: 0; right: 0; top: 0; height: 10px; background: rgba(255,243,224,0.18); }
       #prog { position: absolute; inset: 0; background: var(--turmeric); transform-origin: 0 50%; }
-      #tag { position: absolute; left: 56px; top: 150px; display: flex; gap: 12px; align-items: center;
-             background: rgba(43,19,11,0.82); padding: 8px 10px 8px 16px; border-radius: 10px;
-             font-family: "Space Mono", monospace; font-weight: 700; font-size: 26px; letter-spacing: 0.08em; color: var(--cream); }
-      #tag .dot { width: 18px; height: 18px; border-radius: 50%; background: var(--chili); box-shadow: 0 0 0 5px rgba(226,54,27,0.3); }
-      #tag .ep { background: var(--cream); color: var(--ink); padding: 4px 12px; border-radius: 6px; }
       /* overlays */
       .ov { position: absolute; inset: 0; pointer-events: none; }
       .hook-inner { position: absolute; left: 60px; right: 60px; top: 300px; display: flex; flex-direction: column; align-items: center; gap: 14px; }

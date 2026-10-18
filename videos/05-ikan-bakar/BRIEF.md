@@ -11,7 +11,7 @@ length: under-2min
 
 ## Intent
 
-One of 6 TikTok shorts cut from the Tasty Tuesday live (pes asam pedas session, 74 min).
+One of 6 TikTok shorts cut from a regular TikTok live (pes asam pedas session, 74 min).
 User brief (verbatim): "Edit video ni menggunakan Hyperframes. Transcribe dulu so kau tahu mana nak letak
 animation, motion graphics, sound fx dekat mana yang patut. Buang yg repeatable, awkward pauses, cari hook
 yang kuat dan moment yang boleh menarik audience. Buat lebih kurang 5-6 video yang sesuai untuk di post di

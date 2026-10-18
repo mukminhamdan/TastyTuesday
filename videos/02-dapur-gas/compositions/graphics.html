@@ -11,11 +11,6 @@
       /* progress + tag */
       #progwrap { position: absolute; left: 0; right: 0; top: 0; height: 10px; background: rgba(255,243,224,0.18); }
       #prog { position: absolute; inset: 0; background: var(--turmeric); transform-origin: 0 50%; }
-      #tag { position: absolute; left: 56px; top: 150px; display: flex; gap: 12px; align-items: center;
-             background: rgba(43,19,11,0.82); padding: 8px 10px 8px 16px; border-radius: 10px;
-             font-family: "Space Mono", monospace; font-weight: 700; font-size: 26px; letter-spacing: 0.08em; color: var(--cream); }
-      #tag .dot { width: 18px; height: 18px; border-radius: 50%; background: var(--chili); box-shadow: 0 0 0 5px rgba(226,54,27,0.3); }
-      #tag .ep { background: var(--cream); color: var(--ink); padding: 4px 12px; border-radius: 6px; }
       /* overlays */
       .ov { position: absolute; inset: 0; pointer-events: none; }
       .hook-inner { position: absolute; left: 60px; right: 60px; top: 300px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
@@ -90,7 +85,6 @@
         <div id="ov5" class="clip ov ov-stamp" data-start="39.907" data-duration="1.580" data-track-index="45"><div class="stamp-inner">Boleh masak telur</div></div>
         <div id="ov6" class="clip ov ov-cta" data-start="47.687" data-duration="3.047" data-track-index="46"><div class="cta-inner"><div class="cta-top">KORANG PERNAH?</div><div class="cta-main">Komen kisah dapur korang</div></div></div>
         <div id="progwrap"><div id="prog"></div></div>
-        <div id="tag"><span class="dot"></span><span>TASTY TUESDAY</span><span class="ep">EP 02</span></div>
       </div>
       <script>
         const tl = gsap.timeline({ paused: true });

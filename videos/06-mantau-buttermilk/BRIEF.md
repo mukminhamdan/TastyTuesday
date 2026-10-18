@@ -2,7 +2,7 @@
 workflow: general-video
 flow: automation
 storyboard: no
-message: "Tumis Lebih 120°C Boleh Ke?"
+message: "Mantau Goreng Cecah Buttermilk"
 destination: tiktok
 aspect: 1080x1920
 language: ms
@@ -11,13 +11,13 @@ length: under-2min
 
 ## Intent
 
-One of 6 TikTok shorts cut from the Tasty Tuesday live (pes asam pedas session, 74 min).
+One of 6 TikTok shorts cut from a regular TikTok live (pes asam pedas session, 74 min).
 User brief (verbatim): "Edit video ni menggunakan Hyperframes. Transcribe dulu so kau tahu mana nak letak
 animation, motion graphics, sound fx dekat mana yang patut. Buang yg repeatable, awkward pauses, cari hook
 yang kuat dan moment yang boleh menarik audience. Buat lebih kurang 5-6 video yang sesuai untuk di post di
 tiktok kurang 2 minit. Jangan render dulu final file. Preview dulu."
 
-Hook (cold open): "Kalau kita tumis lebih daripada 120, boleh tu sebenarnya?" with title card "Tumis lebih / 120°C / boleh ke?".
+Hook (cold open): "Eh, sedapnya mantau goreng cecah dengan buttermilk!" with title card "Mantau goreng / cecah buttermilk". Replaces the Thermomix tips short: user does not want Thermomix content.
 
 ## Assets
 
@@ -33,5 +33,5 @@ Hook (cold open): "Kalau kita tumis lebih daripada 120, boleh tu sebenarnya?" wi
 
 ## Notes
 
-- Generated from ../specs/06-tips-thermomix.json by ../tools/build_short.py; edit the spec and rebuild rather than hand-editing HTML.
+- Generated from ../specs/06-mantau-buttermilk.json by ../tools/build_short.py; edit the spec and rebuild rather than hand-editing HTML.
 - No background music: the HeyGen BGM catalog needs a sign-in; ask before adding one.

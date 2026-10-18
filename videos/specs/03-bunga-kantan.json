@@ -1,78 +1,363 @@
 {
-  "id": "03-bunga-kantan",
-  "title": "Bunga Kantan RM3 Dapat 2 Kuntum",
-  "ep": "EP 03",
-  "words_file": "words.json",
-  "keeps": [
-    [3428.80, 3429.50],
-    [3431.36, 3434.75],
-    [3396.46, 3397.86],
-    [3398.24, 3403.15],
-    [3405.20, 3407.25],
-    [3407.92, 3409.98],
-    [3410.84, 3411.55],
-    [3411.80, 3412.95],
-    [3415.92, 3417.45],
-    [3418.58, 3423.05],
-    [3423.58, 3425.40],
-    [3427.66, 3429.50],
-    [3431.36, 3434.75],
-    [3434.82, 3438.38],
-    [3456.74, 3459.95],
-    [3460.18, 3461.40],
-    [3461.50, 3463.00]
+ "id": "03-bunga-kantan",
+ "title": "Bunga Kantan RM3 Dapat 2 Kuntum",
+ "words_file": "words.json",
+ "keeps": [
+  [
+   3428.8,
+   3429.5
   ],
-  "captions": [
-    {"s": 3428.88, "e": 3429.45, "t": "Tiga ringgit", "hi": ["tiga", "ringgit"]},
-    {"s": 3431.42, "e": 3434.60, "t": "dapat dua kuntum je bunga kantan.", "hi": ["dua", "kuntum"]},
-    {"s": 3396.50, "e": 3397.80, "t": "Barang ada, hari tu beli", "k": 2},
-    {"s": 3398.28, "e": 3403.10, "t": "daun kesum banyak sangat, beli bunga kantan banyak sangat, blend siap-siap, frozen kan.", "hi": ["frozen"]},
-    {"s": 3405.24, "e": 3407.12, "who": "Tetamu live", "t": "Kau beli bunga kantan kat mana? Manjung ke sini?"},
-    {"s": 3407.96, "e": 3409.92, "t": "Beli kat... takkanlah bunga kantan beli kat Manjung."},
-    {"s": 3410.88, "e": 3411.46, "t": "Kat sini lah."},
-    {"s": 3411.84, "e": 3412.90, "who": "Tetamu live", "t": "Bagi lah tahu Manjung murah."},
-    {"s": 3415.96, "e": 3417.40, "t": "Beli bunga kantan kat NSK.", "hi": ["nsk."]},
-    {"s": 3418.62, "e": 3421.58, "t": "Kalau bunga kantan ke daun kesum kan, dia bagi selambak yang banyak tu kan.", "hi": ["selambak"]},
-    {"s": 3422.14, "e": 3423.00, "t": "Satu ikat tu sekali."},
-    {"s": 3423.62, "e": 3425.30, "t": "Kalau dekat Tesco,"},
-    {"s": 3427.70, "e": 3428.75, "t": "Lotus tu", "k": 11},
-    {"s": 3428.88, "e": 3429.45, "t": "tiga ringgit", "k": 11, "hi": ["tiga", "ringgit"]},
-    {"s": 3431.42, "e": 3434.60, "t": "dapat dua kuntum je bunga kantan.", "k": 12, "hi": ["dua", "kuntum"]},
-    {"s": 3434.86, "e": 3438.35, "t": "Kalau serai, dekat NSK kan, satu ikat tu seringgit.", "hi": ["seringgit."]},
-    {"s": 3456.78, "e": 3459.90, "t": "Kalau dekat Lotus lah, saya cakap lah pergi pagi-pagi.", "hi": ["pagi-pagi."]},
-    {"s": 3460.22, "e": 3461.38, "t": "Tapi tu lah, tiga ringgit"},
-    {"s": 3461.56, "e": 3462.90, "t": "dapat dua kuntum.", "hi": ["dua", "kuntum."]}
+  [
+   3431.36,
+   3434.75
   ],
-  "overlays": [
-    {"type": "hook", "s": 3428.80, "e": 3434.70, "kicker": "HARGA BUNGA KANTAN", "lines": ["RM3", "dapat 2 kuntum je?!"]},
-    {"type": "label", "s": 3398.28, "e": 3403.15, "k": 2, "tag": "TIP SIMPAN", "text": "Beli banyak, blend siap-siap, frozen."},
-    {"type": "versus", "k": 8, "s": 3415.96, "e": 3438.38, "title": "MANA LAGI BERBALOI?",
-     "left": {"where": "NSK", "price": "1 IKAT", "get": "dapat selambak!", "badge": "BERBALOI"},
-     "right": {"where": "LOTUS'S", "price": "RM3", "get": "dapat 2 kuntum je", "badge": "MAHAL"},
-     "at": [3415.96, 3427.70, 3431.70]},
-    {"type": "stamp", "s": 3456.78, "e": 3459.95, "text": "Pergi pagi-pagi!"},
-    {"type": "cta", "s": 3460.18, "top": "KORANG BELI KAT MANA?", "text": "Share port murah kat komen"}
+  [
+   3396.46,
+   3397.86
   ],
-  "punches": [
-    {"s": 3428.88, "amt": 0.14},
-    {"s": 3431.70, "amt": 0.1},
-    {"s": 3420.46, "amt": 0.12},
-    {"s": 3428.88, "amt": 0.12, "k": 11},
-    {"s": 3461.56, "amt": 0.12}
+  [
+   3398.24,
+   3403.15
   ],
-  "sfx": [
-    {"s": 3428.80, "f": "whoosh-cinematic", "vol": 0.45},
-    {"s": 3428.88, "f": "impact-bass-1", "vol": 0.5},
-    {"s": 3431.70, "f": "click", "vol": 0.35},
-    {"s": 3398.28, "f": "whoosh-short", "vol": 0.4, "k": 2},
-    {"s": 3405.24, "f": "notification", "vol": 0.35},
-    {"s": 3411.84, "f": "notification", "vol": 0.3},
-    {"s": 3415.96, "f": "whoosh-short", "vol": 0.4},
-    {"s": 3416.10, "f": "pop", "vol": 0.4},
-    {"s": 3427.70, "f": "pop", "vol": 0.4, "k": 11},
-    {"s": 3431.70, "f": "impact-bass-2", "vol": 0.45, "k": 12},
-    {"s": 3431.90, "f": "error", "vol": 0.25, "k": 12},
-    {"s": 3456.78, "f": "impact-bass-1", "vol": 0.4},
-    {"s": 3460.18, "f": "chime", "vol": 0.4}
+  [
+   3405.2,
+   3407.25
+  ],
+  [
+   3407.92,
+   3409.98
+  ],
+  [
+   3410.84,
+   3411.55
+  ],
+  [
+   3411.8,
+   3412.95
+  ],
+  [
+   3415.92,
+   3417.45
+  ],
+  [
+   3418.58,
+   3423.05
+  ],
+  [
+   3423.58,
+   3425.4
+  ],
+  [
+   3427.66,
+   3429.5
+  ],
+  [
+   3431.36,
+   3434.75
+  ],
+  [
+   3434.82,
+   3438.38
+  ],
+  [
+   3456.74,
+   3459.95
+  ],
+  [
+   3460.18,
+   3461.4
+  ],
+  [
+   3461.5,
+   3463.0
   ]
+ ],
+ "captions": [
+  {
+   "s": 3428.88,
+   "e": 3429.45,
+   "t": "Tiga ringgit",
+   "hi": [
+    "tiga",
+    "ringgit"
+   ]
+  },
+  {
+   "s": 3431.42,
+   "e": 3434.6,
+   "t": "dapat dua kuntum je bunga kantan.",
+   "hi": [
+    "dua",
+    "kuntum"
+   ]
+  },
+  {
+   "s": 3396.5,
+   "e": 3397.8,
+   "t": "Barang ada, hari tu beli",
+   "k": 2
+  },
+  {
+   "s": 3398.28,
+   "e": 3403.1,
+   "t": "daun kesum banyak sangat, beli bunga kantan banyak sangat, blend siap-siap, frozen kan.",
+   "hi": [
+    "frozen"
+   ]
+  },
+  {
+   "s": 3405.24,
+   "e": 3407.12,
+   "who": "Tetamu live",
+   "t": "Kau beli bunga kantan kat mana? Manjung ke sini?"
+  },
+  {
+   "s": 3407.96,
+   "e": 3409.92,
+   "t": "Beli kat... takkanlah bunga kantan beli kat Manjung."
+  },
+  {
+   "s": 3410.88,
+   "e": 3411.46,
+   "t": "Kat sini lah."
+  },
+  {
+   "s": 3411.84,
+   "e": 3412.9,
+   "who": "Tetamu live",
+   "t": "Bagi lah tahu Manjung murah."
+  },
+  {
+   "s": 3415.96,
+   "e": 3417.4,
+   "t": "Beli bunga kantan kat NSK.",
+   "hi": [
+    "nsk."
+   ]
+  },
+  {
+   "s": 3418.62,
+   "e": 3421.58,
+   "t": "Kalau bunga kantan ke daun kesum kan, dia bagi selambak yang banyak tu kan.",
+   "hi": [
+    "selambak"
+   ]
+  },
+  {
+   "s": 3422.14,
+   "e": 3423.0,
+   "t": "Satu ikat tu sekali."
+  },
+  {
+   "s": 3423.62,
+   "e": 3425.3,
+   "t": "Kalau dekat Tesco,"
+  },
+  {
+   "s": 3427.7,
+   "e": 3428.75,
+   "t": "Lotus tu",
+   "k": 11
+  },
+  {
+   "s": 3428.88,
+   "e": 3429.45,
+   "t": "tiga ringgit",
+   "k": 11,
+   "hi": [
+    "tiga",
+    "ringgit"
+   ]
+  },
+  {
+   "s": 3431.42,
+   "e": 3434.6,
+   "t": "dapat dua kuntum je bunga kantan.",
+   "k": 12,
+   "hi": [
+    "dua",
+    "kuntum"
+   ]
+  },
+  {
+   "s": 3434.86,
+   "e": 3438.35,
+   "t": "Kalau serai, dekat NSK kan, satu ikat tu seringgit.",
+   "hi": [
+    "seringgit."
+   ]
+  },
+  {
+   "s": 3456.78,
+   "e": 3459.9,
+   "t": "Kalau dekat Lotus lah, saya cakap lah pergi pagi-pagi.",
+   "hi": [
+    "pagi-pagi."
+   ]
+  },
+  {
+   "s": 3460.22,
+   "e": 3461.38,
+   "t": "Tapi tu lah, tiga ringgit"
+  },
+  {
+   "s": 3461.56,
+   "e": 3462.9,
+   "t": "dapat dua kuntum.",
+   "hi": [
+    "dua",
+    "kuntum."
+   ]
+  }
+ ],
+ "overlays": [
+  {
+   "type": "hook",
+   "s": 3428.8,
+   "e": 3434.7,
+   "kicker": "HARGA BUNGA KANTAN",
+   "lines": [
+    "RM3",
+    "dapat 2 kuntum je?!"
+   ]
+  },
+  {
+   "type": "label",
+   "s": 3398.28,
+   "e": 3403.15,
+   "k": 2,
+   "tag": "TIP SIMPAN",
+   "text": "Beli banyak, blend siap-siap, frozen."
+  },
+  {
+   "type": "versus",
+   "k": 8,
+   "s": 3415.96,
+   "e": 3438.38,
+   "title": "MANA LAGI BERBALOI?",
+   "left": {
+    "where": "NSK",
+    "price": "1 IKAT",
+    "get": "dapat selambak!",
+    "badge": "BERBALOI"
+   },
+   "right": {
+    "where": "LOTUS'S",
+    "price": "RM3",
+    "get": "dapat 2 kuntum je",
+    "badge": "MAHAL"
+   },
+   "at": [
+    3415.96,
+    3427.7,
+    3431.7
+   ]
+  },
+  {
+   "type": "stamp",
+   "s": 3456.78,
+   "e": 3459.95,
+   "text": "Pergi pagi-pagi!"
+  },
+  {
+   "type": "cta",
+   "s": 3460.18,
+   "top": "KORANG BELI KAT MANA?",
+   "text": "Share port murah kat komen"
+  }
+ ],
+ "punches": [
+  {
+   "s": 3428.88,
+   "amt": 0.14
+  },
+  {
+   "s": 3431.7,
+   "amt": 0.1
+  },
+  {
+   "s": 3420.46,
+   "amt": 0.12
+  },
+  {
+   "s": 3428.88,
+   "amt": 0.12,
+   "k": 11
+  },
+  {
+   "s": 3461.56,
+   "amt": 0.12
+  }
+ ],
+ "sfx": [
+  {
+   "s": 3428.8,
+   "f": "whoosh-cinematic",
+   "vol": 0.45
+  },
+  {
+   "s": 3428.88,
+   "f": "impact-bass-1",
+   "vol": 0.5
+  },
+  {
+   "s": 3431.7,
+   "f": "click",
+   "vol": 0.35
+  },
+  {
+   "s": 3398.28,
+   "f": "whoosh-short",
+   "vol": 0.4,
+   "k": 2
+  },
+  {
+   "s": 3405.24,
+   "f": "notification",
+   "vol": 0.35
+  },
+  {
+   "s": 3411.84,
+   "f": "notification",
+   "vol": 0.3
+  },
+  {
+   "s": 3415.96,
+   "f": "whoosh-short",
+   "vol": 0.4
+  },
+  {
+   "s": 3416.1,
+   "f": "pop",
+   "vol": 0.4
+  },
+  {
+   "s": 3427.7,
+   "f": "pop",
+   "vol": 0.4,
+   "k": 11
+  },
+  {
+   "s": 3431.7,
+   "f": "impact-bass-2",
+   "vol": 0.45,
+   "k": 12
+  },
+  {
+   "s": 3431.9,
+   "f": "error",
+   "vol": 0.25,
+   "k": 12
+  },
+  {
+   "s": 3456.78,
+   "f": "impact-bass-1",
+   "vol": 0.4
+  },
+  {
+   "s": 3460.18,
+   "f": "chime",
+   "vol": 0.4
+  }
+ ]
 }
