@@ -39,7 +39,7 @@
       .cap { left: 0; width: 1080px; top: 1290px; height: 260px; display: flex; align-items: center; justify-content: center; padding: 0 70px; }
       .cap-inner { text-align: center; font-weight: 900; font-size: 64px; line-height: 1.12; color: #fff; text-transform: uppercase; letter-spacing: -0.01em;
         -webkit-text-stroke: 3px rgba(0,0,0,0.85); paint-order: stroke fill; text-shadow: 0 6px 18px rgba(0,0,0,0.6); }
-      .cap .w { display: inline-block; }
+      .cap .w { display: inline-block; margin: 0 0.1em; }
       .cap .w.hl { color: var(--mustard); }
 
       /* tip card */

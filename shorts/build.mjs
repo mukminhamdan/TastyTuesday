@@ -81,17 +81,50 @@ function framing(seg) {
   return { scale, left: -x0 * scale, top: -y0 * scale, w: SRC_W * scale, h: SRC_H * scale };
 }
 
-function captionHtml(text) {
-  // *word* marks a highlighted word.
-  return text
-    .split(/\s+/)
-    .filter(Boolean)
-    .map((w) => {
-      const hl = /^\*.*\*[.,!?]?$/.test(w);
-      const clean = w.replace(/\*/g, "");
-      return `<span class="w${hl ? " hl" : ""}">${esc(clean)}</span>`;
-    })
-    .join(" ");
+// Caption groups straight from the word-level transcript: only words inside kept
+// segments, max 3 words, broken at punctuation, cuts and pauses. spec.fix rewrites
+// misheard words — key "word" (any occurrence, lowercase, no punctuation) or "@<start>"
+// (one token); value "" drops it. spec.highlight words get the accent colour.
+function captionGroups(spec, segs) {
+  if (!spec.transcript) return [];
+  const words = JSON.parse(fs.readFileSync(path.join(ROOT, spec.transcript), "utf8"));
+  const fix = spec.fix ?? {};
+  const hl = new Set((spec.highlight ?? []).map((w) => w.toLowerCase()));
+  const groups = [];
+  let g = null;
+  for (const [ws, we, raw] of words) {
+    const seg = segs.find((x) => ws >= x.in - 0.06 && ws < x.out - 0.05);
+    if (!seg || seg.vol === 0) continue;
+    const key = raw.toLowerCase().replace(/[.,!?]/g, "");
+    let text = fix[`@${ws.toFixed(2)}`] ?? fix[key] ?? raw;
+    if (fix[key] != null && /[.,!?]$/.test(raw) && text && !/[.,!?]$/.test(text)) text += raw.at(-1);
+    if (!text) continue;
+    const s = seg.start + Math.max(0, ws - seg.in);
+    const e = seg.start + Math.min(seg.len, we - seg.in);
+    const gap = g ? s - g.e : 0;
+    if (!g || g.seg !== seg.i || g.words.length >= (spec.maxWords ?? 3) || gap > 0.45 || /[.,!?]$/.test(g.words.at(-1).text)) {
+      g = { seg: seg.i, s, e, words: [] };
+      groups.push(g);
+    }
+    for (const part of text.split(/\s+/)) g.words.push({ text: part, s, hl: hl.has(part.toLowerCase().replace(/[.,!?]/g, "")) });
+    g.e = e;
+  }
+  groups.sort((a, b) => a.s - b.s);
+  // Whisper sometimes stamps a quick run of words with one timestamp; fold such a
+  // blink-length group into the next one in the same shot rather than lose it.
+  for (let i = groups.length - 2; i >= 0; i--) {
+    const [a, b] = [groups[i], groups[i + 1]];
+    if (a.seg === b.seg && b.s - a.s < 0.3) {
+      b.words = [...a.words, ...b.words];
+      b.s = a.s;
+      groups.splice(i, 1);
+    }
+  }
+  groups.forEach((x, i) => {
+    x.e = Math.min(x.e + 0.25, i + 1 < groups.length ? groups[i + 1].s : Infinity);
+    x.words.forEach((w) => (w.text = w.text.replace(/[.,]$/, "")));
+  });
+  return groups.filter((x) => x.e - x.s > 0.12);
 }
 
 export function build(spec) {
@@ -169,21 +202,21 @@ export function build(spec) {
   tl.push(`tl.fromTo("#progress .bar", { scaleX: 0 }, { scaleX: 1, duration: ${total}, ease: "none" }, 0);`);
 
   // --- captions -----------------------------------------------------------------
-  const caps = (spec.captions ?? [])
-    .map(([a, b, text]) => ({ s: mapRaw(segs, a, "start"), e: mapRaw(segs, b, "end"), text }))
-    .filter((c) => c.s != null && c.e != null && c.e - c.s > 0.15);
+  const outroAt = spec.outro ? total - spec.outro.dur : total;
+  const caps = captionGroups(spec, segs).filter((c) => c.s < outroAt - 0.2);
+  caps.forEach((c) => (c.e = Math.min(c.e, outroAt)));
   caps.forEach((c, i) => {
-    if (i + 1 < caps.length) c.e = Math.min(c.e, caps[i + 1].s);
     const id = `cap${i}`;
+    const spans = c.words.map((w) => `<span class="w${w.hl ? " hl" : ""}">${esc(w.text)}</span>`).join(" ");
     overlays.push(
-      `<div id="${id}" class="clip cap" data-start="${r3(c.s)}" data-duration="${r3(c.e - c.s)}"><div class="cap-inner">${captionHtml(c.text)}</div></div>`,
+      `<div id="${id}" class="clip cap" data-start="${r3(c.s)}" data-duration="${r3(c.e - c.s)}"><div class="cap-inner">${spans}</div></div>`,
     );
     tl.push(`tl.from("#${id} .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, ${r3(c.s)});`);
-    const n = c.text.split(/\s+/).filter(Boolean).length;
-    const step = (c.e - c.s) / Math.max(1, n);
-    tl.push(
-      `tl.fromTo("#${id} .w", { opacity: 0.55 }, { opacity: 1, duration: 0.08, stagger: ${r3(step)} }, ${r3(c.s)});`,
-    );
+    // karaoke: each word brightens and pops on the frame it is spoken
+    c.words.forEach((w, k) => {
+      tl.push(`tl.fromTo("#${id} .w:nth-child(${k + 1})", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, ${r3(Math.max(c.s, w.s))});`);
+      tl.push(`tl.set("#${id} .w:nth-child(${k + 1})", { opacity: 1 }, ${r3(Math.max(c.s, w.s) + 0.2)});`);
+    });
   });
 
   // --- tip cards / stat chips / stickers ------------------------------------------
@@ -193,7 +226,7 @@ export function build(spec) {
     const d = Math.min(c.dur ?? 3.5, total - t - 0.05);
     const id = `card${i}`;
     if (c.type === "tip") {
-      overlays.push(`<div id="${id}" class="clip tip" data-start="${r3(t)}" data-duration="${r3(d)}">
+      overlays.push(`<div id="${id}" class="clip tip" data-start="${r3(t)}" data-duration="${r3(d)}"${c.y ? ` style="top:${c.y}px"` : ""}>
   <div class="tip-label"><svg viewBox="0 0 24 24" width="34" height="34"><path fill="currentColor" d="M12 2a7 7 0 0 0-4 12.7V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3A7 7 0 0 0 12 2zm-2 18h4v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"/></svg>${esc(c.label ?? "TIP")}</div>
   <div class="tip-text">${esc(c.text)}</div>
 </div>`);
@@ -203,12 +236,16 @@ export function build(spec) {
       addSfx("whoosh-short", t);
       addSfx("pop", t + 0.3);
     } else if (c.type === "chips") {
-      overlays.push(`<div id="${id}" class="clip chips" data-start="${r3(t)}" data-duration="${r3(d)}">
+      overlays.push(`<div id="${id}" class="clip chips" data-start="${r3(t)}" data-duration="${r3(d)}"${c.y ? ` style="top:${c.y}px"` : ""}>
   ${c.items.map((x) => `<div class="chip">${esc(x)}</div>`).join("\n  ")}
 </div>`);
-      tl.push(`tl.from("#${id} .chip", { scale: 0, opacity: 0, duration: 0.3, stagger: 0.18, ease: "back.out(2.6)" }, ${r3(t)});`);
+      // c.times: raw time each chip lands on (e.g. as the word is spoken); default stagger
+      const times = c.items.map((_, k) => (c.times ? mapRaw(segs, c.times[k], "start") : t + k * 0.18));
+      times.forEach((tk, k) => {
+        tl.push(`tl.from("#${id} .chip:nth-child(${k + 1})", { scale: 0, opacity: 0, duration: 0.3, ease: "back.out(2.6)" }, ${r3(tk)});`);
+        addSfx("click", tk);
+      });
       tl.push(`tl.to("#${id} .chip", { scale: 0, opacity: 0, duration: 0.2, stagger: 0.05, ease: "power2.in" }, ${r3(t + d - 0.3)});`);
-      c.items.forEach((_, k) => addSfx("click", t + k * 0.18));
     } else if (c.type === "sticker") {
       overlays.push(`<div id="${id}" class="clip sticker" data-start="${r3(t)}" data-duration="${r3(d)}" style="top:${c.y ?? 300}px">
   <div class="rays"></div><div class="sticker-text">${esc(c.text)}</div>
@@ -248,7 +285,7 @@ export function build(spec) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=${W}, height=${H}" />
     <title>${esc(spec.title)}</title>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script src="assets/gsap.min.js"></script>
     <style>
 ${css}
     </style>
@@ -284,6 +321,7 @@ async function main() {
     const proj = path.join(ROOT, "videos", spec.id);
     fs.mkdirSync(path.join(proj, "assets/sfx"), { recursive: true });
     for (const s of Object.values(SFX)) fs.copyFileSync(path.join(ROOT, "shared", s.file), path.join(proj, s.file));
+    fs.copyFileSync(path.join(ROOT, "shared/assets/gsap.min.js"), path.join(proj, "assets/gsap.min.js"));
     fs.copyFileSync(path.join(ROOT, "hyperframes.json"), path.join(proj, "hyperframes.json"));
     fs.writeFileSync(path.join(proj, "meta.json"), JSON.stringify({ id: spec.id, name: spec.title }, null, 2) + "\n");
     const out = path.join(proj, "index.html");
@@ -292,4 +330,4 @@ async function main() {
   }
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1]).href) main();
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) main();
