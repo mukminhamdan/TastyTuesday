@@ -1,0 +1,453 @@
+{
+ "id": "reel",
+ "title": "Tasty Tuesday — Menu Petang (Reel)",
+ "source": "assets/source.mp4",
+ "source_audio": "assets/source_audio.m4a",
+ "mode": "tight",
+ "clips": [
+  {
+   "id": "hook1",
+   "in": 1224.3,
+   "out": 1227.63,
+   "visual": 1229.0,
+   "flip": true,
+   "oy": 0.78,
+   "push": [
+    1.0,
+    1.08
+   ],
+   "text": ""
+  },
+  {
+   "id": "hook2",
+   "in": 1232.62,
+   "out": 1235.28,
+   "flip": true,
+   "oy": 0.74,
+   "punch": [
+    [
+     0.6,
+     1.12
+    ]
+   ],
+   "text": "Nampak crust dia?"
+  },
+  {
+   "id": "tease1",
+   "in": 1256.0,
+   "out": 1256.95,
+   "oy": 0.6,
+   "vol": 0.35,
+   "snap": false,
+   "text": ""
+  },
+  {
+   "id": "tease2",
+   "in": 1308.0,
+   "out": 1308.95,
+   "oy": 0.7,
+   "vol": 0.35,
+   "snap": false,
+   "text": ""
+  },
+  {
+   "id": "tease3",
+   "in": 1412.2,
+   "out": 1413.6,
+   "flip": true,
+   "oy": 0.42,
+   "push": [
+    1.05,
+    1.15
+   ],
+   "text": "Wow!",
+   "snap": false
+  },
+  {
+   "id": "s1a",
+   "in": 70.3,
+   "out": 74.6,
+   "oy": 0.55,
+   "text": "Hari ini saya nak buat kuih abok-abok minum petang."
+  },
+  {
+   "id": "s1c",
+   "in": 128.1,
+   "out": 132.1,
+   "oy": 0.6,
+   "push": [
+    1.0,
+    1.06
+   ],
+   "text": "Daun pisang ni, you just gulungkan. Buatkan dia punya kelongsong.",
+   "snap": false
+  },
+  {
+   "id": "s1e",
+   "in": 213.0,
+   "out": 216.7,
+   "oy": 0.6,
+   "text": "Kita kukuskan dia selama 20 minit.",
+   "snap": false
+  },
+  {
+   "id": "s1g",
+   "in": 1347.3,
+   "out": 1351.37,
+   "oy": 0.72,
+   "push": [
+    1.0,
+    1.1
+   ],
+   "text": "I pakai gula Melaka, pure gula Melaka."
+  },
+  {
+   "id": "s2a",
+   "in": 303.34,
+   "out": 306.96,
+   "mode": "wide",
+   "oy": 0.12,
+   "text": "Saya nak buat cekodok, cekodok pisang."
+  },
+  {
+   "id": "s2c",
+   "in": 364.66,
+   "out": 370.4,
+   "visual": 466.0,
+   "oy": 0.62,
+   "text": "180 tu adalah suhu yang paling sesuai untuk kita menggoreng dengan deep fry.",
+   "snap": false
+  },
+  {
+   "id": "s2d",
+   "in": 382.0,
+   "out": 385.31,
+   "visual": 498.0,
+   "oy": 0.62,
+   "punch": [
+    [
+     1.6,
+     1.15
+    ]
+   ],
+   "text": "Dia rangup kat luar, tapi still juicy kat dalam."
+  },
+  {
+   "id": "s2f",
+   "in": 844.15,
+   "out": 845.84,
+   "oy": 0.62,
+   "push": [
+    1.0,
+    1.08
+   ],
+   "text": "Masak. Cantik kan?"
+  },
+  {
+   "id": "s2g",
+   "in": 1266.42,
+   "out": 1267.88,
+   "oy": 0.55,
+   "text": "Dia tak berminyak sangat eh."
+  },
+  {
+   "id": "s3a",
+   "in": 567.68,
+   "out": 570.9,
+   "mode": "wide",
+   "oy": 0.25,
+   "text": "Untuk hari ini saya akan buat roti gula.",
+   "flip": true
+  },
+  {
+   "id": "s3b",
+   "in": 608.57,
+   "out": 612.78,
+   "mode": "wide",
+   "oy": 0.3,
+   "text": "15 minit, air crisp ni 150 degree.",
+   "flip": true
+  },
+  {
+   "id": "s3c",
+   "in": 621.3,
+   "out": 626.64,
+   "mode": "wide",
+   "oy": 0.3,
+   "text": "Saya suka garing, jadi saya tunggu sampai 15 minit. Bila makan dia akan krup krup krup!",
+   "flip": true
+  },
+  {
+   "id": "s3e",
+   "in": 1412.12,
+   "out": 1415.6,
+   "flip": true,
+   "oy": 0.42,
+   "punch": [
+    [
+     0.15,
+     1.12
+    ]
+   ],
+   "text": "Wow! Mmm, crunchy. Mmm, crunchy."
+  },
+  {
+   "id": "s4a",
+   "in": 708.84,
+   "out": 715.05,
+   "mode": "tight",
+   "flip": true,
+   "oy": 0.55,
+   "text": "Antara mode yang best saya suka dengan Cooven, kita ada mode pizza."
+  },
+  {
+   "id": "s4b",
+   "in": 751.86,
+   "out": 756.08,
+   "mode": "tight",
+   "flip": true,
+   "oy": 0.55,
+   "text": "Dengan mode pizza ni, kita hanya buat pizza selama 6 minit sahaja."
+  },
+  {
+   "id": "s4c",
+   "in": 993.69,
+   "out": 996.49,
+   "flip": true,
+   "oy": 0.5,
+   "text": "Kita boleh tambah cheese banyak mana yang kita nak."
+  },
+  {
+   "id": "s4d",
+   "in": 765.37,
+   "out": 768.75,
+   "visual": 1235.4,
+   "flip": true,
+   "oy": 0.78,
+   "push": [
+    1.0,
+    1.1
+   ],
+   "text": "Dalam masa 6 minit saja, kita boleh bakar pizza dekat rumah.",
+   "snap": false
+  },
+  {
+   "id": "o1",
+   "in": 1456.52,
+   "out": 1460.7,
+   "mode": "tight",
+   "flip": true,
+   "oy": 0.35,
+   "text": "Main masa minit-minit macam tu je. Tak sampai sejam pun."
+  },
+  {
+   "id": "o2",
+   "in": 1561.1,
+   "out": 1567.7,
+   "mode": "tight",
+   "flip": true,
+   "oy": 0.45,
+   "text": "InsyaAllah minggu depan kita akan live lagi pada pukul 4 petang.",
+   "snap": false
+  }
+ ],
+ "graphics": [
+  {
+   "type": "hook",
+   "clip": "hook1",
+   "dur": 3.3,
+   "kicker": "TASTY TUESDAY · MENU PETANG",
+   "lines": [
+    "Pizza",
+    "6 minit?!"
+   ],
+   "hi": 1
+  },
+  {
+   "type": "chip",
+   "clip": "hook2",
+   "offset": 0.5,
+   "dur": 2.0,
+   "text": "SIAP 6 MINIT",
+   "icon": "✓",
+   "pos": "tr"
+  },
+  {
+   "type": "chip",
+   "clip": "tease1",
+   "offset": 0.05,
+   "dur": 3.2,
+   "text": "+3 MENU PETANG LAGI",
+   "icon": "+",
+   "pos": "tl",
+   "sfx_name": "whoosh-short"
+  },
+  {
+   "type": "flash",
+   "clip": "s1a",
+   "offset": -0.08,
+   "dur": 0.18
+  },
+  {
+   "type": "menu",
+   "clip": "s1a",
+   "offset": 0.1,
+   "dur": 3.4,
+   "num": "01",
+   "title": "Kuih Abok-Abok",
+   "by": "Kak Salma · Fungsi Steam"
+  },
+  {
+   "type": "chip",
+   "clip": "s1e",
+   "offset": 0.3,
+   "dur": 2.8,
+   "text": "STEAM · 15–20 MINIT",
+   "icon": "~",
+   "pos": "tr"
+  },
+  {
+   "type": "chip",
+   "clip": "s1g",
+   "offset": 1.2,
+   "dur": 2.6,
+   "text": "PURE GULA MELAKA",
+   "icon": "★",
+   "pos": "tr"
+  },
+  {
+   "type": "flash",
+   "clip": "s2a",
+   "offset": -0.08,
+   "dur": 0.18
+  },
+  {
+   "type": "menu",
+   "clip": "s2a",
+   "offset": 0.1,
+   "dur": 3.2,
+   "num": "02",
+   "title": "Cekodok Pisang",
+   "by": "Intan Safiya · Deep Fry"
+  },
+  {
+   "type": "chip",
+   "clip": "s2c",
+   "offset": 0.4,
+   "dur": 3.2,
+   "text": "DEEP FRY · 180°C",
+   "icon": "!",
+   "pos": "tr"
+  },
+  {
+   "type": "chip",
+   "clip": "s2g",
+   "offset": 0.1,
+   "dur": 1.4,
+   "text": "TAK BERMINYAK",
+   "icon": "✓",
+   "pos": "tr"
+  },
+  {
+   "type": "flash",
+   "clip": "s3a",
+   "offset": -0.08,
+   "dur": 0.18
+  },
+  {
+   "type": "menu",
+   "clip": "s3a",
+   "offset": 0.1,
+   "dur": 3.1,
+   "num": "03",
+   "title": "Roti Gula",
+   "by": "Chef Hani · Air Crisp"
+  },
+  {
+   "type": "chip",
+   "clip": "s3b",
+   "offset": 0.3,
+   "dur": 3.4,
+   "text": "AIR CRISP · 150°C · 15 MIN",
+   "icon": "~",
+   "pos": "tr"
+  },
+  {
+   "type": "flash",
+   "clip": "s4a",
+   "offset": -0.08,
+   "dur": 0.18
+  },
+  {
+   "type": "menu",
+   "clip": "s4a",
+   "offset": 0.1,
+   "dur": 3.4,
+   "num": "04",
+   "title": "Pizza",
+   "by": "Mukmin · Mod Pizza"
+  },
+  {
+   "type": "chip",
+   "clip": "s4b",
+   "offset": 2.6,
+   "dur": 1.6,
+   "text": "6 MINIT JE!",
+   "icon": "!",
+   "pos": "tr"
+  },
+  {
+   "type": "outro",
+   "clip": "o2",
+   "offset": 0,
+   "dur": 6.6,
+   "kicker": "TASTY TUESDAY",
+   "big": "Live setiap [Selasa]",
+   "cta": "4 petang · Follow kami"
+  }
+ ],
+ "sfx": [
+  {
+   "name": "whoosh-short",
+   "clip": "tease2",
+   "offset": -0.05,
+   "vol": 0.5
+  },
+  {
+   "name": "whoosh-short",
+   "clip": "tease3",
+   "offset": -0.05,
+   "vol": 0.5
+  },
+  {
+   "name": "sparkle",
+   "clip": "s1g",
+   "offset": 0.2,
+   "vol": 0.35
+  },
+  {
+   "name": "sparkle",
+   "clip": "s2f",
+   "offset": 0.1,
+   "vol": 0.35
+  },
+  {
+   "name": "click-soft",
+   "clip": "s3e",
+   "offset": 0.15,
+   "vol": 0.5
+  },
+  {
+   "name": "sparkle",
+   "clip": "s4d",
+   "offset": 0.3,
+   "vol": 0.35
+  },
+  {
+   "name": "whoosh",
+   "clip": "o1",
+   "offset": -0.05,
+   "vol": 0.45
+  }
+ ]
+}

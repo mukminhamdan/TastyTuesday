@@ -1,0 +1,175 @@
+{
+ "id": "short-2-cekodok",
+ "source": "assets/source.mp4",
+ "source_audio": "assets/source_audio.m4a",
+ "mode": "tight",
+ "title": "Tasty Tuesday — Cekodok Pisang",
+ "clips": [
+  {
+   "id": "hook",
+   "in": 382.0,
+   "out": 385.31,
+   "visual": 498.0,
+   "oy": 0.62,
+   "push": [
+    1.0,
+    1.1
+   ],
+   "text": ""
+  },
+  {
+   "id": "b1",
+   "in": 303.34,
+   "out": 306.96,
+   "mode": "wide",
+   "oy": 0.12,
+   "text": "Saya nak buat cekodok, cekodok pisang."
+  },
+  {
+   "id": "b2",
+   "in": 323.5,
+   "out": 324.95,
+   "mode": "wide",
+   "oy": 0.12,
+   "text": "Guna function deep fry."
+  },
+  {
+   "id": "b3",
+   "in": 364.66,
+   "out": 370.4,
+   "visual": 466.0,
+   "oy": 0.62,
+   "snap": false,
+   "text": "180 tu adalah suhu yang paling sesuai untuk kita menggoreng dengan deep fry."
+  },
+  {
+   "id": "b4",
+   "in": 426.42,
+   "out": 430.3,
+   "oy": 0.6,
+   "text": "Kita punya minyak dah pun panas. So kita tak payah nak agak-agak lah.",
+   "snap": false
+  },
+  {
+   "id": "b5",
+   "in": 497.9,
+   "out": 503.5,
+   "oy": 0.6,
+   "snap": false,
+   "text": "The best thing pasal Cooven ni, dia set temperature yang static."
+  },
+  {
+   "id": "b6",
+   "in": 844.15,
+   "out": 845.84,
+   "oy": 0.62,
+   "push": [
+    1.0,
+    1.08
+   ],
+   "text": "Masak. Cantik kan?"
+  },
+  {
+   "id": "b7",
+   "in": 1255.03,
+   "out": 1258.22,
+   "oy": 0.55,
+   "text": "Okay, tengok. Dia punya tekstur dengan warna dia."
+  },
+  {
+   "id": "b8",
+   "in": 1266.42,
+   "out": 1267.88,
+   "oy": 0.55,
+   "text": "Dia tak berminyak sangat eh."
+  },
+  {
+   "id": "outro",
+   "in": 1561.1,
+   "out": 1567.7,
+   "mode": "tight",
+   "flip": true,
+   "oy": 0.45,
+   "snap": false,
+   "text": "InsyaAllah minggu depan kita akan live lagi pada pukul 4 petang."
+  }
+ ],
+ "graphics": [
+  {
+   "type": "hook",
+   "clip": "hook",
+   "dur": 3.3,
+   "kicker": "TASTY TUESDAY · MENU PETANG",
+   "lines": [
+    "Rangup luar",
+    "juicy dalam"
+   ],
+   "hi": 1
+  },
+  {
+   "type": "flash",
+   "clip": "b1",
+   "offset": -0.08,
+   "dur": 0.18
+  },
+  {
+   "type": "menu",
+   "clip": "b1",
+   "offset": 0.1,
+   "dur": 3.4,
+   "num": "02",
+   "title": "Cekodok Pisang",
+   "by": "Intan Safiya · Deep Fry"
+  },
+  {
+   "type": "chip",
+   "clip": "b3",
+   "offset": 0.4,
+   "dur": 3.4,
+   "text": "DEEP FRY · 180°C",
+   "icon": "!",
+   "pos": "tr"
+  },
+  {
+   "type": "chip",
+   "clip": "b5",
+   "offset": 2.5,
+   "dur": 3.0,
+   "text": "SUHU STATIK",
+   "icon": "✓",
+   "pos": "tr"
+  },
+  {
+   "type": "chip",
+   "clip": "b8",
+   "offset": 0.1,
+   "dur": 1.4,
+   "text": "TAK BERMINYAK",
+   "icon": "✓",
+   "pos": "tr"
+  },
+  {
+   "type": "outro",
+   "clip": "outro",
+   "offset": 0,
+   "dur": 6.6,
+   "kicker": "TASTY TUESDAY",
+   "big": "Live setiap [Selasa]",
+   "cta": "4 petang · Follow kami"
+  }
+ ],
+ "sfx": [
+  {
+   "name": "sparkle",
+   "clip": "b6",
+   "offset": 0.1,
+   "vol": 0.35
+  },
+  {
+   "name": "whoosh",
+   "clip": "outro",
+   "offset": -0.05,
+   "vol": 0.45
+  }
+ ]
+}

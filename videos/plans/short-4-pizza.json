@@ -1,0 +1,197 @@
+{
+ "id": "short-4-pizza",
+ "source": "assets/source.mp4",
+ "source_audio": "assets/source_audio.m4a",
+ "mode": "tight",
+ "title": "Tasty Tuesday — Pizza 6 Minit",
+ "clips": [
+  {
+   "id": "hook1",
+   "in": 1224.3,
+   "out": 1227.63,
+   "visual": 1229.0,
+   "flip": true,
+   "oy": 0.78,
+   "push": [
+    1.0,
+    1.08
+   ],
+   "snap": false,
+   "text": "",
+   "vol": 1.3
+  },
+  {
+   "id": "hook2",
+   "in": 1232.62,
+   "out": 1235.28,
+   "flip": true,
+   "oy": 0.74,
+   "punch": [
+    [
+     0.6,
+     1.12
+    ]
+   ],
+   "text": "Nampak crust dia?",
+   "vol": 1.3
+  },
+  {
+   "id": "d1",
+   "in": 708.84,
+   "out": 715.05,
+   "flip": true,
+   "oy": 0.55,
+   "text": "Antara mode yang best saya suka dengan Cooven, kita ada mode pizza.",
+   "vol": 1.3
+  },
+  {
+   "id": "d2",
+   "in": 744.22,
+   "out": 747.4,
+   "flip": true,
+   "oy": 0.55,
+   "text": "Bila dah selesai preheat, dia akan suruh masukkan makanan.",
+   "vol": 1.3
+  },
+  {
+   "id": "d3",
+   "in": 748.79,
+   "out": 751.08,
+   "flip": true,
+   "oy": 0.55,
+   "text": "Jadi, saya masukkan terus saya punya pizza.",
+   "vol": 1.3
+  },
+  {
+   "id": "d4",
+   "in": 751.86,
+   "out": 756.08,
+   "flip": true,
+   "oy": 0.55,
+   "text": "Dengan mode pizza ni, kita hanya buat pizza selama 6 minit sahaja.",
+   "vol": 1.3
+  },
+  {
+   "id": "d5",
+   "in": 970.04,
+   "out": 974.16,
+   "flip": true,
+   "oy": 0.5,
+   "text": "2 minit tadi, kita boleh tambah cheese.",
+   "vol": 1.3
+  },
+  {
+   "id": "d6",
+   "in": 993.69,
+   "out": 996.49,
+   "flip": true,
+   "oy": 0.5,
+   "text": "Kita boleh tambah cheese banyak mana yang kita nak.",
+   "vol": 1.3
+  },
+  {
+   "id": "d7",
+   "in": 765.37,
+   "out": 768.75,
+   "visual": 1235.4,
+   "flip": true,
+   "oy": 0.78,
+   "snap": false,
+   "push": [
+    1.0,
+    1.1
+   ],
+   "text": "Dalam masa 6 minit saja, kita boleh bakar pizza dekat rumah.",
+   "vol": 1.3
+  },
+  {
+   "id": "outro",
+   "in": 1561.1,
+   "out": 1567.7,
+   "mode": "tight",
+   "flip": true,
+   "oy": 0.45,
+   "snap": false,
+   "text": "InsyaAllah minggu depan kita akan live lagi pada pukul 4 petang.",
+   "vol": 1.3
+  }
+ ],
+ "graphics": [
+  {
+   "type": "hook",
+   "clip": "hook1",
+   "dur": 3.3,
+   "kicker": "TASTY TUESDAY · MENU PETANG",
+   "lines": [
+    "Pizza",
+    "6 minit?!"
+   ],
+   "hi": 1
+  },
+  {
+   "type": "chip",
+   "clip": "hook2",
+   "offset": 0.5,
+   "dur": 2.0,
+   "text": "SIAP 6 MINIT",
+   "icon": "✓",
+   "pos": "tr"
+  },
+  {
+   "type": "flash",
+   "clip": "d1",
+   "offset": -0.08,
+   "dur": 0.18
+  },
+  {
+   "type": "menu",
+   "clip": "d1",
+   "offset": 0.1,
+   "dur": 3.4,
+   "num": "04",
+   "title": "Pizza",
+   "by": "Mukmin · Mod Pizza"
+  },
+  {
+   "type": "chip",
+   "clip": "d4",
+   "offset": 2.6,
+   "dur": 1.6,
+   "text": "6 MINIT JE!",
+   "icon": "!",
+   "pos": "tr"
+  },
+  {
+   "type": "chip",
+   "clip": "d5",
+   "offset": 0.3,
+   "dur": 3.0,
+   "text": "TAMBAH CHEESE",
+   "icon": "+",
+   "pos": "tr"
+  },
+  {
+   "type": "outro",
+   "clip": "outro",
+   "offset": 0,
+   "dur": 6.6,
+   "kicker": "TASTY TUESDAY",
+   "big": "Live setiap [Selasa]",
+   "cta": "4 petang · Follow kami"
+  }
+ ],
+ "sfx": [
+  {
+   "name": "sparkle",
+   "clip": "d7",
+   "offset": 0.3,
+   "vol": 0.35
+  },
+  {
+   "name": "whoosh",
+   "clip": "outro",
+   "offset": -0.05,
+   "vol": 0.45
+  }
+ ]
+}

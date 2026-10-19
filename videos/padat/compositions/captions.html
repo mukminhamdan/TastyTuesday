@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="ms">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+        #root { position: absolute; inset: 0; pointer-events: none; }
+        .cg { position: absolute; left: 108px; right: 108px; top: 1240px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 20px; opacity: 0;
+               font-family: "Archivo Black", sans-serif; font-size: 76px; line-height: 1.08; text-transform: uppercase; letter-spacing: -0.01em; text-align: center; }
+        .w { display: inline-block; color: #fff8ee; -webkit-text-stroke: 14px #2b1a12; paint-order: stroke fill; text-shadow: 0 7px 0 rgba(28,18,12,0.6); transform-origin: 50% 60%; }
+        .w.on { color: #ffc93c; }
+      </style>
+      <div id="root" data-composition-id="captions" data-width="1080" data-height="1920">
+        <div class="cg" id="cg000"><span class="w">Wah,</span></div>
+        <div class="cg" id="cg001"><span class="w">tengok</span><span class="w">dia</span><span class="w">punya</span></div>
+        <div class="cg" id="cg002"><span class="w">crust</span><span class="w">tu.</span></div>
+        <div class="cg" id="cg003"><span class="w">Nampak</span><span class="w">crust</span><span class="w">dia?</span></div>
+        <div class="cg" id="cg004"><span class="w">Assalamualaikum</span><span class="w">semua.</span></div>
+        <div class="cg" id="cg005"><span class="w">Tema</span><span class="w">petang</span><span class="w">ni</span></div>
+        <div class="cg" id="cg006"><span class="w">adalah</span><span class="w">menu</span><span class="w">petang.</span></div>
+        <div class="cg" id="cg007"><span class="w">Menu</span><span class="w">petang.</span></div>
+        <div class="cg" id="cg008"><span class="w">Jadi</span><span class="w">kita</span><span class="w">akan</span></div>
+        <div class="cg" id="cg009"><span class="w">buat</span></div>
+        <div class="cg" id="cg010"><span class="w">kuih</span><span class="w">abok-abok,</span></div>
+        <div class="cg" id="cg011"><span class="w">cekodok,</span></div>
+        <div class="cg" id="cg012"><span class="w">roti</span><span class="w">gula</span><span class="w">dengan</span></div>
+        <div class="cg" id="cg013"><span class="w">pizza.</span></div>
+        <div class="cg" id="cg014"><span class="w">So</span><span class="w">untuk</span><span class="w">menu</span></div>
+        <div class="cg" id="cg015"><span class="w">yang</span><span class="w">pertama,</span></div>
+        <div class="cg" id="cg016"><span class="w">kita</span><span class="w">akan</span><span class="w">start</span></div>
+        <div class="cg" id="cg017"><span class="w">dengan</span><span class="w">Kak</span><span class="w">Salma.</span></div>
+        <div class="cg" id="cg018"><span class="w">Hai,</span></div>
+        <div class="cg" id="cg019"><span class="w">Advisor</span><span class="w">Salma.</span></div>
+        <div class="cg" id="cg020"><span class="w">Hari</span><span class="w">ini</span><span class="w">saya</span></div>
+        <div class="cg" id="cg021"><span class="w">nak</span><span class="w">buat</span><span class="w">kuih</span></div>
+        <div class="cg" id="cg022"><span class="w">abok-abok</span><span class="w">minum</span><span class="w">petang.</span></div>
+        <div class="cg" id="cg023"><span class="w">Kuih</span><span class="w">abok-abok</span><span class="w">ni</span></div>
+        <div class="cg" id="cg024"><span class="w">separuh</span><span class="w">saya</span><span class="w">dah</span></div>
+        <div class="cg" id="cg025"><span class="w">siap</span><span class="w">bungkus.</span></div>
+        <div class="cg" id="cg026"><span class="w">So,</span></div>
+        <div class="cg" id="cg027"><span class="w">saya</span><span class="w">nak</span><span class="w">panaskan.</span></div>
+        <div class="cg" id="cg028"><span class="w">Bila</span><span class="w">kita</span><span class="w">panaskan,</span></div>
+        <div class="cg" id="cg029"><span class="w">kita</span><span class="w">kena</span><span class="w">pakai</span></div>
+        <div class="cg" id="cg030"><span class="w">rack.</span></div>
+        <div class="cg" id="cg031"><span class="w">Okay,</span></div>
+        <div class="cg" id="cg032"><span class="w">middle</span><span class="w">rack</span><span class="w">ni</span></div>
+        <div class="cg" id="cg033"><span class="w">kita</span><span class="w">just</span><span class="w">letak</span></div>
+        <div class="cg" id="cg034"><span class="w">air</span><span class="w">about</span><span class="w">1.5</span></div>
+        <div class="cg" id="cg035"><span class="w">liter.</span></div>
+        <div class="cg" id="cg036"><span class="w">Lepas</span><span class="w">tu</span><span class="w">kita</span></div>
+        <div class="cg" id="cg037"><span class="w">tutupkan</span><span class="w">sahaja</span><span class="w">dan</span></div>
+        <div class="cg" id="cg038"><span class="w">kita</span><span class="w">on.</span></div>
+        <div class="cg" id="cg039"><span class="w">Kita</span><span class="w">nak</span><span class="w">pakai</span></div>
+        <div class="cg" id="cg040"><span class="w">steam</span><span class="w">function.</span></div>
+        <div class="cg" id="cg041"><span class="w">Hari</span><span class="w">ini</span><span class="w">saya</span></div>
+        <div class="cg" id="cg042"><span class="w">gunakan</span><span class="w">function</span><span class="w">steam.</span></div>
+        <div class="cg" id="cg043"><span class="w">P2,</span></div>
+        <div class="cg" id="cg044"><span class="w">10</span><span class="w">minit.</span></div>
+        <div class="cg" id="cg045"><span class="w">Okey,</span></div>
+        <div class="cg" id="cg046"><span class="w">cara</span><span class="w">nak</span><span class="w">buat</span></div>
+        <div class="cg" id="cg047"><span class="w">ni.</span></div>
+        <div class="cg" id="cg048"><span class="w">Daun</span><span class="w">pisang</span><span class="w">ni,</span></div>
+        <div class="cg" id="cg049"><span class="w">you</span><span class="w">just</span><span class="w">gulungkan.</span></div>
+        <div class="cg" id="cg050"><span class="w">Buatkan</span><span class="w">dia</span><span class="w">punya</span></div>
+        <div class="cg" id="cg051"><span class="w">kelongsong.</span></div>
+        <div class="cg" id="cg052"><span class="w">Boleh</span><span class="w">nampak</span><span class="w">eh.</span></div>
+        <div class="cg" id="cg053"><span class="w">Masukkan</span><span class="w">dalam</span><span class="w">2</span></div>
+        <div class="cg" id="cg054"><span class="w">sudu</span><span class="w">kecil.</span></div>
+        <div class="cg" id="cg055"><span class="w">Lepas</span><span class="w">tu</span><span class="w">masukkan</span></div>
+        <div class="cg" id="cg056"><span class="w">gula.</span></div>
+        <div class="cg" id="cg057"><span class="w">Masukkan</span><span class="w">lagi,</span></div>
+        <div class="cg" id="cg058"><span class="w">satu</span><span class="w">sudu</span><span class="w">setengah.</span></div>
+        <div class="cg" id="cg059"><span class="w">Okey,</span></div>
+        <div class="cg" id="cg060"><span class="w">banyak</span><span class="w">mana</span><span class="w">nak</span></div>
+        <div class="cg" id="cg061"><span class="w">masukkan</span><span class="w">ni</span><span class="w">depend</span></div>
+        <div class="cg" id="cg062"><span class="w">pada</span><span class="w">saiz</span><span class="w">kelongsong</span></div>
+        <div class="cg" id="cg063"><span class="w">you,</span></div>
+        <div class="cg" id="cg064"><span class="w">okay?</span></div>
+        <div class="cg" id="cg065"><span class="w">Basket</span><span class="w">ni</span><span class="w">pun</span></div>
+        <div class="cg" id="cg066"><span class="w">kita</span><span class="w">dapat</span><span class="w">masa</span></div>
+        <div class="cg" id="cg067"><span class="w">kita</span><span class="w">beli</span><span class="w">Cooven</span></div>
+        <div class="cg" id="cg068"><span class="w">ni.</span></div>
+        <div class="cg" id="cg069"><span class="w">Dia</span><span class="w">inklusif</span><span class="w">sekali.</span></div>
+        <div class="cg" id="cg070"><span class="w">And</span><span class="w">then,</span></div>
+        <div class="cg" id="cg071"><span class="w">you</span><span class="w">masukkan</span><span class="w">aje.</span></div>
+        <div class="cg" id="cg072"><span class="w">Masukkan</span><span class="w">saja</span><span class="w">dalam</span></div>
+        <div class="cg" id="cg073"><span class="w">itu,</span></div>
+        <div class="cg" id="cg074"><span class="w">kita</span><span class="w">kukuskan</span><span class="w">dia</span></div>
+        <div class="cg" id="cg075"><span class="w">selama</span><span class="w">20</span><span class="w">minit.</span></div>
+        <div class="cg" id="cg076"><span class="w">Okey,</span></div>
+        <div class="cg" id="cg077"><span class="w">15</span><span class="w">hingga</span><span class="w">20</span></div>
+        <div class="cg" id="cg078"><span class="w">minit.</span></div>
+        <div class="cg" id="cg079"><span class="w">Tengok</span><span class="w">saiz</span><span class="w">kelongsong</span></div>
+        <div class="cg" id="cg080"><span class="w">itu.</span></div>
+        <div class="cg" id="cg081"><span class="w">Itu</span><span class="w">saja,</span></div>
+        <div class="cg" id="cg082"><span class="w">Mukmin.</span></div>
+        <div class="cg" id="cg083"><span class="w">Kita</span><span class="w">tunggu</span><span class="w">lepas</span></div>
+        <div class="cg" id="cg084"><span class="w">20</span><span class="w">minit,</span></div>
+        <div class="cg" id="cg085"><span class="w">insyaAllah</span><span class="w">kuih</span><span class="w">kita</span></div>
+        <div class="cg" id="cg086"><span class="w">akan</span><span class="w">masak.</span></div>
+        <div class="cg" id="cg087"><span class="w">Kita</span><span class="w">boleh</span><span class="w">buat</span></div>
+        <div class="cg" id="cg088"><span class="w">banyak-banyak,</span></div>
+        <div class="cg" id="cg089"><span class="w">kalau</span><span class="w">kita</span><span class="w">tak</span></div>
+        <div class="cg" id="cg090"><span class="w">pakai</span><span class="w">basket</span><span class="w">tu.</span></div>
+        <div class="cg" id="cg091"><span class="w">Dia</span><span class="w">bergantung</span><span class="w">lah.</span></div>
+        <div class="cg" id="cg092"><span class="w">Kalau</span><span class="w">tak</span><span class="w">pakai</span></div>
+        <div class="cg" id="cg093"><span class="w">basket,</span></div>
+        <div class="cg" id="cg094"><span class="w">kita</span><span class="w">boleh</span><span class="w">susun</span></div>
+        <div class="cg" id="cg095"><span class="w">direct</span><span class="w">atas</span><span class="w">rack</span></div>
+        <div class="cg" id="cg096"><span class="w">tu</span><span class="w">tadi.</span></div>
+        <div class="cg" id="cg097"><span class="w">Banyak</span><span class="w">kita</span><span class="w">dapat.</span></div>
+        <div class="cg" id="cg098"><span class="w">Yang</span><span class="w">ini</span><span class="w">pun</span></div>
+        <div class="cg" id="cg099"><span class="w">lebih</span><span class="w">daripada</span><span class="w">10,</span></div>
+        <div class="cg" id="cg100"><span class="w">lebih</span><span class="w">daripada</span><span class="w">15.</span></div>
+        <div class="cg" id="cg101"><span class="w">Okey</span><span class="w">itu</span><span class="w">saja,</span></div>
+        <div class="cg" id="cg102"><span class="w">very</span><span class="w">senang,</span></div>
+        <div class="cg" id="cg103"><span class="w">very</span><span class="w">simple.</span></div>
+        <div class="cg" id="cg104"><span class="w">Resepi</span><span class="w">abok-abok,</span></div>
+        <div class="cg" id="cg105"><span class="w">beli</span><span class="w">Cooven</span><span class="w">nanti</span></div>
+        <div class="cg" id="cg106"><span class="w">kita</span><span class="w">akan</span><span class="w">dapat</span></div>
+        <div class="cg" id="cg107"><span class="w">resepi</span><span class="w">ya.</span></div>
+        <div class="cg" id="cg108"><span class="w">Okay,</span></div>
+        <div class="cg" id="cg109"><span class="w">saya</span><span class="w">punya</span><span class="w">abok-abok</span></div>
+        <div class="cg" id="cg110"><span class="w">dah</span><span class="w">masak.</span></div>
+        <div class="cg" id="cg111"><span class="w">Very</span><span class="w">nice</span><span class="w">eh.</span></div>
+        <div class="cg" id="cg112"><span class="w">Abok-abok</span><span class="w">kita</span><span class="w">masak</span></div>
+        <div class="cg" id="cg113"><span class="w">dalam</span><span class="w">15</span><span class="w">hingga</span></div>
+        <div class="cg" id="cg114"><span class="w">20</span><span class="w">minit.</span></div>
+        <div class="cg" id="cg115"><span class="w">20</span><span class="w">minit</span><span class="w">pun</span></div>
+        <div class="cg" id="cg116"><span class="w">dah</span><span class="w">cukup.</span></div>
+        <div class="cg" id="cg117"><span class="w">Tadi</span><span class="w">saya</span><span class="w">pakai</span></div>
+        <div class="cg" id="cg118"><span class="w">P2.</span></div>
+        <div class="cg" id="cg119"><span class="w">Makan</span><span class="w">masa</span><span class="w">dalam</span></div>
+        <div class="cg" id="cg120"><span class="w">18</span><span class="w">minit,</span></div>
+        <div class="cg" id="cg121"><span class="w">tak</span><span class="w">sampai</span><span class="w">20</span></div>
+        <div class="cg" id="cg122"><span class="w">minit.</span></div>
+        <div class="cg" id="cg123"><span class="w">Okay,</span></div>
+        <div class="cg" id="cg124"><span class="w">ni</span><span class="w">lah</span><span class="w">dia.</span></div>
+        <div class="cg" id="cg125"><span class="w">Kuih</span><span class="w">abok-abok.</span></div>
+        <div class="cg" id="cg126"><span class="w">Kuih</span><span class="w">abok-abok</span><span class="w">ni</span></div>
+        <div class="cg" id="cg127"><span class="w">jarang</span><span class="w">kita</span><span class="w">jumpa</span></div>
+        <div class="cg" id="cg128"><span class="w">kat</span><span class="w">kedai</span><span class="w">kan,</span></div>
+        <div class="cg" id="cg129"><span class="w">Mukmin?</span></div>
+        <div class="cg" id="cg130"><span class="w">Ya,</span></div>
+        <div class="cg" id="cg131"><span class="w">betul.</span></div>
+        <div class="cg" id="cg132"><span class="w">Jarang.</span></div>
+        <div class="cg" id="cg133"><span class="w">Susah</span><span class="w">kita</span><span class="w">nak</span></div>
+        <div class="cg" id="cg134"><span class="w">jumpa</span><span class="w">kat</span><span class="w">kedai.</span></div>
+        <div class="cg" id="cg135"><span class="w">So</span><span class="w">kalau</span><span class="w">nak,</span></div>
+        <div class="cg" id="cg136"><span class="w">kena</span><span class="w">buat</span><span class="w">sendiri.</span></div>
+        <div class="cg" id="cg137"><span class="w">Unless</span><span class="w">bulan</span><span class="w">Ramadan.</span></div>
+        <div class="cg" id="cg138"><span class="w">Tapi</span><span class="w">kan</span><span class="w">Mukmin,</span></div>
+        <div class="cg" id="cg139"><span class="w">bila</span><span class="w">jumpa</span><span class="w">abok-abok</span></div>
+        <div class="cg" id="cg140"><span class="w">bulan</span><span class="w">Ramadan,</span></div>
+        <div class="cg" id="cg141"><span class="w">sedihnya.</span></div>
+        <div class="cg" id="cg142"><span class="w">Kadang-kadang</span><span class="w">orang</span></div>
+        <div class="cg" id="cg143"><span class="w">buat</span><span class="w">keras</span><span class="w">tau,</span></div>
+        <div class="cg" id="cg144"><span class="w">Mukmin.</span></div>
+        <div class="cg" id="cg145"><span class="w">Susah</span><span class="w">nak</span><span class="w">dapat</span></div>
+        <div class="cg" id="cg146"><span class="w">yang</span><span class="w">sedap.</span></div>
+        <div class="cg" id="cg147"><span class="w">And</span><span class="w">then</span><span class="w">this</span></div>
+        <div class="cg" id="cg148"><span class="w">one,</span></div>
+        <div class="cg" id="cg149"><span class="w">the</span><span class="w">colour</span><span class="w">pun</span></div>
+        <div class="cg" id="cg150"><span class="w">not</span><span class="w">very</span><span class="w">bright,</span></div>
+        <div class="cg" id="cg151"><span class="w">because</span><span class="w">I</span><span class="w">pakai</span></div>
+        <div class="cg" id="cg152"><span class="w">gula</span><span class="w">Melaka.</span></div>
+        <div class="cg" id="cg153"><span class="w">Pure</span><span class="w">gula</span><span class="w">Melaka.</span></div>
+        <div class="cg" id="cg154"><span class="w">Hai,</span></div>
+        <div class="cg" id="cg155"><span class="w">Assalamualaikum,</span></div>
+        <div class="cg" id="cg156"><span class="w">saya</span><span class="w">Intan</span><span class="w">Safiya.</span></div>
+        <div class="cg" id="cg157"><span class="w">So</span><span class="w">hari</span><span class="w">ni</span></div>
+        <div class="cg" id="cg158"><span class="w">saya</span><span class="w">nak</span><span class="w">buat</span></div>
+        <div class="cg" id="cg159"><span class="w">cekodok,</span></div>
+        <div class="cg" id="cg160"><span class="w">cekodok</span><span class="w">pisang.</span></div>
+        <div class="cg" id="cg161"><span class="w">Okey?</span></div>
+        <div class="cg" id="cg162"><span class="w">Kita</span><span class="w">punya</span></div>
+        <div class="cg" id="cg163"><span class="w">adunan</span><span class="w">kita</span><span class="w">dah</span></div>
+        <div class="cg" id="cg164"><span class="w">buat</span><span class="w">siap-siap</span><span class="w">dah.</span></div>
+        <div class="cg" id="cg165"><span class="w">Okey.</span></div>
+        <div class="cg" id="cg166"><span class="w">Dan</span><span class="w">sekarang</span><span class="w">kita</span></div>
+        <div class="cg" id="cg167"><span class="w">tengah</span><span class="w">tunggu,</span></div>
+        <div class="cg" id="cg168"><span class="w">kita</span><span class="w">nak</span><span class="w">preheat</span></div>
+        <div class="cg" id="cg169"><span class="w">kita</span><span class="w">punya</span></div>
+        <div class="cg" id="cg170"><span class="w">Cooven.</span></div>
+        <div class="cg" id="cg171"><span class="w">Kita</span><span class="w">nak</span><span class="w">guna</span></div>
+        <div class="cg" id="cg172"><span class="w">function</span><span class="w">deep</span><span class="w">fry</span></div>
+        <div class="cg" id="cg173"><span class="w">untuk</span><span class="w">masak</span><span class="w">cekodok</span></div>
+        <div class="cg" id="cg174"><span class="w">ni.</span></div>
+        <div class="cg" id="cg175"><span class="w">Kita</span><span class="w">guna</span><span class="w">function</span></div>
+        <div class="cg" id="cg176"><span class="w">deep</span><span class="w">fry.</span></div>
+        <div class="cg" id="cg177"><span class="w">So</span><span class="w">sekarang</span><span class="w">ni</span></div>
+        <div class="cg" id="cg178"><span class="w">saya</span><span class="w">tengah</span></div>
+        <div class="cg" id="cg179"><span class="w">preheat</span><span class="w">minyak.</span></div>
+        <div class="cg" id="cg180"><span class="w">Kita</span><span class="w">kena</span><span class="w">letak</span></div>
+        <div class="cg" id="cg181"><span class="w">minyak</span><span class="w">dulu</span><span class="w">dalam,</span></div>
+        <div class="cg" id="cg182"><span class="w">nampak</span><span class="w">tak?</span></div>
+        <div class="cg" id="cg183"><span class="w">Sebab</span><span class="w">kita</span><span class="w">nak</span></div>
+        <div class="cg" id="cg184"><span class="w">pastikan</span><span class="w">minyak</span><span class="w">kita</span></div>
+        <div class="cg" id="cg185"><span class="w">memang</span><span class="w">betul-betul</span></div>
+        <div class="cg" id="cg186"><span class="w">panas.</span></div>
+        <div class="cg" id="cg187"><span class="w">So</span><span class="w">sekarang</span><span class="w">kalau</span></div>
+        <div class="cg" id="cg188"><span class="w">guna</span><span class="w">function</span><span class="w">deep</span></div>
+        <div class="cg" id="cg189"><span class="w">fry</span><span class="w">ni,</span></div>
+        <div class="cg" id="cg190"><span class="w">suhu</span><span class="w">yang</span><span class="w">dia</span></div>
+        <div class="cg" id="cg191"><span class="w">suggest</span><span class="w">dalam</span><span class="w">Cooven</span></div>
+        <div class="cg" id="cg192"><span class="w">ni</span><span class="w">180.</span></div>
+        <div class="cg" id="cg193"><span class="w">So</span><span class="w">180</span><span class="w">tu</span></div>
+        <div class="cg" id="cg194"><span class="w">adalah</span><span class="w">suhu</span><span class="w">yang</span></div>
+        <div class="cg" id="cg195"><span class="w">paling</span><span class="w">sesuai</span><span class="w">untuk</span></div>
+        <div class="cg" id="cg196"><span class="w">kita</span><span class="w">menggoreng</span><span class="w">dengan</span></div>
+        <div class="cg" id="cg197"><span class="w">deep</span><span class="w">fry.</span></div>
+        <div class="cg" id="cg198"><span class="w">Nanti</span><span class="w">kalau</span><span class="w">kita</span></div>
+        <div class="cg" id="cg199"><span class="w">masak,</span></div>
+        <div class="cg" id="cg200"><span class="w">masakan</span><span class="w">tu</span><span class="w">dia</span></div>
+        <div class="cg" id="cg201"><span class="w">cepat</span><span class="w">masak,</span></div>
+        <div class="cg" id="cg202"><span class="w">dia</span><span class="w">rangup</span><span class="w">kat</span></div>
+        <div class="cg" id="cg203"><span class="w">luar</span><span class="w">tapi</span><span class="w">still</span></div>
+        <div class="cg" id="cg204"><span class="w">juicy</span><span class="w">kat</span><span class="w">dalam.</span></div>
+        <div class="cg" id="cg205"><span class="w">Tapi</span><span class="w">dia</span><span class="w">tak</span></div>
+        <div class="cg" id="cg206"><span class="w">serap</span><span class="w">minyak.</span></div>
+        <div class="cg" id="cg207"><span class="w">Haa.</span></div>
+        <div class="cg" id="cg208"><span class="w">Kita</span><span class="w">punya</span><span class="w">minyak</span></div>
+        <div class="cg" id="cg209"><span class="w">dah</span><span class="w">pun</span><span class="w">panas.</span></div>
+        <div class="cg" id="cg210"><span class="w">So</span><span class="w">kita</span><span class="w">tak</span></div>
+        <div class="cg" id="cg211"><span class="w">payah</span><span class="w">nak</span><span class="w">agak-agak</span></div>
+        <div class="cg" id="cg212"><span class="w">lah.</span></div>
+        <div class="cg" id="cg213"><span class="w">Kalau</span><span class="w">dulu</span><span class="w">kan,</span></div>
+        <div class="cg" id="cg214"><span class="w">tak</span><span class="w">tahu</span><span class="w">minyak</span></div>
+        <div class="cg" id="cg215"><span class="w">panas</span><span class="w">ke</span><span class="w">tak.</span></div>
+        <div class="cg" id="cg216"><span class="w">Kita</span><span class="w">letaklah</span><span class="w">sikit</span></div>
+        <div class="cg" id="cg217"><span class="w">masakan</span><span class="w">kita</span><span class="w">tu,</span></div>
+        <div class="cg" id="cg218"><span class="w">eh</span><span class="w">dah</span><span class="w">panas</span></div>
+        <div class="cg" id="cg219"><span class="w">ke</span><span class="w">belum?</span></div>
+        <div class="cg" id="cg220"><span class="w">Oh,</span></div>
+        <div class="cg" id="cg221"><span class="w">tak</span><span class="w">panas</span><span class="w">sangat</span></div>
+        <div class="cg" id="cg222"><span class="w">lagi.</span></div>
+        <div class="cg" id="cg223"><span class="w">Haa,</span></div>
+        <div class="cg" id="cg224"><span class="w">try</span><span class="w">lagi.</span></div>
+        <div class="cg" id="cg225"><span class="w">Tetapi</span><span class="w">sekarang</span><span class="w">kalau</span></div>
+        <div class="cg" id="cg226"><span class="w">dengan</span><span class="w">Cooven,</span></div>
+        <div class="cg" id="cg227"><span class="w">kita</span><span class="w">tak</span><span class="w">payah</span></div>
+        <div class="cg" id="cg228"><span class="w">nak</span><span class="w">agak-agak.</span></div>
+        <div class="cg" id="cg229"><span class="w">Eh,</span></div>
+        <div class="cg" id="cg230"><span class="w">dah</span><span class="w">panas</span><span class="w">ke</span></div>
+        <div class="cg" id="cg231"><span class="w">belum?</span></div>
+        <div class="cg" id="cg232"><span class="w">Haa,</span></div>
+        <div class="cg" id="cg233"><span class="w">sebab</span><span class="w">masa</span><span class="w">preheat</span></div>
+        <div class="cg" id="cg234"><span class="w">tu,</span></div>
+        <div class="cg" id="cg235"><span class="w">bila</span><span class="w">capai</span><span class="w">suhu</span></div>
+        <div class="cg" id="cg236"><span class="w">dia,</span></div>
+        <div class="cg" id="cg237"><span class="w">memang</span><span class="w">dah</span><span class="w">sesuai</span></div>
+        <div class="cg" id="cg238"><span class="w">untuk</span><span class="w">masak.</span></div>
+        <div class="cg" id="cg239"><span class="w">Kita</span><span class="w">dah</span><span class="w">tahu</span></div>
+        <div class="cg" id="cg240"><span class="w">memang</span><span class="w">minyak</span><span class="w">tu</span></div>
+        <div class="cg" id="cg241"><span class="w">dah</span><span class="w">panas</span><span class="w">dah.</span></div>
+        <div class="cg" id="cg242"><span class="w">So</span><span class="w">untuk</span><span class="w">deep</span></div>
+        <div class="cg" id="cg243"><span class="w">fry,</span></div>
+        <div class="cg" id="cg244"><span class="w">kita</span><span class="w">boleh</span><span class="w">guna</span></div>
+        <div class="cg" id="cg245"><span class="w">dua</span><span class="w">cara.</span></div>
+        <div class="cg" id="cg246"><span class="w">Satu,</span></div>
+        <div class="cg" id="cg247"><span class="w">direct</span><span class="w">macam</span><span class="w">saya</span></div>
+        <div class="cg" id="cg248"><span class="w">buat</span><span class="w">sekarang.</span></div>
+        <div class="cg" id="cg249"><span class="w">Ataupun</span><span class="w">kita</span><span class="w">guna</span></div>
+        <div class="cg" id="cg250"><span class="w">basket</span><span class="w">yang</span><span class="w">Kak</span></div>
+        <div class="cg" id="cg251"><span class="w">Salma</span><span class="w">tunjuk</span><span class="w">tadi</span></div>
+        <div class="cg" id="cg252"><span class="w">tu.</span></div>
+        <div class="cg" id="cg253"><span class="w">Kalau</span><span class="w">kita</span><span class="w">guna</span></div>
+        <div class="cg" id="cg254"><span class="w">basket</span><span class="w">tu,</span></div>
+        <div class="cg" id="cg255"><span class="w">dia</span><span class="w">akan</span><span class="w">cukup</span></div>
+        <div class="cg" id="cg256"><span class="w">untuk</span><span class="w">sebesar</span><span class="w">mana</span></div>
+        <div class="cg" id="cg257"><span class="w">basket</span><span class="w">tu</span><span class="w">lah.</span></div>
+        <div class="cg" id="cg258"><span class="w">Tapi</span><span class="w">kalau</span><span class="w">kita</span></div>
+        <div class="cg" id="cg259"><span class="w">nak</span><span class="w">buat</span><span class="w">banyak,</span></div>
+        <div class="cg" id="cg260"><span class="w">kita</span><span class="w">boleh</span><span class="w">direct</span></div>
+        <div class="cg" id="cg261"><span class="w">dia</span><span class="w">kat</span><span class="w">dalam</span></div>
+        <div class="cg" id="cg262"><span class="w">kita</span><span class="w">punya</span></div>
+        <div class="cg" id="cg263"><span class="w">Okay,</span></div>
+        <div class="cg" id="cg264"><span class="w">untuk</span><span class="w">siapa</span><span class="w">yang</span></div>
+        <div class="cg" id="cg265"><span class="w">tak</span><span class="w">tahu</span><span class="w">lagi,</span></div>
+        <div class="cg" id="cg266"><span class="w">the</span><span class="w">best</span><span class="w">thing</span></div>
+        <div class="cg" id="cg267"><span class="w">pasal</span><span class="w">Cooven</span><span class="w">ni,</span></div>
+        <div class="cg" id="cg268"><span class="w">dia</span><span class="w">set</span><span class="w">temperature</span></div>
+        <div class="cg" id="cg269"><span class="w">yang</span><span class="w">static.</span></div>
+        <div class="cg" id="cg270"><span class="w">Jadi</span><span class="w">kalau</span><span class="w">kita</span></div>
+        <div class="cg" id="cg271"><span class="w">goreng</span><span class="w">apa-apa,</span></div>
+        <div class="cg" id="cg272"><span class="w">macam</span><span class="w">goreng</span><span class="w">ikan,</span></div>
+        <div class="cg" id="cg273"><span class="w">apa-apa</span><span class="w">yang</span><span class="w">kita</span></div>
+        <div class="cg" id="cg274"><span class="w">nak</span><span class="w">deep</span><span class="w">fry,</span></div>
+        <div class="cg" id="cg275"><span class="w">suhu</span><span class="w">dia</span><span class="w">tak</span></div>
+        <div class="cg" id="cg276"><span class="w">akan</span><span class="w">berubah.</span></div>
+        <div class="cg" id="cg277"><span class="w">Macam</span><span class="w">kita</span><span class="w">boleh</span></div>
+        <div class="cg" id="cg278"><span class="w">tengok</span><span class="w">dekat</span><span class="w">dalam</span></div>
+        <div class="cg" id="cg279"><span class="w">sekarang</span><span class="w">ni.</span></div>
+        <div class="cg" id="cg280"><span class="w">Jadi</span><span class="w">kita</span><span class="w">boleh</span></div>
+        <div class="cg" id="cg281"><span class="w">tinggal,</span></div>
+        <div class="cg" id="cg282"><span class="w">tak</span><span class="w">hangit.</span></div>
+        <div class="cg" id="cg283"><span class="w">Goreng-gorengan</span><span class="w">kita</span></div>
+        <div class="cg" id="cg284"><span class="w">tak</span><span class="w">cepat</span><span class="w">hangus.</span></div>
+        <div class="cg" id="cg285"><span class="w">Okey,</span></div>
+        <div class="cg" id="cg286"><span class="w">kita</span><span class="w">tengok</span><span class="w">hasil</span></div>
+        <div class="cg" id="cg287"><span class="w">tadi</span><span class="w">tu.</span></div>
+        <div class="cg" id="cg288"><span class="w">Hasil</span><span class="w">cekodok</span><span class="w">kita.</span></div>
+        <div class="cg" id="cg289"><span class="w">So,</span></div>
+        <div class="cg" id="cg290"><span class="w">cekodok</span><span class="w">pisang</span><span class="w">kita</span></div>
+        <div class="cg" id="cg291"><span class="w">dah</span><span class="w">masak.</span></div>
+        <div class="cg" id="cg292"><span class="w">Cantik</span><span class="w">kan?</span></div>
+        <div class="cg" id="cg293"><span class="w">So</span><span class="w">kita</span><span class="w">boleh</span></div>
+        <div class="cg" id="cg294"><span class="w">guna</span><span class="w">basket</span><span class="w">yang</span></div>
+        <div class="cg" id="cg295"><span class="w">memang</span><span class="w">kita</span><span class="w">dapat</span></div>
+        <div class="cg" id="cg296"><span class="w">sekali</span><span class="w">dalam</span><span class="w">package</span></div>
+        <div class="cg" id="cg297"><span class="w">Cooven</span><span class="w">ni.</span></div>
+        <div class="cg" id="cg298"><span class="w">Kita</span><span class="w">tak</span><span class="w">perlu</span></div>
+        <div class="cg" id="cg299"><span class="w">tambah</span><span class="w">duit</span><span class="w">untuk</span></div>
+        <div class="cg" id="cg300"><span class="w">dapatkan</span><span class="w">basket</span><span class="w">ni.</span></div>
+        <div class="cg" id="cg301"><span class="w">So</span><span class="w">guna</span><span class="w">basket</span></div>
+        <div class="cg" id="cg302"><span class="w">ni,</span></div>
+        <div class="cg" id="cg303"><span class="w">kalau</span><span class="w">kita</span><span class="w">buat</span></div>
+        <div class="cg" id="cg304"><span class="w">deep</span><span class="w">fry,</span></div>
+        <div class="cg" id="cg305"><span class="w">kita</span><span class="w">masukkan,</span></div>
+        <div class="cg" id="cg306"><span class="w">kita</span><span class="w">boleh</span><span class="w">toskan</span></div>
+        <div class="cg" id="cg307"><span class="w">minyak-minyak</span><span class="w">yang</span></div>
+        <div class="cg" id="cg308"><span class="w">ada.</span></div>
+        <div class="cg" id="cg309"><span class="w">Okey,</span></div>
+        <div class="cg" id="cg310"><span class="w">tengok.</span></div>
+        <div class="cg" id="cg311"><span class="w">Dia</span><span class="w">punya</span><span class="w">tekstur</span></div>
+        <div class="cg" id="cg312"><span class="w">dengan</span><span class="w">warna</span><span class="w">dia.</span></div>
+        <div class="cg" id="cg313"><span class="w">Sama</span><span class="w">tak</span><span class="w">macam</span></div>
+        <div class="cg" id="cg314"><span class="w">yang</span><span class="w">selalu</span><span class="w">kita</span></div>
+        <div class="cg" id="cg315"><span class="w">beli</span><span class="w">dekat</span><span class="w">luar?</span></div>
+        <div class="cg" id="cg316"><span class="w">Panas.</span></div>
+        <div class="cg" id="cg317"><span class="w">Panas.</span></div>
+        <div class="cg" id="cg318"><span class="w">Panas.</span></div>
+        <div class="cg" id="cg319"><span class="w">Dia</span><span class="w">tak</span><span class="w">berminyak</span></div>
+        <div class="cg" id="cg320"><span class="w">sangat</span><span class="w">eh.</span></div>
+        <div class="cg" id="cg321"><span class="w">Of</span><span class="w">course</span><span class="w">lah,</span></div>
+        <div class="cg" id="cg322"><span class="w">kalau</span><span class="w">kita</span><span class="w">guna</span></div>
+        <div class="cg" id="cg323"><span class="w">deep</span><span class="w">fry</span><span class="w">memang</span></div>
+        <div class="cg" id="cg324"><span class="w">ada</span><span class="w">minyak,</span></div>
+        <div class="cg" id="cg325"><span class="w">tapi</span><span class="w">tak</span><span class="w">banyak</span></div>
+        <div class="cg" id="cg326"><span class="w">sangat.</span></div>
+        <div class="cg" id="cg327"><span class="w">Kalau</span><span class="w">kita</span><span class="w">beli</span></div>
+        <div class="cg" id="cg328"><span class="w">kat</span><span class="w">luar,</span></div>
+        <div class="cg" id="cg329"><span class="w">kadang-kadang</span><span class="w">kita</span></div>
+        <div class="cg" id="cg330"><span class="w">boleh</span><span class="w">perah,</span></div>
+        <div class="cg" id="cg331"><span class="w">kita</span><span class="w">lap</span><span class="w">dengan</span></div>
+        <div class="cg" id="cg332"><span class="w">tisu,</span></div>
+        <div class="cg" id="cg333"><span class="w">still</span><span class="w">banyak</span><span class="w">lagi</span></div>
+        <div class="cg" id="cg334"><span class="w">minyak</span><span class="w">dia</span><span class="w">kan.</span></div>
+        <div class="cg" id="cg335"><span class="w">So</span><span class="w">dengan</span><span class="w">deep</span></div>
+        <div class="cg" id="cg336"><span class="w">fry</span><span class="w">kita,</span></div>
+        <div class="cg" id="cg337"><span class="w">insyaAllah</span><span class="w">kita</span><span class="w">boleh</span></div>
+        <div class="cg" id="cg338"><span class="w">kurangkan</span><span class="w">minyak</span><span class="w">tu.</span></div>
+        <div class="cg" id="cg339"><span class="w">Untuk</span><span class="w">hari</span><span class="w">ini</span></div>
+        <div class="cg" id="cg340"><span class="w">saya</span><span class="w">akan</span><span class="w">buat</span></div>
+        <div class="cg" id="cg341"><span class="w">roti</span><span class="w">gula.</span></div>
+        <div class="cg" id="cg342"><span class="w">Kudapan</span><span class="w">makan</span><span class="w">petang.</span></div>
+        <div class="cg" id="cg343"><span class="w">Memang</span><span class="w">sedap.</span></div>
+        <div class="cg" id="cg344"><span class="w">Alright,</span></div>
+        <div class="cg" id="cg345"><span class="w">so</span><span class="w">kita</span><span class="w">akan</span></div>
+        <div class="cg" id="cg346"><span class="w">gunakan</span><span class="w">function</span><span class="w">air</span></div>
+        <div class="cg" id="cg347"><span class="w">crisp,</span></div>
+        <div class="cg" id="cg348"><span class="w">okay?</span></div>
+        <div class="cg" id="cg349"><span class="w">Dan</span><span class="w">caranya,</span></div>
+        <div class="cg" id="cg350"><span class="w">mula-mula</span><span class="w">kita</span><span class="w">preheat.</span></div>
+        <div class="cg" id="cg351"><span class="w">Ni</span><span class="w">dah</span><span class="w">preheat</span></div>
+        <div class="cg" id="cg352"><span class="w">dah.</span></div>
+        <div class="cg" id="cg353"><span class="w">Kita</span><span class="w">dah</span><span class="w">potong</span></div>
+        <div class="cg" id="cg354"><span class="w">roti</span><span class="w">dengan</span><span class="w">gula</span></div>
+        <div class="cg" id="cg355"><span class="w">siap-siap.</span></div>
+        <div class="cg" id="cg356"><span class="w">Lepas</span><span class="w">tu</span><span class="w">kita</span></div>
+        <div class="cg" id="cg357"><span class="w">masukkan.</span></div>
+        <div class="cg" id="cg358"><span class="w">Yang</span><span class="w">ini</span><span class="w">actually</span></div>
+        <div class="cg" id="cg359"><span class="w">kita</span><span class="w">boleh</span><span class="w">buat</span></div>
+        <div class="cg" id="cg360"><span class="w">3</span><span class="w">layer,</span></div>
+        <div class="cg" id="cg361"><span class="w">tapi</span><span class="w">hari</span><span class="w">ni</span></div>
+        <div class="cg" id="cg362"><span class="w">saya</span><span class="w">cuma</span><span class="w">buat</span></div>
+        <div class="cg" id="cg363"><span class="w">dua</span><span class="w">layer</span><span class="w">sahaja.</span></div>
+        <div class="cg" id="cg364"><span class="w">Dan</span><span class="w">kita</span><span class="w">gunakan</span></div>
+        <div class="cg" id="cg365"><span class="w">rack</span><span class="w">ni.</span></div>
+        <div class="cg" id="cg366"><span class="w">Dua-dua</span><span class="w">rack</span><span class="w">ni</span></div>
+        <div class="cg" id="cg367"><span class="w">memang</span><span class="w">akan</span><span class="w">datang</span></div>
+        <div class="cg" id="cg368"><span class="w">sekali</span><span class="w">bila</span><span class="w">kita</span></div>
+        <div class="cg" id="cg369"><span class="w">beli</span><span class="w">Cooven</span><span class="w">tau.</span></div>
+        <div class="cg" id="cg370"><span class="w">Okay,</span></div>
+        <div class="cg" id="cg371"><span class="w">so</span><span class="w">kita</span><span class="w">buatkan</span></div>
+        <div class="cg" id="cg372"><span class="w">dua</span><span class="w">layer.</span></div>
+        <div class="cg" id="cg373"><span class="w">Alright,</span></div>
+        <div class="cg" id="cg374"><span class="w">so</span><span class="w">kita</span><span class="w">setkan</span></div>
+        <div class="cg" id="cg375"><span class="w">masa.</span></div>
+        <div class="cg" id="cg376"><span class="w">15</span><span class="w">minit,</span></div>
+        <div class="cg" id="cg377"><span class="w">air</span><span class="w">crisp</span><span class="w">ni</span></div>
+        <div class="cg" id="cg378"><span class="w">150</span><span class="w">degree.</span></div>
+        <div class="cg" id="cg379"><span class="w">Yang</span><span class="w">15</span><span class="w">minit</span></div>
+        <div class="cg" id="cg380"><span class="w">ni</span><span class="w">kita</span><span class="w">tengok</span></div>
+        <div class="cg" id="cg381"><span class="w">jugalah,</span></div>
+        <div class="cg" id="cg382"><span class="w">kalau</span><span class="w">tak</span><span class="w">nak</span></div>
+        <div class="cg" id="cg383"><span class="w">garing</span><span class="w">sangat,</span></div>
+        <div class="cg" id="cg384"><span class="w">boleh</span><span class="w">buat</span><span class="w">12-13</span></div>
+        <div class="cg" id="cg385"><span class="w">minit.</span></div>
+        <div class="cg" id="cg386"><span class="w">Tapi</span><span class="w">saya</span><span class="w">suka</span></div>
+        <div class="cg" id="cg387"><span class="w">garing,</span></div>
+        <div class="cg" id="cg388"><span class="w">jadi</span><span class="w">saya</span><span class="w">akan</span></div>
+        <div class="cg" id="cg389"><span class="w">tunggu</span><span class="w">sampai</span><span class="w">15</span></div>
+        <div class="cg" id="cg390"><span class="w">minit.</span></div>
+        <div class="cg" id="cg391"><span class="w">Bila</span><span class="w">makan,</span></div>
+        <div class="cg" id="cg392"><span class="w">dia</span><span class="w">akan</span><span class="w">krup</span></div>
+        <div class="cg" id="cg393"><span class="w">krup</span><span class="w">krup!</span></div>
+        <div class="cg" id="cg394"><span class="w">Haa,</span></div>
+        <div class="cg" id="cg395"><span class="w">macam</span><span class="w">tu</span><span class="w">lah.</span></div>
+        <div class="cg" id="cg396"><span class="w">So</span><span class="w">sekarang</span><span class="w">ni</span></div>
+        <div class="cg" id="cg397"><span class="w">dah</span><span class="w">masuk.</span></div>
+        <div class="cg" id="cg398"><span class="w">Kita</span><span class="w">tunggu</span><span class="w">15</span></div>
+        <div class="cg" id="cg399"><span class="w">minit,</span></div>
+        <div class="cg" id="cg400"><span class="w">nanti</span><span class="w">baru</span><span class="w">siap.</span></div>
+        <div class="cg" id="cg401"><span class="w">Yang</span><span class="w">best</span><span class="w">dengan</span></div>
+        <div class="cg" id="cg402"><span class="w">Cooven</span><span class="w">ni,</span></div>
+        <div class="cg" id="cg403"><span class="w">kalau</span><span class="w">kita</span><span class="w">buat</span></div>
+        <div class="cg" id="cg404"><span class="w">bakar</span><span class="w">macam</span><span class="w">ni,</span></div>
+        <div class="cg" id="cg405"><span class="w">apa</span><span class="w">yang</span><span class="w">bestnya?</span></div>
+        <div class="cg" id="cg406"><span class="w">Okay,</span></div>
+        <div class="cg" id="cg407"><span class="w">saya</span><span class="w">pernah</span><span class="w">cuba</span></div>
+        <div class="cg" id="cg408"><span class="w">bakar</span><span class="w">pakai</span><span class="w">oven,</span></div>
+        <div class="cg" id="cg409"><span class="w">dan</span><span class="w">saya</span><span class="w">pernah</span></div>
+        <div class="cg" id="cg410"><span class="w">cuba</span><span class="w">pakai</span><span class="w">air</span></div>
+        <div class="cg" id="cg411"><span class="w">fryer.</span></div>
+        <div class="cg" id="cg412"><span class="w">Semua</span><span class="w">roti</span><span class="w">tu</span></div>
+        <div class="cg" id="cg413"><span class="w">dia</span><span class="w">jadi</span><span class="w">macam</span></div>
+        <div class="cg" id="cg414"><span class="w">keras</span><span class="w">kering.</span></div>
+        <div class="cg" id="cg415"><span class="w">Tak</span><span class="w">sedap.</span></div>
+        <div class="cg" id="cg416"><span class="w">Gula</span><span class="w">dia</span><span class="w">pun</span></div>
+        <div class="cg" id="cg417"><span class="w">macam</span><span class="w">tak</span><span class="w">serap</span></div>
+        <div class="cg" id="cg418"><span class="w">dekat</span><span class="w">butter</span><span class="w">tu.</span></div>
+        <div class="cg" id="cg419"><span class="w">Tapi</span><span class="w">yang</span><span class="w">ini,</span></div>
+        <div class="cg" id="cg420"><span class="w">you</span><span class="w">akan</span><span class="w">tengok</span></div>
+        <div class="cg" id="cg421"><span class="w">hasil</span><span class="w">dia.</span></div>
+        <div class="cg" id="cg422"><span class="w">Memang</span><span class="w">macam</span><span class="w">yang</span></div>
+        <div class="cg" id="cg423"><span class="w">kita</span><span class="w">beli</span><span class="w">kat</span></div>
+        <div class="cg" id="cg424"><span class="w">kedai</span><span class="w">mamak</span><span class="w">dulu</span></div>
+        <div class="cg" id="cg425"><span class="w">kan?</span></div>
+        <div class="cg" id="cg426"><span class="w">Petang-petang.</span></div>
+        <div class="cg" id="cg427"><span class="w">Lepas</span><span class="w">tu</span><span class="w">kalau</span></div>
+        <div class="cg" id="cg428"><span class="w">nak</span><span class="w">cicah</span><span class="w">kopi,</span></div>
+        <div class="cg" id="cg429"><span class="w">alamak,</span></div>
+        <div class="cg" id="cg430"><span class="w">memang</span><span class="w">power</span><span class="w">punya.</span></div>
+        <div class="cg" id="cg431"><span class="w">Haa,</span></div>
+        <div class="cg" id="cg432"><span class="w">okay.</span></div>
+        <div class="cg" id="cg433"><span class="w">So</span><span class="w">untuk</span><span class="w">siapa</span></div>
+        <div class="cg" id="cg434"><span class="w">yang</span><span class="w">nak</span><span class="w">tahu</span></div>
+        <div class="cg" id="cg435"><span class="w">pasal</span><span class="w">Cooven,</span></div>
+        <div class="cg" id="cg436"><span class="w">lid</span><span class="w">kita</span><span class="w">ni,</span></div>
+        <div class="cg" id="cg437"><span class="w">kaca</span><span class="w">atas</span><span class="w">tu.</span></div>
+        <div class="cg" id="cg438"><span class="w">Dia</span><span class="w">tak</span><span class="w">macam</span></div>
+        <div class="cg" id="cg439"><span class="w">air</span><span class="w">fryer</span><span class="w">biasa,</span></div>
+        <div class="cg" id="cg440"><span class="w">kita</span><span class="w">boleh</span><span class="w">tengok.</span></div>
+        <div class="cg" id="cg441"><span class="w">Walaupun</span><span class="w">dia</span><span class="w">kaca,</span></div>
+        <div class="cg" id="cg442"><span class="w">dia</span><span class="w">tahan</span><span class="w">panas.</span></div>
+        <div class="cg" id="cg443"><span class="w">So</span><span class="w">kita</span><span class="w">boleh</span></div>
+        <div class="cg" id="cg444"><span class="w">tengok</span><span class="w">tekstur</span><span class="w">dalam</span></div>
+        <div class="cg" id="cg445"><span class="w">tu,</span></div>
+        <div class="cg" id="cg446"><span class="w">macam</span><span class="w">mana</span><span class="w">hasil</span></div>
+        <div class="cg" id="cg447"><span class="w">yang</span><span class="w">kita</span><span class="w">masak.</span></div>
+        <div class="cg" id="cg448"><span class="w">Kita</span><span class="w">tak</span><span class="w">perlu</span></div>
+        <div class="cg" id="cg449"><span class="w">lagi</span><span class="w">nak</span><span class="w">kena</span></div>
+        <div class="cg" id="cg450"><span class="w">buka,</span></div>
+        <div class="cg" id="cg451"><span class="w">tarik,</span></div>
+        <div class="cg" id="cg452"><span class="w">semua.</span></div>
+        <div class="cg" id="cg453"><span class="w">Alright,</span></div>
+        <div class="cg" id="cg454"><span class="w">dah</span><span class="w">siap</span><span class="w">dah.</span></div>
+        <div class="cg" id="cg455"><span class="w">Okey.</span></div>
+        <div class="cg" id="cg456"><span class="w">Kalau</span><span class="w">nak</span><span class="w">tahu</span></div>
+        <div class="cg" id="cg457"><span class="w">hasil</span><span class="w">dia</span><span class="w">nanti,</span></div>
+        <div class="cg" id="cg458"><span class="w">dia</span><span class="w">akan</span><span class="w">jadi</span></div>
+        <div class="cg" id="cg459"><span class="w">macam</span><span class="w">ni.</span></div>
+        <div class="cg" id="cg460"><span class="w">Boleh</span><span class="w">ASMR?</span></div>
+        <div class="cg" id="cg461"><span class="w">Boleh.</span></div>
+        <div class="cg" id="cg462"><span class="w">Bismillahirrahmanirrahim.</span></div>
+        <div class="cg" id="cg463"><span class="w">Wow!</span></div>
+        <div class="cg" id="cg464"><span class="w">Mmm,</span></div>
+        <div class="cg" id="cg465"><span class="w">crunchy.</span></div>
+        <div class="cg" id="cg466"><span class="w">Mmm,</span></div>
+        <div class="cg" id="cg467"><span class="w">crunchy.</span></div>
+        <div class="cg" id="cg468"><span class="w">Mmm,</span></div>
+        <div class="cg" id="cg469"><span class="w">sedap.</span></div>
+        <div class="cg" id="cg470"><span class="w">Mmm.</span></div>
+        <div class="cg" id="cg471"><span class="w">Senang.</span></div>
+        <div class="cg" id="cg472"><span class="w">Pada</span><span class="w">siapa</span><span class="w">yang</span></div>
+        <div class="cg" id="cg473"><span class="w">ada</span><span class="w">roti</span><span class="w">lebih,</span></div>
+        <div class="cg" id="cg474"><span class="w">boleh</span><span class="w">buat</span><span class="w">macam</span></div>
+        <div class="cg" id="cg475"><span class="w">ni.</span></div>
+        <div class="cg" id="cg476"><span class="w">Kadang-kadang</span><span class="w">bila</span></div>
+        <div class="cg" id="cg477"><span class="w">roti</span><span class="w">tu</span><span class="w">dah</span></div>
+        <div class="cg" id="cg478"><span class="w">nak</span><span class="w">expired,</span></div>
+        <div class="cg" id="cg479"><span class="w">ataupun</span><span class="w">dah</span><span class="w">expired</span></div>
+        <div class="cg" id="cg480"><span class="w">tapi</span><span class="w">still</span><span class="w">okay,</span></div>
+        <div class="cg" id="cg481"><span class="w">I</span><span class="w">buat</span><span class="w">je.</span></div>
+        <div class="cg" id="cg482"><span class="w">Sayang</span><span class="w">kan,</span></div>
+        <div class="cg" id="cg483"><span class="w">daripada</span><span class="w">nak</span><span class="w">membazir.</span></div>
+        <div class="cg" id="cg484"><span class="w">So</span><span class="w">kadang-kadang</span><span class="w">kat</span></div>
+        <div class="cg" id="cg485"><span class="w">rumah</span><span class="w">ni,</span></div>
+        <div class="cg" id="cg486"><span class="w">dah</span><span class="w">expired</span><span class="w">satu</span></div>
+        <div class="cg" id="cg487"><span class="w">hari,</span></div>
+        <div class="cg" id="cg488"><span class="w">buat</span><span class="w">je</span><span class="w">kan?</span></div>
+        <div class="cg" id="cg489"><span class="w">Betul</span><span class="w">tak?</span></div>
+        <div class="cg" id="cg490"><span class="w">Yang</span><span class="w">ni</span><span class="w">tadi,</span></div>
+        <div class="cg" id="cg491"><span class="w">I</span><span class="w">set</span><span class="w">15</span></div>
+        <div class="cg" id="cg492"><span class="w">minit.</span></div>
+        <div class="cg" id="cg493"><span class="w">Tapi</span><span class="w">sebab</span><span class="w">kita</span></div>
+        <div class="cg" id="cg494"><span class="w">gunakan</span><span class="w">rack</span><span class="w">atas,</span></div>
+        <div class="cg" id="cg495"><span class="w">yang</span><span class="w">kat</span><span class="w">atas</span></div>
+        <div class="cg" id="cg496"><span class="w">tu</span><span class="w">dah</span><span class="w">nampak</span></div>
+        <div class="cg" id="cg497"><span class="w">colour</span><span class="w">brown.</span></div>
+        <div class="cg" id="cg498"><span class="w">So</span><span class="w">saya</span><span class="w">matikan</span></div>
+        <div class="cg" id="cg499"><span class="w">masa</span><span class="w">minit</span><span class="w">yang</span></div>
+        <div class="cg" id="cg500"><span class="w">ke-12.</span></div>
+        <div class="cg" id="cg501"><span class="w">Maknanya</span><span class="w">yang</span><span class="w">ni</span></div>
+        <div class="cg" id="cg502"><span class="w">total</span><span class="w">12</span><span class="w">minit</span></div>
+        <div class="cg" id="cg503"><span class="w">tu</span><span class="w">je.</span></div>
+        <div class="cg" id="cg504"><span class="w">Sebab</span><span class="w">kalau</span><span class="w">kita</span></div>
+        <div class="cg" id="cg505"><span class="w">letak</span><span class="w">bahagian</span><span class="w">bawah,</span></div>
+        <div class="cg" id="cg506"><span class="w">dia</span><span class="w">akan</span><span class="w">lambat</span></div>
+        <div class="cg" id="cg507"><span class="w">sikit.</span></div>
+        <div class="cg" id="cg508"><span class="w">Tapi</span><span class="w">yang</span><span class="w">bahagian</span></div>
+        <div class="cg" id="cg509"><span class="w">bawah</span><span class="w">ni</span><span class="w">pun</span></div>
+        <div class="cg" id="cg510"><span class="w">dah</span><span class="w">masak.</span></div>
+        <div class="cg" id="cg511"><span class="w">Saya</span><span class="w">akan</span><span class="w">buat</span></div>
+        <div class="cg" id="cg512"><span class="w">pizza</span><span class="w">sekejap</span><span class="w">lagi.</span></div>
+        <div class="cg" id="cg513"><span class="w">Sekarang</span><span class="w">saya</span><span class="w">dah</span></div>
+        <div class="cg" id="cg514"><span class="w">preheat.</span></div>
+        <div class="cg" id="cg515"><span class="w">Okay,</span></div>
+        <div class="cg" id="cg516"><span class="w">antara</span><span class="w">mode</span><span class="w">yang</span></div>
+        <div class="cg" id="cg517"><span class="w">best</span><span class="w">saya</span><span class="w">suka</span></div>
+        <div class="cg" id="cg518"><span class="w">dengan</span><span class="w">Cooven,</span></div>
+        <div class="cg" id="cg519"><span class="w">kita</span><span class="w">ada</span><span class="w">mode</span></div>
+        <div class="cg" id="cg520"><span class="w">pizza.</span></div>
+        <div class="cg" id="cg521"><span class="w">Mode</span><span class="w">pizza</span><span class="w">yang</span></div>
+        <div class="cg" id="cg522"><span class="w">memang</span><span class="w">specific.</span></div>
+        <div class="cg" id="cg523"><span class="w">Pizza</span><span class="w">mode,</span></div>
+        <div class="cg" id="cg524"><span class="w">memang</span><span class="w">untuk</span><span class="w">pizza</span></div>
+        <div class="cg" id="cg525"><span class="w">sahaja.</span></div>
+        <div class="cg" id="cg526"><span class="w">So,</span></div>
+        <div class="cg" id="cg527"><span class="w">bila</span><span class="w">dah</span><span class="w">selesai</span></div>
+        <div class="cg" id="cg528"><span class="w">preheat,</span></div>
+        <div class="cg" id="cg529"><span class="w">dia</span><span class="w">akan</span><span class="w">suruh</span></div>
+        <div class="cg" id="cg530"><span class="w">masukkan</span><span class="w">makanan.</span></div>
+        <div class="cg" id="cg531"><span class="w">Jadi,</span></div>
+        <div class="cg" id="cg532"><span class="w">saya</span><span class="w">masukkan</span><span class="w">terus</span></div>
+        <div class="cg" id="cg533"><span class="w">saya</span><span class="w">punya</span><span class="w">pizza.</span></div>
+        <div class="cg" id="cg534"><span class="w">Dan</span><span class="w">yang</span><span class="w">bestnya,</span></div>
+        <div class="cg" id="cg535"><span class="w">dengan</span><span class="w">mode</span><span class="w">pizza</span></div>
+        <div class="cg" id="cg536"><span class="w">ni</span><span class="w">kita</span><span class="w">hanya</span></div>
+        <div class="cg" id="cg537"><span class="w">buat</span><span class="w">pizza</span><span class="w">selama</span></div>
+        <div class="cg" id="cg538"><span class="w">6</span><span class="w">minit</span><span class="w">sahaja.</span></div>
+        <div class="cg" id="cg539"><span class="w">Bayangkan,</span></div>
+        <div class="cg" id="cg540"><span class="w">kita</span><span class="w">boleh</span><span class="w">bakar</span></div>
+        <div class="cg" id="cg541"><span class="w">pizza</span><span class="w">selama</span><span class="w">6</span></div>
+        <div class="cg" id="cg542"><span class="w">minit.</span></div>
+        <div class="cg" id="cg543"><span class="w">Untuk</span><span class="w">anak-anak</span><span class="w">yang</span></div>
+        <div class="cg" id="cg544"><span class="w">ada</span><span class="w">dekat</span><span class="w">rumah,</span></div>
+        <div class="cg" id="cg545"><span class="w">ibu-ibu,</span></div>
+        <div class="cg" id="cg546"><span class="w">ayah-ayah</span><span class="w">yang</span><span class="w">anak</span></div>
+        <div class="cg" id="cg547"><span class="w">diorang</span><span class="w">nak</span></div>
+        <div class="cg" id="cg548"><span class="w">makan</span><span class="w">pizza.</span></div>
+        <div class="cg" id="cg549"><span class="w">Jadi</span><span class="w">dengan</span><span class="w">dalam</span></div>
+        <div class="cg" id="cg550"><span class="w">masa</span><span class="w">6</span><span class="w">minit</span></div>
+        <div class="cg" id="cg551"><span class="w">saja,</span></div>
+        <div class="cg" id="cg552"><span class="w">kita</span><span class="w">boleh</span><span class="w">bakar</span></div>
+        <div class="cg" id="cg553"><span class="w">pizza</span><span class="w">dekat</span><span class="w">rumah.</span></div>
+        <div class="cg" id="cg554"><span class="w">Tak</span><span class="w">perlu</span><span class="w">nak</span></div>
+        <div class="cg" id="cg555"><span class="w">keluar</span><span class="w">pergi</span><span class="w">kedai.</span></div>
+        <div class="cg" id="cg556"><span class="w">Kita</span><span class="w">boleh</span><span class="w">buat</span></div>
+        <div class="cg" id="cg557"><span class="w">dekat</span><span class="w">rumah.</span></div>
+        <div class="cg" id="cg558"><span class="w">Resepi</span><span class="w">pula,</span></div>
+        <div class="cg" id="cg559"><span class="w">jangan</span><span class="w">risau.</span></div>
+        <div class="cg" id="cg560"><span class="w">Resepi</span><span class="w">memang</span><span class="w">kita</span></div>
+        <div class="cg" id="cg561"><span class="w">akan</span><span class="w">bagi.</span></div>
+        <div class="cg" id="cg562"><span class="w">HQ</span><span class="w">Cooven</span><span class="w">pun</span></div>
+        <div class="cg" id="cg563"><span class="w">sediakan</span><span class="w">resepi,</span></div>
+        <div class="cg" id="cg564"><span class="w">dan</span><span class="w">support</span><span class="w">group</span></div>
+        <div class="cg" id="cg565"><span class="w">kita</span><span class="w">pun</span><span class="w">sediakan</span></div>
+        <div class="cg" id="cg566"><span class="w">resepi</span><span class="w">juga.</span></div>
+        <div class="cg" id="cg567"><span class="w">Jadi</span><span class="w">tak</span><span class="w">perlu</span></div>
+        <div class="cg" id="cg568"><span class="w">risau,</span></div>
+        <div class="cg" id="cg569"><span class="w">kita</span><span class="w">tak</span><span class="w">perlu</span></div>
+        <div class="cg" id="cg570"><span class="w">menunggu-nunggu</span></div>
+        <div class="cg" id="cg571"><span class="w">ataupun</span><span class="w">tercari-cari</span></div>
+        <div class="cg" id="cg572"><span class="w">resepi</span><span class="w">yang</span><span class="w">ada</span></div>
+        <div class="cg" id="cg573"><span class="w">di</span><span class="w">social</span><span class="w">media</span></div>
+        <div class="cg" id="cg574"><span class="w">ataupun</span><span class="w">online.</span></div>
+        <div class="cg" id="cg575"><span class="w">2</span><span class="w">minit</span><span class="w">tadi,</span></div>
+        <div class="cg" id="cg576"><span class="w">kita</span><span class="w">boleh</span><span class="w">tambah</span></div>
+        <div class="cg" id="cg577"><span class="w">cheese.</span></div>
+        <div class="cg" id="cg578"><span class="w">Jadi</span><span class="w">memang</span><span class="w">6</span></div>
+        <div class="cg" id="cg579"><span class="w">minit</span><span class="w">sahaja.</span></div>
+        <div class="cg" id="cg580"><span class="w">6</span><span class="w">minit</span><span class="w">bakar.</span></div>
+        <div class="cg" id="cg581"><span class="w">Kita</span><span class="w">buat</span><span class="w">sendiri,</span></div>
+        <div class="cg" id="cg582"><span class="w">jadi</span><span class="w">kita</span><span class="w">boleh</span></div>
+        <div class="cg" id="cg583"><span class="w">tambah</span><span class="w">cheese</span><span class="w">banyak</span></div>
+        <div class="cg" id="cg584"><span class="w">mana</span><span class="w">yang</span><span class="w">kita</span></div>
+        <div class="cg" id="cg585"><span class="w">nak.</span></div>
+        <div class="cg" id="cg586"><span class="w">Kita</span><span class="w">tunjuk</span><span class="w">hari</span></div>
+        <div class="cg" id="cg587"><span class="w">ini</span><span class="w">hanya</span><span class="w">empat</span></div>
+        <div class="cg" id="cg588"><span class="w">mode</span><span class="w">sahaja</span><span class="w">tau.</span></div>
+        <div class="cg" id="cg589"><span class="w">Empat</span><span class="w">mode</span><span class="w">sahaja</span></div>
+        <div class="cg" id="cg590"><span class="w">yang</span><span class="w">ada</span><span class="w">pada</span></div>
+        <div class="cg" id="cg591"><span class="w">Cooven.</span></div>
+        <div class="cg" id="cg592"><span class="w">Dan</span><span class="w">Cooven</span><span class="w">ada</span></div>
+        <div class="cg" id="cg593"><span class="w">15</span><span class="w">plus</span><span class="w">one</span></div>
+        <div class="cg" id="cg594"><span class="w">function.</span></div>
+        <div class="cg" id="cg595"><span class="w">Nak</span><span class="w">tengok</span><span class="w">Mukmin</span></div>
+        <div class="cg" id="cg596"><span class="w">punya</span><span class="w">pizza?</span></div>
+        <div class="cg" id="cg597"><span class="w">6</span><span class="w">minit</span><span class="w">je.</span></div>
+        <div class="cg" id="cg598"><span class="w">Pizza</span><span class="w">6</span><span class="w">minit</span></div>
+        <div class="cg" id="cg599"><span class="w">dah</span><span class="w">siap.</span></div>
+        <div class="cg" id="cg600"><span class="w">Aduh.</span></div>
+        <div class="cg" id="cg601"><span class="w">Wah,</span></div>
+        <div class="cg" id="cg602"><span class="w">tengok</span><span class="w">dia</span><span class="w">punya</span></div>
+        <div class="cg" id="cg603"><span class="w">crust</span><span class="w">tu.</span></div>
+        <div class="cg" id="cg604"><span class="w">Nampak</span><span class="w">crust</span><span class="w">dia?</span></div>
+        <div class="cg" id="cg605"><span class="w">Oh!</span></div>
+        <div class="cg" id="cg606"><span class="w">Sekejapnya.</span></div>
+        <div class="cg" id="cg607"><span class="w">Nak</span><span class="w">buat</span><span class="w">pizza</span></div>
+        <div class="cg" id="cg608"><span class="w">jugalah</span><span class="w">lepas</span><span class="w">ni.</span></div>
+        <div class="cg" id="cg609"><span class="w">So</span><span class="w">kita</span><span class="w">tengok</span></div>
+        <div class="cg" id="cg610"><span class="w">resepi</span><span class="w">kita</span><span class="w">hari</span></div>
+        <div class="cg" id="cg611"><span class="w">ni.</span></div>
+        <div class="cg" id="cg612"><span class="w">Main</span><span class="w">masa</span><span class="w">minit-minit</span></div>
+        <div class="cg" id="cg613"><span class="w">macam</span><span class="w">tu</span><span class="w">je.</span></div>
+        <div class="cg" id="cg614"><span class="w">Tak</span><span class="w">sampai</span><span class="w">sejam</span></div>
+        <div class="cg" id="cg615"><span class="w">pun.</span></div>
+        <div class="cg" id="cg616"><span class="w">Paling</span><span class="w">lama</span><span class="w">Kak</span></div>
+        <div class="cg" id="cg617"><span class="w">Salma?</span></div>
+        <div class="cg" id="cg618"><span class="w">20</span><span class="w">minit.</span></div>
+        <div class="cg" id="cg619"><span class="w">Kak</span><span class="w">Hani</span><span class="w">berapa</span></div>
+        <div class="cg" id="cg620"><span class="w">minit?</span></div>
+        <div class="cg" id="cg621"><span class="w">15</span><span class="w">minit.</span></div>
+        <div class="cg" id="cg622"><span class="w">So</span><span class="w">kita</span><span class="w">suka</span></div>
+        <div class="cg" id="cg623"><span class="w">guna</span><span class="w">Cooven</span><span class="w">sebab</span></div>
+        <div class="cg" id="cg624"><span class="w">dia</span><span class="w">memudahkan</span><span class="w">kita,</span></div>
+        <div class="cg" id="cg625"><span class="w">dan</span></div>
+        <div class="cg" id="cg626"><span class="w">proses</span><span class="w">masak</span><span class="w">tu</span></div>
+        <div class="cg" id="cg627"><span class="w">cepat.</span></div>
+        <div class="cg" id="cg628"><span class="w">Kita</span><span class="w">pun</span><span class="w">tak</span></div>
+        <div class="cg" id="cg629"><span class="w">suka</span><span class="w">duduk</span><span class="w">kat</span></div>
+        <div class="cg" id="cg630"><span class="w">dapur</span><span class="w">lama-lama,</span></div>
+        <div class="cg" id="cg631"><span class="w">lagi-lagi</span><span class="w">dapur</span><span class="w">panas.</span></div>
+        <div class="cg" id="cg632"><span class="w">So</span><span class="w">saya</span><span class="w">kalau</span></div>
+        <div class="cg" id="cg633"><span class="w">boleh</span><span class="w">nak</span><span class="w">masak</span></div>
+        <div class="cg" id="cg634"><span class="w">cepat-cepat</span><span class="w">dan</span><span class="w">boleh</span></div>
+        <div class="cg" id="cg635"><span class="w">makan.</span></div>
+        <div class="cg" id="cg636"><span class="w">Okay,</span></div>
+        <div class="cg" id="cg637"><span class="w">so</span><span class="w">sekarang</span><span class="w">menu-menu</span></div>
+        <div class="cg" id="cg638"><span class="w">kita</span><span class="w">semua</span><span class="w">hari</span></div>
+        <div class="cg" id="cg639"><span class="w">ini</span><span class="w">dah</span><span class="w">siap.</span></div>
+        <div class="cg" id="cg640"><span class="w">Ready</span><span class="w">untuk</span><span class="w">minum</span></div>
+        <div class="cg" id="cg641"><span class="w">petang.</span></div>
+        <div class="cg" id="cg642"><span class="w">Okay,</span></div>
+        <div class="cg" id="cg643"><span class="w">follow</span><span class="w">semua</span><span class="w">chef</span></div>
+        <div class="cg" id="cg644"><span class="w">yang</span><span class="w">ada</span><span class="w">ni.</span></div>
+        <div class="cg" id="cg645"><span class="w">Intan</span><span class="w">Safiya,</span></div>
+        <div class="cg" id="cg646"><span class="w">Chef</span><span class="w">Hani,</span></div>
+        <div class="cg" id="cg647"><span class="w">dengan</span><span class="w">Chef</span><span class="w">Salma.</span></div>
+        <div class="cg" id="cg648"><span class="w">Jadi</span><span class="w">insyaAllah</span><span class="w">minggu</span></div>
+        <div class="cg" id="cg649"><span class="w">depan</span><span class="w">kita</span><span class="w">akan</span></div>
+        <div class="cg" id="cg650"><span class="w">live</span><span class="w">lagi</span><span class="w">pada</span></div>
+        <div class="cg" id="cg651"><span class="w">pukul</span><span class="w">4</span><span class="w">petang,</span></div>
+        <div class="cg" id="cg652"><span class="w">untuk</span><span class="w">sesi</span><span class="w">ketiga</span></div>
+        <div class="cg" id="cg653"><span class="w">Tasty</span><span class="w">Tuesday</span><span class="w">dengan</span></div>
+        <div class="cg" id="cg654"><span class="w">tema</span><span class="w">yang</span><span class="w">berlainan.</span></div>
+        <div class="cg" id="cg655"><span class="w">InsyaAllah.</span></div>
+        <div class="cg" id="cg656"><span class="w">So</span><span class="w">hari</span><span class="w">ni</span></div>
+        <div class="cg" id="cg657"><span class="w">kita</span><span class="w">akan</span><span class="w">tamatkan.</span></div>
+        <div class="cg" id="cg658"><span class="w">Terima</span><span class="w">kasih.</span></div>
+        <div class="cg" id="cg659"><span class="w">Dan</span><span class="w">follow,</span></div>
+        <div class="cg" id="cg660"><span class="w">share.</span></div>
+        <div class="cg" id="cg661"><span class="w">Jangan</span><span class="w">lupa,</span></div>
+        <div class="cg" id="cg662"><span class="w">siapa</span><span class="w">yang</span><span class="w">nak</span></div>
+        <div class="cg" id="cg663"><span class="w">tahu</span></div>
+      </div>
+      <script>
+        const G = [[3.433, 3.673, [[3.433, 3.673]]], [3.673, 4.953, [[3.673, 4.193], [4.193, 4.453], [4.453, 4.953]]], [4.953, 5.473, [[4.953, 5.213], [5.213, 5.473]]], [5.473, 7.8, [[5.473, 6.653], [6.653, 7.033], [7.033, 7.313]]], [7.8, 9.333, [[7.8, 8.64], [8.64, 9.28]]], [9.333, 10.093, [[9.333, 9.613], [9.613, 9.953], [9.953, 10.113]]], [10.093, 11.313, [[10.093, 10.533], [10.533, 10.993], [10.993, 11.313]]], [11.313, 12.567, [[11.313, 11.953], [11.953, 12.333]]], [12.647, 14.007, [[12.647, 13.067], [13.067, 13.647], [13.647, 14.007]]], [14.007, 14.433, [[14.007, 14.207]]], [14.493, 15.467, [[14.493, 14.653], [14.633, 15.233]]], [15.527, 16.3, [[15.527, 16.167]]], [16.4, 17.34, [[16.4, 16.74], [16.74, 17.02], [17.02, 17.34]]], [17.34, 17.9, [[17.34, 17.68]]], [18.38, 19.08, [[18.38, 18.54], [18.5, 18.76], [18.76, 19.08]]], [19.08, 19.68, [[19.08, 19.24], [19.2, 19.68]]], [19.68, 20.48, [[19.68, 20.02], [20.02, 20.36], [20.36, 20.52]]], [20.48, 21.433, [[20.48, 20.78], [20.78, 20.94], [20.92, 21.18]]], [21.473, 21.633, [[21.473, 21.633]]], [21.633, 22.553, [[21.633, 22.213], [22.213, 22.553]]], [22.553, 23.793, [[22.553, 22.933], [22.933, 23.373], [23.373, 23.793]]], [23.793, 24.313, [[23.793, 23.953], [23.953, 24.133], [24.133, 24.313]]], [24.313, 25.973, [[24.313, 25.133], [25.133, 25.613], [25.613, 25.973]]], [25.973, 27.533, [[25.973, 26.133], [26.133, 27.373], [27.373, 27.533]]], [27.533, 29.073, [[27.533, 28.133], [28.133, 28.893], [28.893, 29.073]]], [29.073, 29.773, [[29.073, 29.233], [29.233, 29.773]]], [29.773, 30.513, [[29.773, 30.513]]], [30.513, 31.793, [[30.513, 30.873], [30.873, 31.033], [31.033, 31.793]]], [31.793, 33.773, [[31.793, 32.513], [32.513, 32.993], [32.993, 33.773]]], [33.773, 35.553, [[33.773, 34.293], [34.293, 35.213], [35.213, 35.553]]], [35.553, 35.967, [[35.553, 35.733]]], [35.987, 36.367, [[35.987, 36.367]]], [36.367, 37.207, [[36.367, 36.747], [36.747, 36.967], [36.967, 37.207]]], [37.207, 38.467, [[37.207, 37.707], [37.707, 38.007], [38.007, 38.467]]], [38.467, 39.487, [[38.467, 38.647], [38.647, 39.067], [39.067, 39.487]]], [39.487, 40.007, [[39.487, 40.007]]], [40.007, 42.307, [[40.007, 41.087], [41.087, 41.407], [41.407, 42.307]]], [42.307, 43.867, [[42.307, 42.927], [42.927, 43.487], [43.487, 43.867]]], [43.867, 44.833, [[43.867, 44.427], [44.427, 44.667]]], [44.913, 46.313, [[44.913, 45.373], [45.373, 45.653], [45.653, 46.313]]], [46.313, 46.993, [[46.313, 46.573], [46.573, 46.993]]], [46.993, 48.213, [[46.993, 47.433], [47.433, 47.793], [47.793, 48.213]]], [48.213, 49.967, [[48.213, 48.933], [48.933, 49.573], [49.573, 49.753]]], [50.107, 50.407, [[50.107, 50.407]]], [50.407, 51.533, [[50.407, 50.847], [50.847, 51.487]]], [51.613, 51.993, [[51.613, 51.993]]], [51.993, 52.953, [[51.993, 52.333], [52.333, 52.793], [52.793, 52.953]]], [52.953, 53.113, [[52.953, 53.113]]], [53.113, 54.413, [[53.113, 53.273], [53.273, 54.213], [54.213, 54.413]]], [54.413, 55.333, [[54.413, 54.673], [54.673, 54.853], [54.853, 55.333]]], [55.333, 56.333, [[55.333, 55.753], [55.753, 55.913], [55.913, 56.333]]], [56.333, 57.093, [[56.333, 57.093]]], [57.093, 58.367, [[57.093, 57.593], [57.593, 57.913], [57.913, 58.153]]], [58.387, 59.547, [[58.387, 58.867], [58.867, 59.207], [59.207, 59.547]]], [59.547, 60.5, [[59.547, 59.847], [59.847, 60.267]]], [60.56, 61.76, [[60.56, 60.88], [60.88, 61.28], [61.28, 61.76]]], [61.76, 62.367, [[61.76, 62.1]]], [62.407, 63.7, [[62.407, 63.047], [63.047, 63.427]]], [63.72, 65.067, [[63.72, 64.1], [64.1, 64.36], [64.36, 64.8]]], [65.107, 65.547, [[65.107, 65.547]]], [65.547, 66.827, [[65.547, 66.027], [66.027, 66.587], [66.587, 66.827]]], [66.827, 68.507, [[66.827, 67.727], [67.727, 67.947], [67.947, 68.507]]], [68.507, 70.987, [[68.507, 69.587], [69.587, 69.907], [69.907, 70.987]]], [70.987, 71.287, [[70.987, 71.287]]], [71.287, 72.2, [[71.287, 71.947]]], [72.24, 73.24, [[72.24, 72.74], [72.74, 72.98], [72.98, 73.24]]], [73.24, 74.56, [[73.24, 73.66], [73.66, 74.14], [74.14, 74.56]]], [74.56, 75.84, [[74.56, 75.0], [75.0, 75.34], [75.34, 75.84]]], [75.84, 76.02, [[75.84, 76.02]]], [76.02, 78.267, [[76.02, 76.64], [76.64, 77.5], [77.5, 78.04]]], [78.347, 78.767, [[78.347, 78.567], [78.567, 78.767]]], [78.767, 80.8, [[78.767, 78.967], [78.967, 80.127], [80.127, 80.527]]], [80.82, 81.98, [[80.82, 81.28], [81.28, 81.6], [81.6, 81.98]]], [81.98, 82.9, [[81.98, 82.9]]], [82.9, 84.04, [[82.9, 83.38], [83.38, 83.88], [83.88, 84.04]]], [84.04, 85.22, [[84.04, 84.58], [84.58, 84.8], [84.8, 85.22]]], [85.22, 85.54, [[85.22, 85.54]]], [85.54, 87.3, [[85.54, 86.72], [86.72, 87.04], [87.04, 87.3]]], [87.3, 87.6, [[87.3, 87.6]]], [87.6, 88.76, [[87.6, 87.98], [87.98, 88.14], [88.14, 88.76]]], [88.76, 89.22, [[88.76, 89.22]]], [89.22, 90.36, [[89.22, 89.54], [89.54, 90.36]]], [90.36, 90.66, [[90.36, 90.66]]], [90.66, 91.72, [[90.66, 90.98], [90.98, 91.36], [91.36, 91.72]]], [91.72, 92.42, [[91.72, 92.02], [92.02, 92.42]]], [92.42, 93.84, [[92.42, 93.28], [93.28, 93.44], [93.42, 93.84]]], [93.84, 95.067, [[93.84, 94.28], [94.28, 94.72]]], [95.087, 96.387, [[95.087, 95.807], [95.807, 96.207], [96.207, 96.387]]], [96.387, 97.187, [[96.387, 97.187]]], [97.187, 98.847, [[97.187, 98.007], [98.007, 98.527], [98.527, 98.847]]], [98.847, 100.4, [[98.847, 99.427], [99.427, 99.947], [99.947, 100.207]]], [100.5, 101.7, [[100.5, 100.66], [100.66, 101.52], [101.52, 101.7]]], [101.7, 102.7, [[101.7, 102.06], [102.06, 102.24], [102.24, 102.7]]], [102.7, 103.1, [[102.7, 103.1]]], [103.1, 104.36, [[103.1, 103.54], [103.54, 103.96], [103.96, 104.36]]], [104.36, 105.92, [[104.36, 104.82], [104.82, 105.62], [105.62, 105.92]]], [105.92, 106.72, [[105.92, 106.14], [106.14, 106.72]]], [106.72, 108.04, [[106.72, 107.12], [107.12, 107.64], [107.64, 108.04]]], [108.04, 109.32, [[108.04, 108.6], [108.6, 109.06], [109.06, 109.32]]], [109.32, 111.08, [[109.32, 110.06], [110.06, 110.84], [110.84, 111.08]]], [111.08, 112.867, [[111.08, 111.52], [111.52, 112.4], [112.4, 112.66]]], [112.907, 113.807, [[112.907, 113.207], [113.207, 113.547], [113.547, 113.807]]], [113.807, 114.247, [[113.807, 113.967], [113.947, 114.247]]], [114.247, 114.647, [[114.247, 114.407], [114.387, 114.647]]], [114.647, 116.307, [[114.647, 115.207], [115.207, 116.307]]], [116.307, 117.287, [[116.307, 116.567], [116.567, 116.967], [116.967, 117.287]]], [117.287, 118.367, [[117.287, 117.547], [117.547, 117.867], [117.867, 118.367]]], [118.367, 119.3, [[118.367, 118.987], [118.987, 119.147]]], [119.3, 119.62, [[119.3, 119.62]]], [119.62, 121.24, [[119.62, 119.96], [119.96, 120.3], [120.3, 121.24]]], [121.24, 121.76, [[121.24, 121.4], [121.4, 121.76]]], [121.76, 123.1, [[121.76, 121.96], [121.96, 122.42], [122.42, 123.1]]], [123.1, 125.32, [[123.1, 123.82], [123.82, 124.94], [124.94, 125.32]]], [125.32, 126.34, [[125.32, 125.76], [125.76, 126.0], [126.0, 126.34]]], [126.34, 127.06, [[126.34, 126.64], [126.64, 127.06]]], [127.06, 128.44, [[127.06, 127.8], [127.8, 128.2], [128.2, 128.44]]], [128.44, 129.233, [[128.44, 128.7], [128.7, 129.2]]], [129.273, 130.773, [[129.273, 129.793], [129.793, 130.273], [130.273, 130.773]]], [130.773, 131.033, [[130.773, 131.033]]], [131.033, 132.753, [[131.033, 131.873], [131.873, 132.373], [132.373, 132.753]]], [132.753, 133.613, [[132.753, 133.053], [133.053, 133.613]]], [133.613, 134.833, [[133.613, 133.933], [133.933, 134.533], [134.533, 134.833]]], [134.833, 135.667, [[134.833, 135.293]]], [135.807, 136.127, [[135.807, 136.127]]], [136.127, 136.967, [[136.127, 136.307], [136.307, 136.747], [136.747, 136.967]]], [136.967, 137.927, [[136.967, 137.147], [137.147, 137.927]]], [137.927, 139.127, [[137.927, 138.187], [138.187, 138.947], [138.947, 139.127]]], [139.127, 140.447, [[139.127, 139.467], [139.467, 140.007], [140.007, 140.447]]], [140.447, 142.047, [[140.447, 140.727], [140.727, 141.047], [141.047, 142.047]]], [142.047, 142.427, [[142.047, 142.427]]], [142.427, 142.607, [[142.427, 142.607]]], [142.607, 143.067, [[142.607, 143.067]]], [143.067, 143.407, [[143.067, 143.407]]], [143.407, 144.567, [[143.407, 143.727], [143.727, 144.347], [144.347, 144.567]]], [144.567, 145.827, [[144.567, 145.187], [145.187, 145.347], [145.347, 145.827]]], [145.827, 146.627, [[145.827, 146.007], [146.007, 146.467], [146.467, 146.627]]], [146.627, 148.307, [[146.627, 147.127], [147.127, 147.287], [147.287, 148.307]]], [148.307, 149.647, [[148.307, 148.767], [148.767, 149.127], [149.127, 149.647]]], [149.647, 151.047, [[149.647, 150.507], [150.507, 150.687], [150.687, 151.047]]], [151.047, 152.527, [[151.047, 151.367], [151.367, 151.847], [151.847, 152.527]]], [152.527, 153.947, [[152.527, 153.007], [153.007, 153.947]]], [153.947, 154.633, [[153.947, 154.447]]], [154.753, 155.773, [[154.753, 155.333], [155.333, 155.773]]], [155.773, 156.433, [[155.773, 155.933], [155.913, 156.293], [156.293, 156.453]]], [156.433, 156.967, [[156.433, 156.913]]], [157.047, 158.127, [[157.047, 157.487], [157.487, 157.647], [157.647, 158.127]]], [158.127, 158.887, [[158.127, 158.327], [158.327, 158.887]]], [158.887, 159.407, [[158.887, 159.047], [159.047, 159.247], [159.247, 159.407]]], [159.407, 159.747, [[159.407, 159.747]]], [159.747, 160.587, [[159.747, 159.927], [159.927, 160.367], [160.367, 160.587]]], [160.587, 161.287, [[160.587, 160.827], [160.827, 161.047], [161.047, 161.287]]], [161.287, 162.887, [[161.287, 162.347], [162.347, 162.527], [162.527, 162.887]]], [162.887, 164.007, [[162.887, 163.227], [163.227, 164.007]]], [164.007, 166.233, [[164.007, 164.787], [164.787, 165.127], [165.127, 166.147]]], [166.313, 166.493, [[166.313, 166.493]]], [166.493, 167.853, [[166.493, 167.853]]], [167.853, 169.633, [[167.853, 168.373], [168.373, 168.893], [168.893, 169.633]]], [169.633, 170.433, [[169.633, 169.813], [169.813, 170.193], [170.193, 170.433]]], [170.433, 171.153, [[170.433, 170.793], [170.793, 170.973], [170.973, 171.153]]], [171.153, 171.973, [[171.153, 171.973]]], [171.973, 173.573, [[171.973, 173.013], [173.013, 173.573]]], [173.573, 174.653, [[173.573, 174.653]]], [174.653, 175.733, [[174.653, 175.013], [175.013, 175.493]]], [175.773, 177.113, [[175.773, 176.413], [176.413, 176.873], [176.873, 177.113]]], [177.113, 178.753, [[177.113, 177.413], [177.413, 178.253], [178.253, 178.753]]], [178.753, 179.213, [[178.753, 179.213]]], [179.213, 180.553, [[179.213, 179.473], [179.473, 180.153], [180.153, 180.553]]], [180.553, 181.833, [[180.553, 181.393], [181.393, 181.833]]], [181.833, 183.573, [[181.833, 182.533], [182.533, 182.873], [182.873, 183.573]]], [183.573, 184.5, [[183.573, 184.013], [184.013, 184.473]]], [184.52, 184.94, [[184.52, 184.94]]], [184.94, 185.9, [[184.94, 185.3], [185.3, 185.48], [185.48, 185.9]]], [185.9, 186.7, [[185.9, 186.26], [186.26, 186.5], [186.5, 186.7]]], [186.7, 188.08, [[186.7, 187.14], [187.14, 187.46], [187.46, 188.08]]], [188.08, 188.3, [[188.08, 188.3]]], [188.3, 189.8, [[188.3, 188.84], [188.84, 189.38], [189.38, 189.8]]], [189.8, 190.42, [[189.8, 189.96], [189.96, 190.42]]], [190.42, 191.56, [[190.42, 190.62], [190.62, 191.4], [191.4, 191.56]]], [191.56, 192.667, [[191.56, 191.98], [191.98, 192.4]]], [192.747, 193.547, [[192.747, 193.147], [193.147, 193.547]]], [193.547, 195.027, [[193.547, 194.247], [194.247, 194.647], [194.647, 195.027]]], [195.027, 197.127, [[195.027, 195.427], [195.427, 196.147], [196.147, 197.127]]], [197.127, 198.0, [[197.127, 197.567], [197.567, 197.827]]], [198.02, 198.94, [[198.02, 198.34], [198.34, 198.78], [198.78, 198.94]]], [198.94, 200.66, [[198.94, 199.62], [199.62, 200.22], [200.22, 200.66]]], [200.66, 202.06, [[200.66, 201.04], [201.04, 202.06]]], [202.06, 202.48, [[202.06, 202.48]]], [202.48, 203.74, [[202.48, 202.68], [202.68, 203.24], [203.24, 203.74]]], [203.74, 204.96, [[203.74, 204.14], [204.14, 204.6], [204.6, 204.96]]], [204.96, 205.3, [[204.96, 205.12], [205.12, 205.3]]], [205.3, 206.04, [[205.3, 205.7], [205.7, 205.88], [205.88, 206.04]]], [206.04, 207.52, [[206.04, 206.52], [206.52, 207.0], [207.0, 207.52]]], [207.52, 208.0, [[207.52, 207.76], [207.76, 208.0]]], [208.0, 208.8, [[208.0, 208.2], [208.2, 208.56], [208.56, 208.8]]], [208.8, 210.48, [[208.8, 209.72], [209.72, 210.3], [210.3, 210.48]]], [210.48, 211.76, [[210.48, 210.82], [210.82, 211.28], [211.28, 211.76]]], [211.76, 213.72, [[211.76, 212.34], [212.34, 213.38], [213.38, 213.72]]], [213.72, 214.6, [[213.72, 213.88], [213.88, 214.6]]], [214.64, 215.86, [[214.64, 214.98], [214.98, 215.38], [215.38, 215.86]]], [215.86, 216.34, [[215.86, 216.34]]], [216.34, 217.48, [[216.34, 217.1], [217.1, 217.3], [217.3, 217.48]]], [217.48, 218.74, [[217.48, 218.06], [218.06, 218.74]]], [218.74, 219.88, [[218.74, 219.28], [219.28, 219.64], [219.64, 219.88]]], [219.88, 220.9, [[219.88, 220.04], [220.04, 220.58], [220.58, 220.9]]], [220.9, 221.967, [[220.9, 221.12], [221.12, 221.4], [221.4, 221.88]]], [221.987, 222.827, [[221.987, 222.327], [222.327, 222.587], [222.587, 222.827]]], [222.827, 223.747, [[222.827, 223.207], [223.207, 223.747]]], [223.747, 224.167, [[223.747, 224.007]]], [224.207, 225.087, [[224.207, 224.567], [224.567, 224.827], [224.827, 225.087]]], [225.087, 225.667, [[225.087, 225.267], [225.267, 225.427], [225.407, 225.667]]], [225.667, 226.447, [[225.667, 225.947], [225.947, 226.327], [226.327, 226.487]]], [226.447, 227.407, [[226.447, 226.707], [226.707, 226.867], [226.827, 227.407]]], [227.407, 227.527, [[227.407, 227.567]]], [227.527, 228.887, [[227.527, 228.447], [228.447, 228.747], [228.747, 228.907]]], [228.887, 229.727, [[228.887, 229.047], [229.047, 229.427], [229.427, 229.727]]], [229.727, 230.7, [[229.727, 230.167], [230.167, 230.327], [230.327, 230.507]]], [230.82, 231.92, [[230.82, 231.14], [231.14, 231.64], [231.64, 231.92]]], [231.92, 232.8, [[231.92, 232.4], [232.4, 232.66], [232.66, 232.82]]], [232.8, 233.36, [[232.8, 232.96], [232.94, 233.1], [233.08, 233.36]]], [233.36, 234.06, [[233.36, 233.52], [233.5, 234.06]]], [234.06, 234.22, [[234.06, 234.22]]], [234.22, 235.06, [[234.22, 234.46], [234.46, 234.72], [234.72, 235.06]]], [235.06, 235.32, [[235.06, 235.32]]], [235.32, 235.46, [[235.32, 235.48]]], [235.46, 235.96, [[235.46, 235.62], [235.6, 235.96]]], [235.96, 237.36, [[235.96, 236.36], [236.36, 237.0], [237.0, 237.36]]], [237.36, 238.02, [[237.36, 237.64], [237.64, 238.02]]], [238.02, 239.22, [[238.02, 238.66], [238.66, 238.9], [238.9, 239.22]]], [239.22, 240.06, [[239.22, 239.38], [239.34, 240.06]]], [240.06, 240.2, [[240.06, 240.22]]], [240.2, 240.9, [[240.2, 240.44], [240.44, 240.7], [240.7, 240.9]]], [240.9, 241.22, [[240.9, 241.22]]], [241.22, 241.36, [[241.22, 241.38]]], [241.36, 242.86, [[241.36, 241.8], [241.8, 242.08], [242.08, 242.86]]], [242.86, 243.1, [[242.86, 243.1]]], [243.1, 244.64, [[243.1, 243.48], [243.48, 244.24], [244.24, 244.64]]], [244.64, 244.78, [[244.64, 244.8]]], [244.78, 245.82, [[244.78, 245.06], [245.06, 245.26], [245.26, 245.82]]], [245.82, 246.76, [[245.82, 246.2], [246.2, 246.76]]], [246.76, 247.8, [[246.76, 247.18], [247.18, 247.34], [247.34, 247.8]]], [247.8, 248.94, [[247.8, 248.06], [248.06, 248.76], [248.76, 248.94]]], [248.94, 249.767, [[248.94, 249.12], [249.12, 249.48], [249.48, 249.72]]], [249.867, 251.147, [[249.867, 250.047], [250.047, 250.647], [250.647, 251.147]]], [251.147, 251.387, [[251.147, 251.387]]], [251.387, 252.667, [[251.387, 251.807], [251.807, 252.287], [252.287, 252.667]]], [252.667, 253.287, [[252.667, 252.867], [252.867, 253.287]]], [253.287, 254.367, [[253.287, 254.367]]], [254.367, 255.627, [[254.367, 254.747], [254.747, 255.167], [255.167, 255.627]]], [255.627, 256.927, [[255.627, 255.807], [255.807, 256.927]]], [256.927, 258.967, [[256.927, 257.647], [257.647, 258.547], [258.547, 258.967]]], [258.967, 259.767, [[258.967, 259.387], [259.387, 259.567], [259.567, 259.767]]], [259.767, 261.487, [[259.767, 260.247], [260.247, 260.727], [260.727, 261.487]]], [261.487, 261.687, [[261.487, 261.687]]], [261.687, 263.547, [[261.687, 262.487], [262.487, 263.007], [263.007, 263.547]]], [263.547, 264.347, [[263.547, 264.147], [264.147, 264.347]]], [264.347, 265.907, [[264.347, 264.547], [264.547, 265.227], [265.227, 265.907]]], [265.907, 267.967, [[265.907, 266.307], [266.307, 267.107], [267.107, 267.967]]], [267.967, 268.787, [[267.967, 268.407], [268.407, 268.587], [268.587, 268.787]]], [268.787, 270.467, [[268.787, 269.267], [269.267, 269.807], [269.807, 270.467]]], [270.467, 271.347, [[270.467, 270.707], [270.707, 270.947], [270.947, 271.347]]], [271.347, 273.167, [[271.347, 272.187], [272.187, 272.787], [272.787, 273.167]]], [273.167, 274.567, [[273.167, 273.467], [273.467, 273.647], [273.647, 274.567]]], [274.567, 275.533, [[274.567, 274.947], [274.947, 275.427]]], [275.593, 276.113, [[275.593, 276.113]]], [276.113, 277.513, [[276.113, 276.973], [276.973, 277.333], [277.333, 277.513]]], [277.513, 278.933, [[277.513, 277.713], [277.713, 278.253], [278.253, 278.933]]], [278.933, 279.513, [[278.933, 279.113], [279.113, 279.333], [279.333, 279.513]]], [279.513, 280.653, [[279.513, 280.073], [280.073, 280.433], [280.433, 280.653]]], [280.653, 281.933, [[280.653, 280.833], [280.833, 281.013], [281.013, 281.933]]], [281.933, 282.833, [[281.933, 282.193], [282.193, 282.833]]], [282.833, 284.333, [[282.833, 283.393], [283.393, 283.913], [283.913, 284.333]]], [284.333, 285.773, [[284.333, 284.753], [284.753, 285.773]]], [285.773, 287.293, [[285.773, 286.533], [286.533, 286.913], [286.913, 287.293]]], [287.293, 288.893, [[287.293, 288.233], [288.233, 288.413], [288.413, 288.893]]], [288.893, 289.693, [[288.893, 289.233], [289.233, 289.433], [289.433, 289.693]]], [289.693, 291.593, [[289.693, 291.233], [291.233, 291.413], [291.413, 291.593]]], [291.593, 292.753, [[291.593, 292.053], [292.053, 292.753]]], [292.753, 294.293, [[292.753, 293.153], [293.153, 293.513], [293.513, 294.293]]], [294.293, 295.733, [[294.293, 294.893], [294.893, 295.273], [295.273, 295.733]]], [295.733, 297.5, [[295.733, 296.893], [296.893, 297.453]]], [297.54, 299.06, [[297.54, 298.02], [298.02, 298.46], [298.46, 299.06]]], [299.06, 299.72, [[299.06, 299.72]]], [299.72, 300.3, [[299.72, 299.88], [299.88, 300.3]]], [300.3, 301.38, [[300.3, 301.06], [301.06, 301.38]]], [301.38, 302.6, [[301.38, 301.54], [301.54, 301.84], [301.84, 302.44]]], [302.68, 303.2, [[302.68, 303.2]]], [303.2, 304.6, [[303.2, 303.72], [303.72, 304.16], [304.16, 304.6]]], [304.6, 305.9, [[304.6, 305.64], [305.64, 305.9]]], [305.9, 308.267, [[305.9, 306.34], [306.34, 307.48], [307.48, 308.24]]], [308.327, 308.587, [[308.327, 308.587]]], [308.587, 310.507, [[308.587, 309.407], [309.407, 309.967], [309.967, 310.507]]], [310.507, 312.347, [[310.507, 311.347], [311.347, 312.347]]], [312.347, 313.507, [[312.347, 313.247], [313.247, 313.507]]], [313.507, 315.627, [[313.507, 314.107], [314.107, 315.107], [315.107, 315.627]]], [315.627, 317.447, [[315.627, 316.207], [316.207, 317.187], [317.187, 317.447]]], [317.447, 319.327, [[317.447, 318.127], [318.127, 318.767], [318.767, 319.327]]], [319.327, 322.487, [[319.327, 320.727], [320.727, 321.327], [321.327, 322.487]]], [322.487, 323.533, [[322.487, 323.047], [323.047, 323.327]]], [323.653, 324.893, [[323.653, 324.113], [324.113, 324.353], [324.353, 324.893]]], [324.893, 325.933, [[324.893, 325.293], [325.293, 325.533], [325.533, 325.933]]], [325.933, 328.073, [[325.933, 327.353], [327.353, 327.893], [327.893, 328.073]]], [328.073, 329.033, [[328.073, 328.253], [328.253, 328.653], [328.653, 329.033]]], [329.033, 329.233, [[329.033, 329.233]]], [329.233, 330.973, [[329.233, 329.693], [329.693, 330.093], [330.093, 330.973]]], [330.973, 331.413, [[330.973, 331.233], [331.233, 331.413]]], [331.413, 332.933, [[331.413, 331.833], [331.833, 332.933]]], [332.933, 334.053, [[332.933, 333.333], [333.333, 333.693], [333.693, 334.053]]], [334.053, 335.113, [[334.053, 334.933], [334.933, 335.113]]], [335.113, 335.7, [[335.113, 335.633]]], [335.74, 336.18, [[335.74, 336.18]]], [336.18, 336.56, [[336.18, 336.56]]], [336.56, 338.08, [[336.56, 337.18], [337.18, 337.62], [337.62, 338.08]]], [338.08, 339.04, [[338.08, 338.46], [338.46, 338.84], [338.84, 339.04]]], [339.04, 340.66, [[339.04, 339.42], [339.42, 339.6], [339.6, 340.66]]], [340.66, 342.64, [[340.66, 340.84], [340.84, 341.42], [341.42, 342.64]]], [342.64, 344.18, [[342.64, 343.02], [343.02, 343.4], [343.4, 344.18]]], [344.18, 344.56, [[344.18, 344.56]]], [344.56, 344.94, [[344.56, 344.94]]], [344.94, 345.567, [[344.94, 345.34]]], [345.587, 346.267, [[345.587, 345.767], [345.767, 345.927], [345.887, 346.267]]], [346.267, 347.033, [[346.267, 346.527], [346.527, 346.687]]], [347.053, 347.613, [[347.053, 347.213], [347.173, 347.473], [347.473, 347.633]]], [347.613, 348.653, [[347.613, 347.893], [347.893, 348.353], [348.353, 348.653]]], [348.653, 349.233, [[348.653, 348.813], [348.793, 348.953], [348.953, 349.233]]], [349.233, 349.893, [[349.233, 349.513], [349.513, 349.893]]], [349.893, 351.053, [[349.893, 350.253], [350.253, 350.413], [350.393, 351.053]]], [351.053, 351.413, [[351.053, 351.413]]], [351.413, 352.353, [[351.413, 351.733], [351.733, 352.033], [352.033, 352.353]]], [352.353, 352.673, [[352.353, 352.513], [352.493, 352.673]]], [352.673, 353.833, [[352.673, 353.313], [353.313, 353.833]]], [353.833, 354.493, [[353.833, 354.153], [354.153, 354.493]]], [354.493, 355.733, [[354.493, 354.773], [354.773, 355.453], [355.453, 355.733]]], [355.733, 356.013, [[355.733, 356.013]]], [356.013, 357.593, [[356.013, 356.173], [356.153, 356.433], [356.433, 357.593]]], [357.593, 358.833, [[357.593, 357.873], [357.873, 358.693], [358.693, 358.853]]], [358.833, 359.513, [[358.833, 358.993], [358.973, 359.313], [359.313, 359.513]]], [359.513, 360.133, [[359.513, 359.693], [359.693, 360.133]]], [360.133, 361.593, [[360.133, 360.933], [360.933, 361.253], [361.253, 361.593]]], [361.593, 362.6, [[361.593, 362.013], [362.013, 362.453], [362.453, 362.6]]], [362.64, 363.86, [[362.64, 363.02], [363.02, 363.38], [363.38, 363.86]]], [363.86, 364.86, [[363.86, 364.2], [364.2, 364.68], [364.68, 364.86]]], [364.86, 366.24, [[364.86, 365.28], [365.28, 366.24]]], [366.24, 367.74, [[366.24, 366.94], [366.94, 367.28], [367.28, 367.74]]], [367.74, 369.2, [[367.74, 368.52], [368.52, 368.96]]], [369.28, 369.86, [[369.28, 369.86]]], [369.86, 370.92, [[369.86, 370.22], [370.22, 370.62], [370.62, 370.92]]], [370.92, 372.1, [[370.92, 371.46], [371.46, 371.82], [371.82, 372.1]]], [372.1, 372.4, [[372.1, 372.4]]], [372.4, 373.467, [[372.4, 373.26]]], [373.547, 374.287, [[373.547, 373.727], [373.727, 374.287]]], [374.287, 375.987, [[374.287, 375.107], [375.107, 375.487], [375.487, 375.987]]], [375.987, 377.187, [[375.987, 376.247], [376.247, 376.727], [376.727, 377.187]]], [377.187, 377.367, [[377.187, 377.367]]], [377.367, 379.647, [[377.367, 378.367], [378.367, 378.547], [378.547, 379.647]]], [379.647, 380.867, [[379.647, 380.007], [380.007, 380.387], [380.387, 380.867]]], [380.867, 381.307, [[380.867, 381.307]]], [381.307, 382.507, [[381.307, 381.887], [381.887, 382.127], [382.127, 382.507]]], [382.507, 383.847, [[382.507, 383.847]]], [383.847, 385.087, [[383.847, 384.087], [384.087, 384.467], [384.467, 385.087]]], [385.087, 386.387, [[385.087, 385.807], [385.807, 386.187], [386.187, 386.387]]], [386.387, 387.167, [[386.387, 386.687], [386.687, 387.067]]], [387.227, 387.767, [[387.227, 387.427], [387.427, 387.627], [387.627, 387.787]]], [387.767, 388.427, [[387.767, 388.027], [388.027, 388.267], [388.267, 388.427]]], [388.427, 389.467, [[388.427, 388.587], [388.527, 388.727], [388.727, 389.147]]], [389.627, 390.767, [[389.627, 389.787], [389.747, 390.007], [390.007, 390.767]]], [390.767, 391.207, [[390.767, 390.967], [390.967, 391.207]]], [391.207, 391.787, [[391.207, 391.527], [391.527, 391.687], [391.667, 391.827]]], [391.787, 392.607, [[391.787, 392.047], [392.047, 392.327], [392.327, 392.607]]], [392.607, 393.927, [[392.607, 393.147], [393.147, 393.627], [393.627, 393.927]]], [393.927, 395.1, [[393.927, 394.467], [394.467, 394.887], [394.887, 395.047]]], [395.12, 395.52, [[395.12, 395.52]]], [395.52, 396.92, [[395.52, 395.74], [395.74, 396.1], [396.1, 396.92]]], [396.92, 397.72, [[396.92, 397.08], [397.08, 397.72]]], [397.72, 398.42, [[397.72, 398.42]]], [398.42, 399.3, [[398.42, 398.6], [398.6, 398.94], [398.94, 399.3]]], [399.3, 399.8, [[399.3, 399.62]]], [399.88, 400.96, [[399.88, 400.34], [400.34, 400.96]]], [400.96, 402.68, [[400.96, 401.3], [401.3, 402.26], [402.26, 402.68]]], [402.68, 404.167, [[402.68, 403.24], [403.24, 403.94]]], [404.227, 404.867, [[404.227, 404.387], [404.367, 404.567], [404.567, 404.867]]], [404.867, 405.647, [[404.867, 405.027], [405.007, 405.347], [405.347, 405.647]]], [405.647, 406.167, [[405.647, 406.167]]], [406.167, 407.307, [[406.167, 406.587], [406.587, 407.147], [407.147, 407.307]]], [407.307, 408.147, [[407.307, 407.587], [407.587, 408.147]]], [408.147, 408.947, [[408.147, 408.527], [408.527, 408.687], [408.667, 408.947]]], [408.947, 409.267, [[408.947, 409.267]]], [409.267, 410.267, [[409.267, 409.607], [409.607, 409.907], [409.907, 410.267]]], [410.267, 410.707, [[410.267, 410.707]]], [410.707, 412.307, [[410.707, 411.167], [411.167, 411.547], [411.547, 412.307]]], [412.307, 413.247, [[412.307, 412.747], [412.747, 413.047], [413.047, 413.247]]], [413.247, 413.667, [[413.247, 413.667]]], [413.667, 414.427, [[413.667, 414.007], [414.007, 414.427]]], [414.427, 415.127, [[414.427, 414.587], [414.587, 414.967], [414.967, 415.127]]], [415.127, 415.787, [[415.127, 415.627], [415.627, 415.787]]], [415.787, 416.007, [[415.787, 416.007]]], [416.007, 417.533, [[416.007, 416.547], [416.547, 416.847], [416.847, 417.327]]], [417.613, 418.693, [[417.613, 417.773], [417.753, 418.273], [418.273, 418.693]]], [418.693, 419.213, [[418.693, 418.893], [418.893, 419.213]]], [419.213, 420.593, [[419.213, 419.593], [419.593, 420.373], [420.373, 420.593]]], [420.593, 420.913, [[420.593, 420.913]]], [420.913, 422.1, [[420.913, 421.333], [421.333, 421.693], [421.693, 421.893]]], [422.16, 423.22, [[422.16, 422.36], [422.36, 422.88], [422.88, 423.22]]], [423.22, 423.78, [[423.22, 423.6], [423.6, 423.78]]], [423.78, 424.86, [[423.78, 424.24], [424.24, 424.6], [424.6, 424.86]]], [424.86, 425.84, [[424.86, 425.26], [425.26, 425.6], [425.6, 425.84]]], [425.84, 428.0, [[425.84, 426.3], [426.3, 427.3], [427.3, 428.0]]], [428.0, 428.38, [[428.0, 428.38]]], [428.38, 429.54, [[428.38, 428.74], [428.74, 429.14], [429.14, 429.54]]], [429.54, 431.26, [[429.54, 430.26], [430.26, 430.68], [430.68, 431.26]]], [431.26, 432.32, [[431.26, 431.52], [431.52, 431.92], [431.92, 432.32]]], [432.32, 433.92, [[432.32, 433.32], [433.32, 433.7], [433.7, 433.92]]], [433.92, 434.08, [[433.92, 434.08]]], [434.08, 435.04, [[434.08, 434.42], [434.42, 434.88], [434.88, 435.04]]], [435.04, 436.52, [[435.04, 435.22], [435.22, 436.18], [436.18, 436.52]]], [436.52, 437.8, [[436.52, 436.96], [436.96, 437.8]]], [437.8, 438.7, [[437.8, 438.28], [438.28, 438.7]]], [438.7, 439.58, [[438.7, 439.18], [439.18, 439.34], [439.34, 439.58]]], [439.58, 440.98, [[439.58, 440.0], [440.0, 440.18], [440.18, 440.98]]], [440.98, 442.08, [[440.98, 441.32], [441.32, 441.92], [441.92, 442.08]]], [442.08, 443.62, [[442.08, 442.42], [442.42, 442.72], [442.72, 443.62]]], [443.62, 444.62, [[443.62, 443.8], [443.8, 444.14], [444.14, 444.62]]], [444.62, 445.18, [[444.62, 445.0], [445.0, 445.18]]], [445.18, 446.12, [[445.18, 445.58], [445.58, 445.94], [445.94, 446.12]]], [446.12, 447.12, [[446.12, 446.54], [446.54, 446.96], [446.96, 447.12]]], [447.12, 448.4, [[447.12, 447.66], [447.66, 448.06], [448.06, 448.4]]], [448.4, 448.64, [[448.4, 448.64]]], [448.64, 449.36, [[448.64, 449.36]]], [449.36, 450.94, [[449.36, 450.1], [450.1, 450.44], [450.44, 450.94]]], [450.94, 452.08, [[450.94, 451.16], [451.16, 451.64], [451.64, 452.08]]], [452.08, 452.66, [[452.08, 452.66]]], [452.66, 454.333, [[452.66, 453.28], [453.28, 453.84], [453.84, 454.2]]], [454.453, 454.673, [[454.453, 454.673]]], [454.673, 455.533, [[454.673, 455.533]]], [455.533, 456.833, [[455.533, 455.753], [455.753, 456.193], [456.193, 456.833]]], [456.833, 457.913, [[456.833, 457.193], [457.193, 457.393], [457.393, 457.913]]], [457.913, 459.393, [[457.913, 458.893], [458.893, 459.393]]], [459.393, 460.593, [[459.393, 459.613], [459.613, 460.393], [460.393, 460.593]]], [460.593, 462.213, [[460.593, 461.513], [461.513, 461.993], [461.993, 462.213]]], [462.213, 463.293, [[462.213, 462.433], [462.433, 462.693], [462.693, 463.293]]], [463.293, 464.713, [[463.293, 463.633], [463.633, 463.933], [463.933, 464.713]]], [464.713, 466.6, [[464.713, 465.273], [465.273, 465.993], [465.993, 466.433]]], [466.64, 467.4, [[466.64, 467.0], [467.0, 467.16], [467.16, 467.4]]], [467.4, 468.44, [[467.4, 467.56], [467.52, 468.2], [468.2, 468.44]]], [468.44, 469.22, [[468.44, 468.66], [468.66, 468.96], [468.96, 469.22]]], [469.22, 470.34, [[469.22, 469.78], [469.78, 470.02], [470.02, 470.34]]], [470.34, 470.46, [[470.34, 470.5]]], [470.46, 471.48, [[470.46, 470.7], [470.7, 471.04], [471.04, 471.48]]], [471.48, 472.78, [[471.48, 471.66], [471.66, 472.06], [472.06, 472.78]]], [472.78, 473.48, [[472.78, 473.08], [473.08, 473.24], [473.2, 473.48]]], [473.48, 474.24, [[473.48, 473.82], [473.82, 473.98], [473.98, 474.24]]], [474.24, 474.48, [[474.24, 474.48]]], [474.48, 474.86, [[474.48, 474.86]]], [474.86, 475.4, [[474.86, 475.26]]], [475.5, 476.1, [[475.5, 476.1]]], [476.1, 476.967, [[476.1, 476.32], [476.32, 476.56], [476.56, 476.9]]], [477.007, 477.367, [[477.007, 477.367]]], [477.367, 478.327, [[477.367, 477.867], [477.867, 478.027], [478.027, 478.327]]], [478.327, 479.307, [[478.327, 478.787], [478.787, 478.987], [478.987, 479.307]]], [479.307, 480.247, [[479.307, 479.547], [479.547, 479.867], [479.867, 480.247]]], [480.247, 481.467, [[480.247, 480.747], [480.747, 481.327]]], [481.507, 483.4, [[481.507, 482.467], [482.467, 482.987]]], [483.52, 484.48, [[483.52, 484.48]]], [484.48, 489.18, [[484.48, 488.68]]], [489.253, 489.873, [[489.253, 489.873]]], [489.873, 490.793, [[489.873, 490.793]]], [490.793, 491.673, [[490.793, 491.673]]], [491.673, 492.373, [[491.673, 492.373]]], [492.373, 492.993, [[492.373, 492.993]]], [492.993, 493.653, [[492.993, 493.653]]], [493.653, 495.273, [[493.653, 495.273]]], [495.273, 496.373, [[495.273, 495.873]]], [496.62, 497.0, [[496.62, 497.0]]], [497.0, 498.34, [[497.0, 497.78], [497.78, 498.16], [498.16, 498.34]]], [498.34, 499.76, [[498.34, 498.72], [498.72, 499.38], [499.38, 499.76]]], [499.76, 501.08, [[499.76, 500.22], [500.22, 500.7], [500.7, 501.08]]], [501.08, 501.26, [[501.08, 501.26]]], [501.26, 503.66, [[501.26, 503.28], [503.28, 503.66]]], [503.66, 504.78, [[503.66, 504.32], [504.32, 504.5], [504.5, 504.78]]], [504.78, 505.72, [[504.78, 505.02], [505.02, 505.72]]], [505.72, 507.74, [[505.72, 506.58], [506.58, 506.84], [506.84, 507.74]]], [507.74, 509.2, [[507.74, 508.52], [508.52, 508.72], [508.72, 509.2]]], [509.2, 510.12, [[509.2, 509.7], [509.7, 509.92], [509.92, 510.12]]], [510.12, 510.76, [[510.12, 510.58], [510.58, 510.76]]], [510.76, 512.74, [[510.76, 511.52], [511.52, 511.72], [511.72, 512.74]]], [512.74, 514.0, [[512.74, 512.94], [512.94, 513.8], [513.8, 514.0]]], [514.0, 514.6, [[514.0, 514.42], [514.42, 514.6]]], [514.6, 515.84, [[514.6, 514.8], [514.8, 515.38], [515.38, 515.84]]], [515.84, 516.28, [[515.84, 516.28]]], [516.28, 517.22, [[516.28, 516.84], [516.84, 517.02], [517.02, 517.22]]], [517.22, 518.933, [[517.22, 518.34], [518.34, 518.56]]], [519.033, 520.513, [[519.033, 519.193], [519.193, 519.353], [519.353, 520.513]]], [520.513, 521.213, [[520.513, 520.693], [520.693, 520.853], [520.853, 521.213]]], [521.213, 521.613, [[521.213, 521.613]]], [521.613, 523.313, [[521.613, 522.333], [522.333, 522.873], [522.873, 523.313]]], [523.313, 524.793, [[523.313, 524.153], [524.153, 524.373], [524.373, 524.793]]], [524.793, 525.753, [[524.793, 525.153], [525.153, 525.313], [525.313, 525.753]]], [525.753, 526.573, [[525.753, 525.913], [525.913, 526.133], [526.133, 526.573]]], [526.573, 527.633, [[526.573, 527.473], [527.473, 527.633]]], [527.633, 528.933, [[527.633, 527.893], [527.893, 528.333], [528.333, 528.933]]], [528.933, 529.873, [[528.933, 529.253], [529.253, 529.713], [529.713, 529.873]]], [529.873, 530.093, [[529.873, 530.093]]], [530.093, 531.293, [[530.093, 530.953], [530.953, 531.133], [531.133, 531.293]]], [531.293, 532.293, [[531.293, 531.653], [531.653, 531.913], [531.913, 532.293]]], [532.293, 532.673, [[532.293, 532.493], [532.493, 532.673]]], [532.673, 533.653, [[532.673, 532.993], [532.993, 533.333], [533.333, 533.653]]], [533.653, 535.093, [[533.653, 533.973], [533.973, 534.693], [534.693, 535.093]]], [535.093, 536.493, [[535.093, 535.253], [535.253, 535.573], [535.573, 536.493]]], [536.493, 536.893, [[536.493, 536.893]]], [536.893, 538.613, [[536.893, 537.493], [537.493, 537.833], [537.833, 538.613]]], [538.613, 539.273, [[538.613, 538.933], [538.933, 539.093], [539.093, 539.273]]], [539.273, 539.933, [[539.273, 539.433], [539.433, 539.813]]], [539.973, 540.733, [[539.973, 540.253], [540.253, 540.573], [540.573, 540.733]]], [540.733, 542.5, [[540.733, 541.113], [541.113, 541.773], [541.773, 542.293]]], [542.62, 543.66, [[542.62, 543.12], [543.12, 543.46], [543.46, 543.66]]], [543.66, 544.68, [[543.66, 544.68]]], [544.68, 545.18, [[544.68, 545.18]]], [545.18, 546.56, [[545.18, 545.72], [545.72, 546.4], [546.4, 546.56]]], [546.56, 547.96, [[546.56, 546.84], [546.84, 547.18], [547.18, 547.96]]], [547.96, 548.7, [[547.96, 548.34], [548.34, 548.7]]], [548.7, 550.32, [[548.7, 549.04], [549.04, 549.94], [549.94, 550.32]]], [550.32, 550.833, [[550.32, 550.66]]], [550.913, 551.893, [[550.913, 551.273], [551.273, 551.713], [551.713, 551.893]]], [551.893, 553.493, [[551.893, 552.273], [552.273, 553.493]]], [553.493, 554.953, [[553.493, 554.313], [554.313, 554.953]]], [554.953, 556.093, [[554.953, 555.313], [555.313, 555.693], [555.693, 556.093]]], [556.093, 556.867, [[556.093, 556.653]]], [556.907, 557.007, [[556.907, 557.067]]], [557.007, 557.907, [[557.007, 557.327], [557.327, 557.487], [557.447, 557.907]]], [557.907, 558.127, [[557.907, 558.127]]], [558.127, 559.007, [[558.127, 558.487], [558.487, 558.767], [558.767, 559.007]]], [559.007, 560.1, [[559.007, 559.627], [559.627, 559.967]]], [560.12, 560.34, [[560.12, 560.34]]], [560.34, 561.42, [[560.34, 560.84], [560.84, 561.18], [561.18, 561.42]]], [561.42, 562.533, [[561.42, 561.78], [561.78, 562.08], [562.08, 562.32]]], [562.633, 563.093, [[562.633, 562.793], [562.733, 562.893], [562.853, 563.093]]], [563.093, 564.313, [[563.093, 563.333], [563.333, 563.833], [563.833, 564.313]]], [564.313, 565.033, [[564.313, 564.513], [564.513, 564.753], [564.753, 565.033]]], [565.033, 565.753, [[565.033, 565.193], [565.153, 565.413], [565.413, 565.753]]], [565.753, 566.493, [[565.753, 565.913], [565.913, 566.133], [566.133, 566.493]]], [566.493, 567.293, [[566.493, 567.293]]], [567.293, 568.213, [[567.293, 567.653], [567.653, 567.893], [567.893, 568.213]]], [568.213, 569.093, [[568.213, 568.493], [568.493, 568.813], [568.813, 569.093]]], [569.093, 569.373, [[569.093, 569.373]]], [569.373, 570.193, [[569.373, 569.593], [569.593, 570.073], [570.073, 570.233]]], [570.193, 571.353, [[570.193, 570.453], [570.453, 570.853], [570.853, 571.353]]], [571.353, 572.073, [[571.353, 572.073]]], [572.073, 573.573, [[572.073, 572.533], [572.533, 572.693], [572.633, 573.573]]], [573.573, 574.1, [[573.573, 573.793], [573.793, 573.953]]], [574.16, 575.6, [[574.16, 574.62], [574.62, 575.6]]], [575.6, 576.56, [[575.6, 575.92], [575.92, 576.24], [576.24, 576.56]]], [576.56, 577.44, [[576.56, 576.88], [576.88, 577.12], [577.12, 577.44]]], [577.44, 577.78, [[577.44, 577.78]]], [577.78, 579.62, [[577.78, 578.52], [578.52, 579.26], [579.26, 579.62]]], [579.62, 580.833, [[579.62, 580.06], [580.06, 580.38], [580.38, 580.7]]], [580.873, 581.473, [[580.873, 581.053], [581.053, 581.313], [581.313, 581.473]]], [581.473, 582.293, [[581.473, 581.733], [581.733, 581.993], [581.993, 582.293]]], [582.293, 583.673, [[582.293, 583.193], [583.193, 583.553], [583.553, 583.713]]], [583.673, 584.4, [[583.673, 583.933], [583.933, 584.213]]], [584.46, 585.18, [[584.46, 584.88], [584.88, 585.18]]], [585.18, 586.1, [[585.18, 585.82], [585.82, 586.1]]], [586.1, 587.66, [[586.1, 587.0], [587.0, 587.32], [587.32, 587.66]]], [587.66, 588.533, [[587.66, 587.96], [587.96, 588.26]]], [588.613, 589.433, [[588.613, 588.873], [588.873, 589.253], [589.253, 589.433]]], [589.433, 590.813, [[589.433, 590.013], [590.013, 590.813]]], [590.813, 591.593, [[590.813, 590.993], [590.993, 591.373], [591.373, 591.593]]], [591.593, 593.533, [[591.593, 591.993], [591.993, 592.333], [592.333, 593.533]]], [593.533, 594.653, [[593.533, 594.293], [594.293, 594.653]]], [594.653, 596.233, [[594.653, 595.113], [595.113, 595.293], [595.293, 596.233]]], [596.233, 596.753, [[596.233, 596.753]]], [596.753, 598.073, [[596.753, 597.533], [597.533, 597.713], [597.713, 598.073]]], [598.073, 599.4, [[598.073, 599.213]]], [599.42, 601.42, [[599.42, 600.12], [600.12, 601.42]]], [601.42, 602.76, [[601.42, 602.22], [602.22, 602.4], [602.4, 602.76]]], [602.76, 603.88, [[602.76, 602.92], [602.92, 603.34], [603.34, 603.88]]], [603.88, 605.433, [[603.88, 604.46], [604.46, 605.18]]], [605.533, 607.0, [[605.533, 605.813], [605.813, 606.213], [606.213, 606.653]]], [607.08, 608.36, [[607.08, 607.42], [607.42, 608.02], [608.02, 608.36]]], [608.36, 609.167, [[608.36, 608.72]]], [609.387, 610.067, [[609.387, 609.667], [609.667, 609.907], [609.907, 610.067]]], [610.067, 610.807, [[610.067, 610.367], [610.367, 610.807]]], [610.807, 611.933, [[610.807, 610.967], [610.967, 611.387], [611.387, 611.647]]], [611.993, 612.613, [[611.993, 612.153], [612.153, 612.313], [612.233, 612.613]]], [612.613, 613.133, [[612.613, 612.793], [612.793, 612.973], [612.973, 613.133]]], [613.133, 613.713, [[613.133, 613.333], [613.333, 613.513], [613.513, 613.713]]], [613.713, 614.493, [[613.713, 614.033], [614.033, 614.193], [614.113, 614.493]]], [614.493, 614.833, [[614.493, 614.653]]], [614.913, 616.033, [[614.913, 615.313], [615.313, 615.673], [615.673, 616.033]]], [616.033, 617.253, [[616.033, 616.413], [616.413, 616.893], [616.893, 617.253]]], [617.253, 619.013, [[617.253, 617.613], [617.613, 618.713], [618.713, 619.013]]], [619.013, 621.173, [[619.013, 620.273], [620.273, 620.633], [620.633, 621.173]]], [621.173, 622.393, [[621.173, 621.433], [621.433, 621.993], [621.993, 622.393]]], [622.393, 623.373, [[622.393, 623.373]]], [623.373, 624.273, [[623.373, 623.553], [623.553, 623.913], [623.913, 624.273]]], [624.273, 625.473, [[624.273, 624.773], [624.773, 624.993], [624.993, 625.473]]], [625.473, 626.133, [[625.473, 625.853]]], [626.213, 627.193, [[626.213, 626.393], [626.393, 626.793], [626.793, 627.193]]], [627.193, 628.393, [[627.193, 627.593], [627.593, 628.393]]], [628.393, 629.273, [[628.393, 628.693], [628.693, 629.073], [629.073, 629.273]]], [629.273, 631.073, [[629.273, 630.293], [630.293, 630.673], [630.673, 631.073]]], [631.073, 631.533, [[631.073, 631.273], [631.273, 631.533]]], [631.533, 632.6, [[631.533, 632.313]]], [632.7, 632.94, [[632.7, 632.94]]], [632.94, 634.22, [[632.94, 633.46], [633.46, 633.72], [633.72, 634.22]]], [634.22, 634.74, [[634.22, 634.48], [634.48, 634.74]]], [634.74, 637.067, [[634.74, 635.92], [635.92, 636.3], [636.3, 636.58]]], [637.107, 638.4, [[637.107, 638.027]]], [638.52, 639.54, [[638.52, 639.54]]], [639.54, 640.36, [[639.54, 639.74], [639.74, 639.94], [639.94, 640.36]]], [640.36, 642.533, [[640.36, 641.4], [641.4, 641.88], [641.88, 642.32]]], [642.653, 643.733, [[642.653, 642.873], [642.873, 643.333], [643.333, 643.733]]], [643.733, 646.133, [[643.733, 644.493], [644.493, 645.013], [645.013, 646.133]]], [646.133, 646.393, [[646.133, 646.393]]], [646.393, 647.973, [[646.393, 646.593], [646.593, 646.993], [646.993, 647.973]]], [647.973, 649.373, [[647.973, 648.473], [648.473, 648.713], [648.713, 649.373]]], [649.373, 650.533, [[649.373, 649.613], [649.613, 650.013], [650.013, 650.533]]], [650.533, 650.733, [[650.533, 650.733]]], [650.733, 652.153, [[650.733, 651.193], [651.193, 651.873], [651.873, 652.153]]], [652.153, 652.673, [[652.153, 652.673]]], [652.673, 653.553, [[652.673, 653.093], [653.093, 653.553]]], [653.553, 655.473, [[653.553, 653.753], [653.753, 654.533], [654.533, 655.473]]], [655.473, 656.673, [[655.473, 656.673]]], [656.673, 657.813, [[656.673, 657.393], [657.393, 657.813]]], [657.813, 658.833, [[657.813, 658.013], [658.013, 658.413], [658.413, 658.833]]], [658.833, 660.333, [[658.833, 659.393], [659.393, 659.873], [659.873, 660.333]]], [660.333, 662.273, [[660.333, 660.533], [660.533, 661.773], [661.773, 662.273]]], [662.273, 662.733, [[662.273, 662.653]]], [662.733, 664.053, [[662.733, 663.053], [663.053, 663.553], [663.553, 664.053]]], [664.053, 664.513, [[664.053, 664.513]]], [664.513, 665.133, [[664.513, 664.853], [664.853, 665.013], [664.993, 665.153]]], [665.133, 665.813, [[665.133, 665.413], [665.413, 665.673], [665.673, 665.833]]], [665.813, 666.813, [[665.813, 666.113], [666.113, 666.813]]], [666.813, 668.213, [[666.813, 667.693], [667.693, 667.953], [667.953, 668.213]]], [668.213, 669.373, [[668.213, 668.373], [668.373, 668.973], [668.973, 669.373]]], [669.373, 670.293, [[669.373, 669.633], [669.633, 669.973], [669.973, 670.293]]], [670.293, 671.613, [[670.293, 671.033], [671.033, 671.333], [671.333, 671.613]]], [671.613, 671.9, [[671.613, 671.893]]], [672.08, 672.88, [[672.08, 672.88]]], [672.88, 675.5, [[672.88, 673.14], [673.14, 674.26], [674.26, 675.5]]], [675.5, 677.94, [[675.5, 676.26], [676.26, 677.14], [677.14, 677.94]]], [677.94, 679.64, [[677.94, 678.66], [678.66, 679.1], [679.1, 679.64]]], [679.64, 681.12, [[679.64, 680.0], [680.0, 680.52], [680.52, 681.12]]], [681.12, 681.833, [[681.12, 681.8]]], [681.933, 682.413, [[681.933, 682.413]]], [682.413, 684.193, [[682.413, 683.573], [683.573, 683.993], [683.993, 684.193]]], [684.193, 685.073, [[684.193, 684.413], [684.413, 684.853], [684.853, 685.073]]], [685.073, 686.833, [[685.073, 685.493], [685.493, 686.833]]], [686.833, 687.513, [[686.833, 687.053], [687.053, 687.513]]], [687.513, 689.013, [[687.513, 687.933], [687.933, 688.593], [688.593, 689.013]]], [689.013, 690.993, [[689.013, 689.433], [689.433, 690.573], [690.573, 690.993]]], [690.993, 693.433, [[690.993, 692.073], [692.073, 692.813], [692.813, 693.433]]], [693.433, 694.693, [[693.433, 693.853], [693.853, 694.273], [694.273, 694.693]]], [694.693, 696.013, [[694.693, 695.133], [695.133, 695.593], [695.593, 696.013]]], [696.013, 698.833, [[696.013, 696.913], [696.913, 697.433], [697.433, 698.833]]], [698.833, 700.013, [[698.833, 699.053], [699.053, 699.573], [699.573, 700.013]]], [700.013, 701.433, [[700.013, 700.553], [700.553, 700.793], [700.793, 701.433]]], [701.433, 703.033, [[701.433, 703.033]]], [703.033, 704.113, [[703.033, 703.253], [703.253, 703.913], [703.913, 704.113]]], [704.113, 706.233, [[704.113, 704.573], [704.573, 705.013], [705.013, 706.233]]], [706.233, 707.773, [[706.233, 707.353], [707.353, 707.773]]], [707.773, 708.413, [[707.773, 707.993], [707.993, 708.413]]], [708.413, 708.833, [[708.413, 708.833]]], [708.833, 710.213, [[708.833, 709.793], [709.793, 710.213]]], [710.213, 711.453, [[710.213, 711.033], [711.033, 711.253], [711.253, 711.453]]], [711.453, 712.133, [[711.453, 711.913]]]];
+        const groups = Array.from(document.querySelectorAll("#root .cg"));
+        const words = groups.map((g) => Array.from(g.querySelectorAll(".w")));
+        const driver = { t: 0 };
+        function paint(t) {
+          for (let i = 0; i < G.length; i++) {
+            const [s, e, ws] = G[i];
+            const live = t >= s && t < e;
+            groups[i].style.opacity = live ? 1 : 0;
+            if (!live) continue;
+            const pop = Math.min(1, (t - s) / 0.12);
+            groups[i].style.transform = `translateY(${(1 - pop) * 26}px) scale(${0.9 + 0.1 * pop})`;
+            for (let j = 0; j < ws.length; j++) {
+              const on = t >= ws[j][0] && (j === ws.length - 1 || t < ws[j + 1][0]);
+              const el = words[i][j];
+              el.classList.toggle("on", on);
+              el.style.transform = on ? "scale(1.1)" : "scale(1)";
+            }
+          }
+        }
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo(driver, { t: 0 }, { t: 719.1667, duration: 719.1667, ease: "none", onUpdate: () => paint(driver.t) }, 0);
+        window.__timelines["captions"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

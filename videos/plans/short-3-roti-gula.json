@@ -1,0 +1,181 @@
+{
+ "id": "short-3-roti-gula",
+ "source": "assets/source.mp4",
+ "source_audio": "assets/source_audio.m4a",
+ "mode": "tight",
+ "title": "Tasty Tuesday — Roti Gula",
+ "clips": [
+  {
+   "id": "hook",
+   "in": 1412.12,
+   "out": 1415.6,
+   "flip": true,
+   "oy": 0.42,
+   "punch": [
+    [
+     0.15,
+     1.12
+    ]
+   ],
+   "text": ""
+  },
+  {
+   "id": "c1",
+   "in": 567.68,
+   "out": 570.9,
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.25,
+   "text": "Untuk hari ini saya akan buat roti gula."
+  },
+  {
+   "id": "c2",
+   "in": 585.11,
+   "out": 595.95,
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.25,
+   "text": "Potong roti dengan gula siap-siap lah. Lepas tu kita masukkan. Yang ini actually kita boleh buat 3 layer, tapi hari ni saya cuma buat dua layer sahaja."
+  },
+  {
+   "id": "c3",
+   "in": 608.57,
+   "out": 612.78,
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.3,
+   "text": "15 minit, air crisp ni 150 degree."
+  },
+  {
+   "id": "c4",
+   "in": 621.3,
+   "out": 626.64,
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.3,
+   "text": "Saya suka garing, jadi saya tunggu sampai 15 minit. Bila makan dia akan krup krup krup!"
+  },
+  {
+   "id": "c5",
+   "in": 653.72,
+   "out": 664.4,
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.3,
+   "text": "Memang macam yang kita beli kat kedai mamak dulu kan? Petang-petang. Lepas tu kalau nak cicah kopi, alamak, memang power punya."
+  },
+  {
+   "id": "c6",
+   "in": 1396.26,
+   "out": 1400.17,
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.25,
+   "text": "Kalau nak tahu hasil dia nanti, dia akan jadi macam ni."
+  },
+  {
+   "id": "c7",
+   "in": 1426.54,
+   "out": 1435.64,
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.25,
+   "snap": false,
+   "text": "Kadang-kadang bila roti tu dah nak expired, ataupun dah expired tapi still okay, I buat je. Sayang kan, daripada nak membazir."
+  },
+  {
+   "id": "outro",
+   "in": 1561.1,
+   "out": 1567.7,
+   "mode": "tight",
+   "flip": true,
+   "oy": 0.45,
+   "snap": false,
+   "text": "InsyaAllah minggu depan kita akan live lagi pada pukul 4 petang."
+  }
+ ],
+ "graphics": [
+  {
+   "type": "hook",
+   "clip": "hook",
+   "dur": 3.4,
+   "kicker": "TASTY TUESDAY · MENU PETANG",
+   "lines": [
+    "Roti gula",
+    "crunchy!"
+   ],
+   "hi": 1
+  },
+  {
+   "type": "flash",
+   "clip": "c1",
+   "offset": -0.08,
+   "dur": 0.18
+  },
+  {
+   "type": "menu",
+   "clip": "c1",
+   "offset": 0.1,
+   "dur": 3.1,
+   "num": "03",
+   "title": "Roti Gula",
+   "by": "Chef Hani · Air Crisp"
+  },
+  {
+   "type": "chip",
+   "clip": "c2",
+   "offset": 6.5,
+   "dur": 3.4,
+   "text": "2 LAYER RACK",
+   "icon": "~",
+   "pos": "tr"
+  },
+  {
+   "type": "chip",
+   "clip": "c3",
+   "offset": 0.3,
+   "dur": 3.6,
+   "text": "AIR CRISP · 150°C · 15 MIN",
+   "icon": "~",
+   "pos": "tr"
+  },
+  {
+   "type": "chip",
+   "clip": "c7",
+   "offset": 0.5,
+   "dur": 3.4,
+   "text": "TIP: ROTI LEBIH",
+   "icon": "!",
+   "pos": "tr"
+  },
+  {
+   "type": "outro",
+   "clip": "outro",
+   "offset": 0,
+   "dur": 6.6,
+   "kicker": "TASTY TUESDAY",
+   "big": "Live setiap [Selasa]",
+   "cta": "4 petang · Follow kami"
+  }
+ ],
+ "sfx": [
+  {
+   "name": "click-soft",
+   "clip": "hook",
+   "offset": 0.15,
+   "vol": 0.5
+  },
+  {
+   "name": "sparkle",
+   "clip": "c6",
+   "offset": 2.0,
+   "vol": 0.35
+  },
+  {
+   "name": "whoosh",
+   "clip": "outro",
+   "offset": -0.05,
+   "vol": 0.45
+  }
+ ]
+}

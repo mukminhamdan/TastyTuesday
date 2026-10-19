@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ms">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+      #root { position: absolute; inset: 0; overflow: hidden; font-family: "Archivo Black", sans-serif; }
+      .g { position: absolute; opacity: 0; will-change: transform, opacity; }
+      .mono { font-family: "Space Mono", monospace; font-weight: 700; }
+      /* hook */
+      .hook { inset: 0; }
+      .hook .shade { position: absolute; inset: 0; background: radial-gradient(120% 70% at 50% 40%, rgba(28,18,12,0.38) 0%, rgba(28,18,12,0.82) 100%); }
+      .hook .stack { position: absolute; left: 108px; right: 108px; top: 470px; display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+      .hook .kicker { background: #e8442e; color: #fff4e6; font-size: 30px; letter-spacing: 0.08em; padding: 12px 22px; border-radius: 8px; }
+      .hook .line { display: block; color: #fff4e6; font-size: 112px; line-height: 0.98; letter-spacing: -0.03em; text-transform: uppercase; text-shadow: 0 6px 0 rgba(28,18,12,0.55); }
+      .hook .line.hi { color: #2b1a12; background: #ffc93c; padding: 6px 22px 2px; border-radius: 10px; text-shadow: none; }
+      /* menu card */
+      .menu { left: 72px; top: 250px; display: flex; align-items: stretch; gap: 0; }
+      .menu .num { width: 150px; background: #e8442e; color: #fff4e6; font-size: 76px; display: flex; align-items: center; justify-content: center; border-radius: 18px 0 0 18px; }
+      .menu .card { background: rgba(43,26,18,0.94); border-radius: 0 18px 18px 0; padding: 22px 36px 24px 30px; border-left: 6px solid #ffc93c; }
+      .menu .label { color: #ffc93c; font-size: 26px; letter-spacing: 0.12em; }
+      .menu .title { color: #fff4e6; font-size: 74px; line-height: 1.0; letter-spacing: -0.03em; text-transform: uppercase; margin-top: 6px; }
+      .menu .by { color: #f6d9bf; font-size: 28px; margin-top: 10px; }
+      /* chip */
+      .chip { display: flex; align-items: center; gap: 16px; background: #fff4e6; color: #2b1a12; border: 5px solid #2b1a12; border-radius: 999px; padding: 14px 34px 14px 18px; font-size: 38px; box-shadow: 0 8px 0 #2b1a12; }
+      .chip .dot { width: 44px; height: 44px; border-radius: 50%; background: #e8442e; color: #fff4e6; font-size: 26px; display: flex; align-items: center; justify-content: center; }
+      .chip .txt { font-family: "Space Mono", monospace; font-weight: 700; letter-spacing: 0.02em; }
+      /* flash */
+      .flash { inset: 0; background: #fff4e6; }
+      /* outro */
+      .outro { inset: 0; background: rgba(28,18,12,0.72); }
+      .outro .stack { position: absolute; left: 108px; right: 108px; top: 560px; display: flex; flex-direction: column; align-items: center; gap: 26px; text-align: center; }
+      .outro .kicker { color: #ffc93c; font-size: 32px; letter-spacing: 0.14em; }
+      .outro .big { color: #fff4e6; font-size: 128px; line-height: 0.95; letter-spacing: -0.03em; text-transform: uppercase; }
+      .outro .big .red { color: #ff7a5c; }
+      .outro .cta { background: #e8442e; color: #fff4e6; font-size: 44px; padding: 20px 40px; border-radius: 999px; text-transform: uppercase; }
+      .outro .rule { width: 0; height: 6px; background: #ffc93c; border-radius: 3px; }
+      </style>
+      <div id="root" data-composition-id="graphics" data-width="1080" data-height="1920">
+        <div class="g hook" id="g00"><div class="shade"></div><div class="stack"><div class="kicker mono" id="g00k">TASTY TUESDAY · MENU PETANG</div><span class="line" id="g00l0">Abok-Abok</span><span class="line hi" id="g00l1">jarang jumpa!</span></div></div>
+        <div class="g flash" id="g01"></div>
+        <div class="g menu" id="g02"><div class="num" id="g02n">01</div><div class="card" id="g02c"><div class="label mono">MENU PETANG</div><div class="title">Kuih Abok-Abok</div><div class="by mono">Kak Salma · Fungsi Steam</div></div></div>
+        <div class="g chip" id="g03" style="right:72px; top:300px;"><div class="dot">~</div><div class="txt">AIR 1.5 LITER</div></div>
+        <div class="g chip" id="g04" style="right:72px; top:300px;"><div class="dot">~</div><div class="txt">STEAM · P2</div></div>
+        <div class="g chip" id="g05" style="right:72px; top:300px;"><div class="dot">!</div><div class="txt">KUKUS 15–20 MINIT</div></div>
+        <div class="g chip" id="g06" style="right:72px; top:300px;"><div class="dot">★</div><div class="txt">PURE GULA MELAKA</div></div>
+        <div class="g outro" id="g07"><div class="stack"><div class="kicker mono" id="g07k">TASTY TUESDAY</div><div class="big" id="g07b">Live setiap <span class="red">Selasa</span></div><div class="rule" id="g07r"></div><div class="cta" id="g07c">4 petang · Follow kami</div></div></div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#g00", {opacity:0}, {opacity:1, duration:0.12}, 0);
+        tl.fromTo("#g00k", {y:-30, opacity:0}, {y:0, opacity:1, duration:0.3, ease:"power3.out"}, 0);
+        tl.fromTo("#g00l0", {scale:1.6, opacity:0, rotation:3}, {scale:1, opacity:1, rotation:0, duration:0.32, ease:"back.out(2.2)"}, 0.12);
+        tl.fromTo("#g00l1", {scale:1.6, opacity:0, rotation:-4}, {scale:1, opacity:1, rotation:0, duration:0.32, ease:"back.out(2.2)"}, 0.34);
+        tl.to("#g00", {opacity:0, duration:0.25, ease:"power2.in"}, 3.15);
+        tl.fromTo("#g01", {opacity:0}, {opacity:0.9, duration:0.09, ease:"power2.out"}, 4.353);
+        tl.to("#g01", {opacity:0, duration:0.09, ease:"power2.in"}, 4.443);
+        tl.fromTo("#g02", {opacity:0}, {opacity:1, duration:0.1}, 4.533);
+        tl.fromTo("#g02n", {scale:0, rotation:-25}, {scale:1, rotation:0, duration:0.4, ease:"back.out(2.4)"}, 4.533);
+        tl.fromTo("#g02c", {clipPath:"inset(0 100% 0 0)", x:-40}, {clipPath:"inset(0 0% 0 0)", x:0, duration:0.5, ease:"power4.out"}, 4.653);
+        tl.to("#g02", {y:-40, opacity:0, duration:0.3, ease:"power2.in"}, 7.633);
+        tl.fromTo("#g03", {scale:0.3, opacity:0, rotation:-6}, {scale:1, opacity:1, rotation:0, duration:0.38, ease:"back.out(2.6)"}, 9.8);
+        tl.to("#g03", {scale:0.6, opacity:0, duration:0.22, ease:"power2.in"}, 12.58);
+        tl.fromTo("#g04", {scale:0.3, opacity:0, rotation:-6}, {scale:1, opacity:1, rotation:0, duration:0.38, ease:"back.out(2.6)"}, 20.067);
+        tl.to("#g04", {scale:0.6, opacity:0, duration:0.22, ease:"power2.in"}, 22.247);
+        tl.fromTo("#g05", {scale:0.3, opacity:0, rotation:-6}, {scale:1, opacity:1, rotation:0, duration:0.38, ease:"back.out(2.6)"}, 28.067);
+        tl.to("#g05", {scale:0.6, opacity:0, duration:0.22, ease:"power2.in"}, 31.047);
+        tl.fromTo("#g06", {scale:0.3, opacity:0, rotation:-6}, {scale:1, opacity:1, rotation:0, duration:0.38, ease:"back.out(2.6)"}, 36.133);
+        tl.to("#g06", {scale:0.6, opacity:0, duration:0.22, ease:"power2.in"}, 38.713);
+        tl.fromTo("#g07", {opacity:0}, {opacity:1, duration:0.3}, 39.2);
+        tl.fromTo("#g07k", {y:30, opacity:0}, {y:0, opacity:1, duration:0.4, ease:"power3.out"}, 39.3);
+        tl.fromTo("#g07b", {scale:1.4, opacity:0}, {scale:1, opacity:1, duration:0.45, ease:"back.out(1.8)"}, 39.4);
+        tl.fromTo("#g07r", {width:0}, {width:420, duration:0.5, ease:"power3.inOut"}, 39.65);
+        tl.fromTo("#g07c", {y:40, opacity:0}, {y:0, opacity:1, duration:0.4, ease:"power3.out"}, 39.9);
+        tl.fromTo("#g07c", {scale:1}, {scale:1.06, duration:0.5, ease:"sine.inOut", yoyo:true, repeat:10}, 40.4);
+        tl.set({}, {}, 45.8);
+        window.__timelines["graphics"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

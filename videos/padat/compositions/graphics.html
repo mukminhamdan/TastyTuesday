@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ms">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+      #root { position: absolute; inset: 0; overflow: hidden; font-family: "Archivo Black", sans-serif; }
+      .g { position: absolute; opacity: 0; will-change: transform, opacity; }
+      .mono { font-family: "Space Mono", monospace; font-weight: 700; }
+      /* hook */
+      .hook { inset: 0; }
+      .hook .shade { position: absolute; inset: 0; background: radial-gradient(120% 70% at 50% 40%, rgba(28,18,12,0.15) 0%, rgba(28,18,12,0.78) 100%); }
+      .hook .stack { position: absolute; left: 108px; right: 108px; top: 470px; display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+      .hook .kicker { background: #e8442e; color: #fff4e6; font-size: 30px; letter-spacing: 0.08em; padding: 12px 22px; border-radius: 8px; }
+      .hook .line { display: block; color: #fff4e6; font-size: 112px; line-height: 0.98; letter-spacing: -0.03em; text-transform: uppercase; text-shadow: 0 6px 0 rgba(28,18,12,0.55); }
+      .hook .line.hi { color: #2b1a12; background: #ffc93c; padding: 6px 22px 2px; border-radius: 10px; text-shadow: none; }
+      /* menu card */
+      .menu { left: 72px; top: 250px; display: flex; align-items: stretch; gap: 0; }
+      .menu .num { width: 150px; background: #e8442e; color: #fff4e6; font-size: 76px; display: flex; align-items: center; justify-content: center; border-radius: 18px 0 0 18px; }
+      .menu .card { background: rgba(43,26,18,0.94); border-radius: 0 18px 18px 0; padding: 22px 36px 24px 30px; border-left: 6px solid #ffc93c; }
+      .menu .label { color: #ffc93c; font-size: 26px; letter-spacing: 0.12em; }
+      .menu .title { color: #fff4e6; font-size: 74px; line-height: 1.0; letter-spacing: -0.03em; text-transform: uppercase; margin-top: 6px; }
+      .menu .by { color: #f6d9bf; font-size: 28px; margin-top: 10px; }
+      /* chip */
+      .chip { display: flex; align-items: center; gap: 16px; background: #fff4e6; color: #2b1a12; border: 5px solid #2b1a12; border-radius: 999px; padding: 14px 34px 14px 18px; font-size: 38px; box-shadow: 0 8px 0 #2b1a12; }
+      .chip .dot { width: 44px; height: 44px; border-radius: 50%; background: #e8442e; color: #fff4e6; font-size: 26px; display: flex; align-items: center; justify-content: center; }
+      .chip .txt { font-family: "Space Mono", monospace; font-weight: 700; letter-spacing: 0.02em; }
+      /* flash */
+      .flash { inset: 0; background: #fff4e6; }
+      /* outro */
+      .outro { inset: 0; background: rgba(28,18,12,0.72); }
+      .outro .stack { position: absolute; left: 108px; right: 108px; top: 560px; display: flex; flex-direction: column; align-items: center; gap: 26px; text-align: center; }
+      .outro .kicker { color: #ffc93c; font-size: 32px; letter-spacing: 0.14em; }
+      .outro .big { color: #fff4e6; font-size: 128px; line-height: 0.95; letter-spacing: -0.03em; text-transform: uppercase; }
+      .outro .big .red { color: #ff7a5c; }
+      .outro .cta { background: #e8442e; color: #fff4e6; font-size: 44px; padding: 20px 40px; border-radius: 999px; text-transform: uppercase; }
+      .outro .rule { width: 0; height: 6px; background: #ffc93c; border-radius: 3px; }
+      </style>
+      <div id="root" data-composition-id="graphics" data-width="1080" data-height="1920">
+        <div class="g hook" id="g00"><div class="shade"></div><div class="stack"><div class="kicker mono" id="g00k">TASTY TUESDAY · MENU PETANG</div><span class="line" id="g00l0">Pizza</span><span class="line hi" id="g00l1">6 minit?!</span></div></div>
+        <div class="g chip" id="g01" style="right:72px; top:300px;"><div class="dot">✓</div><div class="txt">SIAP 6 MINIT</div></div>
+        <div class="g flash" id="g02"></div>
+        <div class="g menu" id="g03"><div class="num" id="g03n">TT</div><div class="card" id="g03c"><div class="label mono">LIVE · SELASA</div><div class="title">Menu Petang</div><div class="by mono">Mukmin · Host</div></div></div>
+        <div class="g chip" id="g04" style="right:72px; top:300px;"><div class="dot">4</div><div class="txt">4 MENU · 4 FUNGSI COOVEN</div></div>
+        <div class="g flash" id="g05"></div>
+        <div class="g menu" id="g06"><div class="num" id="g06n">01</div><div class="card" id="g06c"><div class="label mono">MENU PETANG</div><div class="title">Kuih Abok-Abok</div><div class="by mono">Kak Salma · Fungsi Steam</div></div></div>
+        <div class="g chip" id="g07" style="right:72px; top:300px;"><div class="dot">~</div><div class="txt">AIR 1.5 LITER</div></div>
+        <div class="g chip" id="g08" style="right:72px; top:300px;"><div class="dot">~</div><div class="txt">STEAM · P2</div></div>
+        <div class="g chip" id="g09" style="right:72px; top:300px;"><div class="dot">!</div><div class="txt">KUKUS 15–20 MINIT</div></div>
+        <div class="g chip" id="g10" style="right:72px; top:300px;"><div class="dot">★</div><div class="txt">HASIL</div></div>
+        <div class="g chip" id="g11" style="right:72px; top:300px;"><div class="dot">★</div><div class="txt">PURE GULA MELAKA</div></div>
+        <div class="g flash" id="g12"></div>
+        <div class="g menu" id="g13"><div class="num" id="g13n">02</div><div class="card" id="g13c"><div class="label mono">MENU PETANG</div><div class="title">Cekodok Pisang</div><div class="by mono">Intan Safiya · Deep Fry</div></div></div>
+        <div class="g chip" id="g14" style="right:72px; top:300px;"><div class="dot">!</div><div class="txt">DEEP FRY · 180°C</div></div>
+        <div class="g chip" id="g15" style="right:72px; top:300px;"><div class="dot">★</div><div class="txt">HASIL</div></div>
+        <div class="g chip" id="g16" style="right:72px; top:300px;"><div class="dot">✓</div><div class="txt">BASKET PERCUMA</div></div>
+        <div class="g flash" id="g17"></div>
+        <div class="g menu" id="g18"><div class="num" id="g18n">03</div><div class="card" id="g18c"><div class="label mono">MENU PETANG</div><div class="title">Roti Gula</div><div class="by mono">Chef Hani · Air Crisp</div></div></div>
+        <div class="g chip" id="g19" style="right:72px; top:300px;"><div class="dot">~</div><div class="txt">AIR CRISP · 150°C · 15 MIN</div></div>
+        <div class="g chip" id="g20" style="right:72px; top:300px;"><div class="dot">★</div><div class="txt">HASIL</div></div>
+        <div class="g chip" id="g21" style="right:72px; top:300px;"><div class="dot">!</div><div class="txt">TIP: ROTI LEBIH</div></div>
+        <div class="g flash" id="g22"></div>
+        <div class="g menu" id="g23"><div class="num" id="g23n">04</div><div class="card" id="g23c"><div class="label mono">MENU PETANG</div><div class="title">Pizza</div><div class="by mono">Mukmin · Mod Pizza</div></div></div>
+        <div class="g chip" id="g24" style="right:72px; top:300px;"><div class="dot">!</div><div class="txt">MOD PIZZA · 6 MINIT</div></div>
+        <div class="g chip" id="g25" style="right:72px; top:300px;"><div class="dot">+</div><div class="txt">15+1 FUNGSI</div></div>
+        <div class="g chip" id="g26" style="right:72px; top:300px;"><div class="dot">★</div><div class="txt">HASIL</div></div>
+        <div class="g flash" id="g27"></div>
+        <div class="g outro" id="g28"><div class="stack"><div class="kicker mono" id="g28k">TASTY TUESDAY</div><div class="big" id="g28b">Live setiap <span class="red">Selasa</span></div><div class="rule" id="g28r"></div><div class="cta" id="g28c">4 petang · Follow kami</div></div></div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#g00", {opacity:0}, {opacity:1, duration:0.12}, 0);
+        tl.fromTo("#g00k", {y:-30, opacity:0}, {y:0, opacity:1, duration:0.3, ease:"power3.out"}, 0);
+        tl.fromTo("#g00l0", {scale:1.6, opacity:0, rotation:3}, {scale:1, opacity:1, rotation:0, duration:0.32, ease:"back.out(2.2)"}, 0.12);
+        tl.fromTo("#g00l1", {scale:1.6, opacity:0, rotation:-4}, {scale:1, opacity:1, rotation:0, duration:0.32, ease:"back.out(2.2)"}, 0.34);
+        tl.to("#g00", {opacity:0, duration:0.25, ease:"power2.in"}, 3.05);
+        tl.fromTo("#g01", {scale:0.3, opacity:0, rotation:-6}, {scale:1, opacity:1, rotation:0, duration:0.38, ease:"back.out(2.6)"}, 5.733);
+        tl.to("#g01", {scale:0.6, opacity:0, duration:0.22, ease:"power2.in"}, 7.413);
+        tl.fromTo("#g02", {opacity:0}, {opacity:0.9, duration:0.09, ease:"power2.out"}, 7.72);
+        tl.to("#g02", {opacity:0, duration:0.09, ease:"power2.in"}, 7.81);
+        tl.fromTo("#g03", {opacity:0}, {opacity:1, duration:0.1}, 9.433);
+        tl.fromTo("#g03n", {scale:0, rotation:-25}, {scale:1, rotation:0, duration:0.4, ease:"back.out(2.4)"}, 9.433);
+        tl.fromTo("#g03c", {clipPath:"inset(0 100% 0 0)", x:-40}, {clipPath:"inset(0 0% 0 0)", x:0, duration:0.5, ease:"power4.out"}, 9.553);
+        tl.to("#g03", {y:-40, opacity:0, duration:0.3, ease:"power2.in"}, 12.133);
+        tl.fromTo("#g04", {scale:0.3, opacity:0, rotation:-6}, {scale:1, opacity:1, rotation:0, duration:0.38, ease:"back.out(2.6)"}, 14.433);
+        tl.to("#g04", {scale:0.6, opacity:0, duration:0.22, ease:"power2.in"}, 19.713);
+        tl.fromTo("#g05", {opacity:0}, {opacity:0.9, duration:0.09, ease:"power2.out"}, 21.353);
+        tl.to("#g05", {opacity:0, duration:0.09, ease:"power2.in"}, 21.443);
+        tl.fromTo("#g06", {opacity:0}, {opacity:1, duration:0.1}, 23.633);
+        tl.fromTo("#g06n", {scale:0, rotation:-25}, {scale:1, rotation:0, duration:0.4, ease:"back.out(2.4)"}, 23.633);
+        tl.fromTo("#g06c", {clipPath:"inset(0 100% 0 0)", x:-40}, {clipPath:"inset(0 0% 0 0)", x:0, duration:0.5, ease:"power4.out"}, 23.753);
+        tl.to("#g06", {y:-40, opacity:0, duration:0.3, ease:"power2.in"}, 26.933);
+        tl.fromTo("#g07", {scale:0.3, opacity:0, rotation:-6}, {scale:1, opacity:1, rotation:0, duration:0.38, ease:"back.out(2.6)"}, 36.967);
+        tl.to("#g07", {scale:0.6, opacity:0, duration:0.22, ease:"power2.in"}, 39.947);
+        tl.fromTo("#g08", {scale:0.3, opacity:0, rotation:-6}, {scale:1, opacity:1, rotation:0, duration:0.38, ease:"back.out(2.6)"}, 49.967);
+        tl.to("#g08", {scale:0.6, opacity:0, duration:0.22, ease:"power2.in"}, 52.347);
+        tl.fromTo("#g09", {scale:0.3, opacity:0, rotation:-6}, {scale:1, opacity:1, rotation:0, duration:0.38, ease:"back.out(2.6)"}, 82.3);
+        tl.to("#g09", {scale:0.6, opacity:0, duration:0.22, ease:"power2.in"}, 85.48);
+        tl.fromTo("#g10", {scale:0.3, opacity:0, rotation:-6}, {scale:1, opacity:1, rotation:0, duration:0.38, ease:"back.out(2.6)"}, 119.5);
+        tl.to("#g10", {scale:0.6, opacity:0, duration:0.22, ease:"power2.in"}, 122.08);
+        tl.fromTo("#g11", {scale:0.3, opacity:0, rotation:-6}, {scale:1, opacity:1, rotation:0, duration:0.38, ease:"back.out(2.6)"}, 158.633);
+        tl.to("#g11", {scale:0.6, opacity:0, duration:0.22, ease:"power2.in"}, 161.613);
+        tl.fromTo("#g12", {opacity:0}, {opacity:0.9, duration:0.09, ease:"power2.out"}, 166.153);
+        tl.to("#g12", {opacity:0, duration:0.09, ease:"power2.in"}, 166.243);
+        tl.fromTo("#g13", {opacity:0}, {opacity:1, duration:0.1}, 166.633);
+        tl.fromTo("#g13n", {scale:0, rotation:-25}, {scale:1, rotation:0, duration:0.4, ease:"back.out(2.4)"}, 166.633);
+        tl.fromTo("#g13c", {clipPath:"inset(0 100% 0 0)", x:-40}, {clipPath:"inset(0 0% 0 0)", x:0, duration:0.5, ease:"power4.out"}, 166.753);
+        tl.to("#g13", {y:-40, opacity:0, duration:0.3, ease:"power2.in"}, 169.933);
+        tl.fromTo("#g14", {scale:0.3, opacity:0, rotation:-6}, {scale:1, opacity:1, rotation:0, duration:0.38, ease:"back.out(2.6)"}, 204);
+        tl.to("#g14", {scale:0.6, opacity:0, duration:0.22, ease:"power2.in"}, 207.38);
+        tl.fromTo("#g15", {scale:0.3, opacity:0, rotation:-6}, {scale:1, opacity:1, rotation:0, duration:0.38, ease:"back.out(2.6)"}, 302.8);
+        tl.to("#g15", {scale:0.6, opacity:0, duration:0.22, ease:"power2.in"}, 305.38);
+        tl.fromTo("#g16", {scale:0.3, opacity:0, rotation:-6}, {scale:1, opacity:1, rotation:0, duration:0.38, ease:"back.out(2.6)"}, 323.833);
+        tl.to("#g16", {scale:0.6, opacity:0, duration:0.22, ease:"power2.in"}, 326.813);
+        tl.fromTo("#g17", {opacity:0}, {opacity:0.9, duration:0.09, ease:"power2.out"}, 362.52);
+        tl.to("#g17", {opacity:0, duration:0.09, ease:"power2.in"}, 362.61);
+        tl.fromTo("#g18", {opacity:0}, {opacity:1, duration:0.1}, 362.7);
+        tl.fromTo("#g18n", {scale:0, rotation:-25}, {scale:1, rotation:0, duration:0.4, ease:"back.out(2.4)"}, 362.7);
+        tl.fromTo("#g18c", {clipPath:"inset(0 100% 0 0)", x:-40}, {clipPath:"inset(0 0% 0 0)", x:0, duration:0.5, ease:"power4.out"}, 362.82);
+        tl.to("#g18", {y:-40, opacity:0, duration:0.3, ease:"power2.in"}, 366);
+        tl.fromTo("#g19", {scale:0.3, opacity:0, rotation:-6}, {scale:1, opacity:1, rotation:0, duration:0.38, ease:"back.out(2.6)"}, 400.1);
+        tl.to("#g19", {scale:0.6, opacity:0, duration:0.22, ease:"power2.in"}, 403.48);
+        tl.fromTo("#g20", {scale:0.3, opacity:0, rotation:-6}, {scale:1, opacity:1, rotation:0, duration:0.38, ease:"back.out(2.6)"}, 475.6);
+        tl.to("#g20", {scale:0.6, opacity:0, duration:0.22, ease:"power2.in"}, 478.18);
+        tl.fromTo("#g21", {scale:0.3, opacity:0, rotation:-6}, {scale:1, opacity:1, rotation:0, duration:0.38, ease:"back.out(2.6)"}, 497.1);
+        tl.to("#g21", {scale:0.6, opacity:0, duration:0.22, ease:"power2.in"}, 500.28);
+        tl.fromTo("#g22", {opacity:0}, {opacity:0.9, duration:0.09, ease:"power2.out"}, 539.853);
+        tl.to("#g22", {opacity:0, duration:0.09, ease:"power2.in"}, 539.943);
+        tl.fromTo("#g23", {opacity:0}, {opacity:1, duration:0.1}, 540.033);
+        tl.fromTo("#g23n", {scale:0, rotation:-25}, {scale:1, rotation:0, duration:0.4, ease:"back.out(2.4)"}, 540.033);
+        tl.fromTo("#g23c", {clipPath:"inset(0 100% 0 0)", x:-40}, {clipPath:"inset(0 0% 0 0)", x:0, duration:0.5, ease:"power4.out"}, 540.153);
+        tl.to("#g23", {y:-40, opacity:0, duration:0.3, ease:"power2.in"}, 543.333);
+        tl.fromTo("#g24", {scale:0.3, opacity:0, rotation:-6}, {scale:1, opacity:1, rotation:0, duration:0.38, ease:"back.out(2.6)"}, 564.933);
+        tl.to("#g24", {scale:0.6, opacity:0, duration:0.22, ease:"power2.in"}, 567.713);
+        tl.fromTo("#g25", {scale:0.3, opacity:0, rotation:-6}, {scale:1, opacity:1, rotation:0, duration:0.38, ease:"back.out(2.6)"}, 621.333);
+        tl.to("#g25", {scale:0.6, opacity:0, duration:0.22, ease:"power2.in"}, 624.513);
+        tl.fromTo("#g26", {scale:0.3, opacity:0, rotation:-6}, {scale:1, opacity:1, rotation:0, duration:0.38, ease:"back.out(2.6)"}, 626.333);
+        tl.to("#g26", {scale:0.6, opacity:0, duration:0.22, ease:"power2.in"}, 628.913);
+        tl.fromTo("#g27", {opacity:0}, {opacity:0.9, duration:0.09, ease:"power2.out"}, 642.453);
+        tl.to("#g27", {opacity:0, duration:0.09, ease:"power2.in"}, 642.543);
+        tl.fromTo("#g28", {opacity:0}, {opacity:1, duration:0.3}, 712.133);
+        tl.fromTo("#g28k", {y:30, opacity:0}, {y:0, opacity:1, duration:0.4, ease:"power3.out"}, 712.233);
+        tl.fromTo("#g28b", {scale:1.4, opacity:0}, {scale:1, opacity:1, duration:0.45, ease:"back.out(1.8)"}, 712.333);
+        tl.fromTo("#g28r", {width:0}, {width:420, duration:0.5, ease:"power3.inOut"}, 712.583);
+        tl.fromTo("#g28c", {y:40, opacity:0}, {y:0, opacity:1, duration:0.4, ease:"power3.out"}, 712.833);
+        tl.fromTo("#g28c", {scale:1}, {scale:1.06, duration:0.5, ease:"sine.inOut", yoyo:true, repeat:11}, 713.333);
+        tl.set({}, {}, 719.1667);
+        window.__timelines["graphics"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

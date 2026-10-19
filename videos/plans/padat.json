@@ -1,0 +1,1077 @@
+{
+ "id": "padat",
+ "title": "Tasty Tuesday — Menu Petang (Versi Padat)",
+ "source": "assets/source.mp4",
+ "source_audio": "assets/source_audio.m4a",
+ "mode": "tight",
+ "graphics": [
+  {
+   "type": "hook",
+   "clip": "hook1",
+   "dur": 3.3,
+   "kicker": "TASTY TUESDAY · MENU PETANG",
+   "lines": [
+    "Pizza",
+    "6 minit?!"
+   ],
+   "hi": 1
+  },
+  {
+   "type": "chip",
+   "clip": "hook2",
+   "offset": 2.4,
+   "dur": 1.9,
+   "text": "SIAP 6 MINIT",
+   "icon": "✓",
+   "pos": "tr"
+  },
+  {
+   "type": "flash",
+   "clip": "i1",
+   "offset": -0.08,
+   "dur": 0.18
+  },
+  {
+   "type": "menu",
+   "clip": "i2",
+   "offset": 0.1,
+   "dur": 3.0,
+   "num": "TT",
+   "label": "LIVE · SELASA",
+   "title": "Menu Petang",
+   "by": "Mukmin · Host"
+  },
+  {
+   "type": "chip",
+   "clip": "i4",
+   "offset": 0.0,
+   "dur": 5.5,
+   "text": "4 MENU · 4 FUNGSI COOVEN",
+   "icon": "4",
+   "pos": "tr"
+  },
+  {
+   "type": "flash",
+   "clip": "k1",
+   "offset": -0.08,
+   "dur": 0.18
+  },
+  {
+   "type": "menu",
+   "clip": "k1",
+   "offset": 2.2,
+   "dur": 3.6,
+   "num": "01",
+   "title": "Kuih Abok-Abok",
+   "by": "Kak Salma · Fungsi Steam"
+  },
+  {
+   "type": "chip",
+   "clip": "k2",
+   "offset": 1.0,
+   "dur": 3.2,
+   "text": "AIR 1.5 LITER",
+   "icon": "~",
+   "pos": "tr"
+  },
+  {
+   "type": "chip",
+   "clip": "k4",
+   "offset": 0.0,
+   "dur": 2.6,
+   "text": "STEAM · P2",
+   "icon": "~",
+   "pos": "tr"
+  },
+  {
+   "type": "chip",
+   "clip": "k10",
+   "offset": 1.5,
+   "dur": 3.4,
+   "text": "KUKUS 15–20 MINIT",
+   "icon": "!",
+   "pos": "tr"
+  },
+  {
+   "type": "chip",
+   "clip": "k13",
+   "offset": 0.2,
+   "dur": 2.8,
+   "text": "HASIL",
+   "icon": "★",
+   "pos": "tr",
+   "sfx_name": "sparkle"
+  },
+  {
+   "type": "chip",
+   "clip": "k15",
+   "offset": 4.0,
+   "dur": 3.2,
+   "text": "PURE GULA MELAKA",
+   "icon": "★",
+   "pos": "tr"
+  },
+  {
+   "type": "flash",
+   "clip": "n1",
+   "offset": -0.08,
+   "dur": 0.18
+  },
+  {
+   "type": "menu",
+   "clip": "n1",
+   "offset": 0.4,
+   "dur": 3.6,
+   "num": "02",
+   "title": "Cekodok Pisang",
+   "by": "Intan Safiya · Deep Fry"
+  },
+  {
+   "type": "chip",
+   "clip": "n5",
+   "offset": 6.0,
+   "dur": 3.6,
+   "text": "DEEP FRY · 180°C",
+   "icon": "!",
+   "pos": "tr"
+  },
+  {
+   "type": "chip",
+   "clip": "n13",
+   "offset": 0.2,
+   "dur": 2.8,
+   "text": "HASIL",
+   "icon": "★",
+   "pos": "tr",
+   "sfx_name": "sparkle"
+  },
+  {
+   "type": "chip",
+   "clip": "n14",
+   "offset": 0.3,
+   "dur": 3.2,
+   "text": "BASKET PERCUMA",
+   "icon": "✓",
+   "pos": "tr"
+  },
+  {
+   "type": "flash",
+   "clip": "h1",
+   "offset": -0.08,
+   "dur": 0.18
+  },
+  {
+   "type": "menu",
+   "clip": "h1",
+   "offset": 0.1,
+   "dur": 3.6,
+   "num": "03",
+   "title": "Roti Gula",
+   "by": "Chef Hani · Air Crisp"
+  },
+  {
+   "type": "chip",
+   "clip": "h5",
+   "offset": 0.3,
+   "dur": 3.6,
+   "text": "AIR CRISP · 150°C · 15 MIN",
+   "icon": "~",
+   "pos": "tr"
+  },
+  {
+   "type": "chip",
+   "clip": "h8",
+   "offset": 0.2,
+   "dur": 2.8,
+   "text": "HASIL",
+   "icon": "★",
+   "pos": "tr",
+   "sfx_name": "sparkle"
+  },
+  {
+   "type": "chip",
+   "clip": "h10",
+   "offset": 0.5,
+   "dur": 3.4,
+   "text": "TIP: ROTI LEBIH",
+   "icon": "!",
+   "pos": "tr"
+  },
+  {
+   "type": "flash",
+   "clip": "m1",
+   "offset": -0.08,
+   "dur": 0.18
+  },
+  {
+   "type": "menu",
+   "clip": "m1",
+   "offset": 0.1,
+   "dur": 3.6,
+   "num": "04",
+   "title": "Pizza",
+   "by": "Mukmin · Mod Pizza"
+  },
+  {
+   "type": "chip",
+   "clip": "m4",
+   "offset": 2.4,
+   "dur": 3.0,
+   "text": "MOD PIZZA · 6 MINIT",
+   "icon": "!",
+   "pos": "tr"
+  },
+  {
+   "type": "chip",
+   "clip": "m8",
+   "offset": 6.5,
+   "dur": 3.4,
+   "text": "15+1 FUNGSI",
+   "icon": "+",
+   "pos": "tr"
+  },
+  {
+   "type": "chip",
+   "clip": "m10",
+   "offset": 0.2,
+   "dur": 2.8,
+   "text": "HASIL",
+   "icon": "★",
+   "pos": "tr",
+   "sfx_name": "sparkle"
+  },
+  {
+   "type": "flash",
+   "clip": "w1",
+   "offset": -0.08,
+   "dur": 0.18
+  },
+  {
+   "type": "outro",
+   "clip": "w5",
+   "offset": 0,
+   "dur": 6.8,
+   "kicker": "TASTY TUESDAY",
+   "big": "Live setiap [Selasa]",
+   "cta": "4 petang · Follow kami"
+  }
+ ],
+ "sfx": [
+  {
+   "name": "whoosh",
+   "clip": "i1",
+   "offset": -0.05,
+   "vol": 0.45
+  },
+  {
+   "name": "whoosh",
+   "clip": "k1",
+   "offset": -0.05,
+   "vol": 0.45
+  },
+  {
+   "name": "whoosh",
+   "clip": "n1",
+   "offset": -0.05,
+   "vol": 0.45
+  },
+  {
+   "name": "whoosh",
+   "clip": "h1",
+   "offset": -0.05,
+   "vol": 0.45
+  },
+  {
+   "name": "whoosh",
+   "clip": "m1",
+   "offset": -0.05,
+   "vol": 0.45
+  },
+  {
+   "name": "whoosh",
+   "clip": "w1",
+   "offset": -0.05,
+   "vol": 0.45
+  },
+  {
+   "name": "click-soft",
+   "clip": "h9",
+   "offset": 5.2,
+   "vol": 0.5
+  }
+ ],
+ "clips": [
+  {
+   "visual": 1229.0,
+   "flip": true,
+   "oy": 0.78,
+   "push": [
+    1.0,
+    1.08
+   ],
+   "snap": false,
+   "id": "hook1",
+   "in": 1224.3,
+   "out": 1227.63,
+   "text": ""
+  },
+  {
+   "flip": true,
+   "oy": 0.74,
+   "punch": [
+    [
+     2.3,
+     1.12
+    ]
+   ],
+   "id": "hook2",
+   "in": 1230.87,
+   "out": 1235.28,
+   "text": "Wah, tengok dia punya crust tu. Nampak crust dia?"
+  },
+  {
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.35,
+   "patch": [
+    740,
+    1190
+   ],
+   "snap": false,
+   "id": "i1",
+   "in": 0.18,
+   "out": 1.7,
+   "text": "Assalamualaikum semua."
+  },
+  {
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.35,
+   "patch": [
+    740,
+    1190
+   ],
+   "id": "i2",
+   "in": 3.6,
+   "out": 6.76,
+   "text": "Tema petang ni adalah menu petang. Menu petang."
+  },
+  {
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.35,
+   "patch": [
+    740,
+    1190
+   ],
+   "id": "i3",
+   "in": 7.83,
+   "out": 9.52,
+   "text": "Jadi kita akan buat"
+  },
+  {
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.35,
+   "patch": [
+    740,
+    1190
+   ],
+   "id": "i4.0",
+   "in": 10.62,
+   "out": 11.5,
+   "text": "kuih abok-abok,"
+  },
+  {
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.35,
+   "patch": [
+    740,
+    1190
+   ],
+   "id": "i4.1",
+   "in": 13.02,
+   "out": 13.71,
+   "text": "cekodok,"
+  },
+  {
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.35,
+   "patch": [
+    740,
+    1190
+   ],
+   "id": "i4.2",
+   "in": 14.9,
+   "out": 16.33,
+   "text": "roti gula dengan pizza."
+  },
+  {
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.35,
+   "patch": [
+    740,
+    1190
+   ],
+   "id": "i7",
+   "in": 44.8,
+   "out": 48.3,
+   "text": "So untuk menu yang pertama, kita akan start dengan Kak Salma."
+  },
+  {
+   "oy": 0.55,
+   "id": "k1",
+   "in": 68.82,
+   "out": 83.24,
+   "text": "Hai, Advisor Salma. Hari ini saya nak buat kuih abok-abok minum petang. Kuih abok-abok ni separuh saya dah siap bungkus. So, saya nak panaskan. Bila kita panaskan, kita kena pakai rack."
+  },
+  {
+   "oy": 0.55,
+   "id": "k2",
+   "in": 84.25,
+   "out": 93.0,
+   "text": "Okay, middle rack ni kita just letak air about 1.5 liter. Lepas tu kita tutupkan sahaja dan kita on."
+  },
+  {
+   "oy": 0.55,
+   "id": "k3",
+   "in": 95.19,
+   "out": 100.14,
+   "text": "Kita nak pakai steam function. Hari ini saya gunakan function steam."
+  },
+  {
+   "oy": 0.55,
+   "id": "k4",
+   "in": 109.85,
+   "out": 111.3,
+   "text": "P2, 10 minit."
+  },
+  {
+   "oy": 0.6,
+   "id": "k6",
+   "in": 126.07,
+   "out": 132.75,
+   "text": "Okey, cara nak buat ni. Daun pisang ni, you just gulungkan. Buatkan dia punya kelongsong. Boleh nampak eh."
+  },
+  {
+   "oy": 0.6,
+   "id": "k7.0",
+   "in": 138.58,
+   "out": 140.59,
+   "text": "Masukkan dalam 2 sudu kecil."
+  },
+  {
+   "oy": 0.6,
+   "id": "k7.1",
+   "in": 141.59,
+   "out": 143.34,
+   "text": "Lepas tu masukkan gula."
+  },
+  {
+   "oy": 0.6,
+   "id": "k8.0",
+   "in": 149.37,
+   "out": 150.64,
+   "text": "Masukkan lagi,"
+  },
+  {
+   "oy": 0.6,
+   "id": "k8.1",
+   "in": 151.42,
+   "out": 152.56,
+   "text": "satu sudu setengah."
+  },
+  {
+   "oy": 0.6,
+   "id": "k8.2",
+   "in": 153.88,
+   "out": 160.84,
+   "text": "Okey, banyak mana nak masukkan ni depend pada saiz kelongsong you, okay?"
+  },
+  {
+   "oy": 0.6,
+   "id": "k9",
+   "in": 199.98,
+   "out": 205.96,
+   "text": "Basket ni pun kita dapat masa kita beli Cooven ni. Dia inklusif sekali."
+  },
+  {
+   "oy": 0.6,
+   "id": "k9b",
+   "in": 206.94,
+   "out": 209.29,
+   "text": "And then, you masukkan aje."
+  },
+  {
+   "oy": 0.6,
+   "id": "k10",
+   "in": 211.99,
+   "out": 226.19,
+   "text": "Masukkan saja dalam itu, kita kukuskan dia selama 20 minit. Okey, 15 hingga 20 minit. Tengok saiz kelongsong itu. Itu saja, Mukmin. Kita tunggu lepas 20 minit, insyaAllah kuih kita akan masak."
+  },
+  {
+   "oy": 0.6,
+   "id": "k11.0",
+   "in": 235.29,
+   "out": 240.4,
+   "text": "Kita boleh buat banyak-banyak, kalau kita tak pakai basket tu."
+  },
+  {
+   "oy": 0.6,
+   "id": "k11.1",
+   "in": 241.18,
+   "out": 253.48,
+   "text": "Dia bergantung lah. Kalau tak pakai basket, kita boleh susun direct atas rack tu tadi. Banyak kita dapat. Yang ini pun lebih daripada 10, lebih daripada 15."
+  },
+  {
+   "oy": 0.6,
+   "id": "k12",
+   "in": 261.37,
+   "out": 267.69,
+   "text": "Okey itu saja, very senang, very simple. Resepi abok-abok, beli Cooven nanti kita akan dapat resepi ya."
+  },
+  {
+   "oy": 0.7,
+   "id": "k13",
+   "in": 1293.02,
+   "out": 1302.92,
+   "text": "Okay, saya punya abok-abok dah masak. Very nice eh. Abok-abok kita masak dalam 15 hingga 20 minit. 20 minit pun dah cukup."
+  },
+  {
+   "oy": 0.7,
+   "id": "k13c",
+   "in": 1310.52,
+   "out": 1316.84,
+   "text": "Tadi saya pakai P2. Makan masa dalam 18 minit, tak sampai 20 minit."
+  },
+  {
+   "oy": 0.7,
+   "id": "k14",
+   "in": 1319.38,
+   "out": 1338.17,
+   "text": "Okay, ni lah dia. Kuih abok-abok. Kuih abok-abok ni jarang kita jumpa kat kedai kan, Mukmin? Ya, betul. Jarang. Susah kita nak jumpa kat kedai. So kalau nak, kena buat sendiri. Unless bulan Ramadan. Tapi kan Mukmin, bila jumpa abok-abok bulan Ramadan, sedihnya."
+  },
+  {
+   "oy": 0.7,
+   "id": "k15.0",
+   "in": 1338.52,
+   "out": 1340.81,
+   "text": "Kadang-kadang orang buat keras tau, Mukmin."
+  },
+  {
+   "oy": 0.7,
+   "id": "k15.1",
+   "in": 1342.17,
+   "out": 1351.37,
+   "text": "Susah nak dapat yang sedap. And then this one, the colour pun not very bright, because I pakai gula Melaka. Pure gula Melaka."
+  },
+  {
+   "mode": "wide",
+   "oy": 0.12,
+   "id": "n1",
+   "in": 299.29,
+   "out": 308.75,
+   "text": "Hai, Assalamualaikum, saya Intan Safiya. So hari ni saya nak buat cekodok, cekodok pisang. Okey? Kita punya"
+  },
+  {
+   "mode": "wide",
+   "oy": 0.12,
+   "id": "n2",
+   "in": 309.59,
+   "out": 318.41,
+   "text": "adunan kita dah buat siap-siap dah. Okey. Dan sekarang kita tengah tunggu, kita nak preheat kita punya"
+  },
+  {
+   "mode": "wide",
+   "oy": 0.12,
+   "id": "n3",
+   "in": 318.94,
+   "out": 326.96,
+   "text": "Cooven. Kita nak guna function deep fry untuk masak cekodok ni. Kita guna function deep fry. So sekarang ni saya tengah"
+  },
+  {
+   "oy": 0.6,
+   "id": "n4",
+   "in": 327.96,
+   "out": 333.13,
+   "text": "preheat minyak. Kita kena letak minyak dulu dalam, nampak tak?"
+  },
+  {
+   "oy": 0.6,
+   "snap": false,
+   "id": "n5",
+   "in": 353.85,
+   "out": 370.45,
+   "text": "Sebab kita nak pastikan minyak kita memang betul-betul panas. So sekarang kalau guna function deep fry ni, suhu yang dia suggest dalam Cooven ni 180. So 180 tu adalah suhu yang paling sesuai untuk kita menggoreng dengan deep fry."
+  },
+  {
+   "oy": 0.6,
+   "id": "n6.0",
+   "in": 378.1,
+   "out": 385.31,
+   "text": "Nanti kalau kita masak, masakan tu dia cepat masak, dia rangup kat luar tapi still juicy kat dalam."
+  },
+  {
+   "oy": 0.6,
+   "id": "n6.1",
+   "in": 386.04,
+   "out": 388.2,
+   "text": "Tapi dia tak serap minyak. Haa."
+  },
+  {
+   "oy": 0.6,
+   "id": "n8.0",
+   "in": 426.42,
+   "out": 432.78,
+   "text": "Kita punya minyak dah pun panas. So kita tak payah nak agak-agak lah. Kalau dulu kan, tak tahu minyak panas ke tak."
+  },
+  {
+   "oy": 0.6,
+   "id": "n8.1",
+   "in": 433.4,
+   "out": 452.49,
+   "text": "Kita letaklah sikit masakan kita tu, eh dah panas ke belum? Oh, tak panas sangat lagi. Haa, try lagi. Tetapi sekarang kalau dengan Cooven, kita tak payah nak agak-agak. Eh, dah panas ke belum? Haa, sebab masa preheat tu, bila capai suhu dia, memang dah sesuai untuk masak. Kita dah tahu memang minyak tu dah panas dah."
+  },
+  {
+   "oy": 0.6,
+   "id": "n10",
+   "in": 453.43,
+   "out": 479.12,
+   "text": "So untuk deep fry, kita boleh guna dua cara. Satu, direct macam saya buat sekarang. Ataupun kita guna basket yang Kak Salma tunjuk tadi tu. Kalau kita guna basket tu, dia akan cukup untuk sebesar mana basket tu lah. Tapi kalau kita nak buat banyak, kita boleh direct dia kat dalam kita punya"
+  },
+  {
+   "oy": 0.6,
+   "id": "n11",
+   "in": 495.61,
+   "out": 517.39,
+   "text": "Okay, untuk siapa yang tak tahu lagi, the best thing pasal Cooven ni, dia set temperature yang static. Jadi kalau kita goreng apa-apa, macam goreng ikan, apa-apa yang kita nak deep fry, suhu dia tak akan berubah. Macam kita boleh tengok dekat dalam sekarang ni."
+  },
+  {
+   "oy": 0.6,
+   "id": "n12",
+   "in": 521.3,
+   "out": 526.38,
+   "text": "Jadi kita boleh tinggal, tak hangit. Goreng-gorengan kita tak cepat hangus."
+  },
+  {
+   "oy": 0.62,
+   "id": "n13.0",
+   "in": 834.97,
+   "out": 840.49,
+   "text": "Okey, kita tengok hasil tadi tu. Hasil cekodok kita."
+  },
+  {
+   "oy": 0.62,
+   "id": "n13.1",
+   "in": 841.21,
+   "out": 856.3,
+   "text": "So, cekodok pisang kita dah masak. Cantik kan? So kita boleh guna basket yang memang kita dapat sekali dalam package Cooven ni."
+  },
+  {
+   "oy": 0.62,
+   "id": "n14",
+   "in": 856.95,
+   "out": 869.04,
+   "text": "Kita tak perlu tambah duit untuk dapatkan basket ni. So guna basket ni, kalau kita buat deep fry, kita masukkan, kita boleh toskan minyak-minyak yang ada."
+  },
+  {
+   "oy": 0.55,
+   "id": "n17",
+   "in": 1255.03,
+   "out": 1264.97,
+   "text": "Okey, tengok. Dia punya tekstur dengan warna dia. Sama tak macam yang selalu kita beli dekat luar? Panas. Panas. Panas."
+  },
+  {
+   "oy": 0.55,
+   "snap": false,
+   "id": "n18.0",
+   "in": 1266.42,
+   "out": 1267.88,
+   "text": "Dia tak berminyak sangat eh."
+  },
+  {
+   "oy": 0.55,
+   "snap": false,
+   "id": "n18.1",
+   "in": 1268.63,
+   "out": 1284.2,
+   "text": "Of course lah, kalau kita guna deep fry memang ada minyak, tapi tak banyak sangat. Kalau kita beli kat luar, kadang-kadang kita boleh perah, kita lap dengan tisu, still banyak lagi minyak dia kan. So dengan deep fry kita, insyaAllah kita boleh kurangkan minyak tu."
+  },
+  {
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.25,
+   "id": "h1",
+   "in": 567.68,
+   "out": 574.16,
+   "text": "Untuk hari ini saya akan buat roti gula. Kudapan makan petang. Memang sedap."
+  },
+  {
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.25,
+   "id": "h2.0",
+   "in": 574.65,
+   "out": 578.73,
+   "text": "Alright, so kita akan gunakan function air crisp, okay?"
+  },
+  {
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.25,
+   "id": "h2.1",
+   "in": 579.35,
+   "out": 592.97,
+   "text": "Dan caranya, mula-mula kita preheat. Ni dah preheat dah. Kita dah potong roti dengan gula siap-siap. Lepas tu kita masukkan. Yang ini actually kita boleh buat 3 layer,"
+  },
+  {
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.25,
+   "id": "h2.2",
+   "in": 593.82,
+   "out": 595.95,
+   "text": "tapi hari ni saya cuma buat dua layer sahaja."
+  },
+  {
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.25,
+   "id": "h4.0",
+   "in": 597.18,
+   "out": 602.73,
+   "text": "Dan kita gunakan rack ni. Dua-dua rack ni memang akan datang sekali bila kita beli Cooven tau."
+  },
+  {
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.25,
+   "id": "h4.1",
+   "in": 603.48,
+   "out": 608.04,
+   "text": "Okay, so kita buatkan dua layer. Alright, so kita setkan masa."
+  },
+  {
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.3,
+   "id": "h5.0",
+   "in": 608.57,
+   "out": 612.78,
+   "text": "15 minit, air crisp ni 150 degree."
+  },
+  {
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.3,
+   "id": "h5.1",
+   "in": 613.46,
+   "out": 626.64,
+   "text": "Yang 15 minit ni kita tengok jugalah, kalau tak nak garing sangat, boleh buat 12-13 minit. Tapi saya suka garing, jadi saya akan tunggu sampai 15 minit. Bila makan, dia akan krup krup krup! Haa, macam tu lah."
+  },
+  {
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.3,
+   "id": "h5.2",
+   "in": 627.29,
+   "out": 631.69,
+   "text": "So sekarang ni dah masuk. Kita tunggu 15 minit, nanti baru siap."
+  },
+  {
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.3,
+   "id": "h6",
+   "in": 632.25,
+   "out": 664.4,
+   "text": "Yang best dengan Cooven ni, kalau kita buat bakar macam ni, apa yang bestnya? Okay, saya pernah cuba bakar pakai oven, dan saya pernah cuba pakai air fryer. Semua roti tu dia jadi macam keras kering. Tak sedap. Gula dia pun macam tak serap dekat butter tu. Tapi yang ini, you akan tengok hasil dia. Memang macam yang kita beli kat kedai mamak dulu kan? Petang-petang. Lepas tu kalau nak cicah kopi, alamak, memang power punya."
+  },
+  {
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.3,
+   "id": "h7.0",
+   "in": 669.59,
+   "out": 681.68,
+   "text": "Haa, okay. So untuk siapa yang nak tahu pasal Cooven, lid kita ni, kaca atas tu. Dia tak macam air fryer biasa, kita boleh tengok."
+  },
+  {
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.3,
+   "id": "h7.1",
+   "in": 682.42,
+   "out": 691.15,
+   "text": "Walaupun dia kaca, dia tahan panas. So kita boleh tengok tekstur dalam tu, macam mana hasil yang kita masak. Kita tak perlu lagi nak kena buka, tarik, semua."
+  },
+  {
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.25,
+   "id": "h8.0",
+   "in": 1391.74,
+   "out": 1393.07,
+   "text": "Alright, dah siap dah."
+  },
+  {
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.25,
+   "id": "h8.1",
+   "in": 1395.77,
+   "out": 1400.17,
+   "text": "Okey. Kalau nak tahu hasil dia nanti, dia akan jadi macam ni."
+  },
+  {
+   "flip": true,
+   "oy": 0.42,
+   "id": "h9.0",
+   "in": 1401.43,
+   "out": 1403.28,
+   "text": "Boleh ASMR?"
+  },
+  {
+   "flip": true,
+   "oy": 0.42,
+   "id": "h9.1",
+   "in": 1403.9,
+   "out": 1409.55,
+   "text": "Boleh. Bismillahirrahmanirrahim."
+  },
+  {
+   "flip": true,
+   "oy": 0.42,
+   "id": "h9.2",
+   "in": 1412.12,
+   "out": 1419.37,
+   "text": "Wow! Mmm, crunchy. Mmm, crunchy. Mmm, sedap. Mmm."
+  },
+  {
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.25,
+   "id": "h10",
+   "in": 1420.12,
+   "out": 1442.41,
+   "text": "Senang. Pada siapa yang ada roti lebih, boleh buat macam ni. Kadang-kadang bila roti tu dah nak expired, ataupun dah expired tapi still okay, I buat je. Sayang kan, daripada nak membazir. So kadang-kadang kat rumah ni, dah expired satu hari, buat je kan? Betul tak?"
+  },
+  {
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.25,
+   "snap": false,
+   "id": "h10b",
+   "in": 1486.36,
+   "out": 1507.36,
+   "text": "Yang ni tadi, I set 15 minit. Tapi sebab kita gunakan rack atas, yang kat atas tu dah nampak colour brown. So saya matikan masa minit yang ke-12. Maknanya yang ni total 12 minit tu je. Sebab kalau kita letak bahagian bawah, dia akan lambat sikit. Tapi yang bahagian bawah ni pun dah masak."
+  },
+  {
+   "flip": true,
+   "oy": 0.55,
+   "id": "m1.0",
+   "in": 703.86,
+   "out": 706.28,
+   "text": "Saya akan buat pizza sekejap lagi."
+  },
+  {
+   "flip": true,
+   "oy": 0.55,
+   "id": "m1.1",
+   "in": 706.97,
+   "out": 715.05,
+   "text": "Sekarang saya dah preheat. Okay, antara mode yang best saya suka dengan Cooven, kita ada mode pizza."
+  },
+  {
+   "flip": true,
+   "oy": 0.55,
+   "id": "m1.2",
+   "in": 715.83,
+   "out": 721.71,
+   "text": "Mode pizza yang memang specific. Pizza mode, memang untuk pizza sahaja."
+  },
+  {
+   "flip": true,
+   "oy": 0.55,
+   "id": "m3.0",
+   "in": 744.22,
+   "out": 747.4,
+   "text": "So, bila dah selesai preheat, dia akan suruh masukkan makanan."
+  },
+  {
+   "flip": true,
+   "oy": 0.55,
+   "id": "m3.1",
+   "in": 748.79,
+   "out": 751.08,
+   "text": "Jadi, saya masukkan terus saya punya pizza."
+  },
+  {
+   "flip": true,
+   "oy": 0.55,
+   "id": "m4.0",
+   "in": 751.86,
+   "out": 763.31,
+   "text": "Dan yang bestnya, dengan mode pizza ni kita hanya buat pizza selama 6 minit sahaja. Bayangkan, kita boleh bakar pizza selama 6 minit. Untuk anak-anak yang ada dekat rumah, ibu-ibu, ayah-ayah yang anak diorang nak"
+  },
+  {
+   "flip": true,
+   "oy": 0.55,
+   "id": "m4.1",
+   "in": 763.99,
+   "out": 770.6,
+   "text": "makan pizza. Jadi dengan dalam masa 6 minit saja, kita boleh bakar pizza dekat rumah."
+  },
+  {
+   "flip": true,
+   "oy": 0.55,
+   "id": "m4.2",
+   "in": 771.22,
+   "out": 774.57,
+   "text": "Tak perlu nak keluar pergi kedai. Kita boleh buat dekat rumah."
+  },
+  {
+   "flip": true,
+   "oy": 0.55,
+   "id": "m5.0",
+   "in": 777.59,
+   "out": 781.52,
+   "text": "Resepi pula, jangan risau. Resepi memang kita akan bagi."
+  },
+  {
+   "flip": true,
+   "oy": 0.55,
+   "id": "m5.1",
+   "in": 782.39,
+   "out": 793.07,
+   "text": "HQ Cooven pun sediakan resepi, dan support group kita pun sediakan resepi juga. Jadi tak perlu risau, kita tak perlu menunggu-nunggu"
+  },
+  {
+   "flip": true,
+   "oy": 0.55,
+   "id": "m5.2",
+   "in": 794.23,
+   "out": 800.14,
+   "text": "ataupun tercari-cari resepi yang ada di social media ataupun online."
+  },
+  {
+   "flip": true,
+   "oy": 0.5,
+   "id": "m7a.0",
+   "in": 970.04,
+   "out": 971.37,
+   "text": "2 minit tadi,"
+  },
+  {
+   "flip": true,
+   "oy": 0.5,
+   "id": "m7a.1",
+   "in": 972.15,
+   "out": 974.16,
+   "text": "kita boleh tambah cheese."
+  },
+  {
+   "flip": true,
+   "oy": 0.5,
+   "id": "m7b",
+   "in": 978.87,
+   "out": 981.58,
+   "text": "Jadi memang 6 minit sahaja. 6 minit bakar."
+  },
+  {
+   "flip": true,
+   "oy": 0.5,
+   "id": "m7c",
+   "in": 993.69,
+   "out": 996.49,
+   "text": "Kita buat sendiri, jadi kita boleh tambah cheese banyak mana yang kita nak."
+  },
+  {
+   "flip": true,
+   "oy": 0.5,
+   "id": "m8",
+   "in": 1040.92,
+   "out": 1052.27,
+   "text": "Kita tunjuk hari ini hanya empat mode sahaja tau. Empat mode sahaja yang ada pada Cooven. Dan Cooven ada 15 plus one function."
+  },
+  {
+   "flip": true,
+   "oy": 0.76,
+   "id": "m10.0",
+   "in": 1221.34,
+   "out": 1227.63,
+   "text": "Nak tengok Mukmin punya pizza? 6 minit je. Pizza 6 minit dah siap. Aduh."
+  },
+  {
+   "flip": true,
+   "oy": 0.76,
+   "id": "m10.1",
+   "in": 1230.87,
+   "out": 1235.28,
+   "text": "Wah, tengok dia punya crust tu. Nampak crust dia?"
+  },
+  {
+   "flip": true,
+   "oy": 0.76,
+   "id": "m10.2",
+   "in": 1235.9,
+   "out": 1237.2,
+   "text": "Oh!"
+  },
+  {
+   "flip": true,
+   "oy": 0.76,
+   "id": "m10.3",
+   "in": 1238.39,
+   "out": 1242.44,
+   "text": "Sekejapnya. Nak buat pizza jugalah lepas ni."
+  },
+  {
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.25,
+   "id": "w1",
+   "in": 1453.75,
+   "out": 1473.9,
+   "text": "So kita tengok resepi kita hari ni. Main masa minit-minit macam tu je. Tak sampai sejam pun. Paling lama Kak Salma? 20 minit. Kak Hani berapa minit? 15 minit. So kita suka guna Cooven sebab dia memudahkan kita, dan"
+  },
+  {
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.25,
+   "snap": false,
+   "id": "w2",
+   "in": 1474.42,
+   "out": 1483.6,
+   "text": "proses masak tu cepat. Kita pun tak suka duduk kat dapur lama-lama, lagi-lagi dapur panas. So saya kalau boleh nak masak cepat-cepat dan boleh makan."
+  },
+  {
+   "mode": "wide",
+   "flip": true,
+   "oy": 0.25,
+   "id": "w3",
+   "in": 1515.67,
+   "out": 1525.77,
+   "text": "Okay, so sekarang menu-menu kita semua hari ini dah siap. Ready untuk minum petang."
+  },
+  {
+   "flip": true,
+   "oy": 0.45,
+   "id": "w4",
+   "in": 1551.16,
+   "out": 1581.23,
+   "text": "Okay, follow semua chef yang ada ni. Intan Safiya, Chef Hani, dengan Chef Salma. Jadi insyaAllah minggu depan kita akan live lagi pada pukul 4 petang, untuk sesi ketiga Tasty Tuesday dengan tema yang berlainan. InsyaAllah. So hari ni kita akan tamatkan. Terima kasih. Dan follow, share. Jangan lupa, siapa yang nak tahu"
+  },
+  {
+   "flip": true,
+   "oy": 0.45,
+   "id": "w5",
+   "in": 1582.17,
+   "out": 1589.04,
+   "text": "pasal Cooven, nak tahu promo Cooven, boleh follow. Okay. Thank you semua."
+  }
+ ]
+}
