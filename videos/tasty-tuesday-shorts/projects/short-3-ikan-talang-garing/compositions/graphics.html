@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ms">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+
+      #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif;
+        --ink: #1E0F0A; --cream: #FFF4E2; --chili: #D7263D; --turmeric: #FFD23F; }
+      .ov { position: absolute; inset: 0; }
+      .hook-dim { position: absolute; inset: 0; background: rgba(30, 15, 10, 0.62); }
+      .hook-card { position: absolute; left: 70px; right: 70px; top: 470px; display: flex; flex-direction: column;
+        align-items: center; gap: 6px; }
+      .hook-kicker { font-weight: 900; font-size: 34px; letter-spacing: 0.32em; color: var(--ink);
+        background: var(--turmeric); padding: 10px 22px 8px 30px; border-radius: 6px; margin-bottom: 22px; }
+      .hook-line { font-family: "Archivo Black", sans-serif; line-height: 1.02; color: #FFFFFF; text-align: center;
+        text-transform: uppercase; display: block; }
+      .hook-line span { display: inline-block; paint-order: stroke fill; -webkit-text-stroke: 14px #1E0F0A;
+        text-shadow: 0 10px 0 #1E0F0A; }
+      .hook-line.hl span { color: var(--turmeric); }
+      .headline { position: absolute; left: 60px; right: 150px; top: 120px; font-family: "Archivo Black", sans-serif;
+        font-size: 50px; line-height: 1.05; color: #FFFFFF; text-transform: uppercase; paint-order: stroke fill;
+        -webkit-text-stroke: 9px #1E0F0A; }
+      .stamp { position: absolute; width: 330px; height: 330px; border-radius: 50%; background: var(--chili);
+        border: 10px dashed #FFF4E2; display: flex; flex-direction: column; align-items: center; justify-content: center;
+        box-shadow: 0 18px 0 rgba(0, 0, 0, 0.35); }
+      .stamp-big { font-family: "Archivo Black", sans-serif; font-size: 116px; line-height: 1; color: #FFFFFF; }
+      .stamp-small { font-weight: 900; font-size: 38px; letter-spacing: 0.12em; color: var(--turmeric); }
+      .chip { position: absolute; left: 60px; display: flex; align-items: stretch; border-radius: 14px; overflow: hidden;
+        box-shadow: 0 12px 0 rgba(0, 0, 0, 0.35); max-width: 860px; }
+      .chip-tag { background: var(--turmeric); color: var(--ink); font-weight: 900; font-size: 40px;
+        padding: 18px 22px; letter-spacing: 0.06em; }
+      .chip-text { background: #FFF4E2; color: var(--ink); font-weight: 900; font-size: 40px; padding: 18px 26px; }
+      .shout { position: absolute; left: 60px; right: 150px; text-align: center; font-family: "Archivo Black", sans-serif;
+        line-height: 1; text-transform: uppercase; }
+      .shout span { display: inline-block; color: var(--turmeric); paint-order: stroke fill; -webkit-text-stroke: 14px #1E0F0A;
+        text-shadow: 0 10px 0 #1E0F0A; }
+      .flash { position: absolute; inset: 0; background: #FFF4E2; }
+      .end-dim { position: absolute; inset: 0; background: rgba(30, 15, 10, 0.78); }
+      .end-box { position: absolute; left: 80px; right: 80px; top: 620px; display: flex; flex-direction: column;
+        align-items: center; gap: 26px; text-align: center; }
+      .end-kicker { font-weight: 900; font-size: 34px; letter-spacing: 0.32em; color: var(--ink); background: var(--turmeric);
+        padding: 10px 22px 8px 30px; border-radius: 6px; }
+      .end-title { font-family: "Archivo Black", sans-serif; font-size: 96px; line-height: 1.02; color: #FFFFFF;
+        text-transform: uppercase; }
+      .end-cta { font-weight: 900; font-size: 44px; color: var(--ink); background: #FFF4E2; padding: 20px 34px;
+        border-radius: 999px; }
+      #progress { position: absolute; left: 0; top: 0; width: 1080px; height: 10px; background: rgba(255, 244, 226, 0.18); }
+      #progress-fill { width: 1080px; height: 10px; background: var(--turmeric); transform-origin: 0 50%; }
+      </style>
+      <div id="root" data-composition-id="graphics" data-start="0" data-duration="50.700" data-width="1080" data-height="1920">
+        <section id="hook" class="clip ov" data-start="0" data-duration="2.4" data-track-index="5"><div class="hook-dim" id="hook-dim"></div><div class="hook-card" id="hook-card"><div class="hook-kicker" id="hook-kicker">TIPS MAK</div><div class="hook-line" style="font-size:118px"><span>Ikan goreng</span></div><div class="hook-line hl" style="font-size:170px"><span>garing</span></div><div class="hook-line" style="font-size:130px"><span>tak hancur</span></div></div></section>
+        <section id="headline" class="clip ov" data-start="2.4" data-duration="45.900" data-track-index="6"><div class="headline" id="headline-in">Ikan talang goreng garing, minyak sikit je</div></section>
+        <section id="ov0" class="clip ov" data-start="10.600" data-duration="2.2" data-track-index="7"><div class="stamp" id="ov0-in" style="left:680px;top:360px"><div class="stamp-big">RM10</div><div class="stamp-small">2 EKOR</div></div></section>
+        <section id="ov1" class="clip ov" data-start="12.000" data-duration="2.6" data-track-index="7"><div class="chip" id="ov1-in" style="top:330px"><span class="chip-tag">MODE</span><span class="chip-text">Deep fry</span></div></section>
+        <section id="ov2" class="clip ov" data-start="21.450" data-duration="4.6" data-track-index="7"><div class="chip" id="ov2-in" style="top:330px"><span class="chip-tag">TIP #1</span><span class="chip-text">Minyak sikit je</span></div></section>
+        <section id="ov3" class="clip ov" data-start="29.700" data-duration="0.35" data-track-index="8"><div class="flash" id="ov3-in"></div></section>
+        <section id="ov4" class="clip ov" data-start="37.400" data-duration="3.0" data-track-index="7"><div class="chip" id="ov4-in" style="top:330px"><span class="chip-tag">TIP #2</span><span class="chip-text">Sambal asingkan</span></div></section>
+        <section id="ov5" class="clip ov" data-start="43.650" data-duration="1.6" data-track-index="7"><div class="shout" id="ov5-in" style="top:380px;font-size:150px"><span>Crispy!</span></div></section>
+        <section id="endcard" class="clip ov" data-start="48.300" data-duration="2.4" data-track-index="9"><div class="end-dim" id="end-dim"></div><div class="end-box" id="end-box"><div class="end-title">Ikan talang goreng garing</div><div class="end-cta" id="end-cta">Follow untuk tips Mak seterusnya</div></div></section>
+        <div id="progress"><div id="progress-fill"></div></div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#hook-dim", {opacity:0}, {opacity:1, duration:0.25, ease:"power1.out"}, 0);
+        tl.fromTo("#hook-kicker", {y:-40, opacity:0}, {y:0, opacity:1, duration:0.35, ease:"power3.out"}, 0.05);
+        tl.fromTo("#hook-card .hook-line", {scale:1.9, opacity:0, rotation:-4}, {scale:1, opacity:1, rotation:0, duration:0.38, ease:"back.out(2.2)", stagger:0.16}, 0.12);
+        tl.to("#hook-card", {scale:0.92, opacity:0, duration:0.28, ease:"power2.in"}, 2.100);
+        tl.to("#hook-dim", {opacity:0, duration:0.3, ease:"power1.in"}, 2.100);
+        tl.fromTo("#headline-in", {y:-30, opacity:0}, {y:0, opacity:1, duration:0.4, ease:"power3.out"}, 2.500);
+        tl.fromTo("#ov0-in", {scale:2.6, rotation:-28, opacity:0}, {scale:1, rotation:-9, opacity:1, duration:0.42, ease:"back.out(2)"}, 10.600);
+        tl.fromTo("#ov0-in", {scale:1}, {scale:1.06, duration:0.5, ease:"sine.inOut", yoyo:true, repeat:1, immediateRender:false}, 11.050);
+        tl.to("#ov0-in", {scale:0.6, opacity:0, duration:0.2, ease:"power2.in"}, 12.580);
+        tl.fromTo("#ov1-in", {x:-700, opacity:0}, {x:0, opacity:1, duration:0.42, ease:"power4.out"}, 12.000);
+        tl.to("#ov1-in", {x:700, opacity:0, duration:0.3, ease:"power3.in"}, 14.300);
+        tl.fromTo("#ov2-in", {x:-700, opacity:0}, {x:0, opacity:1, duration:0.42, ease:"power4.out"}, 21.450);
+        tl.to("#ov2-in", {x:700, opacity:0, duration:0.3, ease:"power3.in"}, 25.750);
+        tl.fromTo("#ov3-in", {opacity:0.85}, {opacity:0, duration:0.33, ease:"power2.out", immediateRender:false}, 29.700);
+        tl.fromTo("#ov4-in", {x:-700, opacity:0}, {x:0, opacity:1, duration:0.42, ease:"power4.out"}, 37.400);
+        tl.to("#ov4-in", {x:700, opacity:0, duration:0.3, ease:"power3.in"}, 40.100);
+        tl.fromTo("#ov5-in", {scale:0.2, rotation:8, opacity:0}, {scale:1, rotation:-3, opacity:1, duration:0.34, ease:"back.out(2.6)"}, 43.650);
+        tl.fromTo("#ov5-in", {x:0}, {x:10, duration:0.05, ease:"none", yoyo:true, repeat:5, immediateRender:false}, 43.990);
+        tl.to("#ov5-in", {scale:1.3, opacity:0, duration:0.22, ease:"power2.in"}, 45.010);
+        tl.fromTo("#end-dim", {opacity:0}, {opacity:1, duration:0.35, ease:"power1.out"}, 48.300);
+        tl.fromTo("#end-box", {y:80, opacity:0, scale:0.9}, {y:0, opacity:1, scale:1, duration:0.5, ease:"back.out(1.6)"}, 48.400);
+        tl.fromTo("#end-cta", {scale:1}, {scale:1.07, duration:0.45, ease:"sine.inOut", yoyo:true, repeat:2, immediateRender:false}, 48.900);
+        tl.fromTo("#progress-fill", {scaleX:0}, {scaleX:1, duration:50.700, ease:"none"}, 0);
+        window.__timelines["graphics"] = tl;
+      </script>
+    </template>
+  </body>
+</html>
