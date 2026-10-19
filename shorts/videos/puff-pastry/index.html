@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="ms" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Puff Pastry Bite Mode Oven</title>
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      :root {
+        --mustard: #ffc83d;
+        --tomato: #e8452c;
+        --cream: #fff6e5;
+        --cocoa: #2b1a12;
+        --apron: #a8743f;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--cocoa); }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; font-family: Montserrat, Inter, sans-serif; }
+      .clip { position: absolute; }
+      video.src { position: absolute; object-fit: fill; }
+
+      /* light warm grade + vignette over the footage */
+      .grade { inset: 0; pointer-events: none;
+        background:
+          radial-gradient(ellipse at 50% 45%, rgba(0,0,0,0) 55%, rgba(20,8,0,0.45) 100%),
+          linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 14%, rgba(0,0,0,0) 62%, rgba(0,0,0,0.55) 100%);
+        mix-blend-mode: normal; }
+      .flash { inset: 0; background: #fff; }
+
+      /* hook */
+      .hook { inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 300px 60px 0; gap: 14px; }
+      .hook-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,8,0,0.8) 0%, rgba(20,8,0,0.55) 45%, rgba(20,8,0,0) 75%); }
+      .hook-kicker { position: relative; font-weight: 800; font-size: 34px; letter-spacing: 0.32em; color: var(--cocoa); background: var(--mustard); padding: 10px 26px; border-radius: 999px; margin-bottom: 18px; }
+      .hook-line { position: relative; font-weight: 900; font-size: 104px; line-height: 1.02; text-transform: uppercase; color: #fff; text-align: center; letter-spacing: -0.02em;
+        text-shadow: 0 6px 0 rgba(0,0,0,0.35), 0 0 40px rgba(0,0,0,0.5); }
+      .hook-line.accent { color: var(--mustard); }
+
+      /* persistent tag */
+      .tag { top: 96px; left: 0; display: flex; align-items: stretch; border-radius: 0 22px 22px 0; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
+      .tag-brand { background: var(--tomato); color: #fff; font-weight: 900; font-size: 26px; letter-spacing: 0.18em; padding: 16px 20px 16px 44px; }
+      .tag-menu { background: var(--cream); color: var(--cocoa); font-weight: 800; font-size: 30px; padding: 14px 26px; }
+
+      .progress { top: 0; left: 0; width: 1080px; height: 12px; background: rgba(0,0,0,0.25); }
+      .progress .bar { width: 100%; height: 100%; background: var(--mustard); transform-origin: 0 50%; }
+
+      /* captions */
+      .cap { left: 0; width: 1080px; top: 1290px; height: 260px; display: flex; align-items: center; justify-content: center; padding: 0 70px; }
+      .cap-inner { text-align: center; font-weight: 900; font-size: 64px; line-height: 1.12; color: #fff; text-transform: uppercase; letter-spacing: -0.01em;
+        -webkit-text-stroke: 3px rgba(0,0,0,0.85); paint-order: stroke fill; text-shadow: 0 6px 18px rgba(0,0,0,0.6); }
+      .cap .w { display: inline-block; margin: 0 0.1em; }
+      .cap .w.hl { color: var(--mustard); }
+
+      /* tip card */
+      .tip { left: 60px; top: 300px; width: 960px; background: var(--cream); border-radius: 34px; padding: 34px 40px 40px; box-shadow: 0 24px 60px rgba(0,0,0,0.45); border: 6px solid var(--mustard); }
+      .tip-label { display: inline-flex; align-items: center; gap: 10px; background: var(--tomato); color: #fff; font-weight: 900; font-size: 36px; letter-spacing: 0.08em; padding: 10px 24px 10px 16px; border-radius: 999px; margin-bottom: 18px; }
+      .tip-text { font-weight: 800; font-size: 54px; line-height: 1.15; color: var(--cocoa); }
+
+      /* stat chips */
+      .chips { left: 0; width: 1080px; top: 1060px; display: flex; flex-wrap: wrap; justify-content: center; gap: 22px; padding: 0 50px; }
+      .chip { background: var(--mustard); color: var(--cocoa); font-weight: 900; font-size: 52px; padding: 18px 34px; border-radius: 22px; box-shadow: 0 12px 30px rgba(0,0,0,0.4); border: 4px solid var(--cocoa); }
+
+      /* sticker */
+      .sticker { left: 0; width: 1080px; height: 420px; display: flex; align-items: center; justify-content: center; }
+      .sticker .rays { position: absolute; width: 640px; height: 640px; border-radius: 50%;
+        background: repeating-conic-gradient(rgba(255,200,61,0.55) 0deg 10deg, rgba(255,200,61,0) 10deg 20deg);
+        -webkit-mask: radial-gradient(circle, #000 30%, transparent 70%); mask: radial-gradient(circle, #000 30%, transparent 70%); }
+      .sticker-text { position: relative; font-weight: 900; font-size: 130px; color: var(--mustard); text-transform: uppercase; transform: rotate(-6deg);
+        -webkit-text-stroke: 8px var(--cocoa); paint-order: stroke fill; text-shadow: 0 12px 0 var(--tomato); }
+
+      /* outro */
+      .outro { inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; padding: 0 70px; }
+      .outro-shade { position: absolute; inset: 0; background: rgba(43,26,18,0.82); }
+      .outro-kicker { position: relative; font-weight: 800; font-size: 34px; letter-spacing: 0.32em; color: var(--cocoa); background: var(--mustard); padding: 10px 26px; border-radius: 999px; }
+      .outro-title { position: relative; font-weight: 900; font-size: 96px; line-height: 1.04; text-align: center; text-transform: uppercase; color: #fff; }
+      .outro-cta { position: relative; font-weight: 800; font-size: 44px; text-align: center; color: var(--cocoa); background: var(--cream); padding: 20px 36px; border-radius: 26px; border: 5px solid var(--tomato); }
+
+    </style>
+  </head>
+  <body>
+    <!-- generated by ../../build.mjs from specs/puff-pastry.mjs — edit the spec, not this file -->
+    <div id="root" data-composition-id="puff-pastry" data-start="0" data-duration="55.67" data-width="1080" data-height="1920">
+      <video id="v0" class="clip src" src="assets/clip.mp4" data-start="0" data-duration="3.85" data-media-start="486.9" data-has-audio="true" data-fade-in="0.03" data-fade-out="0.03" data-volume="1" playsinline style="left:-7.2px;top:-768px;width:1440px;height:2880px"></video>
+      <video id="v1" class="clip src" src="assets/clip.mp4" data-start="3.85" data-duration="2.6" data-media-start="5.45" data-has-audio="true" data-fade-in="0.03" data-fade-out="0.03" data-volume="1" playsinline style="left:-7.2px;top:-249.6px;width:1440px;height:2880px"></video>
+      <video id="v2" class="clip src" src="assets/clip.mp4" data-start="6.45" data-duration="5.23" data-media-start="19.84" data-has-audio="true" data-fade-in="0.03" data-fade-out="0.03" data-volume="1" playsinline style="left:-68px;top:-640px;width:1600px;height:3200px"></video>
+      <video id="v3" class="clip src" src="assets/clip.mp4" data-start="11.68" data-duration="6.62" data-media-start="120.58" data-has-audio="true" data-fade-in="0.03" data-fade-out="0.03" data-volume="1" playsinline style="left:-7.2px;top:-480px;width:1440px;height:2880px"></video>
+      <video id="v4" class="clip src" src="assets/clip.mp4" data-start="18.3" data-duration="2.52" data-media-start="173.92" data-has-audio="true" data-fade-in="0.03" data-fade-out="0.03" data-volume="1" playsinline style="left:-68px;top:-640px;width:1600px;height:3200px"></video>
+      <video id="v5" class="clip src" src="assets/clip.mp4" data-start="20.82" data-duration="4.72" data-media-start="40.68" data-has-audio="true" data-fade-in="0.03" data-fade-out="0.03" data-volume="1" playsinline style="left:-7.2px;top:-336px;width:1440px;height:2880px"></video>
+      <video id="v6" class="clip src" src="assets/clip.mp4" data-start="25.54" data-duration="4.01" data-media-start="55.93" data-has-audio="true" data-fade-in="0.03" data-fade-out="0.03" data-volume="1" playsinline style="left:-68px;top:-480px;width:1600px;height:3200px"></video>
+      <video id="v7" class="clip src" src="assets/clip.mp4" data-start="29.55" data-duration="3.6" data-media-start="273.1" data-has-audio="true" data-fade-in="0.03" data-fade-out="0.03" data-volume="1" playsinline style="left:-7.2px;top:-336px;width:1440px;height:2880px"></video>
+      <video id="v8" class="clip src" src="assets/clip.mp4" data-start="33.15" data-duration="1.82" data-media-start="278.6" data-has-audio="true" data-fade-in="0.03" data-fade-out="0.03" data-volume="1" playsinline style="left:-68px;top:-480px;width:1600px;height:3200px"></video>
+      <video id="v9" class="clip src" src="assets/clip.mp4" data-start="34.97" data-duration="4.16" data-media-start="340.54" data-has-audio="true" data-fade-in="0.03" data-fade-out="0.03" data-volume="1" playsinline style="left:-7.2px;top:-624px;width:1440px;height:2880px"></video>
+      <video id="v10" class="clip src" src="assets/clip.mp4" data-start="39.13" data-duration="4.11" data-media-start="396.71" data-has-audio="true" data-fade-in="0.03" data-fade-out="0.03" data-volume="1" playsinline style="left:-7.2px;top:-480px;width:1440px;height:2880px"></video>
+      <video id="v11" class="clip src" src="assets/clip.mp4" data-start="43.24" data-duration="7.59" data-media-start="436.35" data-has-audio="true" data-fade-in="0.03" data-fade-out="0.03" data-volume="1" playsinline style="left:-68px;top:-960px;width:1600px;height:3200px"></video>
+      <video id="v12" class="clip src" src="assets/clip.mp4" data-start="50.83" data-duration="4.84" data-media-start="497.76" data-has-audio="true" data-fade-in="0.03" data-fade-out="0.03" data-volume="1" playsinline style="left:-7.2px;top:-768px;width:1440px;height:2880px"></video>
+      <div id="grade" class="clip grade" data-start="0" data-duration="55.67"></div>
+      <div id="flash1" class="clip flash" data-start="3.85" data-duration="0.3"></div>
+      <div id="flash3" class="clip flash" data-start="11.68" data-duration="0.3"></div>
+      <div id="flash5" class="clip flash" data-start="20.82" data-duration="0.3"></div>
+      <div id="flash10" class="clip flash" data-start="39.13" data-duration="0.3"></div>
+      <div id="hook" class="clip hook" data-start="0" data-duration="2.8">
+  <div class="hook-shade"></div>
+  <div class="hook-kicker">TASTY TUESDAY</div>
+  <div class="hook-line" id="hl0">Snek rangup</div>
+  <div class="hook-line accent" id="hl1">10 minit je!</div>
+</div>
+      <div id="tag" class="clip tag" data-start="2.8" data-duration="50.17">
+  <span class="tag-brand">TASTY TUESDAY</span><span class="tag-menu">Puff Pastry Bite</span>
+</div>
+      <div id="progress" class="clip progress" data-start="0" data-duration="55.67"><div class="bar"></div></div>
+      <div id="cap0" class="clip cap" data-start="0.04" data-duration="0.56"><div class="cap-inner"><span class="w">Wow</span></div></div>
+      <div id="cap1" class="clip cap" data-start="0.6" data-duration="1.13"><div class="cap-inner"><span class="w hl">crunchy</span></div></div>
+      <div id="cap2" class="clip cap" data-start="1.73" data-duration="1.47"><div class="cap-inner"><span class="w hl">Crispy</span></div></div>
+      <div id="cap3" class="clip cap" data-start="3.2" data-duration="0.68"><div class="cap-inner"><span class="w">Kan</span></div></div>
+      <div id="cap4" class="clip cap" data-start="3.88" data-duration="0.84"><div class="cap-inner"><span class="w">Hari</span> <span class="w">ini</span> <span class="w">kita</span></div></div>
+      <div id="cap5" class="clip cap" data-start="4.72" data-duration="0.82"><div class="cap-inner"><span class="w">nak</span> <span class="w">buat</span> <span class="w hl">puff</span></div></div>
+      <div id="cap6" class="clip cap" data-start="5.54" data-duration="0.91"><div class="cap-inner"><span class="w hl">pastry</span> <span class="w hl">bite</span></div></div>
+      <div id="cap7" class="clip cap" data-start="6.45" data-duration="0.73"><div class="cap-inner"><span class="w">kita</span> <span class="w">tak</span> <span class="w">payah</span></div></div>
+      <div id="cap8" class="clip cap" data-start="7.18" data-duration="1.26"><div class="cap-inner"><span class="w">susah-susah</span> <span class="w">nak</span> <span class="w">buat</span></div></div>
+      <div id="cap9" class="clip cap" data-start="8.44" data-duration="0.63"><div class="cap-inner"><span class="w">sendiri</span></div></div>
+      <div id="cap10" class="clip cap" data-start="9.07" data-duration="0.69"><div class="cap-inner"><span class="w">kita</span> <span class="w hl">beli</span> <span class="w">je</span></div></div>
+      <div id="cap11" class="clip cap" data-start="9.76" data-duration="0.99"><div class="cap-inner"><span class="w hl">puff</span> <span class="w hl">pastry</span> <span class="w">yang</span></div></div>
+      <div id="cap12" class="clip cap" data-start="10.75" data-duration="0.93"><div class="cap-inner"><span class="w">dah</span> <span class="w hl">siap</span> <span class="w">ni</span></div></div>
+      <div id="cap13" class="clip cap" data-start="11.68" data-duration="1.66"><div class="cap-inner"><span class="w">Sebab</span> <span class="w">dia</span> <span class="w">kata</span></div></div>
+      <div id="cap14" class="clip cap" data-start="13.34" data-duration="1.05"><div class="cap-inner"><span class="w hl">puff</span> <span class="w hl">pastry</span> <span class="w hl">bite</span></div></div>
+      <div id="cap15" class="clip cap" data-start="14.39" data-duration="0.72"><div class="cap-inner"><span class="w">kan</span></div></div>
+      <div id="cap16" class="clip cap" data-start="15.48" data-duration="1.47"><div class="cap-inner"><span class="w">So</span> <span class="w">kita</span> <span class="w">nak</span> <span class="w">senang</span> <span class="w">lah</span></div></div>
+      <div id="cap17" class="clip cap" data-start="17.02" data-duration="0.69"><div class="cap-inner"><span class="w">Sekali</span> <span class="w">masuk</span> <span class="w hl">mulut</span></div></div>
+      <div id="cap18" class="clip cap" data-start="17.71" data-duration="0.59"><div class="cap-inner"><span class="w">habis</span></div></div>
+      <div id="cap19" class="clip cap" data-start="18.3" data-duration="0.99"><div class="cap-inner"><span class="w">Nanti</span> <span class="w">dia</span> <span class="w hl">kembang</span></div></div>
+      <div id="cap20" class="clip cap" data-start="19.52" data-duration="0.76"><div class="cap-inner"><span class="w hl">puff</span> <span class="w hl">pastry</span> <span class="w">boleh</span></div></div>
+      <div id="cap21" class="clip cap" data-start="20.28" data-duration="0.54"><div class="cap-inner"><span class="w">je</span> <span class="w hl">rapat-rapat</span></div></div>
+      <div id="cap22" class="clip cap" data-start="20.82" data-duration="1.26"><div class="cap-inner"><span class="w">Dan</span> <span class="w">kita</span> <span class="w">akan</span></div></div>
+      <div id="cap23" class="clip cap" data-start="22.08" data-duration="1.01"><div class="cap-inner"><span class="w">set</span> <span class="w">kita</span> <span class="w">punya</span></div></div>
+      <div id="cap24" class="clip cap" data-start="23.09" data-duration="2.45"><div class="cap-inner"><span class="w">suhu</span> <span class="w">kepada</span> <span class="w hl">180°C</span></div></div>
+      <div id="cap25" class="clip cap" data-start="25.54" data-duration="1.41"><div class="cap-inner"><span class="w">Dan</span> <span class="w">kita</span> <span class="w">nak</span></div></div>
+      <div id="cap26" class="clip cap" data-start="26.95" data-duration="1.96"><div class="cap-inner"><span class="w">buat</span> <span class="w hl">10</span> <span class="w hl">minit</span></div></div>
+      <div id="cap27" class="clip cap" data-start="28.91" data-duration="0.72"><div class="cap-inner"><span class="w">je</span></div></div>
+      <div id="cap28" class="clip cap" data-start="29.63" data-duration="0.88"><div class="cap-inner"><span class="w">25%</span></div></div>
+      <div id="cap29" class="clip cap" data-start="30.51" data-duration="0.7"><div class="cap-inner"><span class="w">kat</span> <span class="w">sini</span></div></div>
+      <div id="cap30" class="clip cap" data-start="31.21" data-duration="0.74"><div class="cap-inner"><span class="w">50%</span></div></div>
+      <div id="cap31" class="clip cap" data-start="31.95" data-duration="1.22"><div class="cap-inner"><span class="w">ni</span> <span class="w">75%</span></div></div>
+      <div id="cap32" class="clip cap" data-start="33.17" data-duration="0.56"><div class="cap-inner"><span class="w">dah</span> <span class="w">dekat</span> <span class="w">nak</span></div></div>
+      <div id="cap33" class="clip cap" data-start="33.73" data-duration="1.24"><div class="cap-inner"><span class="w hl">100%</span> <span class="w">ready</span></div></div>
+      <div id="cap34" class="clip cap" data-start="34.97" data-duration="1.23"><div class="cap-inner"><span class="w">Tapi</span> <span class="w">kalau</span> <span class="w">oven</span></div></div>
+      <div id="cap35" class="clip cap" data-start="36.21" data-duration="0.7"><div class="cap-inner"><span class="w">kena</span> <span class="w hl">buka</span></div></div>
+      <div id="cap36" class="clip cap" data-start="36.91" data-duration="0.52"><div class="cap-inner"><span class="w">Sebab</span> <span class="w">kalau</span> <span class="w">tak</span></div></div>
+      <div id="cap37" class="clip cap" data-start="37.43" data-duration="0.38"><div class="cap-inner"><span class="w hl">buka</span></div></div>
+      <div id="cap38" class="clip cap" data-start="37.81" data-duration="0.52"><div class="cap-inner"><span class="w">dia</span> <span class="w">memang</span> <span class="w">tak</span></div></div>
+      <div id="cap39" class="clip cap" data-start="38.33" data-duration="0.8"><div class="cap-inner"><span class="w">akan</span> <span class="w hl">teruskan</span></div></div>
+      <div id="cap40" class="clip cap" data-start="39.13" data-duration="1.43"><div class="cap-inner"><span class="w">kita</span> <span class="w">punya</span> <span class="w hl">puff</span></div></div>
+      <div id="cap41" class="clip cap" data-start="40.56" data-duration="0.52"><div class="cap-inner"><span class="w hl">pastry</span> <span class="w">tadi</span> <span class="w">dah</span></div></div>
+      <div id="cap42" class="clip cap" data-start="41.08" data-duration="0.66"><div class="cap-inner"><span class="w">masak</span></div></div>
+      <div id="cap43" class="clip cap" data-start="41.74" data-duration="1.22"><div class="cap-inner"><span class="w">So</span> <span class="w">kita</span> <span class="w">just</span> <span class="w">angkat</span></div></div>
+      <div id="cap44" class="clip cap" data-start="42.96" data-duration="0.28"><div class="cap-inner"><span class="w">dia</span></div></div>
+      <div id="cap45" class="clip cap" data-start="43.24" data-duration="1.26"><div class="cap-inner"><span class="w">coklat</span> <span class="w">ke</span></div></div>
+      <div id="cap46" class="clip cap" data-start="44.5" data-duration="1.98"><div class="cap-inner"><span class="w">nak</span> <span class="w">pipingkan</span> <span class="w">topping</span></div></div>
+      <div id="cap47" class="clip cap" data-start="46.48" data-duration="0.51"><div class="cap-inner"><span class="w">dia</span></div></div>
+      <div id="cap48" class="clip cap" data-start="46.99" data-duration="0.7"><div class="cap-inner"><span class="w">coklat</span> <span class="w">ke</span></div></div>
+      <div id="cap49" class="clip cap" data-start="47.69" data-duration="0.94"><div class="cap-inner"><span class="w">peanut</span> <span class="w">butter</span> <span class="w">ke</span></div></div>
+      <div id="cap50" class="clip cap" data-start="48.63" data-duration="0.95"><div class="cap-inner"><span class="w">kita</span> <span class="w">kena</span> <span class="w">tunggu</span></div></div>
+      <div id="cap51" class="clip cap" data-start="49.58" data-duration="0.75"><div class="cap-inner"><span class="w">dia</span> <span class="w hl">sejuk</span> <span class="w">dulu</span></div></div>
+      <div id="cap52" class="clip cap" data-start="50.33" data-duration="0.5"><div class="cap-inner"><span class="w">tau</span></div></div>
+      <div id="cap53" class="clip cap" data-start="50.83" data-duration="0.93"><div class="cap-inner"><span class="w hl">Sedapnya</span> <span class="w">buat</span> <span class="w">minum</span></div></div>
+      <div id="cap54" class="clip cap" data-start="51.76" data-duration="1.12"><div class="cap-inner"><span class="w">petang</span></div></div>
+      <div id="card0" class="clip sticker" data-start="1.1" data-duration="1.9" style="top:330px">
+  <div class="rays"></div><div class="sticker-text">Crunchy!</div>
+</div>
+      <div id="card1" class="clip chips" data-start="9.61" data-duration="2">
+  <div class="chip">GUNA PUFF PASTRY SEJUK BEKU</div>
+</div>
+      <div id="card2" class="clip tip" data-start="18.38" data-duration="2.4">
+  <div class="tip-label"><svg viewBox="0 0 24 24" width="34" height="34"><path fill="currentColor" d="M12 2a7 7 0 0 0-4 12.7V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3A7 7 0 0 0 12 2zm-2 18h4v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"/></svg>TIP</div>
+  <div class="tip-text">Susun rapat pun boleh. Senang dipisahkan lepas bakar</div>
+</div>
+      <div id="card3" class="clip chips" data-start="21.14" data-duration="8.2" style="top:330px">
+  <div class="chip">MODE: OVEN</div>
+  <div class="chip">180°C</div>
+  <div class="chip">10 MIN</div>
+</div>
+      <div id="card4" class="clip chips" data-start="29.55" data-duration="5.3">
+  <div class="chip">25%</div>
+  <div class="chip">50%</div>
+  <div class="chip">75%</div>
+  <div class="chip">100%</div>
+</div>
+      <div id="card5" class="clip tip" data-start="35.03" data-duration="4.1">
+  <div class="tip-label"><svg viewBox="0 0 24 24" width="34" height="34"><path fill="currentColor" d="M12 2a7 7 0 0 0-4 12.7V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3A7 7 0 0 0 12 2zm-2 18h4v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"/></svg>PENTING</div>
+  <div class="tip-text">Mode oven: bila keluar ADD FOOD, buka penutup. Kalau tak, dia tak mula masak!</div>
+</div>
+      <div id="card6" class="clip tip" data-start="43.89" data-duration="6.9">
+  <div class="tip-label"><svg viewBox="0 0 24 24" width="34" height="34"><path fill="currentColor" d="M12 2a7 7 0 0 0-4 12.7V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3A7 7 0 0 0 12 2zm-2 18h4v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"/></svg>TIP</div>
+  <div class="tip-text">Nak piping coklat atau peanut butter? Tunggu sejuk dulu</div>
+</div>
+      <div id="outro" class="clip outro" data-start="52.97" data-duration="2.7">
+  <div class="outro-shade"></div>
+  <div class="outro-kicker">TASTY TUESDAY</div>
+  <div class="outro-title">Snek minum petang!</div>
+  <div class="outro-cta">Save &amp; cuba hujung minggu ni</div>
+</div>
+      <audio id="sfx-0" src="assets/sfx/whoosh-short.mp3" data-start="3.7" data-duration="0.6" data-volume="0.35"></audio>
+      <audio id="sfx-1" src="assets/sfx/whoosh-short.mp3" data-start="11.53" data-duration="0.6" data-volume="0.35"></audio>
+      <audio id="sfx-2" src="assets/sfx/whoosh-short.mp3" data-start="20.67" data-duration="0.6" data-volume="0.35"></audio>
+      <audio id="sfx-3" src="assets/sfx/whoosh-short.mp3" data-start="38.98" data-duration="0.6" data-volume="0.35"></audio>
+      <audio id="sfx-4" src="assets/sfx/whoosh.mp3" data-start="0" data-duration="0.9" data-volume="0.32"></audio>
+      <audio id="sfx-5" src="assets/sfx/impact-bass-1.mp3" data-start="0.6" data-duration="2.12" data-volume="0.45"></audio>
+      <audio id="sfx-6" src="assets/sfx/sparkle.mp3" data-start="1.1" data-duration="1.8" data-volume="0.35"></audio>
+      <audio id="sfx-7" src="assets/sfx/click-soft.mp3" data-start="9.61" data-duration="0.37" data-volume="0.45"></audio>
+      <audio id="sfx-8" src="assets/sfx/whoosh-short.mp3" data-start="18.38" data-duration="0.6" data-volume="0.35"></audio>
+      <audio id="sfx-9" src="assets/sfx/pop.mp3" data-start="18.68" data-duration="0.72" data-volume="0.4"></audio>
+      <audio id="sfx-10" src="assets/sfx/click-soft.mp3" data-start="21.14" data-duration="0.37" data-volume="0.45"></audio>
+      <audio id="sfx-11" src="assets/sfx/click-soft.mp3" data-start="24.17" data-duration="0.37" data-volume="0.45"></audio>
+      <audio id="sfx-12" src="assets/sfx/click-soft.mp3" data-start="27.39" data-duration="0.37" data-volume="0.45"></audio>
+      <audio id="sfx-13" src="assets/sfx/click-soft.mp3" data-start="29.63" data-duration="0.37" data-volume="0.45"></audio>
+      <audio id="sfx-14" src="assets/sfx/click-soft.mp3" data-start="31.21" data-duration="0.37" data-volume="0.45"></audio>
+      <audio id="sfx-15" src="assets/sfx/click-soft.mp3" data-start="32.16" data-duration="0.37" data-volume="0.45"></audio>
+      <audio id="sfx-16" src="assets/sfx/click-soft.mp3" data-start="33.73" data-duration="0.37" data-volume="0.45"></audio>
+      <audio id="sfx-17" src="assets/sfx/whoosh-short.mp3" data-start="35.03" data-duration="0.6" data-volume="0.35"></audio>
+      <audio id="sfx-18" src="assets/sfx/pop.mp3" data-start="35.33" data-duration="0.72" data-volume="0.4"></audio>
+      <audio id="sfx-19" src="assets/sfx/whoosh-short.mp3" data-start="43.89" data-duration="0.6" data-volume="0.35"></audio>
+      <audio id="sfx-20" src="assets/sfx/pop.mp3" data-start="44.19" data-duration="0.72" data-volume="0.4"></audio>
+      <audio id="sfx-21" src="assets/sfx/chime.mp3" data-start="53.22" data-duration="2.45" data-volume="0.35"></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#v0", { scale: 1, transformOrigin: "547.2px 1728px" }, { scale: 1.04, duration: 3.85, ease: "none" }, 0);
+      tl.fromTo("#v1", { scale: 1, transformOrigin: "547.2px 1209.6px" }, { scale: 1.04, duration: 2.6, ease: "none" }, 3.85);
+      tl.fromTo("#flash1", { opacity: 0.85 }, { opacity: 0, duration: 0.28, ease: "power2.out" }, 3.85);
+      tl.fromTo("#v2", { scale: 1, transformOrigin: "608px 1600px" }, { scale: 1.04, duration: 5.23, ease: "none" }, 6.45);
+      tl.fromTo("#v3", { scale: 1, transformOrigin: "547.2px 1440px" }, { scale: 1.04, duration: 6.62, ease: "none" }, 11.68);
+      tl.fromTo("#flash3", { opacity: 0.85 }, { opacity: 0, duration: 0.28, ease: "power2.out" }, 11.68);
+      tl.fromTo("#v4", { scale: 1, transformOrigin: "608px 1600px" }, { scale: 1.04, duration: 2.52, ease: "none" }, 18.3);
+      tl.fromTo("#v5", { scale: 1, transformOrigin: "547.2px 1296px" }, { scale: 1.04, duration: 4.72, ease: "none" }, 20.82);
+      tl.fromTo("#flash5", { opacity: 0.85 }, { opacity: 0, duration: 0.28, ease: "power2.out" }, 20.82);
+      tl.fromTo("#v6", { scale: 1, transformOrigin: "608px 1440px" }, { scale: 1.04, duration: 4.01, ease: "none" }, 25.54);
+      tl.fromTo("#v7", { scale: 1, transformOrigin: "547.2px 1296px" }, { scale: 1.04, duration: 3.6, ease: "none" }, 29.55);
+      tl.fromTo("#v8", { scale: 1, transformOrigin: "608px 1440px" }, { scale: 1.04, duration: 1.82, ease: "none" }, 33.15);
+      tl.fromTo("#v9", { scale: 1, transformOrigin: "547.2px 1584px" }, { scale: 1.04, duration: 4.16, ease: "none" }, 34.97);
+      tl.fromTo("#v10", { scale: 1, transformOrigin: "547.2px 1440px" }, { scale: 1.04, duration: 4.11, ease: "none" }, 39.13);
+      tl.fromTo("#flash10", { opacity: 0.85 }, { opacity: 0, duration: 0.28, ease: "power2.out" }, 39.13);
+      tl.fromTo("#v11", { scale: 1, transformOrigin: "608px 1920px" }, { scale: 1.04, duration: 7.59, ease: "none" }, 43.24);
+      tl.fromTo("#v12", { scale: 1, transformOrigin: "547.2px 1728px" }, { scale: 1.04, duration: 4.84, ease: "none" }, 50.83);
+      tl.from("#hook .hook-shade", { opacity: 0, duration: 0.25 }, 0);
+      tl.from("#hook .hook-kicker", { y: -40, opacity: 0, duration: 0.35, ease: "back.out(2)" }, 0.05);
+      tl.from("#hl0", { scale: 2.2, opacity: 0, rotation: -4, duration: 0.32, ease: "power4.out" }, 0.12);
+      tl.from("#hl1", { scale: 2.2, opacity: 0, rotation: 4, duration: 0.32, ease: "power4.out" }, 0.4);
+      tl.to("#hook", { x: 10, duration: 0.05, yoyo: true, repeat: 3, ease: "none" }, 0.7);
+      tl.to("#hook", { opacity: 0, y: -60, duration: 0.3, ease: "power2.in" }, 2.5);
+      tl.from("#tag", { x: -420, duration: 0.45, ease: "back.out(1.6)" }, 2.8);
+      tl.fromTo("#progress .bar", { scaleX: 0 }, { scaleX: 1, duration: 55.67, ease: "none" }, 0);
+      tl.from("#cap0 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 0.04);
+      tl.fromTo("#cap0 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 0.04);
+      tl.set("#cap0 .w:nth-child(1)", { opacity: 1 }, 0.24);
+      tl.from("#cap1 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 0.6);
+      tl.fromTo("#cap1 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 0.6);
+      tl.set("#cap1 .w:nth-child(1)", { opacity: 1 }, 0.8);
+      tl.from("#cap2 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 1.73);
+      tl.fromTo("#cap2 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 1.73);
+      tl.set("#cap2 .w:nth-child(1)", { opacity: 1 }, 1.93);
+      tl.from("#cap3 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 3.2);
+      tl.fromTo("#cap3 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 3.2);
+      tl.set("#cap3 .w:nth-child(1)", { opacity: 1 }, 3.4);
+      tl.from("#cap4 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 3.88);
+      tl.fromTo("#cap4 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 3.88);
+      tl.set("#cap4 .w:nth-child(1)", { opacity: 1 }, 4.08);
+      tl.fromTo("#cap4 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 4.24);
+      tl.set("#cap4 .w:nth-child(2)", { opacity: 1 }, 4.44);
+      tl.fromTo("#cap4 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 4.4);
+      tl.set("#cap4 .w:nth-child(3)", { opacity: 1 }, 4.6);
+      tl.from("#cap5 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 4.72);
+      tl.fromTo("#cap5 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 4.72);
+      tl.set("#cap5 .w:nth-child(1)", { opacity: 1 }, 4.92);
+      tl.fromTo("#cap5 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 4.92);
+      tl.set("#cap5 .w:nth-child(2)", { opacity: 1 }, 5.12);
+      tl.fromTo("#cap5 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 5.24);
+      tl.set("#cap5 .w:nth-child(3)", { opacity: 1 }, 5.44);
+      tl.from("#cap6 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 5.54);
+      tl.fromTo("#cap6 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 5.54);
+      tl.set("#cap6 .w:nth-child(1)", { opacity: 1 }, 5.74);
+      tl.fromTo("#cap6 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 6);
+      tl.set("#cap6 .w:nth-child(2)", { opacity: 1 }, 6.2);
+      tl.from("#cap7 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 6.45);
+      tl.fromTo("#cap7 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 6.45);
+      tl.set("#cap7 .w:nth-child(1)", { opacity: 1 }, 6.65);
+      tl.fromTo("#cap7 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 6.67);
+      tl.set("#cap7 .w:nth-child(2)", { opacity: 1 }, 6.87);
+      tl.fromTo("#cap7 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 6.83);
+      tl.set("#cap7 .w:nth-child(3)", { opacity: 1 }, 7.03);
+      tl.from("#cap8 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 7.18);
+      tl.fromTo("#cap8 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 7.18);
+      tl.set("#cap8 .w:nth-child(1)", { opacity: 1 }, 7.38);
+      tl.fromTo("#cap8 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 7.97);
+      tl.set("#cap8 .w:nth-child(2)", { opacity: 1 }, 8.17);
+      tl.fromTo("#cap8 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 8.16);
+      tl.set("#cap8 .w:nth-child(3)", { opacity: 1 }, 8.36);
+      tl.from("#cap9 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 8.44);
+      tl.fromTo("#cap9 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 8.44);
+      tl.set("#cap9 .w:nth-child(1)", { opacity: 1 }, 8.64);
+      tl.from("#cap10 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 9.07);
+      tl.fromTo("#cap10 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 9.07);
+      tl.set("#cap10 .w:nth-child(1)", { opacity: 1 }, 9.27);
+      tl.fromTo("#cap10 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 9.4);
+      tl.set("#cap10 .w:nth-child(2)", { opacity: 1 }, 9.6);
+      tl.fromTo("#cap10 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 9.63);
+      tl.set("#cap10 .w:nth-child(3)", { opacity: 1 }, 9.83);
+      tl.from("#cap11 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 9.76);
+      tl.fromTo("#cap11 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 9.76);
+      tl.set("#cap11 .w:nth-child(1)", { opacity: 1 }, 9.96);
+      tl.fromTo("#cap11 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 10.2);
+      tl.set("#cap11 .w:nth-child(2)", { opacity: 1 }, 10.4);
+      tl.fromTo("#cap11 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 10.47);
+      tl.set("#cap11 .w:nth-child(3)", { opacity: 1 }, 10.67);
+      tl.from("#cap12 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 10.75);
+      tl.fromTo("#cap12 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 10.75);
+      tl.set("#cap12 .w:nth-child(1)", { opacity: 1 }, 10.95);
+      tl.fromTo("#cap12 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 10.95);
+      tl.set("#cap12 .w:nth-child(2)", { opacity: 1 }, 11.15);
+      tl.fromTo("#cap12 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 11.24);
+      tl.set("#cap12 .w:nth-child(3)", { opacity: 1 }, 11.44);
+      tl.from("#cap13 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 11.68);
+      tl.fromTo("#cap13 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 11.68);
+      tl.set("#cap13 .w:nth-child(1)", { opacity: 1 }, 11.88);
+      tl.fromTo("#cap13 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 12.36);
+      tl.set("#cap13 .w:nth-child(2)", { opacity: 1 }, 12.56);
+      tl.fromTo("#cap13 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 12.9);
+      tl.set("#cap13 .w:nth-child(3)", { opacity: 1 }, 13.1);
+      tl.from("#cap14 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 13.34);
+      tl.fromTo("#cap14 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 13.34);
+      tl.set("#cap14 .w:nth-child(1)", { opacity: 1 }, 13.54);
+      tl.fromTo("#cap14 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 13.66);
+      tl.set("#cap14 .w:nth-child(2)", { opacity: 1 }, 13.86);
+      tl.fromTo("#cap14 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 14.09);
+      tl.set("#cap14 .w:nth-child(3)", { opacity: 1 }, 14.29);
+      tl.from("#cap15 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 14.39);
+      tl.fromTo("#cap15 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 14.39);
+      tl.set("#cap15 .w:nth-child(1)", { opacity: 1 }, 14.59);
+      tl.from("#cap16 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 15.48);
+      tl.fromTo("#cap16 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 15.48);
+      tl.set("#cap16 .w:nth-child(1)", { opacity: 1 }, 15.68);
+      tl.fromTo("#cap16 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 15.48);
+      tl.set("#cap16 .w:nth-child(2)", { opacity: 1 }, 15.68);
+      tl.fromTo("#cap16 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 15.48);
+      tl.set("#cap16 .w:nth-child(3)", { opacity: 1 }, 15.68);
+      tl.fromTo("#cap16 .w:nth-child(4)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 15.76);
+      tl.set("#cap16 .w:nth-child(4)", { opacity: 1 }, 15.96);
+      tl.fromTo("#cap16 .w:nth-child(5)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 16.36);
+      tl.set("#cap16 .w:nth-child(5)", { opacity: 1 }, 16.56);
+      tl.from("#cap17 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 17.02);
+      tl.fromTo("#cap17 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 17.02);
+      tl.set("#cap17 .w:nth-child(1)", { opacity: 1 }, 17.22);
+      tl.fromTo("#cap17 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 17.08);
+      tl.set("#cap17 .w:nth-child(2)", { opacity: 1 }, 17.28);
+      tl.fromTo("#cap17 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 17.4);
+      tl.set("#cap17 .w:nth-child(3)", { opacity: 1 }, 17.6);
+      tl.from("#cap18 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 17.71);
+      tl.fromTo("#cap18 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 17.71);
+      tl.set("#cap18 .w:nth-child(1)", { opacity: 1 }, 17.91);
+      tl.from("#cap19 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 18.3);
+      tl.fromTo("#cap19 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 18.3);
+      tl.set("#cap19 .w:nth-child(1)", { opacity: 1 }, 18.5);
+      tl.fromTo("#cap19 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 18.53);
+      tl.set("#cap19 .w:nth-child(2)", { opacity: 1 }, 18.73);
+      tl.fromTo("#cap19 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 18.67);
+      tl.set("#cap19 .w:nth-child(3)", { opacity: 1 }, 18.87);
+      tl.from("#cap20 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 19.52);
+      tl.fromTo("#cap20 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 19.52);
+      tl.set("#cap20 .w:nth-child(1)", { opacity: 1 }, 19.72);
+      tl.fromTo("#cap20 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 19.52);
+      tl.set("#cap20 .w:nth-child(2)", { opacity: 1 }, 19.72);
+      tl.fromTo("#cap20 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 19.8);
+      tl.set("#cap20 .w:nth-child(3)", { opacity: 1 }, 20);
+      tl.from("#cap21 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 20.28);
+      tl.fromTo("#cap21 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 20.28);
+      tl.set("#cap21 .w:nth-child(1)", { opacity: 1 }, 20.48);
+      tl.fromTo("#cap21 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 20.44);
+      tl.set("#cap21 .w:nth-child(2)", { opacity: 1 }, 20.64);
+      tl.from("#cap22 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 20.82);
+      tl.fromTo("#cap22 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 20.82);
+      tl.set("#cap22 .w:nth-child(1)", { opacity: 1 }, 21.02);
+      tl.fromTo("#cap22 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 21.11);
+      tl.set("#cap22 .w:nth-child(2)", { opacity: 1 }, 21.31);
+      tl.fromTo("#cap22 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 21.49);
+      tl.set("#cap22 .w:nth-child(3)", { opacity: 1 }, 21.69);
+      tl.from("#cap23 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 22.08);
+      tl.fromTo("#cap23 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 22.08);
+      tl.set("#cap23 .w:nth-child(1)", { opacity: 1 }, 22.28);
+      tl.fromTo("#cap23 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 22.22);
+      tl.set("#cap23 .w:nth-child(2)", { opacity: 1 }, 22.42);
+      tl.fromTo("#cap23 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 22.54);
+      tl.set("#cap23 .w:nth-child(3)", { opacity: 1 }, 22.74);
+      tl.from("#cap24 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 23.09);
+      tl.fromTo("#cap24 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 23.09);
+      tl.set("#cap24 .w:nth-child(1)", { opacity: 1 }, 23.29);
+      tl.fromTo("#cap24 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 23.4);
+      tl.set("#cap24 .w:nth-child(2)", { opacity: 1 }, 23.6);
+      tl.fromTo("#cap24 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 24.17);
+      tl.set("#cap24 .w:nth-child(3)", { opacity: 1 }, 24.37);
+      tl.from("#cap25 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 25.54);
+      tl.fromTo("#cap25 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 25.54);
+      tl.set("#cap25 .w:nth-child(1)", { opacity: 1 }, 25.74);
+      tl.fromTo("#cap25 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 25.93);
+      tl.set("#cap25 .w:nth-child(2)", { opacity: 1 }, 26.13);
+      tl.fromTo("#cap25 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 26.46);
+      tl.set("#cap25 .w:nth-child(3)", { opacity: 1 }, 26.66);
+      tl.from("#cap26 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 26.95);
+      tl.fromTo("#cap26 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 26.95);
+      tl.set("#cap26 .w:nth-child(1)", { opacity: 1 }, 27.15);
+      tl.fromTo("#cap26 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 27.39);
+      tl.set("#cap26 .w:nth-child(2)", { opacity: 1 }, 27.59);
+      tl.fromTo("#cap26 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 28.19);
+      tl.set("#cap26 .w:nth-child(3)", { opacity: 1 }, 28.39);
+      tl.from("#cap27 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 28.91);
+      tl.fromTo("#cap27 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 28.91);
+      tl.set("#cap27 .w:nth-child(1)", { opacity: 1 }, 29.11);
+      tl.from("#cap28 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 29.63);
+      tl.fromTo("#cap28 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 29.63);
+      tl.set("#cap28 .w:nth-child(1)", { opacity: 1 }, 29.83);
+      tl.from("#cap29 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 30.51);
+      tl.fromTo("#cap29 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 30.51);
+      tl.set("#cap29 .w:nth-child(1)", { opacity: 1 }, 30.71);
+      tl.fromTo("#cap29 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 30.67);
+      tl.set("#cap29 .w:nth-child(2)", { opacity: 1 }, 30.87);
+      tl.from("#cap30 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 31.21);
+      tl.fromTo("#cap30 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 31.21);
+      tl.set("#cap30 .w:nth-child(1)", { opacity: 1 }, 31.41);
+      tl.from("#cap31 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 31.95);
+      tl.fromTo("#cap31 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 31.95);
+      tl.set("#cap31 .w:nth-child(1)", { opacity: 1 }, 32.15);
+      tl.fromTo("#cap31 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 32.16);
+      tl.set("#cap31 .w:nth-child(2)", { opacity: 1 }, 32.36);
+      tl.from("#cap32 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 33.17);
+      tl.fromTo("#cap32 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 33.17);
+      tl.set("#cap32 .w:nth-child(1)", { opacity: 1 }, 33.37);
+      tl.fromTo("#cap32 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 33.17);
+      tl.set("#cap32 .w:nth-child(2)", { opacity: 1 }, 33.37);
+      tl.fromTo("#cap32 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 33.44);
+      tl.set("#cap32 .w:nth-child(3)", { opacity: 1 }, 33.64);
+      tl.from("#cap33 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 33.73);
+      tl.fromTo("#cap33 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 33.73);
+      tl.set("#cap33 .w:nth-child(1)", { opacity: 1 }, 33.93);
+      tl.fromTo("#cap33 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 34.75);
+      tl.set("#cap33 .w:nth-child(2)", { opacity: 1 }, 34.95);
+      tl.from("#cap34 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 34.97);
+      tl.fromTo("#cap34 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 34.97);
+      tl.set("#cap34 .w:nth-child(1)", { opacity: 1 }, 35.17);
+      tl.fromTo("#cap34 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 34.97);
+      tl.set("#cap34 .w:nth-child(2)", { opacity: 1 }, 35.17);
+      tl.fromTo("#cap34 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 35.3);
+      tl.set("#cap34 .w:nth-child(3)", { opacity: 1 }, 35.5);
+      tl.from("#cap35 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 36.21);
+      tl.fromTo("#cap35 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 36.21);
+      tl.set("#cap35 .w:nth-child(1)", { opacity: 1 }, 36.41);
+      tl.fromTo("#cap35 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 36.23);
+      tl.set("#cap35 .w:nth-child(2)", { opacity: 1 }, 36.43);
+      tl.from("#cap36 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 36.91);
+      tl.fromTo("#cap36 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 36.91);
+      tl.set("#cap36 .w:nth-child(1)", { opacity: 1 }, 37.11);
+      tl.fromTo("#cap36 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 36.98);
+      tl.set("#cap36 .w:nth-child(2)", { opacity: 1 }, 37.18);
+      tl.fromTo("#cap36 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 37.24);
+      tl.set("#cap36 .w:nth-child(3)", { opacity: 1 }, 37.44);
+      tl.from("#cap37 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 37.43);
+      tl.fromTo("#cap37 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 37.43);
+      tl.set("#cap37 .w:nth-child(1)", { opacity: 1 }, 37.63);
+      tl.from("#cap38 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 37.81);
+      tl.fromTo("#cap38 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 37.81);
+      tl.set("#cap38 .w:nth-child(1)", { opacity: 1 }, 38.01);
+      tl.fromTo("#cap38 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 37.85);
+      tl.set("#cap38 .w:nth-child(2)", { opacity: 1 }, 38.05);
+      tl.fromTo("#cap38 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 38.11);
+      tl.set("#cap38 .w:nth-child(3)", { opacity: 1 }, 38.31);
+      tl.from("#cap39 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 38.33);
+      tl.fromTo("#cap39 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 38.33);
+      tl.set("#cap39 .w:nth-child(1)", { opacity: 1 }, 38.53);
+      tl.fromTo("#cap39 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 38.51);
+      tl.set("#cap39 .w:nth-child(2)", { opacity: 1 }, 38.71);
+      tl.from("#cap40 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 39.13);
+      tl.fromTo("#cap40 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 39.13);
+      tl.set("#cap40 .w:nth-child(1)", { opacity: 1 }, 39.33);
+      tl.fromTo("#cap40 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 39.43);
+      tl.set("#cap40 .w:nth-child(2)", { opacity: 1 }, 39.63);
+      tl.fromTo("#cap40 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 39.81);
+      tl.set("#cap40 .w:nth-child(3)", { opacity: 1 }, 40.01);
+      tl.from("#cap41 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 40.56);
+      tl.fromTo("#cap41 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 40.56);
+      tl.set("#cap41 .w:nth-child(1)", { opacity: 1 }, 40.76);
+      tl.fromTo("#cap41 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 40.57);
+      tl.set("#cap41 .w:nth-child(2)", { opacity: 1 }, 40.77);
+      tl.fromTo("#cap41 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 40.86);
+      tl.set("#cap41 .w:nth-child(3)", { opacity: 1 }, 41.06);
+      tl.from("#cap42 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 41.08);
+      tl.fromTo("#cap42 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 41.08);
+      tl.set("#cap42 .w:nth-child(1)", { opacity: 1 }, 41.28);
+      tl.from("#cap43 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 41.74);
+      tl.fromTo("#cap43 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 41.74);
+      tl.set("#cap43 .w:nth-child(1)", { opacity: 1 }, 41.94);
+      tl.fromTo("#cap43 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 41.96);
+      tl.set("#cap43 .w:nth-child(2)", { opacity: 1 }, 42.16);
+      tl.fromTo("#cap43 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 42.21);
+      tl.set("#cap43 .w:nth-child(3)", { opacity: 1 }, 42.41);
+      tl.fromTo("#cap43 .w:nth-child(4)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 42.46);
+      tl.set("#cap43 .w:nth-child(4)", { opacity: 1 }, 42.66);
+      tl.from("#cap44 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 42.96);
+      tl.fromTo("#cap44 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 42.96);
+      tl.set("#cap44 .w:nth-child(1)", { opacity: 1 }, 43.16);
+      tl.from("#cap45 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 43.24);
+      tl.fromTo("#cap45 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 43.24);
+      tl.set("#cap45 .w:nth-child(1)", { opacity: 1 }, 43.44);
+      tl.fromTo("#cap45 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 44.04);
+      tl.set("#cap45 .w:nth-child(2)", { opacity: 1 }, 44.24);
+      tl.from("#cap46 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 44.5);
+      tl.fromTo("#cap46 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 44.5);
+      tl.set("#cap46 .w:nth-child(1)", { opacity: 1 }, 44.7);
+      tl.fromTo("#cap46 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 44.93);
+      tl.set("#cap46 .w:nth-child(2)", { opacity: 1 }, 45.13);
+      tl.fromTo("#cap46 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 46.32);
+      tl.set("#cap46 .w:nth-child(3)", { opacity: 1 }, 46.52);
+      tl.from("#cap47 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 46.48);
+      tl.fromTo("#cap47 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 46.48);
+      tl.set("#cap47 .w:nth-child(1)", { opacity: 1 }, 46.68);
+      tl.from("#cap48 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 46.99);
+      tl.fromTo("#cap48 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 46.99);
+      tl.set("#cap48 .w:nth-child(1)", { opacity: 1 }, 47.19);
+      tl.fromTo("#cap48 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 47.38);
+      tl.set("#cap48 .w:nth-child(2)", { opacity: 1 }, 47.58);
+      tl.from("#cap49 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 47.69);
+      tl.fromTo("#cap49 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 47.69);
+      tl.set("#cap49 .w:nth-child(1)", { opacity: 1 }, 47.89);
+      tl.fromTo("#cap49 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 47.97);
+      tl.set("#cap49 .w:nth-child(2)", { opacity: 1 }, 48.17);
+      tl.fromTo("#cap49 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 48.4);
+      tl.set("#cap49 .w:nth-child(3)", { opacity: 1 }, 48.6);
+      tl.from("#cap50 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 48.63);
+      tl.fromTo("#cap50 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 48.63);
+      tl.set("#cap50 .w:nth-child(1)", { opacity: 1 }, 48.83);
+      tl.fromTo("#cap50 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 48.89);
+      tl.set("#cap50 .w:nth-child(2)", { opacity: 1 }, 49.09);
+      tl.fromTo("#cap50 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 49.14);
+      tl.set("#cap50 .w:nth-child(3)", { opacity: 1 }, 49.34);
+      tl.from("#cap51 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 49.58);
+      tl.fromTo("#cap51 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 49.58);
+      tl.set("#cap51 .w:nth-child(1)", { opacity: 1 }, 49.78);
+      tl.fromTo("#cap51 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 49.81);
+      tl.set("#cap51 .w:nth-child(2)", { opacity: 1 }, 50.01);
+      tl.fromTo("#cap51 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 50.07);
+      tl.set("#cap51 .w:nth-child(3)", { opacity: 1 }, 50.27);
+      tl.from("#cap52 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 50.33);
+      tl.fromTo("#cap52 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 50.33);
+      tl.set("#cap52 .w:nth-child(1)", { opacity: 1 }, 50.53);
+      tl.from("#cap53 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 50.83);
+      tl.fromTo("#cap53 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 50.83);
+      tl.set("#cap53 .w:nth-child(1)", { opacity: 1 }, 51.03);
+      tl.fromTo("#cap53 .w:nth-child(2)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 50.9);
+      tl.set("#cap53 .w:nth-child(2)", { opacity: 1 }, 51.1);
+      tl.fromTo("#cap53 .w:nth-child(3)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 51.28);
+      tl.set("#cap53 .w:nth-child(3)", { opacity: 1 }, 51.48);
+      tl.from("#cap54 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 51.76);
+      tl.fromTo("#cap54 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 51.76);
+      tl.set("#cap54 .w:nth-child(1)", { opacity: 1 }, 51.96);
+      tl.from("#card0 .sticker-text", { scale: 3, opacity: 0, rotation: -20, duration: 0.4, ease: "back.out(2)" }, 1.1);
+      tl.from("#card0 .rays", { scale: 0, opacity: 0, duration: 0.5, ease: "power3.out" }, 1.1);
+      tl.to("#card0 .rays", { rotation: 90, duration: 1.9, ease: "none" }, 1.1);
+      tl.to("#card0", { scale: 0, opacity: 0, duration: 0.25, ease: "power2.in" }, 2.75);
+      tl.from("#card1 .chip:nth-child(1)", { scale: 0, opacity: 0, duration: 0.3, ease: "back.out(2.6)" }, 9.61);
+      tl.to("#card1 .chip", { scale: 0, opacity: 0, duration: 0.2, stagger: 0.05, ease: "power2.in" }, 11.31);
+      tl.from("#card2", { x: -1100, rotation: -6, duration: 0.5, ease: "back.out(1.4)" }, 18.38);
+      tl.from("#card2 .tip-text", { opacity: 0, y: 20, duration: 0.3 }, 18.63);
+      tl.to("#card2", { x: 1100, rotation: 6, duration: 0.35, ease: "power3.in" }, 20.43);
+      tl.from("#card3 .chip:nth-child(1)", { scale: 0, opacity: 0, duration: 0.3, ease: "back.out(2.6)" }, 21.14);
+      tl.from("#card3 .chip:nth-child(2)", { scale: 0, opacity: 0, duration: 0.3, ease: "back.out(2.6)" }, 24.17);
+      tl.from("#card3 .chip:nth-child(3)", { scale: 0, opacity: 0, duration: 0.3, ease: "back.out(2.6)" }, 27.39);
+      tl.to("#card3 .chip", { scale: 0, opacity: 0, duration: 0.2, stagger: 0.05, ease: "power2.in" }, 29.04);
+      tl.from("#card4 .chip:nth-child(1)", { scale: 0, opacity: 0, duration: 0.3, ease: "back.out(2.6)" }, 29.63);
+      tl.from("#card4 .chip:nth-child(2)", { scale: 0, opacity: 0, duration: 0.3, ease: "back.out(2.6)" }, 31.21);
+      tl.from("#card4 .chip:nth-child(3)", { scale: 0, opacity: 0, duration: 0.3, ease: "back.out(2.6)" }, 32.16);
+      tl.from("#card4 .chip:nth-child(4)", { scale: 0, opacity: 0, duration: 0.3, ease: "back.out(2.6)" }, 33.73);
+      tl.to("#card4 .chip", { scale: 0, opacity: 0, duration: 0.2, stagger: 0.05, ease: "power2.in" }, 34.55);
+      tl.from("#card5", { x: -1100, rotation: -6, duration: 0.5, ease: "back.out(1.4)" }, 35.03);
+      tl.from("#card5 .tip-text", { opacity: 0, y: 20, duration: 0.3 }, 35.28);
+      tl.to("#card5", { x: 1100, rotation: 6, duration: 0.35, ease: "power3.in" }, 38.78);
+      tl.from("#card6", { x: -1100, rotation: -6, duration: 0.5, ease: "back.out(1.4)" }, 43.89);
+      tl.from("#card6 .tip-text", { opacity: 0, y: 20, duration: 0.3 }, 44.14);
+      tl.to("#card6", { x: 1100, rotation: 6, duration: 0.35, ease: "power3.in" }, 50.44);
+      tl.from("#outro .outro-shade", { opacity: 0, duration: 0.4 }, 52.97);
+      tl.from("#outro .outro-kicker", { y: 40, opacity: 0, duration: 0.35 }, 53.07);
+      tl.from("#outro .outro-title", { scale: 1.8, opacity: 0, duration: 0.4, ease: "power4.out" }, 53.22);
+      tl.from("#outro .outro-cta", { y: 60, opacity: 0, duration: 0.4, ease: "back.out(2)" }, 53.57);
+      tl.to("#outro .outro-cta", { scale: 1.06, duration: 0.4, yoyo: true, repeat: 3, ease: "sine.inOut" }, 54.07);
+      window.__timelines["puff-pastry"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
