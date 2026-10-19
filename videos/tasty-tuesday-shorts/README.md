@@ -1,7 +1,7 @@
-# Tasty Tuesday — TikTok shorts (HyperFrames)
+# Shorts TikTok dari live masak (HyperFrames)
 
-Empat video pendek (< 1 minit setiap satu, 1080x1920) yang dipotong daripada rakaman video call
-Tasty Tuesday (`VID_20261012_214059_551.mp4`, 87 minit).
+Empat video pendek (< 1 minit setiap satu, 1080x1920) yang dipotong daripada rakaman live TikTok
+masak bersama keluarga (`VID_20261012_214059_551.mp4`, 87 minit). Caption untuk post: `captions-tiktok.md`.
 
 | Short | Tempoh | Hook | Isi |
 | --- | --- | --- | --- |
