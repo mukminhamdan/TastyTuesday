@@ -15,8 +15,11 @@ for (const f of fs.readdirSync(dir).filter((f) => f.endsWith(".mjs")).sort()) {
   if (only && spec.id !== only) continue;
   const out = path.join(ROOT, "videos", spec.id, "assets", "clip.mp4");
   fs.mkdirSync(path.dirname(out), { recursive: true });
-  execFileSync("ffmpeg", ["-v", "error", "-y", "-ss", String(spec.proxyIn), "-i", raw, "-t", String(spec.proxyOut - spec.proxyIn),
-    "-c:v", "libx264", "-preset", "veryfast", "-crf", "19", "-g", "15", "-pix_fmt", "yuv420p",
+  const inputs = spec.proxy.flatMap(([a, b]) => ["-ss", String(a), "-t", String(b - a), "-i", raw]);
+  const n = spec.proxy.length;
+  const graph = spec.proxy.map((_, i) => `[${i}:v][${i}:a]`).join("") + `concat=n=${n}:v=1:a=1[v][a]`;
+  execFileSync("ffmpeg", ["-v", "error", "-y", ...inputs, "-filter_complex", graph, "-map", "[v]", "-map", "[a]",
+    "-c:v", "libx264", "-preset", "veryfast", "-crf", "19", "-g", "15", "-pix_fmt", "yuv420p", "-r", "30",
     "-c:a", "aac", "-b:a", "160k", "-ar", "48000", "-movflags", "+faststart", out], { stdio: "inherit" });
-  console.log(`${spec.id}: ${spec.proxyIn}s-${spec.proxyOut}s -> ${path.relative(ROOT, out)}`);
+  console.log(`${spec.id}: ${spec.proxy.map(([a, b]) => `${a}-${b}s`).join(", ")} -> ${path.relative(ROOT, out)}`);
 }

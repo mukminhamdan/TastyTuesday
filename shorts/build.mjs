@@ -7,7 +7,7 @@
 //
 // Output: videos/<id>/ is a standalone HyperFrames project (index.html + assets).
 // The footage proxy videos/<id>/assets/clip.mp4 is cut from the raw recording by
-// cut-clips.mjs (spec.proxyIn / spec.proxyOut).
+// cut-clips.mjs: spec.proxy ranges [[in, out], ...] back to back.
 import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
@@ -35,10 +35,21 @@ const esc = (s) =>
   String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const r3 = (n) => Math.round(n * 1000) / 1000;
 
+// Raw-recording time -> time inside the concatenated proxy clip.
+export function proxyTime(spec, raw) {
+  let off = 0;
+  for (const [a, b] of spec.proxy) {
+    if (raw >= a && raw <= b) return off + (raw - a);
+    off += b - a;
+  }
+  throw new Error(`${spec.id}: raw ${raw}s is outside every proxy range`);
+}
+
 function buildTimeline(spec) {
   let t = 0;
   return spec.segments.map((s, i) => {
     const len = s.out - s.in;
+    if (Math.abs(proxyTime(spec, s.out) - proxyTime(spec, s.in) - len) > 1e-6) throw new Error(`${spec.id}: segment ${i} spans two proxy ranges`);
     const seg = { ...s, i, start: t, len };
     t += len;
     return seg;
@@ -108,7 +119,7 @@ export function build(spec) {
     const f = framing(s);
     const id = `v${s.i}`;
     videos.push(
-      `<video id="${id}" class="clip src" src="assets/clip.mp4" data-start="${r3(s.start)}" data-duration="${r3(s.len)}" data-media-start="${r3(s.in - spec.proxyIn)}" data-has-audio="true" data-fade-in="0.03" data-fade-out="0.03" data-volume="${s.vol ?? 1}" playsinline style="left:${r3(f.left)}px;top:${r3(f.top)}px;width:${r3(f.w)}px;height:${r3(f.h)}px"></video>`,
+      `<video id="${id}" class="clip src" src="assets/clip.mp4" data-start="${r3(s.start)}" data-duration="${r3(s.len)}" data-media-start="${r3(proxyTime(spec, s.in))}" data-has-audio="true" data-fade-in="0.03" data-fade-out="0.03" data-volume="${s.vol ?? 1}" playsinline style="left:${r3(f.left)}px;top:${r3(f.top)}px;width:${r3(f.w)}px;height:${r3(f.h)}px"></video>`,
     );
     // Slow push-in inside every shot hides the jump cut and keeps the frame alive.
     const ox = r3(-f.left + W / 2);
