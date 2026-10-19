@@ -248,7 +248,7 @@ export function build(spec) {
       tl.push(`tl.to("#${id} .chip", { scale: 0, opacity: 0, duration: 0.2, stagger: 0.05, ease: "power2.in" }, ${r3(t + d - 0.3)});`);
     } else if (c.type === "sticker") {
       overlays.push(`<div id="${id}" class="clip sticker" data-start="${r3(t)}" data-duration="${r3(d)}" style="top:${c.y ?? 300}px">
-  <div class="rays"></div><div class="sticker-text">${esc(c.text)}</div>
+  <div class="rays"></div><div class="sticker-text" style="font-size:${Math.min(130, Math.floor(1450 / c.text.length))}px">${esc(c.text)}</div>
 </div>`);
       tl.push(`tl.from("#${id} .sticker-text", { scale: 3, opacity: 0, rotation: -20, duration: 0.4, ease: "back.out(2)" }, ${r3(t)});`);
       tl.push(`tl.from("#${id} .rays", { scale: 0, opacity: 0, duration: 0.5, ease: "power3.out" }, ${r3(t)});`);
