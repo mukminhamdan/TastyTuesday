@@ -71,10 +71,12 @@
         -webkit-text-stroke: 8px var(--cocoa); paint-order: stroke fill; text-shadow: 0 12px 0 var(--tomato); }
 
       /* outro */
-      .outro { inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; padding: 0 70px; }
+      .outro { inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; padding: 0 70px; }
       .outro-shade { position: absolute; inset: 0; background: rgba(43,26,18,0.82); }
       .outro-kicker { position: relative; font-weight: 800; font-size: 34px; letter-spacing: 0.32em; color: var(--cocoa); background: var(--mustard); padding: 10px 26px; border-radius: 999px; }
       .outro-title { position: relative; font-weight: 900; font-size: 96px; line-height: 1.04; text-align: center; text-transform: uppercase; color: #fff; }
+      .outro-live { position: relative; display: inline-flex; align-items: center; gap: 14px; font-weight: 800; font-size: 34px; color: #fff; background: #111; padding: 14px 28px; border-radius: 999px; border: 3px solid rgba(255,255,255,0.25); }
+      .live-dot { width: 18px; height: 18px; border-radius: 50%; background: #fe2c55; box-shadow: 0 0 0 4px rgba(254,44,85,0.3); }
       .outro-cta { position: relative; font-weight: 800; font-size: 44px; text-align: center; color: var(--cocoa); background: var(--cream); padding: 20px 36px; border-radius: 26px; border: 5px solid var(--tomato); }
 
     </style>
@@ -193,6 +195,7 @@
   <img class="outro-logo" src="assets/logo.jpg" alt="Tasty Tuesday" />
   <div class="outro-title">Save resepi ni!</div>
   <div class="outro-cta">Follow untuk Tasty Tuesday setiap Selasa</div>
+  <div class="outro-live"><span class="live-dot"></span>LIVE di TikTok · setiap Selasa, 4 petang</div>
 </div>
       <audio id="bgm" src="assets/bgm.m4a" data-start="0" data-duration="48.96" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.35},{"t":2.6,"v":0.35},{"t":3,"v":0.1},{"t":48.56,"v":0.1},{"t":48.96,"v":0}]}]}'></audio>
       <audio id="sfx-0" src="assets/sfx/whoosh-short.mp3" data-start="4.45" data-duration="0.6" data-volume="0.35"></audio>
@@ -587,6 +590,8 @@
       tl.from("#outro .outro-title", { scale: 1.8, opacity: 0, duration: 0.4, ease: "power4.out" }, 49.81);
       tl.from("#outro .outro-cta", { y: 60, opacity: 0, duration: 0.4, ease: "back.out(2)" }, 50.16);
       tl.to("#outro .outro-cta", { scale: 1.06, duration: 0.4, yoyo: true, repeat: 3, ease: "sine.inOut" }, 50.66);
+      tl.from("#outro .outro-live", { y: 40, opacity: 0, duration: 0.35, ease: "power3.out" }, 50.41);
+      tl.to("#outro .live-dot", { opacity: 0.2, duration: 0.3, yoyo: true, repeat: 5, ease: "none" }, 50.56);
       window.__timelines["keledek"] = tl;
       tl.seek(0);
     </script>

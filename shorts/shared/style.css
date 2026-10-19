@@ -63,8 +63,10 @@
         -webkit-text-stroke: 8px var(--cocoa); paint-order: stroke fill; text-shadow: 0 12px 0 var(--tomato); }
 
       /* outro */
-      .outro { inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; padding: 0 70px; }
+      .outro { inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; padding: 0 70px; }
       .outro-shade { position: absolute; inset: 0; background: rgba(43,26,18,0.82); }
       .outro-kicker { position: relative; font-weight: 800; font-size: 34px; letter-spacing: 0.32em; color: var(--cocoa); background: var(--mustard); padding: 10px 26px; border-radius: 999px; }
       .outro-title { position: relative; font-weight: 900; font-size: 96px; line-height: 1.04; text-align: center; text-transform: uppercase; color: #fff; }
+      .outro-live { position: relative; display: inline-flex; align-items: center; gap: 14px; font-weight: 800; font-size: 34px; color: #fff; background: #111; padding: 14px 28px; border-radius: 999px; border: 3px solid rgba(255,255,255,0.25); }
+      .live-dot { width: 18px; height: 18px; border-radius: 50%; background: #fe2c55; box-shadow: 0 0 0 4px rgba(254,44,85,0.3); }
       .outro-cta { position: relative; font-weight: 800; font-size: 44px; text-align: center; color: var(--cocoa); background: var(--cream); padding: 20px 36px; border-radius: 26px; border: 5px solid var(--tomato); }

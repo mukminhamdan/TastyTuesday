@@ -271,12 +271,15 @@ export function build(spec) {
   <img class="outro-logo" src="assets/logo.jpg" alt="Tasty Tuesday" />
   <div class="outro-title">${esc(spec.outro.title)}</div>
   <div class="outro-cta">${esc(spec.outro.cta)}</div>
+  <div class="outro-live"><span class="live-dot"></span>LIVE di TikTok · setiap Selasa, 4 petang</div>
 </div>`);
     tl.push(`tl.from("#outro .outro-shade", { opacity: 0, duration: 0.4 }, ${r3(t)});`);
     tl.push(`tl.from("#outro .outro-logo", { scale: 0, rotation: -20, duration: 0.5, ease: "back.out(1.8)" }, ${r3(t + 0.05)});`);
     tl.push(`tl.from("#outro .outro-title", { scale: 1.8, opacity: 0, duration: 0.4, ease: "power4.out" }, ${r3(t + 0.25)});`);
     tl.push(`tl.from("#outro .outro-cta", { y: 60, opacity: 0, duration: 0.4, ease: "back.out(2)" }, ${r3(t + 0.6)});`);
     tl.push(`tl.to("#outro .outro-cta", { scale: 1.06, duration: 0.4, yoyo: true, repeat: 3, ease: "sine.inOut" }, ${r3(t + 1.1)});`);
+    tl.push(`tl.from("#outro .outro-live", { y: 40, opacity: 0, duration: 0.35, ease: "power3.out" }, ${r3(t + 0.85)});`);
+    tl.push(`tl.to("#outro .live-dot", { opacity: 0.2, duration: 0.3, yoyo: true, repeat: 5, ease: "none" }, ${r3(t + 1.0)});`);
     // Jingle from the top so its "Tasty Tuesday!" lands on the outro; it creeps in under the last line.
     const j0 = Math.max(0, t - 0.6);
     sfx.push(
