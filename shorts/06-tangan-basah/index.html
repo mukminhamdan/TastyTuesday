@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ms" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Noto Color Emoji"; src: local("Noto Color Emoji"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #1c130d; }
+      #root { width: 100%; height: 100%; position: relative; overflow: hidden;
+        font-family: "Archivo Black", "Noto Color Emoji", sans-serif; color: #fff6e6; }
+      .bg { position: absolute; inset: 0; background: #1c130d; overflow: hidden; }
+      .glow { position: absolute; border-radius: 50%; filter: blur(60px); }
+      .glow-a { width: 900px; height: 700px; left: -200px; top: -260px; background: rgba(255, 196, 61, 0.22); }
+      .glow-b { width: 900px; height: 800px; right: -300px; bottom: -300px; background: rgba(232, 72, 44, 0.22); }
+      .stripes { position: absolute; left: -200px; top: -200px; width: 1480px; height: 2320px;
+        background: repeating-linear-gradient(135deg, rgba(255, 214, 120, 0.035) 0 40px, transparent 40px 120px); }
+
+      .kicker { position: absolute; left: 0; right: 0; top: 150px; display: flex; justify-content: center; }
+      .kicker-pill { display: flex; align-items: center; gap: 14px; padding: 10px 24px; border-radius: 40px;
+        background: rgba(0, 0, 0, 0.35); border: 2px solid rgba(255, 214, 120, 0.45);
+        font-family: "IBM Plex Mono", monospace; font-weight: 700; font-size: 26px; letter-spacing: 0.12em; color: #ffd678; }
+      .live-dot { width: 16px; height: 16px; border-radius: 50%; background: #ff4b2b; display: block; }
+
+      .title-zone { position: absolute; left: 60px; right: 60px; top: 215px; height: 165px;
+        display: flex; align-items: center; justify-content: center; text-align: center; }
+      .title { text-wrap: balance; font-size: 62px; line-height: 1.08; letter-spacing: -0.02em; color: #ffd23f;
+        text-shadow: 0 5px 0 #7a2a12; max-width: 960px; }
+      .hook { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center;
+        justify-content: center; text-align: center; }
+      .hook-line { font-size: 84px; line-height: 1.0; letter-spacing: -0.03em; color: #fff6e6;
+        text-shadow: 0 6px 0 #c2361b; display: block; max-width: 1000px; }
+      .hook-line:nth-child(2) { color: #ffd23f; text-shadow: 0 6px 0 #7a2a12; }
+
+      .card { position: absolute; left: 0; width: 1080px; top: 400px; height: 1050px;
+        overflow: hidden; background: #000; }
+      .punch, .zoom { position: absolute; left: 0; top: 0; width: 1080px; height: 1050px; transform-origin: 50% 45%; }
+      .cam-video { position: absolute; left: 0; top: -435px; width: 1080px; height: 1920px; object-fit: cover; }
+      .progress { position: absolute; left: 0; bottom: 0; width: 1080px; height: 8px; background: #ffd23f;
+        transform-origin: 0% 50%; }
+
+      .tip { position: absolute; left: 50px; right: 50px; top: 196px; min-height: 196px; padding: 26px 34px 30px;
+        background: #fff6e6; border-radius: 28px; box-shadow: 0 10px 0 #c2361b; opacity: 0; }
+      .tip-label { display: inline-block; padding: 6px 18px; border-radius: 12px; background: #e8482c; color: #fff6e6;
+        font-family: "IBM Plex Mono", monospace; font-weight: 700; font-size: 28px; letter-spacing: 0.1em; }
+      .tip-text { text-wrap: balance; margin-top: 14px; font-size: 50px; line-height: 1.1; letter-spacing: -0.02em; color: #2a1a10; }
+
+      .listcard { position: absolute; left: 70px; right: 70px; padding: 22px 34px 26px; border-radius: 26px;
+        background: rgba(255, 246, 230, 0.96); box-shadow: 0 10px 0 #c2361b; opacity: 0; }
+      .li { display: flex; align-items: center; gap: 18px; margin-top: 14px; font-size: 54px; line-height: 1.12;
+        letter-spacing: -0.02em; color: #2a1a10; opacity: 0; }
+      .li-dot { display: block; width: 22px; height: 22px; border-radius: 50%; background: #e8482c; flex: none; }
+      .sticker { position: absolute; display: flex; align-items: center; gap: 10px; padding: 14px 26px;
+        border-radius: 22px; background: #ffd23f; color: #2a1a10; font-size: 58px; letter-spacing: -0.02em;
+        box-shadow: 0 8px 0 #2a1a10; opacity: 0; white-space: nowrap; transform-origin: 50% 50%; }
+      .sticker.stk { background: #fff6e6; }
+      .emo { font-family: "Noto Color Emoji", sans-serif; font-size: 64px; line-height: 1; }
+
+      .captions { position: absolute; left: 30px; right: 30px; top: 1474px; height: 190px; }
+      .cg { position: absolute; left: 0; right: 0; top: 0; display: flex; flex-wrap: wrap; justify-content: center;
+        align-content: flex-start; gap: 0 24px; text-align: center; opacity: 0; }
+      .w { display: inline-block; font-size: 70px; line-height: 1.12; letter-spacing: -0.01em; color: #fff6e6;
+        -webkit-text-stroke: 12px #1c130d; paint-order: stroke fill; text-shadow: 0 6px 0 rgba(0,0,0,0.5); }
+
+      .cta { position: absolute; left: 0; right: 0; top: 230px; display: flex; justify-content: center; opacity: 0; }
+      .cta-pill { padding: 26px 42px; border-radius: 26px; background: #e8482c; color: #fff6e6; font-size: 54px;
+        letter-spacing: -0.02em; box-shadow: 0 10px 0 #7a2a12; text-align: center; max-width: 980px; text-wrap: balance; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="56.420" data-width="1080" data-height="1920">
+      <div class="bg" id="bg">
+        <div class="glow glow-a" id="glow-a" data-layout-allow-overflow></div>
+        <div class="glow glow-b" id="glow-b" data-layout-allow-overflow></div>
+        <div class="stripes" id="stripes" data-layout-allow-overflow></div>
+      </div>
+
+      <div class="kicker"><div class="kicker-pill" id="kicker"><span class="live-dot" id="live-dot"></span>TASTY TUESDAY · LIVE</div></div>
+      <div class="title-zone">
+        <div class="hook" id="hook" data-layout-allow-overlap><div class="hook-line">DOH LEKAT</div><div class="hook-line">KAT TANGAN?</div></div>
+        <div class="title" id="title" data-layout-allow-overlap>Stretch &amp; fold: tangan basah atau kering?</div>
+      </div>
+
+      <div class="card" id="card">
+        <div class="punch" id="punch" data-layout-allow-overflow><div class="zoom" id="zoom" data-layout-allow-overflow>
+        <video id="seg-0" class="clip cam-video" src="assets/src_0.mp4" playsinline data-has-audio="true" data-start="0.000" data-duration="6.240" data-media-start="1.000" data-fade-in="0.03" data-fade-out="0.03" data-track-index="0"></video>
+        <video id="seg-1" class="clip cam-video" src="assets/src_0.mp4" playsinline data-has-audio="true" data-start="6.240" data-duration="10.500" data-media-start="8.240" data-fade-in="0.03" data-fade-out="0.03" data-track-index="0"></video>
+        <video id="seg-2" class="clip cam-video" src="assets/src_0.mp4" playsinline data-has-audio="true" data-start="16.740" data-duration="1.540" data-media-start="18.740" data-fade-in="0.03" data-fade-out="0.03" data-track-index="0"></video>
+        <video id="seg-3" class="clip cam-video" src="assets/src_0.mp4" playsinline data-has-audio="true" data-start="18.280" data-duration="6.040" data-media-start="28.840" data-fade-in="0.03" data-fade-out="0.03" data-track-index="0"></video>
+        <video id="seg-4" class="clip cam-video" src="assets/src_0.mp4" playsinline data-has-audio="true" data-start="24.320" data-duration="15.600" data-media-start="41.680" data-fade-in="0.03" data-fade-out="0.03" data-track-index="0"></video>
+        <video id="seg-5" class="clip cam-video" src="assets/src_1.mp4" playsinline data-has-audio="true" data-start="39.920" data-duration="16.500" data-media-start="1.000" data-fade-in="0.03" data-fade-out="0.03" data-track-index="0"></video>
+        </div></div>
+        <div class="progress" id="progress"></div>
+      </div>
+
+      <div class="sticker stk" id="stk-1" style="left:360px;top:1120px"><span class="emo">🙌</span><span class="stk-text">TAK LEKAT!</span></div>
+      <div class="sticker lol" id="stk-3" style="left:200px;top:1000px"><span class="emo">🤣</span><span class="stk-text">TIPAH TERTIPU</span></div>
+
+    <div class="tip" id="tip-0" data-layout-allow-overflow><div class="tip-label">TIP</div><div class="tip-text">Sediakan bowl air kat sebelah — basahkan tangan</div></div>
+    <div class="listcard" id="list-2" style="top:1156px" data-layout-allow-overflow><div class="tip-label">INGAT</div><div class="li" id="li-2-0"><span class="li-dot"></span>Stretch: tangan BASAH</div><div class="li" id="li-2-1"><span class="li-dot"></span>Fold akhir: tangan KERING</div></div>
+
+      <div class="captions" id="captions">
+      <div class="cg" id="cg-0"><span class="w" id="cw-0-0">STRETCH</span><span class="w" id="cw-0-1">DAH</span></div>
+      <div class="cg" id="cg-1"><span class="w" id="cw-1-0">LIPAT</span><span class="w" id="cw-1-1">KE</span><span class="w" id="cw-1-2">BAWAH</span></div>
+      <div class="cg" id="cg-2"><span class="w" id="cw-2-0">KENAPA</span><span class="w" id="cw-2-1">TAK</span><span class="w" id="cw-2-2">BASAH</span></div>
+      <div class="cg" id="cg-3"><span class="w" id="cw-3-0">TANGAN</span><span class="w" id="cw-3-1">-TANGAN</span></div>
+      <div class="cg" id="cg-4"><span class="w" id="cw-4-0">DENGAN</span><span class="w" id="cw-4-1">AIR?</span></div>
+      <div class="cg" id="cg-5"><span class="w" id="cw-5-0">DAH</span><span class="w" id="cw-5-1">DAH</span><span class="w" id="cw-5-2">BASAH</span></div>
+      <div class="cg" id="cg-6"><span class="w" id="cw-6-0">TAK</span></div>
+      <div class="cg" id="cg-7"><span class="w" id="cw-7-0">SEDIAKAN</span><span class="w" id="cw-7-1">BOWL</span></div>
+      <div class="cg" id="cg-8"><span class="w" id="cw-8-0">KAT</span><span class="w" id="cw-8-1">SEBELAH</span><span class="w" id="cw-8-2">TU</span></div>
+      <div class="cg" id="cg-9"><span class="w" id="cw-9-0">SENANG</span></div>
+      <div class="cg" id="cg-10"><span class="w" id="cw-10-0">OH</span><span class="w" id="cw-10-1">IYA</span><span class="w" id="cw-10-2">KE?</span></div>
+      <div class="cg" id="cg-11"><span class="w" id="cw-11-0">DIA</span><span class="w" id="cw-11-1">MEMANG</span></div>
+      <div class="cg" id="cg-12"><span class="w" id="cw-12-0">SENTIASA</span></div>
+      <div class="cg" id="cg-13"><span class="w" id="cw-13-0">BASAHKAN</span><span class="w" id="cw-13-1">EH?</span></div>
+      <div class="cg" id="cg-14"><span class="w" id="cw-14-0">YA</span></div>
+      <div class="cg" id="cg-15"><span class="w" id="cw-15-0">BILA</span><span class="w" id="cw-15-1">KITA</span></div>
+      <div class="cg" id="cg-16"><span class="w" id="cw-16-0">STRETCH</span><span class="w" id="cw-16-1">TARIK</span></div>
+      <div class="cg" id="cg-17"><span class="w" id="cw-17-0">NI</span></div>
+      <div class="cg" id="cg-18"><span class="w" id="cw-18-0">LEPAS</span><span class="w" id="cw-18-1">TU</span><span class="w" id="cw-18-2">RASA</span></div>
+      <div class="cg" id="cg-19"><span class="w" id="cw-19-0">STICKY</span><span class="w" id="cw-19-1">PEGANG</span></div>
+      <div class="cg" id="cg-20"><span class="w" id="cw-20-0">LAGI</span><span class="w" id="cw-20-1">TARIK</span></div>
+      <div class="cg" id="cg-21"><span class="w" id="cw-21-0">SENANG</span><span class="w" id="cw-21-1">NAK</span></div>
+      <div class="cg" id="cg-22"><span class="w" id="cw-22-0">TARIK</span></div>
+      <div class="cg" id="cg-23"><span class="w" id="cw-23-0">HAA</span><span class="w" id="cw-23-1">OH</span><span class="w" id="cw-23-2">OK</span></div>
+      <div class="cg" id="cg-24"><span class="w" id="cw-24-0">LEPAS</span><span class="w" id="cw-24-1">TU</span><span class="w" id="cw-24-2">JADI</span></div>
+      <div class="cg" id="cg-25"><span class="w" id="cw-25-0">TANGAN</span><span class="w" id="cw-25-1">TARIK</span><span class="w" id="cw-25-2">JE</span></div>
+      <div class="cg" id="cg-26"><span class="w" id="cw-26-0">BARULAH</span><span class="w" id="cw-26-1">TAK</span></div>
+      <div class="cg" id="cg-27"><span class="w" id="cw-27-0">LEKAT</span><span class="w" id="cw-27-1">BARULAH</span></div>
+      <div class="cg" id="cg-28"><span class="w" id="cw-28-0">TAK</span><span class="w" id="cw-28-1">BUKAN</span><span class="w" id="cw-28-2">LEKAT</span></div>
+      <div class="cg" id="cg-29"><span class="w" id="cw-29-0">TEPUNG</span><span class="w" id="cw-29-1">KALAU</span></div>
+      <div class="cg" id="cg-30"><span class="w" id="cw-30-0">YANG</span><span class="w" id="cw-30-1">INI</span><span class="w" id="cw-30-2">KITA</span></div>
+      <div class="cg" id="cg-31"><span class="w" id="cw-31-0">KENA</span><span class="w" id="cw-31-1">TANGAN</span></div>
+      <div class="cg" id="cg-32"><span class="w" id="cw-32-0">BASAH</span><span class="w" id="cw-32-1">TAPI</span><span class="w" id="cw-32-2">BILA</span></div>
+      <div class="cg" id="cg-33"><span class="w" id="cw-33-0">KITA</span><span class="w" id="cw-33-1">NAK</span><span class="w" id="cw-33-2">NAK</span></div>
+      <div class="cg" id="cg-34"><span class="w" id="cw-34-0">FOLD</span><span class="w" id="cw-34-1">LAST</span><span class="w" id="cw-34-2">TU</span></div>
+      <div class="cg" id="cg-35"><span class="w" id="cw-35-0">BARU</span><span class="w" id="cw-35-1">KITA</span></div>
+      <div class="cg" id="cg-36"><span class="w" id="cw-36-0">NAK</span><span class="w" id="cw-36-1">APA</span><span class="w" id="cw-36-2">YANG</span></div>
+      <div class="cg" id="cg-37"><span class="w" id="cw-37-0">LAST</span><span class="w" id="cw-37-1">KALI</span><span class="w" id="cw-37-2">APA</span></div>
+      <div class="cg" id="cg-38"><span class="w" id="cw-38-0">NAMA</span><span class="w" id="cw-38-1">DIA</span><span class="w" id="cw-38-2">FOLD</span></div>
+      <div class="cg" id="cg-39"><span class="w" id="cw-39-0">NAK</span><span class="w" id="cw-39-1">FOLD</span><span class="w" id="cw-39-2">TU</span></div>
+      <div class="cg" id="cg-40"><span class="w" id="cw-40-0">BARU</span><span class="w" id="cw-40-1">KITA</span><span class="w" id="cw-40-2">PAKAI</span></div>
+      <div class="cg" id="cg-41"><span class="w" id="cw-41-0">KERING</span></div>
+      <div class="cg" id="cg-42"><span class="w" id="cw-42-0">DIA</span><span class="w" id="cw-42-1">NAMPAK</span><span class="w" id="cw-42-2">LAH</span></div>
+      <div class="cg" id="cg-43"><span class="w" id="cw-43-0">DIA</span><span class="w" id="cw-43-1">MACAM</span><span class="w" id="cw-43-2">DIA</span></div>
+      <div class="cg" id="cg-44"><span class="w" id="cw-44-0">SEMAKIN</span><span class="w" id="cw-44-1">GLUTEN</span></div>
+      <div class="cg" id="cg-45"><span class="w" id="cw-45-0">FREE</span><span class="w" id="cw-45-1">DIA</span><span class="w" id="cw-45-2">PUNYA</span></div>
+      <div class="cg" id="cg-46"><span class="w" id="cw-46-0">GLUTEN</span><span class="w" id="cw-46-1">TU</span></div>
+      <div class="cg" id="cg-47"><span class="w" id="cw-47-0">SEMAKIN</span><span class="w" id="cw-47-1">PECAH</span></div>
+      <div class="cg" id="cg-48"><span class="w" id="cw-48-0">DIA</span><span class="w" id="cw-48-1">SUKA</span><span class="w" id="cw-48-2">DIA</span></div>
+      <div class="cg" id="cg-49"><span class="w" id="cw-49-0">BUBBLE</span><span class="w" id="cw-49-1">TU</span><span class="w" id="cw-49-2">DIA</span></div>
+      <div class="cg" id="cg-50"><span class="w" id="cw-50-0">BUKAN</span><span class="w" id="cw-50-1">BUBBLE</span></div>
+      <div class="cg" id="cg-51"><span class="w" id="cw-51-0">SEBENARNYA</span><span class="w" id="cw-51-1">BELUM</span></div>
+      <div class="cg" id="cg-52"><span class="w" id="cw-52-0">BUBBLE</span><span class="w" id="cw-52-1">LAGI</span><span class="w" id="cw-52-2">DIA</span></div>
+      <div class="cg" id="cg-53"><span class="w" id="cw-53-0">MACAM</span><span class="w" id="cw-53-1">SHINING</span></div>
+      <div class="cg" id="cg-54"><span class="w" id="cw-54-0">SEBAB</span><span class="w" id="cw-54-1">KENA</span><span class="w" id="cw-54-2">LAMPU</span></div>
+      <div class="cg" id="cg-55"><span class="w" id="cw-55-0">OH</span><span class="w" id="cw-55-1">IYA</span><span class="w" id="cw-55-2">KE?</span></div>
+      <div class="cg" id="cg-56"><span class="w" id="cw-56-0">TIPAH</span><span class="w" id="cw-56-1">TERTIPU</span></div>
+      </div>
+
+      <div class="cta" id="cta"><div class="cta-pill">Follow untuk tips sourdough lagi!</div></div>
+
+    <audio id="sfx-0" src="assets/sfx/impact-bass-1.mp3" data-start="0.050" data-duration="2.116" data-volume="0.4" data-track-index="3"></audio>
+    <audio id="sfx-1" src="assets/sfx/ding.mp3" data-start="7.870" data-duration="1.437" data-volume="0.3" data-track-index="4"></audio>
+    <audio id="sfx-2" src="assets/sfx/pop.mp3" data-start="22.310" data-duration="0.720" data-volume="0.35" data-track-index="5"></audio>
+    <audio id="sfx-3" src="assets/sfx/pop.mp3" data-start="28.510" data-duration="0.720" data-volume="0.3" data-track-index="3"></audio>
+    <audio id="sfx-4" src="assets/sfx/pop.mp3" data-start="36.510" data-duration="0.720" data-volume="0.3" data-track-index="4"></audio>
+    <audio id="sfx-5" src="assets/sfx/boing.mp3" data-start="50.590" data-duration="0.731" data-volume="0.4" data-track-index="5"></audio>
+    <audio id="sfx-6" src="assets/sfx/pop.mp3" data-start="53.820" data-duration="0.720" data-volume="0.35" data-track-index="3"></audio>
+    </div>
+    <script>
+      const D = {"duration": 56.42, "cuts": [6.24, 16.74, 18.28, 24.32, 39.92], "captions": [{"start": 0.16, "end": 0.94, "words": [{"t": "STRETCH", "s": 0.16}, {"t": "DAH", "s": 0.76}]}, {"start": 0.94, "end": 2.05, "words": [{"t": "LIPAT", "s": 0.94}, {"t": "KE", "s": 1.3}, {"t": "BAWAH", "s": 1.4}]}, {"start": 2.16, "end": 3.42, "words": [{"t": "KENAPA", "s": 2.16}, {"t": "TAK", "s": 2.76}, {"t": "BASAH", "s": 2.94}]}, {"start": 3.42, "end": 4.0, "words": [{"t": "TANGAN", "s": 3.42}, {"t": "-TANGAN", "s": 3.82}]}, {"start": 4.0, "end": 5.17, "words": [{"t": "DENGAN", "s": 4.0}, {"t": "AIR?", "s": 4.28}]}, {"start": 5.46, "end": 6.3, "words": [{"t": "DAH", "s": 5.46}, {"t": "DAH", "s": 5.84}, {"t": "BASAH", "s": 6.0}]}, {"start": 6.3, "end": 7.0, "words": [{"t": "TAK", "s": 6.3}]}, {"start": 7.0, "end": 7.62, "words": [{"t": "SEDIAKAN", "s": 7.0}, {"t": "BOWL", "s": 7.26}]}, {"start": 7.62, "end": 8.32, "words": [{"t": "KAT", "s": 7.62}, {"t": "SEBELAH", "s": 7.78}, {"t": "TU", "s": 8.22}]}, {"start": 8.32, "end": 8.97, "words": [{"t": "SENANG", "s": 8.32}]}, {"start": 9.08, "end": 9.86, "words": [{"t": "OH", "s": 9.08}, {"t": "IYA", "s": 9.28}, {"t": "KE?", "s": 9.5}]}, {"start": 9.86, "end": 10.12, "words": [{"t": "DIA", "s": 9.86}, {"t": "MEMANG", "s": 9.9}]}, {"start": 10.12, "end": 10.52, "words": [{"t": "SENTIASA", "s": 10.12}]}, {"start": 10.52, "end": 11.41, "words": [{"t": "BASAHKAN", "s": 10.52}, {"t": "EH?", "s": 11.04}]}, {"start": 11.54, "end": 12.14, "words": [{"t": "YA", "s": 11.54}]}, {"start": 12.14, "end": 12.56, "words": [{"t": "BILA", "s": 12.14}, {"t": "KITA", "s": 12.36}]}, {"start": 12.56, "end": 13.42, "words": [{"t": "STRETCH", "s": 12.56}, {"t": "TARIK", "s": 12.88}]}, {"start": 13.42, "end": 13.88, "words": [{"t": "NI", "s": 13.42}]}, {"start": 13.88, "end": 14.22, "words": [{"t": "LEPAS", "s": 13.88}, {"t": "TU", "s": 14.0}, {"t": "RASA", "s": 14.06}]}, {"start": 14.22, "end": 15.04, "words": [{"t": "STICKY", "s": 14.22}, {"t": "PEGANG", "s": 14.62}]}, {"start": 15.04, "end": 16.67, "words": [{"t": "LAGI", "s": 15.04}, {"t": "TARIK", "s": 15.42}]}, {"start": 16.8, "end": 17.14, "words": [{"t": "SENANG", "s": 16.8}, {"t": "NAK", "s": 17.04}]}, {"start": 17.14, "end": 17.83, "words": [{"t": "TARIK", "s": 17.14}]}, {"start": 18.3, "end": 19.22, "words": [{"t": "HAA", "s": 18.3}, {"t": "OH", "s": 18.92}, {"t": "OK", "s": 18.92}]}, {"start": 19.22, "end": 19.9, "words": [{"t": "LEPAS", "s": 19.22}, {"t": "TU", "s": 19.46}, {"t": "JADI", "s": 19.62}]}, {"start": 19.9, "end": 21.45, "words": [{"t": "TANGAN", "s": 19.9}, {"t": "TARIK", "s": 20.38}, {"t": "JE", "s": 21.04}]}, {"start": 22.26, "end": 23.0, "words": [{"t": "BARULAH", "s": 22.26}, {"t": "TAK", "s": 22.88}]}, {"start": 23.0, "end": 24.02, "words": [{"t": "LEKAT", "s": 23.0}, {"t": "BARULAH", "s": 23.56}]}, {"start": 24.02, "end": 25.18, "words": [{"t": "TAK", "s": 24.02}, {"t": "BUKAN", "s": 24.4}, {"t": "LEKAT", "s": 25.02}]}, {"start": 25.18, "end": 26.49, "words": [{"t": "TEPUNG", "s": 25.18}, {"t": "KALAU", "s": 25.52}]}, {"start": 26.55, "end": 28.9, "words": [{"t": "YANG", "s": 26.55}, {"t": "INI", "s": 27.86}, {"t": "KITA", "s": 28.18}]}, {"start": 28.9, "end": 29.34, "words": [{"t": "KENA", "s": 28.9}, {"t": "TANGAN", "s": 29.1}]}, {"start": 29.34, "end": 30.38, "words": [{"t": "BASAH", "s": 29.34}, {"t": "TAPI", "s": 29.72}, {"t": "BILA", "s": 30.12}]}, {"start": 30.38, "end": 32.3, "words": [{"t": "KITA", "s": 30.38}, {"t": "NAK", "s": 30.66}, {"t": "NAK", "s": 31.4}]}, {"start": 32.3, "end": 32.98, "words": [{"t": "FOLD", "s": 32.3}, {"t": "LAST", "s": 32.64}, {"t": "TU", "s": 32.82}]}, {"start": 32.98, "end": 33.71, "words": [{"t": "BARU", "s": 32.98}, {"t": "KITA", "s": 33.14}]}, {"start": 34.16, "end": 35.32, "words": [{"t": "NAK", "s": 34.16}, {"t": "APA", "s": 34.62}, {"t": "YANG", "s": 35.14}]}, {"start": 35.32, "end": 35.82, "words": [{"t": "LAST", "s": 35.32}, {"t": "KALI", "s": 35.54}, {"t": "APA", "s": 35.68}]}, {"start": 35.82, "end": 37.01, "words": [{"t": "NAMA", "s": 35.82}, {"t": "DIA", "s": 36.06}, {"t": "FOLD", "s": 36.22}]}, {"start": 37.01, "end": 38.48, "words": [{"t": "NAK", "s": 37.01}, {"t": "FOLD", "s": 38.06}, {"t": "TU", "s": 38.36}]}, {"start": 38.48, "end": 39.38, "words": [{"t": "BARU", "s": 38.48}, {"t": "KITA", "s": 38.64}, {"t": "PAKAI", "s": 38.94}]}, {"start": 39.38, "end": 39.98, "words": [{"t": "KERING", "s": 39.38}]}, {"start": 39.98, "end": 41.14, "words": [{"t": "DIA", "s": 39.98}, {"t": "NAMPAK", "s": 40.68}, {"t": "LAH", "s": 41.0}]}, {"start": 41.14, "end": 41.82, "words": [{"t": "DIA", "s": 41.14}, {"t": "MACAM", "s": 41.36}, {"t": "DIA", "s": 41.58}]}, {"start": 41.82, "end": 43.0, "words": [{"t": "SEMAKIN", "s": 41.82}, {"t": "GLUTEN", "s": 42.56}]}, {"start": 43.0, "end": 44.76, "words": [{"t": "FREE", "s": 43.0}, {"t": "DIA", "s": 43.46}, {"t": "PUNYA", "s": 44.2}]}, {"start": 44.76, "end": 45.24, "words": [{"t": "GLUTEN", "s": 44.76}, {"t": "TU", "s": 45.12}]}, {"start": 45.24, "end": 45.92, "words": [{"t": "SEMAKIN", "s": 45.24}, {"t": "PECAH", "s": 45.54}]}, {"start": 45.92, "end": 46.36, "words": [{"t": "DIA", "s": 45.92}, {"t": "SUKA", "s": 45.98}, {"t": "DIA", "s": 46.18}]}, {"start": 46.36, "end": 47.94, "words": [{"t": "BUBBLE", "s": 46.36}, {"t": "TU", "s": 46.74}, {"t": "DIA", "s": 47.0}]}, {"start": 47.94, "end": 49.0, "words": [{"t": "BUKAN", "s": 47.94}, {"t": "BUBBLE", "s": 48.62}]}, {"start": 49.0, "end": 49.96, "words": [{"t": "SEBENARNYA", "s": 49.0}, {"t": "BELUM", "s": 49.38}]}, {"start": 49.96, "end": 50.52, "words": [{"t": "BUBBLE", "s": 49.96}, {"t": "LAGI", "s": 50.2}, {"t": "DIA", "s": 50.4}]}, {"start": 50.52, "end": 51.06, "words": [{"t": "MACAM", "s": 50.52}, {"t": "SHINING", "s": 50.68}]}, {"start": 51.06, "end": 52.02, "words": [{"t": "SEBAB", "s": 51.06}, {"t": "KENA", "s": 51.3}, {"t": "LAMPU", "s": 51.44}]}, {"start": 52.02, "end": 53.03, "words": [{"t": "OH", "s": 52.02}, {"t": "IYA", "s": 52.4}, {"t": "KE?", "s": 52.6}]}, {"start": 53.3, "end": 54.85, "words": [{"t": "TIPAH", "s": 53.3}, {"t": "TERTIPU", "s": 53.94}]}], "events": [{"type": "tip", "dur": 4.6, "at": 7.87, "i": 0}, {"type": "sticker", "dur": 2.0, "at": 22.31, "i": 1}, {"type": "list", "at": 28.51, "itemsAt": [28.51, 36.51], "end": 39.92, "i": 2}, {"type": "lol", "dur": 2.73, "at": 50.59, "i": 3}], "hookHold": 2.6, "punch": true};
+      const tl = gsap.timeline({ paused: true });
+      const T = D.duration;
+
+      // ambience: slow breathing glows + drifting ghost type
+      tl.fromTo("#glow-a", { scale: 1 }, { scale: 1.15, duration: T / 2, ease: "sine.inOut", yoyo: true, repeat: 1 }, 0);
+      tl.fromTo("#glow-b", { scale: 1.1 }, { scale: 0.95, duration: T / 2, ease: "sine.inOut", yoyo: true, repeat: 1 }, 0);
+      tl.fromTo("#stripes", { x: 0, y: 0 }, { x: 120, y: -120, duration: T, ease: "none" }, 0);
+      tl.fromTo("#live-dot", { opacity: 1 }, { opacity: 0.25, duration: 0.6, ease: "sine.inOut", yoyo: true,
+        repeat: Math.max(0, Math.floor(T / 0.6) - 1) }, 0);
+      tl.fromTo("#progress", { scaleX: 0 }, { scaleX: 1, duration: T, ease: "none" }, 0);
+
+      // hook: lines slam in, hold, then hand over to the persistent title
+      const lines = gsap.utils.toArray(".hook-line");
+      // frame 0 doubles as the feed thumbnail, so everything starts readable and only settles
+      lines.forEach((el, i) => {
+        tl.fromTo(el, { scale: 1.18 }, { scale: 1, duration: 0.35, ease: "expo.out" }, i * 0.12);
+      });
+      tl.fromTo("#card", { y: 24 }, { y: 0, duration: 0.45, ease: "power3.out" }, 0);
+      tl.to("#hook", { opacity: 0, y: -20, duration: 0.25, ease: "power2.in" }, D.hookHold);
+      tl.fromTo("#title", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, D.hookHold + 0.15);
+
+      // jump cuts: alternate a subtle punch so cuts read as intentional
+      if (D.punch) {
+        D.cuts.forEach((t, i) => {
+          tl.set("#punch", { scale: i % 2 === 0 ? 1.06 : 1.0 }, t);
+        });
+      }
+
+      // events
+      let titleBusyUntil = 0;
+      D.events.forEach((e) => {
+        const dur = e.dur || 3;
+        if (e.type === "tip") {
+          const el = "#tip-" + e.i;
+          tl.to("#title", { opacity: 0, duration: 0.15 }, e.at - 0.05);
+          tl.fromTo(el, { x: -1100, opacity: 1, rotation: -3 }, { x: 0, rotation: -1, duration: 0.45, ease: "power3.out" }, e.at);
+          tl.to(el, { x: 1100, rotation: 2, duration: 0.35, ease: "power2.in" }, e.at + dur);
+          tl.set(el, { opacity: 0 }, e.at + dur + 0.36);
+          tl.to("#title", { opacity: 1, duration: 0.25 }, e.at + dur + 0.3);
+        } else if (e.type === "lol" || e.type === "sticker") {
+          const el = "#stk-" + e.i;
+          const rot = e.i % 2 === 0 ? -8 : 7;
+          tl.fromTo(el, { scale: 0, opacity: 0, rotation: rot * 2 }, { scale: 1, opacity: 1, rotation: rot, duration: 0.3, ease: "power3.out" }, e.at);
+          tl.to(el, { scale: 1.08, duration: 0.18, ease: "sine.inOut", yoyo: true, repeat: 1 }, e.at + 0.35);
+          tl.to(el, { scale: 0.6, opacity: 0, duration: 0.2, ease: "power2.in" }, e.at + dur - 0.2);
+          if (e.type === "lol") {
+            tl.to("#zoom", { scale: 1.12, duration: 0.18, ease: "power3.out" }, e.at);
+            tl.to("#zoom", { scale: 1.0, duration: 0.4, ease: "power2.inOut" }, e.at + Math.min(dur, 1.4));
+          }
+        } else if (e.type === "list") {
+          const el = "#list-" + e.i;
+          tl.fromTo(el, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, e.at);
+          e.itemsAt.forEach((t, k) => {
+            tl.fromTo("#li-" + e.i + "-" + k, { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.25, ease: "power3.out" }, Math.max(e.at, t));
+          });
+          tl.to(el, { opacity: 0, y: 30, duration: 0.25, ease: "power2.in" }, e.end);
+        } else if (e.type === "zoom") {
+          tl.set("#zoom", { transformOrigin: e.origin || "50% 45%" }, e.at);
+          tl.to("#zoom", { scale: e.scale || 1.3, duration: 0.35, ease: "power3.out" }, e.at);
+          tl.to("#zoom", { scale: 1.0, duration: 0.4, ease: "power2.inOut" }, e.at + dur);
+          tl.set("#zoom", { transformOrigin: "50% 45%" }, e.at + dur + 0.41);
+        }
+      });
+
+      // karaoke captions: one group at a time, active word lights up
+      D.captions.forEach((g, gi) => {
+        const el = document.getElementById("cg-" + gi);
+        if (!el) return;
+        tl.fromTo(el, { opacity: 0, y: 18, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.12, ease: "power3.out" }, g.start);
+        g.words.forEach((w, wi) => {
+          const wel = "#cw-" + gi + "-" + wi;
+          tl.fromTo(wel, { color: "#fff6e6", scale: 1 }, { color: "#ffd23f", scale: 1.1, duration: 0.08, ease: "power2.out" }, Math.max(g.start, w.s));
+          if (wi < g.words.length - 1) tl.to(wel, { color: "#fff6e6", scale: 1, duration: 0.08 }, Math.max(g.start, g.words[wi + 1].s));
+        });
+        tl.to(el, { opacity: 0, duration: 0.08, ease: "power2.in" }, Math.max(g.start + 0.1, g.end - 0.08));
+        tl.set(el, { opacity: 0, visibility: "hidden" }, g.end);
+      });
+
+      // end call-to-action
+      tl.to("#title", { opacity: 0, duration: 0.15 }, T - 2.65);
+      tl.fromTo("#cta", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power3.out" }, T - 2.6);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

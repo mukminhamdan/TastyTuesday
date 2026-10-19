@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="ms" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Noto Color Emoji"; src: local("Noto Color Emoji"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #1c130d; }
+      #root { width: 100%; height: 100%; position: relative; overflow: hidden;
+        font-family: "Archivo Black", "Noto Color Emoji", sans-serif; color: #fff6e6; }
+      .bg { position: absolute; inset: 0; background: #1c130d; overflow: hidden; }
+      .glow { position: absolute; border-radius: 50%; filter: blur(60px); }
+      .glow-a { width: 900px; height: 700px; left: -200px; top: -260px; background: rgba(255, 196, 61, 0.22); }
+      .glow-b { width: 900px; height: 800px; right: -300px; bottom: -300px; background: rgba(232, 72, 44, 0.22); }
+      .stripes { position: absolute; left: -200px; top: -200px; width: 1480px; height: 2320px;
+        background: repeating-linear-gradient(135deg, rgba(255, 214, 120, 0.035) 0 40px, transparent 40px 120px); }
+
+      .kicker { position: absolute; left: 0; right: 0; top: 150px; display: flex; justify-content: center; }
+      .kicker-pill { display: flex; align-items: center; gap: 14px; padding: 10px 24px; border-radius: 40px;
+        background: rgba(0, 0, 0, 0.35); border: 2px solid rgba(255, 214, 120, 0.45);
+        font-family: "IBM Plex Mono", monospace; font-weight: 700; font-size: 26px; letter-spacing: 0.12em; color: #ffd678; }
+      .live-dot { width: 16px; height: 16px; border-radius: 50%; background: #ff4b2b; display: block; }
+
+      .title-zone { position: absolute; left: 60px; right: 60px; top: 215px; height: 165px;
+        display: flex; align-items: center; justify-content: center; text-align: center; }
+      .title { text-wrap: balance; font-size: 62px; line-height: 1.08; letter-spacing: -0.02em; color: #ffd23f;
+        text-shadow: 0 5px 0 #7a2a12; max-width: 960px; }
+      .hook { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center;
+        justify-content: center; text-align: center; }
+      .hook-line { font-size: 84px; line-height: 1.0; letter-spacing: -0.03em; color: #fff6e6;
+        text-shadow: 0 6px 0 #c2361b; display: block; max-width: 1000px; }
+      .hook-line:nth-child(2) { color: #ffd23f; text-shadow: 0 6px 0 #7a2a12; }
+
+      .card { position: absolute; left: 0; width: 1080px; top: 400px; height: 1050px;
+        overflow: hidden; background: #000; }
+      .punch, .zoom { position: absolute; left: 0; top: 0; width: 1080px; height: 1050px; transform-origin: 50% 45%; }
+      .cam-video { position: absolute; left: 0; top: -435px; width: 1080px; height: 1920px; object-fit: cover; }
+      .progress { position: absolute; left: 0; bottom: 0; width: 1080px; height: 8px; background: #ffd23f;
+        transform-origin: 0% 50%; }
+
+      .tip { position: absolute; left: 50px; right: 50px; top: 196px; min-height: 196px; padding: 26px 34px 30px;
+        background: #fff6e6; border-radius: 28px; box-shadow: 0 10px 0 #c2361b; opacity: 0; }
+      .tip-label { display: inline-block; padding: 6px 18px; border-radius: 12px; background: #e8482c; color: #fff6e6;
+        font-family: "IBM Plex Mono", monospace; font-weight: 700; font-size: 28px; letter-spacing: 0.1em; }
+      .tip-text { text-wrap: balance; margin-top: 14px; font-size: 50px; line-height: 1.1; letter-spacing: -0.02em; color: #2a1a10; }
+
+      .listcard { position: absolute; left: 70px; right: 70px; padding: 22px 34px 26px; border-radius: 26px;
+        background: rgba(255, 246, 230, 0.96); box-shadow: 0 10px 0 #c2361b; opacity: 0; }
+      .li { display: flex; align-items: center; gap: 18px; margin-top: 14px; font-size: 54px; line-height: 1.12;
+        letter-spacing: -0.02em; color: #2a1a10; opacity: 0; }
+      .li-dot { display: block; width: 22px; height: 22px; border-radius: 50%; background: #e8482c; flex: none; }
+      .sticker { position: absolute; display: flex; align-items: center; gap: 10px; padding: 14px 26px;
+        border-radius: 22px; background: #ffd23f; color: #2a1a10; font-size: 58px; letter-spacing: -0.02em;
+        box-shadow: 0 8px 0 #2a1a10; opacity: 0; white-space: nowrap; transform-origin: 50% 50%; }
+      .sticker.stk { background: #fff6e6; }
+      .emo { font-family: "Noto Color Emoji", sans-serif; font-size: 64px; line-height: 1; }
+
+      .captions { position: absolute; left: 30px; right: 30px; top: 1474px; height: 190px; }
+      .cg { position: absolute; left: 0; right: 0; top: 0; display: flex; flex-wrap: wrap; justify-content: center;
+        align-content: flex-start; gap: 0 24px; text-align: center; opacity: 0; }
+      .w { display: inline-block; font-size: 70px; line-height: 1.12; letter-spacing: -0.01em; color: #fff6e6;
+        -webkit-text-stroke: 12px #1c130d; paint-order: stroke fill; text-shadow: 0 6px 0 rgba(0,0,0,0.5); }
+
+      .cta { position: absolute; left: 0; right: 0; top: 230px; display: flex; justify-content: center; opacity: 0; }
+      .cta-pill { padding: 26px 42px; border-radius: 26px; background: #e8482c; color: #fff6e6; font-size: 54px;
+        letter-spacing: -0.02em; box-shadow: 0 10px 0 #7a2a12; text-align: center; max-width: 980px; text-wrap: balance; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="26.680" data-width="1080" data-height="1920">
+      <div class="bg" id="bg">
+        <div class="glow glow-a" id="glow-a" data-layout-allow-overflow></div>
+        <div class="glow glow-b" id="glow-b" data-layout-allow-overflow></div>
+        <div class="stripes" id="stripes" data-layout-allow-overflow></div>
+      </div>
+
+      <div class="kicker"><div class="kicker-pill" id="kicker"><span class="live-dot" id="live-dot"></span>TASTY TUESDAY · LIVE</div></div>
+      <div class="title-zone">
+        <div class="hook" id="hook" data-layout-allow-overlap><div class="hook-line">SOURDOUGH</div><div class="hook-line">4 BAHAN JE!</div></div>
+        <div class="title" id="title" data-layout-allow-overlap>Resepi sourdough 4 bahan je!</div>
+      </div>
+
+      <div class="card" id="card">
+        <div class="punch" id="punch" data-layout-allow-overflow><div class="zoom" id="zoom" data-layout-allow-overflow>
+        <video id="seg-0" class="clip cam-video" src="assets/src_0.mp4" playsinline data-has-audio="true" data-start="0.000" data-duration="2.540" data-media-start="1.000" data-fade-in="0.03" data-fade-out="0.03" data-track-index="0"></video>
+        <video id="seg-1" class="clip cam-video" src="assets/src_0.mp4" playsinline data-has-audio="true" data-start="2.540" data-duration="6.500" data-media-start="9.020" data-fade-in="0.03" data-fade-out="0.03" data-track-index="0"></video>
+        <video id="seg-2" class="clip cam-video" src="assets/src_1.mp4" playsinline data-has-audio="true" data-start="9.040" data-duration="2.800" data-media-start="1.000" data-fade-in="0.03" data-fade-out="0.03" data-track-index="0"></video>
+        <video id="seg-3" class="clip cam-video" src="assets/src_1.mp4" playsinline data-has-audio="true" data-start="11.840" data-duration="3.980" data-media-start="8.100" data-fade-in="0.03" data-fade-out="0.03" data-track-index="0"></video>
+        <video id="seg-4" class="clip cam-video" src="assets/src_2.mp4" playsinline data-has-audio="true" data-start="15.820" data-duration="2.360" data-media-start="1.000" data-fade-in="0.03" data-fade-out="0.03" data-track-index="0"></video>
+        <video id="seg-5" class="clip cam-video" src="assets/src_3.mp4" playsinline data-has-audio="true" data-start="18.180" data-duration="8.500" data-media-start="1.000" data-fade-in="0.03" data-fade-out="0.03" data-track-index="0"></video>
+        </div></div>
+        <div class="progress" id="progress"></div>
+      </div>
+
+      <div class="sticker lol" id="stk-0" style="left:520px;top:980px"><span class="emo">🫙</span><span class="stk-text">NAIK 3X!</span></div>
+
+    <div class="tip" id="tip-1" data-layout-allow-overflow><div class="tip-label">TIP</div><div class="tip-text">Guna starter bila dah naik 3x ganda, sebelum dia turun</div></div>
+    <div class="listcard" id="list-2" style="top:972px" data-layout-allow-overflow><div class="tip-label">RESEPI</div><div class="li" id="li-2-0"><span class="li-dot"></span>300g tepung</div><div class="li" id="li-2-1"><span class="li-dot"></span>180g air</div><div class="li" id="li-2-2"><span class="li-dot"></span>60g starter</div><div class="li" id="li-2-3"><span class="li-dot"></span>6g garam</div></div>
+
+      <div class="captions" id="captions">
+      <div class="cg" id="cg-0"><span class="w" id="cw-0-0">TINGGI</span><span class="w" id="cw-0-1">MACAM</span></div>
+      <div class="cg" id="cg-1"><span class="w" id="cw-1-0">KENA</span><span class="w" id="cw-1-1">BALUN</span></div>
+      <div class="cg" id="cg-2"><span class="w" id="cw-2-0">TIGA</span><span class="w" id="cw-2-1">KALI</span><span class="w" id="cw-2-2">GANDA</span></div>
+      <div class="cg" id="cg-3"><span class="w" id="cw-3-0">SEBELUM</span><span class="w" id="cw-3-1">DIA</span></div>
+      <div class="cg" id="cg-4"><span class="w" id="cw-4-0">TURUN</span></div>
+      <div class="cg" id="cg-5"><span class="w" id="cw-5-0">JOM</span><span class="w" id="cw-5-1">KITA</span><span class="w" id="cw-5-2">BUAT</span></div>
+      <div class="cg" id="cg-6"><span class="w" id="cw-6-0">KITA</span></div>
+      <div class="cg" id="cg-7"><span class="w" id="cw-7-0">MIX</span><span class="w" id="cw-7-1">ROTI</span></div>
+      <div class="cg" id="cg-8"><span class="w" id="cw-8-0">300</span><span class="w" id="cw-8-1">GRAM</span></div>
+      <div class="cg" id="cg-9"><span class="w" id="cw-9-0">180</span><span class="w" id="cw-9-1">GRAM</span><span class="w" id="cw-9-2">AIR</span></div>
+      <div class="cg" id="cg-10"><span class="w" id="cw-10-0">60</span><span class="w" id="cw-10-1">GRAM</span></div>
+      <div class="cg" id="cg-11"><span class="w" id="cw-11-0">GARAM</span><span class="w" id="cw-11-1">6</span></div>
+      <div class="cg" id="cg-12"><span class="w" id="cw-12-0">STARTER</span><span class="w" id="cw-12-1">60</span><span class="w" id="cw-12-2">GRAM</span></div>
+      <div class="cg" id="cg-13"><span class="w" id="cw-13-0">KAN</span><span class="w" id="cw-13-1">MUKMIN?</span></div>
+      <div class="cg" id="cg-14"><span class="w" id="cw-14-0">HAA</span></div>
+      <div class="cg" id="cg-15"><span class="w" id="cw-15-0">SETIAP</span><span class="w" id="cw-15-1">60</span></div>
+      <div class="cg" id="cg-16"><span class="w" id="cw-16-0">SETIAP</span><span class="w" id="cw-16-1">AIR</span><span class="w" id="cw-16-2">GARAM</span></div>
+      <div class="cg" id="cg-17"><span class="w" id="cw-17-0">AIR</span></div>
+      <div class="cg" id="cg-18"><span class="w" id="cw-18-0">CUKUP</span></div>
+      <div class="cg" id="cg-19"><span class="w" id="cw-19-0">OK</span></div>
+      </div>
+
+      <div class="cta" id="cta"><div class="cta-pill">Save resepi ni &amp; follow untuk part 2!</div></div>
+
+    <audio id="sfx-0" src="assets/sfx/impact-bass-1.mp3" data-start="0.050" data-duration="2.116" data-volume="0.4" data-track-index="3"></audio>
+    <audio id="sfx-1" src="assets/sfx/boing.mp3" data-start="1.170" data-duration="0.731" data-volume="0.4" data-track-index="4"></audio>
+    <audio id="sfx-2" src="assets/sfx/ding.mp3" data-start="3.690" data-duration="1.437" data-volume="0.3" data-track-index="5"></audio>
+    <audio id="sfx-3" src="assets/sfx/pop.mp3" data-start="9.410" data-duration="0.720" data-volume="0.3" data-track-index="3"></audio>
+    <audio id="sfx-4" src="assets/sfx/pop.mp3" data-start="12.010" data-duration="0.720" data-volume="0.3" data-track-index="4"></audio>
+    <audio id="sfx-5" src="assets/sfx/pop.mp3" data-start="13.810" data-duration="0.720" data-volume="0.3" data-track-index="5"></audio>
+    <audio id="sfx-6" src="assets/sfx/pop.mp3" data-start="16.130" data-duration="0.720" data-volume="0.3" data-track-index="3"></audio>
+    <audio id="sfx-7" src="assets/sfx/pop.mp3" data-start="24.080" data-duration="0.720" data-volume="0.35" data-track-index="4"></audio>
+    </div>
+    <script>
+      const D = {"duration": 26.68, "cuts": [2.54, 9.04, 11.84, 15.82, 18.18], "captions": [{"start": 0.33, "end": 1.31, "words": [{"t": "TINGGI", "s": 0.33}, {"t": "MACAM", "s": 1.13}]}, {"start": 1.31, "end": 2.24, "words": [{"t": "KENA", "s": 1.31}, {"t": "BALUN", "s": 1.55}]}, {"start": 2.67, "end": 4.25, "words": [{"t": "TIGA", "s": 2.67}, {"t": "KALI", "s": 3.47}, {"t": "GANDA", "s": 3.77}]}, {"start": 4.25, "end": 4.73, "words": [{"t": "SEBELUM", "s": 4.25}, {"t": "DIA", "s": 4.59}]}, {"start": 4.73, "end": 5.41, "words": [{"t": "TURUN", "s": 4.73}]}, {"start": 5.41, "end": 6.35, "words": [{"t": "JOM", "s": 5.41}, {"t": "KITA", "s": 5.73}, {"t": "BUAT", "s": 5.99}]}, {"start": 6.35, "end": 7.4, "words": [{"t": "KITA", "s": 6.35}]}, {"start": 7.85, "end": 8.96, "words": [{"t": "MIX", "s": 7.85}, {"t": "ROTI", "s": 8.17}]}, {"start": 9.41, "end": 11.34, "words": [{"t": "300", "s": 9.41}, {"t": "GRAM", "s": 10.25}]}, {"start": 11.99, "end": 14.2, "words": [{"t": "180", "s": 11.99}, {"t": "GRAM", "s": 12.83}, {"t": "AIR", "s": 13.51}]}, {"start": 14.45, "end": 16.12, "words": [{"t": "60", "s": 14.45}, {"t": "GRAM", "s": 15.59}]}, {"start": 16.42, "end": 18.31, "words": [{"t": "GARAM", "s": 16.42}, {"t": "6", "s": 17.72}]}, {"start": 18.46, "end": 19.5, "words": [{"t": "STARTER", "s": 18.46}, {"t": "60", "s": 18.94}, {"t": "GRAM", "s": 19.18}]}, {"start": 19.5, "end": 20.33, "words": [{"t": "KAN", "s": 19.5}, {"t": "MUKMIN?", "s": 19.74}]}, {"start": 20.48, "end": 21.69, "words": [{"t": "HAA", "s": 20.48}]}, {"start": 21.69, "end": 22.46, "words": [{"t": "SETIAP", "s": 21.69}, {"t": "60", "s": 21.85}]}, {"start": 22.94, "end": 25.02, "words": [{"t": "SETIAP", "s": 22.94}, {"t": "AIR", "s": 24.12}, {"t": "GARAM", "s": 24.44}]}, {"start": 25.02, "end": 25.9, "words": [{"t": "AIR", "s": 25.02}]}, {"start": 25.9, "end": 26.26, "words": [{"t": "CUKUP", "s": 25.9}]}, {"start": 26.26, "end": 26.68, "words": [{"t": "OK", "s": 26.26}]}], "events": [{"type": "lol", "dur": 1.8, "at": 1.17, "i": 0}, {"type": "tip", "dur": 4.4, "at": 3.69, "i": 1}, {"type": "list", "at": 9.41, "itemsAt": [9.41, 12.01, 13.81, 16.13], "end": 23.98, "i": 2}], "hookHold": 2.2, "punch": true};
+      const tl = gsap.timeline({ paused: true });
+      const T = D.duration;
+
+      // ambience: slow breathing glows + drifting ghost type
+      tl.fromTo("#glow-a", { scale: 1 }, { scale: 1.15, duration: T / 2, ease: "sine.inOut", yoyo: true, repeat: 1 }, 0);
+      tl.fromTo("#glow-b", { scale: 1.1 }, { scale: 0.95, duration: T / 2, ease: "sine.inOut", yoyo: true, repeat: 1 }, 0);
+      tl.fromTo("#stripes", { x: 0, y: 0 }, { x: 120, y: -120, duration: T, ease: "none" }, 0);
+      tl.fromTo("#live-dot", { opacity: 1 }, { opacity: 0.25, duration: 0.6, ease: "sine.inOut", yoyo: true,
+        repeat: Math.max(0, Math.floor(T / 0.6) - 1) }, 0);
+      tl.fromTo("#progress", { scaleX: 0 }, { scaleX: 1, duration: T, ease: "none" }, 0);
+
+      // hook: lines slam in, hold, then hand over to the persistent title
+      const lines = gsap.utils.toArray(".hook-line");
+      // frame 0 doubles as the feed thumbnail, so everything starts readable and only settles
+      lines.forEach((el, i) => {
+        tl.fromTo(el, { scale: 1.18 }, { scale: 1, duration: 0.35, ease: "expo.out" }, i * 0.12);
+      });
+      tl.fromTo("#card", { y: 24 }, { y: 0, duration: 0.45, ease: "power3.out" }, 0);
+      tl.to("#hook", { opacity: 0, y: -20, duration: 0.25, ease: "power2.in" }, D.hookHold);
+      tl.fromTo("#title", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, D.hookHold + 0.15);
+
+      // jump cuts: alternate a subtle punch so cuts read as intentional
+      if (D.punch) {
+        D.cuts.forEach((t, i) => {
+          tl.set("#punch", { scale: i % 2 === 0 ? 1.06 : 1.0 }, t);
+        });
+      }
+
+      // events
+      let titleBusyUntil = 0;
+      D.events.forEach((e) => {
+        const dur = e.dur || 3;
+        if (e.type === "tip") {
+          const el = "#tip-" + e.i;
+          tl.to("#title", { opacity: 0, duration: 0.15 }, e.at - 0.05);
+          tl.fromTo(el, { x: -1100, opacity: 1, rotation: -3 }, { x: 0, rotation: -1, duration: 0.45, ease: "power3.out" }, e.at);
+          tl.to(el, { x: 1100, rotation: 2, duration: 0.35, ease: "power2.in" }, e.at + dur);
+          tl.set(el, { opacity: 0 }, e.at + dur + 0.36);
+          tl.to("#title", { opacity: 1, duration: 0.25 }, e.at + dur + 0.3);
+        } else if (e.type === "lol" || e.type === "sticker") {
+          const el = "#stk-" + e.i;
+          const rot = e.i % 2 === 0 ? -8 : 7;
+          tl.fromTo(el, { scale: 0, opacity: 0, rotation: rot * 2 }, { scale: 1, opacity: 1, rotation: rot, duration: 0.3, ease: "power3.out" }, e.at);
+          tl.to(el, { scale: 1.08, duration: 0.18, ease: "sine.inOut", yoyo: true, repeat: 1 }, e.at + 0.35);
+          tl.to(el, { scale: 0.6, opacity: 0, duration: 0.2, ease: "power2.in" }, e.at + dur - 0.2);
+          if (e.type === "lol") {
+            tl.to("#zoom", { scale: 1.12, duration: 0.18, ease: "power3.out" }, e.at);
+            tl.to("#zoom", { scale: 1.0, duration: 0.4, ease: "power2.inOut" }, e.at + Math.min(dur, 1.4));
+          }
+        } else if (e.type === "list") {
+          const el = "#list-" + e.i;
+          tl.fromTo(el, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, e.at);
+          e.itemsAt.forEach((t, k) => {
+            tl.fromTo("#li-" + e.i + "-" + k, { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.25, ease: "power3.out" }, Math.max(e.at, t));
+          });
+          tl.to(el, { opacity: 0, y: 30, duration: 0.25, ease: "power2.in" }, e.end);
+        } else if (e.type === "zoom") {
+          tl.set("#zoom", { transformOrigin: e.origin || "50% 45%" }, e.at);
+          tl.to("#zoom", { scale: e.scale || 1.3, duration: 0.35, ease: "power3.out" }, e.at);
+          tl.to("#zoom", { scale: 1.0, duration: 0.4, ease: "power2.inOut" }, e.at + dur);
+          tl.set("#zoom", { transformOrigin: "50% 45%" }, e.at + dur + 0.41);
+        }
+      });
+
+      // karaoke captions: one group at a time, active word lights up
+      D.captions.forEach((g, gi) => {
+        const el = document.getElementById("cg-" + gi);
+        if (!el) return;
+        tl.fromTo(el, { opacity: 0, y: 18, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.12, ease: "power3.out" }, g.start);
+        g.words.forEach((w, wi) => {
+          const wel = "#cw-" + gi + "-" + wi;
+          tl.fromTo(wel, { color: "#fff6e6", scale: 1 }, { color: "#ffd23f", scale: 1.1, duration: 0.08, ease: "power2.out" }, Math.max(g.start, w.s));
+          if (wi < g.words.length - 1) tl.to(wel, { color: "#fff6e6", scale: 1, duration: 0.08 }, Math.max(g.start, g.words[wi + 1].s));
+        });
+        tl.to(el, { opacity: 0, duration: 0.08, ease: "power2.in" }, Math.max(g.start + 0.1, g.end - 0.08));
+        tl.set(el, { opacity: 0, visibility: "hidden" }, g.end);
+      });
+
+      // end call-to-action
+      tl.to("#title", { opacity: 0, duration: 0.15 }, T - 2.65);
+      tl.fromTo("#cta", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power3.out" }, T - 2.6);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

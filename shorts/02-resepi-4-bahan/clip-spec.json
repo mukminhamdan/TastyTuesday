@@ -1,0 +1,14 @@
+{
+  "id": "02-resepi-4-bahan",
+  "title": "Resepi sourdough 4 bahan je!",
+  "hook": ["SOURDOUGH", "4 BAHAN JE!"],
+  "segments": [[278.1, 280.2], [285.9, 292.3], [770.5, 772.7], [777.4, 781.3], [809.4, 811.4], [1067.0, 1075.1]],
+  "events": [
+    {"t": 279.0, "type": "lol", "text": "NAIK 3X!", "emoji": "🫙", "dur": 1.8, "x": 520, "y": 980},
+    {"t": 287.0, "type": "tip", "label": "TIP", "text": "Guna starter bila dah naik 3x ganda, sebelum dia turun", "dur": 4.4},
+    {"t": 770.6, "type": "list", "label": "RESEPI", "items": [[770.6, "300g tepung"], [777.5, "180g air"], [779.3, "60g starter"], [809.5, "6g garam"]]}
+  ],
+  "caption_fixes": {"^stator$": "starter", "^balu$": "balun", "^Makmin": "Mukmin"},
+  "hook_hold": 2.2,
+  "cta": "Save resepi ni & follow untuk part 2!"
+}

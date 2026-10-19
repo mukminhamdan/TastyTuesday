@@ -1,0 +1,15 @@
+{
+  "id": "11-shower-cap-cair",
+  "title": "Shower cap cair dalam oven 😂",
+  "hook": ["SHOWER CAP", "CAIR DALAM OVEN"],
+  "segments": [[2570.9, 2578.6], [2580.2, 2583.4], [2496.9, 2512.3], [2514.5, 2518.6], [2583.4, 2589.9]],
+  "events": [
+    {"t": 2576.0, "type": "lol", "text": "CAIR?!", "emoji": "🫠", "dur": 1.8, "x": 520, "y": 1000},
+    {"t": 2582.5, "type": "lol", "text": "AKU MAKAN", "emoji": "😂", "dur": 2.2, "x": 300, "y": 1000},
+    {"t": 2499.5, "type": "sticker", "text": "GUNTING TISU?", "emoji": "✂️", "dur": 2.4, "x": 230, "y": 1120},
+    {"t": 2515.5, "type": "lol", "text": "AKU PUN SAMA", "emoji": "🙈", "dur": 2.0, "x": 260, "y": 1000}
+  ],
+  "caption_fixes": {"^startle$": "starter", "^ticahnya$": "faedahnya"},
+  "hook_hold": 2.2,
+  "cta": "Live setiap Selasa 4 petang · Follow!"
+}

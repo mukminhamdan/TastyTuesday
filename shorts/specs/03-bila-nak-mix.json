@@ -1,0 +1,15 @@
+{
+  "id": "03-bila-nak-mix",
+  "title": "Doh lembek? Starter belum naik 3x ganda",
+  "hook": ["DOH LEMBEK?", "NI PUNCANYA"],
+  "segments": [[2461.1, 2468.9], [2470.7, 2478.6], [7413.8, 7423.0], [7426.9, 7429.9], [7432.9, 7442.9], [7474.2, 7481.2]],
+  "events": [
+    {"t": 2471.0, "type": "sticker", "text": "2X = BELUM CUKUP", "emoji": "❌", "dur": 2.6, "x": 200, "y": 1150},
+    {"t": 7419.0, "type": "tip", "label": "TIP", "text": "Mix masa starter tengah naik — 3x ganda paling ngam", "dur": 5.0},
+    {"t": 7434.5, "type": "sticker", "text": "3X = NGAM!", "emoji": "✅", "dur": 2.4, "x": 300, "y": 1150},
+    {"t": 7438.5, "type": "tip", "label": "AWAS", "text": "Dah turun baru mix = roti jadi masam", "dur": 4.0},
+    {"t": 7479.0, "type": "lol", "text": "MASAM!", "emoji": "😖", "dur": 1.8, "x": 560, "y": 1000}
+  ],
+  "caption_fixes": {"^sawar$": "sourdough", "^Mengam": "Ngam", "^-engam$": ""},
+  "cta": "Follow untuk tips sourdough lagi!"
+}

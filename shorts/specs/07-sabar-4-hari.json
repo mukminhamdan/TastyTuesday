@@ -1,0 +1,17 @@
+{
+  "id": "07-sabar-4-hari",
+  "title": "Sourdough ambil 4 hari — kena sabar tinggi",
+  "hook": ["SOURDOUGH", "AMBIL 4 HARI?!"],
+  "segments": [[7176.4, 7181.0], [7186.3, 7199.9], [7201.0, 7206.0], [7207.7, 7218.6], [7229.1, 7232.6],
+               [7240.1, 7253.9], [7258.9, 7264.6], [7273.0, 7283.0], [7316.8, 7323.9]],
+  "events": [
+    {"t": 7187.0, "type": "list", "label": "JADUAL", "items": [[7187.0, "Hari 1–2: feed starter"], [7191.2, "Hari 3: mix + fold"], [7196.5, "Masuk fridge"], [7198.8, "Hari 4: bakar!"]], "until": 7205.5},
+    {"t": 7211.0, "type": "lol", "text": "KENAPA AKU BUAT", "emoji": "😩", "dur": 2.2, "x": 150, "y": 1000},
+    {"t": 7241.5, "type": "sticker", "text": "TAK BOLEH KELUAR", "emoji": "🏠", "dur": 2.6, "x": 200, "y": 1120},
+    {"t": 7261.0, "type": "tip", "label": "TIP", "text": "Lebih 30 minit = overproof. Guna timer!", "dur": 4.0},
+    {"t": 7280.0, "type": "lol", "text": "TANPA TIDUR", "emoji": "😴", "dur": 2.2, "x": 260, "y": 1000},
+    {"t": 7318.0, "type": "tip", "label": "TIP", "text": "Set alarm feed starter, waktu sama setiap hari", "dur": 4.6}
+  ],
+  "caption_fixes": {"^Sawa$": "Sourdough", "^profil$": "proof", "^pesawat$": "sourdough", "^fit$": "feed", "^overflow\\.?$": "overproof"},
+  "cta": "Tag kawan yang sabar tinggi!"
+}

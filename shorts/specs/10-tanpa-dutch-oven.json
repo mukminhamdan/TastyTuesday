@@ -1,0 +1,13 @@
+{
+  "id": "10-tanpa-dutch-oven",
+  "title": "Bakar sourdough tanpa Dutch oven",
+  "hook": ["TAK ADA", "DUTCH OVEN?"],
+  "segments": [[5298.3, 5302.6], [5305.6, 5320.0], [5320.8, 5324.0], [5325.0, 5332.3], [5333.5, 5336.4]],
+  "events": [
+    {"t": 5299.5, "type": "list", "label": "MOD", "items": [[5299.5, "Barbecue"], [5301.5, "Oven"]], "until": 5304.0},
+    {"t": 5316.5, "type": "tip", "label": "TIP", "text": "Tutup dengan aluminium foil + letak air kat tepi", "dur": 5.0},
+    {"t": 5329.5, "type": "lol", "text": "DUTCH OVEN MAHAL", "emoji": "💸", "dur": 2.2, "x": 170, "y": 1000}
+  ],
+  "caption_fixes": {"^Kuvern,?$": "Kuven", "^kereta$": "kita", "^Dutch$": "Dutch"},
+  "cta": "Follow untuk tips sourdough lagi!"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "01-oven-tersakiti",
+  "title": "Suami preheat oven… doh sourdough ada kat dalam",
+  "hook": ["DOH SAYA", "KENA PREHEAT?!"],
+  "segments": [[4005.4, 4015.6], [3968.6, 3972.4], [3983.4, 3988.6], [3992.6, 4005.4], [4016.8, 4023.6],
+               [4031.5, 4034.6], [4036.2, 4037.9], [4069.9, 4075.4], [4098.0, 4104.0], [6806.6, 6818.0]],
+  "events": [
+    {"t": 4011.5, "type": "sticker", "text": "TERSAKITI", "emoji": "😭", "dur": 2.2, "x": 330, "y": 1150},
+    {"t": 3999.0, "type": "zoom", "scale": 1.15, "origin": "50% 50%", "dur": 2.5},
+    {"t": 4021.0, "type": "sticker", "text": "PLASTIK HILANG", "emoji": "🫠", "dur": 2.2, "x": 260, "y": 1150},
+    {"t": 4032.0, "type": "lol", "text": "BERBULU!", "emoji": "😤", "dur": 1.8, "x": 560, "y": 1000},
+    {"t": 4070.5, "type": "tip", "label": "TIP", "text": "Tak jadi? Bakar je. Tak jadi juga? Blend buat cekodok!", "dur": 4.6},
+    {"t": 4101.5, "type": "lol", "text": "CEKODOK!", "emoji": "😂", "dur": 1.8, "x": 560, "y": 1000},
+    {"t": 6814.5, "type": "lol", "text": "RUMAH PUN TAK ADA", "emoji": "🤣", "dur": 2.4, "x": 140, "y": 1000}
+  ],
+  "caption_fixes": {"^sourdough$": "sourdough", "^dos$": "doh", "^dough$": "doh", "^Banco": "Bancuh", "^setor": "suami", "^tabarlah": "sabarlah", "^Bukan$": "Bukan", "^kecepat$": "cekodok", "^dok$": ""},
+  "cta": "Live setiap Selasa 4 petang · Follow!"
+}

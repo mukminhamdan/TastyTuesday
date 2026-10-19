@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="ms" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Noto Color Emoji"; src: local("Noto Color Emoji"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #1c130d; }
+      #root { width: 100%; height: 100%; position: relative; overflow: hidden;
+        font-family: "Archivo Black", "Noto Color Emoji", sans-serif; color: #fff6e6; }
+      .bg { position: absolute; inset: 0; background: #1c130d; overflow: hidden; }
+      .glow { position: absolute; border-radius: 50%; filter: blur(60px); }
+      .glow-a { width: 900px; height: 700px; left: -200px; top: -260px; background: rgba(255, 196, 61, 0.22); }
+      .glow-b { width: 900px; height: 800px; right: -300px; bottom: -300px; background: rgba(232, 72, 44, 0.22); }
+      .stripes { position: absolute; left: -200px; top: -200px; width: 1480px; height: 2320px;
+        background: repeating-linear-gradient(135deg, rgba(255, 214, 120, 0.035) 0 40px, transparent 40px 120px); }
+
+      .kicker { position: absolute; left: 0; right: 0; top: 150px; display: flex; justify-content: center; }
+      .kicker-pill { display: flex; align-items: center; gap: 14px; padding: 10px 24px; border-radius: 40px;
+        background: rgba(0, 0, 0, 0.35); border: 2px solid rgba(255, 214, 120, 0.45);
+        font-family: "IBM Plex Mono", monospace; font-weight: 700; font-size: 26px; letter-spacing: 0.12em; color: #ffd678; }
+      .live-dot { width: 16px; height: 16px; border-radius: 50%; background: #ff4b2b; display: block; }
+
+      .title-zone { position: absolute; left: 60px; right: 60px; top: 215px; height: 165px;
+        display: flex; align-items: center; justify-content: center; text-align: center; }
+      .title { text-wrap: balance; font-size: 62px; line-height: 1.08; letter-spacing: -0.02em; color: #ffd23f;
+        text-shadow: 0 5px 0 #7a2a12; max-width: 960px; }
+      .hook { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center;
+        justify-content: center; text-align: center; }
+      .hook-line { font-size: 84px; line-height: 1.0; letter-spacing: -0.03em; color: #fff6e6;
+        text-shadow: 0 6px 0 #c2361b; display: block; max-width: 1000px; }
+      .hook-line:nth-child(2) { color: #ffd23f; text-shadow: 0 6px 0 #7a2a12; }
+
+      .card { position: absolute; left: 0; width: 1080px; top: 400px; height: 1050px;
+        overflow: hidden; background: #000; }
+      .punch, .zoom { position: absolute; left: 0; top: 0; width: 1080px; height: 1050px; transform-origin: 50% 45%; }
+      .cam-video { position: absolute; left: 0; top: -435px; width: 1080px; height: 1920px; object-fit: cover; }
+      .progress { position: absolute; left: 0; bottom: 0; width: 1080px; height: 8px; background: #ffd23f;
+        transform-origin: 0% 50%; }
+
+      .tip { position: absolute; left: 50px; right: 50px; top: 196px; min-height: 196px; padding: 26px 34px 30px;
+        background: #fff6e6; border-radius: 28px; box-shadow: 0 10px 0 #c2361b; opacity: 0; }
+      .tip-label { display: inline-block; padding: 6px 18px; border-radius: 12px; background: #e8482c; color: #fff6e6;
+        font-family: "IBM Plex Mono", monospace; font-weight: 700; font-size: 28px; letter-spacing: 0.1em; }
+      .tip-text { text-wrap: balance; margin-top: 14px; font-size: 50px; line-height: 1.1; letter-spacing: -0.02em; color: #2a1a10; }
+
+      .listcard { position: absolute; left: 70px; right: 70px; padding: 22px 34px 26px; border-radius: 26px;
+        background: rgba(255, 246, 230, 0.96); box-shadow: 0 10px 0 #c2361b; opacity: 0; }
+      .li { display: flex; align-items: center; gap: 18px; margin-top: 14px; font-size: 54px; line-height: 1.12;
+        letter-spacing: -0.02em; color: #2a1a10; opacity: 0; }
+      .li-dot { display: block; width: 22px; height: 22px; border-radius: 50%; background: #e8482c; flex: none; }
+      .sticker { position: absolute; display: flex; align-items: center; gap: 10px; padding: 14px 26px;
+        border-radius: 22px; background: #ffd23f; color: #2a1a10; font-size: 58px; letter-spacing: -0.02em;
+        box-shadow: 0 8px 0 #2a1a10; opacity: 0; white-space: nowrap; transform-origin: 50% 50%; }
+      .sticker.stk { background: #fff6e6; }
+      .emo { font-family: "Noto Color Emoji", sans-serif; font-size: 64px; line-height: 1; }
+
+      .captions { position: absolute; left: 30px; right: 30px; top: 1474px; height: 190px; }
+      .cg { position: absolute; left: 0; right: 0; top: 0; display: flex; flex-wrap: wrap; justify-content: center;
+        align-content: flex-start; gap: 0 24px; text-align: center; opacity: 0; }
+      .w { display: inline-block; font-size: 70px; line-height: 1.12; letter-spacing: -0.01em; color: #fff6e6;
+        -webkit-text-stroke: 12px #1c130d; paint-order: stroke fill; text-shadow: 0 6px 0 rgba(0,0,0,0.5); }
+
+      .cta { position: absolute; left: 0; right: 0; top: 230px; display: flex; justify-content: center; opacity: 0; }
+      .cta-pill { padding: 26px 42px; border-radius: 26px; background: #e8482c; color: #fff6e6; font-size: 54px;
+        letter-spacing: -0.02em; box-shadow: 0 10px 0 #7a2a12; text-align: center; max-width: 980px; text-wrap: balance; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="77.660" data-width="1080" data-height="1920">
+      <div class="bg" id="bg">
+        <div class="glow glow-a" id="glow-a" data-layout-allow-overflow></div>
+        <div class="glow glow-b" id="glow-b" data-layout-allow-overflow></div>
+        <div class="stripes" id="stripes" data-layout-allow-overflow></div>
+      </div>
+
+      <div class="kicker"><div class="kicker-pill" id="kicker"><span class="live-dot" id="live-dot"></span>TASTY TUESDAY · LIVE</div></div>
+      <div class="title-zone">
+        <div class="hook" id="hook" data-layout-allow-overlap><div class="hook-line">SOURDOUGH</div><div class="hook-line">AMBIL 4 HARI?!</div></div>
+        <div class="title" id="title" data-layout-allow-overlap>Sourdough ambil 4 hari — kena sabar tinggi</div>
+      </div>
+
+      <div class="card" id="card">
+        <div class="punch" id="punch" data-layout-allow-overflow><div class="zoom" id="zoom" data-layout-allow-overflow>
+        <video id="seg-0" class="clip cam-video" src="assets/src_0.mp4" playsinline data-has-audio="true" data-start="0.000" data-duration="4.680" data-media-start="1.000" data-fade-in="0.03" data-fade-out="0.03" data-track-index="0"></video>
+        <video id="seg-1" class="clip cam-video" src="assets/src_0.mp4" playsinline data-has-audio="true" data-start="4.680" data-duration="13.920" data-media-start="10.780" data-fade-in="0.03" data-fade-out="0.03" data-track-index="0"></video>
+        <video id="seg-2" class="clip cam-video" src="assets/src_0.mp4" playsinline data-has-audio="true" data-start="18.600" data-duration="5.400" data-media-start="25.620" data-fade-in="0.03" data-fade-out="0.03" data-track-index="0"></video>
+        <video id="seg-3" class="clip cam-video" src="assets/src_0.mp4" playsinline data-has-audio="true" data-start="24.000" data-duration="11.480" data-media-start="32.200" data-fade-in="0.03" data-fade-out="0.03" data-track-index="0"></video>
+        <video id="seg-4" class="clip cam-video" src="assets/src_0.mp4" playsinline data-has-audio="true" data-start="35.480" data-duration="3.940" data-media-start="53.580" data-fade-in="0.03" data-fade-out="0.03" data-track-index="0"></video>
+        <video id="seg-5" class="clip cam-video" src="assets/src_0.mp4" playsinline data-has-audio="true" data-start="39.420" data-duration="13.900" data-media-start="64.720" data-fade-in="0.03" data-fade-out="0.03" data-track-index="0"></video>
+        <video id="seg-6" class="clip cam-video" src="assets/src_0.mp4" playsinline data-has-audio="true" data-start="53.320" data-duration="6.320" data-media-start="83.360" data-fade-in="0.03" data-fade-out="0.03" data-track-index="0"></video>
+        <video id="seg-7" class="clip cam-video" src="assets/src_0.mp4" playsinline data-has-audio="true" data-start="59.640" data-duration="10.520" data-media-start="97.480" data-fade-in="0.03" data-fade-out="0.03" data-track-index="0"></video>
+        <video id="seg-8" class="clip cam-video" src="assets/src_1.mp4" playsinline data-has-audio="true" data-start="70.160" data-duration="7.500" data-media-start="1.000" data-fade-in="0.03" data-fade-out="0.03" data-track-index="0"></video>
+        </div></div>
+        <div class="progress" id="progress"></div>
+      </div>
+
+      <div class="sticker lol" id="stk-1" style="left:150px;top:1000px"><span class="emo">😩</span><span class="stk-text">KENAPA AKU BUAT</span></div>
+      <div class="sticker stk" id="stk-2" style="left:200px;top:1120px"><span class="emo">🏠</span><span class="stk-text">TAK BOLEH KELUAR</span></div>
+      <div class="sticker lol" id="stk-4" style="left:260px;top:1000px"><span class="emo">😴</span><span class="stk-text">TANPA TIDUR</span></div>
+
+    <div class="tip" id="tip-3" data-layout-allow-overflow><div class="tip-label">TIP</div><div class="tip-text">Lebih 30 minit = overproof. Guna timer!</div></div>
+    <div class="tip" id="tip-5" data-layout-allow-overflow><div class="tip-label">TIP</div><div class="tip-text">Set alarm feed starter, waktu sama setiap hari</div></div>
+    <div class="listcard" id="list-0" style="top:972px" data-layout-allow-overflow><div class="tip-label">JADUAL</div><div class="li" id="li-0-0"><span class="li-dot"></span>Hari 1–2: feed starter</div><div class="li" id="li-0-1"><span class="li-dot"></span>Hari 3: mix + fold</div><div class="li" id="li-0-2"><span class="li-dot"></span>Masuk fridge</div><div class="li" id="li-0-3"><span class="li-dot"></span>Hari 4: bakar!</div></div>
+
+      <div class="captions" id="captions">
+      <div class="cg" id="cg-0"><span class="w" id="cw-0-0">4</span><span class="w" id="cw-0-1">HARI</span><span class="w" id="cw-0-2">EH</span></div>
+      <div class="cg" id="cg-1"><span class="w" id="cw-1-0">4</span><span class="w" id="cw-1-1">HARI</span></div>
+      <div class="cg" id="cg-2"><span class="w" id="cw-2-0">SEBAB</span><span class="w" id="cw-2-1">KITA</span><span class="w" id="cw-2-2">KENA</span></div>
+      <div class="cg" id="cg-3"><span class="w" id="cw-3-0">FEED</span><span class="w" id="cw-3-1">SETIAP</span><span class="w" id="cw-3-2">HARI</span></div>
+      <div class="cg" id="cg-4"><span class="w" id="cw-4-0">KITA</span><span class="w" id="cw-4-1">KENA</span><span class="w" id="cw-4-2">FEED</span></div>
+      <div class="cg" id="cg-5"><span class="w" id="cw-5-0">DIA</span></div>
+      <div class="cg" id="cg-6"><span class="w" id="cw-6-0">PASAL</span><span class="w" id="cw-6-1">HARI</span></div>
+      <div class="cg" id="cg-7"><span class="w" id="cw-7-0">KETIGA</span><span class="w" id="cw-7-1">TU</span><span class="w" id="cw-7-2">BARU</span></div>
+      <div class="cg" id="cg-8"><span class="w" id="cw-8-0">KITA</span><span class="w" id="cw-8-1">BUAT</span><span class="w" id="cw-8-2">YANG</span></div>
+      <div class="cg" id="cg-9"><span class="w" id="cw-9-0">MACAM</span><span class="w" id="cw-9-1">IDA</span><span class="w" id="cw-9-2">BUAT</span></div>
+      <div class="cg" id="cg-10"><span class="w" id="cw-10-0">TADI</span><span class="w" id="cw-10-1">TU</span></div>
+      <div class="cg" id="cg-11"><span class="w" id="cw-11-0">LEPAS</span><span class="w" id="cw-11-1">IDA</span><span class="w" id="cw-11-2">DAH</span></div>
+      <div class="cg" id="cg-12"><span class="w" id="cw-12-0">BUAT</span><span class="w" id="cw-12-1">TU</span><span class="w" id="cw-12-2">LEPAS</span></div>
+      <div class="cg" id="cg-13"><span class="w" id="cw-13-0">TU</span><span class="w" id="cw-13-1">DIA</span><span class="w" id="cw-13-2">MASUK</span></div>
+      <div class="cg" id="cg-14"><span class="w" id="cw-14-0">DALAM</span><span class="w" id="cw-14-1">FRIDGE</span></div>
+      <div class="cg" id="cg-15"><span class="w" id="cw-15-0">BESOK</span><span class="w" id="cw-15-1">PULA</span><span class="w" id="cw-15-2">BARU</span></div>
+      <div class="cg" id="cg-16"><span class="w" id="cw-16-0">BOLEH</span><span class="w" id="cw-16-1">BAKAR</span><span class="w" id="cw-16-2">ALL</span></div>
+      <div class="cg" id="cg-17"><span class="w" id="cw-17-0">IN</span><span class="w" id="cw-17-1">DALAM</span><span class="w" id="cw-17-2">4</span></div>
+      <div class="cg" id="cg-18"><span class="w" id="cw-18-0">HARI</span><span class="w" id="cw-18-1">ITU</span><span class="w" id="cw-18-2">YANG</span></div>
+      <div class="cg" id="cg-19"><span class="w" id="cw-19-0">MACAM</span><span class="w" id="cw-19-1">ITU</span></div>
+      <div class="cg" id="cg-20"><span class="w" id="cw-20-0">YANG</span></div>
+      <div class="cg" id="cg-21"><span class="w" id="cw-21-0">SIKIT</span><span class="w" id="cw-21-1">LAH</span><span class="w" id="cw-21-2">NAK</span></div>
+      <div class="cg" id="cg-22"><span class="w" id="cw-22-0">BUAT</span><span class="w" id="cw-22-1">TAPI</span><span class="w" id="cw-22-2">BILA</span></div>
+      <div class="cg" id="cg-23"><span class="w" id="cw-23-0">RESULT</span><span class="w" id="cw-23-1">DIA</span><span class="w" id="cw-23-2">BILA</span></div>
+      <div class="cg" id="cg-24"><span class="w" id="cw-24-0">-BILA</span><span class="w" id="cw-24-1">BUAT</span><span class="w" id="cw-24-2">TU</span></div>
+      <div class="cg" id="cg-25"><span class="w" id="cw-25-0">RASA</span><span class="w" id="cw-25-1">MACAM</span></div>
+      <div class="cg" id="cg-26"><span class="w" id="cw-26-0">KENAPA</span><span class="w" id="cw-26-1">AKU</span><span class="w" id="cw-26-2">BUAT</span></div>
+      <div class="cg" id="cg-27"><span class="w" id="cw-27-0">TAPI</span><span class="w" id="cw-27-1">BILA</span><span class="w" id="cw-27-2">DAH</span></div>
+      <div class="cg" id="cg-28"><span class="w" id="cw-28-0">JADI</span></div>
+      <div class="cg" id="cg-29"><span class="w" id="cw-29-0">TERUS</span><span class="w" id="cw-29-1">SEMANGAT</span></div>
+      <div class="cg" id="cg-30"><span class="w" id="cw-30-0">NAK</span><span class="w" id="cw-30-1">BUAT</span><span class="w" id="cw-30-2">LAGI</span></div>
+      <div class="cg" id="cg-31"><span class="w" id="cw-31-0">DIA</span><span class="w" id="cw-31-1">TAK</span><span class="w" id="cw-31-2">ADALAH</span></div>
+      <div class="cg" id="cg-32"><span class="w" id="cw-32-0">SUSAH</span><span class="w" id="cw-32-1">DIA</span><span class="w" id="cw-32-2">TAK</span></div>
+      <div class="cg" id="cg-33"><span class="w" id="cw-33-0">ADALAH</span><span class="w" id="cw-33-1">MAKAN</span></div>
+      <div class="cg" id="cg-34"><span class="w" id="cw-34-0">MASA</span></div>
+      <div class="cg" id="cg-35"><span class="w" id="cw-35-0">SETENGAH</span><span class="w" id="cw-35-1">JAM</span></div>
+      <div class="cg" id="cg-36"><span class="w" id="cw-36-0">MACAM</span><span class="w" id="cw-36-1">UNTUK</span></div>
+      <div class="cg" id="cg-37"><span class="w" id="cw-37-0">PROSES</span><span class="w" id="cw-37-1">STRETCH</span></div>
+      <div class="cg" id="cg-38"><span class="w" id="cw-38-0">AND</span><span class="w" id="cw-38-1">FOLD</span><span class="w" id="cw-38-2">NI</span></div>
+      <div class="cg" id="cg-39"><span class="w" id="cw-39-0">-TIGA</span><span class="w" id="cw-39-1">JAM</span><span class="w" id="cw-39-2">TU</span></div>
+      <div class="cg" id="cg-40"><span class="w" id="cw-40-0">KITA</span><span class="w" id="cw-40-1">TAK</span><span class="w" id="cw-40-2">BOLEH</span></div>
+      <div class="cg" id="cg-41"><span class="w" id="cw-41-0">KELUAR</span></div>
+      <div class="cg" id="cg-42"><span class="w" id="cw-42-0">BAGAIMANA</span></div>
+      <div class="cg" id="cg-43"><span class="w" id="cw-43-0">TAK</span><span class="w" id="cw-43-1">BOLEH</span><span class="w" id="cw-43-2">AMBIL</span></div>
+      <div class="cg" id="cg-44"><span class="w" id="cw-44-0">ANAK</span><span class="w" id="cw-44-1">SEKOLAH</span></div>
+      <div class="cg" id="cg-45"><span class="w" id="cw-45-0">TAK</span><span class="w" id="cw-45-1">BOLEH</span><span class="w" id="cw-45-2">HANTAR</span></div>
+      <div class="cg" id="cg-46"><span class="w" id="cw-46-0">ANAK</span><span class="w" id="cw-46-1">SEKOLAH</span></div>
+      <div class="cg" id="cg-47"><span class="w" id="cw-47-0">TAK</span><span class="w" id="cw-47-1">BOLEH</span><span class="w" id="cw-47-2">PERGI</span></div>
+      <div class="cg" id="cg-48"><span class="w" id="cw-48-0">KENA</span><span class="w" id="cw-48-1">TUNGGU</span></div>
+      <div class="cg" id="cg-49"><span class="w" id="cw-49-0">BELI</span><span class="w" id="cw-49-1">BELAH</span></div>
+      <div class="cg" id="cg-50"><span class="w" id="cw-50-0">KENA</span><span class="w" id="cw-50-1">TUNGGU</span></div>
+      <div class="cg" id="cg-51"><span class="w" id="cw-51-0">SEBAB</span><span class="w" id="cw-51-1">KALAU</span></div>
+      <div class="cg" id="cg-52"><span class="w" id="cw-52-0">TERLEBIH</span></div>
+      <div class="cg" id="cg-53"><span class="w" id="cw-53-0">TERLEBIH</span></div>
+      <div class="cg" id="cg-54"><span class="w" id="cw-54-0">DARIPADA</span><span class="w" id="cw-54-1">TIGA</span></div>
+      <div class="cg" id="cg-55"><span class="w" id="cw-55-0">PULUH</span><span class="w" id="cw-55-1">MINIT</span><span class="w" id="cw-55-2">TU</span></div>
+      <div class="cg" id="cg-56"><span class="w" id="cw-56-0">DIA</span><span class="w" id="cw-56-1">AKAN</span></div>
+      <div class="cg" id="cg-57"><span class="w" id="cw-57-0">OVERPROOF</span><span class="w" id="cw-57-1">BILA</span></div>
+      <div class="cg" id="cg-58"><span class="w" id="cw-58-0">DIA</span><span class="w" id="cw-58-1">OVERPROOF</span><span class="w" id="cw-58-2">TU</span></div>
+      <div class="cg" id="cg-59"><span class="w" id="cw-59-0">DIA</span><span class="w" id="cw-59-1">JADI</span><span class="w" id="cw-59-2">LEMBEK</span></div>
+      <div class="cg" id="cg-60"><span class="w" id="cw-60-0">DIA</span><span class="w" id="cw-60-1">TAK</span><span class="w" id="cw-60-2">DIA</span></div>
+      <div class="cg" id="cg-61"><span class="w" id="cw-61-0">ROTI</span><span class="w" id="cw-61-1">KENA</span><span class="w" id="cw-61-2">DIA</span></div>
+      <div class="cg" id="cg-62"><span class="w" id="cw-62-0">FLAT</span><span class="w" id="cw-62-1">NANTI</span></div>
+      <div class="cg" id="cg-63"><span class="w" id="cw-63-0">SAYA</span><span class="w" id="cw-63-1">PERNAH</span><span class="w" id="cw-63-2">BUAT</span></div>
+      <div class="cg" id="cg-64"><span class="w" id="cw-64-0">HARI</span><span class="w" id="cw-64-1">ITU</span></div>
+      <div class="cg" id="cg-65"><span class="w" id="cw-65-0">TERLEBIH</span></div>
+      <div class="cg" id="cg-66"><span class="w" id="cw-66-0">TERLANJAK</span><span class="w" id="cw-66-1">PROOF</span></div>
+      <div class="cg" id="cg-67"><span class="w" id="cw-67-0">SAMPAI</span><span class="w" id="cw-67-1">DUA</span><span class="w" id="cw-67-2">JAM</span></div>
+      <div class="cg" id="cg-68"><span class="w" id="cw-68-0">TAK</span><span class="w" id="cw-68-1">PERASAN</span></div>
+      <div class="cg" id="cg-69"><span class="w" id="cw-69-0">ITU</span><span class="w" id="cw-69-1">MEMANG</span><span class="w" id="cw-69-2">KENA</span></div>
+      <div class="cg" id="cg-70"><span class="w" id="cw-70-0">GUNA</span><span class="w" id="cw-70-1">TIMER</span></div>
+      <div class="cg" id="cg-71"><span class="w" id="cw-71-0">ORANG</span><span class="w" id="cw-71-1">-ORANG</span></div>
+      <div class="cg" id="cg-72"><span class="w" id="cw-72-0">YANG</span><span class="w" id="cw-72-1">ADA</span></div>
+      <div class="cg" id="cg-73"><span class="w" id="cw-73-0">KESABARAN</span><span class="w" id="cw-73-1">TINGGI</span></div>
+      <div class="cg" id="cg-74"><span class="w" id="cw-74-0">JE</span><span class="w" id="cw-74-1">BUAT</span></div>
+      <div class="cg" id="cg-75"><span class="w" id="cw-75-0">SOURDOUGH</span><span class="w" id="cw-75-1">DIA</span></div>
+      <div class="cg" id="cg-76"><span class="w" id="cw-76-0">TU</span></div>
+      <div class="cg" id="cg-77"><span class="w" id="cw-77-0">SETAKAT</span><span class="w" id="cw-77-1">NI</span><span class="w" id="cw-77-2">SAYA</span></div>
+      <div class="cg" id="cg-78"><span class="w" id="cw-78-0">BELUM</span><span class="w" id="cw-78-1">ADA</span><span class="w" id="cw-78-2">LAGI</span></div>
+      <div class="cg" id="cg-79"><span class="w" id="cw-79-0">KESABARAN</span></div>
+      <div class="cg" id="cg-80"><span class="w" id="cw-80-0">LIPAT</span><span class="w" id="cw-80-1">BAJU</span><span class="w" id="cw-80-2">TAK</span></div>
+      <div class="cg" id="cg-81"><span class="w" id="cw-81-0">DIA</span><span class="w" id="cw-81-1">SENDIRI</span><span class="w" id="cw-81-2">KE</span></div>
+      <div class="cg" id="cg-82"><span class="w" id="cw-82-0">ORANG</span><span class="w" id="cw-82-1">YANG</span><span class="w" id="cw-82-2">ADA</span></div>
+      <div class="cg" id="cg-83"><span class="w" id="cw-83-0">KESABARAN</span></div>
+      <div class="cg" id="cg-84"><span class="w" id="cw-84-0">TINGGI</span></div>
+      <div class="cg" id="cg-85"><span class="w" id="cw-85-0">ORANG</span><span class="w" id="cw-85-1">YANG</span><span class="w" id="cw-85-2">BOLEH</span></div>
+      <div class="cg" id="cg-86"><span class="w" id="cw-86-0">DUDUK</span><span class="w" id="cw-86-1">DEKAT</span></div>
+      <div class="cg" id="cg-87"><span class="w" id="cw-87-0">RUMAH</span><span class="w" id="cw-87-1">30</span><span class="w" id="cw-87-2">MINIT</span></div>
+      <div class="cg" id="cg-88"><span class="w" id="cw-88-0">TANPA</span><span class="w" id="cw-88-1">TIDUR</span></div>
+      <div class="cg" id="cg-89"><span class="w" id="cw-89-0">INGAT</span><span class="w" id="cw-89-1">SEBENARNYA</span></div>
+      <div class="cg" id="cg-90"><span class="w" id="cw-90-0">KITA</span><span class="w" id="cw-90-1">TAK</span><span class="w" id="cw-90-2">FEED</span></div>
+      <div class="cg" id="cg-91"><span class="w" id="cw-91-0">ITU</span><span class="w" id="cw-91-1">SEBAB</span><span class="w" id="cw-91-2">KITA</span></div>
+      <div class="cg" id="cg-92"><span class="w" id="cw-92-0">TAK</span><span class="w" id="cw-92-1">INGAT</span><span class="w" id="cw-92-2">SO</span></div>
+      <div class="cg" id="cg-93"><span class="w" id="cw-93-0">KALAU</span><span class="w" id="cw-93-1">MACAM</span></div>
+      <div class="cg" id="cg-94"><span class="w" id="cw-94-0">UNTUK</span><span class="w" id="cw-94-1">TIGA</span><span class="w" id="cw-94-2">HARI</span></div>
+      <div class="cg" id="cg-95"><span class="w" id="cw-95-0">ITU</span><span class="w" id="cw-95-1">KAU</span><span class="w" id="cw-95-2">SET</span></div>
+      <div class="cg" id="cg-96"><span class="w" id="cw-96-0">ALARM</span><span class="w" id="cw-96-1">SETIAP</span></div>
+      <div class="cg" id="cg-97"><span class="w" id="cw-97-0">HARI</span><span class="w" id="cw-97-1">-HARI</span><span class="w" id="cw-97-2">YANG</span></div>
+      <div class="cg" id="cg-98"><span class="w" id="cw-98-0">SAMA</span><span class="w" id="cw-98-1">SUPAYA</span><span class="w" id="cw-98-2">KAU</span></div>
+      <div class="cg" id="cg-99"><span class="w" id="cw-99-0">INGAT</span></div>
+      </div>
+
+      <div class="cta" id="cta"><div class="cta-pill">Tag kawan yang sabar tinggi!</div></div>
+
+    <audio id="sfx-0" src="assets/sfx/impact-bass-1.mp3" data-start="0.050" data-duration="2.116" data-volume="0.4" data-track-index="3"></audio>
+    <audio id="sfx-1" src="assets/sfx/pop.mp3" data-start="5.650" data-duration="0.720" data-volume="0.3" data-track-index="4"></audio>
+    <audio id="sfx-2" src="assets/sfx/pop.mp3" data-start="9.850" data-duration="0.720" data-volume="0.3" data-track-index="5"></audio>
+    <audio id="sfx-3" src="assets/sfx/pop.mp3" data-start="15.150" data-duration="0.720" data-volume="0.3" data-track-index="3"></audio>
+    <audio id="sfx-4" src="assets/sfx/pop.mp3" data-start="17.450" data-duration="0.720" data-volume="0.3" data-track-index="4"></audio>
+    <audio id="sfx-5" src="assets/sfx/boing.mp3" data-start="27.550" data-duration="0.731" data-volume="0.4" data-track-index="5"></audio>
+    <audio id="sfx-6" src="assets/sfx/pop.mp3" data-start="40.950" data-duration="0.720" data-volume="0.35" data-track-index="3"></audio>
+    <audio id="sfx-7" src="assets/sfx/ding.mp3" data-start="55.710" data-duration="1.437" data-volume="0.3" data-track-index="4"></audio>
+    <audio id="sfx-8" src="assets/sfx/boing.mp3" data-start="66.910" data-duration="0.731" data-volume="0.4" data-track-index="5"></audio>
+    <audio id="sfx-9" src="assets/sfx/ding.mp3" data-start="71.650" data-duration="1.437" data-volume="0.3" data-track-index="3"></audio>
+    <audio id="sfx-10" src="assets/sfx/pop.mp3" data-start="75.060" data-duration="0.720" data-volume="0.35" data-track-index="4"></audio>
+    </div>
+    <script>
+      const D = {"duration": 77.66, "cuts": [4.68, 18.6, 24.0, 35.48, 39.42, 53.32, 59.64, 70.16], "captions": [{"start": 0.24, "end": 1.79, "words": [{"t": "4", "s": 0.24}, {"t": "HARI", "s": 0.8}, {"t": "EH", "s": 1.36}]}, {"start": 3.06, "end": 4.43, "words": [{"t": "4", "s": 3.06}, {"t": "HARI", "s": 3.62}]}, {"start": 5.02, "end": 6.42, "words": [{"t": "SEBAB", "s": 5.02}, {"t": "KITA", "s": 5.58}, {"t": "KENA", "s": 6.14}]}, {"start": 6.42, "end": 7.46, "words": [{"t": "FEED", "s": 6.42}, {"t": "SETIAP", "s": 6.76}, {"t": "HARI", "s": 7.28}]}, {"start": 7.46, "end": 8.18, "words": [{"t": "KITA", "s": 7.46}, {"t": "KENA", "s": 7.72}, {"t": "FEED", "s": 7.94}]}, {"start": 8.18, "end": 8.78, "words": [{"t": "DIA", "s": 8.18}]}, {"start": 9.66, "end": 10.4, "words": [{"t": "PASAL", "s": 9.66}, {"t": "HARI", "s": 10.22}]}, {"start": 10.4, "end": 11.26, "words": [{"t": "KETIGA", "s": 10.4}, {"t": "TU", "s": 10.84}, {"t": "BARU", "s": 11.0}]}, {"start": 11.26, "end": 12.2, "words": [{"t": "KITA", "s": 11.26}, {"t": "BUAT", "s": 11.5}, {"t": "YANG", "s": 12.08}]}, {"start": 12.2, "end": 12.88, "words": [{"t": "MACAM", "s": 12.2}, {"t": "IDA", "s": 12.4}, {"t": "BUAT", "s": 12.66}]}, {"start": 12.88, "end": 13.63, "words": [{"t": "TADI", "s": 12.88}, {"t": "TU", "s": 13.12}]}, {"start": 14.34, "end": 15.24, "words": [{"t": "LEPAS", "s": 14.34}, {"t": "IDA", "s": 14.82}, {"t": "DAH", "s": 15.1}]}, {"start": 15.24, "end": 16.06, "words": [{"t": "BUAT", "s": 15.24}, {"t": "TU", "s": 15.46}, {"t": "LEPAS", "s": 15.7}]}, {"start": 16.06, "end": 16.5, "words": [{"t": "TU", "s": 16.06}, {"t": "DIA", "s": 16.22}, {"t": "MASUK", "s": 16.34}]}, {"start": 16.5, "end": 17.04, "words": [{"t": "DALAM", "s": 16.5}, {"t": "FRIDGE", "s": 16.7}]}, {"start": 17.04, "end": 18.12, "words": [{"t": "BESOK", "s": 17.04}, {"t": "PULA", "s": 17.64}, {"t": "BARU", "s": 17.86}]}, {"start": 18.12, "end": 19.22, "words": [{"t": "BOLEH", "s": 18.12}, {"t": "BAKAR", "s": 18.36}, {"t": "ALL", "s": 18.74}]}, {"start": 19.22, "end": 19.74, "words": [{"t": "IN", "s": 19.22}, {"t": "DALAM", "s": 19.38}, {"t": "4", "s": 19.56}]}, {"start": 19.74, "end": 20.44, "words": [{"t": "HARI", "s": 19.74}, {"t": "ITU", "s": 20.08}, {"t": "YANG", "s": 20.26}]}, {"start": 20.44, "end": 21.57, "words": [{"t": "MACAM", "s": 20.44}, {"t": "ITU", "s": 20.64}]}, {"start": 22.41, "end": 23.66, "words": [{"t": "YANG", "s": 22.41}]}, {"start": 24.03, "end": 24.54, "words": [{"t": "SIKIT", "s": 24.03}, {"t": "LAH", "s": 24.14}, {"t": "NAK", "s": 24.32}]}, {"start": 24.54, "end": 25.4, "words": [{"t": "BUAT", "s": 24.54}, {"t": "TAPI", "s": 24.76}, {"t": "BILA", "s": 25.04}]}, {"start": 25.4, "end": 26.62, "words": [{"t": "RESULT", "s": 25.4}, {"t": "DIA", "s": 25.76}, {"t": "BILA", "s": 26.06}]}, {"start": 26.62, "end": 27.18, "words": [{"t": "-BILA", "s": 26.62}, {"t": "BUAT", "s": 26.8}, {"t": "TU", "s": 27.06}]}, {"start": 27.18, "end": 27.64, "words": [{"t": "RASA", "s": 27.18}, {"t": "MACAM", "s": 27.34}]}, {"start": 27.64, "end": 28.68, "words": [{"t": "KENAPA", "s": 27.64}, {"t": "AKU", "s": 28.18}, {"t": "BUAT", "s": 28.34}]}, {"start": 28.68, "end": 29.68, "words": [{"t": "TAPI", "s": 28.68}, {"t": "BILA", "s": 29.32}, {"t": "DAH", "s": 29.56}]}, {"start": 29.68, "end": 30.28, "words": [{"t": "JADI", "s": 29.68}]}, {"start": 31.54, "end": 32.28, "words": [{"t": "TERUS", "s": 31.54}, {"t": "SEMANGAT", "s": 32.02}]}, {"start": 32.28, "end": 32.76, "words": [{"t": "NAK", "s": 32.28}, {"t": "BUAT", "s": 32.36}, {"t": "LAGI", "s": 32.5}]}, {"start": 32.76, "end": 33.64, "words": [{"t": "DIA", "s": 32.76}, {"t": "TAK", "s": 33.14}, {"t": "ADALAH", "s": 33.46}]}, {"start": 33.64, "end": 34.24, "words": [{"t": "SUSAH", "s": 33.64}, {"t": "DIA", "s": 34.02}, {"t": "TAK", "s": 34.12}]}, {"start": 34.24, "end": 34.7, "words": [{"t": "ADALAH", "s": 34.24}, {"t": "MAKAN", "s": 34.4}]}, {"start": 34.7, "end": 35.33, "words": [{"t": "MASA", "s": 34.7}]}, {"start": 35.82, "end": 36.38, "words": [{"t": "SETENGAH", "s": 35.82}, {"t": "JAM", "s": 36.18}]}, {"start": 36.38, "end": 37.16, "words": [{"t": "MACAM", "s": 36.38}, {"t": "UNTUK", "s": 36.84}]}, {"start": 37.16, "end": 38.34, "words": [{"t": "PROSES", "s": 37.16}, {"t": "STRETCH", "s": 37.78}]}, {"start": 38.34, "end": 39.41, "words": [{"t": "AND", "s": 38.34}, {"t": "FOLD", "s": 38.62}, {"t": "NI", "s": 38.92}]}, {"start": 39.47, "end": 40.0, "words": [{"t": "-TIGA", "s": 39.47}, {"t": "JAM", "s": 39.58}, {"t": "TU", "s": 39.86}]}, {"start": 40.0, "end": 40.42, "words": [{"t": "KITA", "s": 40.0}, {"t": "TAK", "s": 40.2}, {"t": "BOLEH", "s": 40.3}]}, {"start": 40.42, "end": 40.58, "words": [{"t": "KELUAR", "s": 40.42}]}, {"start": 40.58, "end": 41.02, "words": [{"t": "BAGAIMANA", "s": 40.58}]}, {"start": 41.02, "end": 41.48, "words": [{"t": "TAK", "s": 41.02}, {"t": "BOLEH", "s": 41.1}, {"t": "AMBIL", "s": 41.22}]}, {"start": 41.48, "end": 42.26, "words": [{"t": "ANAK", "s": 41.48}, {"t": "SEKOLAH", "s": 41.64}]}, {"start": 42.26, "end": 42.6, "words": [{"t": "TAK", "s": 42.26}, {"t": "BOLEH", "s": 42.3}, {"t": "HANTAR", "s": 42.4}]}, {"start": 42.6, "end": 43.3, "words": [{"t": "ANAK", "s": 42.6}, {"t": "SEKOLAH", "s": 42.76}]}, {"start": 43.3, "end": 43.66, "words": [{"t": "TAK", "s": 43.3}, {"t": "BOLEH", "s": 43.36}, {"t": "PERGI", "s": 43.48}]}, {"start": 43.66, "end": 44.35, "words": [{"t": "KENA", "s": 43.66}, {"t": "TUNGGU", "s": 43.66}]}, {"start": 44.52, "end": 45.22, "words": [{"t": "BELI", "s": 44.52}, {"t": "BELAH", "s": 44.76}]}, {"start": 45.22, "end": 45.88, "words": [{"t": "KENA", "s": 45.22}, {"t": "TUNGGU", "s": 45.32}]}, {"start": 45.88, "end": 46.46, "words": [{"t": "SEBAB", "s": 45.88}, {"t": "KALAU", "s": 46.24}]}, {"start": 46.46, "end": 47.04, "words": [{"t": "TERLEBIH", "s": 46.46}]}, {"start": 47.04, "end": 47.48, "words": [{"t": "TERLEBIH", "s": 47.04}]}, {"start": 47.48, "end": 47.76, "words": [{"t": "DARIPADA", "s": 47.48}, {"t": "TIGA", "s": 47.62}]}, {"start": 47.76, "end": 48.28, "words": [{"t": "PULUH", "s": 47.76}, {"t": "MINIT", "s": 47.94}, {"t": "TU", "s": 48.18}]}, {"start": 48.28, "end": 48.54, "words": [{"t": "DIA", "s": 48.28}, {"t": "AKAN", "s": 48.4}]}, {"start": 48.54, "end": 49.18, "words": [{"t": "OVERPROOF", "s": 48.54}, {"t": "BILA", "s": 49.06}]}, {"start": 49.18, "end": 49.66, "words": [{"t": "DIA", "s": 49.18}, {"t": "OVERPROOF", "s": 49.26}, {"t": "TU", "s": 49.46}]}, {"start": 49.66, "end": 50.36, "words": [{"t": "DIA", "s": 49.66}, {"t": "JADI", "s": 49.78}, {"t": "LEMBEK", "s": 49.94}]}, {"start": 50.36, "end": 51.03, "words": [{"t": "DIA", "s": 50.36}, {"t": "TAK", "s": 50.42}, {"t": "DIA", "s": 50.52}]}, {"start": 51.03, "end": 52.44, "words": [{"t": "ROTI", "s": 51.03}, {"t": "KENA", "s": 52.22}, {"t": "DIA", "s": 52.34}]}, {"start": 52.44, "end": 53.27, "words": [{"t": "FLAT", "s": 52.44}, {"t": "NANTI", "s": 52.68}]}, {"start": 53.41, "end": 54.32, "words": [{"t": "SAYA", "s": 53.41}, {"t": "PERNAH", "s": 53.64}, {"t": "BUAT", "s": 54.08}]}, {"start": 54.32, "end": 54.68, "words": [{"t": "HARI", "s": 54.32}, {"t": "ITU", "s": 54.52}]}, {"start": 54.68, "end": 55.64, "words": [{"t": "TERLEBIH", "s": 54.68}]}, {"start": 55.64, "end": 56.5, "words": [{"t": "TERLANJAK", "s": 55.64}, {"t": "PROOF", "s": 56.08}]}, {"start": 56.5, "end": 57.16, "words": [{"t": "SAMPAI", "s": 56.5}, {"t": "DUA", "s": 56.74}, {"t": "JAM", "s": 56.9}]}, {"start": 57.16, "end": 57.97, "words": [{"t": "TAK", "s": 57.16}, {"t": "PERASAN", "s": 57.28}]}, {"start": 58.12, "end": 58.78, "words": [{"t": "ITU", "s": 58.12}, {"t": "MEMANG", "s": 58.4}, {"t": "KENA", "s": 58.58}]}, {"start": 58.78, "end": 59.63, "words": [{"t": "GUNA", "s": 58.78}, {"t": "TIMER", "s": 59.08}]}, {"start": 59.96, "end": 60.48, "words": [{"t": "ORANG", "s": 59.96}, {"t": "-ORANG", "s": 60.36}]}, {"start": 60.48, "end": 60.86, "words": [{"t": "YANG", "s": 60.48}, {"t": "ADA", "s": 60.68}]}, {"start": 60.86, "end": 61.64, "words": [{"t": "KESABARAN", "s": 60.86}, {"t": "TINGGI", "s": 61.28}]}, {"start": 61.64, "end": 61.98, "words": [{"t": "JE", "s": 61.64}, {"t": "BUAT", "s": 61.8}]}, {"start": 61.98, "end": 62.46, "words": [{"t": "SOURDOUGH", "s": 61.98}, {"t": "DIA", "s": 62.26}]}, {"start": 62.46, "end": 62.7, "words": [{"t": "TU", "s": 62.46}]}, {"start": 62.7, "end": 63.26, "words": [{"t": "SETAKAT", "s": 62.7}, {"t": "NI", "s": 62.98}, {"t": "SAYA", "s": 63.12}]}, {"start": 63.26, "end": 63.8, "words": [{"t": "BELUM", "s": 63.26}, {"t": "ADA", "s": 63.44}, {"t": "LAGI", "s": 63.64}]}, {"start": 63.8, "end": 64.02, "words": [{"t": "KESABARAN", "s": 63.8}]}, {"start": 64.02, "end": 64.94, "words": [{"t": "LIPAT", "s": 64.02}, {"t": "BAJU", "s": 64.08}, {"t": "TAK", "s": 64.56}]}, {"start": 64.94, "end": 65.26, "words": [{"t": "DIA", "s": 64.94}, {"t": "SENDIRI", "s": 64.94}, {"t": "KE", "s": 65.16}]}, {"start": 65.26, "end": 65.56, "words": [{"t": "ORANG", "s": 65.26}, {"t": "YANG", "s": 65.36}, {"t": "ADA", "s": 65.5}]}, {"start": 65.56, "end": 65.86, "words": [{"t": "KESABARAN", "s": 65.56}]}, {"start": 65.86, "end": 66.2, "words": [{"t": "TINGGI", "s": 65.86}]}, {"start": 66.2, "end": 66.58, "words": [{"t": "ORANG", "s": 66.2}, {"t": "YANG", "s": 66.34}, {"t": "BOLEH", "s": 66.42}]}, {"start": 66.58, "end": 66.98, "words": [{"t": "DUDUK", "s": 66.58}, {"t": "DEKAT", "s": 66.84}]}, {"start": 66.98, "end": 68.0, "words": [{"t": "RUMAH", "s": 66.98}, {"t": "30", "s": 67.24}, {"t": "MINIT", "s": 67.5}]}, {"start": 68.0, "end": 68.93, "words": [{"t": "TANPA", "s": 68.0}, {"t": "TIDUR", "s": 68.28}]}, {"start": 70.28, "end": 71.04, "words": [{"t": "INGAT", "s": 70.28}, {"t": "SEBENARNYA", "s": 70.5}]}, {"start": 71.04, "end": 71.6, "words": [{"t": "KITA", "s": 71.04}, {"t": "TAK", "s": 71.24}, {"t": "FEED", "s": 71.36}]}, {"start": 71.6, "end": 72.06, "words": [{"t": "ITU", "s": 71.6}, {"t": "SEBAB", "s": 71.72}, {"t": "KITA", "s": 71.84}]}, {"start": 72.06, "end": 72.72, "words": [{"t": "TAK", "s": 72.06}, {"t": "INGAT", "s": 72.28}, {"t": "SO", "s": 72.58}]}, {"start": 72.72, "end": 73.16, "words": [{"t": "KALAU", "s": 72.72}, {"t": "MACAM", "s": 72.92}]}, {"start": 73.16, "end": 74.32, "words": [{"t": "UNTUK", "s": 73.16}, {"t": "TIGA", "s": 73.9}, {"t": "HARI", "s": 74.16}]}, {"start": 74.32, "end": 75.14, "words": [{"t": "ITU", "s": 74.32}, {"t": "KAU", "s": 74.44}, {"t": "SET", "s": 74.64}]}, {"start": 75.14, "end": 75.9, "words": [{"t": "ALARM", "s": 75.14}, {"t": "SETIAP", "s": 75.4}]}, {"start": 75.9, "end": 76.4, "words": [{"t": "HARI", "s": 75.9}, {"t": "-HARI", "s": 76.1}, {"t": "YANG", "s": 76.28}]}, {"start": 76.4, "end": 77.28, "words": [{"t": "SAMA", "s": 76.4}, {"t": "SUPAYA", "s": 76.74}, {"t": "KAU", "s": 77.16}]}, {"start": 77.28, "end": 77.66, "words": [{"t": "INGAT", "s": 77.28}]}], "events": [{"type": "list", "at": 5.65, "itemsAt": [5.65, 9.85, 15.15, 17.45], "end": 23.23, "i": 0}, {"type": "lol", "dur": 2.2, "at": 27.55, "i": 1}, {"type": "sticker", "dur": 2.6, "at": 40.95, "i": 2}, {"type": "tip", "dur": 4.0, "at": 55.71, "i": 3}, {"type": "lol", "dur": 2.2, "at": 66.91, "i": 4}, {"type": "tip", "dur": 2.91, "at": 71.65, "i": 5}], "hookHold": 2.6, "punch": true};
+      const tl = gsap.timeline({ paused: true });
+      const T = D.duration;
+
+      // ambience: slow breathing glows + drifting ghost type
+      tl.fromTo("#glow-a", { scale: 1 }, { scale: 1.15, duration: T / 2, ease: "sine.inOut", yoyo: true, repeat: 1 }, 0);
+      tl.fromTo("#glow-b", { scale: 1.1 }, { scale: 0.95, duration: T / 2, ease: "sine.inOut", yoyo: true, repeat: 1 }, 0);
+      tl.fromTo("#stripes", { x: 0, y: 0 }, { x: 120, y: -120, duration: T, ease: "none" }, 0);
+      tl.fromTo("#live-dot", { opacity: 1 }, { opacity: 0.25, duration: 0.6, ease: "sine.inOut", yoyo: true,
+        repeat: Math.max(0, Math.floor(T / 0.6) - 1) }, 0);
+      tl.fromTo("#progress", { scaleX: 0 }, { scaleX: 1, duration: T, ease: "none" }, 0);
+
+      // hook: lines slam in, hold, then hand over to the persistent title
+      const lines = gsap.utils.toArray(".hook-line");
+      // frame 0 doubles as the feed thumbnail, so everything starts readable and only settles
+      lines.forEach((el, i) => {
+        tl.fromTo(el, { scale: 1.18 }, { scale: 1, duration: 0.35, ease: "expo.out" }, i * 0.12);
+      });
+      tl.fromTo("#card", { y: 24 }, { y: 0, duration: 0.45, ease: "power3.out" }, 0);
+      tl.to("#hook", { opacity: 0, y: -20, duration: 0.25, ease: "power2.in" }, D.hookHold);
+      tl.fromTo("#title", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, D.hookHold + 0.15);
+
+      // jump cuts: alternate a subtle punch so cuts read as intentional
+      if (D.punch) {
+        D.cuts.forEach((t, i) => {
+          tl.set("#punch", { scale: i % 2 === 0 ? 1.06 : 1.0 }, t);
+        });
+      }
+
+      // events
+      let titleBusyUntil = 0;
+      D.events.forEach((e) => {
+        const dur = e.dur || 3;
+        if (e.type === "tip") {
+          const el = "#tip-" + e.i;
+          tl.to("#title", { opacity: 0, duration: 0.15 }, e.at - 0.05);
+          tl.fromTo(el, { x: -1100, opacity: 1, rotation: -3 }, { x: 0, rotation: -1, duration: 0.45, ease: "power3.out" }, e.at);
+          tl.to(el, { x: 1100, rotation: 2, duration: 0.35, ease: "power2.in" }, e.at + dur);
+          tl.set(el, { opacity: 0 }, e.at + dur + 0.36);
+          tl.to("#title", { opacity: 1, duration: 0.25 }, e.at + dur + 0.3);
+        } else if (e.type === "lol" || e.type === "sticker") {
+          const el = "#stk-" + e.i;
+          const rot = e.i % 2 === 0 ? -8 : 7;
+          tl.fromTo(el, { scale: 0, opacity: 0, rotation: rot * 2 }, { scale: 1, opacity: 1, rotation: rot, duration: 0.3, ease: "power3.out" }, e.at);
+          tl.to(el, { scale: 1.08, duration: 0.18, ease: "sine.inOut", yoyo: true, repeat: 1 }, e.at + 0.35);
+          tl.to(el, { scale: 0.6, opacity: 0, duration: 0.2, ease: "power2.in" }, e.at + dur - 0.2);
+          if (e.type === "lol") {
+            tl.to("#zoom", { scale: 1.12, duration: 0.18, ease: "power3.out" }, e.at);
+            tl.to("#zoom", { scale: 1.0, duration: 0.4, ease: "power2.inOut" }, e.at + Math.min(dur, 1.4));
+          }
+        } else if (e.type === "list") {
+          const el = "#list-" + e.i;
+          tl.fromTo(el, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, e.at);
+          e.itemsAt.forEach((t, k) => {
+            tl.fromTo("#li-" + e.i + "-" + k, { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.25, ease: "power3.out" }, Math.max(e.at, t));
+          });
+          tl.to(el, { opacity: 0, y: 30, duration: 0.25, ease: "power2.in" }, e.end);
+        } else if (e.type === "zoom") {
+          tl.set("#zoom", { transformOrigin: e.origin || "50% 45%" }, e.at);
+          tl.to("#zoom", { scale: e.scale || 1.3, duration: 0.35, ease: "power3.out" }, e.at);
+          tl.to("#zoom", { scale: 1.0, duration: 0.4, ease: "power2.inOut" }, e.at + dur);
+          tl.set("#zoom", { transformOrigin: "50% 45%" }, e.at + dur + 0.41);
+        }
+      });
+
+      // karaoke captions: one group at a time, active word lights up
+      D.captions.forEach((g, gi) => {
+        const el = document.getElementById("cg-" + gi);
+        if (!el) return;
+        tl.fromTo(el, { opacity: 0, y: 18, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.12, ease: "power3.out" }, g.start);
+        g.words.forEach((w, wi) => {
+          const wel = "#cw-" + gi + "-" + wi;
+          tl.fromTo(wel, { color: "#fff6e6", scale: 1 }, { color: "#ffd23f", scale: 1.1, duration: 0.08, ease: "power2.out" }, Math.max(g.start, w.s));
+          if (wi < g.words.length - 1) tl.to(wel, { color: "#fff6e6", scale: 1, duration: 0.08 }, Math.max(g.start, g.words[wi + 1].s));
+        });
+        tl.to(el, { opacity: 0, duration: 0.08, ease: "power2.in" }, Math.max(g.start + 0.1, g.end - 0.08));
+        tl.set(el, { opacity: 0, visibility: "hidden" }, g.end);
+      });
+
+      // end call-to-action
+      tl.to("#title", { opacity: 0, duration: 0.15 }, T - 2.65);
+      tl.fromTo("#cta", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power3.out" }, T - 2.6);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
