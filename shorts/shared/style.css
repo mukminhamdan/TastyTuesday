@@ -1,0 +1,67 @@
+      :root {
+        --mustard: #ffc83d;
+        --tomato: #e8452c;
+        --cream: #fff6e5;
+        --cocoa: #2b1a12;
+        --apron: #a8743f;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--cocoa); }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; font-family: Montserrat, Inter, sans-serif; }
+      .clip { position: absolute; }
+      video.src { position: absolute; object-fit: fill; }
+
+      /* light warm grade + vignette over the footage */
+      .grade { inset: 0; pointer-events: none;
+        background:
+          radial-gradient(ellipse at 50% 45%, rgba(0,0,0,0) 55%, rgba(20,8,0,0.45) 100%),
+          linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 14%, rgba(0,0,0,0) 62%, rgba(0,0,0,0.55) 100%);
+        mix-blend-mode: normal; }
+      .flash { inset: 0; background: #fff; }
+
+      /* hook */
+      .hook { inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 300px 60px 0; gap: 14px; }
+      .hook-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,8,0,0.8) 0%, rgba(20,8,0,0.55) 45%, rgba(20,8,0,0) 75%); }
+      .hook-kicker { position: relative; font-weight: 800; font-size: 34px; letter-spacing: 0.32em; color: var(--cocoa); background: var(--mustard); padding: 10px 26px; border-radius: 999px; margin-bottom: 18px; }
+      .hook-line { position: relative; font-weight: 900; font-size: 104px; line-height: 1.02; text-transform: uppercase; color: #fff; text-align: center; letter-spacing: -0.02em;
+        text-shadow: 0 6px 0 rgba(0,0,0,0.35), 0 0 40px rgba(0,0,0,0.5); }
+      .hook-line.accent { color: var(--mustard); }
+
+      /* persistent tag */
+      .tag { top: 96px; left: 0; display: flex; align-items: stretch; border-radius: 0 22px 22px 0; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
+      .tag-brand { background: var(--tomato); color: #fff; font-weight: 900; font-size: 26px; letter-spacing: 0.18em; padding: 16px 20px 16px 44px; }
+      .tag-menu { background: var(--cream); color: var(--cocoa); font-weight: 800; font-size: 30px; padding: 14px 26px; }
+
+      .progress { top: 0; left: 0; width: 1080px; height: 12px; background: rgba(0,0,0,0.25); }
+      .progress .bar { width: 100%; height: 100%; background: var(--mustard); transform-origin: 0 50%; }
+
+      /* captions */
+      .cap { left: 0; width: 1080px; top: 1290px; height: 260px; display: flex; align-items: center; justify-content: center; padding: 0 70px; }
+      .cap-inner { text-align: center; font-weight: 900; font-size: 64px; line-height: 1.12; color: #fff; text-transform: uppercase; letter-spacing: -0.01em;
+        -webkit-text-stroke: 3px rgba(0,0,0,0.85); paint-order: stroke fill; text-shadow: 0 6px 18px rgba(0,0,0,0.6); }
+      .cap .w { display: inline-block; }
+      .cap .w.hl { color: var(--mustard); }
+
+      /* tip card */
+      .tip { left: 60px; top: 300px; width: 960px; background: var(--cream); border-radius: 34px; padding: 34px 40px 40px; box-shadow: 0 24px 60px rgba(0,0,0,0.45); border: 6px solid var(--mustard); }
+      .tip-label { display: inline-flex; align-items: center; gap: 10px; background: var(--tomato); color: #fff; font-weight: 900; font-size: 36px; letter-spacing: 0.08em; padding: 10px 24px 10px 16px; border-radius: 999px; margin-bottom: 18px; }
+      .tip-text { font-weight: 800; font-size: 54px; line-height: 1.15; color: var(--cocoa); }
+
+      /* stat chips */
+      .chips { left: 0; width: 1080px; top: 1060px; display: flex; flex-wrap: wrap; justify-content: center; gap: 22px; padding: 0 50px; }
+      .chip { background: var(--mustard); color: var(--cocoa); font-weight: 900; font-size: 52px; padding: 18px 34px; border-radius: 22px; box-shadow: 0 12px 30px rgba(0,0,0,0.4); border: 4px solid var(--cocoa); }
+
+      /* sticker */
+      .sticker { left: 0; width: 1080px; height: 420px; display: flex; align-items: center; justify-content: center; }
+      .sticker .rays { position: absolute; width: 640px; height: 640px; border-radius: 50%;
+        background: repeating-conic-gradient(rgba(255,200,61,0.55) 0deg 10deg, rgba(255,200,61,0) 10deg 20deg);
+        -webkit-mask: radial-gradient(circle, #000 30%, transparent 70%); mask: radial-gradient(circle, #000 30%, transparent 70%); }
+      .sticker-text { position: relative; font-weight: 900; font-size: 130px; color: var(--mustard); text-transform: uppercase; transform: rotate(-6deg);
+        -webkit-text-stroke: 8px var(--cocoa); paint-order: stroke fill; text-shadow: 0 12px 0 var(--tomato); }
+
+      /* outro */
+      .outro { inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; padding: 0 70px; }
+      .outro-shade { position: absolute; inset: 0; background: rgba(43,26,18,0.82); }
+      .outro-kicker { position: relative; font-weight: 800; font-size: 34px; letter-spacing: 0.32em; color: var(--cocoa); background: var(--mustard); padding: 10px 26px; border-radius: 999px; }
+      .outro-title { position: relative; font-weight: 900; font-size: 96px; line-height: 1.04; text-align: center; text-transform: uppercase; color: #fff; }
+      .outro-cta { position: relative; font-weight: 800; font-size: 44px; text-align: center; color: var(--cocoa); background: var(--cream); padding: 20px 36px; border-radius: 26px; border: 5px solid var(--tomato); }

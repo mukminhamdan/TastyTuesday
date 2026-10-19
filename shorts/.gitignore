@@ -1,0 +1,4 @@
+videos/*/assets/clip.mp4
+videos/*/renders/
+renders/
+node_modules/
