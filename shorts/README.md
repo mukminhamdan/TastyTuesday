@@ -1,6 +1,6 @@
 # Tasty Tuesday shorts
 
-Five sub-60s vertical shorts cut from the week-1 Tasty Tuesday live call (71 min),
+Six sub-60s vertical shorts cut from the week-1 Tasty Tuesday live call (71 min),
 one per chef/menu, built with [HyperFrames](https://hyperframes.heygen.com).
 
 | Video | Chef | Cooven mode | Length |
@@ -10,6 +10,7 @@ one per chef/menu, built with [HyperFrames](https://hyperframes.heygen.com).
 | `videos/ikan-bakar` | Kak Salma | Grill High 10 min + Broil 3 min | 53.1 s |
 | `videos/puff-pastry` | Intan Safia | Oven 180°C 10 min | 55.7 s |
 | `videos/corndog` | Zura | Deep Fry 1 min | 55.4 s |
+| `videos/ikan-bilis` | Kak Hani | Air Crisp 200°C 5 min | 51.5 s |
 
 ## How it fits together
 
@@ -24,7 +25,7 @@ one per chef/menu, built with [HyperFrames](https://hyperframes.heygen.com).
 
 ```bash
 node cut-clips.mjs /path/to/raw.mp4      # once, or after changing spec.proxy
-node build.mjs                            # regenerate all five projects
+node build.mjs                            # regenerate all six projects
 cd videos/kentang
 npx hyperframes@0.8.174 preview           # review in Studio
 npx hyperframes@0.8.174 render --quality draft -o draft.mp4
