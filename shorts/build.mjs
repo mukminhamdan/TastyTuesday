@@ -175,11 +175,11 @@ export function build(spec) {
     const d = hook.dur ?? 3;
     overlays.push(`<div id="hook" class="clip hook" data-start="0" data-duration="${d}">
   <div class="hook-shade"></div>
-  <div class="hook-kicker">${esc(hook.kicker ?? "TASTY TUESDAY")}</div>
+  <img class="hook-logo" src="assets/logo.jpg" alt="Tasty Tuesday" />
   ${hook.lines.map((l, i) => `<div class="hook-line${i === hook.accent ? " accent" : ""}" id="hl${i}">${esc(l)}</div>`).join("\n  ")}
 </div>`);
     tl.push(`tl.from("#hook .hook-shade", { opacity: 0, duration: 0.25 }, 0);`);
-    tl.push(`tl.from("#hook .hook-kicker", { y: -40, opacity: 0, duration: 0.35, ease: "back.out(2)" }, 0.05);`);
+    tl.push(`tl.from("#hook .hook-logo", { scale: 0, rotation: -25, duration: 0.45, ease: "back.out(2)" }, 0.02);`);
     hook.lines.forEach((_, i) => {
       tl.push(
         `tl.from("#hl${i}", { scale: 2.2, opacity: 0, rotation: ${i % 2 ? 4 : -4}, duration: 0.32, ease: "power4.out" }, ${r3(0.12 + i * 0.28)});`,
@@ -198,6 +198,8 @@ export function build(spec) {
   <span class="tag-brand">TASTY TUESDAY</span><span class="tag-menu">${esc(spec.menu)}</span>
 </div>`);
   tl.push(`tl.from("#tag", { x: -420, duration: 0.45, ease: "back.out(1.6)" }, ${r3(tagStart)});`);
+  overlays.push(`<img id="wm" class="clip wm" src="assets/logo.jpg" alt="" data-start="${r3(tagStart)}" data-duration="${r3(tagEnd - tagStart)}" />`);
+  tl.push(`tl.from("#wm", { scale: 0, rotation: 30, duration: 0.45, ease: "back.out(2)" }, ${r3(tagStart + 0.15)});`);
   overlays.push(`<div id="progress" class="clip progress" data-start="0" data-duration="${total}"><div class="bar"></div></div>`);
   tl.push(`tl.fromTo("#progress .bar", { scaleX: 0 }, { scaleX: 1, duration: ${total}, ease: "none" }, 0);`);
 
@@ -266,16 +268,29 @@ export function build(spec) {
     const t = total - d;
     overlays.push(`<div id="outro" class="clip outro" data-start="${r3(t)}" data-duration="${r3(d)}">
   <div class="outro-shade"></div>
-  <div class="outro-kicker">TASTY TUESDAY</div>
+  <img class="outro-logo" src="assets/logo.jpg" alt="Tasty Tuesday" />
   <div class="outro-title">${esc(spec.outro.title)}</div>
   <div class="outro-cta">${esc(spec.outro.cta)}</div>
 </div>`);
     tl.push(`tl.from("#outro .outro-shade", { opacity: 0, duration: 0.4 }, ${r3(t)});`);
-    tl.push(`tl.from("#outro .outro-kicker", { y: 40, opacity: 0, duration: 0.35 }, ${r3(t + 0.1)});`);
+    tl.push(`tl.from("#outro .outro-logo", { scale: 0, rotation: -20, duration: 0.5, ease: "back.out(1.8)" }, ${r3(t + 0.05)});`);
     tl.push(`tl.from("#outro .outro-title", { scale: 1.8, opacity: 0, duration: 0.4, ease: "power4.out" }, ${r3(t + 0.25)});`);
     tl.push(`tl.from("#outro .outro-cta", { y: 60, opacity: 0, duration: 0.4, ease: "back.out(2)" }, ${r3(t + 0.6)});`);
     tl.push(`tl.to("#outro .outro-cta", { scale: 1.06, duration: 0.4, yoyo: true, repeat: 3, ease: "sine.inOut" }, ${r3(t + 1.1)});`);
-    addSfx("chime", t + 0.25);
+    // Jingle from the top so its "Tasty Tuesday!" lands on the outro; it creeps in under the last line.
+    const j0 = Math.max(0, t - 0.6);
+    sfx.push(
+      `<audio id="jingle" src="assets/jingle.m4a" data-start="${r3(j0)}" data-duration="${r3(total - j0)}" data-volume="1" data-fade-out="0.5" data-automation='${JSON.stringify({ version: 1, lanes: [{ target: "volume", points: [{ t: 0, v: 0.12 }, { t: r3(t - j0), v: 0.6 }] }] })}'></audio>`,
+    );
+  }
+
+  {
+    const h = hook ? hook.dur ?? 3 : 0;
+    const end = spec.outro ? total - spec.outro.dur - 0.6 : total;
+    const pts = [{ t: 0, v: 0.35 }, { t: r3(Math.max(0.1, h - 0.4)), v: 0.35 }, { t: r3(h), v: 0.1 }, { t: r3(end - 0.4), v: 0.1 }, { t: r3(end), v: 0 }];
+    sfx.unshift(
+      `<audio id="bgm" src="assets/bgm.m4a" data-start="0" data-duration="${r3(end)}" data-volume="1" data-automation='${JSON.stringify({ version: 1, lanes: [{ target: "volume", points: pts }] })}'></audio>`,
+    );
   }
 
   const css = fs.readFileSync(path.join(ROOT, "shared/style.css"), "utf8");
@@ -321,7 +336,7 @@ async function main() {
     const proj = path.join(ROOT, "videos", spec.id);
     fs.mkdirSync(path.join(proj, "assets/sfx"), { recursive: true });
     for (const s of Object.values(SFX)) fs.copyFileSync(path.join(ROOT, "shared", s.file), path.join(proj, s.file));
-    fs.copyFileSync(path.join(ROOT, "shared/assets/gsap.min.js"), path.join(proj, "assets/gsap.min.js"));
+    for (const f of ["gsap.min.js", "logo.jpg", "bgm.m4a", "jingle.m4a"]) fs.copyFileSync(path.join(ROOT, "shared/assets", f), path.join(proj, "assets", f));
     fs.copyFileSync(path.join(ROOT, "hyperframes.json"), path.join(proj, "hyperframes.json"));
     fs.writeFileSync(path.join(proj, "meta.json"), JSON.stringify({ id: spec.id, name: spec.title }, null, 2) + "\n");
     const out = path.join(proj, "index.html");

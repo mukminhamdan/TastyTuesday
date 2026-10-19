@@ -20,8 +20,11 @@
       .flash { inset: 0; background: #fff; }
 
       /* hook */
-      .hook { inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 300px 60px 0; gap: 14px; }
+      .hook { inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 170px 60px 0; gap: 14px; }
       .hook-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,8,0,0.8) 0%, rgba(20,8,0,0.55) 45%, rgba(20,8,0,0) 75%); }
+      .hook-logo { position: relative; width: 300px; height: 300px; border-radius: 50%; margin-bottom: 6px; box-shadow: 0 16px 40px rgba(0,0,0,0.45); }
+      .wm { top: 64px; right: 36px; width: 132px; height: 132px; border-radius: 50%; box-shadow: 0 8px 22px rgba(0,0,0,0.4); }
+      .outro-logo { position: relative; width: 420px; height: 420px; border-radius: 50%; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
       .hook-kicker { position: relative; font-weight: 800; font-size: 34px; letter-spacing: 0.32em; color: var(--cocoa); background: var(--mustard); padding: 10px 26px; border-radius: 999px; margin-bottom: 18px; }
       .hook-line { position: relative; font-weight: 900; font-size: 104px; line-height: 1.02; text-transform: uppercase; color: #fff; text-align: center; letter-spacing: -0.02em;
         text-shadow: 0 6px 0 rgba(0,0,0,0.35), 0 0 40px rgba(0,0,0,0.5); }

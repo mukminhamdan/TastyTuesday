@@ -28,8 +28,11 @@
       .flash { inset: 0; background: #fff; }
 
       /* hook */
-      .hook { inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 300px 60px 0; gap: 14px; }
+      .hook { inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 170px 60px 0; gap: 14px; }
       .hook-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,8,0,0.8) 0%, rgba(20,8,0,0.55) 45%, rgba(20,8,0,0) 75%); }
+      .hook-logo { position: relative; width: 300px; height: 300px; border-radius: 50%; margin-bottom: 6px; box-shadow: 0 16px 40px rgba(0,0,0,0.45); }
+      .wm { top: 64px; right: 36px; width: 132px; height: 132px; border-radius: 50%; box-shadow: 0 8px 22px rgba(0,0,0,0.4); }
+      .outro-logo { position: relative; width: 420px; height: 420px; border-radius: 50%; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
       .hook-kicker { position: relative; font-weight: 800; font-size: 34px; letter-spacing: 0.32em; color: var(--cocoa); background: var(--mustard); padding: 10px 26px; border-radius: 999px; margin-bottom: 18px; }
       .hook-line { position: relative; font-weight: 900; font-size: 104px; line-height: 1.02; text-transform: uppercase; color: #fff; text-align: center; letter-spacing: -0.02em;
         text-shadow: 0 6px 0 rgba(0,0,0,0.35), 0 0 40px rgba(0,0,0,0.5); }
@@ -100,13 +103,14 @@
       <div id="flash11" class="clip flash" data-start="42.54" data-duration="0.3"></div>
       <div id="hook" class="clip hook" data-start="0" data-duration="2.8">
   <div class="hook-shade"></div>
-  <div class="hook-kicker">TASTY TUESDAY</div>
+  <img class="hook-logo" src="assets/logo.jpg" alt="Tasty Tuesday" />
   <div class="hook-line" id="hl0">Ikan bilis + kacang</div>
   <div class="hook-line accent" id="hl1">5 minit, tak hangit!</div>
 </div>
       <div id="tag" class="clip tag" data-start="2.8" data-duration="45.95">
   <span class="tag-brand">TASTY TUESDAY</span><span class="tag-menu">Ikan Bilis &amp; Kacang</span>
 </div>
+      <img id="wm" class="clip wm" src="assets/logo.jpg" alt="" data-start="2.8" data-duration="45.95" />
       <div id="progress" class="clip progress" data-start="0" data-duration="51.45"><div class="bar"></div></div>
       <div id="cap0" class="clip cap" data-start="0.66" data-duration="0.67"><div class="cap-inner"><span class="w">Ni</span> <span class="w">untuk</span> <span class="w hl">nasi</span></div></div>
       <div id="cap1" class="clip cap" data-start="1.33" data-duration="0.9"><div class="cap-inner"><span class="w hl">lemak</span> <span class="w">ni</span></div></div>
@@ -177,10 +181,11 @@
 </div>
       <div id="outro" class="clip outro" data-start="48.75" data-duration="2.7">
   <div class="outro-shade"></div>
-  <div class="outro-kicker">TASTY TUESDAY</div>
+  <img class="outro-logo" src="assets/logo.jpg" alt="Tasty Tuesday" />
   <div class="outro-title">Sambal nasi lemak, siap!</div>
   <div class="outro-cta">Komen NASI LEMAK kalau nak cuba</div>
 </div>
+      <audio id="bgm" src="assets/bgm.m4a" data-start="0" data-duration="48.15" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.35},{"t":2.4,"v":0.35},{"t":2.8,"v":0.1},{"t":47.75,"v":0.1},{"t":48.15,"v":0}]}]}'></audio>
       <audio id="sfx-0" src="assets/sfx/whoosh-short.mp3" data-start="6.25" data-duration="0.6" data-volume="0.35"></audio>
       <audio id="sfx-1" src="assets/sfx/whoosh-short.mp3" data-start="21.26" data-duration="0.6" data-volume="0.35"></audio>
       <audio id="sfx-2" src="assets/sfx/whoosh-short.mp3" data-start="34.13" data-duration="0.6" data-volume="0.35"></audio>
@@ -197,7 +202,7 @@
       <audio id="sfx-13" src="assets/sfx/pop.mp3" data-start="31.01" data-duration="0.72" data-volume="0.4"></audio>
       <audio id="sfx-14" src="assets/sfx/whoosh-short.mp3" data-start="34.36" data-duration="0.6" data-volume="0.35"></audio>
       <audio id="sfx-15" src="assets/sfx/pop.mp3" data-start="34.66" data-duration="0.72" data-volume="0.4"></audio>
-      <audio id="sfx-16" src="assets/sfx/chime.mp3" data-start="49" data-duration="2.45" data-volume="0.35"></audio>
+      <audio id="jingle" src="assets/jingle.m4a" data-start="48.15" data-duration="3.3" data-volume="1" data-fade-out="0.5" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.12},{"t":0.6,"v":0.6}]}]}'></audio>
     </div>
     <script>
       window.__timelines = window.__timelines || {};
@@ -221,12 +226,13 @@
       tl.fromTo("#v12", { scale: 1, transformOrigin: "690px 960px" }, { scale: 1.04, duration: 3, ease: "none" }, 45.49);
       tl.fromTo("#v13", { scale: 1, transformOrigin: "567px 960px" }, { scale: 1.04, duration: 2.96, ease: "none" }, 48.49);
       tl.from("#hook .hook-shade", { opacity: 0, duration: 0.25 }, 0);
-      tl.from("#hook .hook-kicker", { y: -40, opacity: 0, duration: 0.35, ease: "back.out(2)" }, 0.05);
+      tl.from("#hook .hook-logo", { scale: 0, rotation: -25, duration: 0.45, ease: "back.out(2)" }, 0.02);
       tl.from("#hl0", { scale: 2.2, opacity: 0, rotation: -4, duration: 0.32, ease: "power4.out" }, 0.12);
       tl.from("#hl1", { scale: 2.2, opacity: 0, rotation: 4, duration: 0.32, ease: "power4.out" }, 0.4);
       tl.to("#hook", { x: 10, duration: 0.05, yoyo: true, repeat: 3, ease: "none" }, 0.7);
       tl.to("#hook", { opacity: 0, y: -60, duration: 0.3, ease: "power2.in" }, 2.5);
       tl.from("#tag", { x: -420, duration: 0.45, ease: "back.out(1.6)" }, 2.8);
+      tl.from("#wm", { scale: 0, rotation: 30, duration: 0.45, ease: "back.out(2)" }, 2.95);
       tl.fromTo("#progress .bar", { scaleX: 0 }, { scaleX: 1, duration: 51.45, ease: "none" }, 0);
       tl.from("#cap0 .cap-inner", { scale: 0.7, opacity: 0, duration: 0.14, ease: "back.out(2.5)" }, 0.66);
       tl.fromTo("#cap0 .w:nth-child(1)", { opacity: 0.5, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, 0.66);
@@ -531,7 +537,7 @@
       tl.from("#card4 .tip-text", { opacity: 0, y: 20, duration: 0.3 }, 34.61);
       tl.to("#card4", { x: 1100, rotation: 6, duration: 0.35, ease: "power3.in" }, 42.21);
       tl.from("#outro .outro-shade", { opacity: 0, duration: 0.4 }, 48.75);
-      tl.from("#outro .outro-kicker", { y: 40, opacity: 0, duration: 0.35 }, 48.85);
+      tl.from("#outro .outro-logo", { scale: 0, rotation: -20, duration: 0.5, ease: "back.out(1.8)" }, 48.8);
       tl.from("#outro .outro-title", { scale: 1.8, opacity: 0, duration: 0.4, ease: "power4.out" }, 49);
       tl.from("#outro .outro-cta", { y: 60, opacity: 0, duration: 0.4, ease: "back.out(2)" }, 49.35);
       tl.to("#outro .outro-cta", { scale: 1.06, duration: 0.4, yoyo: true, repeat: 3, ease: "sine.inOut" }, 49.85);
