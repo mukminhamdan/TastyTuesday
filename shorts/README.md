@@ -31,4 +31,5 @@ npx hyperframes@0.8.174 preview           # review in Studio
 npx hyperframes@0.8.174 render --quality draft -o draft.mp4
 ```
 
-Final 1080×1920 renders are not made yet — waiting for review of the drafts.
+Final renders: `npx hyperframes@0.8.174 render --quality delivery --fps 30`, then a two-pass
+`loudnorm` to -14 LUFS (video stream copied). Output goes to `renders/` (git-ignored).
