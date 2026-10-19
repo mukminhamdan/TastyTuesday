@@ -26,7 +26,7 @@ export default {
     { in: 3315.76, out: 3320.6, fy: 0.6 }, // "sedapnya buat minum petang"
   ],
   cards: [
-    { type: "sticker", raw: 3306.0, dur: 1.9, text: "Crunchy!", y: 330 },
+    { type: "sticker", raw: 3316.0, dur: 1.6, text: "Crunchy!", y: 330 },
     { type: "chips", raw: 1929.0, dur: 2.0, items: ["GUNA PUFF PASTRY SEJUK BEKU"] },
     { type: "tip", raw: 2178.0, dur: 2.4, label: "TIP", text: "Susun rapat pun boleh. Senang dipisahkan lepas bakar" },
     { type: "chips", raw: 2045.0, dur: 8.2, y: 330, items: ["MODE: OVEN", "180°C", "10 MIN"], times: [2045.0, 2048.03, 2061.78] },
