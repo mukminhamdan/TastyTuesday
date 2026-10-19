@@ -45,13 +45,14 @@
   {
    "id": "b4",
    "in": 426.42,
-   "out": 432.78,
+   "out": 430.3,
    "oy": 0.6,
-   "text": "Kita punya minyak dah pun panas. So kita tak payah nak agak-agak lah. Kalau dulu kan, tak tahu minyak panas ke tak."
+   "text": "Kita punya minyak dah pun panas. So kita tak payah nak agak-agak lah.",
+   "snap": false
   },
   {
    "id": "b5",
-   "in": 496.9,
+   "in": 497.9,
    "out": 503.5,
    "oy": 0.6,
    "snap": false,
