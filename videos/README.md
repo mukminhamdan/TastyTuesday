@@ -1,11 +1,15 @@
 # Tasty Tuesday — video edits (HyperFrames)
 
 Source: 26.5-minute vertical recording of the Tasty Tuesday live (720×1280, four Cooven cooks plus the host).
-Two edits are built from it:
+Six edits are built from it. The four `short-*` projects split the reel by menu; each has its own hook, its menu's key steps and result, and the shared "Live setiap Selasa" outro:
 
 | Project | Length | What it is |
 |---|---|---|
 | `reel/` | ~86 s | Short-form cut: pizza hook, teaser, the four menus, outro. |
+| `short-1-abok/` | ~46 s | Kuih Abok-Abok (Kak Salma, steam), standalone short |
+| `short-2-cekodok/` | ~41 s | Cekodok Pisang (Intan Safiya, deep fry), standalone short |
+| `short-3-roti-gula/` | ~58 s | Roti Gula (Chef Hani, air crisp), standalone short |
+| `short-4-pizza/` | ~39 s | Pizza (Mukmin, mod pizza), standalone short |
 | `padat/` | ~12 min | Long cut that keeps every menu's steps, tips and tasting, with waiting, mute/unmute chatter, repeats and long promos taken out. Each menu's result is moved right after its cooking. |
 
 ## How an edit is built

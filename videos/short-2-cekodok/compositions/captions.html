@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ms">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+        #root { position: absolute; inset: 0; pointer-events: none; }
+        .cg { position: absolute; left: 108px; right: 108px; top: 1240px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 20px; opacity: 0;
+               font-family: "Archivo Black", sans-serif; font-size: 76px; line-height: 1.08; text-transform: uppercase; letter-spacing: -0.01em; text-align: center; }
+        .w { display: inline-block; color: #fff8ee; -webkit-text-stroke: 14px #2b1a12; paint-order: stroke fill; text-shadow: 0 7px 0 rgba(28,18,12,0.6); transform-origin: 50% 60%; }
+        .w.on { color: #ffc93c; }
+      </style>
+      <div id="root" data-composition-id="captions" data-width="1080" data-height="1920">
+        <div class="cg" id="cg000"><span class="w">Saya</span><span class="w">nak</span><span class="w">buat</span></div>
+        <div class="cg" id="cg001"><span class="w">cekodok,</span></div>
+        <div class="cg" id="cg002"><span class="w">cekodok</span><span class="w">pisang.</span></div>
+        <div class="cg" id="cg003"><span class="w">Guna</span><span class="w">function</span><span class="w">deep</span></div>
+        <div class="cg" id="cg004"><span class="w">fry.</span></div>
+        <div class="cg" id="cg005"><span class="w">180</span><span class="w">tu</span><span class="w">adalah</span></div>
+        <div class="cg" id="cg006"><span class="w">suhu</span><span class="w">yang</span><span class="w">paling</span></div>
+        <div class="cg" id="cg007"><span class="w">sesuai</span><span class="w">untuk</span><span class="w">kita</span></div>
+        <div class="cg" id="cg008"><span class="w">menggoreng</span><span class="w">dengan</span><span class="w">deep</span></div>
+        <div class="cg" id="cg009"><span class="w">fry.</span></div>
+        <div class="cg" id="cg010"><span class="w">Kita</span><span class="w">punya</span><span class="w">minyak</span></div>
+        <div class="cg" id="cg011"><span class="w">dah</span><span class="w">pun</span><span class="w">panas.</span></div>
+        <div class="cg" id="cg012"><span class="w">So</span><span class="w">kita</span><span class="w">tak</span></div>
+        <div class="cg" id="cg013"><span class="w">payah</span><span class="w">nak</span><span class="w">agak-agak</span></div>
+        <div class="cg" id="cg014"><span class="w">lah.</span></div>
+        <div class="cg" id="cg015"><span class="w">Kalau</span><span class="w">dulu</span><span class="w">kan,</span></div>
+        <div class="cg" id="cg016"><span class="w">tak</span><span class="w">tahu</span><span class="w">minyak</span></div>
+        <div class="cg" id="cg017"><span class="w">panas</span><span class="w">ke</span><span class="w">tak.</span></div>
+        <div class="cg" id="cg018"><span class="w">The</span><span class="w">best</span><span class="w">thing</span></div>
+        <div class="cg" id="cg019"><span class="w">pasal</span><span class="w">Cooven</span><span class="w">ni,</span></div>
+        <div class="cg" id="cg020"><span class="w">dia</span><span class="w">set</span><span class="w">temperature</span></div>
+        <div class="cg" id="cg021"><span class="w">yang</span><span class="w">static.</span></div>
+        <div class="cg" id="cg022"><span class="w">Masak.</span></div>
+        <div class="cg" id="cg023"><span class="w">Cantik</span><span class="w">kan?</span></div>
+        <div class="cg" id="cg024"><span class="w">Okay,</span></div>
+        <div class="cg" id="cg025"><span class="w">tengok.</span></div>
+        <div class="cg" id="cg026"><span class="w">Dia</span><span class="w">punya</span><span class="w">tekstur</span></div>
+        <div class="cg" id="cg027"><span class="w">dengan</span><span class="w">warna</span><span class="w">dia.</span></div>
+        <div class="cg" id="cg028"><span class="w">Dia</span><span class="w">tak</span><span class="w">berminyak</span></div>
+        <div class="cg" id="cg029"><span class="w">sangat</span><span class="w">eh.</span></div>
+      </div>
+      <script>
+        const G = [[3.42, 4.34, [[3.42, 3.84], [3.84, 4.04], [4.04, 4.34]]], [4.34, 5.12, [[4.34, 5.12]]], [5.12, 7.033, [[5.12, 6.18], [6.18, 6.9]]], [7.053, 8.153, [[7.053, 7.513], [7.513, 7.913], [7.913, 8.153]]], [8.153, 8.567, [[8.153, 8.567]]], [8.567, 10.047, [[8.567, 8.827], [8.827, 9.287], [9.287, 10.047]]], [10.047, 10.987, [[10.047, 10.407], [10.407, 10.567], [10.567, 10.987]]], [10.987, 12.347, [[10.987, 11.387], [11.387, 11.827], [11.827, 12.347]]], [12.347, 13.767, [[12.347, 13.167], [13.167, 13.507], [13.507, 13.767]]], [13.767, 14.3, [[13.767, 14.087]]], [14.34, 15.22, [[14.34, 14.7], [14.7, 14.96], [14.96, 15.22]]], [15.22, 15.8, [[15.22, 15.4], [15.4, 15.56], [15.54, 15.8]]], [15.8, 16.58, [[15.8, 16.08], [16.08, 16.46], [16.46, 16.62]]], [16.58, 17.54, [[16.58, 16.84], [16.84, 17.0], [16.96, 17.54]]], [17.54, 17.66, [[17.54, 17.7]]], [17.66, 19.02, [[17.66, 18.58], [18.58, 18.88], [18.88, 19.04]]], [19.02, 19.86, [[19.02, 19.18], [19.18, 19.56], [19.56, 19.86]]], [19.86, 20.833, [[19.86, 20.3], [20.3, 20.46], [20.46, 20.64]]], [20.853, 21.793, [[20.853, 21.113], [21.113, 21.433], [21.433, 21.793]]], [21.793, 24.093, [[21.793, 22.893], [22.893, 23.833], [23.833, 24.093]]], [24.093, 26.073, [[24.093, 24.353], [24.353, 24.673], [24.673, 26.073]]], [26.073, 27.433, [[26.073, 26.613], [26.613, 27.393]]], [27.453, 27.973, [[27.453, 27.973]]], [27.973, 29.2, [[27.973, 28.693], [28.693, 29.093]]], [29.26, 29.68, [[29.26, 29.68]]], [29.68, 30.02, [[29.68, 30.02]]], [30.02, 31.62, [[30.02, 30.68], [30.68, 31.12], [31.12, 31.62]]], [31.62, 32.433, [[31.62, 31.94], [31.94, 32.26], [32.26, 32.433]]], [32.553, 33.273, [[32.553, 32.713], [32.693, 32.853], [32.833, 33.273]]], [33.273, 34.1, [[33.273, 33.553], [33.553, 33.713]]]];
+        const groups = Array.from(document.querySelectorAll("#root .cg"));
+        const words = groups.map((g) => Array.from(g.querySelectorAll(".w")));
+        const driver = { t: 0 };
+        function paint(t) {
+          for (let i = 0; i < G.length; i++) {
+            const [s, e, ws] = G[i];
+            const live = t >= s && t < e;
+            groups[i].style.opacity = live ? 1 : 0;
+            if (!live) continue;
+            const pop = Math.min(1, (t - s) / 0.12);
+            groups[i].style.transform = `translateY(${(1 - pop) * 26}px) scale(${0.9 + 0.1 * pop})`;
+            for (let j = 0; j < ws.length; j++) {
+              const on = t >= ws[j][0] && (j === ws.length - 1 || t < ws[j + 1][0]);
+              const el = words[i][j];
+              el.classList.toggle("on", on);
+              el.style.transform = on ? "scale(1.1)" : "scale(1)";
+            }
+          }
+        }
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo(driver, { t: 0 }, { t: 40.7, duration: 40.7, ease: "none", onUpdate: () => paint(driver.t) }, 0);
+        window.__timelines["captions"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

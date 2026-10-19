@@ -283,7 +283,7 @@ GFX_CSS = """
       .mono { font-family: "Space Mono", monospace; font-weight: 700; }
       /* hook */
       .hook { inset: 0; }
-      .hook .shade { position: absolute; inset: 0; background: radial-gradient(120% 70% at 50% 40%, rgba(28,18,12,0.15) 0%, rgba(28,18,12,0.78) 100%); }
+      .hook .shade { position: absolute; inset: 0; background: radial-gradient(120% 70% at 50% 40%, rgba(28,18,12,0.38) 0%, rgba(28,18,12,0.82) 100%); }
       .hook .stack { position: absolute; left: 108px; right: 108px; top: 470px; display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
       .hook .kicker { background: #e8442e; color: #fff4e6; font-size: 30px; letter-spacing: 0.08em; padding: 12px 22px; border-radius: 8px; }
       .hook .line { display: block; color: #fff4e6; font-size: 112px; line-height: 0.98; letter-spacing: -0.03em; text-transform: uppercase; text-shadow: 0 6px 0 rgba(28,18,12,0.55); }

@@ -1,0 +1,194 @@
+{
+ "id": "short-1-abok",
+ "source": "assets/source.mp4",
+ "source_audio": "assets/source_audio.m4a",
+ "mode": "tight",
+ "title": "Tasty Tuesday — Kuih Abok-Abok",
+ "clips": [
+  {
+   "id": "hook",
+   "in": 1321.14,
+   "out": 1325.6,
+   "oy": 0.72,
+   "push": [
+    1.0,
+    1.1
+   ],
+   "text": ""
+  },
+  {
+   "id": "a1",
+   "in": 70.3,
+   "out": 74.6,
+   "oy": 0.55,
+   "text": "Hari ini saya nak buat kuih abok-abok minum petang."
+  },
+  {
+   "id": "a2",
+   "in": 84.25,
+   "out": 93.0,
+   "oy": 0.55,
+   "text": "Okay, middle rack ni kita just letak air about 1.5 liter. Lepas tu kita tutupkan sahaja dan kita on."
+  },
+  {
+   "id": "a3",
+   "in": 95.19,
+   "out": 97.52,
+   "oy": 0.55,
+   "text": "Kita nak pakai steam function."
+  },
+  {
+   "id": "a4",
+   "in": 109.85,
+   "out": 111.3,
+   "oy": 0.55,
+   "text": "P2, 10 minit."
+  },
+  {
+   "id": "a5",
+   "in": 128.1,
+   "out": 132.1,
+   "oy": 0.6,
+   "snap": false,
+   "push": [
+    1.0,
+    1.06
+   ],
+   "text": "Daun pisang ni, you just gulungkan. Buatkan dia punya kelongsong."
+  },
+  {
+   "id": "a6",
+   "in": 138.58,
+   "out": 140.59,
+   "oy": 0.6,
+   "text": "Masukkan dalam 2 sudu kecil."
+  },
+  {
+   "id": "a7",
+   "in": 213.0,
+   "out": 216.7,
+   "oy": 0.6,
+   "snap": false,
+   "text": "Kita kukuskan dia selama 20 minit."
+  },
+  {
+   "id": "a8",
+   "in": 1293.02,
+   "out": 1296.66,
+   "oy": 0.7,
+   "push": [
+    1.0,
+    1.08
+   ],
+   "text": "Okey, saya punya abok-abok dah masak. Very nice eh."
+  },
+  {
+   "id": "a9",
+   "in": 1347.3,
+   "out": 1351.37,
+   "oy": 0.72,
+   "push": [
+    1.0,
+    1.1
+   ],
+   "text": "I pakai gula Melaka, pure gula Melaka."
+  },
+  {
+   "id": "outro",
+   "in": 1561.1,
+   "out": 1567.7,
+   "mode": "tight",
+   "flip": true,
+   "oy": 0.45,
+   "snap": false,
+   "text": "InsyaAllah minggu depan kita akan live lagi pada pukul 4 petang."
+  }
+ ],
+ "graphics": [
+  {
+   "type": "hook",
+   "clip": "hook",
+   "dur": 3.4,
+   "kicker": "TASTY TUESDAY · MENU PETANG",
+   "lines": [
+    "Abok-Abok",
+    "jarang jumpa!"
+   ],
+   "hi": 1
+  },
+  {
+   "type": "flash",
+   "clip": "a1",
+   "offset": -0.08,
+   "dur": 0.18
+  },
+  {
+   "type": "menu",
+   "clip": "a1",
+   "offset": 0.1,
+   "dur": 3.4,
+   "num": "01",
+   "title": "Kuih Abok-Abok",
+   "by": "Kak Salma · Fungsi Steam"
+  },
+  {
+   "type": "chip",
+   "clip": "a2",
+   "offset": 1.0,
+   "dur": 3.0,
+   "text": "AIR 1.5 LITER",
+   "icon": "~",
+   "pos": "tr"
+  },
+  {
+   "type": "chip",
+   "clip": "a4",
+   "offset": 0.0,
+   "dur": 2.4,
+   "text": "STEAM · P2",
+   "icon": "~",
+   "pos": "tr"
+  },
+  {
+   "type": "chip",
+   "clip": "a7",
+   "offset": 0.3,
+   "dur": 3.2,
+   "text": "KUKUS 15–20 MINIT",
+   "icon": "!",
+   "pos": "tr"
+  },
+  {
+   "type": "chip",
+   "clip": "a9",
+   "offset": 1.0,
+   "dur": 2.8,
+   "text": "PURE GULA MELAKA",
+   "icon": "★",
+   "pos": "tr"
+  },
+  {
+   "type": "outro",
+   "clip": "outro",
+   "offset": 0,
+   "dur": 6.6,
+   "kicker": "TASTY TUESDAY",
+   "big": "Live setiap [Selasa]",
+   "cta": "4 petang · Follow kami"
+  }
+ ],
+ "sfx": [
+  {
+   "name": "sparkle",
+   "clip": "a8",
+   "offset": 0.2,
+   "vol": 0.35
+  },
+  {
+   "name": "whoosh",
+   "clip": "outro",
+   "offset": -0.05,
+   "vol": 0.45
+  }
+ ]
+}
