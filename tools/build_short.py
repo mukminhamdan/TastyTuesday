@@ -55,6 +55,12 @@ class Timeline:
                 return round(o, 3)
         return self.duration
 
+    def seg_index(self, src):
+        for i, (s, e, _) in enumerate(self.segs):
+            if s - 1e-6 <= src <= e + 1e-6:
+                return i
+        return None
+
     def cut_points(self):
         return [round(o, 3) for (_, _, o) in self.segs[1:]]
 
@@ -124,19 +130,28 @@ def build_captions(words, tl, fixes, max_words=3, max_chars=16, gap=0.32):
         text = w["w"].strip()
         if not text:
             continue
-        s = tl.to_out(max(w["s"], mid - 0.5), clamp=False) or o
-        e = tl.to_out(min(w["e"], mid + 0.5), clamp=False) or o
-        kept.append({"t": text, "s": min(s, o), "e": max(e, o + 0.05)})
+        seg = tl.seg_index(mid)
+        if text.startswith("-") and kept and kept[-1]["g"] == seg:
+            # whisper splits reduplication ("berumur -umur"); glue it back onto the previous word
+            kept[-1]["t"] += text
+            continue
+        s = tl.to_out(max(w["s"], mid - 0.5), clamp=False)
+        e = tl.to_out(min(w["e"], mid + 0.5), clamp=False)
+        s = o if s is None else s
+        e = o if e is None else e
+        kept.append({"t": text, "s": min(s, o), "e": max(e, o + 0.05), "g": seg})
     for k in kept:
         for a, b in fixes.items():
             k["t"] = re.sub(a, b, k["t"], flags=re.IGNORECASE)
     kept = [k for k in kept if k["t"].strip()]
+    # segments can be reordered, so group in cut-timeline order and never across a cut
+    kept.sort(key=lambda k: k["s"])
 
     groups, cur = [], []
     for k in kept:
         if cur:
             chars = sum(len(x["t"]) + 1 for x in cur) + len(k["t"])
-            if (len(cur) >= max_words or chars > max_chars or k["s"] - cur[-1]["e"] > gap
+            if (len(cur) >= max_words or chars > max_chars or k["s"] - cur[-1]["e"] > gap or k["g"] != cur[-1]["g"]
                     or re.search(r"[.?!,]$", cur[-1]["t"])):
                 groups.append(cur)
                 cur = []
@@ -289,7 +304,7 @@ def build(spec_path, source, transcript_path):
         "__DUR__": f"{tl.duration:.3f}",
         "__CARD_TOP__": str(card_top), "__CARD_H__": str(card_h), "__VID_OFF__": str(vid_offset),
         "__CAP_TOP__": str(spec.get("caption_top", card_top + card_h + 24)),
-        "__TITLE__": esc(spec["title"]), "__KICKER__": esc(spec.get("kicker", "TASTY TUESDAY · LIVE")),
+        "__TITLE__": esc(spec["title"]), "__KICKER__": esc(spec.get("kicker", "LIVE · SOURDOUGH")),
         "__HOOK__": hook_lines, "__VIDEOS__": "\n        ".join(vids), "__AUDIO__": "\n    ".join(auds),
         "__TIPS__": "\n    ".join(tips + lists), "__STICKERS__": "\n      ".join(stickers),
         "__CAPTIONS__": "\n      ".join(cap_html), "__CTA__": esc(spec.get("cta", "Follow untuk resepi seterusnya!")),

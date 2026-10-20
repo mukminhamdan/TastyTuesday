@@ -1,4 +1,4 @@
-# Tasty Tuesday — Live Sourdough → 12 Shorts (HyperFrames)
+# Live TikTok Sourdough → 12 Shorts (HyperFrames)
 
 Sumber: live TikTok 2j 18m (720×1280, multi-cam), Google Drive `14bqHsCfScSWV2OSewatSGhr5YCAfOMHP`.
 Transkrip penuh (word-level, Whisper large-v3-turbo, Bahasa Melayu): `transcript/transcript.txt` + `transcript/transcript.json`.
@@ -15,7 +15,7 @@ Status: **PREVIEW sahaja** — draf render kualiti rendah untuk semakan. Render 
 - Sticker lawak + punch-in zoom pada punchline (SFX *boing*); sticker info (SFX *pop*).
 - Kad senarai (resepi / jadual) dengan item muncul ikut sebutan (SFX *pop* setiap item).
 - Jump cut: punch 1.00↔1.06 berselang supaya potongan nampak sengaja.
-- Hujung: pill CTA (SFX *pop*). Bar progress bawah video.
+- Label atas: "LIVE · SOURDOUGH" (tiada jenama siri). Hujung: pill CTA (SFX *pop*). Bar progress bawah video.
 - Potongan audio di-snap ke titik paling senyap (±0.3s) + fade 30ms → tiada "klik"/potong tengah perkataan.
 - Audio dinormalkan ke ~ −15 LUFS (sesuai TikTok/Reels).
 - Font: Archivo Black (display/kapsyen) + IBM Plex Mono (label). Palet: coklat gelap, kuning mentega, merah tomato.
@@ -59,7 +59,6 @@ Status: **PREVIEW sahaja** — draf render kualiti rendah untuk semakan. Render 
 - 25:03 "nak buat konten sendiri" — Kak minta bahagian starter naik 3x.
 - 29:04 buang lapisan gelap starter + 29:56 feed 10g je, jangan banyak (discard).
 - 1:26:04 Japanese flour manis imbang rasa masam.
-- 1:51:26 live hari Selasa 4 petang ada tema → promo live.
 
 ## Cara edit / rebuild
 
@@ -72,5 +71,4 @@ Status: **PREVIEW sahaja** — draf render kualiti rendah untuk semakan. Render 
 ## Perlu semak
 
 - Kapsyen dijana automatik dari transkrip; sebahagian perkataan pasar/nama mungkin salah eja. Betulkan dalam `caption_fixes` atau `caption_overrides` setiap spec.
-- CTA "Live setiap Selasa 4 petang" diambil dari sebutan di 51:35 — sahkan masa live.
 - SFX: perpustakaan HyperFrames (pop, whoosh, ding, impact) + boing/ding/slide disintesis sendiri (bebas lesen).

@@ -1,6 +1,6 @@
 # TastyTuesday
 
-Short-form edits of the Tasty Tuesday lives, built with [HyperFrames](https://hyperframes.heygen.com).
+Short-form edits cut from TikTok lives, built with [HyperFrames](https://hyperframes.heygen.com).
 
 - `EDIT_PLAN.md` — the clip list, hooks, what was cut and why.
 - `shorts/specs/*.json` — one spec per short (source ranges, hook, tips, stickers, SFX, caption fixes).
