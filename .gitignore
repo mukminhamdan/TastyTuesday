@@ -2,7 +2,7 @@
 shorts/*/assets/footage/
 shorts/*/.hyperframes/
 shorts/*/renders/
-previews/*.mp4
+previews/
 *.wav
 node_modules/
 __pycache__/
