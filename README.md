@@ -34,5 +34,5 @@ stat pops, joke stickers with punch-in zooms, SFX and an end card.
 cd shorts/01-lempeng-garing
 npx hyperframes preview                  # Studio: edit/trim visually
 tools/render_previews.sh                 # low-res draft previews into previews/
-npx hyperframes render -q delivery       # FINAL render (only after approval)
+tools/render_final.sh                    # FINAL renders (1080x1920, 30fps) into renders/
 ```

@@ -6,3 +6,4 @@ previews/
 *.wav
 node_modules/
 __pycache__/
+renders/
