@@ -31,16 +31,16 @@ Kod: **A** = headline atas · **K** = label kecil atas hook · **H** = baris hoo
 
 Caption:
 
-- **01-C1** — Sebab yang jual kat luar semua lempeng putih kan. Macam kuih dadar je. Saya panggil kuih dadar je.
+- **01-C1** — Sebab yang jual kat luar semua lempeng putih kan. Macam kuih dadar je. *I* panggil kuih dadar je.
 - **01-C2** — Lempeng guna *cooker* je kan?
-- **01-C3** — Saya suka pakai *deep fry*
+- **01-C3** — *I* suka pakai *deep fry*
 - **01-C4** — Kenapa *deep fry*?
-- **01-C5** — Saya nak cepat. Oh, ya ke? Saya bukannya buat kerja lambat-lambat ni, saya buat kerja cepat-cepat.
+- **01-C5** — *I* nak cepat. Oh, ya ke? *I* bukannya buat kerja lambat-lambat ni, *I* buat kerja cepat-cepat.
 - **01-C6** — Oh, tapi letak minyak banyaklah? Tak adalah. Minyak sikit je.
-- **01-C7** — Sebab korang punya lempeng warna putih tu kan? Aha. Saya punya lempeng garing. Sebab tu, sebab tu saya kena pakai *deep fry*.
+- **01-C7** — *Because you all* punya lempeng warna putih tu kan? Aha. *I* punya lempeng garing. Sebab tu, sebab tu *I* kena pakai *deep fry*.
 - **01-C8** — Minyak sikit, macam kita dalam kuali minyak sikit je
-- **01-C9** — Saya nak cepat masak. Tapi kalau saya nak lambat masak, okey, boleh pakai *cooker*. Nak cepat masak, tak boleh pakai *cooker*. Itu sahaja.
-- **01-C10** — Awak buat lempeng putih, saya buat lempeng garing. Aku rasa *super* garing
+- **01-C9** — *I* nak cepat masak. Tapi kalau *I* nak lambat masak, *okay*, boleh pakai *cooker*. Nak cepat masak, tak boleh pakai *cooker*. Itu sahaja.
+- **01-C10** — *You* buat yang lempeng putih, *I* buat lempeng garing. Aku rasa *super* garing
 
 - **01-Y** — garing, putih, cepat, deep, fry, dadar, sikit, cepatcepat
 
@@ -68,9 +68,9 @@ Caption:
 - **02-C7** — Tadi lagi dah letak *basket*. Awal-awal masuk lagi dah letak *basket*. Padahal tak terbang sangat pun tadi
 - **02-C8** — Dia baru mengecut je
 - **02-C9** — Kenapa kau tak pakai *air rack*?
-- **02-C10** — *Dehydrate* jangan terus dalam periuk. Dia kena ada... kau kena ada alas dengan *rack* tu. Supaya ada udara dekat belah bawah. Sebab itulah dia melekat.
-- **02-C11** — Dia kalau terus nanti dia bersentuh dengan itu. Lagi lambat sebab dia tak ada ruang udara di antara
-- **02-C12** — Lain kali kau kena tanya *dehydrate expert*!
+- **02-C10** — *Dehydrate* jangan *direct* dekat dalam *pot*. Dia kena ada... kau kena ada alas dengan *rack* tu. *So that* ada udara dekat belah bawah. *That's why* dia melekat.
+- **02-C11** — Dia kalau *direct* nanti dia *touch* dengan itu. Lagi lambat sebab dia tak ada ruang udara *in between*
+- **02-C12** — Lain kali kau kena tanya *the dehydrate expert*!
 
 - **02-Y** — 65, jam, rack, alas, udara, melekat, terbang, expert, direct, basket
 
@@ -90,18 +90,18 @@ Caption:
 
 Caption:
 
-- **03-C1** — Kena masak dululah cili tu, eh? Ha, cili tu kami ni kan cerewet sikit
+- **03-C1** — Kena masak dululah cili tu, eh? Ha, cili tu *we all* ni kan cerewet sikit
 - **03-C2** — Cili tu tak nak rasa, nanti takut bau maung cili kan
-- **03-C3** — Jadi kami akan masak cili tu sampai tak ada bau
-- **03-C4** — Ni dah tak bau lagi. Barulah saya masukkan bahan-bahan lain.
-- **03-C5** — Saya masak lama tau. Nak bagi cili ni masak dulu sebelum masuk apa-apa.
-- **03-C6** — Tapi kalau awak dah pakai cili boh, buat 150 gram
-- **03-C7** — Kalau cili boh, cili dah siap *blend*. Tu cili kering tadi, yang kering awak timbang 50 gram
-- **03-C8** — Petis tu *any brand* boleh ke? Boleh. Kalau awak nak buat sikit, awak agak-agak jelah sebenarnya
+- **03-C3** — *So we all* akan masak cili tu sampai tak ada bau
+- **03-C4** — Ni dah tak bau lagi. Barulah *I* masukkan bahan-bahan lain.
+- **03-C5** — *I* masak lama tau. Nak bagi cili ni masak dulu sebelum masuk apa-apa.
+- **03-C6** — Tapi kalau *you* dah pakai cili boh, buat 150 gram
+- **03-C7** — Kalau cili boh, cili dah siap *blend*. Tu cili kering tadi, yang kering *you* timbang 50 gram
+- **03-C8** — Petis tu *any brand* boleh ke? Boleh. Kalau *you* nak buat sikit, *you just* agak-agaklah sebenarnya
 - **03-C9** — Dia orang kalau yang jual tu kan, dia orang pakai gula putih banyak kan. Macam saya, tak pakai gula putih langsung
-- **03-C10** — Tapi kalau cair, kalau awak nak pekat, boleh tambah tepung jagung je
-- **03-C11** — Tapi kan Mukmin, saya dah biasa buat pakai sekilo petis. Tapi bila saya buat setengah kilo, dia macam tak *kick*lah. Tak rasa petis.
-- **03-C12** — Eh, potong-potong kalau tak nak bagi dia lebam macam mana? Rendam dengan garam ke tak payah? Asing-asingkan.
+- **03-C10** — Tapi kalau cair, kalau *you* nak pekat, boleh tambah tepung jagung je
+- **03-C11** — Tapi kan Mukmin, *I* dah biasa buat pakai sekilo petis. Tapi bila saya buat setengah kilo, dia macam tak *kick*lah. Tak rasa petis.
+- **03-C12** — Eh, potong-potong kalau tak nak kasi dia lebam macam mana? Rendam dengan garam ke tak payah? Asing-asingkan.
 - **03-C13** — Jangan satukan, nanti dia cepat lebam.
 
 - **03-Y** — 150, 50, gram, tepung, jagung, maung, petis, gula, putih, lebam, kick, sekilo
@@ -126,7 +126,7 @@ Caption:
 - **04-C4** — Sebab dia dah macam dalam *cheese* tu kan ada asid kan?
 - **04-C5** — *Chemistry*-nya! *Purple* campur dengan asid, *purple-pink* je.
 - **04-C6** — Kertas litmus!
-- **04-C7** — Campur *honey* tak? Campur *honey* tak, Pia? Campur *honey*. Cuba campur lemon pula, tengok warna apa?
+- **04-C7** — Campur *honey* tak? Campur *honey* tak, Pia? Campur *honey*. Cuba campur *lemon* pula, tengok warna apa?
 - **04-C8** — Wiwit-wiwit tulah
 - **04-C9** — Banyak sangat wiwit tu, Alin!
 - **04-C10** — Dia nak gelap sikit. Ha, dia jadi gelap. Kita bereksperimen malam ni.
@@ -149,17 +149,17 @@ Caption:
 Caption:
 
 - **05-C1** — Satu bekas, semua berkulat
-- **05-C2** — Saya ada. Aku punya *dry lemon* hari tu, aku lupa masuk peti sejuk. Lepas tu dia dah berkulat.
-- **05-C3** — Eh kau, betul tak boleh berkulat. Saya punya *dry lemon*, saya tak masuk peti sejuk.
-- **05-C4** — Macam mana boleh berkulat? Sebab awak tak kering betul-betul kot. Maknanya awak tak cukup keringlah tu.
-- **05-C5** — Itulah, lemon saya tak cukup keringlah tu
+- **05-C2** — Saya ada. Aku punya *dry lemon* hari tu, aku lupa masuk *fridge*. Lepas tu dia dah berkulat.
+- **05-C3** — Eh kau, betul tak boleh berkulat. *I* punya *dry lemon*, *I* tak masuk *fridge*.
+- **05-C4** — Macam mana boleh berkulat? Sebab *you* tak kering betul-betul kot. Maknanya *you* tak cukup keringlah tu.
+- **05-C5** — Itulah, *lemon* saya tak cukup keringlah tu
 - **05-C6** — Hari tu buat macam mana kau *slice*? Kau punya apa, *mandolin*?
 - **05-C7** — Yalah, sebab aku terer. Dengan pisau, senipis-nipisnya
 - **05-C8** — Kalau kau guna pisau yang dah lama tu, dia memang tumpul. Kau guna pisau tajam
-- **05-C9** — Aku punya lemon memang tak sekatalah. Ada tebal, ada nipis
+- **05-C9** — Aku punya *lemon* memang tak sekatalah. Ada tebal, ada nipis
 - **05-C10** — Kalau tebal dia lambat
 
-- **05-Y** — berkulat, kering, tebal, nipis, sekata, tajam, tumpul, terror, lambat, mandolin, peti, sejuk
+- **05-Y** — berkulat, kering, tebal, nipis, sekata, tajam, tumpul, terror, lambat, mandolin, fridge
 
 ## 06. Mak-mak vs Teknologi
 
@@ -182,8 +182,8 @@ Caption:
 - **06-C4** — Kakak terkeluar ke, macam nak *share* sekejap? Memang keluarlah kalau *share*
 - **06-C5** — Kejap, mana kejap? Apa tu dia? *Flip camera*. Ya Allah. Ha, nak *flip* kamera sebenarnya.
 - **06-C6** — Tapi tak keluar gambar pun
-- **06-C7** — Satu jam dia cari butang *off*, tak jumpa. Sebab tu dia biar je. Lepas tu dia pergi kerja, dia tinggal je benda tu hidup sebab dia tak jumpa butang *off*
-- **06-C8** — Habis tu kat mana butang *off* dia? Tekan yang sama ni. Oh, *on off* tu. Tekan lama.
+- **06-C7** — Satu jam dia cari *button off*, tak jumpa. Sebab tu dia biar je. Lepas tu dia pergi kerja, dia tinggal je benda tu hidup sebab dia tak jumpa *button off*
+- **06-C8** — Habis tu kat mana *button off* dia? Tekan yang sama ni. Oh, *on off* tu. Tekan lama.
 - **06-C9** — Kita orang merepek-repek kat dalam ni. Kita orang dalam ni memang selalu macam ni
 
 - **06-Y** — komen, share, terkeluar, flip, camera, screenshot, selfie, button, off, jam
@@ -204,7 +204,7 @@ Caption:
 
 - **07-C1** — Guna *slow cook* je
 - **07-C2** — Eh, *slow cook*. *Slow cook* lajulah weh sekarang. Dah tak *slow* dah. Dah tak *slow* lagilah aku punya *slow cook* ni
-- **07-C3** — Kuah rojak ni, biji pun mesin tak hancur. Saya punya tu dah tumpullah. Apa dia? Thermomix? Thermomix punya *blade* dah tumpul. Mesin banyak kali, tak nak hancur pun dia.
+- **07-C3** — Kuah rojak ni, biji pun mesin tak hancur. *I* punya tu dah tumpullah. Apa dia? Thermomix? Thermomix punya *blade* dah tumpul. Mesin banyak kali, tak nak hancur pun dia.
 - **07-C4** — Kena beli Tazo nanti
 - **07-C5** — Wahai. Kena jual Thermomixlah kalau nak beli Tazo
 - **07-C6** — Itulah, nak juallah satu lagi tu. Tapi satu lagi tu anak-anak punya. Dia dah kahwin, dia nak ambil nanti. Suka hati nak jual orang punya.
@@ -225,10 +225,10 @@ Caption:
 
 Caption:
 
-- **08-C1** — *Cheesecake* hari tu awak buat kat rumah Kak Min, berapa kilo? Berapa gram?
+- **08-C1** — *Cheesecake* hari tu *you* buat kat rumah Kak Min, berapa kilo? Berapa gram?
 - **08-C2** — 500
 - **08-C3** — Dia punya *cream cheese* 500
-- **08-C4** — Awak buat berapa loyang punya? 8 inci. 8 inci. Diameter.
+- **08-C4** — *You* buat berapa loyang punya? 8 inci. 8 inci. *Diameter*.
 - **08-C5** — Tinggi 3 inci
 - **08-C6** — Bulat kan? Bulat.
 - **08-C7** — Sebab saya kat rumah saya ada 2 inci dengan 3 inci. Kalau 2 inci tu penuh, tak muat. Kena 3 inci baru dia ngam-ngam

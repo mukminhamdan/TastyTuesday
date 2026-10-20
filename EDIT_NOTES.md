@@ -28,16 +28,16 @@ Sumber: rakaman live video call 93 minit (720×1280). Semua masa dalam kurungan 
 **Headline atas:** Lempeng garing vs lempeng putih
 
 **Susunan klip (selepas buang pause):**
-1. (08:47) Sebab yang jual kat luar semua lempeng putih kan. Macam kuih dadar je. Saya panggil kuih dadar je.
+1. (08:47) Sebab yang jual kat luar semua lempeng putih kan. Macam kuih dadar je. *I* panggil kuih dadar je.
 1. (06:48) Lempeng guna *cooker* je kan?
-1. (06:51) Saya suka pakai *deep fry*
+1. (06:51) *I* suka pakai *deep fry*
 1. (06:54) Kenapa *deep fry*?
-1. (06:56) Saya nak cepat. Oh, ya ke? Saya bukannya buat kerja lambat-lambat ni, saya buat kerja cepat-cepat.
+1. (06:56) *I* nak cepat. Oh, ya ke? *I* bukannya buat kerja lambat-lambat ni, *I* buat kerja cepat-cepat.
 1. (07:18) Oh, tapi letak minyak banyaklah? Tak adalah. Minyak sikit je.
-1. (07:27) Sebab korang punya lempeng warna putih tu kan? Aha. Saya punya lempeng garing. Sebab tu, sebab tu saya kena pakai *deep fry*.
+1. (07:27) *Because you all* punya lempeng warna putih tu kan? Aha. *I* punya lempeng garing. Sebab tu, sebab tu *I* kena pakai *deep fry*.
 1. (07:41) Minyak sikit, macam kita dalam kuali minyak sikit je
-1. (07:47) Saya nak cepat masak. Tapi kalau saya nak lambat masak, okey, boleh pakai *cooker*. Nak cepat masak, tak boleh pakai *cooker*. Itu sahaja.
-1. (08:39) Awak buat lempeng putih, saya buat lempeng garing. Aku rasa *super* garing
+1. (07:47) *I* nak cepat masak. Tapi kalau *I* nak lambat masak, *okay*, boleh pakai *cooker*. Nak cepat masak, tak boleh pakai *cooker*. Itu sahaja.
+1. (08:39) *You* buat yang lempeng putih, *I* buat lempeng garing. Aku rasa *super* garing
 
 **Grafik & SFX:**
 - (07:01) **joke** "Kerja cepat-cepat!" — SFX: boing + punch-in zoom
@@ -61,9 +61,9 @@ Sumber: rakaman live video call 93 minit (720×1280). Semua masa dalam kurungan 
 1. (58:25) Tadi lagi dah letak *basket*. Awal-awal masuk lagi dah letak *basket*. Padahal tak terbang sangat pun tadi
 1. (58:52) Dia baru mengecut je
 1. (64:02) Kenapa kau tak pakai *air rack*?
-1. (64:15) *Dehydrate* jangan terus dalam periuk. Dia kena ada... kau kena ada alas dengan *rack* tu. Supaya ada udara dekat belah bawah. Sebab itulah dia melekat.
-1. (64:57) Dia kalau terus nanti dia bersentuh dengan itu. Lagi lambat sebab dia tak ada ruang udara di antara
-1. (64:33) Lain kali kau kena tanya *dehydrate expert*!
+1. (64:15) *Dehydrate* jangan *direct* dekat dalam *pot*. Dia kena ada... kau kena ada alas dengan *rack* tu. *So that* ada udara dekat belah bawah. *That's why* dia melekat.
+1. (64:57) Dia kalau *direct* nanti dia *touch* dengan itu. Lagi lambat sebab dia tak ada ruang udara *in between*
+1. (64:33) Lain kali kau kena tanya *the dehydrate expert*!
 
 **Grafik & SFX:**
 - (06:04) **stat** "65°C / suhu dehydrate" — SFX: ping
@@ -79,18 +79,18 @@ Sumber: rakaman live video call 93 minit (720×1280). Semua masa dalam kurungan 
 **Headline atas:** Rahsia kuah rojak pekat & kick
 
 **Susunan klip (selepas buang pause):**
-1. (22:18) Kena masak dululah cili tu, eh? Ha, cili tu kami ni kan cerewet sikit
+1. (22:18) Kena masak dululah cili tu, eh? Ha, cili tu *we all* ni kan cerewet sikit
 1. (22:26) Cili tu tak nak rasa, nanti takut bau maung cili kan
-1. (22:31) Jadi kami akan masak cili tu sampai tak ada bau
-1. (22:35) Ni dah tak bau lagi. Barulah saya masukkan bahan-bahan lain.
-1. (14:44) Saya masak lama tau. Nak bagi cili ni masak dulu sebelum masuk apa-apa.
-1. (24:31) Tapi kalau awak dah pakai cili boh, buat 150 gram
-1. (24:38) Kalau cili boh, cili dah siap *blend*. Tu cili kering tadi, yang kering awak timbang 50 gram
-1. (25:05) Petis tu *any brand* boleh ke? Boleh. Kalau awak nak buat sikit, awak agak-agak jelah sebenarnya
+1. (22:31) *So we all* akan masak cili tu sampai tak ada bau
+1. (22:35) Ni dah tak bau lagi. Barulah *I* masukkan bahan-bahan lain.
+1. (14:44) *I* masak lama tau. Nak bagi cili ni masak dulu sebelum masuk apa-apa.
+1. (24:31) Tapi kalau *you* dah pakai cili boh, buat 150 gram
+1. (24:38) Kalau cili boh, cili dah siap *blend*. Tu cili kering tadi, yang kering *you* timbang 50 gram
+1. (25:05) Petis tu *any brand* boleh ke? Boleh. Kalau *you* nak buat sikit, *you just* agak-agaklah sebenarnya
 1. (25:13) Dia orang kalau yang jual tu kan, dia orang pakai gula putih banyak kan. Macam saya, tak pakai gula putih langsung
-1. (25:24) Tapi kalau cair, kalau awak nak pekat, boleh tambah tepung jagung je
-1. (53:40) Tapi kan Mukmin, saya dah biasa buat pakai sekilo petis. Tapi bila saya buat setengah kilo, dia macam tak *kick*lah. Tak rasa petis.
-1. (90:07) Eh, potong-potong kalau tak nak bagi dia lebam macam mana? Rendam dengan garam ke tak payah? Asing-asingkan.
+1. (25:24) Tapi kalau cair, kalau *you* nak pekat, boleh tambah tepung jagung je
+1. (53:40) Tapi kan Mukmin, *I* dah biasa buat pakai sekilo petis. Tapi bila saya buat setengah kilo, dia macam tak *kick*lah. Tak rasa petis.
+1. (90:07) Eh, potong-potong kalau tak nak kasi dia lebam macam mana? Rendam dengan garam ke tak payah? Asing-asingkan.
 1. (90:14) Jangan satukan, nanti dia cepat lebam.
 
 **Grafik & SFX:**
@@ -114,7 +114,7 @@ Sumber: rakaman live video call 93 minit (720×1280). Semua masa dalam kurungan 
 1. (75:29) Sebab dia dah macam dalam *cheese* tu kan ada asid kan?
 1. (75:37) *Chemistry*-nya! *Purple* campur dengan asid, *purple-pink* je.
 1. (75:58) Kertas litmus!
-1. (76:39) Campur *honey* tak? Campur *honey* tak, Pia? Campur *honey*. Cuba campur lemon pula, tengok warna apa?
+1. (76:39) Campur *honey* tak? Campur *honey* tak, Pia? Campur *honey*. Cuba campur *lemon* pula, tengok warna apa?
 1. (78:09) Wiwit-wiwit tulah
 1. (78:18) Banyak sangat wiwit tu, Alin!
 1. (78:27) Dia nak gelap sikit. Ha, dia jadi gelap. Kita bereksperimen malam ni.
@@ -134,14 +134,14 @@ Sumber: rakaman live video call 93 minit (720×1280). Semua masa dalam kurungan 
 
 **Susunan klip (selepas buang pause):**
 1. (80:57) Satu bekas, semua berkulat
-1. (77:28) Saya ada. Aku punya *dry lemon* hari tu, aku lupa masuk peti sejuk. Lepas tu dia dah berkulat.
-1. (77:34) Eh kau, betul tak boleh berkulat. Saya punya *dry lemon*, saya tak masuk peti sejuk.
-1. (77:40) Macam mana boleh berkulat? Sebab awak tak kering betul-betul kot. Maknanya awak tak cukup keringlah tu.
-1. (80:17) Itulah, lemon saya tak cukup keringlah tu
+1. (77:28) Saya ada. Aku punya *dry lemon* hari tu, aku lupa masuk *fridge*. Lepas tu dia dah berkulat.
+1. (77:34) Eh kau, betul tak boleh berkulat. *I* punya *dry lemon*, *I* tak masuk *fridge*.
+1. (77:40) Macam mana boleh berkulat? Sebab *you* tak kering betul-betul kot. Maknanya *you* tak cukup keringlah tu.
+1. (80:17) Itulah, *lemon* saya tak cukup keringlah tu
 1. (80:22) Hari tu buat macam mana kau *slice*? Kau punya apa, *mandolin*?
 1. (80:31) Yalah, sebab aku terer. Dengan pisau, senipis-nipisnya
 1. (80:40) Kalau kau guna pisau yang dah lama tu, dia memang tumpul. Kau guna pisau tajam
-1. (80:45) Aku punya lemon memang tak sekatalah. Ada tebal, ada nipis
+1. (80:45) Aku punya *lemon* memang tak sekatalah. Ada tebal, ada nipis
 1. (80:53) Kalau tebal dia lambat
 
 **Grafik & SFX:**
@@ -163,8 +163,8 @@ Sumber: rakaman live video call 93 minit (720×1280). Semua masa dalam kurungan 
 1. (21:33) Kakak terkeluar ke, macam nak *share* sekejap? Memang keluarlah kalau *share*
 1. (59:20) Kejap, mana kejap? Apa tu dia? *Flip camera*. Ya Allah. Ha, nak *flip* kamera sebenarnya.
 1. (60:05) Tapi tak keluar gambar pun
-1. (27:22) Satu jam dia cari butang *off*, tak jumpa. Sebab tu dia biar je. Lepas tu dia pergi kerja, dia tinggal je benda tu hidup sebab dia tak jumpa butang *off*
-1. (27:40) Habis tu kat mana butang *off* dia? Tekan yang sama ni. Oh, *on off* tu. Tekan lama.
+1. (27:22) Satu jam dia cari *button off*, tak jumpa. Sebab tu dia biar je. Lepas tu dia pergi kerja, dia tinggal je benda tu hidup sebab dia tak jumpa *button off*
+1. (27:40) Habis tu kat mana *button off* dia? Tekan yang sama ni. Oh, *on off* tu. Tekan lama.
 1. (91:41) Kita orang merepek-repek kat dalam ni. Kita orang dalam ni memang selalu macam ni
 
 **Grafik & SFX:**
@@ -183,7 +183,7 @@ Sumber: rakaman live video call 93 minit (720×1280). Semua masa dalam kurungan 
 **Susunan klip (selepas buang pause):**
 1. (37:19) Guna *slow cook* je
 1. (37:22) Eh, *slow cook*. *Slow cook* lajulah weh sekarang. Dah tak *slow* dah. Dah tak *slow* lagilah aku punya *slow cook* ni
-1. (14:53) Kuah rojak ni, biji pun mesin tak hancur. Saya punya tu dah tumpullah. Apa dia? Thermomix? Thermomix punya *blade* dah tumpul. Mesin banyak kali, tak nak hancur pun dia.
+1. (14:53) Kuah rojak ni, biji pun mesin tak hancur. *I* punya tu dah tumpullah. Apa dia? Thermomix? Thermomix punya *blade* dah tumpul. Mesin banyak kali, tak nak hancur pun dia.
 1. (15:07) Kena beli Tazo nanti
 1. (15:10) Wahai. Kena jual Thermomixlah kalau nak beli Tazo
 1. (15:39) Itulah, nak juallah satu lagi tu. Tapi satu lagi tu anak-anak punya. Dia dah kahwin, dia nak ambil nanti. Suka hati nak jual orang punya.
@@ -202,10 +202,10 @@ Sumber: rakaman live video call 93 minit (720×1280). Semua masa dalam kurungan 
 **Headline atas:** Cheesecake: saiz loyang yang ngam
 
 **Susunan klip (selepas buang pause):**
-1. (79:06) *Cheesecake* hari tu awak buat kat rumah Kak Min, berapa kilo? Berapa gram?
+1. (79:06) *Cheesecake* hari tu *you* buat kat rumah Kak Min, berapa kilo? Berapa gram?
 1. (79:13) 500
 1. (79:16) Dia punya *cream cheese* 500
-1. (79:27) Awak buat berapa loyang punya? 8 inci. 8 inci. Diameter.
+1. (79:27) *You* buat berapa loyang punya? 8 inci. 8 inci. *Diameter*.
 1. (79:36) Tinggi 3 inci
 1. (79:41) Bulat kan? Bulat.
 1. (79:47) Sebab saya kat rumah saya ada 2 inci dengan 3 inci. Kalau 2 inci tu penuh, tak muat. Kena 3 inci baru dia ngam-ngam
@@ -244,4 +244,4 @@ Sumber: rakaman live video call 93 minit (720×1280). Semua masa dalam kurungan 
 
 ## Nota
 - SFX: library Pixabay (bundled HyperFrames) + 2 bunyi sintetik (boing, ding). Tiada muzik latar (boleh ditambah jika mahu).
-- Caption: ejaan dibetulkan (BM santai, "-lah" dilekatkan, I/you → saya/awak); istilah English ditulis *italic*. "Mumin" dalam audio ditulis "Mukmin". Semak ejaan nama lain (Kak Salma, Pia, Alin) sebelum final.
+- Caption: ejaan dibetulkan (BM santai, "-lah" dilekatkan); perkataan English dikekalkan seperti disebut dan ditulis *italic*. "Mumin" dalam audio ditulis "Mukmin". Semak ejaan nama lain (Kak Salma, Pia, Alin) sebelum final.

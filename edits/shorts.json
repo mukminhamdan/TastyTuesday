@@ -26,7 +26,7 @@
     {
      "in": 527.0,
      "out": 532.4,
-     "cap": "Sebab yang jual kat luar semua lempeng putih kan. Macam kuih dadar je. Saya panggil kuih dadar je."
+     "cap": "Sebab yang jual kat luar semua lempeng putih kan. Macam kuih dadar je. *I* panggil kuih dadar je."
     },
     {
      "in": 408.0,
@@ -36,7 +36,7 @@
     {
      "in": 411.6,
      "out": 413.7,
-     "cap": "Saya suka pakai *deep fry*"
+     "cap": "*I* suka pakai *deep fry*"
     },
     {
      "in": 414.1,
@@ -46,7 +46,7 @@
     {
      "in": 416.3,
      "out": 422.4,
-     "cap": "Saya nak cepat. Oh, ya ke? Saya bukannya buat kerja lambat-lambat ni, saya buat kerja cepat-cepat."
+     "cap": "*I* nak cepat. Oh, ya ke? *I* bukannya buat kerja lambat-lambat ni, *I* buat kerja cepat-cepat."
     },
     {
      "in": 438.0,
@@ -56,7 +56,7 @@
     {
      "in": 447.5,
      "out": 457.8,
-     "cap": "Sebab korang punya lempeng warna putih tu kan? Aha. Saya punya lempeng garing. Sebab tu, sebab tu saya kena pakai *deep fry*."
+     "cap": "*Because you all* punya lempeng warna putih tu kan? Aha. *I* punya lempeng garing. Sebab tu, sebab tu *I* kena pakai *deep fry*."
     },
     {
      "in": 461.4,
@@ -66,12 +66,12 @@
     {
      "in": 467.6,
      "out": 477.7,
-     "cap": "Saya nak cepat masak. Tapi kalau saya nak lambat masak, okey, boleh pakai *cooker*. Nak cepat masak, tak boleh pakai *cooker*. Itu sahaja."
+     "cap": "*I* nak cepat masak. Tapi kalau *I* nak lambat masak, *okay*, boleh pakai *cooker*. Nak cepat masak, tak boleh pakai *cooker*. Itu sahaja."
     },
     {
      "in": 519.5,
      "out": 525.2,
-     "cap": "Awak buat lempeng putih, saya buat lempeng garing. Aku rasa *super* garing"
+     "cap": "*You* buat yang lempeng putih, *I* buat lempeng garing. Aku rasa *super* garing"
     }
    ],
    "overlays": [
@@ -192,17 +192,17 @@
     {
      "in": 3855.1,
      "out": 3866.5,
-     "cap": "*Dehydrate* jangan terus dalam periuk. Dia kena ada... kau kena ada alas dengan *rack* tu. Supaya ada udara dekat belah bawah. Sebab itulah dia melekat."
+     "cap": "*Dehydrate* jangan *direct* dekat dalam *pot*. Dia kena ada... kau kena ada alas dengan *rack* tu. *So that* ada udara dekat belah bawah. *That's why* dia melekat."
     },
     {
      "in": 3897.5,
      "out": 3904.6,
-     "cap": "Dia kalau terus nanti dia bersentuh dengan itu. Lagi lambat sebab dia tak ada ruang udara di antara"
+     "cap": "Dia kalau *direct* nanti dia *touch* dengan itu. Lagi lambat sebab dia tak ada ruang udara *in between*"
     },
     {
      "in": 3873.2,
      "out": 3876.7,
-     "cap": "Lain kali kau kena tanya *dehydrate expert*!"
+     "cap": "Lain kali kau kena tanya *the dehydrate expert*!"
     }
    ],
    "overlays": [
@@ -283,7 +283,7 @@
     {
      "in": 1338.8,
      "out": 1344.2,
-     "cap": "Kena masak dululah cili tu, eh? Ha, cili tu kami ni kan cerewet sikit"
+     "cap": "Kena masak dululah cili tu, eh? Ha, cili tu *we all* ni kan cerewet sikit"
     },
     {
      "in": 1346.2,
@@ -293,32 +293,32 @@
     {
      "in": 1351.3,
      "out": 1354.2,
-     "cap": "Jadi kami akan masak cili tu sampai tak ada bau"
+     "cap": "*So we all* akan masak cili tu sampai tak ada bau"
     },
     {
      "in": 1355.8,
      "out": 1360.0,
-     "cap": "Ni dah tak bau lagi. Barulah saya masukkan bahan-bahan lain."
+     "cap": "Ni dah tak bau lagi. Barulah *I* masukkan bahan-bahan lain."
     },
     {
      "in": 884.8,
      "out": 892.0,
-     "cap": "Saya masak lama tau. Nak bagi cili ni masak dulu sebelum masuk apa-apa."
+     "cap": "*I* masak lama tau. Nak bagi cili ni masak dulu sebelum masuk apa-apa."
     },
     {
      "in": 1471.5,
      "out": 1475.9,
-     "cap": "Tapi kalau awak dah pakai cili boh, buat 150 gram"
+     "cap": "Tapi kalau *you* dah pakai cili boh, buat 150 gram"
     },
     {
      "in": 1478.3,
      "out": 1484.1,
-     "cap": "Kalau cili boh, cili dah siap *blend*. Tu cili kering tadi, yang kering awak timbang 50 gram"
+     "cap": "Kalau cili boh, cili dah siap *blend*. Tu cili kering tadi, yang kering *you* timbang 50 gram"
     },
     {
      "in": 1505.0,
      "out": 1512.4,
-     "cap": "Petis tu *any brand* boleh ke? Boleh. Kalau awak nak buat sikit, awak agak-agak jelah sebenarnya"
+     "cap": "Petis tu *any brand* boleh ke? Boleh. Kalau *you* nak buat sikit, *you just* agak-agaklah sebenarnya"
     },
     {
      "in": 1513.3,
@@ -328,17 +328,17 @@
     {
      "in": 1524.3,
      "out": 1531.4,
-     "cap": "Tapi kalau cair, kalau awak nak pekat, boleh tambah tepung jagung je"
+     "cap": "Tapi kalau cair, kalau *you* nak pekat, boleh tambah tepung jagung je"
     },
     {
      "in": 3220.4,
      "out": 3232.0,
-     "cap": "Tapi kan Mukmin, saya dah biasa buat pakai sekilo petis. Tapi bila saya buat setengah kilo, dia macam tak *kick*lah. Tak rasa petis."
+     "cap": "Tapi kan Mukmin, *I* dah biasa buat pakai sekilo petis. Tapi bila saya buat setengah kilo, dia macam tak *kick*lah. Tak rasa petis."
     },
     {
      "in": 5407.9,
      "out": 5412.3,
-     "cap": "Eh, potong-potong kalau tak nak bagi dia lebam macam mana? Rendam dengan garam ke tak payah? Asing-asingkan."
+     "cap": "Eh, potong-potong kalau tak nak kasi dia lebam macam mana? Rendam dengan garam ke tak payah? Asing-asingkan."
     },
     {
      "in": 5414.9,
@@ -461,7 +461,7 @@
     {
      "in": 4599.4,
      "out": 4605.4,
-     "cap": "Campur *honey* tak? Campur *honey* tak, Pia? Campur *honey*. Cuba campur lemon pula, tengok warna apa?"
+     "cap": "Campur *honey* tak? Campur *honey* tak, Pia? Campur *honey*. Cuba campur *lemon* pula, tengok warna apa?"
     },
     {
      "in": 4689.3,
@@ -550,8 +550,7 @@
     "terror",
     "lambat",
     "mandolin",
-    "peti",
-    "sejuk"
+    "fridge"
    ],
    "segments": [
     {
@@ -562,22 +561,22 @@
     {
      "in": 4648.1,
      "out": 4654.9,
-     "cap": "Saya ada. Aku punya *dry lemon* hari tu, aku lupa masuk peti sejuk. Lepas tu dia dah berkulat."
+     "cap": "Saya ada. Aku punya *dry lemon* hari tu, aku lupa masuk *fridge*. Lepas tu dia dah berkulat."
     },
     {
      "in": 4654.95,
      "out": 4658.9,
-     "cap": "Eh kau, betul tak boleh berkulat. Saya punya *dry lemon*, saya tak masuk peti sejuk."
+     "cap": "Eh kau, betul tak boleh berkulat. *I* punya *dry lemon*, *I* tak masuk *fridge*."
     },
     {
      "in": 4660.5,
      "out": 4665.3,
-     "cap": "Macam mana boleh berkulat? Sebab awak tak kering betul-betul kot. Maknanya awak tak cukup keringlah tu."
+     "cap": "Macam mana boleh berkulat? Sebab *you* tak kering betul-betul kot. Maknanya *you* tak cukup keringlah tu."
     },
     {
      "in": 4817.5,
      "out": 4819.4,
-     "cap": "Itulah, lemon saya tak cukup keringlah tu"
+     "cap": "Itulah, *lemon* saya tak cukup keringlah tu"
     },
     {
      "in": 4822.4,
@@ -597,7 +596,7 @@
     {
      "in": 4845.3,
      "out": 4849.0,
-     "cap": "Aku punya lemon memang tak sekatalah. Ada tebal, ada nipis"
+     "cap": "Aku punya *lemon* memang tak sekatalah. Ada tebal, ada nipis"
     },
     {
      "in": 4853.9,
@@ -703,12 +702,12 @@
     {
      "in": 1642.0,
      "out": 1651.2,
-     "cap": "Satu jam dia cari butang *off*, tak jumpa. Sebab tu dia biar je. Lepas tu dia pergi kerja, dia tinggal je benda tu hidup sebab dia tak jumpa butang *off*"
+     "cap": "Satu jam dia cari *button off*, tak jumpa. Sebab tu dia biar je. Lepas tu dia pergi kerja, dia tinggal je benda tu hidup sebab dia tak jumpa *button off*"
     },
     {
      "in": 1660.0,
      "out": 1667.7,
-     "cap": "Habis tu kat mana butang *off* dia? Tekan yang sama ni. Oh, *on off* tu. Tekan lama."
+     "cap": "Habis tu kat mana *button off* dia? Tekan yang sama ni. Oh, *on off* tu. Tekan lama."
     },
     {
      "in": 5501.0,
@@ -802,7 +801,7 @@
     {
      "in": 893.3,
      "out": 905.4,
-     "cap": "Kuah rojak ni, biji pun mesin tak hancur. Saya punya tu dah tumpullah. Apa dia? Thermomix? Thermomix punya *blade* dah tumpul. Mesin banyak kali, tak nak hancur pun dia."
+     "cap": "Kuah rojak ni, biji pun mesin tak hancur. *I* punya tu dah tumpullah. Apa dia? Thermomix? Thermomix punya *blade* dah tumpul. Mesin banyak kali, tak nak hancur pun dia."
     },
     {
      "in": 907.1,
@@ -890,7 +889,7 @@
     {
      "in": 4746.8,
      "out": 4751.7,
-     "cap": "*Cheesecake* hari tu awak buat kat rumah Kak Min, berapa kilo? Berapa gram?"
+     "cap": "*Cheesecake* hari tu *you* buat kat rumah Kak Min, berapa kilo? Berapa gram?"
     },
     {
      "in": 4753.3,
@@ -905,7 +904,7 @@
     {
      "in": 4767.5,
      "out": 4774.7,
-     "cap": "Awak buat berapa loyang punya? 8 inci. 8 inci. Diameter."
+     "cap": "*You* buat berapa loyang punya? 8 inci. 8 inci. *Diameter*."
     },
     {
      "in": 4776.3,
