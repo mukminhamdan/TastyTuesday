@@ -51,9 +51,9 @@ ASMR potong sourdough 🔪🎧 Dengar bunyi kerak dia… nipis! Rahsianya: Japan
 #sourdough #asmr #sourdoughbread #bakingmalaysia #fyp
 
 ## 10-tanpa-dutch-oven
-Tak ada Dutch oven? Tak apa! 💸 Tutup dengan aluminium foil, letak air kat tepi, terus bakar. Dutch oven tu mahal tau. Korang bakar guna apa?
+Tak ada Dutch oven? Tak apa! 💸 Bakar sourdough dalam Cooven: tutup dengan aluminium foil, letak air kat tepi, siap. Dutch oven tu mahal tau. Korang bakar guna apa?
 
-#sourdough #dutchoven #tipsbaking #bakingmalaysia #fyp
+#sourdough #cooven #dutchoven #tipsbaking #bakingmalaysia #fyp
 
 ## 11-shower-cap-cair
 Shower cap cair dalam oven 🫠 "Kalau dah bercampur dengan roti… aku makan" 😂 Siapa lagi tutup doh guna shower cap? Ada yang gunting tisu pulak!

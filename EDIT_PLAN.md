@@ -48,7 +48,7 @@ Status: **PREVIEW sahaja** — draf render kualiti rendah untuk semakan. Render 
 7. **Sabar 4 hari** — relatable untuk ibu-ibu: jadual 4 hari dalam kad, "tak boleh ambil anak sekolah", "orang yang boleh duduk rumah 30 minit tanpa tidur", tip guna timer + alarm.
 8. **Drama shaker** — beli 6 sebab salah kira, "beli dulu, fikir kemudian", dan "pakai tangan lagi senang — ok confirm tak nak bagi".
 9. **ASMR potong** — reveal roti + bunyi pisau + "kerak nipis". `cut_punch` dimatikan supaya visual tenang.
-10. **Tanpa Dutch oven** — tip foil + air di tepi. ⚠️ Nama periuk dalam kapsyen ditulis "KUVEN" ikut bunyi — sila betulkan ejaan jenama dalam `shorts/specs/10-tanpa-dutch-oven.json` (`caption_fixes`).
+10. **Tanpa Dutch oven** — tip foil + air di tepi; periuk Cooven tak perlukan Dutch oven.
 11. **Shower cap cair** — "shower cap semalam cair dalam oven… kalau dah campur roti, aku makan" + gunting tisu.
 12. **Roti masam** — terangkan sourdough kepada tetamu Indonesia, cerita Kenny Hills (keras & masam) vs roti baru bakar, tutup dengan "sebab keras" (roti sampai seminggu baru habis).
 
