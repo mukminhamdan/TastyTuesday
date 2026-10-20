@@ -214,6 +214,17 @@ def build(spec_path, source, transcript_path):
             captions.append({"start": round(st, 3), "end": round(st + step, 3),
                              "words": [{"t": w, "s": round(st + j * step / len(ws), 3)} for j, w in enumerate(ws)]})
         captions.sort(key=lambda c: c["start"])
+    for gi, txt in spec.get("caption_text", {}).items():
+        # reviewed wording for one caption group (index as shown on the text review page)
+        g = captions[int(gi)]
+        ws = txt.upper().split()
+        old = [w["s"] for w in g["words"]]
+        if len(old) == len(ws):
+            times = old
+        else:
+            step = (g["end"] - g["start"]) / len(ws)
+            times = [round(g["start"] + j * step, 3) for j in range(len(ws))]
+        g["words"] = [{"t": w, "s": t} for w, t in zip(ws, times)]
 
     crop_top, crop_bot = spec.get("crop", [290, 990])
     card_h = round((crop_bot - crop_top) * SRC_SCALE)

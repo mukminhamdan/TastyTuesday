@@ -1,17 +1,118 @@
 {
   "id": "08-drama-shaker",
   "title": "Beli dulu, fikir kemudian 😂",
-  "hook": ["BELI 6 SHAKER", "SALAH KIRA 😂"],
-  "segments": [[5906.3, 5911.9], [5914.4, 5916.5], [5918.3, 5921.0], [5929.2, 5938.4], [5939.0, 5943.0],
-               [5956.0, 5958.5], [5960.6, 5969.6], [1941.4, 1949.2], [1952.1, 1955.6], [1985.4, 1996.0]],
-  "events": [
-    {"t": 5908.0, "type": "sticker", "text": "PENGAYAK TEPUNG", "emoji": "🧂", "dur": 2.6, "x": 180, "y": 1120},
-    {"t": 5919.5, "type": "lol", "text": "BELI 6?!", "emoji": "😱", "dur": 1.8, "x": 500, "y": 1000},
-    {"t": 5931.0, "type": "lol", "text": "SALAH KIRA", "emoji": "🤦", "dur": 2.0, "x": 300, "y": 1000},
-    {"t": 5967.5, "type": "lol", "text": "BELI DULU!", "emoji": "🛒", "dur": 2.4, "x": 330, "y": 1000},
-    {"t": 1944.0, "type": "sticker", "text": "BARANG DAH PENUH", "emoji": "📦", "dur": 2.6, "x": 170, "y": 1120},
-    {"t": 1991.0, "type": "lol", "text": "PAKAI TANGAN JE", "emoji": "✋", "dur": 2.2, "x": 200, "y": 1000}
+  "hook": [
+    "BELI 6 SHAKER",
+    "SALAH KIRA 😂"
   ],
-  "caption_fixes": {"^Salmat$": "Salma", "^Salpah$": "Salma", "^cekuk$": "cekup", "^tabu,?$": "je", "^MH$": "MH"},
-  "cta": "Tag geng korang yang suka beli dulu!"
+  "segments": [
+    [
+      5906.3,
+      5911.9
+    ],
+    [
+      5914.4,
+      5916.5
+    ],
+    [
+      5918.3,
+      5921.0
+    ],
+    [
+      5929.2,
+      5938.4
+    ],
+    [
+      5939.0,
+      5943.0
+    ],
+    [
+      5956.0,
+      5958.5
+    ],
+    [
+      5960.6,
+      5969.6
+    ],
+    [
+      1941.4,
+      1949.2
+    ],
+    [
+      1952.1,
+      1955.6
+    ],
+    [
+      1985.4,
+      1996.0
+    ]
+  ],
+  "events": [
+    {
+      "t": 5908.0,
+      "type": "sticker",
+      "text": "PENGAYAK TEPUNG",
+      "emoji": "🧂",
+      "dur": 2.6,
+      "x": 180,
+      "y": 1120
+    },
+    {
+      "t": 5919.5,
+      "type": "lol",
+      "text": "BELI 6?!",
+      "emoji": "😱",
+      "dur": 1.8,
+      "x": 500,
+      "y": 1000
+    },
+    {
+      "t": 5931.0,
+      "type": "lol",
+      "text": "SALAH KIRA",
+      "emoji": "🤦",
+      "dur": 2.0,
+      "x": 300,
+      "y": 1000
+    },
+    {
+      "t": 5967.5,
+      "type": "lol",
+      "text": "BELI DULU!",
+      "emoji": "🛒",
+      "dur": 2.4,
+      "x": 330,
+      "y": 1000
+    },
+    {
+      "t": 1944.0,
+      "type": "sticker",
+      "text": "BARANG DAH PENUH",
+      "emoji": "📦",
+      "dur": 2.6,
+      "x": 170,
+      "y": 1120
+    },
+    {
+      "t": 1991.0,
+      "type": "lol",
+      "text": "PAKAI TANGAN JE",
+      "emoji": "✋",
+      "dur": 2.2,
+      "x": 200,
+      "y": 1000
+    }
+  ],
+  "caption_fixes": {
+    "^Salmat$": "Salma",
+    "^Salpah$": "Salma",
+    "^cekuk$": "cekup",
+    "^tabu,?$": "je",
+    "^MH$": "MH"
+  },
+  "cta": "Tag geng korang yang suka beli dulu!",
+  "caption_text": {
+    "29": "KENA COMPLETE",
+    "56": "KAT RUMAH KAK"
+  }
 }

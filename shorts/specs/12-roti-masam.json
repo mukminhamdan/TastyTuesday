@@ -1,16 +1,104 @@
 {
   "id": "12-roti-masam",
   "title": "Sourdough: roti keras & masam?",
-  "hook": ["SOURDOUGH TU", "ROTI APA SEBENARNYA?"],
-  "segments": [[1174.3, 1177.9], [1178.3, 1179.3], [1180.7, 1182.6], [1186.1, 1189.5], [1200.2, 1203.7],
-               [7535.6, 7551.0], [7552.0, 7560.2], [603.4, 608.5], [615.2, 620.4]],
-  "events": [
-    {"t": 1181.5, "type": "sticker", "text": "SOURDOUGH", "emoji": "🍞", "dur": 2.0, "x": 300, "y": 1120},
-    {"t": 1201.0, "type": "tip", "label": "FAKTA", "text": "Sourdough = roti masam, guna yis asli (starter) buat sendiri", "dur": 4.6},
-    {"t": 7545.5, "type": "lol", "text": "MASAM & KERAS", "emoji": "😬", "dur": 2.2, "x": 200, "y": 1000},
-    {"t": 7554.0, "type": "sticker", "text": "BARU BAKAR = SEDAP", "emoji": "🔥", "dur": 2.6, "x": 150, "y": 1120},
-    {"t": 618.8, "type": "lol", "text": "SEBAB KERAS", "emoji": "🤣", "dur": 2.0, "x": 300, "y": 1000}
+  "hook": [
+    "SOURDOUGH TU",
+    "ROTI APA SEBENARNYA?"
   ],
-  "caption_fixes": {"^sawadu$": "sourdough", "^sourough$": "sourdough", "^Sourdough$": "sourdough", "^Yis$": "Yis", "^gak$": "gak", "^Benda$": ""},
-  "cta": "Follow untuk live seterusnya!"
+  "segments": [
+    [
+      1174.3,
+      1177.9
+    ],
+    [
+      1178.3,
+      1179.3
+    ],
+    [
+      1180.7,
+      1182.6
+    ],
+    [
+      1186.1,
+      1189.5
+    ],
+    [
+      1200.2,
+      1203.7
+    ],
+    [
+      7535.6,
+      7551.0
+    ],
+    [
+      7552.0,
+      7560.2
+    ],
+    [
+      603.4,
+      608.5
+    ],
+    [
+      615.2,
+      620.4
+    ]
+  ],
+  "events": [
+    {
+      "t": 1181.5,
+      "type": "sticker",
+      "text": "SOURDOUGH",
+      "emoji": "🍞",
+      "dur": 2.0,
+      "x": 300,
+      "y": 1120
+    },
+    {
+      "t": 1201.0,
+      "type": "tip",
+      "label": "FAKTA",
+      "text": "Sourdough = roti masam, guna yis asli (starter) buat sendiri",
+      "dur": 4.6
+    },
+    {
+      "t": 7545.5,
+      "type": "lol",
+      "text": "MASAM & KERAS",
+      "emoji": "😬",
+      "dur": 2.2,
+      "x": 200,
+      "y": 1000
+    },
+    {
+      "t": 7554.0,
+      "type": "sticker",
+      "text": "BARU BAKAR = SEDAP",
+      "emoji": "🔥",
+      "dur": 2.6,
+      "x": 150,
+      "y": 1120
+    },
+    {
+      "t": 618.8,
+      "type": "lol",
+      "text": "SEBAB KERAS",
+      "emoji": "🤣",
+      "dur": 2.0,
+      "x": 300,
+      "y": 1000
+    }
+  ],
+  "caption_fixes": {
+    "^sawadu$": "sourdough",
+    "^sourough$": "sourdough",
+    "^Sourdough$": "sourdough",
+    "^Yis$": "Yis",
+    "^gak$": "gak",
+    "^Benda$": ""
+  },
+  "cta": "Follow untuk live seterusnya!",
+  "caption_text": {
+    "3": "YANG KAYAK",
+    "9": "INI YANAH"
+  }
 }

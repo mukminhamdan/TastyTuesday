@@ -1,16 +1,89 @@
 {
   "id": "09-asmr-potong",
   "title": "Potong sourdough — kerak nipis!",
-  "hook": ["ASMR POTONG", "SOURDOUGH 🔪"],
-  "segments": [[3446.6, 3455.0], [3480.5, 3491.5], [4719.4, 4723.1], [4727.9, 4729.2], [4734.8, 4741.0],
-               [4744.8, 4751.0], [4753.3, 4757.2], [4760.0, 4766.5]],
-  "events": [
-    {"t": 3452.0, "type": "lol", "text": "CANTIKNYA", "emoji": "😍", "dur": 2.0, "x": 300, "y": 1000},
-    {"t": 4737.5, "type": "sticker", "text": "DENGAR BUNYI DIA", "emoji": "🎧", "dur": 2.6, "x": 180, "y": 1120},
-    {"t": 4745.0, "type": "tip", "label": "HASIL", "text": "Kerak nipis = guna Japanese high gluten flour", "dur": 4.0},
-    {"t": 4764.5, "type": "lol", "text": "WAH", "emoji": "🤤", "dur": 1.8, "x": 520, "y": 1000}
+  "hook": [
+    "ASMR POTONG",
+    "SOURDOUGH 🔪"
   ],
-  "caption_fixes": {"^Kisau$": "Pisau", "^kisau$": "pisau", "^babu": "bubble", "^-babble$": ""},
+  "segments": [
+    [
+      3446.6,
+      3455.0
+    ],
+    [
+      3480.5,
+      3491.5
+    ],
+    [
+      4719.4,
+      4723.1
+    ],
+    [
+      4727.9,
+      4729.2
+    ],
+    [
+      4734.8,
+      4741.0
+    ],
+    [
+      4744.8,
+      4751.0
+    ],
+    [
+      4753.3,
+      4757.2
+    ],
+    [
+      4760.0,
+      4766.5
+    ]
+  ],
+  "events": [
+    {
+      "t": 3452.0,
+      "type": "lol",
+      "text": "CANTIKNYA",
+      "emoji": "😍",
+      "dur": 2.0,
+      "x": 300,
+      "y": 1000
+    },
+    {
+      "t": 4737.5,
+      "type": "sticker",
+      "text": "DENGAR BUNYI DIA",
+      "emoji": "🎧",
+      "dur": 2.6,
+      "x": 180,
+      "y": 1120
+    },
+    {
+      "t": 4745.0,
+      "type": "tip",
+      "label": "HASIL",
+      "text": "Kerak nipis = guna Japanese high gluten flour",
+      "dur": 4.0
+    },
+    {
+      "t": 4764.5,
+      "type": "lol",
+      "text": "WAH",
+      "emoji": "🤤",
+      "dur": 1.8,
+      "x": 520,
+      "y": 1000
+    }
+  ],
+  "caption_fixes": {
+    "^Kisau$": "Pisau",
+    "^kisau$": "pisau",
+    "^babu": "bubble",
+    "^-babble$": ""
+  },
   "cut_punch": false,
-  "cta": "Follow untuk resepi sourdough!"
+  "cta": "Follow untuk resepi sourdough!",
+  "caption_text": {
+    "24": "OH SEDAP NI"
+  }
 }
