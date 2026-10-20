@@ -64,3 +64,8 @@ Shower cap cair dalam oven 🫠 "Kalau dah bercampur dengan roti… aku makan" �
 Sourdough tu roti apa sebenarnya? 🍞 Roti masam guna yis asli (starter) buat sendiri. Ada yang serik sebab dapat yang keras & masam, tapi bila makan yang baru bakar… sedap rupanya! Korang team sourdough atau roti biasa?
 
 #sourdough #rotimasam #sourdoughmalaysia #bakingmalaysia #fyp
+
+## 13-oven-tersakiti
+Proof doh sourdough dalam oven… tiba-tiba suami preheat oven nak bakar kek 😭 Plastik hilang, doh "tersakiti". Tapi tak apa, tak jadi bakar je, tak jadi juga blend buat cekodok 🤣 Korang pernah kena macam ni?
+
+#sourdough #bakingfail #lawak #bakingmalaysia #fyp #tiktokmalaysia

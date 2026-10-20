@@ -1,4 +1,4 @@
-# Live TikTok Sourdough → 12 Shorts (HyperFrames)
+# Live TikTok Sourdough → 13 Shorts (HyperFrames)
 
 Sumber: live TikTok 2j 18m (720×1280, multi-cam), Google Drive `14bqHsCfScSWV2OSewatSGhr5YCAfOMHP`.
 Transkrip penuh (word-level, Whisper large-v3-turbo, Bahasa Melayu): `transcript/transcript.txt` + `transcript/transcript.json`.
@@ -36,6 +36,7 @@ Status: **PREVIEW sahaja** — draf render kualiti rendah untuk semakan. Render 
 | 10 | `10-tanpa-dutch-oven` | 34s | Tip | TAK ADA DUTCH OVEN? | 1:28:18–1:28:56 |
 | 11 | `11-shower-cap-cair` | 38s | Lawak | SHOWER CAP CAIR DALAM OVEN | 41:37–41:59, 42:51–43:10 |
 | 12 | `12-roti-masam` | 50s | Edukasi + lawak | SOURDOUGH TU ROTI APA SEBENARNYA? | 19:34–20:04, 2:05:35–2:06:00, 10:03–10:20 |
+| 13 | `13-oven-tersakiti` | 69s | Cerita + lawak | DOH SAYA KENA PREHEAT?! | 1:06:08–1:08:24, 1:53:26 |
 
 ### Kenapa setiap klip (dan apa yang dibuang)
 
@@ -54,7 +55,7 @@ Status: **PREVIEW sahaja** — draf render kualiti rendah untuk semakan. Render 
 
 ### Momen lain yang boleh jadi klip seterusnya
 
-- Klip yang diganti (spec lama ada dalam sejarah git): cerita oven Ida 1:06:08, starter CPR 2:08:21, lubang besar 1:22:05.
+- Klip yang diganti (spec lama ada dalam sejarah git): starter CPR 2:08:21, lubang besar 1:22:05. Cerita oven Ida dikembalikan sebagai klip 13.
 
 - 25:03 "nak buat konten sendiri" — Kak minta bahagian starter naik 3x.
 - 29:04 buang lapisan gelap starter + 29:56 feed 10g je, jangan banyak (discard).
