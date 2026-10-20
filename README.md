@@ -11,6 +11,7 @@ Short-form edits of the Tasty Tuesday live cook-along call, built with
 | `edits/refined.jsonl` | Second-pass transcript (large-v3, beam 5) of the windows used in the shorts |
 | `edits/shorts.json` | Edit decision lists — one entry per short, all times in **source seconds** |
 | `EDIT_NOTES.md` | Human-readable plan: hook, tips, jokes, SFX per short |
+| `POSTING_PLAN.md` | Posting order (Part 1–9) + linked social captions |
 | `shorts/<slug>/` | One HyperFrames project per short (`index.html` = the composition) |
 | `shared/` | SFX library + vendored GSAP shared by every short |
 | `tools/` | Transcription, project generator, preview renderer |
