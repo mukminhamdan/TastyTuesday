@@ -242,14 +242,20 @@ def build(short, words, footage=True):
             cw = retime_caption(seg["cap"], ws, seg["in"], seg["out"])
         else:
             cw = [dict(w) for w in ws]
+        italic = False  # *English term* markers in captions render in italic
         for w in cw:
+            stars = w["w"].count("*")
+            it = italic or stars > 0
+            if stars % 2:
+                italic = not italic
+            w = dict(w, w=w["w"].replace("*", ""), it=it)
             mid = (w["s"] + w["e"]) / 2
             if not any(ra <= mid <= rb for ra, rb in [ranges[k] for k in range(len(ranges)) if seg_of_range[k] == si]):
                 continue
             ts, te = m.tl(w["s"]), m.tl(w["e"])
             if te <= ts:
                 te = ts + 0.12
-            cap_words.append({"w": w["w"], "s": ts, "e": te, "seg": si})
+            cap_words.append({"w": w["w"], "s": ts, "e": te, "seg": si, "it": w["it"]})
     cap_words.sort(key=lambda w: w["s"])
     emph = set(x.lower() for x in short.get("emphasis", []))
     groups = group_captions(cap_words)
@@ -261,6 +267,8 @@ def build(short, words, footage=True):
             cls = "w"
             if re.sub(r"[^\w]", "", word.lower()) in emph:
                 cls += " em"
+            if w.get("it"):
+                cls += " en"
             spans_.append(f'<span class="{cls}" id="cw{gi}_{wi_}">{esc(word)}</span>')
         cap_html.append(
             f'<div class="capg" id="cg{gi}">{" ".join(spans_)}</div>'
@@ -429,6 +437,7 @@ TEMPLATE = r"""<!doctype html>
       .capg { position: absolute; left: 60px; right: 120px; top: 0; text-align: center; font-family: "Archivo Black", sans-serif; font-size: 96px; line-height: 1.1; color: var(--ink); text-transform: uppercase; opacity: 0; }
       .capg .w { display: inline-block; padding: 0 6px; border-radius: 12px; }
       .capg .w.em { background: var(--yolk); }
+      .capg .w.en { font-style: italic; }
       /* overlays */
       .ov { position: absolute; inset: 0; pointer-events: none; }
       .hook-in { position: absolute; left: 60px; right: 60px; top: 520px; display: flex; flex-direction: column; align-items: center; gap: 18px; }
