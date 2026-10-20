@@ -1,4 +1,4 @@
-# Live TikTok Sourdough → 13 Shorts (HyperFrames)
+# Live TikTok Sourdough → 14 Shorts (HyperFrames)
 
 Sumber: live TikTok 2j 18m (720×1280, multi-cam), Google Drive `14bqHsCfScSWV2OSewatSGhr5YCAfOMHP`.
 Transkrip penuh (word-level, Whisper large-v3-turbo, Bahasa Melayu): `transcript/transcript.txt` + `transcript/transcript.json`.
@@ -37,6 +37,7 @@ Status: **PREVIEW sahaja** — draf render kualiti rendah untuk semakan. Render 
 | 11 | `11-shower-cap-cair` | 38s | Lawak | SHOWER CAP CAIR DALAM OVEN | 41:37–41:59, 42:51–43:10 |
 | 12 | `12-roti-masam` | 50s | Edukasi + lawak | SOURDOUGH TU ROTI APA SEBENARNYA? | 19:34–20:04, 2:05:35–2:06:00, 10:03–10:20 |
 | 13 | `13-oven-tersakiti` | 69s | Cerita + lawak | DOH SAYA KENA PREHEAT?! | 1:06:08–1:08:24, 1:53:26 |
+| 14 | `14-bakar-dalam-cooven` | 88s | Proses / tutorial | BAKAR SOURDOUGH DALAM COOVEN 🔥 | 12:18–13:10, 33:29–34:25, 38:40–39:00, 56:34–58:09 |
 
 ### Kenapa setiap klip (dan apa yang dibuang)
 
@@ -52,6 +53,8 @@ Status: **PREVIEW sahaja** — draf render kualiti rendah untuk semakan. Render 
 10. **Tanpa Dutch oven** — tip foil + air di tepi; periuk Cooven tak perlukan Dutch oven.
 11. **Shower cap cair** — "shower cap semalam cair dalam oven… kalau dah campur roti, aku makan" + gunting tisu.
 12. **Roti masam** — terangkan sourdough kepada tetamu Indonesia, cerita Kenny Hills (keras & masam) vs roti baru bakar, tutup dengan "sebab keras" (roti sampai seminggu baru habis).
+
+14. **Bakar dalam Cooven** — proses penuh dalam 5 langkah: score & masuk, tutup foil, buang foil + tuang air, intai (lagi 15 minit), keluarkan. Bahagian tanpa cakap dipercepat 2.5–3× (audio diperlahankan, tiada kapsyen). Setiap segmen di-zoom ke tile Mukmin (`focus` dalam spec).
 
 ### Momen lain yang boleh jadi klip seterusnya
 

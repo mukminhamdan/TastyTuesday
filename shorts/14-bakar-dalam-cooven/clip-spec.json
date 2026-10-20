@@ -1,0 +1,330 @@
+{
+  "id": "14-bakar-dalam-cooven",
+  "title": "Bakar sourdough dalam Cooven: score sampai keluar",
+  "hook": [
+    "BAKAR SOURDOUGH",
+    "DALAM COOVEN 🔥"
+  ],
+  "segments": [
+    [
+      3446.6,
+      3455.0,
+      {
+        "focus": [
+          8,
+          314,
+          350,
+          324
+        ]
+      }
+    ],
+    [
+      738.4,
+      740.1,
+      {
+        "focus": [
+          8,
+          314,
+          350,
+          470
+        ],
+        "fit": "contain"
+      }
+    ],
+    [
+      743.6,
+      748.9,
+      {
+        "focus": [
+          8,
+          314,
+          350,
+          470
+        ],
+        "fit": "contain"
+      }
+    ],
+    [
+      750.4,
+      757.6,
+      {
+        "focus": [
+          8,
+          314,
+          350,
+          470
+        ],
+        "fit": "contain"
+      }
+    ],
+    [
+      758.0,
+      790.0,
+      {
+        "rate": 3,
+        "vol": 0.12,
+        "nocap": true,
+        "focus": [
+          8,
+          314,
+          350,
+          470
+        ],
+        "fit": "contain"
+      }
+    ],
+    [
+      2009.6,
+      2013.7,
+      {
+        "focus": [
+          8,
+          314,
+          350,
+          324
+        ]
+      }
+    ],
+    [
+      2025.0,
+      2065.0,
+      {
+        "rate": 3,
+        "vol": 0.12,
+        "nocap": true,
+        "focus": [
+          8,
+          314,
+          350,
+          324
+        ]
+      }
+    ],
+    [
+      2320.0,
+      2325.6,
+      {
+        "nosnap": true,
+        "focus": [
+          8,
+          314,
+          350,
+          324
+        ]
+      }
+    ],
+    [
+      2333.7,
+      2340.0,
+      {
+        "nosnap": true,
+        "focus": [
+          8,
+          314,
+          350,
+          324
+        ]
+      }
+    ],
+    [
+      3394.4,
+      3398.8,
+      {
+        "focus": [
+          8,
+          314,
+          350,
+          324
+        ]
+      }
+    ],
+    [
+      3400.8,
+      3402.4,
+      {
+        "focus": [
+          8,
+          314,
+          350,
+          324
+        ]
+      }
+    ],
+    [
+      3406.8,
+      3408.3,
+      {
+        "focus": [
+          8,
+          314,
+          350,
+          324
+        ]
+      }
+    ],
+    [
+      3430.0,
+      3446.5,
+      {
+        "rate": 2.5,
+        "vol": 0.15,
+        "nocap": true,
+        "focus": [
+          8,
+          314,
+          350,
+          324
+        ]
+      }
+    ],
+    [
+      3480.4,
+      3489.27,
+      {
+        "nosnap": true,
+        "focus": [
+          8,
+          314,
+          350,
+          324
+        ]
+      }
+    ]
+  ],
+  "events": [
+    {
+      "t": 3451.3,
+      "type": "lol",
+      "text": "CANTIK GILA",
+      "emoji": "🤩",
+      "dur": 2.0,
+      "x": 330,
+      "y": 1000
+    },
+    {
+      "t": 738.5,
+      "type": "tip",
+      "label": "LANGKAH 1",
+      "text": "Score doh, terus masuk Cooven",
+      "dur": 4.5,
+      "sfx": "whoosh"
+    },
+    {
+      "t": 754.2,
+      "type": "sticker",
+      "text": "BESARNYA!",
+      "emoji": "😮",
+      "dur": 2.0,
+      "x": 380,
+      "y": 1120
+    },
+    {
+      "t": 758.2,
+      "type": "tip",
+      "label": "LANGKAH 2",
+      "text": "Tutup dengan aluminium foil, tutup Cooven",
+      "dur": 4.6,
+      "sfx": "whoosh"
+    },
+    {
+      "t": 761.0,
+      "type": "sticker",
+      "text": "3X LAJU",
+      "emoji": "⏩",
+      "dur": 2.0,
+      "x": 640,
+      "y": 1260,
+      "sfx": "click-soft"
+    },
+    {
+      "t": 2010.0,
+      "type": "sticker",
+      "text": "TIMER BUNYI",
+      "emoji": "⏰",
+      "dur": 2.4,
+      "x": 330,
+      "y": 1120
+    },
+    {
+      "t": 2025.3,
+      "type": "tip",
+      "label": "LANGKAH 3",
+      "text": "Buang foil, tuang air kat tepi, tutup balik",
+      "dur": 4.6,
+      "sfx": "whoosh"
+    },
+    {
+      "t": 2028.0,
+      "type": "sticker",
+      "text": "3X LAJU",
+      "emoji": "⏩",
+      "dur": 2.0,
+      "x": 640,
+      "y": 1260,
+      "sfx": "click-soft"
+    },
+    {
+      "t": 2320.1,
+      "type": "tip",
+      "label": "LANGKAH 4",
+      "text": "Intai sikit: lagi 15 minit",
+      "dur": 4.0,
+      "sfx": "whoosh"
+    },
+    {
+      "t": 2337.0,
+      "type": "sticker",
+      "text": "DAH KEEMASAN",
+      "emoji": "✨",
+      "dur": 2.4,
+      "x": 300,
+      "y": 1120
+    },
+    {
+      "t": 3394.5,
+      "type": "tip",
+      "label": "LANGKAH 5",
+      "text": "Siap! Keluarkan guna sarung tangan",
+      "dur": 4.6,
+      "sfx": "whoosh"
+    },
+    {
+      "t": 3401.0,
+      "type": "lol",
+      "text": "NERVOUS",
+      "emoji": "😬",
+      "dur": 1.6,
+      "x": 420,
+      "y": 1000
+    },
+    {
+      "t": 3432.0,
+      "type": "sticker",
+      "text": "2.5X LAJU",
+      "emoji": "⏩",
+      "dur": 2.0,
+      "x": 620,
+      "y": 1260,
+      "sfx": "click-soft"
+    },
+    {
+      "t": 3486.0,
+      "type": "lol",
+      "text": "SEDAPNYA",
+      "emoji": "🤤",
+      "dur": 2.0,
+      "x": 380,
+      "y": 1000
+    }
+  ],
+  "caption_fixes": {
+    "^rasak$": "rasa",
+    "^skor\\?$": "score?",
+    "^indah$": "nak"
+  },
+  "cta": "Follow untuk resepi sourdough!",
+  "caption_text": {
+    "49": "NIPIS",
+    "50": "YA ALLAH MACAM"
+  }
+}

@@ -35,34 +35,37 @@ def media_duration(path):
 class Timeline:
     """Maps source seconds onto the cut (output) timeline."""
 
-    def __init__(self, segments):
+    def __init__(self, segments, opts=None):
+        # each kept piece: (src start, src end, out start, playback rate, options)
         self.segs = []
         t = 0.0
-        for s, e in segments:
-            self.segs.append((s, e, t))
-            t += e - s
+        for i, (s, e) in enumerate(segments):
+            opt = (opts or [{}] * len(segments))[i]
+            rate = float(opt.get("rate", 1))
+            self.segs.append((s, e, t, rate, opt))
+            t += (e - s) / rate
         self.duration = round(t, 3)
 
     def to_out(self, src, clamp=True):
-        for s, e, o in self.segs:
+        for s, e, o, r, _ in self.segs:
             if s - 1e-6 <= src <= e + 1e-6:
-                return round(o + (src - s), 3)
+                return round(o + (src - s) / r, 3)
         if not clamp:
             return None
         # snap to the next kept segment start (event authored inside a cut)
-        for s, e, o in self.segs:
+        for s, e, o, _, _ in self.segs:
             if src < s:
                 return round(o, 3)
         return self.duration
 
     def seg_index(self, src):
-        for i, (s, e, _) in enumerate(self.segs):
+        for i, (s, e, _, _, _) in enumerate(self.segs):
             if s - 1e-6 <= src <= e + 1e-6:
                 return i
         return None
 
     def cut_points(self):
-        return [round(o, 3) for (_, _, o) in self.segs[1:]]
+        return [round(seg[2], 3) for seg in self.segs[1:]]
 
 
 def snap_segments(segments, audio_path, pre=0.3, post=0.35):
@@ -131,6 +134,8 @@ def build_captions(words, tl, fixes, max_words=3, max_chars=16, gap=0.32):
         if not text:
             continue
         seg = tl.seg_index(mid)
+        if tl.segs[seg][4].get("nocap"):
+            continue
         if text.startswith("-") and kept and kept[-1]["g"] == seg:
             # whisper splits reduplication ("berumur -umur"); glue it back onto the previous word
             kept[-1]["t"] += text
@@ -184,10 +189,13 @@ def build(spec_path, source, transcript_path):
     assets = os.path.join(proj, "assets")
     os.makedirs(os.path.join(assets, "sfx"), exist_ok=True)
 
-    segs = [tuple(x) for x in spec["segments"]]
+    # a segment is [start, end] or [start, end, {"rate": 2.5, "vol": 0.15, "nocap": true}] for timelapse pieces
+    segs = [(x[0], x[1]) for x in spec["segments"]]
+    seg_opts = [x[2] if len(x) > 2 else {} for x in spec["segments"]]
     if spec.get("snap", True):
-        segs = snap_segments(segs, os.environ.get("TT_AUDIO"))
-    tl = Timeline(segs)
+        snapped = snap_segments(segs, os.environ.get("TT_AUDIO"))
+        segs = [raw if (o.get("rate") or o.get("nosnap")) else sn for sn, raw, o in zip(snapped, segs, seg_opts)]
+    tl = Timeline(segs, seg_opts)
     files = extract_ranges(source, merge_ranges(segs), assets)
 
     def file_for(s, e):
@@ -260,11 +268,24 @@ def build(spec_path, source, transcript_path):
 
     # ---- media elements
     vids = []
-    for i, (s, e, o) in enumerate(tl.segs):
+    for i, (s, e, o, rate, opt) in enumerate(tl.segs):
         rel, ms = file_for(s, e)
+        extra = f'data-playback-rate="{rate:g}" ' if rate != 1 else ""
+        if "vol" in opt:
+            extra += f'data-volume="{opt["vol"]}" '
+        if "focus" in opt:
+            # blow one camera tile [x, y, w, h] (source px) up to the card; "contain" keeps the whole tile
+            fx, fy, fw, fh = opt["focus"]
+            fit = max if opt.get("fit", "cover") == "cover" else min
+            k = fit(W / fw, card_h / fh)
+            left, top = (W - fw * k) / 2 - fx * k, (card_h - fh * k) / 2 - fy * k
+            clip = (f"inset({fy * k:.1f}px {(720 - fx - fw) * k:.1f}px {(1280 - fy - fh) * k:.1f}px {fx * k:.1f}px "
+                    f"round 28px)")
+            extra += (f'style="left:{left:.1f}px;top:{top:.1f}px;width:{720 * k:.1f}px;height:{1280 * k:.1f}px;'
+                      f'clip-path:{clip}" ')
         vids.append(
             f'<video id="seg-{i}" class="clip cam-video" src="{rel}" playsinline data-has-audio="true" '
-            f'data-start="{o:.3f}" data-duration="{e - s:.3f}" data-media-start="{ms:.3f}" '
+            f'data-start="{o:.3f}" data-duration="{(e - s) / rate:.3f}" data-media-start="{ms:.3f}" {extra}'
             f'data-fade-in="{CLIP_FADE}" data-fade-out="{CLIP_FADE}" data-track-index="0"></video>')
     auds = []
     for i, x in enumerate(sorted(sfx, key=lambda z: z["at"])):
