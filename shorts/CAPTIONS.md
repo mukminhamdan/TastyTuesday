@@ -71,12 +71,6 @@ Proof doh sourdough dalam oven… tiba-tiba suami preheat oven nak bakar kek �
 #sourdough #bakingfail #lawak #bakingmalaysia #fyp #tiktokmalaysia
 
 ## 14-bakar-dalam-cooven
-Bakar sourdough dalam Cooven, dari score sampai keluar 🔥
-1. Score doh, terus masuk Cooven
-2. Tutup dengan aluminium foil
-3. Buang foil, tuang air kat tepi, tutup balik
-4. Intai sikit, lagi 15 minit
-5. Siap! Keluarkan guna sarung tangan
-Hasilnya… cantik gila 🤩 Korang nak try?
+Bake sourdough dengan Cooven, senang je! 🔥 Masuk, tutup, tunggu… keluar cantik gila 🤩 Korang nak try?
 
 #sourdough #cooven #bakesourdough #sourdoughmalaysia #bakingmalaysia #fyp
