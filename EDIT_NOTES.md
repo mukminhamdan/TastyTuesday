@@ -19,7 +19,7 @@ Sumber: rakaman live video call 93 minit (720×1280). Semua masa dalam kurungan 
 | 05 | Kenapa Dry Lemon Berkulat | 36s | Tips |
 | 06 | Mak-mak vs Teknologi | 56s | Blooper / lawak |
 | 07 | Slow Cook Dah Tak Slow | 34s | Lawak |
-| 08 | Cheesecake: Loyang 3 Inci | 30s | Tips |
+| 08 | Cheesecake: Loyang 3 Inci | 28s | Tips |
 | 09 | Orang Nak Tahu Benda Dimasak | 29s | Lawak / relatable |
 
 ## 01. Lempeng Deep Fry?!
@@ -202,7 +202,6 @@ Sumber: rakaman live video call 93 minit (720×1280). Semua masa dalam kurungan 
 **Headline atas:** Cheesecake: saiz loyang yang ngam
 
 **Susunan klip (selepas buang pause):**
-1. (79:51) Kalau 2 inci tu penuh, tak muat
 1. (79:06) Cheesecake hari tu you buat kat rumah Kak Min, berapa kilo? Berapa gram?
 1. (79:13) 500
 1. (79:16) Dia punya cream cheese 500

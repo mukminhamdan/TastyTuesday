@@ -564,7 +564,7 @@
      "cap": "Saya ada. Aku punya dry lemon hari tu, aku lupa masuk fridge. Lepas tu dia dah berkulat."
     },
     {
-     "in": 4654.8,
+     "in": 4654.95,
      "out": 4658.9,
      "cap": "Eh kau, betul tak boleh kulat. I punya dry lemon, I tak masuk fridge."
     },
@@ -886,11 +886,6 @@
     "diameter"
    ],
    "segments": [
-    {
-     "in": 4791.0,
-     "out": 4793.4,
-     "cap": "Kalau 2 inci tu penuh, tak muat"
-    },
     {
      "in": 4746.8,
      "out": 4751.7,
