@@ -1,0 +1,17 @@
+{
+  "id": "04-terus-masuk-fridge",
+  "title": "Lepas shape: tunggu sejam atau terus fridge?",
+  "hook": ["LEPAS SHAPE", "TERUS FRIDGE?"],
+  "segments": [[5092.3, 5095.0], [5097.0, 5107.4], [5108.4, 5120.0], [5120.9, 5122.4], [5125.0, 5128.7],
+               [2198.4, 2200.4], [2205.2, 2207.5], [2209.8, 2213.6], [2217.5, 2223.4]],
+  "events": [
+    {"t": 5099.6, "type": "list", "label": "2 CARA", "items": [[5099.6, "Biar 1 jam luar → fridge"], [5111.8, "Terus masuk fridge"]], "until": 5120.4},
+    {"t": 5121.0, "type": "lol", "text": "PELAJAR CONTOH", "emoji": "🤓", "dur": 2.0, "x": 160, "y": 1000},
+    {"t": 5126.3, "type": "sticker", "text": "BELAJAR DARI YOUTUBE", "emoji": "📺", "dur": 2.4, "x": 110, "y": 1120},
+    {"t": 2205.6, "type": "sticker", "text": "PAGI → PETI SEJUK", "emoji": "🧊", "dur": 2.2, "x": 200, "y": 1120},
+    {"t": 2212.6, "type": "lol", "text": "BANGUN TAHAJUD", "emoji": "🌙", "dur": 1.8, "x": 230, "y": 1000},
+    {"t": 2218.3, "type": "tip", "label": "TIP", "text": "Proof semalaman? Letak atas meja biasa — tempat panas buat dia naik laju sangat", "dur": 5.0}
+  ],
+  "caption_fixes": {"^bersenjuk$": "peti sejuk", "^maja$": "Mak", "^kawai$": "", "^-shape$": "", "^aja$": "", "^dua$": "tu"},
+  "cta": "Korang cara mana? Komen & follow!"
+}

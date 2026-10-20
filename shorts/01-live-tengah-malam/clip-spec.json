@@ -1,0 +1,19 @@
+{
+  "id": "01-live-tengah-malam",
+  "title": "Live sampai tengah malam… penonton pun tertidur",
+  "hook": ["LIVE SAMPAI", "TENGAH MALAM 😴"],
+  "segments": [[5056.1, 5059.6], [6756.4, 6758.95], [6528.2, 6532.5], [7027.6, 7035.6], [7036.2, 7038.55],
+               [7044.0, 7050.5], [6902.9, 6912.3], [6914.5, 6915.6], [6917.8, 6924.1]],
+  "events": [
+    {"t": 5056.6, "type": "sticker", "text": "11 MALAM", "emoji": "🕚", "dur": 2.0, "x": 380, "y": 1120},
+    {"t": 6757.0, "type": "sticker", "text": "12 MALAM", "emoji": "🕛", "dur": 1.8, "x": 380, "y": 1120},
+    {"t": 6531.0, "type": "lol", "text": "KENA TIDUR CUKUP", "emoji": "🥱", "dur": 2.0, "x": 150, "y": 1000},
+    {"t": 7032.6, "type": "lol", "text": "TERTIDUR!", "emoji": "😴", "dur": 2.2, "x": 470, "y": 1000},
+    {"t": 7045.4, "type": "lol", "text": "MENDODOIKAN", "emoji": "🎶", "dur": 2.4, "x": 300, "y": 1000},
+    {"t": 6904.2, "type": "sticker", "text": "CRAVING AYAM BEREMPAH", "emoji": "🍗", "dur": 2.6, "x": 90, "y": 1120},
+    {"t": 6911.4, "type": "lol", "text": "BERAT NAIK?!", "emoji": "⚖️", "dur": 2.0, "x": 380, "y": 1000},
+    {"t": 6921.6, "type": "lol", "text": "TAK ADA BEZA", "emoji": "🤣", "dur": 2.2, "x": 300, "y": 1000}
+  ],
+  "caption_fixes": {"^Kul$": "Pukul", "^saik$": "", "^-sadi$": "", "^Tantai$": "Tapi", "^bidik$": "bilik", "^Mendodorkan$": "Mendodoikan", "^mendodorkan$": "mendodoikan", "^berempas$": "berempah", "^memperlukan$": "memerlukan", "^Tidak$": "Nanti"},
+  "cta": "Live setiap Selasa 4 petang · Follow!"
+}

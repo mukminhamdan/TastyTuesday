@@ -24,11 +24,11 @@ Status: **PREVIEW sahaja** — draf render kualiti rendah untuk semakan. Render 
 
 | # | Klip | Panjang | Jenis | Hook (skrin) | Sumber (live) |
 |---|------|---------|-------|--------------|----------------|
-| 01 | `01-oven-tersakiti` | 69s | Cerita + lawak | DOH SAYA KENA PREHEAT?! | 1:06:08–1:08:24, 1:53:26 |
+| 01 | `01-live-tengah-malam` | 47s | Lawak | LIVE SAMPAI TENGAH MALAM 😴 | 1:24:16, 1:48:48, 1:52:36, 1:55:03–1:55:24, 1:57:07–1:57:30 |
 | 02 | `02-resepi-4-bahan` | 27s | Tip / resepi | SOURDOUGH 4 BAHAN JE! | 4:38, 12:50–13:31, 17:47 |
 | 03 | `03-bila-nak-mix` | 46s | Tip | DOH LEMBEK? NI PUNCANYA | 41:01–41:18, 2:03:33–2:04:41 |
-| 04 | `04-starter-cpr` | 68s | Tip + lawak | STARTER TERBIAR? BAGI DIA CPR! | 2:08:21–2:09:00, 2:10:47–2:11:46 |
-| 05 | `05-lubang-besar` | 60s | Mitos / ilmu baru | LUBANG BESAR = TAK JADI?! | 1:22:05–1:23:58 |
+| 04 | `04-terus-masuk-fridge` | 47s | Tip + lawak | LEPAS SHAPE TERUS FRIDGE? | 1:24:52–1:25:29, 36:38–37:03 |
+| 05 | `05-berapa-kali-fold` | 35s | Tip | BERAPA KALI STRETCH & FOLD? | 1:52:24–1:53:06, 1:58:50–1:59:00 |
 | 06 | `06-tangan-basah` | 56s | Tip + lawak | DOH LEKAT KAT TANGAN? | 1:15:21–1:16:17, 1:17:21 |
 | 07 | `07-sabar-4-hari` | 78s | Relatable + tip | SOURDOUGH AMBIL 4 HARI?! | 1:59:36–2:02:04 |
 | 08 | `08-drama-shaker` | 60s | Lawak | BELI 6 SHAKER, SALAH KIRA 😂 | 1:38:26–1:39:30, 32:21–33:16 |
@@ -39,11 +39,11 @@ Status: **PREVIEW sahaja** — draf render kualiti rendah untuk semakan. Render 
 
 ### Kenapa setiap klip (dan apa yang dibuang)
 
-1. **Oven tersakiti** — momen paling kuat dalam live. Buka terus dengan punchline ("selama dia preheat oven tu… sourdough saya tersakiti"), baru cerita. Dibuang: ulangan "stretch je lah", senyap 6s, cerita sampingan. Tutup dengan dua lawak: "tak jadi blend buat cekodok" + "yang bagi nasihat rumah pun tak ada, tangga pun tak ada" (diambil dari 1:53, callback).
+1. **Live tengah malam** — montaj lawak lewat malam: "jenuh menahan mata", "kita berumur-umur ni perlukan tidur cukup", Kak Noor tertidur sambil on TikTok ("kita mendodoikan dia"), dan punchline "esok berat naik… dah memang berat pun, tak ada bezanya". *(Ganti klip asal "oven tersakiti".)*
 2. **Resepi 4 bahan** — paling "save-able". Starter naik 3x → 300g tepung / 180g air / 60g starter / 6g garam muncul satu-satu dalam kad resepi. Dibuang: 14s + 12s senyap semasa menimbang, sapaan tetamu.
 3. **Bila nak mix** — masalah biasa (doh lembek) → punca (starter baru 2x) → peraturan (3x paling ngam, dah turun = masam). Gabung dua bahagian live yang berjauhan.
-4. **Starter CPR** — lawak "kelabu tu tai dia" + tip kacau 1–2 jam lepas feed. Dibuang: kiraan 10/10/10 yang mengelirukan.
-5. **Lubang besar** — kandungan "myth-busting" yang mudah dikomen. Dibuang: perbualan kedai/tepung yang berulang.
+4. **Terus masuk fridge** — dua cara lepas shape (biar 1 jam di luar vs terus fridge) dalam kad "2 CARA", lawak "pelajar contoh" + "bangun tahajud", tip proof semalaman atas meja biasa. *(Ganti klip asal "starter CPR".)*
+5. **Berapa kali fold** — window pane, "tak larat dah cukup", minimum 2x fold + 1x shape, lagi elok 4–5 kali. *(Ganti klip asal "lubang besar".)*
 6. **Tangan basah** — tip jelas (basah masa stretch, kering masa fold akhir) + lawak "Tipah tertipu" (bubble rupanya lampu).
 7. **Sabar 4 hari** — relatable untuk ibu-ibu: jadual 4 hari dalam kad, "tak boleh ambil anak sekolah", "orang yang boleh duduk rumah 30 minit tanpa tidur", tip guna timer + alarm.
 8. **Drama shaker** — beli 6 sebab salah kira, "beli dulu, fikir kemudian", dan "pakai tangan lagi senang — ok confirm tak nak bagi".
@@ -54,12 +54,12 @@ Status: **PREVIEW sahaja** — draf render kualiti rendah untuk semakan. Render 
 
 ### Momen lain yang boleh jadi klip seterusnya
 
+- Klip yang diganti (spec lama ada dalam sejarah git): cerita oven Ida 1:06:08, starter CPR 2:08:21, lubang besar 1:22:05.
+
 - 25:03 "nak buat konten sendiri" — Kak minta bahagian starter naik 3x.
 - 29:04 buang lapisan gelap starter + 29:56 feed 10g je, jangan banyak (discard).
-- 34:06 / 1:24:57 fridge terus lepas shape vs tunggu 1 jam ("pelajar contoh").
 - 1:26:04 Japanese flour manis imbang rasa masam.
 - 1:51:26 live hari Selasa 4 petang ada tema → promo live.
-- 1:52:24 window pane test + berapa kali fold.
 
 ## Cara edit / rebuild
 
