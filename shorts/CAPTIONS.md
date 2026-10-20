@@ -1,76 +1,91 @@
-# Caption post (TikTok / Reels)
+# Caption post ikut turutan siri (TikTok / Reels)
 
-## 01-live-tengah-malam
-Live buat sourdough sampai pukul 12 malam… penonton pun dah tertidur 😴🤣 Kak Noor tertidur sambil on TikTok, last-last craving ayam berempah pulak. Korang pun selalu lapar tengah malam?
+Satu video sehari, ikut turutan di bawah. Setiap caption sambung dengan video semalam dan bagi teaser untuk esok.
 
-#sourdough #livetiktok #lawak #tengahmalam #fyp #tiktokmalaysia
+## Part 1 · 13-oven-tersakiti
+Part 1/14 🍞 Proof doh sourdough dalam oven… tiba-tiba suami preheat oven nak bakar kek 😭 Doh saya "tersakiti". Tapi tak jadi pun tak apa, blend je buat cekodok 🤣
+Esok: rupa sourdough yang menjadi 👀
 
-## 02-resepi-4-bahan
-Resepi sourdough 4 bahan je 🍞
+#SiriSourdough #sourdough #bakingfail #lawak #bakingmalaysia #fyp
+
+## Part 2 · 09-asmr-potong
+Part 2/14 🔪 Semalam doh tersakiti, hari ni yang menjadi! ASMR potong sourdough, dengar bunyi kerak dia… nipis 🎧 Rahsianya: Japanese high gluten flour.
+Esok: sourdough ni roti apa sebenarnya? 🤔
+
+#SiriSourdough #sourdough #asmr #sourdoughbread #fyp
+
+## Part 3 · 12-roti-masam
+Part 3/14 🤔 Ramai tanya, sourdough tu roti apa? Roti masam guna yis asli (starter) buat sendiri. Ada yang serik sebab dapat yang keras & masam, tapi yang baru bakar… sedap rupanya!
+Esok: resepi dia, 4 bahan je 📝
+
+#SiriSourdough #sourdough #rotimasam #sourdoughmalaysia #fyp
+
+## Part 4 · 02-resepi-4-bahan
+Part 4/14 📝 Macam janji semalam, resepi sourdough 4 bahan je:
 300g tepung
 180g air
 60g starter
 6g garam
-Tip: guna starter bila dah naik 3x ganda, sebelum dia turun. Save dulu, senang nak cari nanti!
+Guna starter bila dah naik 3x ganda. Save dulu!
+Esok: benda paling pelik jadi masa proof 🫠
 
-#resepisourdough #sourdough #sourdoughmalaysia #resepimudah #bakingmalaysia #fyp
+#SiriSourdough #resepisourdough #sourdough #resepimudah #fyp
 
-## 03-bila-nak-mix
-Doh sourdough lembik? Mungkin starter baru naik 2x 😖 Mix masa starter tengah naik, 3x ganda paling ngam. Kalau dah turun baru mix, roti jadi masam. Korang pernah kena tak?
+## Part 5 · 11-shower-cap-cair
+Part 5/14 🫠 Dah ada resepi, jangan buat silap ni pula… shower cap cair dalam oven 😂 "Kalau dah bercampur dengan roti… aku makan." Ada yang gunting tisu pulak!
+Esok: kenapa doh jadi lembik? 😖
 
-#sourdough #sourdoughstarter #tipsbaking #sourdoughmalaysia #fyp
+#SiriSourdough #sourdough #lawak #bakingfail #fyp
 
-## 04-terus-masuk-fridge
-Lepas shape, korang tunggu sejam dulu atau terus masuk fridge? 🧊 Ada yang biar 1 jam kat luar, ada yang terus masuk peti. Kalau proof semalaman, letak atas meja biasa, jangan atas tempat panas. Team mana korang? Komen!
+## Part 6 · 03-bila-nak-mix
+Part 6/14 😖 Ikut resepi tapi doh lembik? Mungkin starter baru naik 2x. Mix masa starter tengah naik, 3x ganda paling ngam. Dah turun baru mix, roti jadi masam.
+Esok: doh lekat kat tangan? Ni caranya 💧
 
-#sourdough #coldproof #tipsbaking #sourdoughmalaysia #fyp
+#SiriSourdough #sourdough #sourdoughstarter #tipsbaking #fyp
 
-## 05-berapa-kali-fold
-Berapa kali stretch & fold? Minimum 2x fold + 1x shape. Tapi lagi banyak lagi elok, 4–5 kali pun boleh 💪 (walaupun dah tak larat 😮‍💨). Korang buat berapa kali?
+## Part 7 · 06-tangan-basah
+Part 7/14 💧 Doh dah ok, tapi lekat kat tangan pula? Masa stretch, tangan basah. Masa fold akhir, tangan kering. Last sekali… Tipah tertipu 🤣
+Esok: kena fold berapa kali sebenarnya? 💪
 
-#stretchandfold #sourdough #tipsbaking #sourdoughmalaysia #fyp
+#SiriSourdough #sourdough #stretchandfold #tipsbaking #fyp
 
-## 06-tangan-basah
-Doh sourdough lekat kat tangan? Sediakan bowl air kat sebelah 💧 Masa stretch, tangan basah. Masa fold akhir, tangan kering. Last sekali… Tipah tertipu 🤣
+## Part 8 · 05-berapa-kali-fold
+Part 8/14 💪 Sambungan semalam: berapa kali stretch & fold? Minimum 2x fold + 1x shape. Lagi banyak lagi elok, 4–5 kali pun boleh (walaupun dah tak larat 😮‍💨).
+Esok: pengayak tepung untuk fold… tapi kenapa beli 6? 🤦
 
-#sourdough #stretchandfold #tipsbaking #sourdoughmalaysia #fyp
+#SiriSourdough #sourdough #stretchandfold #tipsbaking #fyp
 
-## 07-sabar-4-hari
-Sourdough ambil 4 hari 😩 Hari 1–2 feed starter, hari 3 mix + fold dan masuk fridge, hari 4 baru bakar. Lebih 30 minit boleh overproof, jadi guna timer & set alarm. Tag kawan yang sabar tinggi!
+## Part 9 · 08-drama-shaker
+Part 9/14 🤦 Nak tabur tepung masa fold kena ada pengayak. Masalahnya… beli 6 sebab salah kira 😂 Prinsip hidup: beli dulu, fikir kemudian 🛒
+Esok: lepas shape, terus fridge atau tunggu sejam? 🧊
 
-#sourdough #sourdoughstarter #bakingmalaysia #sabar #fyp
+#SiriSourdough #sourdough #lawak #bakingmalaysia #fyp
 
-## 08-drama-shaker
-Beli 6 shaker sebab salah kira 🤦 Prinsip hidup: beli dulu, fikir kemudian 🛒😂 Tag geng korang yang macam ni!
+## Part 10 · 04-terus-masuk-fridge
+Part 10/14 🧊 Doh dah shape, lepas tu? Ada yang biar 1 jam kat luar, ada yang terus masuk fridge. Proof semalaman? Letak atas meja biasa, jangan tempat panas. Team mana korang?
+Esok: semua ni ambil masa berapa hari? 😩
 
-#lawak #bakingmalaysia #sourdough #shopping #fyp #tiktokmalaysia
+#SiriSourdough #sourdough #coldproof #tipsbaking #fyp
 
-## 09-asmr-potong
-ASMR potong sourdough 🔪🎧 Dengar bunyi kerak dia… nipis! Rahsianya: Japanese high gluten flour. Cantik tak?
+## Part 11 · 07-sabar-4-hari
+Part 11/14 😩 Kalau dah ikut dari Part 1, ni rumusannya: sourdough ambil 4 hari! Hari 1–2 feed starter, hari 3 mix + fold, hari 4 bakar. Guna timer & alarm. Tag kawan yang sabar tinggi!
+Esok: sebab tu live kami sampai tengah malam 😴
 
-#sourdough #asmr #sourdoughbread #bakingmalaysia #fyp
+#SiriSourdough #sourdough #sourdoughstarter #bakingmalaysia #fyp
 
-## 10-tanpa-dutch-oven
-Tak ada Dutch oven? Tak apa! 💸 Bakar sourdough dalam Cooven: tutup dengan aluminium foil, letak air kat tepi, siap. Dutch oven tu mahal tau. Korang bakar guna apa?
+## Part 12 · 01-live-tengah-malam
+Part 12/14 😴 Sebab proses dia lama, live pun sampai pukul 12 malam… penonton pun dah tertidur 🤣 Last-last craving ayam berempah pulak. Jom join live seterusnya!
+Esok: tak ada Dutch oven? Jangan risau 💸
 
-#sourdough #cooven #dutchoven #tipsbaking #bakingmalaysia #fyp
+#SiriSourdough #sourdough #livetiktok #lawak #fyp
 
-## 11-shower-cap-cair
-Shower cap cair dalam oven 🫠 "Kalau dah bercampur dengan roti… aku makan" 😂 Siapa lagi tutup doh guna shower cap? Ada yang gunting tisu pulak!
+## Part 13 · 10-tanpa-dutch-oven
+Part 13/14 💸 Dah sampai bahagian bakar. Tak ada Dutch oven? Tak apa! Bakar dalam Cooven: tutup dengan foil, letak air kat tepi, siap. Dutch oven tu mahal tau.
+Esok: part terakhir, bake penuh dalam Cooven 🔥
 
-#lawak #sourdough #bakingfail #bakingmalaysia #fyp
+#SiriSourdough #sourdough #cooven #dutchoven #fyp
 
-## 12-roti-masam
-Sourdough tu roti apa sebenarnya? 🍞 Roti masam guna yis asli (starter) buat sendiri. Ada yang serik sebab dapat yang keras & masam, tapi bila makan yang baru bakar… sedap rupanya! Korang team sourdough atau roti biasa?
+## Part 14 · 14-bakar-dalam-cooven
+Part 14/14 🔥 Part terakhir! Bake sourdough dengan Cooven, senang je. Masuk, tutup, tunggu… keluar cantik gila 🤩 Korang nak try?
 
-#sourdough #rotimasam #sourdoughmalaysia #bakingmalaysia #fyp
-
-## 13-oven-tersakiti
-Proof doh sourdough dalam oven… tiba-tiba suami preheat oven nak bakar kek 😭 Plastik hilang, doh "tersakiti". Tapi tak apa, tak jadi bakar je, tak jadi juga blend buat cekodok 🤣 Korang pernah kena macam ni?
-
-#sourdough #bakingfail #lawak #bakingmalaysia #fyp #tiktokmalaysia
-
-## 14-bakar-dalam-cooven
-Bake sourdough dengan Cooven, senang je! 🔥 Masuk, tutup, tunggu… keluar cantik gila 🤩 Korang nak try?
-
-#sourdough #cooven #bakesourdough #sourdoughmalaysia #bakingmalaysia #fyp
+#SiriSourdough #sourdough #cooven #sourdoughmalaysia #fyp
