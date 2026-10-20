@@ -1,4 +1,4 @@
-# Edit notes — Tasty Tuesday shorts
+# Edit notes — shorts
 
 Sumber: rakaman live video call 93 minit (720×1280). Semua masa dalam kurungan ialah masa dalam video asal.
 
@@ -7,8 +7,8 @@ Sumber: rakaman live video call 93 minit (720×1280). Semua masa dalam kurungan 
 - Buang ayat berulang, sembang luar topik, dan *awkward pause*: setiap senyap > 0.65s dalam segmen dipotong jadi jump cut, dengan punch-in 8% berselang-seli supaya potongan nampak sengaja.
 - Hook kuat di 2.4s pertama (tajuk besar + bass impact + whoosh), diikuti cerita.
 - Caption karaoke (perkataan aktif bertukar merah, kata kunci ditanda kuning).
-- Kad TIP (ding), angka/stat pop (ping), label (pop), sticker lawak + punch-in zoom (boing / error / ding), end card (sparkle).
-- Layout: seluruh grid video call ditunjukkan (supaya orang yang bercakap sentiasa nampak), dalam bingkai 9:16 berjenama Tasty Tuesday.
+- Kad TIP (ding), angka/stat pop (ping), label (pop), sticker lawak + punch-in zoom (boing / error / ding), end card "Masak sama-sama, gelak sama-sama!" (sparkle).
+- Layout: seluruh grid video call ditunjukkan (supaya orang yang bercakap sentiasa nampak), dalam bingkai 9:16 tanpa jenama.
 
 | # | Short | Durasi | Jenis |
 |---|---|---|---|

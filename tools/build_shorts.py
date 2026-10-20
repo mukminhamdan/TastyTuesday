@@ -323,7 +323,7 @@ def build(short, words, footage=True):
                       "ox": ov.get("ox", 35), "oy": ov.get("oy", 50)})
 
     # End card
-    end = short.get("end", {"line1": "TASTY TUESDAY", "line2": "Masak sama-sama, gelak sama-sama"})
+    end = short.get("end", {"line1": "Masak sama-sama", "line2": "gelak sama-sama!"})
     ov_html.append(
         f'<div id="endcard" class="clip ov" data-start="{m.duration:.3f}" data-duration="{outro:.3f}" data-track-index="7">'
         f'<div class="end-in" data-layout-allow-occlusion><div class="end-l1">{esc(end["line1"])}</div><div class="end-l2">{esc(end["line2"])}</div></div></div>'
@@ -453,15 +453,15 @@ TEMPLATE = r"""<!doctype html>
       .label { position: absolute; left: 44px; display: flex; align-items: center; gap: 16px; background: var(--ink); color: #fff8ec; font-weight: 900; font-size: 42px; padding: 16px 30px; border-radius: 999px; }
       .label .dot { width: 20px; height: 20px; border-radius: 50%; background: var(--yolk); display: block; }
       .end-in { position: absolute; left: 0; right: 0; top: 0; bottom: 0; background: rgba(255,241,214,.94); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; }
-      .end-l1 { background: var(--tomato); color: #fff8ec; font-family: "Archivo Black", sans-serif; font-size: 104px; padding: 22px 44px 14px; border-radius: 999px; box-shadow: 0 12px 0 #9e2516; transform: rotate(-3deg); }
-      .end-l2 { font-weight: 900; font-size: 48px; color: var(--ink); text-align: center; max-width: 900px; }
+      .end-l1 { background: var(--tomato); color: #fff8ec; font-family: "Archivo Black", sans-serif; font-size: 80px; padding: 22px 44px 14px; border-radius: 999px; box-shadow: 0 12px 0 #9e2516; transform: rotate(-3deg); }
+      .end-l2 { font-weight: 900; font-size: 56px; color: var(--ink); text-align: center; max-width: 900px; }
     </style>
   </head>
   <body>
     <div id="root" data-composition-id="main" data-start="0" data-duration="__DUR__" data-width="1080" data-height="1920">
       <div class="bg-dots"></div>
       <div class="header">
-        <div class="brand"><div class="brand-pill">TASTY TUESDAY</div><div class="live"><i id="live-dot"></i>LIVE MASAK</div></div>
+        <div class="brand"><div class="live"><i id="live-dot"></i>LIVE MASAK</div></div>
         <div class="headline"><span>__EPISODE__</span></div>
       </div>
       <div class="stage-frame"></div>
@@ -471,7 +471,6 @@ TEMPLATE = r"""<!doctype html>
         </div>
       </div>
       <div class="progress-track"><div class="progress" id="progress"></div></div>
-      <div class="footer"><div class="footer-txt">#TASTYTUESDAY</div></div>
       <div class="caps" id="caps">
       __CAPS__
       </div>
