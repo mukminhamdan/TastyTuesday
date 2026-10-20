@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="ms">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Orang Nak Tahu Benda Dimasak</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #fff1d6; }
+      :root {
+        --cream: #fff1d6; --ink: #2a170c; --tomato: #e4402b; --yolk: #ffcf33; --leaf: #1f7a45; --blue: #3a4fd8;
+      }
+      #root { width: 100%; height: 100%; position: relative; overflow: hidden; font-family: Montserrat, sans-serif; background: var(--cream); }
+      /* background */
+      .bg-dots { position: absolute; inset: 0; background-image: radial-gradient(#e9cf9f 3px, transparent 3.5px); background-size: 46px 46px; opacity: .55; }
+      .header { position: absolute; left: 44px; right: 44px; top: 46px; height: 220px; }
+      .brand { display: flex; align-items: center; justify-content: space-between; }
+      .brand-pill { background: var(--tomato); color: #fff8ec; font-family: "Archivo Black", sans-serif; font-size: 34px; letter-spacing: .03em; padding: 12px 24px 10px; border-radius: 999px; transform: rotate(-2deg); box-shadow: 0 6px 0 #9e2516; }
+      .live { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 26px; color: var(--ink); background: #fff8ec; border: 4px solid var(--ink); padding: 8px 20px; border-radius: 999px; }
+      .live i { width: 16px; height: 16px; border-radius: 50%; background: var(--tomato); display: block; }
+      .headline { margin-top: 26px; font-family: "Archivo Black", sans-serif; font-size: 60px; line-height: 1.05; color: var(--ink); text-transform: uppercase; }
+      .headline .nb { white-space: nowrap; }
+      .headline span { background: linear-gradient(transparent 58%, var(--yolk) 58%, var(--yolk) 92%, transparent 92%); }
+      /* stage: the call grid, framed */
+      .stage-frame { position: absolute; left: 24px; top: 300px; width: 1032px; height: 962px; border-radius: 30px; background: var(--ink); box-shadow: 0 0 0 7px var(--ink), 0 18px 0 7px rgba(42,23,12,.9); }
+      .stage { position: absolute; left: 24px; top: 300px; width: 1032px; height: 962px; overflow: hidden; border-radius: 30px; background: #000; }
+      .cam { position: absolute; inset: 0; transform-origin: 35% 50%; }
+      .src { position: absolute; left: -11.73px; top: -457.36px; width: 1055.45px; height: 1876.36px; object-fit: fill; }
+      .footer { position: absolute; left: 0; width: 1080px; top: 1800px; height: 80px; display: flex; align-items: center; justify-content: center; }
+      .footer-txt { font-family: "Archivo Black", sans-serif; font-size: 30px; color: var(--ink); opacity: .55; letter-spacing: .08em; }
+      .progress-track { position: absolute; left: 60px; width: 960px; top: 1776px; height: 12px; border-radius: 999px; background: rgba(42,23,12,.12); overflow: hidden; }
+      .progress { position: absolute; left: 0; top: 0; height: 12px; width: 960px; background: var(--tomato); transform-origin: 0 50%; border-radius: 999px; }
+      /* captions: under the call grid, on the cream */
+      .caps { position: absolute; left: 0; width: 1080px; top: 1318px; height: 330px; }
+      .capg { position: absolute; left: 60px; right: 120px; top: 0; text-align: center; font-family: "Archivo Black", sans-serif; font-size: 96px; line-height: 1.1; color: var(--ink); text-transform: uppercase; opacity: 0; }
+      .capg .w { display: inline-block; padding: 0 6px; border-radius: 12px; }
+      .capg .w.em { background: var(--yolk); }
+      /* overlays */
+      .ov { position: absolute; inset: 0; pointer-events: none; }
+      .hook-in { position: absolute; left: 60px; right: 60px; top: 520px; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+      .hook-kicker { background: var(--ink); color: var(--yolk); font-weight: 900; font-size: 34px; letter-spacing: .12em; padding: 10px 24px; border-radius: 12px; text-transform: uppercase; }
+      .hook-title { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+      .hook-title .hl { display: block; background: var(--yolk); color: var(--ink); font-family: "Archivo Black", sans-serif; font-size: 92px; line-height: 1; padding: 16px 30px 10px; border-radius: 18px; text-transform: uppercase; box-shadow: 0 10px 0 var(--ink); text-align: center; }
+      .hook-title .hl.long { font-size: 74px; }
+      .hook-title .hl:nth-child(2) { background: var(--tomato); color: #fff8ec; }
+      .pos-top .tip-card, .pos-top .stat-card, .pos-top .label { top: 340px; }
+      .pos-mid .tip-card, .pos-mid .stat-card, .pos-mid .label { top: 700px; }
+      .pos-low .tip-card, .pos-low .stat-card, .pos-low .label { top: 1060px; }
+      .tip-card { position: absolute; left: 44px; right: 44px; display: flex; align-items: stretch; background: #fff8ec; border: 6px solid var(--ink); border-radius: 26px; box-shadow: 0 12px 0 var(--ink); overflow: hidden; }
+      .tip-badge { background: var(--leaf); color: #fff8ec; font-family: "Archivo Black", sans-serif; font-size: 40px; display: flex; align-items: center; padding: 0 26px; letter-spacing: .04em; }
+      .tip-text { padding: 22px 26px; font-weight: 800; font-size: 46px; line-height: 1.12; color: var(--ink); }
+      .stat-card { position: absolute; left: 0; right: 0; display: flex; flex-direction: column; align-items: center; }
+      .stat-num { font-family: "Archivo Black", sans-serif; font-size: 150px; line-height: 1; color: var(--yolk); -webkit-text-stroke: 16px var(--ink); paint-order: stroke fill; text-shadow: 0 12px 0 var(--ink); }
+      .stat-sub { margin-top: 14px; background: var(--ink); color: #fff8ec; font-weight: 900; font-size: 40px; padding: 10px 26px; border-radius: 14px; text-transform: uppercase; letter-spacing: .06em; }
+      .joke { position: absolute; left: 0; right: 0; top: 640px; display: flex; justify-content: center; }
+      .joke span { display: block; background: var(--tomato); color: #fff8ec; font-family: "Archivo Black", sans-serif; font-size: 74px; padding: 16px 30px 10px; border-radius: 20px; border: 6px solid var(--ink); box-shadow: 0 12px 0 var(--ink); text-transform: uppercase; transform: rotate(-5deg); text-align: center; max-width: 840px; line-height: 1.05; }
+      .pos-low .joke { top: 1040px; }
+      .pos-top .joke { top: 380px; }
+      .label { position: absolute; left: 44px; display: flex; align-items: center; gap: 16px; background: var(--ink); color: #fff8ec; font-weight: 900; font-size: 42px; padding: 16px 30px; border-radius: 999px; }
+      .label .dot { width: 20px; height: 20px; border-radius: 50%; background: var(--yolk); display: block; }
+      .end-in { position: absolute; left: 0; right: 0; top: 0; bottom: 0; background: rgba(255,241,214,.94); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; }
+      .end-l1 { background: var(--tomato); color: #fff8ec; font-family: "Archivo Black", sans-serif; font-size: 104px; padding: 22px 44px 14px; border-radius: 999px; box-shadow: 0 12px 0 #9e2516; transform: rotate(-3deg); }
+      .end-l2 { font-weight: 900; font-size: 48px; color: var(--ink); text-align: center; max-width: 900px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="28.93" data-width="1080" data-height="1920">
+      <div class="bg-dots"></div>
+      <div class="header">
+        <div class="brand"><div class="brand-pill">TASTY TUESDAY</div><div class="live"><i id="live-dot"></i>LIVE MASAK</div></div>
+        <div class="headline"><span>Content creator <span class="nb">mak-mak</span></span></div>
+      </div>
+      <div class="stage-frame"></div>
+      <div class="stage">
+        <div class="cam" id="cam" data-layout-allow-overflow>
+        <video id="v0" class="clip src" src="assets/footage/src-04264.40-04328.50.mp4" data-start="0.000" data-duration="1.870" data-media-start="35.630" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v1" class="clip src" src="assets/footage/src-04264.40-04328.50.mp4" data-start="1.870" data-duration="3.300" data-media-start="1.000" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v2" class="clip src" src="assets/footage/src-04264.40-04328.50.mp4" data-start="5.170" data-duration="2.400" data-media-start="4.400" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v3" class="clip src" src="assets/footage/src-04264.40-04328.50.mp4" data-start="7.570" data-duration="1.970" data-media-start="11.130" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v4" class="clip src" src="assets/footage/src-04264.40-04328.50.mp4" data-start="9.540" data-duration="4.500" data-media-start="41.100" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v5" class="clip src" src="assets/footage/src-04264.40-04328.50.mp4" data-start="14.040" data-duration="5.390" data-media-start="47.010" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v6" class="clip src" src="assets/footage/src-04264.40-04328.50.mp4" data-start="19.430" data-duration="3.500" data-media-start="53.400" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v7" class="clip src" src="assets/footage/src-04264.40-04328.50.mp4" data-start="22.930" data-duration="3.800" data-media-start="59.300" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v-tail" class="clip src" src="assets/footage/src-04264.40-04328.50.mp4" data-start="26.730" data-duration="2.200" data-media-start="61.850" data-track-index="1" playsinline muted></video>
+        </div>
+      </div>
+      <div class="progress-track"><div class="progress" id="progress"></div></div>
+      <div class="footer"><div class="footer-txt">#TASTYTUESDAY</div></div>
+      <div class="caps" id="caps">
+      <div class="capg" id="cg0"><span class="w" id="cw0_0">Tak</span> <span class="w" id="cw0_1">ada</span> <span class="w em" id="cw0_2">muka</span></div>
+      <div class="capg" id="cg1"><span class="w" id="cw1_0">aku</span> <span class="w" id="cw1_1">lah,</span></div>
+      <div class="capg" id="cg2"><span class="w" id="cw2_0">tak</span> <span class="w em" id="cw2_1">best</span> <span class="w" id="cw2_2">lah</span></div>
+      <div class="capg" id="cg3"><span class="w" id="cw3_0">Alamak,</span></div>
+      <div class="capg" id="cg4"><span class="w" id="cw4_0">dah</span> <span class="w" id="cw4_1">ada</span> <span class="w em" id="cw4_2">live</span></div>
+      <div class="capg" id="cg5"><span class="w" id="cw5_0">malam</span> <span class="w" id="cw5_1">ni.</span></div>
+      <div class="capg" id="cg6"><span class="w" id="cw6_0">Aku</span> <span class="w" id="cw6_1">tak</span> <span class="w" id="cw6_2">ada</span></div>
+      <div class="capg" id="cg7"><span class="w em" id="cw7_0">content</span> <span class="w" id="cw7_1">lagi</span></div>
+      <div class="capg" id="cg8"><span class="w em" id="cw8_0">Content</span> <span class="w" id="cw8_1">ni</span> <span class="w" id="cw8_2">lah,</span></div>
+      <div class="capg" id="cg9"><span class="w" id="cw9_0">ambil</span> <span class="w" id="cw9_1">lah</span> <span class="w" id="cw9_2">kita</span></div>
+      <div class="capg" id="cg10"><span class="w" id="cw10_0">orang</span> <span class="w" id="cw10_1">punya</span></div>
+      <div class="capg" id="cg11"><span class="w em" id="cw11_0">content</span> <span class="w" id="cw11_1">ni</span></div>
+      <div class="capg" id="cg12"><span class="w" id="cw12_0">Tak</span> <span class="w" id="cw12_1">nak</span> <span class="w" id="cw12_2">lah,</span></div>
+      <div class="capg" id="cg13"><span class="w" id="cw13_0">tak</span> <span class="w" id="cw13_1">ada</span> <span class="w em" id="cw13_2">muka</span></div>
+      <div class="capg" id="cg14"><span class="w" id="cw14_0">aku</span></div>
+      <div class="capg" id="cg15"><span class="w" id="cw15_0">Tak</span> <span class="w" id="cw15_1">nak</span> <span class="w" id="cw15_2">lah,</span></div>
+      <div class="capg" id="cg16"><span class="w" id="cw16_0">storynya</span> <span class="w" id="cw16_1">tak</span> <span class="w em" id="cw16_2">best</span></div>
+      <div class="capg" id="cg17"><span class="w" id="cw17_0">nanti.</span></div>
+      <div class="capg" id="cg18"><span class="w" id="cw18_0">Aku</span> <span class="w" id="cw18_1">macam,</span></div>
+      <div class="capg" id="cg19"><span class="w" id="cw19_0">oh</span> <span class="w" id="cw19_1">ceritanya</span> <span class="w" id="cw19_2">aku</span></div>
+      <div class="capg" id="cg20"><span class="w" id="cw20_0">masuk</span> <span class="w em" id="cw20_1">live</span></div>
+      <div class="capg" id="cg21"><span class="w" id="cw21_0">Alah,</span></div>
+      <div class="capg" id="cg22"><span class="w" id="cw22_0">sama</span> <span class="w" id="cw22_1">je</span> <span class="w" id="cw22_2">macam</span></div>
+      <div class="capg" id="cg23"><span class="w" id="cw23_0">Kak</span> <span class="w" id="cw23_1">Salma</span> <span class="w" id="cw23_2">masuk</span></div>
+      <div class="capg" id="cg24"><span class="w em" id="cw24_0">live</span> <span class="w" id="cw24_1">tu.</span></div>
+      <div class="capg" id="cg25"><span class="w" id="cw25_0">Tak</span> <span class="w" id="cw25_1">apa,</span></div>
+      <div class="capg" id="cg26"><span class="w" id="cw26_0">tu</span> <span class="w em" id="cw26_1">story</span> <span class="w" id="cw26_2">aku.</span></div>
+      <div class="capg" id="cg27"><span class="w" id="cw27_0">Itu</span> <span class="w em" id="cw27_1">content</span> <span class="w" id="cw27_2">aku,</span></div>
+      <div class="capg" id="cg28"><span class="w" id="cw28_0">bukan</span> <span class="w em" id="cw28_1">content</span> <span class="w" id="cw28_2">dia.</span></div>
+      <div class="capg" id="cg29"><span class="w" id="cw29_0">Macam,</span></div>
+      <div class="capg" id="cg30"><span class="w" id="cw30_0">hari</span> <span class="w" id="cw30_1">ni</span> <span class="w" id="cw30_2">mak</span></div>
+      <div class="capg" id="cg31"><span class="w" id="cw31_0">penat</span> <span class="w" id="cw31_1">balik</span> <span class="w" id="cw31_2">kerja,</span></div>
+      <div class="capg" id="cg32"><span class="w" id="cw32_0">bangun</span> <span class="w" id="cw32_1">tidur</span></div>
+      <div class="capg" id="cg33"><span class="w" id="cw33_0">Tak</span> <span class="w" id="cw33_1">ada</span> <span class="w" id="cw33_2">maknanya.</span></div>
+      <div class="capg" id="cg34"><span class="w" id="cw34_0">Tak</span> <span class="w" id="cw34_1">ada</span> <span class="w" id="cw34_2">orang</span></div>
+      <div class="capg" id="cg35"><span class="w em" id="cw35_0">interested</span> <span class="w" id="cw35_1">nak</span></div>
+      <div class="capg" id="cg36"><span class="w" id="cw36_0">tahu</span> <span class="w" id="cw36_1">cerita</span></div>
+      <div class="capg" id="cg37"><span class="w em" id="cw37_0">masalah</span> <span class="w" id="cw37_1">aku.</span></div>
+      <div class="capg" id="cg38"><span class="w" id="cw38_0">Orang</span> <span class="w" id="cw38_1">nak</span> <span class="w" id="cw38_2">tahu</span></div>
+      <div class="capg" id="cg39"><span class="w" id="cw39_0">benda</span> <span class="w em" id="cw39_1">dimasak.</span></div>
+      </div>
+    <div id="hook" class="clip ov" data-start="0" data-duration="2.4" data-track-index="3"><div class="hook-in"><div class="hook-kicker">Real talk</div><div class="hook-title"><span class=hl style='font-size:62px'>Tak ada muka aku,</span><span class=hl style='font-size:81px'>tak best lah!</span></div></div></div>
+    <div id="ov0" class="clip ov pos-top" data-start="2.47" data-duration="2.6" data-track-index="4"><div class="label"><span class="dot"></span>Live malam ni... content belum ada</div></div>
+    <div id="ov1" class="clip ov pos-low" data-start="18.23" data-duration="1.6" data-track-index="5"><div class="joke"><span>Content aku, bukan content dia!</span></div></div>
+    <div id="ov2" class="clip ov pos-low" data-start="24.23" data-duration="2.5000000000004725" data-track-index="6"><div class="tip-card"><div class="tip-badge">FAKTA</div><div class="tip-text">Orang nak tengok apa yang dimasak!</div></div></div>
+    <div id="endcard" class="clip ov" data-start="26.730" data-duration="2.200" data-track-index="7"><div class="end-in" data-layout-allow-occlusion><div class="end-l1">TASTY TUESDAY</div><div class="end-l2">Masak sama-sama, gelak sama-sama</div></div></div>
+    <audio id="sfx0" src="assets/sfx/impact-bass-1.mp3" data-start="0.020" data-duration="2.100" data-track-index="20" data-volume="0.45"></audio>
+    <audio id="sfx1" src="assets/sfx/whoosh.mp3" data-start="2.050" data-duration="0.570" data-track-index="21" data-volume="0.4"></audio>
+    <audio id="sfx2" src="assets/sfx/pop.mp3" data-start="2.470" data-duration="0.720" data-track-index="22" data-volume="0.5"></audio>
+    <audio id="sfx3" src="assets/sfx/boing.mp3" data-start="18.230" data-duration="0.940" data-track-index="23" data-volume="0.5"></audio>
+    <audio id="sfx4" src="assets/sfx/ding.mp3" data-start="24.230" data-duration="1.440" data-track-index="20" data-volume="0.35"></audio>
+    <audio id="sfx5" src="assets/sfx/sparkle.mp3" data-start="26.830" data-duration="1.800" data-track-index="21" data-volume="0.35"></audio>
+    </div>
+    <script>
+      const D = {"cuts": [1.87, 5.17, 7.57, 9.54, 14.04, 19.43, 22.93], "caps": [{"s": 0.12, "e": 0.742, "w": [[0.12, 0.307], [0.307, 0.493], [0.493, 0.742]]}, {"s": 0.742, "e": 1.178, "w": [[0.742, 0.929], [0.929, 1.178]]}, {"s": 1.178, "e": 1.96, "w": [[1.178, 1.364], [1.364, 1.613], [1.613, 1.8]]}, {"s": 1.96, "e": 2.48, "w": [[1.96, 2.48]]}, {"s": 2.48, "e": 3.16, "w": [[2.48, 2.7], [2.7, 2.9], [2.9, 3.16]]}, {"s": 3.16, "e": 3.74, "w": [[3.16, 3.42], [3.42, 3.74]]}, {"s": 3.74, "e": 4.24, "w": [[3.74, 3.86], [3.86, 4.08], [4.08, 4.24]]}, {"s": 4.24, "e": 5.22, "w": [[4.24, 4.64], [4.64, 5.0]]}, {"s": 5.22, "e": 6.38, "w": [[5.22, 6.08], [6.08, 6.22], [6.22, 6.38]]}, {"s": 6.38, "e": 6.92, "w": [[6.38, 6.6], [6.6, 6.76], [6.76, 6.92]]}, {"s": 6.92, "e": 7.22, "w": [[6.92, 7.04], [7.04, 7.18]]}, {"s": 7.18, "e": 7.69, "w": [[7.18, 7.48], [7.48, 7.56]]}, {"s": 7.69, "e": 8.27, "w": [[7.69, 7.89], [7.89, 8.15], [8.15, 8.27]]}, {"s": 8.27, "e": 8.95, "w": [[8.27, 8.37], [8.37, 8.65], [8.65, 8.95]]}, {"s": 8.95, "e": 9.59, "w": [[8.95, 9.45]]}, {"s": 9.59, "e": 9.99, "w": [[9.59, 9.73], [9.73, 9.89], [9.89, 9.99]]}, {"s": 9.99, "e": 11.77, "w": [[9.99, 10.95], [10.95, 11.57], [11.57, 11.77]]}, {"s": 11.77, "e": 12.21, "w": [[11.77, 12.21]]}, {"s": 12.21, "e": 12.73, "w": [[12.21, 12.53], [12.53, 12.73]]}, {"s": 12.73, "e": 13.41, "w": [[12.73, 12.91], [12.91, 13.09], [13.09, 13.41]]}, {"s": 13.41, "e": 14.14, "w": [[13.41, 13.65], [13.65, 13.89]]}, {"s": 14.16, "e": 14.466, "w": [[14.16, 14.466]]}, {"s": 14.466, "e": 15.139, "w": [[14.466, 14.711], [14.711, 14.833], [14.833, 15.139]]}, {"s": 15.139, "e": 15.935, "w": [[15.139, 15.323], [15.323, 15.629], [15.629, 15.935]]}, {"s": 15.935, "e": 16.363, "w": [[15.935, 16.179], [16.179, 16.363]]}, {"s": 16.363, "e": 16.791, "w": [[16.363, 16.546], [16.546, 16.791]]}, {"s": 16.791, "e": 17.464, "w": [[16.791, 16.914], [16.914, 17.22], [17.22, 17.464]]}, {"s": 17.464, "e": 18.321, "w": [[17.464, 17.648], [17.648, 18.076], [18.076, 18.321]]}, {"s": 18.321, "e": 19.54, "w": [[18.321, 18.627], [18.627, 19.055], [19.055, 19.3]]}, {"s": 19.54, "e": 20.0, "w": [[19.54, 20.0]]}, {"s": 20.0, "e": 20.69, "w": [[20.0, 20.307], [20.307, 20.46], [20.46, 20.69]]}, {"s": 20.69, "e": 21.917, "w": [[20.69, 21.073], [21.073, 21.457], [21.457, 21.917]]}, {"s": 21.917, "e": 23.0, "w": [[21.917, 22.377], [22.377, 22.76]]}, {"s": 23.0, "e": 23.98, "w": [[23.0, 23.12], [23.12, 23.26], [23.26, 23.84]]}, {"s": 23.98, "e": 24.48, "w": [[23.98, 24.24], [24.24, 24.34], [24.34, 24.48]]}, {"s": 24.48, "e": 25.02, "w": [[24.48, 24.86], [24.86, 25.02]]}, {"s": 25.02, "e": 25.32, "w": [[25.02, 25.12], [25.12, 25.3]]}, {"s": 25.3, "e": 25.76, "w": [[25.3, 25.52], [25.52, 25.76]]}, {"s": 25.76, "e": 26.2, "w": [[25.76, 25.94], [26.02, 26.1], [26.1, 26.2]]}, {"s": 26.2, "e": 26.79, "w": [[26.2, 26.32], [26.32, 26.54]]}], "ovs": [{"type": "hook", "id": "hook", "s": 0, "d": 2.4}, {"type": "label", "id": "ov0", "s": 2.47, "d": 2.6, "scale": 1.28, "ox": 35, "oy": 50}, {"type": "joke", "id": "ov1", "s": 18.23, "d": 1.6, "scale": 1.45, "ox": 100, "oy": 8}, {"type": "tip", "id": "ov2", "s": 24.23, "d": 2.5000000000004725, "scale": 1.28, "ox": 35, "oy": 50}], "dur": 28.93, "main": 26.730000000000473, "zoomEvery": true};
+      const tl = gsap.timeline({ paused: true });
+      // progress bar + live dot
+      tl.fromTo("#progress", { scaleX: 0 }, { scaleX: 1, duration: D.main, ease: "none" }, 0);
+      tl.fromTo("#live-dot", { opacity: 1 }, { opacity: 0.25, duration: 0.6, repeat: Math.max(0, Math.floor(D.dur / 0.6) - 1), yoyo: true, ease: "sine.inOut" }, 0);
+      // jump-cut punch-ins: alternate framing on every cut so cuts read as edits
+      let zoomed = false;
+      if (D.zoomEvery) {
+        D.cuts.forEach((t) => { zoomed = !zoomed; tl.set("#cam", { scale: zoomed ? 1.08 : 1 }, t); });
+      }
+      // captions: pop in, karaoke highlight, hard kill
+      D.caps.forEach((g, gi) => {
+        const el = "#cg" + gi;
+        tl.fromTo(el, { opacity: 0, scale: 0.82, y: 18 }, { opacity: 1, scale: 1, y: 0, duration: 0.14, ease: "back.out(2.2)" }, g.s);
+        g.w.forEach((w, wi) => {
+          const wid = "#cw" + gi + "_" + wi;
+          const isEm = document.querySelector(wid).classList.contains("em");
+          tl.fromTo(wid, { scale: 1 }, { scale: 1.12, color: "#c2301b", duration: 0.08, ease: "power2.out", immediateRender: false }, w[0]);
+          tl.to(wid, { scale: 1, duration: 0.12, ease: "power2.out" }, w[0] + 0.08);
+        });
+        tl.to(el, { opacity: 0, duration: 0.06 }, g.e - 0.06);
+        tl.set(el, { opacity: 0, visibility: "hidden" }, g.e);
+      });
+      // overlays
+      D.ovs.forEach((o) => {
+        const sel = "#" + o.id;
+        if (o.type === "hook") {
+          tl.fromTo(sel + " .hook-kicker", { y: -24 }, { y: 0, duration: 0.3, ease: "power3.out" }, o.s);
+          tl.fromTo(sel + " .hl", { scale: 1.45, rotation: -6 }, { scale: 1, rotation: 0, duration: 0.34, ease: "back.out(1.8)", stagger: 0.12 }, o.s);
+          tl.to(sel + " .hook-in", { y: -60, opacity: 0, duration: 0.3, ease: "power2.in" }, o.s + o.d - 0.32);
+        } else if (o.type === "tip") {
+          tl.fromTo(sel + " .tip-card", { x: -1100 }, { x: 0, duration: 0.42, ease: "power4.out" }, o.s);
+          tl.fromTo(sel + " .tip-badge", { scale: 0.6 }, { scale: 1, duration: 0.3, ease: "back.out(3)" }, o.s + 0.25);
+          tl.to(sel + " .tip-card", { x: 1100, duration: 0.3, ease: "power3.in" }, o.s + o.d - 0.3);
+        } else if (o.type === "stat") {
+          tl.fromTo(sel + " .stat-num", { scale: 0.2, opacity: 0, rotation: -10 }, { scale: 1, opacity: 1, rotation: 0, duration: 0.4, ease: "back.out(2.4)" }, o.s);
+          tl.fromTo(sel + " .stat-sub", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, o.s + 0.2);
+          tl.to(sel + " .stat-card", { scale: 0.6, opacity: 0, duration: 0.25, ease: "power2.in" }, o.s + o.d - 0.25);
+        } else if (o.type === "joke") {
+          tl.fromTo(sel + " .joke span", { scale: 0, rotation: 12 }, { scale: 1, rotation: -5, duration: 0.45, ease: "elastic.out(1, 0.45)" }, o.s);
+          tl.to(sel + " .joke span", { scale: 1.06, duration: 0.25, yoyo: true, repeat: 3, ease: "sine.inOut" }, o.s + 0.45);
+          tl.to(sel + " .joke span", { scale: 0, opacity: 0, duration: 0.2, ease: "power2.in" }, o.s + o.d - 0.2);
+          tl.set("#cam", { transformOrigin: o.ox + "% " + o.oy + "%" }, o.s);
+          tl.fromTo("#cam", { scale: 1 }, { scale: o.scale, duration: 0.18, ease: "power3.out", immediateRender: false }, o.s);
+          tl.to("#cam", { scale: 1, duration: 0.25, ease: "power2.inOut" }, o.s + o.d - 0.25);
+          tl.set("#cam", { transformOrigin: "35% 50%" }, o.s + o.d);
+        } else if (o.type === "label") {
+          tl.fromTo(sel + " .label", { x: -700 }, { x: 0, duration: 0.4, ease: "power4.out" }, o.s);
+          tl.to(sel + " .label", { x: -700, duration: 0.3, ease: "power3.in" }, o.s + o.d - 0.3);
+        } else if (o.type === "zoom") {
+          tl.set("#cam", { transformOrigin: o.ox + "% " + o.oy + "%" }, o.s);
+          tl.fromTo("#cam", { scale: 1 }, { scale: o.scale, duration: 0.2, ease: "power3.out", immediateRender: false }, o.s);
+          tl.to("#cam", { scale: 1, duration: 0.3, ease: "power2.inOut" }, o.s + o.d - 0.3);
+          tl.set("#cam", { transformOrigin: "35% 50%" }, o.s + o.d);
+        }
+      });
+      // end card
+      tl.fromTo("#endcard .end-in", { opacity: 0 }, { opacity: 1, duration: 0.3 }, D.main);
+      tl.fromTo("#endcard .end-l1", { scale: 0, rotation: 10 }, { scale: 1, rotation: -3, duration: 0.5, ease: "back.out(2)" }, D.main + 0.1);
+      tl.fromTo("#endcard .end-l2", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power3.out" }, D.main + 0.35);
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

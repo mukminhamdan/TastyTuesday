@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ms">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Silap Dehydrate Bunga Telang</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #fff1d6; }
+      :root {
+        --cream: #fff1d6; --ink: #2a170c; --tomato: #e4402b; --yolk: #ffcf33; --leaf: #1f7a45; --blue: #3a4fd8;
+      }
+      #root { width: 100%; height: 100%; position: relative; overflow: hidden; font-family: Montserrat, sans-serif; background: var(--cream); }
+      /* background */
+      .bg-dots { position: absolute; inset: 0; background-image: radial-gradient(#e9cf9f 3px, transparent 3.5px); background-size: 46px 46px; opacity: .55; }
+      .header { position: absolute; left: 44px; right: 44px; top: 46px; height: 220px; }
+      .brand { display: flex; align-items: center; justify-content: space-between; }
+      .brand-pill { background: var(--tomato); color: #fff8ec; font-family: "Archivo Black", sans-serif; font-size: 34px; letter-spacing: .03em; padding: 12px 24px 10px; border-radius: 999px; transform: rotate(-2deg); box-shadow: 0 6px 0 #9e2516; }
+      .live { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 26px; color: var(--ink); background: #fff8ec; border: 4px solid var(--ink); padding: 8px 20px; border-radius: 999px; }
+      .live i { width: 16px; height: 16px; border-radius: 50%; background: var(--tomato); display: block; }
+      .headline { margin-top: 26px; font-family: "Archivo Black", sans-serif; font-size: 60px; line-height: 1.05; color: var(--ink); text-transform: uppercase; }
+      .headline .nb { white-space: nowrap; }
+      .headline span { background: linear-gradient(transparent 58%, var(--yolk) 58%, var(--yolk) 92%, transparent 92%); }
+      /* stage: the call grid, framed */
+      .stage-frame { position: absolute; left: 24px; top: 300px; width: 1032px; height: 962px; border-radius: 30px; background: var(--ink); box-shadow: 0 0 0 7px var(--ink), 0 18px 0 7px rgba(42,23,12,.9); }
+      .stage { position: absolute; left: 24px; top: 300px; width: 1032px; height: 962px; overflow: hidden; border-radius: 30px; background: #000; }
+      .cam { position: absolute; inset: 0; transform-origin: 35% 50%; }
+      .src { position: absolute; left: -11.73px; top: -457.36px; width: 1055.45px; height: 1876.36px; object-fit: fill; }
+      .footer { position: absolute; left: 0; width: 1080px; top: 1800px; height: 80px; display: flex; align-items: center; justify-content: center; }
+      .footer-txt { font-family: "Archivo Black", sans-serif; font-size: 30px; color: var(--ink); opacity: .55; letter-spacing: .08em; }
+      .progress-track { position: absolute; left: 60px; width: 960px; top: 1776px; height: 12px; border-radius: 999px; background: rgba(42,23,12,.12); overflow: hidden; }
+      .progress { position: absolute; left: 0; top: 0; height: 12px; width: 960px; background: var(--tomato); transform-origin: 0 50%; border-radius: 999px; }
+      /* captions: under the call grid, on the cream */
+      .caps { position: absolute; left: 0; width: 1080px; top: 1318px; height: 330px; }
+      .capg { position: absolute; left: 60px; right: 120px; top: 0; text-align: center; font-family: "Archivo Black", sans-serif; font-size: 96px; line-height: 1.1; color: var(--ink); text-transform: uppercase; opacity: 0; }
+      .capg .w { display: inline-block; padding: 0 6px; border-radius: 12px; }
+      .capg .w.em { background: var(--yolk); }
+      /* overlays */
+      .ov { position: absolute; inset: 0; pointer-events: none; }
+      .hook-in { position: absolute; left: 60px; right: 60px; top: 520px; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+      .hook-kicker { background: var(--ink); color: var(--yolk); font-weight: 900; font-size: 34px; letter-spacing: .12em; padding: 10px 24px; border-radius: 12px; text-transform: uppercase; }
+      .hook-title { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+      .hook-title .hl { display: block; background: var(--yolk); color: var(--ink); font-family: "Archivo Black", sans-serif; font-size: 92px; line-height: 1; padding: 16px 30px 10px; border-radius: 18px; text-transform: uppercase; box-shadow: 0 10px 0 var(--ink); text-align: center; }
+      .hook-title .hl.long { font-size: 74px; }
+      .hook-title .hl:nth-child(2) { background: var(--tomato); color: #fff8ec; }
+      .pos-top .tip-card, .pos-top .stat-card, .pos-top .label { top: 340px; }
+      .pos-mid .tip-card, .pos-mid .stat-card, .pos-mid .label { top: 700px; }
+      .pos-low .tip-card, .pos-low .stat-card, .pos-low .label { top: 1060px; }
+      .tip-card { position: absolute; left: 44px; right: 44px; display: flex; align-items: stretch; background: #fff8ec; border: 6px solid var(--ink); border-radius: 26px; box-shadow: 0 12px 0 var(--ink); overflow: hidden; }
+      .tip-badge { background: var(--leaf); color: #fff8ec; font-family: "Archivo Black", sans-serif; font-size: 40px; display: flex; align-items: center; padding: 0 26px; letter-spacing: .04em; }
+      .tip-text { padding: 22px 26px; font-weight: 800; font-size: 46px; line-height: 1.12; color: var(--ink); }
+      .stat-card { position: absolute; left: 0; right: 0; display: flex; flex-direction: column; align-items: center; }
+      .stat-num { font-family: "Archivo Black", sans-serif; font-size: 150px; line-height: 1; color: var(--yolk); -webkit-text-stroke: 16px var(--ink); paint-order: stroke fill; text-shadow: 0 12px 0 var(--ink); }
+      .stat-sub { margin-top: 14px; background: var(--ink); color: #fff8ec; font-weight: 900; font-size: 40px; padding: 10px 26px; border-radius: 14px; text-transform: uppercase; letter-spacing: .06em; }
+      .joke { position: absolute; left: 0; right: 0; top: 640px; display: flex; justify-content: center; }
+      .joke span { display: block; background: var(--tomato); color: #fff8ec; font-family: "Archivo Black", sans-serif; font-size: 74px; padding: 16px 30px 10px; border-radius: 20px; border: 6px solid var(--ink); box-shadow: 0 12px 0 var(--ink); text-transform: uppercase; transform: rotate(-5deg); text-align: center; max-width: 840px; line-height: 1.05; }
+      .pos-low .joke { top: 1040px; }
+      .pos-top .joke { top: 380px; }
+      .label { position: absolute; left: 44px; display: flex; align-items: center; gap: 16px; background: var(--ink); color: #fff8ec; font-weight: 900; font-size: 42px; padding: 16px 30px; border-radius: 999px; }
+      .label .dot { width: 20px; height: 20px; border-radius: 50%; background: var(--yolk); display: block; }
+      .end-in { position: absolute; left: 0; right: 0; top: 0; bottom: 0; background: rgba(255,241,214,.94); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; }
+      .end-l1 { background: var(--tomato); color: #fff8ec; font-family: "Archivo Black", sans-serif; font-size: 104px; padding: 22px 44px 14px; border-radius: 999px; box-shadow: 0 12px 0 #9e2516; transform: rotate(-3deg); }
+      .end-l2 { font-weight: 900; font-size: 48px; color: var(--ink); text-align: center; max-width: 900px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="46.47" data-width="1080" data-height="1920">
+      <div class="bg-dots"></div>
+      <div class="header">
+        <div class="brand"><div class="brand-pill">TASTY TUESDAY</div><div class="live"><i id="live-dot"></i>LIVE MASAK</div></div>
+        <div class="headline"><span>Bunga telang melekat? Ni puncanya</span></div>
+      </div>
+      <div class="stage-frame"></div>
+      <div class="stage">
+        <div class="cam" id="cam" data-layout-allow-overflow>
+        <video id="v0" class="clip src" src="assets/footage/src-03831.95-03905.60.mp4" data-start="0.000" data-duration="1.050" data-media-start="1.000" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v1" class="clip src" src="assets/footage/src-00357.00-00373.00.mp4" data-start="1.050" data-duration="4.200" data-media-start="1.000" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v2" class="clip src" src="assets/footage/src-00357.00-00373.00.mp4" data-start="5.250" data-duration="1.350" data-media-start="6.650" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v3" class="clip src" src="assets/footage/src-00357.00-00373.00.mp4" data-start="6.600" data-duration="2.200" data-media-start="12.800" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v4" class="clip src" src="assets/footage/src-01079.11-01089.40.mp4" data-start="8.800" data-duration="1.980" data-media-start="1.000" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v5" class="clip src" src="assets/footage/src-01079.11-01089.40.mp4" data-start="10.780" data-duration="2.500" data-media-start="6.790" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v6" class="clip src" src="assets/footage/src-03504.60-03535.50.mp4" data-start="13.280" data-duration="3.250" data-media-start="1.000" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v7" class="clip src" src="assets/footage/src-03504.60-03535.50.mp4" data-start="16.530" data-duration="3.010" data-media-start="5.090" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v8" class="clip src" src="assets/footage/src-03504.60-03535.50.mp4" data-start="19.540" data-duration="2.100" data-media-start="27.800" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v9" class="clip src" src="assets/footage/src-03831.95-03905.60.mp4" data-start="21.640" data-duration="1.430" data-media-start="10.550" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v10" class="clip src" src="assets/footage/src-03831.95-03905.60.mp4" data-start="23.070" data-duration="3.740" data-media-start="23.150" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v11" class="clip src" src="assets/footage/src-03831.95-03905.60.mp4" data-start="26.810" data-duration="6.860" data-media-start="27.690" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v12" class="clip src" src="assets/footage/src-03831.95-03905.60.mp4" data-start="33.670" data-duration="7.100" data-media-start="65.550" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v13" class="clip src" src="assets/footage/src-03831.95-03905.60.mp4" data-start="40.770" data-duration="3.500" data-media-start="41.250" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v-tail" class="clip src" src="assets/footage/src-03831.95-03905.60.mp4" data-start="44.270" data-duration="2.200" data-media-start="44.750" data-track-index="1" playsinline muted></video>
+        </div>
+      </div>
+      <div class="progress-track"><div class="progress" id="progress"></div></div>
+      <div class="footer"><div class="footer-txt">#TASTYTUESDAY</div></div>
+      <div class="caps" id="caps">
+      <div class="capg" id="cg0"><span class="w" id="cw0_0">Lekat</span> <span class="w" id="cw0_1">lah</span> <span class="w" id="cw0_2">semua!</span></div>
+      <div class="capg" id="cg1"><span class="w" id="cw1_0">Mukmin,</span></div>
+      <div class="capg" id="cg2"><span class="w" id="cw2_0">dehydrate</span> <span class="w" id="cw2_1">bunga</span></div>
+      <div class="capg" id="cg3"><span class="w" id="cw3_0">telang</span> <span class="w" id="cw3_1">guna</span> <span class="w" id="cw3_2">berapa</span></div>
+      <div class="capg" id="cg4"><span class="w" id="cw4_0">temperature?</span></div>
+      <div class="capg" id="cg5"><span class="w em" id="cw5_0">65</span> <span class="w" id="cw5_1">rasanya</span></div>
+      <div class="capg" id="cg6"><span class="w em" id="cw6_0">65</span> <span class="w" id="cw6_1">je</span> <span class="w" id="cw6_2">lah,</span></div>
+      <div class="capg" id="cg7"><span class="w" id="cw7_0">lama,</span></div>
+      <div class="capg" id="cg8"><span class="w" id="cw8_0">4</span> <span class="w em" id="cw8_1">jam</span></div>
+      <div class="capg" id="cg9"><span class="w" id="cw9_0">Tapi</span> <span class="w" id="cw9_1">kena</span> <span class="w" id="cw9_2">tutup</span></div>
+      <div class="capg" id="cg10"><span class="w" id="cw10_0">dengan</span> <span class="w" id="cw10_1">tu</span> <span class="w" id="cw10_2">tau</span></div>
+      <div class="capg" id="cg11"><span class="w" id="cw11_0">Tutup</span> <span class="w" id="cw11_1">dengan</span></div>
+      <div class="capg" id="cg12"><span class="w em" id="cw12_0">basket</span> <span class="w" id="cw12_1">lagi</span> <span class="w" id="cw12_2">sebab</span></div>
+      <div class="capg" id="cg13"><span class="w" id="cw13_0">takut</span> <span class="w" id="cw13_1">dia</span> <span class="w em" id="cw13_2">terbang</span></div>
+      <div class="capg" id="cg14"><span class="w" id="cw14_0">Tadi</span> <span class="w" id="cw14_1">lagi</span> <span class="w" id="cw14_2">dah</span></div>
+      <div class="capg" id="cg15"><span class="w" id="cw15_0">letak</span> <span class="w em" id="cw15_1">basket.</span></div>
+      <div class="capg" id="cg16"><span class="w" id="cw16_0">Awal-awal</span> <span class="w" id="cw16_1">masuk</span></div>
+      <div class="capg" id="cg17"><span class="w" id="cw17_0">lagi</span> <span class="w em" id="cw17_1">basket.</span></div>
+      <div class="capg" id="cg18"><span class="w" id="cw18_0">Padahal</span> <span class="w" id="cw18_1">tak</span></div>
+      <div class="capg" id="cg19"><span class="w em" id="cw19_0">terbang</span> <span class="w" id="cw19_1">sangat</span> <span class="w" id="cw19_2">pun</span></div>
+      <div class="capg" id="cg20"><span class="w" id="cw20_0">tadi</span></div>
+      <div class="capg" id="cg21"><span class="w" id="cw21_0">Dia</span> <span class="w" id="cw21_1">baru</span> <span class="w" id="cw21_2">mengecut</span></div>
+      <div class="capg" id="cg22"><span class="w" id="cw22_0">je</span></div>
+      <div class="capg" id="cg23"><span class="w" id="cw23_0">Kenapa</span> <span class="w" id="cw23_1">kau</span> <span class="w" id="cw23_2">tak</span></div>
+      <div class="capg" id="cg24"><span class="w" id="cw24_0">pakai</span> <span class="w" id="cw24_1">air</span> <span class="w em" id="cw24_2">rack?</span></div>
+      <div class="capg" id="cg25"><span class="w" id="cw25_0">Dehydrate</span> <span class="w" id="cw25_1">jangan</span></div>
+      <div class="capg" id="cg26"><span class="w em" id="cw26_0">direct</span> <span class="w" id="cw26_1">dekat</span> <span class="w" id="cw26_2">dalam</span></div>
+      <div class="capg" id="cg27"><span class="w" id="cw27_0">pot.</span></div>
+      <div class="capg" id="cg28"><span class="w" id="cw28_0">Dia</span> <span class="w" id="cw28_1">kena</span> <span class="w" id="cw28_2">kena</span></div>
+      <div class="capg" id="cg29"><span class="w" id="cw29_0">ada</span> <span class="w em" id="cw29_1">alas</span> <span class="w" id="cw29_2">dengan</span></div>
+      <div class="capg" id="cg30"><span class="w em" id="cw30_0">rack</span> <span class="w" id="cw30_1">tu.</span></div>
+      <div class="capg" id="cg31"><span class="w" id="cw31_0">So</span> <span class="w" id="cw31_1">that</span> <span class="w" id="cw31_2">ada</span></div>
+      <div class="capg" id="cg32"><span class="w em" id="cw32_0">udara</span> <span class="w" id="cw32_1">dekat</span> <span class="w" id="cw32_2">belah</span></div>
+      <div class="capg" id="cg33"><span class="w" id="cw33_0">bawah.</span></div>
+      <div class="capg" id="cg34"><span class="w" id="cw34_0">That&#x27;s</span> <span class="w" id="cw34_1">why</span> <span class="w" id="cw34_2">dia</span></div>
+      <div class="capg" id="cg35"><span class="w em" id="cw35_0">melekat.</span></div>
+      <div class="capg" id="cg36"><span class="w" id="cw36_0">Dia</span> <span class="w" id="cw36_1">kalau</span> <span class="w em" id="cw36_2">direct</span></div>
+      <div class="capg" id="cg37"><span class="w" id="cw37_0">nanti</span> <span class="w" id="cw37_1">dia</span> <span class="w" id="cw37_2">touch</span></div>
+      <div class="capg" id="cg38"><span class="w" id="cw38_0">dengan</span> <span class="w" id="cw38_1">itu.</span></div>
+      <div class="capg" id="cg39"><span class="w" id="cw39_0">Lagi</span> <span class="w" id="cw39_1">lambat</span> <span class="w" id="cw39_2">sebab</span></div>
+      <div class="capg" id="cg40"><span class="w" id="cw40_0">dia</span> <span class="w" id="cw40_1">tak</span> <span class="w" id="cw40_2">ada</span></div>
+      <div class="capg" id="cg41"><span class="w" id="cw41_0">ruang</span> <span class="w em" id="cw41_1">udara</span> <span class="w" id="cw41_2">in</span></div>
+      <div class="capg" id="cg42"><span class="w" id="cw42_0">between</span></div>
+      <div class="capg" id="cg43"><span class="w" id="cw43_0">Lain</span> <span class="w" id="cw43_1">kali</span> <span class="w" id="cw43_2">kau</span></div>
+      <div class="capg" id="cg44"><span class="w" id="cw44_0">kena</span> <span class="w" id="cw44_1">tanya</span> <span class="w" id="cw44_2">the</span></div>
+      <div class="capg" id="cg45"><span class="w" id="cw45_0">dehydrate</span> <span class="w em" id="cw45_1">expert!</span></div>
+      </div>
+    <div id="hook" class="clip ov" data-start="0" data-duration="2.4" data-track-index="3"><div class="hook-in"><div class="hook-kicker">Tips dehydrate</div><div class="hook-title"><span class=hl style='font-size:88px'>Bunga telang</span><span class=hl style='font-size:92px'>melekat?!</span></div></div></div>
+    <div id="ov0" class="clip ov pos-top" data-start="5.6" data-duration="1.6" data-track-index="4"><div class="stat-card"><div class="stat-num">65°C</div><div class="stat-sub">suhu dehydrate</div></div></div>
+    <div id="ov1" class="clip ov pos-top" data-start="7.8" data-duration="1.4" data-track-index="5"><div class="stat-card"><div class="stat-num">4 JAM</div><div class="stat-sub">lebih kurang</div></div></div>
+    <div id="ov2" class="clip ov pos-top" data-start="18.14" data-duration="1.8" data-track-index="6"><div class="joke"><span>Padahal tak terbang pun</span></div></div>
+    <div id="ov3" class="clip ov pos-low" data-start="23.37" data-duration="3.4" data-track-index="4"><div class="tip-card"><div class="tip-badge">TIP</div><div class="tip-text">Jangan letak terus dalam pot. Alas dengan rack!</div></div></div>
+    <div id="ov4" class="clip ov pos-low" data-start="29.47" data-duration="3.2" data-track-index="5"><div class="tip-card"><div class="tip-badge">KENAPA</div><div class="tip-text">Ada udara di bawah = cepat kering, tak melekat</div></div></div>
+    <div id="ov5" class="clip ov pos-top" data-start="42.37" data-duration="1.8999999999983928" data-track-index="6"><div class="joke"><span>Dehydrate expert</span></div></div>
+    <div id="endcard" class="clip ov" data-start="44.270" data-duration="2.200" data-track-index="7"><div class="end-in" data-layout-allow-occlusion><div class="end-l1">TASTY TUESDAY</div><div class="end-l2">Masak sama-sama, gelak sama-sama</div></div></div>
+    <audio id="sfx0" src="assets/sfx/impact-bass-1.mp3" data-start="0.020" data-duration="2.100" data-track-index="20" data-volume="0.45"></audio>
+    <audio id="sfx1" src="assets/sfx/whoosh.mp3" data-start="2.050" data-duration="0.570" data-track-index="21" data-volume="0.4"></audio>
+    <audio id="sfx2" src="assets/sfx/ping.mp3" data-start="5.600" data-duration="1.320" data-track-index="22" data-volume="0.35"></audio>
+    <audio id="sfx3" src="assets/sfx/ping.mp3" data-start="7.800" data-duration="1.320" data-track-index="23" data-volume="0.35"></audio>
+    <audio id="sfx4" src="assets/sfx/boing.mp3" data-start="18.140" data-duration="0.940" data-track-index="20" data-volume="0.5"></audio>
+    <audio id="sfx5" src="assets/sfx/ding.mp3" data-start="23.370" data-duration="1.440" data-track-index="21" data-volume="0.35"></audio>
+    <audio id="sfx6" src="assets/sfx/ding.mp3" data-start="29.470" data-duration="1.440" data-track-index="22" data-volume="0.35"></audio>
+    <audio id="sfx7" src="assets/sfx/ding.mp3" data-start="42.370" data-duration="1.440" data-track-index="23" data-volume="0.35"></audio>
+    <audio id="sfx8" src="assets/sfx/sparkle.mp3" data-start="44.370" data-duration="1.800" data-track-index="20" data-volume="0.35"></audio>
+    </div>
+    <script>
+      const D = {"cuts": [1.05, 5.25, 6.6, 8.8, 10.78, 13.28, 16.53, 19.54, 21.64, 23.07, 26.81, 33.67, 40.77], "caps": [{"s": 0.12, "e": 1.11, "w": [[0.12, 0.68], [0.68, 0.76], [0.76, 0.94]]}, {"s": 1.11, "e": 1.681, "w": [[1.11, 1.681]]}, {"s": 1.681, "e": 2.824, "w": [[1.681, 2.416], [2.416, 2.824]]}, {"s": 2.824, "e": 4.13, "w": [[2.824, 3.314], [3.314, 3.641], [3.641, 4.13]]}, {"s": 4.13, "e": 5.36, "w": [[4.13, 5.11]]}, {"s": 5.37, "e": 6.7, "w": [[5.37, 5.95], [5.95, 6.53]]}, {"s": 6.7, "e": 7.5, "w": [[6.7, 7.02], [7.02, 7.36], [7.36, 7.5]]}, {"s": 7.5, "e": 7.8, "w": [[7.5, 7.78]]}, {"s": 7.78, "e": 8.87, "w": [[7.78, 8.28], [8.28, 8.62]]}, {"s": 8.92, "e": 9.808, "w": [[8.92, 9.193], [9.193, 9.467], [9.467, 9.808]]}, {"s": 9.808, "e": 10.81, "w": [[9.808, 10.218], [10.218, 10.355], [10.355, 10.56]]}, {"s": 10.85, "e": 11.494, "w": [[10.85, 11.143], [11.143, 11.494]]}, {"s": 11.494, "e": 12.372, "w": [[11.494, 11.845], [11.845, 12.079], [12.079, 12.372]]}, {"s": 12.372, "e": 13.39, "w": [[12.372, 12.665], [12.665, 12.84], [12.84, 13.25]]}, {"s": 13.39, "e": 14.273, "w": [[13.39, 13.711], [13.711, 14.032], [14.032, 14.273]]}, {"s": 14.273, "e": 15.235, "w": [[14.273, 14.674], [14.674, 15.235]]}, {"s": 15.235, "e": 16.359, "w": [[15.235, 15.957], [15.957, 16.359]]}, {"s": 16.359, "e": 17.043, "w": [[16.359, 16.53], [16.53, 17.043]]}, {"s": 17.043, "e": 17.845, "w": [[17.043, 17.605], [17.605, 17.845]]}, {"s": 17.845, "e": 19.129, "w": [[17.845, 18.407], [18.407, 18.888], [18.888, 19.129]]}, {"s": 19.129, "e": 19.66, "w": [[19.129, 19.45]]}, {"s": 19.66, "e": 21.36, "w": [[19.66, 20.24], [20.24, 20.82], [20.82, 21.36]]}, {"s": 21.36, "e": 21.71, "w": [[21.36, 21.62]]}, {"s": 21.71, "e": 22.257, "w": [[21.71, 21.984], [21.984, 22.12], [22.12, 22.257]]}, {"s": 22.257, "e": 23.07, "w": [[22.257, 22.485], [22.485, 22.622], [22.622, 22.85]]}, {"s": 23.07, "e": 24.379, "w": [[23.07, 23.839], [23.839, 24.379]]}, {"s": 24.379, "e": 25.818, "w": [[24.379, 24.918], [24.918, 25.368], [25.368, 25.818]]}, {"s": 25.818, "e": 26.177, "w": [[25.818, 26.177]]}, {"s": 26.177, "e": 27.176, "w": [[26.177, 26.447], [26.447, 26.807], [26.816, 27.176]]}, {"s": 27.176, "e": 28.345, "w": [[27.176, 27.445], [27.445, 27.805], [27.805, 28.345]]}, {"s": 28.345, "e": 28.974, "w": [[28.345, 28.704], [28.704, 28.974]]}, {"s": 28.974, "e": 29.783, "w": [[28.974, 29.154], [29.154, 29.514], [29.514, 29.783]]}, {"s": 29.783, "e": 31.132, "w": [[29.783, 30.233], [30.233, 30.682], [30.682, 31.132]]}, {"s": 31.132, "e": 31.672, "w": [[31.132, 31.672]]}, {"s": 31.672, "e": 32.751, "w": [[31.672, 32.211], [32.211, 32.481], [32.481, 32.751]]}, {"s": 32.751, "e": 33.72, "w": [[32.751, 33.47]]}, {"s": 33.77, "e": 34.977, "w": [[33.77, 34.029], [34.029, 34.46], [34.46, 34.977]]}, {"s": 34.977, "e": 36.099, "w": [[34.977, 35.409], [35.409, 35.667], [35.667, 36.099]]}, {"s": 36.099, "e": 36.961, "w": [[36.099, 36.616], [36.616, 36.961]]}, {"s": 36.961, "e": 38.255, "w": [[36.961, 37.306], [37.306, 37.824], [37.824, 38.255]]}, {"s": 38.255, "e": 39.031, "w": [[38.255, 38.514], [38.514, 38.772], [38.772, 39.031]]}, {"s": 39.031, "e": 40.066, "w": [[39.031, 39.462], [39.462, 39.894], [39.894, 40.066]]}, {"s": 40.066, "e": 40.83, "w": [[40.066, 40.67]]}, {"s": 40.83, "e": 41.71, "w": [[40.83, 41.39], [41.39, 41.57], [41.57, 41.71]]}, {"s": 41.71, "e": 42.47, "w": [[41.71, 41.87], [41.87, 42.23], [42.23, 42.47]]}, {"s": 42.47, "e": 44.34, "w": [[42.47, 43.55], [43.55, 44.09]]}], "ovs": [{"type": "hook", "id": "hook", "s": 0, "d": 2.4}, {"type": "stat", "id": "ov0", "s": 5.6, "d": 1.6, "scale": 1.28, "ox": 35, "oy": 50}, {"type": "stat", "id": "ov1", "s": 7.8, "d": 1.4, "scale": 1.28, "ox": 35, "oy": 50}, {"type": "joke", "id": "ov2", "s": 18.14, "d": 1.8, "scale": 1.28, "ox": 35, "oy": 50}, {"type": "tip", "id": "ov3", "s": 23.37, "d": 3.4, "scale": 1.28, "ox": 35, "oy": 50}, {"type": "tip", "id": "ov4", "s": 29.47, "d": 3.2, "scale": 1.28, "ox": 35, "oy": 50}, {"type": "joke", "id": "ov5", "s": 42.37, "d": 1.8999999999983928, "scale": 1.2, "ox": 35, "oy": 50}], "dur": 46.47, "main": 44.26999999999839, "zoomEvery": true};
+      const tl = gsap.timeline({ paused: true });
+      // progress bar + live dot
+      tl.fromTo("#progress", { scaleX: 0 }, { scaleX: 1, duration: D.main, ease: "none" }, 0);
+      tl.fromTo("#live-dot", { opacity: 1 }, { opacity: 0.25, duration: 0.6, repeat: Math.max(0, Math.floor(D.dur / 0.6) - 1), yoyo: true, ease: "sine.inOut" }, 0);
+      // jump-cut punch-ins: alternate framing on every cut so cuts read as edits
+      let zoomed = false;
+      if (D.zoomEvery) {
+        D.cuts.forEach((t) => { zoomed = !zoomed; tl.set("#cam", { scale: zoomed ? 1.08 : 1 }, t); });
+      }
+      // captions: pop in, karaoke highlight, hard kill
+      D.caps.forEach((g, gi) => {
+        const el = "#cg" + gi;
+        tl.fromTo(el, { opacity: 0, scale: 0.82, y: 18 }, { opacity: 1, scale: 1, y: 0, duration: 0.14, ease: "back.out(2.2)" }, g.s);
+        g.w.forEach((w, wi) => {
+          const wid = "#cw" + gi + "_" + wi;
+          const isEm = document.querySelector(wid).classList.contains("em");
+          tl.fromTo(wid, { scale: 1 }, { scale: 1.12, color: "#c2301b", duration: 0.08, ease: "power2.out", immediateRender: false }, w[0]);
+          tl.to(wid, { scale: 1, duration: 0.12, ease: "power2.out" }, w[0] + 0.08);
+        });
+        tl.to(el, { opacity: 0, duration: 0.06 }, g.e - 0.06);
+        tl.set(el, { opacity: 0, visibility: "hidden" }, g.e);
+      });
+      // overlays
+      D.ovs.forEach((o) => {
+        const sel = "#" + o.id;
+        if (o.type === "hook") {
+          tl.fromTo(sel + " .hook-kicker", { y: -24 }, { y: 0, duration: 0.3, ease: "power3.out" }, o.s);
+          tl.fromTo(sel + " .hl", { scale: 1.45, rotation: -6 }, { scale: 1, rotation: 0, duration: 0.34, ease: "back.out(1.8)", stagger: 0.12 }, o.s);
+          tl.to(sel + " .hook-in", { y: -60, opacity: 0, duration: 0.3, ease: "power2.in" }, o.s + o.d - 0.32);
+        } else if (o.type === "tip") {
+          tl.fromTo(sel + " .tip-card", { x: -1100 }, { x: 0, duration: 0.42, ease: "power4.out" }, o.s);
+          tl.fromTo(sel + " .tip-badge", { scale: 0.6 }, { scale: 1, duration: 0.3, ease: "back.out(3)" }, o.s + 0.25);
+          tl.to(sel + " .tip-card", { x: 1100, duration: 0.3, ease: "power3.in" }, o.s + o.d - 0.3);
+        } else if (o.type === "stat") {
+          tl.fromTo(sel + " .stat-num", { scale: 0.2, opacity: 0, rotation: -10 }, { scale: 1, opacity: 1, rotation: 0, duration: 0.4, ease: "back.out(2.4)" }, o.s);
+          tl.fromTo(sel + " .stat-sub", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, o.s + 0.2);
+          tl.to(sel + " .stat-card", { scale: 0.6, opacity: 0, duration: 0.25, ease: "power2.in" }, o.s + o.d - 0.25);
+        } else if (o.type === "joke") {
+          tl.fromTo(sel + " .joke span", { scale: 0, rotation: 12 }, { scale: 1, rotation: -5, duration: 0.45, ease: "elastic.out(1, 0.45)" }, o.s);
+          tl.to(sel + " .joke span", { scale: 1.06, duration: 0.25, yoyo: true, repeat: 3, ease: "sine.inOut" }, o.s + 0.45);
+          tl.to(sel + " .joke span", { scale: 0, opacity: 0, duration: 0.2, ease: "power2.in" }, o.s + o.d - 0.2);
+          tl.set("#cam", { transformOrigin: o.ox + "% " + o.oy + "%" }, o.s);
+          tl.fromTo("#cam", { scale: 1 }, { scale: o.scale, duration: 0.18, ease: "power3.out", immediateRender: false }, o.s);
+          tl.to("#cam", { scale: 1, duration: 0.25, ease: "power2.inOut" }, o.s + o.d - 0.25);
+          tl.set("#cam", { transformOrigin: "35% 50%" }, o.s + o.d);
+        } else if (o.type === "label") {
+          tl.fromTo(sel + " .label", { x: -700 }, { x: 0, duration: 0.4, ease: "power4.out" }, o.s);
+          tl.to(sel + " .label", { x: -700, duration: 0.3, ease: "power3.in" }, o.s + o.d - 0.3);
+        } else if (o.type === "zoom") {
+          tl.set("#cam", { transformOrigin: o.ox + "% " + o.oy + "%" }, o.s);
+          tl.fromTo("#cam", { scale: 1 }, { scale: o.scale, duration: 0.2, ease: "power3.out", immediateRender: false }, o.s);
+          tl.to("#cam", { scale: 1, duration: 0.3, ease: "power2.inOut" }, o.s + o.d - 0.3);
+          tl.set("#cam", { transformOrigin: "35% 50%" }, o.s + o.d);
+        }
+      });
+      // end card
+      tl.fromTo("#endcard .end-in", { opacity: 0 }, { opacity: 1, duration: 0.3 }, D.main);
+      tl.fromTo("#endcard .end-l1", { scale: 0, rotation: 10 }, { scale: 1, rotation: -3, duration: 0.5, ease: "back.out(2)" }, D.main + 0.1);
+      tl.fromTo("#endcard .end-l2", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power3.out" }, D.main + 0.35);
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

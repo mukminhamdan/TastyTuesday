@@ -1,0 +1,1055 @@
+{
+ "shorts": [
+  {
+   "slug": "01-lempeng-garing",
+   "title": "Lempeng Deep Fry?!",
+   "episode": "Lempeng garing vs lempeng putih",
+   "hook": {
+    "kicker": "Tasty Tuesday",
+    "lines": [
+     "Lempeng",
+     "Deep Fry?!"
+    ],
+    "dur": 2.4
+   },
+   "emphasis": [
+    "garing",
+    "putih",
+    "cepat",
+    "cepat-cepat",
+    "deep",
+    "fry",
+    "dadar",
+    "sikit"
+   ],
+   "segments": [
+    {
+     "in": 527.0,
+     "out": 532.4,
+     "cap": "Sebab yang jual kat luar semua lempeng putih kan. Macam kuih dadar je. I panggil kuih dadar je."
+    },
+    {
+     "in": 408.0,
+     "out": 409.7,
+     "cap": "Lempeng guna cooker je kan?"
+    },
+    {
+     "in": 411.6,
+     "out": 413.7,
+     "cap": "I suka pakai deep fry"
+    },
+    {
+     "in": 414.1,
+     "out": 415.8,
+     "cap": "Kenapa deep fry?"
+    },
+    {
+     "in": 416.3,
+     "out": 422.4,
+     "cap": "I nak cepat. Oh ye ke? I bukannya buat kerja lambat-lambat ni, I buat kerja cepat-cepat."
+    },
+    {
+     "in": 438.0,
+     "out": 443.6,
+     "cap": "Oh tapi letak minyak banyak lah? Tak adalah. Minyak sikit je."
+    },
+    {
+     "in": 447.5,
+     "out": 457.8,
+     "cap": "Because you all punya lempeng warna putih tu kan? Aha. I punya lempeng garing. Sebab tu, sebab tu I kena pakai deep fry."
+    },
+    {
+     "in": 461.4,
+     "out": 464.4,
+     "cap": "Minyak sikit, macam kita dalam kuali minyak sikit je"
+    },
+    {
+     "in": 467.6,
+     "out": 477.7,
+     "cap": "I nak cepat masak. Tapi kalau I nak lambat masak, okay boleh pakai cooker. Nak cepat masak, tak boleh pakai cooker. Itu sahaja."
+    },
+    {
+     "in": 519.5,
+     "out": 525.2,
+     "cap": "You buat yang lempeng putih, I buat lempeng garing. Aku rasa super garing"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "joke",
+     "at": 421.4,
+     "text": "Kerja cepat-cepat!",
+     "dur": 1.8,
+     "sfx": "boing",
+     "pos": "low",
+     "ox": 100,
+     "oy": 8,
+     "scale": 1.55
+    },
+    {
+     "type": "tip",
+     "at": 461.5,
+     "badge": "TIP",
+     "text": "Deep fry guna minyak sikit je, macam goreng dalam kuali",
+     "dur": 3.0
+    },
+    {
+     "type": "label",
+     "at": 452.6,
+     "text": "Lempeng PUTIH vs GARING",
+     "dur": 2.6
+    },
+    {
+     "type": "joke",
+     "at": 476.6,
+     "text": "Itu sahaja.",
+     "dur": 1.4,
+     "sfx": "error",
+     "scale": 1.55,
+     "ox": 100,
+     "oy": 8,
+     "pos": "low"
+    },
+    {
+     "type": "stat",
+     "at": 523.8,
+     "text": "SUPER",
+     "sub": "garing!",
+     "dur": 1.6
+    }
+   ]
+  },
+  {
+   "slug": "02-dehydrate-bunga-telang",
+   "title": "Silap Dehydrate Bunga Telang",
+   "episode": "Bunga telang melekat? Ni puncanya",
+   "hook": {
+    "kicker": "Tips dehydrate",
+    "lines": [
+     "Bunga telang",
+     "melekat?!"
+    ],
+    "dur": 2.4
+   },
+   "emphasis": [
+    "65",
+    "jam",
+    "rack",
+    "alas",
+    "udara",
+    "melekat",
+    "terbang",
+    "expert",
+    "direct",
+    "basket"
+   ],
+   "segments": [
+    {
+     "in": 3832.9,
+     "out": 3834.0,
+     "cap": "Lekat lah semua!"
+    },
+    {
+     "in": 358.0,
+     "out": 362.2,
+     "cap": "Mukmin, dehydrate bunga telang guna berapa temperature?"
+    },
+    {
+     "in": 363.6,
+     "out": 365.0,
+     "cap": "65 rasanya"
+    },
+    {
+     "in": 369.8,
+     "out": 372.0,
+     "cap": "65 je lah, lama, 4 jam"
+    },
+    {
+     "in": 1080.0,
+     "out": 1082.1,
+     "cap": "Tapi kena tutup dengan tu tau"
+    },
+    {
+     "in": 1085.9,
+     "out": 1088.4,
+     "cap": "Tutup dengan basket lagi sebab takut dia terbang"
+    },
+    {
+     "in": 3505.6,
+     "out": 3512.7,
+     "cap": "Tadi lagi dah letak basket. Awal-awal masuk lagi dah letak basket. Padahal tak terbang sangat pun tadi"
+    },
+    {
+     "in": 3532.4,
+     "out": 3534.5,
+     "cap": "Dia baru mengecut je"
+    },
+    {
+     "in": 3842.5,
+     "out": 3844.1,
+     "cap": "Kenapa kau tak pakai air rack?"
+    },
+    {
+     "in": 3855.1,
+     "out": 3866.5,
+     "cap": "Dehydrate jangan direct dekat dalam pot. Dia kena ada... kau kena ada alas dengan rack tu. So that ada udara dekat belah bawah. That's why dia melekat."
+    },
+    {
+     "in": 3897.5,
+     "out": 3904.6,
+     "cap": "Dia kalau direct nanti dia touch dengan itu. Lagi lambat sebab dia tak ada ruang udara in between"
+    },
+    {
+     "in": 3873.2,
+     "out": 3876.7,
+     "cap": "Lain kali kau kena tanya the dehydrate expert!"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "stat",
+     "at": 364.0,
+     "text": "65°C",
+     "sub": "suhu dehydrate",
+     "dur": 1.6
+    },
+    {
+     "type": "stat",
+     "at": 371.0,
+     "text": "4 JAM",
+     "sub": "lebih kurang",
+     "dur": 1.4
+    },
+    {
+     "type": "joke",
+     "at": 3511.3,
+     "text": "Padahal tak terbang pun",
+     "dur": 1.8,
+     "sfx": "boing"
+    },
+    {
+     "type": "tip",
+     "at": 3855.4,
+     "badge": "TIP",
+     "text": "Jangan letak terus dalam pot. Alas dengan rack!",
+     "dur": 3.4,
+     "pos": "low"
+    },
+    {
+     "type": "tip",
+     "at": 3862.3,
+     "badge": "KENAPA",
+     "text": "Ada udara di bawah = cepat kering, tak melekat",
+     "dur": 3.2,
+     "pos": "low"
+    },
+    {
+     "type": "joke",
+     "at": 3874.8,
+     "text": "Dehydrate expert",
+     "dur": 1.9,
+     "sfx": "ding",
+     "scale": 1.2
+    }
+   ]
+  },
+  {
+   "slug": "03-rahsia-kuah-rojak",
+   "title": "Rahsia Kuah Rojak",
+   "episode": "Rahsia kuah rojak pekat & kick",
+   "hook": {
+    "kicker": "Resepi kuah rojak",
+    "lines": [
+     "Rahsia",
+     "kuah rojak"
+    ],
+    "dur": 2.4
+   },
+   "emphasis": [
+    "150",
+    "50",
+    "gram",
+    "tepung",
+    "jagung",
+    "maung",
+    "petis",
+    "gula",
+    "putih",
+    "lebam",
+    "kick",
+    "sekilo"
+   ],
+   "segments": [
+    {
+     "in": 1338.8,
+     "out": 1344.2,
+     "cap": "Kena masak dulu lah cili tu eh? Haa, cili tu we all ni kan cerewet sikit"
+    },
+    {
+     "in": 1346.2,
+     "out": 1349.3,
+     "cap": "Cili tu tak nak rasa, nanti takut bau maung cili kan"
+    },
+    {
+     "in": 1351.3,
+     "out": 1354.2,
+     "cap": "So we all akan masak cili tu sampai tak ada bau"
+    },
+    {
+     "in": 1355.8,
+     "out": 1360.0,
+     "cap": "Ni dah tak bau lagi. Barulah I masukkan bahan-bahan lain."
+    },
+    {
+     "in": 884.8,
+     "out": 892.0,
+     "cap": "I masak lama tau. Nak bagi cili ni masak dulu sebelum masuk apa-apa."
+    },
+    {
+     "in": 1471.5,
+     "out": 1475.9,
+     "cap": "Tapi kalau you dah pakai cili boh, buat 150 gram"
+    },
+    {
+     "in": 1478.3,
+     "out": 1484.1,
+     "cap": "Kalau cili boh, cili dah siap blend. Tu cili kering tadi, yang kering you timbang 50 gram"
+    },
+    {
+     "in": 1505.0,
+     "out": 1512.4,
+     "cap": "Petis tu any brand boleh ke? Boleh. Kalau you nak buat sikit, you just agak-agak lah sebenarnya"
+    },
+    {
+     "in": 1513.3,
+     "out": 1520.0,
+     "cap": "Diorang kalau yang jual tu kan, diorang pakai gula putih banyak kan. Macam saya tak pakai gula putih langsung"
+    },
+    {
+     "in": 1524.3,
+     "out": 1531.4,
+     "cap": "Tapi kalau cair, kalau you nak pekat, boleh tambah tepung jagung je"
+    },
+    {
+     "in": 3220.4,
+     "out": 3232.0,
+     "cap": "Tapi kan Mukmin, I dah biasa buat pakai sekilo petis. Tapi bila saya buat setengah kilo, dia macam tak kick lah. Tak rasa petis."
+    },
+    {
+     "in": 5407.9,
+     "out": 5412.3,
+     "cap": "Eh potong-potong kalau tak nak kasi dia lebam macam mana? Rendam dengan garam ke tak payah? Asing-asingkan."
+    },
+    {
+     "in": 5414.9,
+     "out": 5417.2,
+     "cap": "Jangan satukan, nanti dia cepat lebam."
+    }
+   ],
+   "overlays": [
+    {
+     "type": "tip",
+     "at": 1351.5,
+     "badge": "TIP 1",
+     "text": "Masak cili sampai hilang bau maung",
+     "dur": 3.0,
+     "pos": "low"
+    },
+    {
+     "type": "stat",
+     "at": 1474.8,
+     "text": "150g",
+     "sub": "cili boh",
+     "dur": 1.6
+    },
+    {
+     "type": "stat",
+     "at": 1483.3,
+     "text": "50g",
+     "sub": "cili kering",
+     "dur": 1.4
+    },
+    {
+     "type": "tip",
+     "at": 1513.5,
+     "badge": "TIP 2",
+     "text": "Kurangkan gula putih. Saya tak pakai langsung!",
+     "dur": 3.0,
+     "pos": "low"
+    },
+    {
+     "type": "tip",
+     "at": 1527.5,
+     "badge": "TIP 3",
+     "text": "Kuah cair? Tambah tepung jagung",
+     "dur": 3.2,
+     "pos": "low"
+    },
+    {
+     "type": "joke",
+     "at": 3229.2,
+     "text": "Tak kick lah!",
+     "dur": 1.6,
+     "sfx": "error",
+     "scale": 1.2
+    },
+    {
+     "type": "tip",
+     "at": 5415.0,
+     "badge": "TIP 4",
+     "text": "Buah rojak: asing-asingkan, jangan satukan",
+     "dur": 2.6,
+     "pos": "low"
+    }
+   ]
+  },
+  {
+   "slug": "04-air-bunga-telang-tukar-warna",
+   "title": "Air Bunga Telang Tukar Warna",
+   "episode": "Eksperimen air bunga telang",
+   "hook": {
+    "kicker": "Eksperimen dapur",
+    "lines": [
+     "Biru jadi",
+     "ungu?!"
+    ],
+    "dur": 2.4
+   },
+   "emphasis": [
+    "biru",
+    "birulah",
+    "purple",
+    "pink",
+    "acid",
+    "chemistry",
+    "litmus",
+    "lemon",
+    "honey",
+    "gelap"
+   ],
+   "segments": [
+    {
+     "in": 4703.9,
+     "out": 4707.4,
+     "cap": "Dia jadi darker colour. Dia jadi purple sikit."
+    },
+    {
+     "in": 697.8,
+     "out": 701.3,
+     "cap": "Eh, birulah air saya basuh tadi!"
+    },
+    {
+     "in": 4523.7,
+     "out": 4527.1,
+     "cap": "Bukan colour dia akan jadi macam ni ke nanti? Pink-pink eh?"
+    },
+    {
+     "in": 4529.0,
+     "out": 4532.3,
+     "cap": "Sebab dia dah macam dalam cheese tu kan ada asid kan?"
+    },
+    {
+     "in": 4537.4,
+     "out": 4542.9,
+     "cap": "Chemistry-nya! Purple campur dengan asid, purple-pink je."
+    },
+    {
+     "in": 4558.2,
+     "out": 4559.6,
+     "cap": "Kertas litmus!"
+    },
+    {
+     "in": 4599.4,
+     "out": 4605.4,
+     "cap": "Campur honey tak? Campur honey tak Pia? Campur honey. Cuba campur lemon pula, tengok warna apa?"
+    },
+    {
+     "in": 4689.3,
+     "out": 4691.3,
+     "cap": "Wiwit-wiwit tu lah"
+    },
+    {
+     "in": 4698.7,
+     "out": 4700.7,
+     "cap": "Banyak sangat wiwit tu, Alin!"
+    },
+    {
+     "in": 4707.8,
+     "out": 4713.1,
+     "cap": "Dia nak gelap sikit. Haa, dia jadi gelap. Kita bereksperimen malam ni."
+    },
+    {
+     "in": 4715.5,
+     "out": 4717.8,
+     "cap": "Sedap je dia, honey lemon"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 698.5,
+     "text": "Air basuhan pun dah biru!",
+     "dur": 2.4
+    },
+    {
+     "type": "tip",
+     "at": 4529.5,
+     "badge": "SAINS",
+     "text": "Bunga telang + asid (lemon) = warna jadi ungu/pink",
+     "dur": 3.2,
+     "pos": "low"
+    },
+    {
+     "type": "joke",
+     "at": 4558.3,
+     "text": "Kertas litmus!",
+     "dur": 1.5,
+     "sfx": "ding",
+     "ox": 100,
+     "oy": 8,
+     "scale": 1.5,
+     "pos": "low"
+    },
+    {
+     "type": "joke",
+     "at": 4699.0,
+     "text": "Wiwit wiwit?!",
+     "dur": 1.6,
+     "sfx": "boing"
+    },
+    {
+     "type": "tip",
+     "at": 4715.6,
+     "badge": "CUBA",
+     "text": "Air bunga telang + honey + lemon",
+     "dur": 2.4,
+     "pos": "low"
+    }
+   ]
+  },
+  {
+   "slug": "05-dry-lemon-berkulat",
+   "title": "Kenapa Dry Lemon Berkulat",
+   "episode": "Kenapa dry lemon berkulat?",
+   "hook": {
+    "kicker": "Tips dry lemon",
+    "lines": [
+     "Satu bekas",
+     "berkulat!"
+    ],
+    "dur": 2.4
+   },
+   "emphasis": [
+    "berkulat",
+    "kering",
+    "tebal",
+    "nipis",
+    "sekata",
+    "tajam",
+    "tumpul",
+    "terror",
+    "lambat",
+    "mandolin",
+    "fridge"
+   ],
+   "segments": [
+    {
+     "in": 4857.6,
+     "out": 4860.5,
+     "cap": "Satu bekas, semua berkulat"
+    },
+    {
+     "in": 4648.1,
+     "out": 4654.9,
+     "cap": "Saya ada. Aku punya dry lemon hari tu, aku lupa masuk fridge. Lepas tu dia dah berkulat."
+    },
+    {
+     "in": 4654.8,
+     "out": 4658.9,
+     "cap": "Eh kau, betul tak boleh kulat. I punya dry lemon, I tak masuk fridge."
+    },
+    {
+     "in": 4660.5,
+     "out": 4665.3,
+     "cap": "Macam mana boleh berkulat? Sebab you tak kering betul-betul kot. Maknanya you tak cukup kering lah tu."
+    },
+    {
+     "in": 4817.5,
+     "out": 4819.4,
+     "cap": "Itulah lemon saya tak cukup kering lah tu"
+    },
+    {
+     "in": 4822.4,
+     "out": 4825.7,
+     "cap": "Hari tu buat macam mana kau slice? Kau punya apa, mandolin?"
+    },
+    {
+     "in": 4831.5,
+     "out": 4834.2,
+     "cap": "Yelah sebab aku terror. Dengan pisau, senipis-nipisnya"
+    },
+    {
+     "in": 4840.0,
+     "out": 4844.5,
+     "cap": "Kalau kau guna pisau yang dah lama tu, dia memang tumpul. Kau guna pisau tajam"
+    },
+    {
+     "in": 4845.3,
+     "out": 4849.0,
+     "cap": "Aku punya lemon memang tak sekata lah. Ada tebal, ada nipis"
+    },
+    {
+     "in": 4853.9,
+     "out": 4855.6,
+     "cap": "Kalau tebal dia lambat"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 4651.0,
+     "text": "Lupa masuk fridge...",
+     "dur": 2.4
+    },
+    {
+     "type": "tip",
+     "at": 4662.0,
+     "badge": "PUNCA",
+     "text": "Berkulat = lemon tak cukup kering",
+     "dur": 3.0,
+     "pos": "low"
+    },
+    {
+     "type": "joke",
+     "at": 4832.0,
+     "text": "Sebab aku terror",
+     "dur": 1.8,
+     "sfx": "boing"
+    },
+    {
+     "type": "tip",
+     "at": 4842.7,
+     "badge": "TIP",
+     "text": "Guna pisau tajam, bukan pisau tumpul",
+     "dur": 2.4,
+     "pos": "low"
+    },
+    {
+     "type": "tip",
+     "at": 4846.3,
+     "badge": "TIP",
+     "text": "Slice nipis & sekata. Tebal = lambat kering",
+     "dur": 3.6,
+     "pos": "low"
+    }
+   ]
+  },
+  {
+   "slug": "06-mak-mak-vs-teknologi",
+   "title": "Mak-mak vs Teknologi",
+   "episode": "Live masak, tapi teknologi...",
+   "hook": {
+    "kicker": "Behind the scenes",
+    "lines": [
+     "Mak-mak vs",
+     "teknologi"
+    ],
+    "dur": 2.4
+   },
+   "emphasis": [
+    "komen",
+    "share",
+    "terkeluar",
+    "flip",
+    "camera",
+    "screenshot",
+    "selfie",
+    "button",
+    "off",
+    "jam"
+   ],
+   "segments": [
+    {
+     "in": 3627.5,
+     "out": 3640.0,
+     "cap": "1, 2, 3. Eh, apa ni 1, 2, 3 nya? Screenshot lah. Screenshot tak nampak muka aku. Selfie lah. Cepat selfie."
+    },
+    {
+     "in": 1103.2,
+     "out": 1107.7,
+     "cap": "Mukmin, komen-komen semua memang tak boleh baca eh? Tak nampak apa pun, kosong dia. Tak ada orang komen pun?"
+    },
+    {
+     "in": 1290.2,
+     "out": 1291.9,
+     "cap": "Macam nak share tak jadi"
+    },
+    {
+     "in": 1293.8,
+     "out": 1298.1,
+     "cap": "Kakak terkeluar ke, macam nak share sekejap? Memang keluar lah kalau share"
+    },
+    {
+     "in": 3560.5,
+     "out": 3568.4,
+     "cap": "Kejap, mana kejap? Apa tu dia? Flip camera. Ya Allah. Ha, nak flip kamera sebenarnya."
+    },
+    {
+     "in": 3605.0,
+     "out": 3606.9,
+     "cap": "Tapi tak keluar gambar pun"
+    },
+    {
+     "in": 1642.0,
+     "out": 1651.2,
+     "cap": "Satu jam dia cari button off, tak jumpa. Sebab tu dia biar je. Lepas tu dia pergi kerja, dia tinggal je benda tu hidup sebab dia tak jumpa button off"
+    },
+    {
+     "in": 1660.0,
+     "out": 1667.7,
+     "cap": "Habis tu kat mana button off dia? Tekan yang sama ni. Oh on off tu. Tekan lama."
+    },
+    {
+     "in": 5501.0,
+     "out": 5506.8,
+     "cap": "Kita orang merepek-repek kat dalam ni. Kita orang dalam ni memang selalu macam ni"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "joke",
+     "at": 1107.0,
+     "text": "0 komen",
+     "dur": 1.6,
+     "sfx": "error"
+    },
+    {
+     "type": "label",
+     "at": 1294.0,
+     "text": "Nak share live... terkeluar pula",
+     "dur": 2.6
+    },
+    {
+     "type": "joke",
+     "at": 3565.5,
+     "text": "Ya Allah!",
+     "dur": 1.4,
+     "sfx": "boing",
+     "scale": 1.22
+    },
+    {
+     "type": "joke",
+     "at": 3631.0,
+     "text": "1, 2, 3...?",
+     "dur": 1.4,
+     "sfx": "pop",
+     "ox": 100,
+     "oy": 8,
+     "scale": 1.5,
+     "pos": "low"
+    },
+    {
+     "type": "stat",
+     "at": 1643.5,
+     "text": "1 JAM",
+     "sub": "cari butang off",
+     "dur": 1.8
+    },
+    {
+     "type": "joke",
+     "at": 1667.0,
+     "text": "Tekan lama je!",
+     "dur": 1.4,
+     "sfx": "ding"
+    }
+   ]
+  },
+  {
+   "slug": "07-slow-cook-dah-tak-slow",
+   "title": "Slow Cook Dah Tak Slow",
+   "episode": "Gadget dapur mak-mak",
+   "hook": {
+    "kicker": "Gadget dapur",
+    "lines": [
+     "Slow cook",
+     "dah tak slow?!"
+    ],
+    "dur": 2.4
+   },
+   "emphasis": [
+    "slow",
+    "laju",
+    "tumpul",
+    "blade",
+    "thermomix",
+    "jual",
+    "kahwin",
+    "tazo",
+    "punya"
+   ],
+   "segments": [
+    {
+     "in": 2239.9,
+     "out": 2241.0,
+     "cap": "Guna slow cook je"
+    },
+    {
+     "in": 2242.5,
+     "out": 2251.4,
+     "cap": "Eh slow cook. Slow cook laju lah weh sekarang. Dah tak slow dah. Dah tak slow lagi lah aku punya slow cook ni"
+    },
+    {
+     "in": 893.3,
+     "out": 905.4,
+     "cap": "Kuah rojak ni, biji pun mesin tak hancur. I punya tu dah tumpul lah. Apa dia? Thermomix? Thermomix punya blade dah tumpul. Mesin banyak kali, tak nak hancur pun dia."
+    },
+    {
+     "in": 907.1,
+     "out": 908.7,
+     "cap": "Kena beli Tazo nanti"
+    },
+    {
+     "in": 910.6,
+     "out": 914.2,
+     "cap": "Wahai. Kena jual Thermomix lah kalau nak beli Tazo"
+    },
+    {
+     "in": 939.0,
+     "out": 948.3,
+     "cap": "Itulah nak jual lah satu lagi tu. Tapi satu lagi tu anak-anak punya. Dia dah kahwin, dia nak ambil nanti. Suka hati nak jual orang punya."
+    },
+    {
+     "in": 956.3,
+     "out": 958.6,
+     "cap": "Dah letak dalam rumah saya ni, saya punya lah!"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "joke",
+     "at": 2248.0,
+     "text": "Dah tak slow dah",
+     "dur": 1.8,
+     "sfx": "boing"
+    },
+    {
+     "type": "label",
+     "at": 902.0,
+     "text": "Blade Thermomix dah tumpul",
+     "dur": 2.6
+    },
+    {
+     "type": "label",
+     "at": 911.0,
+     "text": "Jual Thermomix, beli Tazo?",
+     "dur": 2.4
+    },
+    {
+     "type": "joke",
+     "at": 946.6,
+     "text": "Suka hati nak jual orang punya",
+     "dur": 1.7,
+     "sfx": "error",
+     "scale": 1.2
+    },
+    {
+     "type": "joke",
+     "at": 956.6,
+     "text": "Rumah saya, saya punya!",
+     "dur": 2.0,
+     "sfx": "boing",
+     "scale": 1.25
+    }
+   ]
+  },
+  {
+   "slug": "08-cheesecake-loyang-3-inci",
+   "title": "Cheesecake: Loyang 3 Inci",
+   "episode": "Cheesecake: saiz loyang yang ngam",
+   "hook": {
+    "kicker": "Tips cheesecake",
+    "lines": [
+     "Loyang 2 inci",
+     "tak muat!"
+    ],
+    "dur": 2.4
+   },
+   "emphasis": [
+    "500",
+    "inci",
+    "cream",
+    "cheese",
+    "bulat",
+    "tinggi",
+    "ngam-ngam",
+    "muat",
+    "diameter"
+   ],
+   "segments": [
+    {
+     "in": 4791.0,
+     "out": 4793.4,
+     "cap": "Kalau 2 inci tu penuh, tak muat"
+    },
+    {
+     "in": 4746.8,
+     "out": 4751.7,
+     "cap": "Cheesecake hari tu you buat kat rumah Kak Min, berapa kilo? Berapa gram?"
+    },
+    {
+     "in": 4753.3,
+     "out": 4754.1,
+     "cap": "500"
+    },
+    {
+     "in": 4756.5,
+     "out": 4757.8,
+     "cap": "Dia punya cream cheese 500"
+    },
+    {
+     "in": 4767.5,
+     "out": 4774.7,
+     "cap": "You buat berapa loyang punya? 8 inci. 8 inci. Diameter."
+    },
+    {
+     "in": 4776.3,
+     "out": 4778.0,
+     "cap": "Tinggi 3 inci"
+    },
+    {
+     "in": 4781.0,
+     "out": 4783.2,
+     "cap": "Bulat kan? Bulat."
+    },
+    {
+     "in": 4787.6,
+     "out": 4796.0,
+     "cap": "Sebab saya kat rumah saya ada 2 inci dengan 3 inci. Kalau 2 inci tu penuh, tak muat. Kena 3 inci baru dia ngam-ngam"
+    }
+   ],
+   "overlays": [
+    {
+     "type": "stat",
+     "at": 4757.4,
+     "text": "500g",
+     "sub": "cream cheese",
+     "dur": 1.6
+    },
+    {
+     "type": "stat",
+     "at": 4770.5,
+     "text": "8 INCI",
+     "sub": "loyang bulat",
+     "dur": 1.8
+    },
+    {
+     "type": "stat",
+     "at": 4776.6,
+     "text": "3 INCI",
+     "sub": "tinggi loyang",
+     "dur": 1.6
+    },
+    {
+     "type": "tip",
+     "at": 4791.2,
+     "badge": "TIP",
+     "text": "Loyang 2 inci tak muat. Guna 3 inci, baru ngam-ngam",
+     "dur": 3.6,
+     "pos": "low"
+    }
+   ]
+  },
+  {
+   "slug": "09-orang-nak-tahu-benda-dimasak",
+   "title": "Orang Nak Tahu Benda Dimasak",
+   "episode": "Content creator mak-mak",
+   "hook": {
+    "kicker": "Real talk",
+    "lines": [
+     "Tak ada muka aku,",
+     "tak best lah!"
+    ],
+    "dur": 2.4
+   },
+   "emphasis": [
+    "content",
+    "live",
+    "story",
+    "muka",
+    "best",
+    "interested",
+    "dimasak",
+    "masalah"
+   ],
+   "segments": [
+    {
+     "in": 4300.0,
+     "out": 4301.9,
+     "cap": "Tak ada muka aku lah, tak best lah"
+    },
+    {
+     "in": 4265.4,
+     "out": 4268.7,
+     "cap": "Alamak, dah ada live malam ni. Aku tak ada content lagi"
+    },
+    {
+     "in": 4268.8,
+     "out": 4271.2,
+     "cap": "Content ni lah, ambil lah kita orang punya content ni"
+    },
+    {
+     "in": 4275.4,
+     "out": 4277.5,
+     "cap": "Tak nak lah, tak ada muka aku"
+    },
+    {
+     "in": 4305.5,
+     "out": 4310.0,
+     "cap": "Tak nak lah, storynya tak best nanti. Aku macam, oh ceritanya aku masuk live"
+    },
+    {
+     "in": 4311.4,
+     "out": 4316.8,
+     "cap": "Alah, sama je macam Kak Salma masuk live tu. Tak apa, tu story aku. Itu content aku, bukan content dia."
+    },
+    {
+     "in": 4317.8,
+     "out": 4321.3,
+     "cap": "Macam, hari ni mak penat balik kerja, bangun tidur"
+    },
+    {
+     "in": 4323.7,
+     "out": 4327.5,
+     "cap": "Tak ada maknanya. Tak ada orang interested nak tahu cerita masalah aku. Orang nak tahu benda dimasak."
+    }
+   ],
+   "overlays": [
+    {
+     "type": "label",
+     "at": 4266.0,
+     "text": "Live malam ni... content belum ada",
+     "dur": 2.6
+    },
+    {
+     "type": "joke",
+     "at": 4315.6,
+     "text": "Content aku, bukan content dia!",
+     "dur": 1.6,
+     "sfx": "boing",
+     "ox": 100,
+     "oy": 8,
+     "scale": 1.45,
+     "pos": "low"
+    },
+    {
+     "type": "tip",
+     "at": 4325.0,
+     "badge": "FAKTA",
+     "text": "Orang nak tengok apa yang dimasak!",
+     "dur": 2.6,
+     "pos": "low"
+    }
+   ]
+  }
+ ]
+}

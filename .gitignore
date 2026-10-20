@@ -1,0 +1,8 @@
+# Source recording + extracted proxies are large; regenerate with tools/build_shorts.py
+shorts/*/assets/footage/
+shorts/*/.hyperframes/
+shorts/*/renders/
+previews/*.mp4
+*.wav
+node_modules/
+__pycache__/

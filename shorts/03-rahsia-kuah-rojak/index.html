@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="ms">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Rahsia Kuah Rojak</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #fff1d6; }
+      :root {
+        --cream: #fff1d6; --ink: #2a170c; --tomato: #e4402b; --yolk: #ffcf33; --leaf: #1f7a45; --blue: #3a4fd8;
+      }
+      #root { width: 100%; height: 100%; position: relative; overflow: hidden; font-family: Montserrat, sans-serif; background: var(--cream); }
+      /* background */
+      .bg-dots { position: absolute; inset: 0; background-image: radial-gradient(#e9cf9f 3px, transparent 3.5px); background-size: 46px 46px; opacity: .55; }
+      .header { position: absolute; left: 44px; right: 44px; top: 46px; height: 220px; }
+      .brand { display: flex; align-items: center; justify-content: space-between; }
+      .brand-pill { background: var(--tomato); color: #fff8ec; font-family: "Archivo Black", sans-serif; font-size: 34px; letter-spacing: .03em; padding: 12px 24px 10px; border-radius: 999px; transform: rotate(-2deg); box-shadow: 0 6px 0 #9e2516; }
+      .live { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 26px; color: var(--ink); background: #fff8ec; border: 4px solid var(--ink); padding: 8px 20px; border-radius: 999px; }
+      .live i { width: 16px; height: 16px; border-radius: 50%; background: var(--tomato); display: block; }
+      .headline { margin-top: 26px; font-family: "Archivo Black", sans-serif; font-size: 60px; line-height: 1.05; color: var(--ink); text-transform: uppercase; }
+      .headline .nb { white-space: nowrap; }
+      .headline span { background: linear-gradient(transparent 58%, var(--yolk) 58%, var(--yolk) 92%, transparent 92%); }
+      /* stage: the call grid, framed */
+      .stage-frame { position: absolute; left: 24px; top: 300px; width: 1032px; height: 962px; border-radius: 30px; background: var(--ink); box-shadow: 0 0 0 7px var(--ink), 0 18px 0 7px rgba(42,23,12,.9); }
+      .stage { position: absolute; left: 24px; top: 300px; width: 1032px; height: 962px; overflow: hidden; border-radius: 30px; background: #000; }
+      .cam { position: absolute; inset: 0; transform-origin: 35% 50%; }
+      .src { position: absolute; left: -11.73px; top: -457.36px; width: 1055.45px; height: 1876.36px; object-fit: fill; }
+      .footer { position: absolute; left: 0; width: 1080px; top: 1800px; height: 80px; display: flex; align-items: center; justify-content: center; }
+      .footer-txt { font-family: "Archivo Black", sans-serif; font-size: 30px; color: var(--ink); opacity: .55; letter-spacing: .08em; }
+      .progress-track { position: absolute; left: 60px; width: 960px; top: 1776px; height: 12px; border-radius: 999px; background: rgba(42,23,12,.12); overflow: hidden; }
+      .progress { position: absolute; left: 0; top: 0; height: 12px; width: 960px; background: var(--tomato); transform-origin: 0 50%; border-radius: 999px; }
+      /* captions: under the call grid, on the cream */
+      .caps { position: absolute; left: 0; width: 1080px; top: 1318px; height: 330px; }
+      .capg { position: absolute; left: 60px; right: 120px; top: 0; text-align: center; font-family: "Archivo Black", sans-serif; font-size: 96px; line-height: 1.1; color: var(--ink); text-transform: uppercase; opacity: 0; }
+      .capg .w { display: inline-block; padding: 0 6px; border-radius: 12px; }
+      .capg .w.em { background: var(--yolk); }
+      /* overlays */
+      .ov { position: absolute; inset: 0; pointer-events: none; }
+      .hook-in { position: absolute; left: 60px; right: 60px; top: 520px; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+      .hook-kicker { background: var(--ink); color: var(--yolk); font-weight: 900; font-size: 34px; letter-spacing: .12em; padding: 10px 24px; border-radius: 12px; text-transform: uppercase; }
+      .hook-title { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+      .hook-title .hl { display: block; background: var(--yolk); color: var(--ink); font-family: "Archivo Black", sans-serif; font-size: 92px; line-height: 1; padding: 16px 30px 10px; border-radius: 18px; text-transform: uppercase; box-shadow: 0 10px 0 var(--ink); text-align: center; }
+      .hook-title .hl.long { font-size: 74px; }
+      .hook-title .hl:nth-child(2) { background: var(--tomato); color: #fff8ec; }
+      .pos-top .tip-card, .pos-top .stat-card, .pos-top .label { top: 340px; }
+      .pos-mid .tip-card, .pos-mid .stat-card, .pos-mid .label { top: 700px; }
+      .pos-low .tip-card, .pos-low .stat-card, .pos-low .label { top: 1060px; }
+      .tip-card { position: absolute; left: 44px; right: 44px; display: flex; align-items: stretch; background: #fff8ec; border: 6px solid var(--ink); border-radius: 26px; box-shadow: 0 12px 0 var(--ink); overflow: hidden; }
+      .tip-badge { background: var(--leaf); color: #fff8ec; font-family: "Archivo Black", sans-serif; font-size: 40px; display: flex; align-items: center; padding: 0 26px; letter-spacing: .04em; }
+      .tip-text { padding: 22px 26px; font-weight: 800; font-size: 46px; line-height: 1.12; color: var(--ink); }
+      .stat-card { position: absolute; left: 0; right: 0; display: flex; flex-direction: column; align-items: center; }
+      .stat-num { font-family: "Archivo Black", sans-serif; font-size: 150px; line-height: 1; color: var(--yolk); -webkit-text-stroke: 16px var(--ink); paint-order: stroke fill; text-shadow: 0 12px 0 var(--ink); }
+      .stat-sub { margin-top: 14px; background: var(--ink); color: #fff8ec; font-weight: 900; font-size: 40px; padding: 10px 26px; border-radius: 14px; text-transform: uppercase; letter-spacing: .06em; }
+      .joke { position: absolute; left: 0; right: 0; top: 640px; display: flex; justify-content: center; }
+      .joke span { display: block; background: var(--tomato); color: #fff8ec; font-family: "Archivo Black", sans-serif; font-size: 74px; padding: 16px 30px 10px; border-radius: 20px; border: 6px solid var(--ink); box-shadow: 0 12px 0 var(--ink); text-transform: uppercase; transform: rotate(-5deg); text-align: center; max-width: 840px; line-height: 1.05; }
+      .pos-low .joke { top: 1040px; }
+      .pos-top .joke { top: 380px; }
+      .label { position: absolute; left: 44px; display: flex; align-items: center; gap: 16px; background: var(--ink); color: #fff8ec; font-weight: 900; font-size: 42px; padding: 16px 30px; border-radius: 999px; }
+      .label .dot { width: 20px; height: 20px; border-radius: 50%; background: var(--yolk); display: block; }
+      .end-in { position: absolute; left: 0; right: 0; top: 0; bottom: 0; background: rgba(255,241,214,.94); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; }
+      .end-l1 { background: var(--tomato); color: #fff8ec; font-family: "Archivo Black", sans-serif; font-size: 104px; padding: 22px 44px 14px; border-radius: 999px; box-shadow: 0 12px 0 #9e2516; transform: rotate(-3deg); }
+      .end-l2 { font-weight: 900; font-size: 48px; color: var(--ink); text-align: center; max-width: 900px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="66.57" data-width="1080" data-height="1920">
+      <div class="bg-dots"></div>
+      <div class="header">
+        <div class="brand"><div class="brand-pill">TASTY TUESDAY</div><div class="live"><i id="live-dot"></i>LIVE MASAK</div></div>
+        <div class="headline"><span>Rahsia kuah rojak pekat &amp; kick</span></div>
+      </div>
+      <div class="stage-frame"></div>
+      <div class="stage">
+        <div class="cam" id="cam" data-layout-allow-overflow>
+        <video id="v0" class="clip src" src="assets/footage/src-01337.80-01361.00.mp4" data-start="0.000" data-duration="5.400" data-media-start="1.000" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v1" class="clip src" src="assets/footage/src-01337.80-01361.00.mp4" data-start="5.400" data-duration="3.080" data-media-start="8.420" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v2" class="clip src" src="assets/footage/src-01337.80-01361.00.mp4" data-start="8.480" data-duration="2.840" data-media-start="13.500" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v3" class="clip src" src="assets/footage/src-01337.80-01361.00.mp4" data-start="11.320" data-duration="3.580" data-media-start="18.620" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v4" class="clip src" src="assets/footage/src-00883.81-00893.00.mp4" data-start="14.900" data-duration="2.780" data-media-start="1.000" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v5" class="clip src" src="assets/footage/src-00883.81-00893.00.mp4" data-start="17.680" data-duration="2.450" data-media-start="5.740" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v6" class="clip src" src="assets/footage/src-01470.51-01532.40.mp4" data-start="20.130" data-duration="4.280" data-media-start="1.000" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v7" class="clip src" src="assets/footage/src-01470.51-01532.40.mp4" data-start="24.410" data-duration="5.700" data-media-start="7.790" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v8" class="clip src" src="assets/footage/src-01470.51-01532.40.mp4" data-start="30.110" data-duration="2.630" data-media-start="34.490" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v9" class="clip src" src="assets/footage/src-01470.51-01532.40.mp4" data-start="32.740" data-duration="4.330" data-media-start="37.560" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v10" class="clip src" src="assets/footage/src-01470.51-01532.40.mp4" data-start="37.070" data-duration="6.650" data-media-start="42.800" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v11" class="clip src" src="assets/footage/src-01470.51-01532.40.mp4" data-start="43.720" data-duration="1.390" data-media-start="53.790" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v12" class="clip src" src="assets/footage/src-01470.51-01532.40.mp4" data-start="45.110" data-duration="4.100" data-media-start="56.790" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v13" class="clip src" src="assets/footage/src-03219.40-03233.00.mp4" data-start="49.210" data-duration="4.320" data-media-start="1.000" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v14" class="clip src" src="assets/footage/src-03219.40-03233.00.mp4" data-start="53.530" data-duration="4.000" data-media-start="6.760" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v15" class="clip src" src="assets/footage/src-03219.40-03233.00.mp4" data-start="57.530" data-duration="0.750" data-media-start="11.850" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v16" class="clip src" src="assets/footage/src-05406.90-05418.11.mp4" data-start="58.280" data-duration="2.810" data-media-start="1.000" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v17" class="clip src" src="assets/footage/src-05406.90-05418.11.mp4" data-start="61.090" data-duration="1.070" data-media-start="4.330" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v18" class="clip src" src="assets/footage/src-05406.90-05418.11.mp4" data-start="62.160" data-duration="2.210" data-media-start="8.000" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v-tail" class="clip src" src="assets/footage/src-05406.90-05418.11.mp4" data-start="64.370" data-duration="2.200" data-media-start="8.960" data-track-index="1" playsinline muted></video>
+        </div>
+      </div>
+      <div class="progress-track"><div class="progress" id="progress"></div></div>
+      <div class="footer"><div class="footer-txt">#TASTYTUESDAY</div></div>
+      <div class="caps" id="caps">
+      <div class="capg" id="cg0"><span class="w" id="cw0_0">Kena</span> <span class="w" id="cw0_1">masak</span> <span class="w" id="cw0_2">dulu</span></div>
+      <div class="capg" id="cg1"><span class="w" id="cw1_0">lah</span> <span class="w" id="cw1_1">cili</span> <span class="w" id="cw1_2">tu</span></div>
+      <div class="capg" id="cg2"><span class="w" id="cw2_0">eh?</span></div>
+      <div class="capg" id="cg3"><span class="w" id="cw3_0">Haa,</span></div>
+      <div class="capg" id="cg4"><span class="w" id="cw4_0">cili</span> <span class="w" id="cw4_1">tu</span> <span class="w" id="cw4_2">we</span></div>
+      <div class="capg" id="cg5"><span class="w" id="cw5_0">all</span> <span class="w" id="cw5_1">ni</span> <span class="w" id="cw5_2">kan</span></div>
+      <div class="capg" id="cg6"><span class="w" id="cw6_0">cerewet</span> <span class="w" id="cw6_1">sikit</span></div>
+      <div class="capg" id="cg7"><span class="w" id="cw7_0">Cili</span> <span class="w" id="cw7_1">tu</span> <span class="w" id="cw7_2">tak</span></div>
+      <div class="capg" id="cg8"><span class="w" id="cw8_0">nak</span> <span class="w" id="cw8_1">rasa,</span></div>
+      <div class="capg" id="cg9"><span class="w" id="cw9_0">nanti</span> <span class="w" id="cw9_1">takut</span> <span class="w" id="cw9_2">bau</span></div>
+      <div class="capg" id="cg10"><span class="w em" id="cw10_0">maung</span> <span class="w" id="cw10_1">cili</span> <span class="w" id="cw10_2">kan</span></div>
+      <div class="capg" id="cg11"><span class="w" id="cw11_0">So</span> <span class="w" id="cw11_1">we</span> <span class="w" id="cw11_2">all</span></div>
+      <div class="capg" id="cg12"><span class="w" id="cw12_0">akan</span> <span class="w" id="cw12_1">masak</span> <span class="w" id="cw12_2">cili</span></div>
+      <div class="capg" id="cg13"><span class="w" id="cw13_0">tu</span> <span class="w" id="cw13_1">sampai</span> <span class="w" id="cw13_2">tak</span></div>
+      <div class="capg" id="cg14"><span class="w" id="cw14_0">ada</span> <span class="w" id="cw14_1">bau</span></div>
+      <div class="capg" id="cg15"><span class="w" id="cw15_0">Ni</span> <span class="w" id="cw15_1">dah</span> <span class="w" id="cw15_2">tak</span></div>
+      <div class="capg" id="cg16"><span class="w" id="cw16_0">bau</span> <span class="w" id="cw16_1">lagi.</span></div>
+      <div class="capg" id="cg17"><span class="w" id="cw17_0">Barulah</span> <span class="w" id="cw17_1">I</span> <span class="w" id="cw17_2">masukkan</span></div>
+      <div class="capg" id="cg18"><span class="w" id="cw18_0">bahan-bahan</span> <span class="w" id="cw18_1">lain.</span></div>
+      <div class="capg" id="cg19"><span class="w" id="cw19_0">I</span> <span class="w" id="cw19_1">masak</span> <span class="w" id="cw19_2">lama</span></div>
+      <div class="capg" id="cg20"><span class="w" id="cw20_0">tau.</span></div>
+      <div class="capg" id="cg21"><span class="w" id="cw21_0">Nak</span> <span class="w" id="cw21_1">bagi</span> <span class="w" id="cw21_2">sebelum</span></div>
+      <div class="capg" id="cg22"><span class="w" id="cw22_0">masuk</span> <span class="w" id="cw22_1">apa-apa.</span></div>
+      <div class="capg" id="cg23"><span class="w" id="cw23_0">Tapi</span> <span class="w" id="cw23_1">kalau</span> <span class="w" id="cw23_2">you</span></div>
+      <div class="capg" id="cg24"><span class="w" id="cw24_0">dah</span> <span class="w" id="cw24_1">pakai</span> <span class="w" id="cw24_2">cili</span></div>
+      <div class="capg" id="cg25"><span class="w" id="cw25_0">boh,</span></div>
+      <div class="capg" id="cg26"><span class="w" id="cw26_0">buat</span> <span class="w em" id="cw26_1">150</span> <span class="w em" id="cw26_2">gram</span></div>
+      <div class="capg" id="cg27"><span class="w" id="cw27_0">Kalau</span> <span class="w" id="cw27_1">cili</span> <span class="w" id="cw27_2">boh,</span></div>
+      <div class="capg" id="cg28"><span class="w" id="cw28_0">cili</span> <span class="w" id="cw28_1">dah</span> <span class="w" id="cw28_2">siap</span></div>
+      <div class="capg" id="cg29"><span class="w" id="cw29_0">blend.</span></div>
+      <div class="capg" id="cg30"><span class="w" id="cw30_0">Tu</span> <span class="w" id="cw30_1">cili</span> <span class="w" id="cw30_2">kering</span></div>
+      <div class="capg" id="cg31"><span class="w" id="cw31_0">tadi,</span></div>
+      <div class="capg" id="cg32"><span class="w" id="cw32_0">yang</span> <span class="w" id="cw32_1">kering</span> <span class="w" id="cw32_2">you</span></div>
+      <div class="capg" id="cg33"><span class="w" id="cw33_0">timbang</span> <span class="w em" id="cw33_1">50</span> <span class="w em" id="cw33_2">gram</span></div>
+      <div class="capg" id="cg34"><span class="w em" id="cw34_0">Petis</span> <span class="w" id="cw34_1">tu</span> <span class="w" id="cw34_2">any</span></div>
+      <div class="capg" id="cg35"><span class="w" id="cw35_0">brand</span> <span class="w" id="cw35_1">boleh</span> <span class="w" id="cw35_2">ke?</span></div>
+      <div class="capg" id="cg36"><span class="w" id="cw36_0">Boleh.</span></div>
+      <div class="capg" id="cg37"><span class="w" id="cw37_0">you</span> <span class="w" id="cw37_1">nak</span> <span class="w" id="cw37_2">buat</span></div>
+      <div class="capg" id="cg38"><span class="w" id="cw38_0">sikit,</span></div>
+      <div class="capg" id="cg39"><span class="w" id="cw39_0">you</span> <span class="w" id="cw39_1">just</span> <span class="w" id="cw39_2">agak-agak</span></div>
+      <div class="capg" id="cg40"><span class="w" id="cw40_0">lah</span> <span class="w" id="cw40_1">sebenarnya</span></div>
+      <div class="capg" id="cg41"><span class="w" id="cw41_0">Diorang</span> <span class="w" id="cw41_1">kalau</span> <span class="w" id="cw41_2">yang</span></div>
+      <div class="capg" id="cg42"><span class="w" id="cw42_0">jual</span> <span class="w" id="cw42_1">tu</span> <span class="w" id="cw42_2">kan,</span></div>
+      <div class="capg" id="cg43"><span class="w" id="cw43_0">diorang</span> <span class="w" id="cw43_1">pakai</span> <span class="w em" id="cw43_2">gula</span></div>
+      <div class="capg" id="cg44"><span class="w em" id="cw44_0">putih</span> <span class="w" id="cw44_1">banyak</span> <span class="w" id="cw44_2">kan.</span></div>
+      <div class="capg" id="cg45"><span class="w" id="cw45_0">Macam</span> <span class="w" id="cw45_1">saya</span> <span class="w" id="cw45_2">tak</span></div>
+      <div class="capg" id="cg46"><span class="w" id="cw46_0">pakai</span> <span class="w em" id="cw46_1">gula</span> <span class="w em" id="cw46_2">putih</span></div>
+      <div class="capg" id="cg47"><span class="w" id="cw47_0">langsung</span></div>
+      <div class="capg" id="cg48"><span class="w" id="cw48_0">Tapi</span> <span class="w" id="cw48_1">kalau</span> <span class="w" id="cw48_2">cair,</span></div>
+      <div class="capg" id="cg49"><span class="w" id="cw49_0">kalau</span> <span class="w" id="cw49_1">you</span> <span class="w" id="cw49_2">nak</span></div>
+      <div class="capg" id="cg50"><span class="w" id="cw50_0">pekat,</span></div>
+      <div class="capg" id="cg51"><span class="w" id="cw51_0">boleh</span> <span class="w" id="cw51_1">tambah</span></div>
+      <div class="capg" id="cg52"><span class="w em" id="cw52_0">tepung</span> <span class="w em" id="cw52_1">jagung</span> <span class="w" id="cw52_2">je</span></div>
+      <div class="capg" id="cg53"><span class="w" id="cw53_0">Tapi</span> <span class="w" id="cw53_1">kan</span> <span class="w" id="cw53_2">Mukmin,</span></div>
+      <div class="capg" id="cg54"><span class="w" id="cw54_0">I</span> <span class="w" id="cw54_1">dah</span> <span class="w" id="cw54_2">biasa</span></div>
+      <div class="capg" id="cg55"><span class="w" id="cw55_0">buat</span> <span class="w" id="cw55_1">pakai</span> <span class="w em" id="cw55_2">sekilo</span></div>
+      <div class="capg" id="cg56"><span class="w" id="cw56_0">saya</span> <span class="w" id="cw56_1">buat</span> <span class="w" id="cw56_2">setengah</span></div>
+      <div class="capg" id="cg57"><span class="w" id="cw57_0">kilo,</span></div>
+      <div class="capg" id="cg58"><span class="w" id="cw58_0">dia</span> <span class="w" id="cw58_1">macam</span> <span class="w" id="cw58_2">tak</span></div>
+      <div class="capg" id="cg59"><span class="w em" id="cw59_0">kick</span> <span class="w em" id="cw59_1">petis.</span></div>
+      <div class="capg" id="cg60"><span class="w" id="cw60_0">Eh</span> <span class="w" id="cw60_1">potong-potong</span></div>
+      <div class="capg" id="cg61"><span class="w" id="cw61_0">kalau</span> <span class="w" id="cw61_1">tak</span> <span class="w" id="cw61_2">nak</span></div>
+      <div class="capg" id="cg62"><span class="w" id="cw62_0">kasi</span> <span class="w" id="cw62_1">dia</span> <span class="w em" id="cw62_2">lebam</span></div>
+      <div class="capg" id="cg63"><span class="w" id="cw63_0">macam</span> <span class="w" id="cw63_1">mana?</span></div>
+      <div class="capg" id="cg64"><span class="w" id="cw64_0">Rendam</span> <span class="w" id="cw64_1">dengan</span></div>
+      <div class="capg" id="cg65"><span class="w" id="cw65_0">payah?</span></div>
+      <div class="capg" id="cg66"><span class="w" id="cw66_0">Asing-asingkan.</span></div>
+      <div class="capg" id="cg67"><span class="w" id="cw67_0">Jangan</span> <span class="w" id="cw67_1">satukan,</span></div>
+      <div class="capg" id="cg68"><span class="w" id="cw68_0">nanti</span> <span class="w" id="cw68_1">dia</span> <span class="w" id="cw68_2">cepat</span></div>
+      <div class="capg" id="cg69"><span class="w em" id="cw69_0">lebam.</span></div>
+      </div>
+    <div id="hook" class="clip ov" data-start="0" data-duration="2.4" data-track-index="3"><div class="hook-in"><div class="hook-kicker">Resepi kuah rojak</div><div class="hook-title"><span class=hl style='font-size:92px'>Rahsia</span><span class=hl style='font-size:92px'>kuah rojak</span></div></div></div>
+    <div id="ov0" class="clip ov pos-low" data-start="8.68" data-duration="3.0" data-track-index="4"><div class="tip-card"><div class="tip-badge">TIP 1</div><div class="tip-text">Masak cili sampai hilang bau maung</div></div></div>
+    <div id="ov1" class="clip ov pos-top" data-start="23.42" data-duration="1.6" data-track-index="5"><div class="stat-card"><div class="stat-num">150g</div><div class="stat-sub">cili boh</div></div></div>
+    <div id="ov2" class="clip ov pos-top" data-start="29.41" data-duration="1.4" data-track-index="6"><div class="stat-card"><div class="stat-num">50g</div><div class="stat-sub">cili kering</div></div></div>
+    <div id="ov3" class="clip ov pos-low" data-start="37.26" data-duration="3.0" data-track-index="4"><div class="tip-card"><div class="tip-badge">TIP 2</div><div class="tip-text">Kurangkan gula putih. Saya tak pakai langsung!</div></div></div>
+    <div id="ov4" class="clip ov pos-low" data-start="45.31" data-duration="3.2" data-track-index="5"><div class="tip-card"><div class="tip-badge">TIP 3</div><div class="tip-text">Kuah cair? Tambah tepung jagung</div></div></div>
+    <div id="ov5" class="clip ov pos-top" data-start="56.57" data-duration="1.6" data-track-index="6"><div class="joke"><span>Tak kick lah!</span></div></div>
+    <div id="ov6" class="clip ov pos-low" data-start="62.26" data-duration="2.110000000000234" data-track-index="4"><div class="tip-card"><div class="tip-badge">TIP 4</div><div class="tip-text">Buah rojak: asing-asingkan, jangan satukan</div></div></div>
+    <div id="endcard" class="clip ov" data-start="64.370" data-duration="2.200" data-track-index="7"><div class="end-in" data-layout-allow-occlusion><div class="end-l1">TASTY TUESDAY</div><div class="end-l2">Masak sama-sama, gelak sama-sama</div></div></div>
+    <audio id="sfx0" src="assets/sfx/impact-bass-1.mp3" data-start="0.020" data-duration="2.100" data-track-index="20" data-volume="0.45"></audio>
+    <audio id="sfx1" src="assets/sfx/whoosh.mp3" data-start="2.050" data-duration="0.570" data-track-index="21" data-volume="0.4"></audio>
+    <audio id="sfx2" src="assets/sfx/ding.mp3" data-start="8.680" data-duration="1.440" data-track-index="22" data-volume="0.35"></audio>
+    <audio id="sfx3" src="assets/sfx/ping.mp3" data-start="23.420" data-duration="1.320" data-track-index="23" data-volume="0.35"></audio>
+    <audio id="sfx4" src="assets/sfx/ping.mp3" data-start="29.410" data-duration="1.320" data-track-index="20" data-volume="0.35"></audio>
+    <audio id="sfx5" src="assets/sfx/ding.mp3" data-start="37.260" data-duration="1.440" data-track-index="21" data-volume="0.35"></audio>
+    <audio id="sfx6" src="assets/sfx/ding.mp3" data-start="45.310" data-duration="1.440" data-track-index="22" data-volume="0.35"></audio>
+    <audio id="sfx7" src="assets/sfx/error.mp3" data-start="56.570" data-duration="1.620" data-track-index="23" data-volume="0.35"></audio>
+    <audio id="sfx8" src="assets/sfx/ding.mp3" data-start="62.260" data-duration="1.440" data-track-index="20" data-volume="0.35"></audio>
+    <audio id="sfx9" src="assets/sfx/sparkle.mp3" data-start="64.470" data-duration="1.800" data-track-index="21" data-volume="0.35"></audio>
+    </div>
+    <script>
+      const D = {"cuts": [5.4, 8.48, 11.32, 14.9, 17.68, 20.13, 24.41, 30.11, 32.74, 37.07, 43.72, 45.11, 49.21, 53.53, 57.53, 58.28, 61.09, 62.16], "caps": [{"s": 0.07, "e": 1.251, "w": [[0.07, 0.434], [0.434, 0.888], [0.888, 1.251]]}, {"s": 1.251, "e": 2.069, "w": [[1.251, 1.524], [1.524, 1.888], [1.888, 2.069]]}, {"s": 2.069, "e": 2.369, "w": [[2.069, 2.342]]}, {"s": 2.342, "e": 2.705, "w": [[2.342, 2.705]]}, {"s": 2.705, "e": 3.432, "w": [[2.705, 3.069], [3.069, 3.251], [3.251, 3.432]]}, {"s": 3.432, "e": 4.159, "w": [[3.432, 3.705], [3.705, 3.887], [3.887, 4.159]]}, {"s": 4.159, "e": 5.5, "w": [[4.159, 4.796], [4.796, 5.25]]}, {"s": 5.52, "e": 6.12, "w": [[5.52, 5.787], [5.787, 5.92], [5.92, 6.12]]}, {"s": 6.12, "e": 6.653, "w": [[6.12, 6.32], [6.32, 6.653]]}, {"s": 6.653, "e": 7.52, "w": [[6.653, 6.987], [6.987, 7.32], [7.32, 7.52]]}, {"s": 7.52, "e": 8.56, "w": [[7.52, 7.853], [7.853, 8.12], [8.12, 8.32]]}, {"s": 8.56, "e": 9.041, "w": [[8.56, 8.697], [8.697, 8.835], [8.835, 9.041]]}, {"s": 9.041, "e": 9.933, "w": [[9.041, 9.315], [9.315, 9.658], [9.658, 9.933]]}, {"s": 9.933, "e": 10.688, "w": [[9.933, 10.07], [10.07, 10.482], [10.482, 10.688]]}, {"s": 10.688, "e": 11.35, "w": [[10.688, 10.894], [10.894, 11.1]]}, {"s": 11.44, "e": 11.974, "w": [[11.44, 11.573], [11.573, 11.774], [11.774, 11.974]]}, {"s": 11.974, "e": 12.508, "w": [[11.974, 12.174], [12.174, 12.508]]}, {"s": 12.508, "e": 13.642, "w": [[12.508, 12.975], [12.975, 13.108], [13.108, 13.642]]}, {"s": 13.642, "e": 14.96, "w": [[13.642, 14.376], [14.376, 14.71]]}, {"s": 15.02, "e": 16.39, "w": [[15.02, 15.269], [15.269, 15.892], [15.892, 16.39]]}, {"s": 16.39, "e": 16.888, "w": [[16.39, 16.888]]}, {"s": 16.888, "e": 18.541, "w": [[16.888, 17.262], [17.262, 17.68], [17.68, 18.541]]}, {"s": 18.541, "e": 20.25, "w": [[18.541, 19.164], [19.164, 20.13]]}, {"s": 20.25, "e": 21.462, "w": [[20.25, 20.654], [20.654, 21.159], [21.159, 21.462]]}, {"s": 21.462, "e": 22.675, "w": [[21.462, 21.765], [21.765, 22.271], [22.271, 22.675]]}, {"s": 22.675, "e": 23.079, "w": [[22.675, 23.079]]}, {"s": 23.079, "e": 24.44, "w": [[23.079, 23.483], [23.483, 23.786], [23.786, 24.19]]}, {"s": 24.47, "e": 25.435, "w": [[24.47, 24.841], [24.841, 25.138], [25.138, 25.435]]}, {"s": 25.435, "e": 26.252, "w": [[25.435, 25.732], [25.732, 25.955], [25.955, 26.252]]}, {"s": 26.252, "e": 26.697, "w": [[26.252, 26.697]]}, {"s": 26.697, "e": 27.588, "w": [[26.697, 26.846], [26.846, 27.143], [27.143, 27.588]]}, {"s": 27.588, "e": 27.96, "w": [[27.588, 27.96]]}, {"s": 27.96, "e": 28.925, "w": [[27.96, 28.257], [28.257, 28.702], [28.702, 28.925]]}, {"s": 28.925, "e": 30.11, "w": [[28.925, 29.445], [29.445, 29.593], [29.593, 29.89]]}, {"s": 30.11, "e": 31.007, "w": [[30.11, 30.543], [30.543, 30.729], [30.729, 31.007]]}, {"s": 31.007, "e": 32.211, "w": [[31.007, 31.47], [31.47, 31.933], [31.933, 32.211]]}, {"s": 32.211, "e": 32.79, "w": [[32.211, 32.74]]}, {"s": 32.79, "e": 33.717, "w": [[32.79, 33.068], [33.068, 33.346], [33.346, 33.717]]}, {"s": 33.717, "e": 34.273, "w": [[33.717, 34.273]]}, {"s": 34.273, "e": 35.755, "w": [[34.273, 34.551], [34.551, 34.922], [34.922, 35.755]]}, {"s": 35.755, "e": 37.19, "w": [[35.755, 36.033], [36.033, 36.96]]}, {"s": 37.19, "e": 38.299, "w": [[37.19, 37.675], [37.675, 38.022], [38.022, 38.299]]}, {"s": 38.299, "e": 38.993, "w": [[38.299, 38.577], [38.577, 38.715], [38.715, 38.993]]}, {"s": 38.993, "e": 40.102, "w": [[38.993, 39.478], [39.478, 39.825], [39.825, 40.102]]}, {"s": 40.102, "e": 41.142, "w": [[40.102, 40.449], [40.449, 40.865], [40.865, 41.142]]}, {"s": 41.142, "e": 41.975, "w": [[41.142, 41.489], [41.489, 41.766], [41.766, 41.975]]}, {"s": 41.975, "e": 42.945, "w": [[41.975, 42.321], [42.321, 42.599], [42.599, 42.945]]}, {"s": 42.945, "e": 43.75, "w": [[42.945, 43.5]]}, {"s": 43.83, "e": 45.87, "w": [[43.83, 44.89], [45.23, 45.49], [45.49, 45.87]]}, {"s": 45.87, "e": 46.45, "w": [[45.87, 46.15], [46.15, 46.29], [46.29, 46.45]]}, {"s": 46.45, "e": 47.03, "w": [[46.45, 47.03]]}, {"s": 47.03, "e": 47.79, "w": [[47.03, 47.25], [47.25, 47.79]]}, {"s": 47.79, "e": 49.27, "w": [[47.79, 48.45], [48.45, 48.91], [48.91, 49.21]]}, {"s": 49.27, "e": 50.766, "w": [[49.27, 49.698], [49.698, 50.018], [50.018, 50.766]]}, {"s": 50.766, "e": 51.835, "w": [[50.766, 50.98], [50.98, 51.301], [51.301, 51.835]]}, {"s": 51.835, "e": 53.53, "w": [[51.835, 52.263], [52.263, 52.797], [52.797, 53.439]]}, {"s": 53.53, "e": 55.205, "w": [[53.53, 53.923], [53.923, 54.35], [54.35, 55.205]]}, {"s": 55.205, "e": 55.74, "w": [[55.205, 55.74]]}, {"s": 55.74, "e": 56.915, "w": [[55.74, 56.06], [56.06, 56.595], [56.595, 56.915]]}, {"s": 56.915, "e": 58.32, "w": [[56.915, 57.343], [57.53, 58.07]]}, {"s": 58.35, "e": 59.036, "w": [[58.35, 58.441], [58.441, 59.036]]}, {"s": 59.036, "e": 59.539, "w": [[59.036, 59.264], [59.264, 59.401], [59.401, 59.539]]}, {"s": 59.539, "e": 60.087, "w": [[59.539, 59.721], [59.721, 59.859], [59.859, 60.087]]}, {"s": 60.087, "e": 60.544, "w": [[60.087, 60.316], [60.316, 60.544]]}, {"s": 60.544, "e": 61.09, "w": [[60.544, 60.819], [60.819, 61.09]]}, {"s": 61.09, "e": 61.39, "w": [[61.09, 61.304]]}, {"s": 61.304, "e": 62.23, "w": [[61.304, 61.99]]}, {"s": 62.23, "e": 63.045, "w": [[62.23, 62.579], [62.579, 63.045]]}, {"s": 63.045, "e": 63.801, "w": [[63.045, 63.335], [63.335, 63.51], [63.51, 63.801]]}, {"s": 63.801, "e": 64.4, "w": [[63.801, 64.15]]}], "ovs": [{"type": "hook", "id": "hook", "s": 0, "d": 2.4}, {"type": "tip", "id": "ov0", "s": 8.68, "d": 3.0, "scale": 1.28, "ox": 35, "oy": 50}, {"type": "stat", "id": "ov1", "s": 23.42, "d": 1.6, "scale": 1.28, "ox": 35, "oy": 50}, {"type": "stat", "id": "ov2", "s": 29.41, "d": 1.4, "scale": 1.28, "ox": 35, "oy": 50}, {"type": "tip", "id": "ov3", "s": 37.26, "d": 3.0, "scale": 1.28, "ox": 35, "oy": 50}, {"type": "tip", "id": "ov4", "s": 45.31, "d": 3.2, "scale": 1.28, "ox": 35, "oy": 50}, {"type": "joke", "id": "ov5", "s": 56.57, "d": 1.6, "scale": 1.2, "ox": 35, "oy": 50}, {"type": "tip", "id": "ov6", "s": 62.26, "d": 2.110000000000234, "scale": 1.28, "ox": 35, "oy": 50}], "dur": 66.57, "main": 64.37000000000023, "zoomEvery": true};
+      const tl = gsap.timeline({ paused: true });
+      // progress bar + live dot
+      tl.fromTo("#progress", { scaleX: 0 }, { scaleX: 1, duration: D.main, ease: "none" }, 0);
+      tl.fromTo("#live-dot", { opacity: 1 }, { opacity: 0.25, duration: 0.6, repeat: Math.max(0, Math.floor(D.dur / 0.6) - 1), yoyo: true, ease: "sine.inOut" }, 0);
+      // jump-cut punch-ins: alternate framing on every cut so cuts read as edits
+      let zoomed = false;
+      if (D.zoomEvery) {
+        D.cuts.forEach((t) => { zoomed = !zoomed; tl.set("#cam", { scale: zoomed ? 1.08 : 1 }, t); });
+      }
+      // captions: pop in, karaoke highlight, hard kill
+      D.caps.forEach((g, gi) => {
+        const el = "#cg" + gi;
+        tl.fromTo(el, { opacity: 0, scale: 0.82, y: 18 }, { opacity: 1, scale: 1, y: 0, duration: 0.14, ease: "back.out(2.2)" }, g.s);
+        g.w.forEach((w, wi) => {
+          const wid = "#cw" + gi + "_" + wi;
+          const isEm = document.querySelector(wid).classList.contains("em");
+          tl.fromTo(wid, { scale: 1 }, { scale: 1.12, color: "#c2301b", duration: 0.08, ease: "power2.out", immediateRender: false }, w[0]);
+          tl.to(wid, { scale: 1, duration: 0.12, ease: "power2.out" }, w[0] + 0.08);
+        });
+        tl.to(el, { opacity: 0, duration: 0.06 }, g.e - 0.06);
+        tl.set(el, { opacity: 0, visibility: "hidden" }, g.e);
+      });
+      // overlays
+      D.ovs.forEach((o) => {
+        const sel = "#" + o.id;
+        if (o.type === "hook") {
+          tl.fromTo(sel + " .hook-kicker", { y: -24 }, { y: 0, duration: 0.3, ease: "power3.out" }, o.s);
+          tl.fromTo(sel + " .hl", { scale: 1.45, rotation: -6 }, { scale: 1, rotation: 0, duration: 0.34, ease: "back.out(1.8)", stagger: 0.12 }, o.s);
+          tl.to(sel + " .hook-in", { y: -60, opacity: 0, duration: 0.3, ease: "power2.in" }, o.s + o.d - 0.32);
+        } else if (o.type === "tip") {
+          tl.fromTo(sel + " .tip-card", { x: -1100 }, { x: 0, duration: 0.42, ease: "power4.out" }, o.s);
+          tl.fromTo(sel + " .tip-badge", { scale: 0.6 }, { scale: 1, duration: 0.3, ease: "back.out(3)" }, o.s + 0.25);
+          tl.to(sel + " .tip-card", { x: 1100, duration: 0.3, ease: "power3.in" }, o.s + o.d - 0.3);
+        } else if (o.type === "stat") {
+          tl.fromTo(sel + " .stat-num", { scale: 0.2, opacity: 0, rotation: -10 }, { scale: 1, opacity: 1, rotation: 0, duration: 0.4, ease: "back.out(2.4)" }, o.s);
+          tl.fromTo(sel + " .stat-sub", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, o.s + 0.2);
+          tl.to(sel + " .stat-card", { scale: 0.6, opacity: 0, duration: 0.25, ease: "power2.in" }, o.s + o.d - 0.25);
+        } else if (o.type === "joke") {
+          tl.fromTo(sel + " .joke span", { scale: 0, rotation: 12 }, { scale: 1, rotation: -5, duration: 0.45, ease: "elastic.out(1, 0.45)" }, o.s);
+          tl.to(sel + " .joke span", { scale: 1.06, duration: 0.25, yoyo: true, repeat: 3, ease: "sine.inOut" }, o.s + 0.45);
+          tl.to(sel + " .joke span", { scale: 0, opacity: 0, duration: 0.2, ease: "power2.in" }, o.s + o.d - 0.2);
+          tl.set("#cam", { transformOrigin: o.ox + "% " + o.oy + "%" }, o.s);
+          tl.fromTo("#cam", { scale: 1 }, { scale: o.scale, duration: 0.18, ease: "power3.out", immediateRender: false }, o.s);
+          tl.to("#cam", { scale: 1, duration: 0.25, ease: "power2.inOut" }, o.s + o.d - 0.25);
+          tl.set("#cam", { transformOrigin: "35% 50%" }, o.s + o.d);
+        } else if (o.type === "label") {
+          tl.fromTo(sel + " .label", { x: -700 }, { x: 0, duration: 0.4, ease: "power4.out" }, o.s);
+          tl.to(sel + " .label", { x: -700, duration: 0.3, ease: "power3.in" }, o.s + o.d - 0.3);
+        } else if (o.type === "zoom") {
+          tl.set("#cam", { transformOrigin: o.ox + "% " + o.oy + "%" }, o.s);
+          tl.fromTo("#cam", { scale: 1 }, { scale: o.scale, duration: 0.2, ease: "power3.out", immediateRender: false }, o.s);
+          tl.to("#cam", { scale: 1, duration: 0.3, ease: "power2.inOut" }, o.s + o.d - 0.3);
+          tl.set("#cam", { transformOrigin: "35% 50%" }, o.s + o.d);
+        }
+      });
+      // end card
+      tl.fromTo("#endcard .end-in", { opacity: 0 }, { opacity: 1, duration: 0.3 }, D.main);
+      tl.fromTo("#endcard .end-l1", { scale: 0, rotation: 10 }, { scale: 1, rotation: -3, duration: 0.5, ease: "back.out(2)" }, D.main + 0.1);
+      tl.fromTo("#endcard .end-l2", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power3.out" }, D.main + 0.35);
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ms">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Cheesecake: Loyang 3 Inci</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #fff1d6; }
+      :root {
+        --cream: #fff1d6; --ink: #2a170c; --tomato: #e4402b; --yolk: #ffcf33; --leaf: #1f7a45; --blue: #3a4fd8;
+      }
+      #root { width: 100%; height: 100%; position: relative; overflow: hidden; font-family: Montserrat, sans-serif; background: var(--cream); }
+      /* background */
+      .bg-dots { position: absolute; inset: 0; background-image: radial-gradient(#e9cf9f 3px, transparent 3.5px); background-size: 46px 46px; opacity: .55; }
+      .header { position: absolute; left: 44px; right: 44px; top: 46px; height: 220px; }
+      .brand { display: flex; align-items: center; justify-content: space-between; }
+      .brand-pill { background: var(--tomato); color: #fff8ec; font-family: "Archivo Black", sans-serif; font-size: 34px; letter-spacing: .03em; padding: 12px 24px 10px; border-radius: 999px; transform: rotate(-2deg); box-shadow: 0 6px 0 #9e2516; }
+      .live { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 26px; color: var(--ink); background: #fff8ec; border: 4px solid var(--ink); padding: 8px 20px; border-radius: 999px; }
+      .live i { width: 16px; height: 16px; border-radius: 50%; background: var(--tomato); display: block; }
+      .headline { margin-top: 26px; font-family: "Archivo Black", sans-serif; font-size: 60px; line-height: 1.05; color: var(--ink); text-transform: uppercase; }
+      .headline .nb { white-space: nowrap; }
+      .headline span { background: linear-gradient(transparent 58%, var(--yolk) 58%, var(--yolk) 92%, transparent 92%); }
+      /* stage: the call grid, framed */
+      .stage-frame { position: absolute; left: 24px; top: 300px; width: 1032px; height: 962px; border-radius: 30px; background: var(--ink); box-shadow: 0 0 0 7px var(--ink), 0 18px 0 7px rgba(42,23,12,.9); }
+      .stage { position: absolute; left: 24px; top: 300px; width: 1032px; height: 962px; overflow: hidden; border-radius: 30px; background: #000; }
+      .cam { position: absolute; inset: 0; transform-origin: 35% 50%; }
+      .src { position: absolute; left: -11.73px; top: -457.36px; width: 1055.45px; height: 1876.36px; object-fit: fill; }
+      .footer { position: absolute; left: 0; width: 1080px; top: 1800px; height: 80px; display: flex; align-items: center; justify-content: center; }
+      .footer-txt { font-family: "Archivo Black", sans-serif; font-size: 30px; color: var(--ink); opacity: .55; letter-spacing: .08em; }
+      .progress-track { position: absolute; left: 60px; width: 960px; top: 1776px; height: 12px; border-radius: 999px; background: rgba(42,23,12,.12); overflow: hidden; }
+      .progress { position: absolute; left: 0; top: 0; height: 12px; width: 960px; background: var(--tomato); transform-origin: 0 50%; border-radius: 999px; }
+      /* captions: under the call grid, on the cream */
+      .caps { position: absolute; left: 0; width: 1080px; top: 1318px; height: 330px; }
+      .capg { position: absolute; left: 60px; right: 120px; top: 0; text-align: center; font-family: "Archivo Black", sans-serif; font-size: 96px; line-height: 1.1; color: var(--ink); text-transform: uppercase; opacity: 0; }
+      .capg .w { display: inline-block; padding: 0 6px; border-radius: 12px; }
+      .capg .w.em { background: var(--yolk); }
+      /* overlays */
+      .ov { position: absolute; inset: 0; pointer-events: none; }
+      .hook-in { position: absolute; left: 60px; right: 60px; top: 520px; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+      .hook-kicker { background: var(--ink); color: var(--yolk); font-weight: 900; font-size: 34px; letter-spacing: .12em; padding: 10px 24px; border-radius: 12px; text-transform: uppercase; }
+      .hook-title { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+      .hook-title .hl { display: block; background: var(--yolk); color: var(--ink); font-family: "Archivo Black", sans-serif; font-size: 92px; line-height: 1; padding: 16px 30px 10px; border-radius: 18px; text-transform: uppercase; box-shadow: 0 10px 0 var(--ink); text-align: center; }
+      .hook-title .hl.long { font-size: 74px; }
+      .hook-title .hl:nth-child(2) { background: var(--tomato); color: #fff8ec; }
+      .pos-top .tip-card, .pos-top .stat-card, .pos-top .label { top: 340px; }
+      .pos-mid .tip-card, .pos-mid .stat-card, .pos-mid .label { top: 700px; }
+      .pos-low .tip-card, .pos-low .stat-card, .pos-low .label { top: 1060px; }
+      .tip-card { position: absolute; left: 44px; right: 44px; display: flex; align-items: stretch; background: #fff8ec; border: 6px solid var(--ink); border-radius: 26px; box-shadow: 0 12px 0 var(--ink); overflow: hidden; }
+      .tip-badge { background: var(--leaf); color: #fff8ec; font-family: "Archivo Black", sans-serif; font-size: 40px; display: flex; align-items: center; padding: 0 26px; letter-spacing: .04em; }
+      .tip-text { padding: 22px 26px; font-weight: 800; font-size: 46px; line-height: 1.12; color: var(--ink); }
+      .stat-card { position: absolute; left: 0; right: 0; display: flex; flex-direction: column; align-items: center; }
+      .stat-num { font-family: "Archivo Black", sans-serif; font-size: 150px; line-height: 1; color: var(--yolk); -webkit-text-stroke: 16px var(--ink); paint-order: stroke fill; text-shadow: 0 12px 0 var(--ink); }
+      .stat-sub { margin-top: 14px; background: var(--ink); color: #fff8ec; font-weight: 900; font-size: 40px; padding: 10px 26px; border-radius: 14px; text-transform: uppercase; letter-spacing: .06em; }
+      .joke { position: absolute; left: 0; right: 0; top: 640px; display: flex; justify-content: center; }
+      .joke span { display: block; background: var(--tomato); color: #fff8ec; font-family: "Archivo Black", sans-serif; font-size: 74px; padding: 16px 30px 10px; border-radius: 20px; border: 6px solid var(--ink); box-shadow: 0 12px 0 var(--ink); text-transform: uppercase; transform: rotate(-5deg); text-align: center; max-width: 840px; line-height: 1.05; }
+      .pos-low .joke { top: 1040px; }
+      .pos-top .joke { top: 380px; }
+      .label { position: absolute; left: 44px; display: flex; align-items: center; gap: 16px; background: var(--ink); color: #fff8ec; font-weight: 900; font-size: 42px; padding: 16px 30px; border-radius: 999px; }
+      .label .dot { width: 20px; height: 20px; border-radius: 50%; background: var(--yolk); display: block; }
+      .end-in { position: absolute; left: 0; right: 0; top: 0; bottom: 0; background: rgba(255,241,214,.94); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; }
+      .end-l1 { background: var(--tomato); color: #fff8ec; font-family: "Archivo Black", sans-serif; font-size: 104px; padding: 22px 44px 14px; border-radius: 999px; box-shadow: 0 12px 0 #9e2516; transform: rotate(-3deg); }
+      .end-l2 { font-weight: 900; font-size: 48px; color: var(--ink); text-align: center; max-width: 900px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="30.05" data-width="1080" data-height="1920">
+      <div class="bg-dots"></div>
+      <div class="header">
+        <div class="brand"><div class="brand-pill">TASTY TUESDAY</div><div class="live"><i id="live-dot"></i>LIVE MASAK</div></div>
+        <div class="headline"><span>Cheesecake: saiz loyang yang ngam</span></div>
+      </div>
+      <div class="stage-frame"></div>
+      <div class="stage">
+        <div class="cam" id="cam" data-layout-allow-overflow>
+        <video id="v0" class="clip src" src="assets/footage/src-04745.80-04797.00.mp4" data-start="0.000" data-duration="2.400" data-media-start="45.200" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v1" class="clip src" src="assets/footage/src-04745.80-04797.00.mp4" data-start="2.400" data-duration="1.380" data-media-start="1.000" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v2" class="clip src" src="assets/footage/src-04745.80-04797.00.mp4" data-start="3.780" data-duration="3.200" data-media-start="2.700" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v3" class="clip src" src="assets/footage/src-04745.80-04797.00.mp4" data-start="6.980" data-duration="0.680" data-media-start="7.620" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v4" class="clip src" src="assets/footage/src-04745.80-04797.00.mp4" data-start="7.660" data-duration="1.300" data-media-start="10.700" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v5" class="clip src" src="assets/footage/src-04745.80-04797.00.mp4" data-start="8.960" data-duration="6.950" data-media-start="21.700" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v6" class="clip src" src="assets/footage/src-04745.80-04797.00.mp4" data-start="15.910" data-duration="1.540" data-media-start="30.510" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v7" class="clip src" src="assets/footage/src-04745.80-04797.00.mp4" data-start="17.450" data-duration="2.000" data-media-start="35.230" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v8" class="clip src" src="assets/footage/src-04745.80-04797.00.mp4" data-start="19.450" data-duration="8.400" data-media-start="41.800" data-track-index="0" playsinline data-has-audio="true"></video>
+        <video id="v-tail" class="clip src" src="assets/footage/src-04745.80-04797.00.mp4" data-start="27.850" data-duration="2.200" data-media-start="48.950" data-track-index="1" playsinline muted></video>
+        </div>
+      </div>
+      <div class="progress-track"><div class="progress" id="progress"></div></div>
+      <div class="footer"><div class="footer-txt">#TASTYTUESDAY</div></div>
+      <div class="caps" id="caps">
+      <div class="capg" id="cg0"><span class="w" id="cw0_0">Kalau</span> <span class="w" id="cw0_1">2</span></div>
+      <div class="capg" id="cg1"><span class="w" id="cw1_0">Kalau</span></div>
+      <div class="capg" id="cg2"><span class="w em" id="cw2_0">inci</span> <span class="w" id="cw2_1">tu</span></div>
+      <div class="capg" id="cg3"><span class="w" id="cw3_0">2</span></div>
+      <div class="capg" id="cg4"><span class="w" id="cw4_0">penuh,</span></div>
+      <div class="capg" id="cg5"><span class="w em" id="cw5_0">inci</span> <span class="w" id="cw5_1">tu</span> <span class="w" id="cw5_2">penuh,</span></div>
+      <div class="capg" id="cg6"><span class="w" id="cw6_0">tak</span></div>
+      <div class="capg" id="cg7"><span class="w" id="cw7_0">tak</span></div>
+      <div class="capg" id="cg8"><span class="w em" id="cw8_0">muat</span></div>
+      <div class="capg" id="cg9"><span class="w em" id="cw9_0">muat.</span></div>
+      <div class="capg" id="cg10"><span class="w" id="cw10_0">Cheesecake</span> <span class="w" id="cw10_1">hari</span> <span class="w" id="cw10_2">tu</span></div>
+      <div class="capg" id="cg11"><span class="w" id="cw11_0">buat</span> <span class="w" id="cw11_1">kat</span> <span class="w" id="cw11_2">rumah</span></div>
+      <div class="capg" id="cg12"><span class="w" id="cw12_0">Kak</span> <span class="w" id="cw12_1">Min,</span></div>
+      <div class="capg" id="cg13"><span class="w" id="cw13_0">berapa</span> <span class="w" id="cw13_1">kilo?</span></div>
+      <div class="capg" id="cg14"><span class="w" id="cw14_0">Berapa</span> <span class="w" id="cw14_1">gram?</span></div>
+      <div class="capg" id="cg15"><span class="w em" id="cw15_0">500</span></div>
+      <div class="capg" id="cg16"><span class="w" id="cw16_0">Dia</span> <span class="w" id="cw16_1">punya</span> <span class="w em" id="cw16_2">cream</span></div>
+      <div class="capg" id="cg17"><span class="w em" id="cw17_0">cheese</span> <span class="w em" id="cw17_1">500</span></div>
+      <div class="capg" id="cg18"><span class="w" id="cw18_0">You</span> <span class="w" id="cw18_1">buat</span> <span class="w" id="cw18_2">berapa</span></div>
+      <div class="capg" id="cg19"><span class="w" id="cw19_0">loyang</span> <span class="w" id="cw19_1">punya?</span></div>
+      <div class="capg" id="cg20"><span class="w" id="cw20_0">8</span> <span class="w em" id="cw20_1">inci.</span></div>
+      <div class="capg" id="cg21"><span class="w" id="cw21_0">8</span> <span class="w em" id="cw21_1">inci.</span></div>
+      <div class="capg" id="cg22"><span class="w em" id="cw22_0">Diameter.</span></div>
+      <div class="capg" id="cg23"><span class="w em" id="cw23_0">Tinggi</span> <span class="w" id="cw23_1">3</span> <span class="w em" id="cw23_2">inci</span></div>
+      <div class="capg" id="cg24"><span class="w em" id="cw24_0">Bulat</span> <span class="w" id="cw24_1">kan?</span></div>
+      <div class="capg" id="cg25"><span class="w em" id="cw25_0">Bulat.</span></div>
+      <div class="capg" id="cg26"><span class="w" id="cw26_0">Sebab</span> <span class="w" id="cw26_1">saya</span> <span class="w" id="cw26_2">kat</span></div>
+      <div class="capg" id="cg27"><span class="w" id="cw27_0">rumah</span> <span class="w" id="cw27_1">saya</span> <span class="w" id="cw27_2">ada</span></div>
+      <div class="capg" id="cg28"><span class="w" id="cw28_0">2</span> <span class="w em" id="cw28_1">inci</span> <span class="w" id="cw28_2">dengan</span></div>
+      <div class="capg" id="cg29"><span class="w" id="cw29_0">3</span> <span class="w em" id="cw29_1">inci.</span></div>
+      <div class="capg" id="cg30"><span class="w" id="cw30_0">Kena</span> <span class="w" id="cw30_1">3</span> <span class="w em" id="cw30_2">inci</span></div>
+      <div class="capg" id="cg31"><span class="w" id="cw31_0">baru</span> <span class="w" id="cw31_1">dia</span> <span class="w" id="cw31_2">ngam-ngam</span></div>
+      </div>
+    <div id="hook" class="clip ov" data-start="0" data-duration="2.4" data-track-index="3"><div class="hook-in"><div class="hook-kicker">Tips cheesecake</div><div class="hook-title"><span class=hl style='font-size:81px'>Loyang 2 inci</span><span class=hl style='font-size:92px'>tak muat!</span></div></div></div>
+    <div id="ov0" class="clip ov pos-top" data-start="8.56" data-duration="1.6" data-track-index="4"><div class="stat-card"><div class="stat-num">500g</div><div class="stat-sub">cream cheese</div></div></div>
+    <div id="ov1" class="clip ov pos-top" data-start="11.96" data-duration="1.8" data-track-index="5"><div class="stat-card"><div class="stat-num">8 INCI</div><div class="stat-sub">loyang bulat</div></div></div>
+    <div id="ov2" class="clip ov pos-top" data-start="16.2" data-duration="1.6" data-track-index="6"><div class="stat-card"><div class="stat-num">3 INCI</div><div class="stat-sub">tinggi loyang</div></div></div>
+    <div id="ov3" class="clip ov pos-low" data-start="0.2" data-duration="3.6" data-track-index="4"><div class="tip-card"><div class="tip-badge">TIP</div><div class="tip-text">Loyang 2 inci tak muat. Guna 3 inci, baru ngam-ngam</div></div></div>
+    <div id="endcard" class="clip ov" data-start="27.850" data-duration="2.200" data-track-index="7"><div class="end-in" data-layout-allow-occlusion><div class="end-l1">TASTY TUESDAY</div><div class="end-l2">Masak sama-sama, gelak sama-sama</div></div></div>
+    <audio id="sfx0" src="assets/sfx/impact-bass-1.mp3" data-start="0.020" data-duration="2.100" data-track-index="20" data-volume="0.45"></audio>
+    <audio id="sfx1" src="assets/sfx/ding.mp3" data-start="0.200" data-duration="1.440" data-track-index="21" data-volume="0.35"></audio>
+    <audio id="sfx2" src="assets/sfx/whoosh.mp3" data-start="2.050" data-duration="0.570" data-track-index="22" data-volume="0.4"></audio>
+    <audio id="sfx3" src="assets/sfx/ping.mp3" data-start="8.560" data-duration="1.320" data-track-index="23" data-volume="0.35"></audio>
+    <audio id="sfx4" src="assets/sfx/ping.mp3" data-start="11.960" data-duration="1.320" data-track-index="20" data-volume="0.35"></audio>
+    <audio id="sfx5" src="assets/sfx/ping.mp3" data-start="16.200" data-duration="1.320" data-track-index="21" data-volume="0.35"></audio>
+    <audio id="sfx6" src="assets/sfx/sparkle.mp3" data-start="27.950" data-duration="1.800" data-track-index="22" data-volume="0.35"></audio>
+    </div>
+    <script>
+      const D = {"cuts": [2.4, 3.78, 6.98, 7.66, 8.96, 15.91, 17.45, 19.45], "caps": [{"s": 0.03, "e": 0.368, "w": [[0.03, 0.23], [0.23, 0.43]]}, {"s": 0.368, "e": 0.668, "w": [[0.368, 0.81]]}, {"s": 0.43, "e": 0.81, "w": [[0.43, 0.63], [0.63, 0.91]]}, {"s": 0.81, "e": 1.11, "w": [[0.81, 0.987]]}, {"s": 0.91, "e": 1.21, "w": [[0.91, 1.63]]}, {"s": 0.987, "e": 1.63, "w": [[0.987, 1.34], [1.34, 1.517], [1.517, 2.047]]}, {"s": 1.63, "e": 2.047, "w": [[1.63, 2.09]]}, {"s": 2.047, "e": 2.347, "w": [[2.047, 2.312]]}, {"s": 2.09, "e": 2.39, "w": [[2.09, 2.37]]}, {"s": 2.312, "e": 2.612, "w": [[2.312, 25.603]]}, {"s": 2.48, "e": 3.78, "w": [[2.48, 3.27], [3.27, 3.586], [3.586, 3.744]]}, {"s": 3.78, "e": 4.609, "w": [[3.78, 3.977], [3.977, 4.214], [4.214, 4.609]]}, {"s": 4.609, "e": 5.162, "w": [[4.609, 4.846], [4.846, 5.162]]}, {"s": 5.162, "e": 6.031, "w": [[5.162, 5.636], [5.636, 6.031]]}, {"s": 6.031, "e": 7.1, "w": [[6.031, 6.505], [6.505, 6.9]]}, {"s": 7.1, "e": 7.78, "w": [[7.1, 7.54]]}, {"s": 7.78, "e": 8.46, "w": [[7.78, 8.0], [8.0, 8.26], [8.26, 8.46]]}, {"s": 8.46, "e": 9.06, "w": [[8.46, 8.68], [8.68, 8.9]]}, {"s": 9.06, "e": 10.856, "w": [[9.06, 9.474], [9.474, 10.027], [10.027, 10.856]]}, {"s": 10.856, "e": 12.513, "w": [[10.856, 11.684], [11.684, 12.513]]}, {"s": 12.513, "e": 13.48, "w": [[12.513, 12.789], [12.789, 13.48]]}, {"s": 13.48, "e": 14.447, "w": [[13.48, 13.756], [13.756, 14.447]]}, {"s": 14.447, "e": 15.94, "w": [[14.447, 15.69]]}, {"s": 16.03, "e": 17.48, "w": [[16.03, 16.63], [16.63, 16.83], [16.83, 17.23]]}, {"s": 17.57, "e": 18.566, "w": [[17.57, 18.123], [18.123, 18.566]]}, {"s": 18.566, "e": 19.45, "w": [[18.566, 19.23]]}, {"s": 19.45, "e": 20.48, "w": [[19.45, 19.862], [19.862, 20.215], [20.215, 20.48]]}, {"s": 20.48, "e": 21.54, "w": [[20.48, 20.922], [20.922, 21.275], [21.275, 21.54]]}, {"s": 21.54, "e": 22.6, "w": [[21.54, 21.717], [21.717, 22.07], [22.07, 22.6]]}, {"s": 22.6, "e": 23.147, "w": [[22.6, 22.777], [22.777, 22.897]]}, {"s": 25.603, "e": 26.487, "w": [[25.603, 25.957], [25.957, 26.133], [26.133, 26.487]]}, {"s": 26.487, "e": 28.1, "w": [[26.487, 26.84], [26.84, 27.105], [27.105, 27.85]]}], "ovs": [{"type": "hook", "id": "hook", "s": 0, "d": 2.4}, {"type": "stat", "id": "ov0", "s": 8.56, "d": 1.6, "scale": 1.28, "ox": 35, "oy": 50}, {"type": "stat", "id": "ov1", "s": 11.96, "d": 1.8, "scale": 1.28, "ox": 35, "oy": 50}, {"type": "stat", "id": "ov2", "s": 16.2, "d": 1.6, "scale": 1.28, "ox": 35, "oy": 50}, {"type": "tip", "id": "ov3", "s": 0.2, "d": 3.6, "scale": 1.28, "ox": 35, "oy": 50}], "dur": 30.05, "main": 27.850000000000364, "zoomEvery": true};
+      const tl = gsap.timeline({ paused: true });
+      // progress bar + live dot
+      tl.fromTo("#progress", { scaleX: 0 }, { scaleX: 1, duration: D.main, ease: "none" }, 0);
+      tl.fromTo("#live-dot", { opacity: 1 }, { opacity: 0.25, duration: 0.6, repeat: Math.max(0, Math.floor(D.dur / 0.6) - 1), yoyo: true, ease: "sine.inOut" }, 0);
+      // jump-cut punch-ins: alternate framing on every cut so cuts read as edits
+      let zoomed = false;
+      if (D.zoomEvery) {
+        D.cuts.forEach((t) => { zoomed = !zoomed; tl.set("#cam", { scale: zoomed ? 1.08 : 1 }, t); });
+      }
+      // captions: pop in, karaoke highlight, hard kill
+      D.caps.forEach((g, gi) => {
+        const el = "#cg" + gi;
+        tl.fromTo(el, { opacity: 0, scale: 0.82, y: 18 }, { opacity: 1, scale: 1, y: 0, duration: 0.14, ease: "back.out(2.2)" }, g.s);
+        g.w.forEach((w, wi) => {
+          const wid = "#cw" + gi + "_" + wi;
+          const isEm = document.querySelector(wid).classList.contains("em");
+          tl.fromTo(wid, { scale: 1 }, { scale: 1.12, color: "#c2301b", duration: 0.08, ease: "power2.out", immediateRender: false }, w[0]);
+          tl.to(wid, { scale: 1, duration: 0.12, ease: "power2.out" }, w[0] + 0.08);
+        });
+        tl.to(el, { opacity: 0, duration: 0.06 }, g.e - 0.06);
+        tl.set(el, { opacity: 0, visibility: "hidden" }, g.e);
+      });
+      // overlays
+      D.ovs.forEach((o) => {
+        const sel = "#" + o.id;
+        if (o.type === "hook") {
+          tl.fromTo(sel + " .hook-kicker", { y: -24 }, { y: 0, duration: 0.3, ease: "power3.out" }, o.s);
+          tl.fromTo(sel + " .hl", { scale: 1.45, rotation: -6 }, { scale: 1, rotation: 0, duration: 0.34, ease: "back.out(1.8)", stagger: 0.12 }, o.s);
+          tl.to(sel + " .hook-in", { y: -60, opacity: 0, duration: 0.3, ease: "power2.in" }, o.s + o.d - 0.32);
+        } else if (o.type === "tip") {
+          tl.fromTo(sel + " .tip-card", { x: -1100 }, { x: 0, duration: 0.42, ease: "power4.out" }, o.s);
+          tl.fromTo(sel + " .tip-badge", { scale: 0.6 }, { scale: 1, duration: 0.3, ease: "back.out(3)" }, o.s + 0.25);
+          tl.to(sel + " .tip-card", { x: 1100, duration: 0.3, ease: "power3.in" }, o.s + o.d - 0.3);
+        } else if (o.type === "stat") {
+          tl.fromTo(sel + " .stat-num", { scale: 0.2, opacity: 0, rotation: -10 }, { scale: 1, opacity: 1, rotation: 0, duration: 0.4, ease: "back.out(2.4)" }, o.s);
+          tl.fromTo(sel + " .stat-sub", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, o.s + 0.2);
+          tl.to(sel + " .stat-card", { scale: 0.6, opacity: 0, duration: 0.25, ease: "power2.in" }, o.s + o.d - 0.25);
+        } else if (o.type === "joke") {
+          tl.fromTo(sel + " .joke span", { scale: 0, rotation: 12 }, { scale: 1, rotation: -5, duration: 0.45, ease: "elastic.out(1, 0.45)" }, o.s);
+          tl.to(sel + " .joke span", { scale: 1.06, duration: 0.25, yoyo: true, repeat: 3, ease: "sine.inOut" }, o.s + 0.45);
+          tl.to(sel + " .joke span", { scale: 0, opacity: 0, duration: 0.2, ease: "power2.in" }, o.s + o.d - 0.2);
+          tl.set("#cam", { transformOrigin: o.ox + "% " + o.oy + "%" }, o.s);
+          tl.fromTo("#cam", { scale: 1 }, { scale: o.scale, duration: 0.18, ease: "power3.out", immediateRender: false }, o.s);
+          tl.to("#cam", { scale: 1, duration: 0.25, ease: "power2.inOut" }, o.s + o.d - 0.25);
+          tl.set("#cam", { transformOrigin: "35% 50%" }, o.s + o.d);
+        } else if (o.type === "label") {
+          tl.fromTo(sel + " .label", { x: -700 }, { x: 0, duration: 0.4, ease: "power4.out" }, o.s);
+          tl.to(sel + " .label", { x: -700, duration: 0.3, ease: "power3.in" }, o.s + o.d - 0.3);
+        } else if (o.type === "zoom") {
+          tl.set("#cam", { transformOrigin: o.ox + "% " + o.oy + "%" }, o.s);
+          tl.fromTo("#cam", { scale: 1 }, { scale: o.scale, duration: 0.2, ease: "power3.out", immediateRender: false }, o.s);
+          tl.to("#cam", { scale: 1, duration: 0.3, ease: "power2.inOut" }, o.s + o.d - 0.3);
+          tl.set("#cam", { transformOrigin: "35% 50%" }, o.s + o.d);
+        }
+      });
+      // end card
+      tl.fromTo("#endcard .end-in", { opacity: 0 }, { opacity: 1, duration: 0.3 }, D.main);
+      tl.fromTo("#endcard .end-l1", { scale: 0, rotation: 10 }, { scale: 1, rotation: -3, duration: 0.5, ease: "back.out(2)" }, D.main + 0.1);
+      tl.fromTo("#endcard .end-l2", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power3.out" }, D.main + 0.35);
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
