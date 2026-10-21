@@ -181,14 +181,14 @@
    "at": 820.2,
    "dur": 4.0,
    "kicker": "Menu 1 · Kak Salma",
-   "text": "Paste Sup"
+   "text": "Pes Sup"
   },
   {
    "type": "lower",
    "at": 849.2,
    "dur": 4.0,
    "name": "Kak Salma",
-   "role": "Paste Sup"
+   "role": "Pes Sup"
   },
   {
    "type": "label",
@@ -267,7 +267,7 @@
    "at": 1320.0,
    "dur": 5.0,
    "title": "BONUS",
-   "text": "Paste ni boleh [perap ayam bakar] juga!"
+   "text": "Pes ni boleh [perap ayam bakar] juga!"
   },
   {
    "type": "chapter",
@@ -337,7 +337,7 @@
    "at": 820.4,
    "until": 1392.8,
    "kicker": "Menu 1 · Kak Salma",
-   "text": "Paste Sup",
+   "text": "Pes Sup",
    "apps": [
     "THERMOMIX",
     "COOVEN COOKER"

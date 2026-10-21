@@ -25,7 +25,7 @@ Cara edit:
 
 [reels.o03] 0:12.8 KAD MENU
   num = MENU 1 · KAK SALMA
-  text = Paste Sup
+  text = Pes Sup
   apps = THERMOMIX | COOVEN
 
 [reels.o04] 0:19.5 HASIL
@@ -73,17 +73,17 @@ Cara edit:
   l3 = FOLLOW + SHARE
 
 
-### Tasty Tuesday EP3 · Menu 1 · Paste Sup Kak Salma  ·  0:51.4
+### Tasty Tuesday EP3 · Menu 1 · Pes Sup Kak Salma  ·  0:51.4
 
 
 [menu-1-paste-sup.o00] 0:00.2 HOOK
-  kicker = Paste Sup Homemade
+  kicker = Pes Sup Homemade
   text = BAWANG 1KG SEKALI HARUNG!
   highlight = 1KG
 
 [menu-1-paste-sup.o01] 0:11.4 KAD MENU
   num = MENU 1 · KAK SALMA
-  text = Paste Sup
+  text = Pes Sup
   apps = THERMOMIX | COOVEN
 
 [menu-1-paste-sup.o02] 0:14.7 TIP
@@ -113,7 +113,7 @@ Cara edit:
   sub = Kering, tak melepek
 
 [menu-1-paste-sup.g09] 0:48.9 KAD OUTRO
-  l1 = PASTE SUP
+  l1 = PES SUP
   l2 = Thermomix blend × Cooven masak
   l3 = FOLLOW + SHARE
 
@@ -193,7 +193,7 @@ Cara edit:
   text = Berus [darah hitam] perut ikan guna berus gigi khas!
 
 [menu-3-siakap-stim.o06] 0:38.4 LAWAK
-  text = Sahabat kamceng!
+  text = Sahabat kamching!
 
 [menu-3-siakap-stim.o07] 0:41.6 LABEL
   title = SAMBUNG
@@ -303,16 +303,16 @@ Cara edit:
 
 [youtube-full.o08] 2:52.6 BAB
   kicker = Menu 1 · Kak Salma
-  text = Paste Sup
+  text = Pes Sup
 
 [youtube-full.o78] 2:52.8 PANEL 'SEDANG DIMASAK'
   kicker = Menu 1 · Kak Salma
-  text = Paste Sup
+  text = Pes Sup
   apps = THERMOMIX | COOVEN COOKER
 
 [youtube-full.o09] 3:12.2 NAMA
   name = Kak Salma
-  role = Paste Sup
+  role = Pes Sup
 
 [youtube-full.o10] 3:24.0 LABEL
   title = BUAT BANYAK?
@@ -355,7 +355,7 @@ Cara edit:
 
 [youtube-full.o20] 9:18.8 TIP
   title = BONUS
-  text = Paste ni boleh [perap ayam bakar] juga!
+  text = Pes ni boleh [perap ayam bakar] juga!
 
 [youtube-full.o21] 9:54.4 BAB
   kicker = Menu 2 · Piah
@@ -429,7 +429,7 @@ Cara edit:
   text = Lebih kurang [1 liter] — bawah paras tanda.
 
 [youtube-full.o36] 17:32.4 LAWAK
-  text = Sahabat kamceng!
+  text = Sahabat kamching!
 
 [youtube-full.o37] 18:10.1 FAKTA
   title = DAPUR KECIL?
@@ -465,7 +465,7 @@ Cara edit:
 
 [youtube-full.o44] 22:48.4 FAKTA
   title = TAHU TAK?
-  text = Orang Indonesia panggil [onde-onde].
+  text = Orang Indonesia panggil [ondol-ondol].
 
 [youtube-full.o45] 23:22.0 TIP
   title = BETTER TOGETHER
@@ -498,7 +498,7 @@ Cara edit:
 [youtube-full.o82] 26:29.0 PANEL 'SEDANG DIMASAK'
   kicker = Hasil & tips akhir
   text = 4 Menu Siap!
-  apps = PASTE SUP | RED VELVET | SIAKAP · UBI
+  apps = PES SUP | RED VELVET | SIAKAP · UBI
 
 [youtube-full.o52] 26:39.9 LAWAK
   text = Red... red... red?!
@@ -508,7 +508,7 @@ Cara edit:
   sub = Red velvet siap
 
 [youtube-full.o54] 27:45.9 TIP
-  title = PASTE DAH GARING?
+  title = PES DAH GARING?
   text = Tengok — dah masak bila [berbiji, tak bergumpal].
 
 [youtube-full.o55] 29:30.0 TIP
@@ -516,12 +516,12 @@ Cara edit:
   text = Beginner? Sapu frosting guna [pisau] je!
 
 [youtube-full.o56] 30:30.9 TIP
-  title = TIP DEKOR
+  title = TIP DECOR
   text = Tabur [crumbs] red velvet — sembunyi segala cacat-cela!
 
 [youtube-full.o57] 31:30.1 TIP
   title = MUDAH
-  text = Air ikan? [Jongkit tray] je, tak payah ke sinki.
+  text = Air ikan? [Jongket tray] je, tak payah ke sinki.
 
 [youtube-full.o58] 32:15.1 BAHAN
   title = Sos curah siakap
@@ -551,7 +551,7 @@ Cara edit:
 
 [youtube-full.o65] 39:29.1 HASIL
   text = SIAP!
-  sub = Paste sup kering, tak melepek
+  sub = Pes sup kering, tak melepek
 
 [youtube-full.o66] 39:45.3 TIP
   title = TIP JIMAT

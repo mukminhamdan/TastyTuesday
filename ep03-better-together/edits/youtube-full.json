@@ -373,14 +373,14 @@
    "at": 820.2,
    "dur": 4.0,
    "kicker": "Menu 1 · Kak Salma",
-   "text": "Paste Sup"
+   "text": "Pes Sup"
   },
   {
    "type": "lower",
    "at": 849.2,
    "dur": 4.0,
    "name": "Kak Salma",
-   "role": "Paste Sup"
+   "role": "Pes Sup"
   },
   {
    "type": "label",
@@ -459,7 +459,7 @@
    "at": 1320.0,
    "dur": 5.0,
    "title": "BONUS",
-   "text": "Paste ni boleh [perap ayam bakar] juga!"
+   "text": "Pes ni boleh [perap ayam bakar] juga!"
   },
   {
    "type": "chapter",
@@ -573,7 +573,7 @@
    "type": "joke",
    "at": 1991.0,
    "dur": 3.0,
-   "text": "Sahabat kamceng!",
+   "text": "Sahabat kamching!",
    "sfx": "pop"
   },
   {
@@ -632,7 +632,7 @@
    "at": 2340.8,
    "dur": 4.5,
    "title": "TAHU TAK?",
-   "text": "Orang Indonesia panggil [onde-onde]."
+   "text": "Orang Indonesia panggil [ondol-ondol]."
   },
   {
    "type": "tip",
@@ -703,7 +703,7 @@
    "type": "tip",
    "at": 2831.6,
    "dur": 6.0,
-   "title": "PASTE DAH GARING?",
+   "title": "PES DAH GARING?",
    "text": "Tengok — dah masak bila [berbiji, tak bergumpal]."
   },
   {
@@ -717,7 +717,7 @@
    "type": "tip",
    "at": 3105.3,
    "dur": 6.0,
-   "title": "TIP DEKOR",
+   "title": "TIP DECOR",
    "text": "Tabur [crumbs] red velvet — sembunyi segala cacat-cela!",
    "sfx": "sparkle"
   },
@@ -726,7 +726,7 @@
    "at": 3196.0,
    "dur": 5.0,
    "title": "MUDAH",
-   "text": "Air ikan? [Jongkit tray] je, tak payah ke sinki."
+   "text": "Air ikan? [Jongket tray] je, tak payah ke sinki."
   },
   {
    "type": "ingredients",
@@ -794,7 +794,7 @@
    "at": 4127.3,
    "dur": 3.0,
    "text": "SIAP!",
-   "sub": "Paste sup kering, tak melepek"
+   "sub": "Pes sup kering, tak melepek"
   },
   {
    "type": "tip",
@@ -895,7 +895,7 @@
    "at": 820.4,
    "until": 1392.8,
    "kicker": "Menu 1 · Kak Salma",
-   "text": "Paste Sup",
+   "text": "Pes Sup",
    "apps": [
     "THERMOMIX",
     "COOVEN COOKER"
@@ -945,7 +945,7 @@
    "kicker": "Hasil & tips akhir",
    "text": "4 Menu Siap!",
    "apps": [
-    "PASTE SUP",
+    "PES SUP",
     "RED VELVET",
     "SIAKAP · UBI"
    ],

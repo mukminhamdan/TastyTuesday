@@ -1,6 +1,6 @@
 {
  "id": "menu-1-paste-sup",
- "title": "Tasty Tuesday EP3 · Menu 1 · Paste Sup Kak Salma",
+ "title": "Tasty Tuesday EP3 · Menu 1 · Pes Sup Kak Salma",
  "format": "vertical",
  "bug": "MENU 1",
  "tighten": {
@@ -61,7 +61,7 @@
   {
    "gfx": "outro",
    "dur": 2.5,
-   "l1": "PASTE SUP",
+   "l1": "PES SUP",
    "l2": "Thermomix blend × Cooven masak",
    "l3": "FOLLOW + SHARE",
    "sfx": "chime"
@@ -72,7 +72,7 @@
    "type": "hook",
    "at": 1272.6,
    "dur": 3.2,
-   "kicker": "Paste Sup Homemade",
+   "kicker": "Pes Sup Homemade",
    "text": "BAWANG 1KG SEKALI HARUNG!",
    "highlight": "1KG",
    "y": 230
@@ -82,7 +82,7 @@
    "at": 849.1,
    "dur": 3.0,
    "num": "MENU 1 · KAK SALMA",
-   "text": "Paste Sup",
+   "text": "Pes Sup",
    "apps": [
     "THERMOMIX",
     "COOVEN"

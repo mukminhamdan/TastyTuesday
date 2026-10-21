@@ -201,7 +201,7 @@
    "type": "tip",
    "at": 2831.6,
    "dur": 6.0,
-   "title": "PASTE DAH GARING?",
+   "title": "PES DAH GARING?",
    "text": "Tengok — dah masak bila [berbiji, tak bergumpal]."
   },
   {
@@ -215,7 +215,7 @@
    "type": "tip",
    "at": 3105.3,
    "dur": 6.0,
-   "title": "TIP DEKOR",
+   "title": "TIP DECOR",
    "text": "Tabur [crumbs] red velvet — sembunyi segala cacat-cela!",
    "sfx": "sparkle"
   },
@@ -224,7 +224,7 @@
    "at": 3196.0,
    "dur": 5.0,
    "title": "MUDAH",
-   "text": "Air ikan? [Jongkit tray] je, tak payah ke sinki."
+   "text": "Air ikan? [Jongket tray] je, tak payah ke sinki."
   },
   {
    "type": "ingredients",
@@ -292,7 +292,7 @@
    "at": 4127.3,
    "dur": 3.0,
    "text": "SIAP!",
-   "sub": "Paste sup kering, tak melepek"
+   "sub": "Pes sup kering, tak melepek"
   },
   {
    "type": "tip",
@@ -383,7 +383,7 @@
    "kicker": "Hasil & tips akhir",
    "text": "4 Menu Siap!",
    "apps": [
-    "PASTE SUP",
+    "PES SUP",
     "RED VELVET",
     "SIAKAP · UBI"
    ],

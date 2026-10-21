@@ -1,4 +1,4 @@
-# Tasty Tuesday EP3 · Menu 1 · Paste Sup Kak Salma
+# Tasty Tuesday EP3 · Menu 1 · Pes Sup Kak Salma
 
 Duration: 51.4s (0.9 min), 17 clips
 
