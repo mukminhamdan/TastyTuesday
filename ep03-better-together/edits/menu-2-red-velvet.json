@@ -1,0 +1,225 @@
+{
+ "id": "menu-2-red-velvet",
+ "title": "Tasty Tuesday EP3 · Menu 2 · Red Velvet Cupcake",
+ "format": "vertical",
+ "bug": "MENU 2",
+ "tighten": {
+  "max_gap": 0.4,
+  "pad": 0.08
+ },
+ "jump_zoom": 1.1,
+ "origin": "50% 45%",
+ "bgm": {
+  "volume": 0.05
+ },
+ "segments": [
+  {
+   "in": 1660.2,
+   "out": 1669.1,
+   "note": "HOOK glow tanpa preheat"
+  },
+  {
+   "in": 1409.4,
+   "out": 1418.6,
+   "note": "red velvet cupcake, mode oven"
+  },
+  {
+   "in": 1424.5,
+   "out": 1433.0,
+   "note": "adunan blend dalam Thermomix"
+  },
+  {
+   "in": 1447.2,
+   "out": 1454.3,
+   "note": "satu lagi bowl frosting"
+  },
+  {
+   "in": 1490.9,
+   "out": 1500.7,
+   "note": "penuhkan, 14 cawan"
+  },
+  {
+   "in": 1503.1,
+   "out": 1510.0,
+   "note": "JOKE OCD"
+  },
+  {
+   "in": 1517.2,
+   "out": 1524.6,
+   "note": "16 cupcake"
+  },
+  {
+   "in": 1541.4,
+   "out": 1547.3,
+   "note": "tri quarter"
+  },
+  {
+   "in": 1552.8,
+   "out": 1569.7,
+   "note": "menyesal, satu sudu cukup"
+  },
+  {
+   "in": 1622.0,
+   "out": 1636.0,
+   "note": "cupcake kecil 15 minit"
+  },
+  {
+   "in": 1637.1,
+   "out": 1650.8,
+   "note": "suhu 145"
+  },
+  {
+   "in": 2734.0,
+   "out": 2748.2,
+   "note": "JOKE red red red, lupa cek"
+  },
+  {
+   "in": 2748.9,
+   "out": 2767.3,
+   "note": "RESULT cucuk cantik"
+  },
+  {
+   "in": 2972.4,
+   "out": 2981.2,
+   "note": "tak reti frosting, nozzle"
+  },
+  {
+   "in": 2986.4,
+   "out": 3000.3,
+   "note": "beginners pakai pisau"
+  },
+  {
+   "in": 3019.6,
+   "out": 3027.0,
+   "note": "ambil satu jadikan crumbs"
+  },
+  {
+   "in": 3036.8,
+   "out": 3048.3,
+   "note": "frosting thermomix, pisau"
+  },
+  {
+   "in": 3105.2,
+   "out": 3116.1,
+   "note": "TIP crumbs cacat-cela"
+  },
+  {
+   "in": 3741.7,
+   "out": 3749.8,
+   "note": "JOKE jangan cabar, cari nozzle"
+  },
+  {
+   "gfx": "outro",
+   "dur": 3.0,
+   "l1": "RED VELVET",
+   "l2": "Thermomix adun × Cooven bakar",
+   "l3": "FOLLOW + SHARE",
+   "sfx": "chime"
+  }
+ ],
+ "overlays": [
+  {
+   "type": "hook",
+   "at": 1660.4,
+   "dur": 3.6,
+   "kicker": "Red Velvet Cupcake",
+   "text": "15 MINIT TANPA PREHEAT!",
+   "highlight": "15 MINIT",
+   "y": 230
+  },
+  {
+   "type": "menu",
+   "at": 1409.6,
+   "dur": 3.6,
+   "num": "MENU 2",
+   "text": "Red Velvet Cupcake",
+   "apps": [
+    "THERMOMIX",
+    "COOVEN OVEN"
+   ],
+   "y": 280,
+   "size": 96
+  },
+  {
+   "type": "label",
+   "at": 1425.0,
+   "dur": 4.0,
+   "title": "THERMOMIX",
+   "text": "Adunan & [frosting] di-blend siap dulu.",
+   "y": 280
+  },
+  {
+   "type": "fact",
+   "at": 1493.0,
+   "dur": 4.0,
+   "title": "MUAT BERAPA?",
+   "text": "Satu loyang Cooven muat [14–16] cupcake.",
+   "y": 280
+  },
+  {
+   "type": "joke",
+   "at": 1504.8,
+   "dur": 2.6,
+   "text": "OCD sikit!",
+   "sfx": "boing",
+   "punch": 1.12
+  },
+  {
+   "type": "tip",
+   "at": 1556.0,
+   "dur": 6.5,
+   "title": "TIP ISI CUP",
+   "text": "Jangan isi 3/4 — [satu sudu] je dah cukup, tak melimpah.",
+   "y": 280,
+   "sfx": "ding"
+  },
+  {
+   "type": "label",
+   "at": 1630.4,
+   "dur": 7.0,
+   "title": "COOVEN · MODE OVEN",
+   "text": "[145°C] · 15 minit · tanpa preheat",
+   "y": 280
+  },
+  {
+   "type": "joke",
+   "at": 2737.1,
+   "dur": 2.4,
+   "text": "Red... red... red?!",
+   "sfx": "boing",
+   "punch": 1.12
+  },
+  {
+   "type": "reveal",
+   "at": 2759.7,
+   "dur": 3.2,
+   "text": "CANTIK!",
+   "sub": "Tak melimpah ruah"
+  },
+  {
+   "type": "tip",
+   "at": 2986.4,
+   "dur": 6.0,
+   "title": "TAK ADA NOZZLE?",
+   "text": "Beginner? Sapu frosting guna [pisau] je!",
+   "y": 280
+  },
+  {
+   "type": "tip",
+   "at": 3105.3,
+   "dur": 5.5,
+   "title": "TIP DEKOR",
+   "text": "Tabur [crumbs] red velvet — sembunyi segala cacat-cela!",
+   "y": 280,
+   "sfx": "sparkle"
+  },
+  {
+   "type": "joke",
+   "at": 3742.4,
+   "dur": 2.6,
+   "text": "Jangan cabar saya!",
+   "sfx": "badumtss",
+   "punch": 1.14
+  }
+ ]
+}

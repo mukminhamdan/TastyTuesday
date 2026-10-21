@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+        #root { position: absolute; inset: 0; 
+  --cream: #FFF3DF; --tomato: #E8402A; --mustard: #FFB81C; --cocoa: #2A1810;
+  --leaf: #2F9E5B; --ink: #1B0F09; --white: #FFFFFF;
+ font-family: Montserrat, 'Archivo Black', sans-serif; }
+        
+        .ch { position: absolute; left: 720px; width: 1120px; top: 260px; text-align: center; }
+        .band { display: inline-block; background: var(--tomato); padding: 24px 56px 28px; border: 6px solid var(--cocoa); border-radius: 24px;
+                 box-shadow: 0 12px 0 var(--cocoa); transform-origin: 50% 50%; }
+        .cn { font-weight: 900; font-size: 30px; letter-spacing: 0.14em; color: var(--cocoa); text-transform: uppercase; }
+        .ct { font-family: 'Archivo Black', sans-serif; font-size: 74px; color: var(--cream); text-transform: uppercase; line-height: 1.02; }
+      </style>
+      <div id="root" data-composition-id="ov28-chapter" data-width="1920" data-height="1080">
+        <div class="ch"><div class="band">
+          <div class="cn">Menu 3 · Ida</div>
+          <div class="ct">Siakap Stim</div>
+        </div></div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          const q = (s) => document.querySelector('[data-composition-id="ov28-chapter"] ' + s);
+          q('.band') && tl.fromTo(q('.band'), { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: 'power4.out' }, 0);
+          q('.ct') && tl.fromTo(q('.ct'), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.3 }, 0.25);
+          q('.cn') && tl.fromTo(q('.cn'), { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.2);
+          q('.band') && tl.to(q('.band'), { scaleX: 0, opacity: 0, duration: 0.35, ease: 'power3.in' }, 3.55);
+          window.__timelines["ov28-chapter"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

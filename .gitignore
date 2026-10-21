@@ -1,0 +1,10 @@
+# raw footage + renders stay out of git (source is 1.6 GB)
+*.mp4
+*.mov
+*.wav
+**/videos/*/assets/source.mp4
+**/.hyperframes/
+**/renders/
+**/previews/
+node_modules/
+__pycache__/

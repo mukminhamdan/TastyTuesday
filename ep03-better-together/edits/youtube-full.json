@@ -1,0 +1,977 @@
+{
+ "id": "youtube-full",
+ "title": "Tasty Tuesday EP3 · Better Together · Cooven × Thermomix (Full Session)",
+ "format": "landscape",
+ "tighten": {
+  "max_gap": 0.7,
+  "pad": 0.12
+ },
+ "jump_zoom": 1.06,
+ "origin": "50% 45%",
+ "captions": "panel",
+ "bgm": {
+  "volume": 0.07,
+  "ranges": [
+   [
+    0,
+    34
+   ],
+   [
+    -22,
+    -0.01
+   ]
+  ]
+ },
+ "segments": [
+  {
+   "in": 1660.2,
+   "out": 1669.1,
+   "note": "COLD OPEN: oven glow tanpa preheat"
+  },
+  {
+   "in": 3290.6,
+   "out": 3296.9,
+   "note": "cold open: siakap RM40"
+  },
+  {
+   "in": 3305.2,
+   "out": 3314.2,
+   "note": "cold open: < RM20"
+  },
+  {
+   "in": 2649.7,
+   "out": 2659.6,
+   "note": "cold open: patutlah ubi lambung",
+   "volume": 1.3
+  },
+  {
+   "in": 1301.9,
+   "out": 1308.8,
+   "note": "cold open: regular customer, patutlah happy"
+  },
+  {
+   "gfx": "intro",
+   "dur": 4.5,
+   "l1": "TASTY TUESDAY",
+   "l2": "Episod 3 · Better Together",
+   "l3": "COOVEN × THERMOMIX",
+   "sfx": "impact-bass-2"
+  },
+  {
+   "in": 666.7,
+   "out": 727.4,
+   "note": "OPENING: assalamualaikum, minggu ketiga, tema better together, combine dua gadget"
+  },
+  {
+   "in": 744.2,
+   "out": 818.5,
+   "note": "Thermomix tak boleh bakar, Cooven melengkapkan, bukan saingan"
+  },
+  {
+   "in": 820.1,
+   "out": 837.2,
+   "note": "CH1 Kak Salma ready, paste sup"
+  },
+  {
+   "in": 841.1,
+   "out": 842.4
+  },
+  {
+   "in": 845.5,
+   "out": 959.0,
+   "note": "paste sup: mesin separuh, tak letak air, 30 saat x2"
+  },
+  {
+   "in": 966.0,
+   "out": 1031.0,
+   "note": "jintan susah halus, rempah from scratch"
+  },
+  {
+   "in": 1053.2,
+   "out": 1058.9,
+   "note": "Cooven guna mode apa"
+  },
+  {
+   "in": 1069.2,
+   "out": 1261.1,
+   "note": "mode cooker 140, kacau, Thermomix vs Cooven sekali harung"
+  },
+  {
+   "in": 1272.4,
+   "out": 1333.8,
+   "note": "bawang sekilo, regular customer, marinate ayam bakar"
+  },
+  {
+   "in": 1342.8,
+   "out": 1360.0,
+   "note": "seronok masak ramai-ramai"
+  },
+  {
+   "in": 1392.9,
+   "out": 1700.0,
+   "note": "CH2 red velvet: thermomix adunan, 14-16 cup, 3/4, burnt cheesecake, 145 15 min no preheat",
+   "skip": [
+    [
+     1532.6,
+     1540.6
+    ]
+   ]
+  },
+  {
+   "in": 1700.0,
+   "out": 1908.4,
+   "note": "CH3 Ida: Thailand joke, siakap, kelar, serai, mode steam P1-P3, air 1L"
+  },
+  {
+   "in": 1936.7,
+   "out": 1949.3,
+   "note": "15 minit, blend bahan"
+  },
+  {
+   "in": 1968.7,
+   "out": 2009.1,
+   "note": "sos ikan, Thermomix sebelah, kamceng, blend"
+  },
+  {
+   "in": 2019.3,
+   "out": 2280.8,
+   "note": "dapur kecil minimalis, hasil chop, malas alih bowl, basuh ikan, berus gigi, steam 15 min, tray stabil, chopper boleh"
+  },
+  {
+   "in": 2280.7,
+   "out": 2295.3,
+   "note": "CH4 Mukmin",
+   "volume": 1.3
+  },
+  {
+   "in": 2296.3,
+   "out": 2511.2,
+   "note": "ubi lambung part 1",
+   "volume": 1.3
+  },
+  {
+   "in": 2544.4,
+   "out": 2575.2,
+   "note": "8 liter",
+   "volume": 1.3
+  },
+  {
+   "in": 2601.7,
+   "out": 2667.6,
+   "note": "lambung",
+   "volume": 1.3
+  },
+  {
+   "in": 2697.2,
+   "out": 2720.0,
+   "note": "semudah itu",
+   "volume": 1.3
+  },
+  {
+   "in": 2721.1,
+   "out": 2806.8,
+   "note": "CH5 results: red velvet masak, cucuk cantik, Kak Salma belum"
+  },
+  {
+   "in": 2806.7,
+   "out": 2877.8,
+   "note": "paste naik minyak, tips garing"
+  },
+  {
+   "in": 2917.3,
+   "out": 2960.7,
+   "note": "Kak Salma red velvet sambil-sambil"
+  },
+  {
+   "in": 2960.6,
+   "out": 3063.5,
+   "note": "frosting tanpa nozzle"
+  },
+  {
+   "in": 3097.8,
+   "out": 3134.5,
+   "note": "crumbs cacat-cela"
+  },
+  {
+   "in": 3150.4,
+   "out": 3410.0,
+   "note": "Ida ikan dah masak, buang air, sos curah, RM40 vs RM20, bawang goreng, peserta buat macam-macam"
+  },
+  {
+   "in": 3410.0,
+   "out": 3423.5,
+   "note": "I'm not a baker"
+  },
+  {
+   "in": 3463.0,
+   "out": 3483.5,
+   "note": "breakfast table: Thermomix & Cooven sebelah"
+  },
+  {
+   "in": 3528.0,
+   "out": 3548.5,
+   "note": "support group cook along"
+  },
+  {
+   "in": 3629.0,
+   "out": 3650.5,
+   "note": "support group resepi & tips"
+  },
+  {
+   "in": 3671.0,
+   "out": 3700.0,
+   "note": "combo promo"
+  },
+  {
+   "in": 3723.0,
+   "out": 3750.0,
+   "note": "piping vs sudu, cabar"
+  },
+  {
+   "in": 3770.0,
+   "out": 3830.0,
+   "note": "suhu tinggi kalau duduk tepi, panas"
+  },
+  {
+   "in": 3846.0,
+   "out": 3870.0,
+   "note": "first time jadi"
+  },
+  {
+   "in": 3880.0,
+   "out": 3895.0,
+   "note": "rezeki neighbor"
+  },
+  {
+   "in": 3907.6,
+   "out": 3975.0,
+   "note": "rajin masak, frozen, bekal anak"
+  },
+  {
+   "in": 4079.0,
+   "out": 4100.0,
+   "note": "nutella cucu, achievement"
+  },
+  {
+   "in": 4100.0,
+   "out": 4166.0,
+   "note": "paste final, tips minyak"
+  },
+  {
+   "in": 4187.0,
+   "out": 4309.0,
+   "note": "ikan final, nasi, contact, F.R.E.E"
+  },
+  {
+   "in": 4351.0,
+   "out": 4366.0,
+   "note": "contact untuk promo"
+  },
+  {
+   "in": 4565.0,
+   "out": 4605.0,
+   "note": "showcase, rampas limelight"
+  },
+  {
+   "in": 4626.0,
+   "out": 4650.0,
+   "note": "kenyal"
+  },
+  {
+   "in": 4680.0,
+   "out": 4783.0,
+   "note": "CLOSING: semua sedap, terima kasih, minggu depan, bye"
+  },
+  {
+   "in": 163.8,
+   "out": 195.8,
+   "note": "BLOOPER: filter make-up"
+  },
+  {
+   "in": 545.4,
+   "out": 554.1,
+   "note": "BLOOPER: helmet 29k disclaimer"
+  },
+  {
+   "in": 618.1,
+   "out": 629.1,
+   "note": "BLOOPER: cari muka sendiri"
+  },
+  {
+   "gfx": "outro",
+   "dur": 6.0,
+   "l1": "JUMPA SELASA DEPAN!",
+   "l2": "Tasty Tuesday · Live setiap Selasa",
+   "l3": "LIKE · SUBSCRIBE · SHARE",
+   "sfx": "chime"
+  }
+ ],
+ "overlays": [
+  {
+   "type": "hook",
+   "at": 1660.4,
+   "dur": 4.0,
+   "kicker": "Hari ni dalam Tasty Tuesday",
+   "text": "4 MENU · 2 GADGET · 1 DAPUR",
+   "highlight": "2 GADGET",
+   "sfx": "impact-bass-1"
+  },
+  {
+   "type": "hook",
+   "at": 3291.0,
+   "dur": 3.0,
+   "text": "KEDAI: RM40++",
+   "highlight": "RM40++",
+   "sfx": "error"
+  },
+  {
+   "type": "hook",
+   "at": 3306.6,
+   "dur": 3.4,
+   "text": "SENDIRI: < RM20!",
+   "highlight": "RM20!",
+   "sfx": "ding"
+  },
+  {
+   "type": "joke",
+   "at": 2657.8,
+   "dur": 2.2,
+   "text": "Patutlah!",
+   "sfx": "badumtss",
+   "punch": 1.1
+  },
+  {
+   "type": "joke",
+   "at": 1306.2,
+   "dur": 2.2,
+   "text": "Patutlah happy!",
+   "sfx": "boing"
+  },
+  {
+   "type": "chapter",
+   "at": 666.8,
+   "dur": 4.0,
+   "kicker": "Pembukaan",
+   "text": "Kenapa Better Together?"
+  },
+  {
+   "type": "tip",
+   "at": 783.2,
+   "dur": 6.0,
+   "title": "BETTER TOGETHER",
+   "text": "Thermomix [blend & adun] · Cooven [bakar, goreng, steam, masak]"
+  },
+  {
+   "type": "fact",
+   "at": 790.2,
+   "dur": 6.5,
+   "title": "BUKAN SAINGAN",
+   "text": "Dua gadget ni [saling melengkapi] di dapur."
+  },
+  {
+   "type": "chapter",
+   "at": 820.2,
+   "dur": 4.0,
+   "kicker": "Menu 1 · Kak Salma",
+   "text": "Paste Sup"
+  },
+  {
+   "type": "lower",
+   "at": 849.2,
+   "dur": 4.0,
+   "name": "Kak Salma",
+   "role": "Paste Sup"
+  },
+  {
+   "type": "label",
+   "at": 861.0,
+   "dur": 4.5,
+   "title": "BUAT BANYAK?",
+   "text": "Mesin ikut [2–3 batch] supaya semua halus."
+  },
+  {
+   "type": "tip",
+   "at": 884.6,
+   "dur": 5.0,
+   "title": "TIP BLEND",
+   "text": "Tak letak air — terus guna [minyak] masa mesin."
+  },
+  {
+   "type": "label",
+   "at": 892.0,
+   "dur": 5.0,
+   "title": "THERMOMIX",
+   "text": "[30 saat × 2] = 1 minit je, terus halus!",
+   "sfx": "ding"
+  },
+  {
+   "type": "tip",
+   "at": 1000.8,
+   "dur": 5.5,
+   "title": "TIP RASA",
+   "text": "Guna rempah [biji-biji] — fresh from scratch, bukan serbuk siap."
+  },
+  {
+   "type": "label",
+   "at": 1083.0,
+   "dur": 6.0,
+   "title": "COOVEN · MODE COOKER",
+   "text": "[140°C] · 30 minit · tumis perlahan-lahan"
+  },
+  {
+   "type": "tip",
+   "at": 1137.0,
+   "dur": 5.0,
+   "title": "NAK CEPAT?",
+   "text": "Boleh naik [160–180°C], tapi kena kerap kacau."
+  },
+  {
+   "type": "tip",
+   "at": 1168.0,
+   "dur": 5.5,
+   "title": "TIP",
+   "text": "Kacau setiap [5–10 minit] je — tak perlu duduk tepi dapur."
+  },
+  {
+   "type": "fact",
+   "at": 1205.0,
+   "dur": 5.5,
+   "title": "BETTER TOGETHER",
+   "text": "Thermomix: 2 kali tumis · Cooven: [sekali harung]!"
+  },
+  {
+   "type": "fact",
+   "at": 1272.6,
+   "dur": 4.5,
+   "title": "SKALA",
+   "text": "Bawang besar [1 kg] sekali masak."
+  },
+  {
+   "type": "joke",
+   "at": 1301.8,
+   "dur": 2.6,
+   "text": "Regular customer!",
+   "sfx": "badumtss",
+   "punch": 1.08
+  },
+  {
+   "type": "tip",
+   "at": 1320.0,
+   "dur": 5.0,
+   "title": "BONUS",
+   "text": "Paste ni boleh [perap ayam bakar] juga!"
+  },
+  {
+   "type": "chapter",
+   "at": 1401.4,
+   "dur": 4.0,
+   "kicker": "Menu 2",
+   "text": "Red Velvet Cupcake"
+  },
+  {
+   "type": "label",
+   "at": 1425.0,
+   "dur": 5.0,
+   "title": "THERMOMIX",
+   "text": "Adunan & [frosting] di-blend siap dulu."
+  },
+  {
+   "type": "fact",
+   "at": 1495.2,
+   "dur": 5.0,
+   "title": "MUAT BERAPA?",
+   "text": "Satu loyang Cooven muat [14–16] cupcake."
+  },
+  {
+   "type": "joke",
+   "at": 1504.8,
+   "dur": 2.6,
+   "text": "OCD sikit!",
+   "sfx": "boing",
+   "punch": 1.08
+  },
+  {
+   "type": "tip",
+   "at": 1556.0,
+   "dur": 7.0,
+   "title": "TIP ISI CUP",
+   "text": "Jangan isi 3/4 — [satu sudu] je dah cukup, tak melimpah.",
+   "sfx": "ding"
+  },
+  {
+   "type": "tip",
+   "at": 1586.3,
+   "dur": 6.0,
+   "title": "BONUS",
+   "text": "Burnt cheesecake? Gaul dalam Thermomix, bakar [30 minit] je."
+  },
+  {
+   "type": "label",
+   "at": 1641.0,
+   "dur": 7.0,
+   "title": "COOVEN · MODE OVEN",
+   "text": "[145°C] · 15 minit · tanpa preheat"
+  },
+  {
+   "type": "chapter",
+   "at": 1700.1,
+   "dur": 4.0,
+   "kicker": "Menu 3 · Ida",
+   "text": "Siakap Stim"
+  },
+  {
+   "type": "joke",
+   "at": 1705.8,
+   "dur": 2.6,
+   "text": "Terus ke Thailand!",
+   "sfx": "whoosh"
+  },
+  {
+   "type": "lower",
+   "at": 1715.2,
+   "dur": 4.0,
+   "name": "Ida",
+   "role": "Ikan Siakap Stim"
+  },
+  {
+   "type": "tip",
+   "at": 1740.0,
+   "dur": 5.0,
+   "title": "TIP SEDAP",
+   "text": "[Kelar-kelar] badan ikan dulu supaya rasa meresap."
+  },
+  {
+   "type": "joke",
+   "at": 1759.0,
+   "dur": 2.6,
+   "text": "Cedera parah!",
+   "sfx": "boing",
+   "punch": 1.08
+  },
+  {
+   "type": "label",
+   "at": 1824.8,
+   "dur": 5.0,
+   "title": "COOVEN · MODE STEAM",
+   "text": "[P3] (suhu tinggi) · 15 minit"
+  },
+  {
+   "type": "fact",
+   "at": 1847.2,
+   "dur": 6.0,
+   "title": "P1 · P2 · P3",
+   "text": "P1 = suhu rendah · P2 = sederhana · [P3 = tinggi]"
+  },
+  {
+   "type": "label",
+   "at": 1870.0,
+   "dur": 5.0,
+   "title": "AIR",
+   "text": "Lebih kurang [1 liter] — bawah paras tanda."
+  },
+  {
+   "type": "joke",
+   "at": 1991.0,
+   "dur": 3.0,
+   "text": "Sahabat kamceng!",
+   "sfx": "pop"
+  },
+  {
+   "type": "fact",
+   "at": 2045.7,
+   "dur": 6.0,
+   "title": "DAPUR KECIL?",
+   "text": "Dua gadget je — [dapur lengkap] untuk rumah kecil & minimalis."
+  },
+  {
+   "type": "joke",
+   "at": 2090.6,
+   "dur": 3.0,
+   "text": "Mak malas!",
+   "sfx": "badumtss",
+   "punch": 1.08
+  },
+  {
+   "type": "tip",
+   "at": 2125.0,
+   "dur": 8.0,
+   "title": "TIP TAK HANYIR",
+   "text": "Berus [darah hitam] dalam perut ikan guna berus gigi khas dapur!",
+   "sfx": "ding"
+  },
+  {
+   "type": "fact",
+   "at": 2205.4,
+   "dur": 6.0,
+   "title": "KENAPA COOVEN?",
+   "text": "Rack [stabil], steam lebih laju, ruang lebih besar."
+  },
+  {
+   "type": "tip",
+   "at": 2247.2,
+   "dur": 6.0,
+   "title": "TAK ADA THERMOMIX?",
+   "text": "Guna [blender / chopper] biasa pun boleh."
+  },
+  {
+   "type": "chapter",
+   "at": 2282.2,
+   "dur": 4.0,
+   "kicker": "Menu 4 · Mukmin",
+   "text": "Ubi Lambung"
+  },
+  {
+   "type": "lower",
+   "at": 2306.4,
+   "dur": 4.0,
+   "name": "Mukmin",
+   "role": "Ubi Lambung"
+  },
+  {
+   "type": "fact",
+   "at": 2340.8,
+   "dur": 4.5,
+   "title": "TAHU TAK?",
+   "text": "Orang Indonesia panggil [onde-onde]."
+  },
+  {
+   "type": "tip",
+   "at": 2380.4,
+   "dur": 6.0,
+   "title": "BETTER TOGETHER",
+   "text": "Thermomix [adun], Cooven [goreng] — sebab Thermomix tak boleh deep fry."
+  },
+  {
+   "type": "label",
+   "at": 2425.0,
+   "dur": 5.0,
+   "title": "COOVEN · MODE DEEP FRY",
+   "text": "Preheat [1–2 minit] je dah boleh masuk."
+  },
+  {
+   "type": "fact",
+   "at": 2476.6,
+   "dur": 5.0,
+   "title": "BONUS",
+   "text": "[Basket] goreng dapat sekali — tak perlu beli asing."
+  },
+  {
+   "type": "tip",
+   "at": 2491.7,
+   "dur": 6.5,
+   "title": "KENAPA SEDAP?",
+   "text": "Suhu [stabil] — masak sekata, tak hangus, tak mentah.",
+   "sfx": "ding"
+  },
+  {
+   "type": "fact",
+   "at": 2546.0,
+   "dur": 5.0,
+   "title": "KAPASITI",
+   "text": "Periuk [8 liter], tapi minyak [±1 liter] pun cukup."
+  },
+  {
+   "type": "tip",
+   "at": 2632.0,
+   "dur": 5.5,
+   "title": "TAK PAYAH TEKA",
+   "text": "Cooven [bagitahu] bila minyak dah cukup panas."
+  },
+  {
+   "type": "chapter",
+   "at": 2721.2,
+   "dur": 4.0,
+   "kicker": "Bahagian 5",
+   "text": "Hasil & Tips Akhir"
+  },
+  {
+   "type": "joke",
+   "at": 2737.1,
+   "dur": 2.4,
+   "text": "Red... red... red?!",
+   "sfx": "boing",
+   "punch": 1.08
+  },
+  {
+   "type": "reveal",
+   "at": 2759.7,
+   "dur": 3.0,
+   "text": "CANTIK!",
+   "sub": "Red velvet siap"
+  },
+  {
+   "type": "tip",
+   "at": 2831.6,
+   "dur": 6.0,
+   "title": "PASTE DAH GARING?",
+   "text": "Tengok — dah masak bila [berbiji, tak bergumpal]."
+  },
+  {
+   "type": "tip",
+   "at": 2986.4,
+   "dur": 6.0,
+   "title": "TAK ADA NOZZLE?",
+   "text": "Beginner? Sapu frosting guna [pisau] je!"
+  },
+  {
+   "type": "tip",
+   "at": 3105.3,
+   "dur": 6.0,
+   "title": "TIP DEKOR",
+   "text": "Tabur [crumbs] red velvet — sembunyi segala cacat-cela!",
+   "sfx": "sparkle"
+  },
+  {
+   "type": "tip",
+   "at": 3196.0,
+   "dur": 5.0,
+   "title": "MUDAH",
+   "text": "Air ikan? [Jongkit tray] je, tak payah ke sinki."
+  },
+  {
+   "type": "ingredients",
+   "at": 3247.0,
+   "dur": 8.0,
+   "title": "Sos curah siakap",
+   "items": [
+    "Bawang putih",
+    "Chicken stock",
+    "Lada",
+    "Daun ketumbar",
+    "Sos ikan",
+    "Limau nipis"
+   ]
+  },
+  {
+   "type": "joke",
+   "at": 3382.0,
+   "dur": 3.0,
+   "text": "Masak satu, jadi macam-macam!",
+   "sfx": "pop",
+   "size": 50
+  },
+  {
+   "type": "joke",
+   "at": 3413.0,
+   "dur": 2.8,
+   "text": "I'm not a baker!",
+   "sfx": "boing",
+   "punch": 1.08
+  },
+  {
+   "type": "tip",
+   "at": 3786.0,
+   "dur": 7.0,
+   "title": "SUHU RENDAH VS TINGGI",
+   "text": "Nak tinggal-tinggal: [suhu rendah] · Duduk tepi & nak cepat: [suhu tinggi]."
+  },
+  {
+   "type": "joke",
+   "at": 3742.4,
+   "dur": 2.6,
+   "text": "Jangan cabar saya!",
+   "sfx": "badumtss",
+   "punch": 1.08
+  },
+  {
+   "type": "hook",
+   "at": 3913.1,
+   "dur": 3.4,
+   "kicker": "Testimoni",
+   "text": "LAGI RAJIN MASAK!",
+   "highlight": "RAJIN",
+   "sfx": "sparkle"
+  },
+  {
+   "type": "tip",
+   "at": 3955.0,
+   "dur": 6.0,
+   "title": "TIP",
+   "text": "Masak banyak, [simpan frozen] — 2–3 hari lagi boleh makan."
+  },
+  {
+   "type": "reveal",
+   "at": 4127.3,
+   "dur": 3.0,
+   "text": "SIAP!",
+   "sub": "Paste sup kering, tak melepek"
+  },
+  {
+   "type": "tip",
+   "at": 4149.6,
+   "dur": 6.0,
+   "title": "TIP JIMAT",
+   "text": "Lebihan [minyak] boleh simpan untuk tumis next round."
+  },
+  {
+   "type": "reveal",
+   "at": 4221.8,
+   "dur": 3.0,
+   "text": "SEDAPNYA!",
+   "sub": "Siakap stim siap"
+  },
+  {
+   "type": "tip",
+   "at": 4243.2,
+   "dur": 7.0,
+   "title": "TIP BIJAK",
+   "text": "Masak [nasi] terus dalam bowl Thermomix yang berlada — air beras bantu 'cuci' bowl!",
+   "sfx": "ding"
+  },
+  {
+   "type": "joke",
+   "at": 4300.0,
+   "dur": 3.0,
+   "text": "F.R.E.E? Shhh!",
+   "sfx": "boing",
+   "punch": 1.08
+  },
+  {
+   "type": "joke",
+   "at": 4580.0,
+   "dur": 2.8,
+   "text": "Rampas limelight!",
+   "sfx": "pop"
+  },
+  {
+   "type": "reveal",
+   "at": 4634.4,
+   "dur": 3.0,
+   "text": "KENYAL!",
+   "sub": "Ubi lambung siap"
+  },
+  {
+   "type": "chapter",
+   "at": 4692.7,
+   "dur": 6.0,
+   "kicker": "4 menu · 1 live",
+   "text": "Semua sedap!"
+  },
+  {
+   "type": "chapter",
+   "at": 163.9,
+   "dur": 3.5,
+   "kicker": "Bonus",
+   "text": "Blooper!",
+   "sfx": "glitch-1"
+  },
+  {
+   "type": "joke",
+   "at": 190.0,
+   "dur": 3.0,
+   "text": "Over make-up!",
+   "sfx": "boing"
+  },
+  {
+   "type": "joke",
+   "at": 549.5,
+   "dur": 3.5,
+   "text": "Tak ada helmet, tak ada 29k!",
+   "sfx": "badumtss",
+   "size": 50
+  },
+  {
+   "type": "joke",
+   "at": 627.4,
+   "dur": 2.6,
+   "text": "Cari muka sendiri!",
+   "sfx": "boing",
+   "punch": 1.08
+  },
+  {
+   "type": "now",
+   "at": 667.2,
+   "until": 820.0,
+   "kicker": "Pembukaan",
+   "text": "Better Together",
+   "apps": [
+    "THERMOMIX",
+    "COOVEN"
+   ],
+   "sfx": ""
+  },
+  {
+   "type": "now",
+   "at": 820.4,
+   "until": 1392.8,
+   "kicker": "Menu 1 · Kak Salma",
+   "text": "Paste Sup",
+   "apps": [
+    "THERMOMIX",
+    "COOVEN COOKER"
+   ],
+   "sfx": ""
+  },
+  {
+   "type": "now",
+   "at": 1401.6,
+   "until": 1699.9,
+   "kicker": "Menu 2",
+   "text": "Red Velvet Cupcake",
+   "apps": [
+    "THERMOMIX",
+    "COOVEN OVEN"
+   ],
+   "sfx": ""
+  },
+  {
+   "type": "now",
+   "at": 1700.3,
+   "until": 2280.6,
+   "kicker": "Menu 3 · Ida",
+   "text": "Siakap Stim",
+   "apps": [
+    "COOVEN STEAM",
+    "THERMOMIX"
+   ],
+   "sfx": ""
+  },
+  {
+   "type": "now",
+   "at": 2282.4,
+   "until": 2721.0,
+   "kicker": "Menu 4 · Mukmin",
+   "text": "Ubi Lambung",
+   "apps": [
+    "THERMOMIX",
+    "COOVEN DEEP FRY"
+   ],
+   "sfx": ""
+  },
+  {
+   "type": "now",
+   "at": 2721.4,
+   "until": 4679.9,
+   "kicker": "Hasil & tips akhir",
+   "text": "4 Menu Siap!",
+   "apps": [
+    "PASTE SUP",
+    "RED VELVET",
+    "SIAKAP · UBI"
+   ],
+   "sfx": ""
+  },
+  {
+   "type": "now",
+   "at": 4680.2,
+   "until": 4775.0,
+   "kicker": "Penutup",
+   "text": "Jumpa Selasa Depan",
+   "apps": [
+    "TASTY TUESDAY"
+   ],
+   "sfx": ""
+  },
+  {
+   "type": "now",
+   "at": 164.0,
+   "until": 629.0,
+   "kicker": "Bonus",
+   "text": "Blooper",
+   "apps": [
+    "BEHIND THE SCENES"
+   ],
+   "sfx": ""
+  }
+ ]
+}
