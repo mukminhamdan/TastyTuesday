@@ -7,13 +7,13 @@ Sumber: rakaman TikTok Live 92 min (640×1280, 25 fps). Transkrip penuh di `data
 | # | Video | Durasi | Hook pembuka |
 |---|---|---|---|
 | 1 | **YouTube — sesi penuh** (16:9) | 45:00 | Cold open 30s: oven Cooven menyala (red velvet), "Siakap kedai RM40++ vs < RM20", "Patutlah nama ubi lambung!", "Regular customer… patutlah happy" → kad tajuk |
-| 2 | **Reels rumusan** (9:16) | 1:55 | "Thermomix tak boleh bakar? Di sinilah datangnya Cooven" atas b-roll oven menyala |
-| 3 | **Menu 1 · Paste Sup** (Kak Salma) | 2:57 | "Bawang sekilo… dalam Cooven sekali harung je!" |
-| 4 | **Menu 2 · Red Velvet Cupcake** | 2:56 | Oven menyala + "15 minit tanpa preheat" |
-| 5 | **Menu 3 · Siakap Stim** (Ida) | 2:35 | "Siakap steam kat kedai RM40 lebih… total bahan tak sampai RM20!" |
-| 6 | **Menu 4 · Ubi Lambung** (Mukmin) | 2:54 | "Kenapa nama dia ubi lambung?" → "Patutlah!" |
+| 2 | **Reels rumusan** (9:16) | 0:51 | "Thermomix tak boleh bakar? Di sinilah datangnya Cooven" atas b-roll oven menyala |
+| 3 | **Menu 1 · Paste Sup** (Kak Salma) | 0:51 | "Bawang sekilo… dalam Cooven sekali harung je!" |
+| 4 | **Menu 2 · Red Velvet Cupcake** (Piah) | 0:50 | Oven menyala + "15 minit tanpa preheat" |
+| 5 | **Menu 3 · Siakap Stim** (Ida) | 0:54 | "Siakap steam kat kedai RM40 lebih… total bahan tak sampai RM20!" |
+| 6 | **Menu 4 · Ubi Lambung** (Mukmin) | 0:54 | "Kenapa nama dia ubi lambung?" → "Patutlah!" |
 
-Semua video menu ≤ 3 minit (had Instagram Reels).
+Reels dan semua video menu bawah 1 minit (v2, atas permintaan). Versi ~3 minit (v1) ada dalam sejarah git (commit 64fd538).
 
 ## Struktur video YouTube (bab)
 
@@ -64,7 +64,7 @@ Panel kanan sentiasa tunjuk: jenama, kad "Sedang dimasak" setiap bab, kad tip/la
 
 ## Perlu disahkan sebelum render final
 
-1. **Nama host** (Menu 2 / red velvet) — transkrip tak jelas ("Cik Tia/Pia"), jadi kad hanya tulis "MENU 2". Beritahu nama sebenar untuk lower-third.
+1. ~~Nama host Menu 2~~ — disahkan **Piah** (kad, lower-third YouTube & caption dikemas kini).
 2. **Ejaan caption** — Whisper kadang salah dengar dialek; perkataan utama sudah dibetulkan (Kuven → Cooven, Turbomix → Thermomix, dll.). Semak caption dalam preview.
 3. "Cooven Food Engine" — whisper dengar "Current Food Engine"; caption tulis "Cooven Food Engine".
 4. Testimoni "dapat Cooven secara percuma" (promo combo) masih ada dalam video YouTube kerana itu kata-kata live — buang jika promo dah tamat.

@@ -465,7 +465,7 @@
    "type": "chapter",
    "at": 1401.4,
    "dur": 4.0,
-   "kicker": "Menu 2",
+   "kicker": "Menu 2 · Piah",
    "text": "Red Velvet Cupcake"
   },
   {
@@ -906,7 +906,7 @@
    "type": "now",
    "at": 1401.6,
    "until": 1699.9,
-   "kicker": "Menu 2",
+   "kicker": "Menu 2 · Piah",
    "text": "Red Velvet Cupcake",
    "apps": [
     "THERMOMIX",
@@ -972,6 +972,13 @@
     "BEHIND THE SCENES"
    ],
    "sfx": ""
+  },
+  {
+   "type": "lower",
+   "at": 1410.7,
+   "dur": 4.0,
+   "name": "Piah",
+   "role": "Red Velvet Cupcake"
   }
  ]
 }

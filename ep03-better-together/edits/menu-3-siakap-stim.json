@@ -4,8 +4,8 @@
  "format": "vertical",
  "bug": "MENU 3",
  "tighten": {
-  "max_gap": 0.4,
-  "pad": 0.08
+  "max_gap": 0.3,
+  "pad": 0.06
  },
  "jump_zoom": 1.1,
  "origin": "50% 45%",
@@ -19,108 +19,58 @@
    "note": "HOOK siakap steam kat kedai"
   },
   {
-   "in": 3286.2,
-   "out": 3288.5,
-   "note": "pernah makan RM30"
-  },
-  {
-   "in": 3290.6,
-   "out": 3296.9,
+   "in": 3291.8,
+   "out": 3295.3,
    "note": "sekarang RM40 lebih"
   },
   {
-   "in": 3305.2,
+   "in": 3306.6,
    "out": 3314.2,
-   "note": "tak sampai RM20"
+   "note": "tak sampai RM10, total < RM20"
   },
   {
-   "in": 1712.4,
-   "out": 1714.5,
-   "note": "apa dia nak masak"
-  },
-  {
-   "in": 1729.4,
+   "in": 1731.9,
    "out": 1737.5,
-   "note": "ikan steam, seekor siakap"
+   "note": "ikan steam, siakap"
   },
   {
-   "in": 1738.1,
-   "out": 1743.5,
+   "in": 1739.9,
+   "out": 1743.4,
    "note": "kelar-kelar"
   },
   {
-   "in": 1756.0,
-   "out": 1763.3,
-   "note": "JOKE sirip tajam cedera parah"
-  },
-  {
-   "in": 1799.4,
+   "in": 1801.6,
    "out": 1803.7,
    "note": "mode steam"
   },
   {
    "in": 1828.9,
    "out": 1832.1,
-   "note": "set 15 minit"
+   "note": "15 minit"
   },
   {
-   "in": 1858.9,
-   "out": 1862.2,
-   "note": "P3 suhu tinggi"
-  },
-  {
-   "in": 2126.0,
+   "in": 2139.4,
    "out": 2146.6,
-   "note": "TIP basuh, berus gigi khas"
-  },
-  {
-   "in": 2159.4,
-   "out": 2168.0,
-   "note": "add food, steam 15 minit"
+   "note": "TIP berus gigi"
   },
   {
    "in": 1987.3,
    "out": 1994.2,
-   "note": "JOKE better together sahabat kamceng"
+   "note": "JOKE sahabat kamceng"
   },
   {
-   "in": 2090.5,
-   "out": 2099.3,
-   "note": "JOKE mak malas alih bowl"
+   "in": 3320.1,
+   "out": 3324.5,
+   "note": "steam P3 2 minit"
   },
   {
-   "in": 3158.6,
-   "out": 3160.7,
-   "note": "dah masak"
-  },
-  {
-   "in": 3189.0,
-   "out": 3207.9,
-   "note": "buang air ikan, jongkit, semudah itu"
-  },
-  {
-   "in": 3240.2,
-   "out": 3256.0,
-   "note": "curah sos"
-  },
-  {
-   "in": 3316.4,
-   "out": 3325.5,
-   "note": "sambung steam 2 minit"
-  },
-  {
-   "in": 4219.4,
+   "in": 4221.7,
    "out": 4227.9,
-   "note": "RESULT sedapnya settle dinner"
-  },
-  {
-   "in": 4259.4,
-   "out": 4270.0,
-   "note": "TIP nasi air beras cuci lada"
+   "note": "RESULT sedapnya"
   },
   {
    "gfx": "outro",
-   "dur": 3.0,
+   "dur": 2.5,
    "l1": "SIAKAP STIM",
    "l2": "Cooven steam × Thermomix chop",
    "l3": "FOLLOW + SHARE",
@@ -131,7 +81,7 @@
   {
    "type": "hook",
    "at": 3277.0,
-   "dur": 3.4,
+   "dur": 3.0,
    "kicker": "Siakap Steam",
    "text": "KAT KEDAI RM40++?",
    "highlight": "RM40++?",
@@ -140,8 +90,8 @@
   },
   {
    "type": "hook",
-   "at": 3306.8,
-   "dur": 3.6,
+   "at": 3308.6,
+   "dur": 3.4,
    "kicker": "Buat sendiri",
    "text": "TOTAL BAHAN < RM20!",
    "highlight": "RM20!",
@@ -150,8 +100,8 @@
   },
   {
    "type": "menu",
-   "at": 1712.6,
-   "dur": 3.6,
+   "at": 1732.0,
+   "dur": 3.2,
    "num": "MENU 3 · IDA",
    "text": "Siakap Stim",
    "apps": [
@@ -163,33 +113,25 @@
   {
    "type": "tip",
    "at": 1740.0,
-   "dur": 4.0,
-   "title": "TIP SEDAP",
-   "text": "[Kelar-kelar] badan ikan dulu supaya rasa meresap.",
+   "dur": 3.2,
+   "title": "TIP",
+   "text": "[Kelar] badan ikan dulu.",
    "y": 280
   },
   {
-   "type": "joke",
-   "at": 1759.0,
-   "dur": 2.8,
-   "text": "Cedera parah!",
-   "sfx": "boing",
-   "punch": 1.12
-  },
-  {
    "type": "label",
-   "at": 1829.0,
-   "dur": 3.2,
+   "at": 1801.7,
+   "dur": 4.4,
    "title": "COOVEN · MODE STEAM",
    "text": "[P3] (suhu tinggi) · 15 minit",
    "y": 280
   },
   {
    "type": "tip",
-   "at": 2127.0,
-   "dur": 7.0,
+   "at": 2139.5,
+   "dur": 6.0,
    "title": "TIP TAK HANYIR",
-   "text": "Berus [darah hitam] dalam perut ikan guna berus gigi khas dapur!",
+   "text": "Berus [darah hitam] perut ikan guna berus gigi khas!",
    "y": 280,
    "sfx": "ding"
   },
@@ -202,42 +144,11 @@
    "y": 520
   },
   {
-   "type": "joke",
-   "at": 2090.6,
-   "dur": 3.0,
-   "text": "Mak malas!",
-   "sfx": "badumtss",
-   "punch": 1.12
-  },
-  {
-   "type": "tip",
-   "at": 3196.0,
-   "dur": 4.5,
-   "title": "MUDAH",
-   "text": "Air ikan? [Jongkit tray] je, tak payah ke sinki.",
-   "y": 280
-  },
-  {
-   "type": "ingredients",
-   "at": 3243.5,
-   "dur": 7.5,
-   "title": "Sos curah",
-   "items": [
-    "Bawang putih",
-    "Chicken stock",
-    "Lada",
-    "Daun ketumbar",
-    "Sos ikan",
-    "Limau nipis"
-   ],
-   "y": 240
-  },
-  {
    "type": "label",
    "at": 3320.2,
-   "dur": 3.5,
+   "dur": 3.6,
    "title": "SAMBUNG",
-   "text": "Curah sos → steam [P3 · 2 minit] lagi.",
+   "text": "Curah sos → [P3 · 2 minit] lagi.",
    "y": 280
   },
   {
@@ -246,15 +157,6 @@
    "dur": 3.2,
    "text": "SEDAPNYA!",
    "sub": "Settle dinner"
-  },
-  {
-   "type": "tip",
-   "at": 4259.5,
-   "dur": 7.0,
-   "title": "TIP BIJAK",
-   "text": "Masak [nasi] terus dalam bowl Thermomix yang berlada — air beras bantu 'cuci' bowl!",
-   "y": 280,
-   "sfx": "ding"
   }
  ]
 }

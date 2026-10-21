@@ -21,7 +21,7 @@
         <div class="card">
           <div class="icon"><svg viewBox="0 0 64 64" width="100%" height="100%"><circle cx="32" cy="26" r="16" fill="#FFB81C"/><rect x="24" y="40" width="16" height="10" rx="3" fill="#2A1810"/><rect x="27" y="52" width="10" height="5" rx="2" fill="#2A1810"/><path d="M26 26 q6 -8 12 0" stroke="#FFF3DF" stroke-width="3" fill="none" stroke-linecap="round"/></svg></div>
           <div class="ttl">TIP RASA</div>
-          <div class="txt">Guna rempah <b>biji-biji</b> — fresh from scratch, bukan serbuk siap.</div>
+          <div class="txt">Rempah <b>biji-biji</b> — fresh from scratch!</div>
         </div>
       </div>
       <script>
@@ -31,8 +31,8 @@
           q('.card') && tl.fromTo(q('.card'), { x: -1080, rotation: -4 }, { x: 0, rotation: 0, duration: 0.5, ease: 'back.out(1.4)' }, 0);
           q('.icon') && tl.fromTo(q('.icon'), { scale: 0, rotation: -90 }, { scale: 1, rotation: 0, duration: 0.4, ease: 'back.out(3)' }, 0.3);
           q('.txt') && tl.fromTo(q('.txt'), { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.3 }, 0.4);
-          q('.icon') && tl.to(q('.icon'), { rotation: 8, duration: 0.5, yoyo: true, repeat: 5, ease: 'sine.inOut' }, 0.8);
-          q('.card') && tl.to(q('.card'), { x: 1080, duration: 0.4, ease: 'power3.in' }, 3.75);
+          q('.icon') && tl.to(q('.icon'), { rotation: 8, duration: 0.5, yoyo: true, repeat: 4, ease: 'sine.inOut' }, 0.8);
+          q('.card') && tl.to(q('.card'), { x: 1080, duration: 0.4, ease: 'power3.in' }, 3.15);
           window.__timelines["ov02-tip"] = tl;
         })();
       </script>

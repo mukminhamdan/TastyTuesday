@@ -17,7 +17,7 @@
         .sp { position: absolute; width: 60px; height: 60px; }
       </style>
       <div id="root" data-composition-id="ov04-reveal" data-width="1080" data-height="1920">
-        <div class="rv"><div class="rt">SIAP!</div><span class="rs"><span>Kering, tak melepek</span></span></div>
+        <div class="rv"><div class="rt">SIAP!</div></div>
         <div class="sp" style="left:870px; top:460px"><svg viewBox="0 0 20 20" width="60" height="60"><path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8 Z" fill="#FFF3DF"/></svg></div><div class="sp" style="left:606px; top:624px"><svg viewBox="0 0 20 20" width="60" height="60"><path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8 Z" fill="#FFF3DF"/></svg></div><div class="sp" style="left:202px; top:548px"><svg viewBox="0 0 20 20" width="60" height="60"><path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8 Z" fill="#FFF3DF"/></svg></div><div class="sp" style="left:249px; top:343px"><svg viewBox="0 0 20 20" width="60" height="60"><path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8 Z" fill="#FFF3DF"/></svg></div><div class="sp" style="left:679px; top:310px"><svg viewBox="0 0 20 20" width="60" height="60"><path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8 Z" fill="#FFF3DF"/></svg></div><div class="sp" style="left:862px; top:497px"><svg viewBox="0 0 20 20" width="60" height="60"><path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8 Z" fill="#FFF3DF"/></svg></div>
       </div>
       <script>
@@ -28,7 +28,7 @@
           q('.rs') && tl.fromTo(q('.rs'), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.3 }, 0.35);
           tl.fromTo(document.querySelectorAll('[data-composition-id="ov04-reveal"] .sp'), { scale: 0, rotation: 0 }, { scale: 1.2, rotation: 180, duration: 0.5, stagger: 0.07, ease: 'back.out(2)' }, 0.2);
           tl.to(document.querySelectorAll('[data-composition-id="ov04-reveal"] .sp'), { scale: 0, duration: 0.3, stagger: 0.05 }, 1.4);
-          q('.rv') && tl.to(q('.rv'), { opacity: 0, scale: 0.8, duration: 0.3 }, 2.55);
+          q('.rv') && tl.to(q('.rv'), { opacity: 0, scale: 0.8, duration: 0.3 }, 1.95);
           window.__timelines["ov04-reveal"] = tl;
         })();
       </script>

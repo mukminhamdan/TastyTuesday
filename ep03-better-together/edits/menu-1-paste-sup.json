@@ -4,8 +4,8 @@
  "format": "vertical",
  "bug": "MENU 1",
  "tighten": {
-  "max_gap": 0.4,
-  "pad": 0.08
+  "max_gap": 0.3,
+  "pad": 0.06
  },
  "jump_zoom": 1.1,
  "origin": "45% 45%",
@@ -16,7 +16,7 @@
   {
    "in": 1272.4,
    "out": 1279.0,
-   "note": "HOOK: bawang sekilo"
+   "note": "HOOK bawang sekilo"
   },
   {
    "in": 1204.4,
@@ -25,102 +25,42 @@
   },
   {
    "in": 849.0,
-   "out": 859.2,
-   "note": "intro: paste sup, rempah + bawang"
+   "out": 852.3,
+   "note": "hari ni paste sup"
   },
   {
-   "in": 990.3,
+   "in": 999.2,
    "out": 1003.4,
-   "note": "bukan rempah siap, fresh from scratch"
-  },
-  {
-   "in": 862.3,
-   "out": 869.1,
-   "note": "buat banyak, mesin 2-3 kali"
+   "note": "fresh from scratch"
   },
   {
    "in": 884.4,
    "out": 888.2,
-   "note": "TIP tak letak air, terus minyak"
+   "note": "tak letak air, terus minyak"
   },
   {
    "in": 890.8,
    "out": 898.2,
-   "note": "30 saat x2 = satu minit"
-  },
-  {
-   "in": 904.7,
-   "out": 912.3,
-   "note": "kelebihan Thermomix, halus"
-  },
-  {
-   "in": 1082.2,
-   "out": 1086.3,
-   "note": "mode cooker"
+   "note": "30 saat x2 satu minit"
   },
   {
    "in": 1103.6,
-   "out": 1115.5,
-   "note": "140 darjah, tumis perlahan"
-  },
-  {
-   "in": 1120.2,
-   "out": 1124.4,
-   "note": "30 minit"
-  },
-  {
-   "in": 1167.6,
-   "out": 1171.2,
-   "note": "5-10 minit kacau"
-  },
-  {
-   "in": 1180.1,
-   "out": 1188.0,
-   "note": "kacau sekali-sekala"
-  },
-  {
-   "in": 1248.0,
-   "out": 1254.5,
-   "note": "sedap bau"
-  },
-  {
-   "in": 1282.5,
-   "out": 1290.8,
-   "note": "berjual? ada orang tempah"
+   "out": 1110.4,
+   "note": "140 darjah, slowkan penumisan"
   },
   {
    "in": 1301.9,
-   "out": 1310.5,
+   "out": 1308.8,
    "note": "JOKE regular customer, patutlah happy"
   },
   {
-   "in": 1320.5,
-   "out": 1332.0,
-   "note": "marinate ayam bakar"
-  },
-  {
-   "in": 2826.8,
-   "out": 2851.1,
-   "note": "RESULT naik minyak, berbiji tak bergumpal"
-  },
-  {
-   "in": 2869.8,
-   "out": 2877.8,
-   "note": "rasa tetap sedap"
-  },
-  {
-   "in": 4120.4,
+   "in": 4126.7,
    "out": 4134.9,
    "note": "FINAL kering tak melepet"
   },
   {
-   "in": 4147.8,
-   "out": 4162.3,
-   "note": "minyak simpan, minyak kurang tak garing"
-  },
-  {
    "gfx": "outro",
-   "dur": 3.0,
+   "dur": 2.5,
    "l1": "PASTE SUP",
    "l2": "Thermomix blend × Cooven masak",
    "l3": "FOLLOW + SHARE",
@@ -131,7 +71,7 @@
   {
    "type": "hook",
    "at": 1272.6,
-   "dur": 3.4,
+   "dur": 3.2,
    "kicker": "Paste Sup Homemade",
    "text": "BAWANG 1KG SEKALI HARUNG!",
    "highlight": "1KG",
@@ -139,8 +79,8 @@
   },
   {
    "type": "menu",
-   "at": 849.2,
-   "dur": 3.6,
+   "at": 849.1,
+   "dur": 3.0,
    "num": "MENU 1 · KAK SALMA",
    "text": "Paste Sup",
    "apps": [
@@ -151,57 +91,41 @@
   },
   {
    "type": "tip",
-   "at": 995.0,
-   "dur": 4.2,
+   "at": 999.3,
+   "dur": 3.6,
    "title": "TIP RASA",
-   "text": "Guna rempah [biji-biji] — fresh from scratch, bukan serbuk siap.",
-   "y": 280
-  },
-  {
-   "type": "label",
-   "at": 862.5,
-   "dur": 3.5,
-   "title": "BUAT BANYAK?",
-   "text": "Mesin ikut [2–3 batch] supaya semua halus.",
+   "text": "Rempah [biji-biji] — fresh from scratch!",
    "y": 280
   },
   {
    "type": "tip",
-   "at": 884.6,
-   "dur": 4.0,
+   "at": 884.5,
+   "dur": 3.5,
    "title": "TIP BLEND",
-   "text": "Tak letak air — terus guna [minyak] masa mesin.",
+   "text": "Tak letak air — terus guna [minyak].",
    "y": 280
   },
   {
    "type": "label",
    "at": 891.0,
-   "dur": 3.8,
+   "dur": 3.6,
    "title": "THERMOMIX",
-   "text": "[30 saat × 2] = 1 minit je, terus halus!",
+   "text": "[30 saat × 2] je, terus halus!",
    "y": 280,
    "sfx": "ding"
   },
   {
    "type": "label",
-   "at": 1082.4,
-   "dur": 3.8,
+   "at": 1103.8,
+   "dur": 4.0,
    "title": "COOVEN · MODE COOKER",
-   "text": "[140°C] · 30 minit · tumis perlahan-lahan",
-   "y": 280
-  },
-  {
-   "type": "tip",
-   "at": 1168.0,
-   "dur": 4.5,
-   "title": "TIP",
-   "text": "Kacau setiap [5–10 minit] je — tak perlu duduk tepi dapur.",
+   "text": "[140°C] · 30 min · tumis perlahan",
    "y": 280
   },
   {
    "type": "joke",
-   "at": 1301.8,
-   "dur": 2.8,
+   "at": 1302.0,
+   "dur": 2.6,
    "text": "Regular customer!",
    "sfx": "badumtss",
    "punch": 1.12
@@ -209,56 +133,17 @@
   {
    "type": "joke",
    "at": 1306.2,
-   "dur": 2.4,
+   "dur": 2.2,
    "text": "Patutlah happy!",
    "sfx": "boing",
    "y": 520
   },
   {
-   "type": "tip",
-   "at": 1320.0,
-   "dur": 4.5,
-   "title": "BONUS",
-   "text": "Paste ni boleh [perap ayam bakar] juga!",
-   "y": 280
-  },
-  {
-   "type": "tip",
-   "at": 2831.6,
-   "dur": 5.0,
-   "title": "DAH GARING?",
-   "text": "Kacau & tengok — dah masak bila [berbiji, tak bergumpal].",
-   "y": 280
-  },
-  {
-   "type": "reveal",
-   "at": 2869.9,
-   "dur": 3.4,
-   "text": "SEDAP!",
-   "sub": "Harum & wangi"
-  },
-  {
    "type": "reveal",
    "at": 4127.3,
-   "dur": 3.2,
+   "dur": 3.4,
    "text": "SIAP!",
    "sub": "Kering, tak melepek"
-  },
-  {
-   "type": "tip",
-   "at": 4149.6,
-   "dur": 5.5,
-   "title": "TIP JIMAT",
-   "text": "Lebihan [minyak] boleh simpan untuk tumis next round.",
-   "y": 280
-  },
-  {
-   "type": "tip",
-   "at": 4156.0,
-   "dur": 5.0,
-   "title": "INGAT",
-   "text": "Minyak terlalu sikit → paste [tak garing].",
-   "y": 280
   }
  ]
 }

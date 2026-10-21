@@ -4,12 +4,12 @@
  "format": "vertical",
  "bug": "MENU 4",
  "tighten": {
-  "max_gap": 0.4,
-  "pad": 0.08
+  "max_gap": 0.3,
+  "pad": 0.06
  },
  "jump_zoom": 1.1,
  "origin": "50% 45%",
- "voice_volume": 1.3,
+ "voice_volume": 1.0,
  "bgm": {
   "volume": 0.05
  },
@@ -17,93 +17,66 @@
   {
    "in": 2648.6,
    "out": 2659.6,
-   "note": "HOOK: guna basket, lambung-lambung, patutlah nama ubi lambung"
+   "note": "HOOK lambung, patutlah",
+   "volume": 1.3
   },
   {
-   "in": 2297.0,
-   "out": 2300.4,
-   "note": "selamat pagi, better together"
+   "in": 2309.8,
+   "out": 2313.7,
+   "note": "ubi lambung guna Thermomix",
+   "volume": 1.3
   },
   {
-   "in": 2306.2,
-   "out": 2316.6,
-   "note": "saya buat ubi lambung guna Thermomix"
+   "in": 2379.3,
+   "out": 2387.8,
+   "note": "Thermomix tak boleh fry, pentingnya Cooven",
+   "volume": 1.3
   },
   {
-   "in": 2326.7,
-   "out": 2332.4,
-   "note": "Thermomix sebelah, dekat-dekat je"
+   "in": 2424.8,
+   "out": 2429.0,
+   "note": "deep fry",
+   "volume": 1.3
   },
   {
-   "in": 2333.1,
-   "out": 2344.3,
-   "note": "ubi lambung, Indonesia panggil onde-onde"
+   "in": 2478.9,
+   "out": 2483.3,
+   "note": "basket dapat sekali",
+   "volume": 1.3
   },
   {
-   "in": 2345.1,
-   "out": 2355.0,
-   "note": "ubi getuk campur kelapa"
+   "in": 2491.7,
+   "out": 2496.8,
+   "note": "suhu stabil",
+   "volume": 1.3
   },
   {
-   "in": 2357.1,
-   "out": 2368.0,
-   "note": "tepung ubi, tepung ketan"
-  },
-  {
-   "in": 2376.0,
-   "out": 2400.1,
-   "note": "Thermomix tak boleh fry, pentingnya ada Cooven"
-  },
-  {
-   "in": 2422.0,
-   "out": 2431.1,
-   "note": "mode deep fry"
-  },
-  {
-   "in": 2440.4,
-   "out": 2449.3,
-   "note": "preheat sekejap, seminit dua"
-  },
-  {
-   "in": 2467.6,
-   "out": 2483.4,
-   "note": "basket dapat sekali"
-  },
-  {
-   "in": 2486.5,
+   "in": 2507.8,
    "out": 2511.1,
-   "note": "suhu stabil, masak sekata"
-  },
-  {
-   "in": 2544.4,
-   "out": 2562.6,
-   "note": "8 liter, minyak 500ml-1L pun boleh"
+   "note": "semuanya sekata",
+   "volume": 1.3
   },
   {
    "in": 2631.4,
-   "out": 2641.1,
-   "note": "tak payah celup test, dia bagitahu dah panas"
-  },
-  {
-   "in": 2697.2,
-   "out": 2709.5,
-   "note": "semudah itu, lambung-lambung"
+   "out": 2637.0,
+   "note": "tak payah celup test",
+   "volume": 1.3
   },
   {
    "in": 4595.7,
    "out": 4602.6,
-   "note": "JOKE: siapa ambil gambar? saya sendiri. kesiannya",
+   "note": "JOKE kesiannya",
    "volume": 0.85
   },
   {
-   "in": 4626.6,
-   "out": 4638.0,
-   "note": "RESULT: tengok, kenyal",
+   "in": 4633.4,
+   "out": 4637.9,
+   "note": "RESULT kenyal",
    "volume": 0.85
   },
   {
    "gfx": "outro",
-   "dur": 3.0,
+   "dur": 2.5,
    "l1": "UBI LAMBUNG",
    "l2": "Thermomix adun × Cooven goreng",
    "l3": "FOLLOW + SHARE",
@@ -114,7 +87,7 @@
   {
    "type": "hook",
    "at": 2648.8,
-   "dur": 4.0,
+   "dur": 3.6,
    "kicker": "Ubi Lambung",
    "text": "KENAPA NAMA DIA UBI LAMBUNG?",
    "highlight": "LAMBUNG?",
@@ -124,15 +97,15 @@
   {
    "type": "joke",
    "at": 2657.8,
-   "dur": 2.4,
+   "dur": 2.2,
    "text": "Patutlah!",
    "sfx": "badumtss",
    "punch": 1.12
   },
   {
    "type": "menu",
-   "at": 2306.4,
-   "dur": 3.8,
+   "at": 2309.9,
+   "dur": 3.4,
    "num": "MENU 4 · MUKMIN",
    "text": "Ubi Lambung",
    "apps": [
@@ -142,91 +115,59 @@
    "y": 280
   },
   {
-   "type": "fact",
-   "at": 2340.8,
-   "dur": 4.0,
-   "title": "TAHU TAK?",
-   "text": "Orang Indonesia panggil [onde-onde].",
-   "y": 280
-  },
-  {
-   "type": "ingredients",
-   "at": 2348.0,
-   "dur": 8.0,
-   "title": "Resepi Mukmin",
-   "items": [
-    "Keledek 400 g (bakar / kukus)",
-    "Tepung ubi 100 g",
-    "Tepung pulut 20 g",
-    "Baking soda 1 sdt",
-    "Garam secubit"
-   ],
-   "y": 240,
-   "size": 40
-  },
-  {
    "type": "tip",
-   "at": 2380.4,
-   "dur": 5.5,
+   "at": 2379.4,
+   "dur": 5.0,
    "title": "BETTER TOGETHER",
-   "text": "Thermomix [adun], Cooven [goreng] — sebab Thermomix tak boleh deep fry.",
+   "text": "Thermomix [adun], Cooven [goreng].",
    "y": 280
   },
   {
    "type": "label",
-   "at": 2425.0,
-   "dur": 4.5,
+   "at": 2424.9,
+   "dur": 3.6,
    "title": "COOVEN · MODE DEEP FRY",
-   "text": "Preheat [1–2 minit] je dah boleh masuk.",
+   "text": "Preheat [1–2 minit] je.",
    "y": 280
   },
   {
    "type": "fact",
-   "at": 2476.6,
-   "dur": 4.0,
+   "at": 2479.0,
+   "dur": 3.6,
    "title": "BONUS",
-   "text": "[Basket] goreng dapat sekali — tak perlu beli asing.",
+   "text": "[Basket] goreng dapat sekali.",
    "y": 280
   },
   {
    "type": "tip",
-   "at": 2491.7,
-   "dur": 6.0,
+   "at": 2491.8,
+   "dur": 5.0,
    "title": "KENAPA SEDAP?",
-   "text": "Suhu [stabil] — masak sekata, tak hangus, tak mentah.",
+   "text": "Suhu [stabil] — masak sekata.",
    "y": 280,
    "sfx": "ding"
   },
   {
-   "type": "fact",
-   "at": 2546.0,
-   "dur": 4.0,
-   "title": "KAPASITI",
-   "text": "Periuk [8 liter], tapi minyak [±1 liter] pun cukup.",
-   "y": 280
-  },
-  {
    "type": "tip",
-   "at": 2632.0,
-   "dur": 5.0,
+   "at": 2631.5,
+   "dur": 4.2,
    "title": "TAK PAYAH TEKA",
-   "text": "Cooven [bagitahu] bila minyak dah cukup panas.",
+   "text": "Cooven [bagitahu] bila minyak dah panas.",
    "y": 280
   },
   {
    "type": "joke",
    "at": 4599.3,
-   "dur": 2.6,
+   "dur": 2.4,
    "text": "Kesiannya!",
    "sfx": "boing",
    "punch": 1.12
   },
   {
    "type": "reveal",
-   "at": 4633.5,
-   "dur": 3.4,
-   "text": "KENYAL!",
-   "sub": "Ubi lambung siap"
+   "at": 4634.0,
+   "dur": 3.0,
+   "text": "KENYAL!"
   }
  ]
 }
