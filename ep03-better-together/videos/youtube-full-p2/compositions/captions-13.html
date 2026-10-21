@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+        #root { position: absolute; inset: 0; 
+  --cream: #FFF3DF; --tomato: #E8402A; --mustard: #FFB81C; --cocoa: #2A1810;
+  --leaf: #2F9E5B; --ink: #1B0F09; --white: #FFFFFF;
+ font-family: Montserrat, 'Archivo Black', sans-serif; }
+        
+        .cg { position: absolute; left: 760px; width: 1060px; top: 850px; height: 180px; display: flex; align-items: center; justify-content: flex-start;
+              flex-wrap: wrap; align-content: center; opacity: 0; }
+        .cw { display: inline-block; margin-right: 0.26em; font-weight: 800; font-size: 50px; line-height: 1.18; color: var(--cream); }
+        .cw.on { color: var(--mustard); }
+      </style>
+      <div id="root" data-composition-id="captions-13" data-width="1920" data-height="1080">
+        <div class="cg" id="captions-13-g0"><span class="cw" id="captions-13-w0-0">Boleh</span></div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          const q = (s) => document.querySelector('[data-composition-id="captions-13"] ' + s);
+          tl.set('#captions-13-g0', { opacity: 1 }, 0.050);
+          tl.set('#captions-13-w0-0', { color: '#FFB81C' }, 0.050);
+          tl.set('#captions-13-w0-0', { color: '#FFF3DF' }, 1.000);
+          tl.set('#captions-13-g0', { opacity: 0 }, 1.000);
+          window.__timelines["captions-13"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>
