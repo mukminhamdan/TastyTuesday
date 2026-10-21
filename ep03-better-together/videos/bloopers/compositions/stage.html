@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+        #root { position: absolute; inset: 0; 
+  --cream: #FFF3DF; --tomato: #E8402A; --mustard: #FFB81C; --cocoa: #2A1810;
+  --leaf: #2F9E5B; --ink: #1B0F09; --white: #FFFFFF;
+ font-family: Montserrat, 'Archivo Black', sans-serif; }
+        
+        .bug { position: absolute; left: 40px; top: 70px; display: flex; align-items: center; gap: 12px; }
+        .b1 { font-family: 'Archivo Black', sans-serif; font-size: 30px; color: var(--cream); background: var(--tomato); padding: 8px 18px;
+              border-radius: 12px; border: 4px solid var(--cocoa); }
+        .b2 { font-weight: 900; font-size: 26px; color: var(--cocoa); background: var(--mustard); padding: 8px 16px; border-radius: 12px; border: 4px solid var(--cocoa); }
+        .blogo { width: 132px; height: 132px; border-radius: 50%; box-shadow: 0 6px 18px rgba(0,0,0,0.35); }
+      </style>
+      <div id="root" data-composition-id="stage" data-width="1080" data-height="1920">
+        <div class="bug"><img class="blogo" src="assets/logo-round.png" alt="Tasty Tuesday" /><span class="b2">BLOOPER</span></div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          const q = (s) => document.querySelector('[data-composition-id="stage"] ' + s);
+          q('.bug') && tl.fromTo(q('.bug'), { x: -400 }, { x: 0, duration: 0.5, ease: 'power3.out' }, 0.3);
+          window.__timelines["stage"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

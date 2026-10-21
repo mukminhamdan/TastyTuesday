@@ -1,73 +1,73 @@
 1
-00:00:00,100 --> 00:00:03,160
+00:00:10,100 --> 00:00:13,160
 Dia punya method This time Kita tak nak
 
 2
-00:00:03,160 --> 00:00:06,560
+00:00:13,160 --> 00:00:16,560
 preheat Kita masuk terus daripada Awal So
 
 3
-00:00:06,560 --> 00:00:08,970
+00:00:16,560 --> 00:00:18,970
 dia punya 15 minit tu Without preheat
 
 4
-00:00:09,030 --> 00:00:11,790
+00:00:19,030 --> 00:00:21,790
 Sekarang berapa Sekarang berapa Aku tak tahu
 
 5
-00:00:11,790 --> 00:00:14,510
+00:00:21,790 --> 00:00:24,510
 Ya Allah RM40 lebih Itu pun kedai-kedai
 
 6
-00:00:14,510 --> 00:00:15,240
+00:00:24,510 --> 00:00:25,240
 biasa lah
 
 7
-00:00:15,240 --> 00:00:16,010
+00:00:25,240 --> 00:00:26,010
 Lepas tu
 
 8
-00:00:16,120 --> 00:00:19,680
+00:00:26,120 --> 00:00:29,680
 Ikan tak sampai RM10 pun Bahan-bahan lain tu
 
 9
-00:00:19,680 --> 00:00:20,490
+00:00:29,680 --> 00:00:30,490
 Lagilah
 
 10
-00:00:20,580 --> 00:00:23,250
+00:00:30,580 --> 00:00:33,250
 Total bahan tak sampai RM20 pun
 
 11
-00:00:23,310 --> 00:00:25,510
+00:00:33,310 --> 00:00:35,510
 Dia guna basket tu kocak-kocak
 
 12
-00:00:25,810 --> 00:00:27,460
+00:00:35,810 --> 00:00:37,460
 Macam itu je Dia
 
 13
-00:00:27,550 --> 00:00:28,600
+00:00:37,550 --> 00:00:38,600
 boleh lambung-lambung
 
 14
-00:00:28,680 --> 00:00:30,490
+00:00:38,680 --> 00:00:40,490
 Patutlah Nama ubi lambung
 
 15
-00:00:30,560 --> 00:00:32,740
+00:00:40,560 --> 00:00:42,740
 ada regular customer lah ni Dah ada regular
 
 16
-00:00:32,740 --> 00:00:33,290
+00:00:42,740 --> 00:00:43,290
 customer
 
 17
-00:00:33,760 --> 00:00:35,860
+00:00:43,760 --> 00:00:45,860
 Haa Itu yang kena buat Patutlah happy je
 
 18
-00:00:35,860 --> 00:00:37,450
+00:00:45,860 --> 00:00:47,360
 Ya Patutlah happy je
 
 19
@@ -3512,7 +3512,7 @@ bodoh sekali I lah yang tak pandai sekali
 
 879
 00:34:59,120 --> 00:35:00,390
-Berkar-bakar ni
+bakar-bakar ni
 
 880
 00:35:00,740 --> 00:35:03,810
@@ -4481,92 +4481,4 @@ semua Bye dan Assalamualaikum Bye bye
 1121
 00:44:20,010 --> 00:44:22,220
 Assalamualaikum Bye bye
-
-1122
-00:44:22,240 --> 00:44:24,630
-Saya ni kekut sikit lah.
-
-1123
-00:44:24,740 --> 00:44:25,010
-Kalau
-
-1124
-00:44:25,070 --> 00:44:26,120
-dia
-
-1125
-00:44:26,430 --> 00:44:27,820
-mirip image saya eh.
-
-1126
-00:44:27,900 --> 00:44:29,190
-Kalau saya terbalikkan saya jadi.
-
-1127
-00:44:29,340 --> 00:44:30,570
-Eh pakai bunga.
-
-1128
-00:44:30,650 --> 00:44:31,110
-Tak nampak.
-
-1129
-00:44:31,110 --> 00:44:32,900
-Eh over lah pula make upnya.
-
-1130
-00:44:33,020 --> 00:44:36,650
-Kenapa bila saya miripkan image ni dia jadi.
-
-1131
-00:44:36,780 --> 00:44:38,770
-Saya rasa saya jadi gelap.
-
-1132
-00:44:39,020 --> 00:44:39,710
-Saya jadi.
-
-1133
-00:44:40,140 --> 00:44:40,290
-Hmm.
-
-1134
-00:44:40,290 --> 00:44:41,880
-Kepada yang apa ni?
-
-1135
-00:44:42,030 --> 00:44:44,570
-Suka-suka Nak suruh pakai helmet lah Nak
-
-1136
-00:44:44,570 --> 00:44:46,990
-bagi 29k lah Apa semua tu kan?
-
-1137
-00:44:46,990 --> 00:44:47,850
-Tak ada, tak ada, tak ada Kita orang
-
-1138
-00:44:47,850 --> 00:44:48,960
-tak akan buat semua benda tu
-
-1139
-00:44:49,030 --> 00:44:50,710
-Kak Sal Mah memang dah masuk Kak Sal
-
-1140
-00:44:50,710 --> 00:44:52,780
-Mah Kak Sal Mah Kena on camera
-
-1141
-00:44:53,170 --> 00:44:55,630
-Oh, tak on ni camera Patutlah I tak
-
-1142
-00:44:55,630 --> 00:44:56,920
-nampak-nampak Muka I
-
-1143
-00:44:56,980 --> 00:44:58,750
-Cari muka sendiri Tak jumpa ni
 

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ms" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Tasty Tuesday EP3 · Blooper</title>
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #2A1810; }
+      #root { width: 100%; height: 100%; position: relative; overflow: hidden; }
+      #cam { position: absolute; inset: 0; overflow: hidden; z-index: 1; }
+      #punch, #zoom { position: absolute; inset: 0; }
+      #cam video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="46.000" data-width="1080" data-height="1920">
+      <div id="cam">
+        <div id="punch"><div id="zoom">
+          <video id="run00" class="clip" src="assets/edit.mp4" data-start="0.000" data-duration="42.000" data-media-start="0.000" data-track-index="0" playsinline data-has-audio="true"></video>
+        </div></div>
+
+      </div>
+      <div id="stage" data-composition-id="stage" data-composition-src="compositions/stage.html" data-start="0.000" data-duration="46.000" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="position:absolute;inset:0;z-index:3"></div>
+      <div id="captions-00" data-composition-id="captions-00" data-composition-src="compositions/captions-00.html" data-start="0.000" data-duration="14.560" data-track-index="2" data-track-kind="captions" data-width="1080" data-height="1920" style="position:absolute;inset:0;z-index:4"></div>
+      <div id="captions-01" data-composition-id="captions-01" data-composition-src="compositions/captions-01.html" data-start="14.560" data-duration="15.560" data-track-index="2" data-track-kind="captions" data-width="1080" data-height="1920" style="position:absolute;inset:0;z-index:4"></div>
+      <div id="captions-02" data-composition-id="captions-02" data-composition-src="compositions/captions-02.html" data-start="30.120" data-duration="15.880" data-track-index="2" data-track-kind="captions" data-width="1080" data-height="1920" style="position:absolute;inset:0;z-index:4"></div>
+      <div id="ov00-hook" data-composition-id="ov00-hook" data-composition-src="compositions/ov00-hook.html" data-start="0.080" data-duration="3.000" data-track-index="3" data-track-kind="graphics" data-width="1080" data-height="1920" style="position:absolute;inset:0;z-index:5"></div>
+      <div id="ov01-joke" data-composition-id="ov01-joke" data-composition-src="compositions/ov01-joke.html" data-start="2.440" data-duration="1.600" data-track-index="3" data-track-kind="graphics" data-width="1080" data-height="1920" style="position:absolute;inset:0;z-index:5"></div>
+      <div id="ov02-joke" data-composition-id="ov02-joke" data-composition-src="compositions/ov02-joke.html" data-start="4.640" data-duration="1.600" data-track-index="3" data-track-kind="graphics" data-width="1080" data-height="1920" style="position:absolute;inset:0;z-index:5"></div>
+      <div id="ov03-joke" data-composition-id="ov03-joke" data-composition-src="compositions/ov03-joke.html" data-start="7.840" data-duration="1.600" data-track-index="3" data-track-kind="graphics" data-width="1080" data-height="1920" style="position:absolute;inset:0;z-index:5"></div>
+      <div id="ov04-joke" data-composition-id="ov04-joke" data-composition-src="compositions/ov04-joke.html" data-start="11.040" data-duration="1.600" data-track-index="3" data-track-kind="graphics" data-width="1080" data-height="1920" style="position:absolute;inset:0;z-index:5"></div>
+      <div id="ov05-joke" data-composition-id="ov05-joke" data-composition-src="compositions/ov05-joke.html" data-start="14.320" data-duration="1.600" data-track-index="3" data-track-kind="graphics" data-width="1080" data-height="1920" style="position:absolute;inset:0;z-index:5"></div>
+      <div id="ov06-joke" data-composition-id="ov06-joke" data-composition-src="compositions/ov06-joke.html" data-start="22.680" data-duration="1.600" data-track-index="3" data-track-kind="graphics" data-width="1080" data-height="1920" style="position:absolute;inset:0;z-index:5"></div>
+      <div id="ov07-joke" data-composition-id="ov07-joke" data-composition-src="compositions/ov07-joke.html" data-start="25.320" data-duration="1.600" data-track-index="3" data-track-kind="graphics" data-width="1080" data-height="1920" style="position:absolute;inset:0;z-index:5"></div>
+      <div id="ov08-joke" data-composition-id="ov08-joke" data-composition-src="compositions/ov08-joke.html" data-start="26.400" data-duration="1.600" data-track-index="3" data-track-kind="graphics" data-width="1080" data-height="1920" style="position:absolute;inset:0;z-index:5"></div>
+      <div id="ov09-joke" data-composition-id="ov09-joke" data-composition-src="compositions/ov09-joke.html" data-start="33.360" data-duration="1.600" data-track-index="3" data-track-kind="graphics" data-width="1080" data-height="1920" style="position:absolute;inset:0;z-index:5"></div>
+      <div id="ov10-joke" data-composition-id="ov10-joke" data-composition-src="compositions/ov10-joke.html" data-start="36.200" data-duration="1.600" data-track-index="3" data-track-kind="graphics" data-width="1080" data-height="1920" style="position:absolute;inset:0;z-index:5"></div>
+      <div id="ov11-joke" data-composition-id="ov11-joke" data-composition-src="compositions/ov11-joke.html" data-start="40.520" data-duration="1.600" data-track-index="3" data-track-kind="graphics" data-width="1080" data-height="1920" style="position:absolute;inset:0;z-index:5"></div>
+      <div id="gfx00-outro" data-composition-id="gfx00-outro" data-composition-src="compositions/gfx00-outro.html" data-start="42.000" data-duration="4.000" data-track-index="4" data-track-kind="graphics" data-width="1080" data-height="1920" style="position:absolute;inset:0;z-index:6"></div>
+      <audio id="bgm-song-0" src="assets/tasty-tuesday-song.mp3" data-start="0.000" data-duration="13.000" data-track-index="6" data-volume="0.08" data-media-start="4.4" data-fade-in="0.8" data-fade-out="0.3"></audio>
+      <audio id="sfx-00-0" src="assets/sfx/glitch-1.mp3" data-start="0.080" data-duration="2.638" data-track-index="5" data-volume="0.4"></audio>
+      <audio id="sfx-01-0" src="assets/sfx/badumtss.mp3" data-start="2.440" data-duration="2.429" data-track-index="7" data-volume="0.45"></audio>
+      <audio id="sfx-02-0" src="assets/sfx/boing.mp3" data-start="4.640" data-duration="0.940" data-track-index="5" data-volume="0.35"></audio>
+      <audio id="sfx-03-0" src="assets/sfx/pop.mp3" data-start="7.840" data-duration="0.720" data-track-index="5" data-volume="0.55"></audio>
+      <audio id="sfx-04-0" src="assets/sfx/boing.mp3" data-start="11.040" data-duration="0.940" data-track-index="5" data-volume="0.35"></audio>
+      <audio id="bgm-song-1" src="assets/tasty-tuesday-song.mp3" data-start="13.000" data-duration="13.000" data-track-index="6" data-volume="0.08" data-media-start="4.4" data-fade-in="0.3" data-fade-out="0.3"></audio>
+      <audio id="sfx-05-0" src="assets/sfx/badumtss.mp3" data-start="14.320" data-duration="2.429" data-track-index="5" data-volume="0.45"></audio>
+      <audio id="sfx-06-0" src="assets/sfx/boing.mp3" data-start="22.680" data-duration="0.940" data-track-index="5" data-volume="0.35"></audio>
+      <audio id="sfx-07-0" src="assets/sfx/boing.mp3" data-start="25.320" data-duration="0.940" data-track-index="5" data-volume="0.35"></audio>
+      <audio id="bgm-song-2" src="assets/tasty-tuesday-song.mp3" data-start="26.000" data-duration="13.000" data-track-index="6" data-volume="0.08" data-media-start="4.4" data-fade-in="0.3" data-fade-out="0.3"></audio>
+      <audio id="sfx-08-0" src="assets/sfx/badumtss.mp3" data-start="26.400" data-duration="2.429" data-track-index="5" data-volume="0.45"></audio>
+      <audio id="sfx-09-0" src="assets/sfx/boing.mp3" data-start="33.360" data-duration="0.940" data-track-index="5" data-volume="0.35"></audio>
+      <audio id="sfx-10-0" src="assets/sfx/pop.mp3" data-start="36.200" data-duration="0.720" data-track-index="5" data-volume="0.55"></audio>
+      <audio id="bgm-song-3" src="assets/tasty-tuesday-song.mp3" data-start="39.000" data-duration="3.000" data-track-index="6" data-volume="0.08" data-media-start="4.4" data-fade-in="0.3" data-fade-out="0.6"></audio>
+      <audio id="sfx-11-0" src="assets/sfx/badumtss.mp3" data-start="40.520" data-duration="2.429" data-track-index="5" data-volume="0.45"></audio>
+      <audio id="jingle" src="assets/tasty-tuesday-song.mp3" data-start="42.000" data-duration="4.000" data-track-index="7" data-volume="0.9" data-media-start="1.6" data-fade-out="0.5"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 0.000);
+      tl.set('#zoom', { scale: 1.100, transformOrigin: '50% 45%' }, 1.200);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 1.720);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 3.960);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 5.480);
+      tl.set('#zoom', { scale: 1.100, transformOrigin: '50% 45%' }, 7.760);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 8.640);
+      tl.set('#zoom', { scale: 1.100, transformOrigin: '50% 45%' }, 9.760);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 12.840);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 18.840);
+      tl.set('#zoom', { scale: 1.100, transformOrigin: '50% 45%' }, 22.600);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 24.400);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 26.200);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 31.080);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 34.080);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 37.720);
+      tl.set('#zoom', { scale: 1.100, transformOrigin: '50% 45%' }, 40.440);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

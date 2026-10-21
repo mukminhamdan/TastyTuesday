@@ -13,12 +13,17 @@
   "volume": 0.07,
   "ranges": [
    [
-    0,
-    34
+    10,
+    44
    ]
   ]
  },
  "segments": [
+  {
+   "gfx": "opening",
+   "dur": 10.0,
+   "sfx": ""
+  },
   {
    "in": 1660.2,
    "out": 1669.1,
@@ -44,11 +49,6 @@
    "in": 1301.9,
    "out": 1308.8,
    "note": "cold open: regular customer, patutlah happy"
-  },
-  {
-   "gfx": "opening",
-   "dur": 10.0,
-   "sfx": ""
   },
   {
    "in": 666.7,

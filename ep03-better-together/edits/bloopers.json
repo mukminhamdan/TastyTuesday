@@ -1,0 +1,193 @@
+{
+ "id": "bloopers",
+ "title": "Tasty Tuesday EP3 · Blooper",
+ "format": "vertical",
+ "bug": "BLOOPER",
+ "tighten": {
+  "max_gap": 0.3,
+  "pad": 0.06
+ },
+ "jump_zoom": 1.1,
+ "origin": "50% 45%",
+ "bgm": {
+  "volume": 0.08
+ },
+ "brand": {
+  "logo": true,
+  "song": true
+ },
+ "segments": [
+  {
+   "in": 174.0,
+   "out": 176.2,
+   "note": "filter: terbalikkan, pakai bunga"
+  },
+  {
+   "in": 179.7,
+   "out": 181.9,
+   "note": "over lah pula make upnya"
+  },
+  {
+   "in": 192.3,
+   "out": 194.1,
+   "note": "saya jadi gelap"
+  },
+  {
+   "in": 345.4,
+   "out": 349.4,
+   "note": "serba tak kena, nervous"
+  },
+  {
+   "in": 373.2,
+   "out": 379.0,
+   "note": "suara bergema, aku ni tak guna"
+  },
+  {
+   "in": 548.0,
+   "out": 554.0,
+   "note": "helmet, 29k, kita tak buat semua tu"
+  },
+  {
+   "in": 622.3,
+   "out": 629.1,
+   "note": "tak on camera, cari muka sendiri"
+  },
+  {
+   "in": 2736.2,
+   "out": 2738.6,
+   "note": "red red red cup cup"
+  },
+  {
+   "in": 3413.1,
+   "out": 3418.0,
+   "note": "I'm not a baker"
+  },
+  {
+   "in": 4172.3,
+   "out": 4175.6,
+   "note": "tertunduk, sakit pinggang"
+  },
+  {
+   "in": 4579.9,
+   "out": 4583.5,
+   "note": "Salma merampas limelight"
+  },
+  {
+   "in": 4595.7,
+   "out": 4600.8,
+   "note": "siapa ambil gambar? saya sendiri. kesiannya"
+  },
+  {
+   "gfx": "outro",
+   "dur": 4.0,
+   "l1": "BLOOPER",
+   "l2": "Tasty Tuesday · Episod 3",
+   "l3": "FOLLOW + SHARE"
+  }
+ ],
+ "overlays": [
+  {
+   "type": "hook",
+   "at": 174.1,
+   "dur": 3.0,
+   "kicker": "Tasty Tuesday · EP3",
+   "text": "BLOOPER!",
+   "highlight": "BLOOPER!",
+   "y": 230,
+   "size": 120,
+   "sfx": "glitch-1"
+  },
+  {
+   "type": "joke",
+   "at": 180.4,
+   "dur": 1.6,
+   "text": "Over make-up!",
+   "sfx": "badumtss",
+   "punch": 1.12,
+   "y": 480
+  },
+  {
+   "type": "joke",
+   "at": 193.0,
+   "dur": 1.6,
+   "text": "Gelap!",
+   "sfx": "boing",
+   "y": 680
+  },
+  {
+   "type": "joke",
+   "at": 348.6,
+   "dur": 1.6,
+   "text": "Nervous!",
+   "sfx": "pop",
+   "y": 480
+  },
+  {
+   "type": "joke",
+   "at": 377.2,
+   "dur": 1.6,
+   "text": "Alamak!",
+   "sfx": "boing",
+   "punch": 1.12,
+   "y": 680
+  },
+  {
+   "type": "joke",
+   "at": 549.5,
+   "dur": 1.6,
+   "text": "Tak ada 29k!",
+   "sfx": "badumtss",
+   "y": 480
+  },
+  {
+   "type": "joke",
+   "at": 627.4,
+   "dur": 1.6,
+   "text": "Cari muka sendiri!",
+   "sfx": "boing",
+   "punch": 1.12,
+   "y": 680
+  },
+  {
+   "type": "joke",
+   "at": 2737.1,
+   "dur": 1.6,
+   "text": "Red... red... red?!",
+   "sfx": "boing",
+   "y": 480
+  },
+  {
+   "type": "joke",
+   "at": 3413.3,
+   "dur": 1.6,
+   "text": "I'm not a baker!",
+   "sfx": "badumtss",
+   "y": 680
+  },
+  {
+   "type": "joke",
+   "at": 4174.6,
+   "dur": 1.6,
+   "text": "Sakit pinggang!",
+   "sfx": "boing",
+   "y": 480
+  },
+  {
+   "type": "joke",
+   "at": 4582.0,
+   "dur": 1.6,
+   "text": "Rampas limelight!",
+   "sfx": "pop",
+   "y": 680
+  },
+  {
+   "type": "joke",
+   "at": 4599.3,
+   "dur": 1.6,
+   "text": "Kesiannya!",
+   "sfx": "badumtss",
+   "punch": 1.12,
+   "y": 480
+  }
+ ]
+}

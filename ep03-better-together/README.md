@@ -1,6 +1,6 @@
 # Tasty Tuesday · Episod 3 · Better Together (Cooven × Thermomix)
 
-Suntingan rakaman live (92 min, 640×1280) menjadi 6 video, dibina dengan [HyperFrames](https://hyperframes.heygen.com).
+Suntingan rakaman live (92 min, 640×1280) menjadi 7 video, dibina dengan [HyperFrames](https://hyperframes.heygen.com).
 
 | Video | Format | Projek |
 |---|---|---|
@@ -10,6 +10,7 @@ Suntingan rakaman live (92 min, 640×1280) menjadi 6 video, dibina dengan [Hyper
 | Menu 2 · Red Velvet Cupcake | 1080×1920 | `videos/menu-2-red-velvet/` |
 | Menu 3 · Ikan Siakap Stim (Ida) | 1080×1920 | `videos/menu-3-siakap-stim/` |
 | Menu 4 · Ubi Lambung (Mukmin) | 1080×1920 | `videos/menu-4-ubi-lambung/` |
+| Blooper | 1080×1920 | `videos/bloopers/` |
 
 ## Struktur
 

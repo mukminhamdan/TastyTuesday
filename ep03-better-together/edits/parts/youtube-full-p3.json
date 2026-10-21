@@ -131,31 +131,8 @@
   },
   {
    "in": 4680.0,
-   "out": 4783.0,
-   "note": "CLOSING: semua sedap, terima kasih, minggu depan, bye"
-  },
-  {
-   "in": 163.8,
-   "out": 195.8,
-   "note": "BLOOPER: filter make-up"
-  },
-  {
-   "in": 545.4,
-   "out": 554.1,
-   "note": "BLOOPER: helmet 29k disclaimer"
-  },
-  {
-   "in": 618.1,
-   "out": 629.1,
-   "note": "BLOOPER: cari muka sendiri"
-  },
-  {
-   "gfx": "outro",
-   "dur": 6.0,
-   "l1": "JUMPA SELASA DEPAN!",
-   "l2": "Tasty Tuesday · Live setiap Selasa",
-   "l3": "LIKE · SUBSCRIBE · SHARE",
-   "sfx": "chime"
+   "out": 4773.4,
+   "note": "CLOSING: semua sedap, terima kasih, minggu depan, bye bye (video tamat di sini)"
   }
  ],
  "overlays": [
@@ -346,37 +323,6 @@
    "text": "Semua sedap!"
   },
   {
-   "type": "chapter",
-   "at": 163.9,
-   "dur": 3.5,
-   "kicker": "Bonus",
-   "text": "Blooper!",
-   "sfx": "glitch-1"
-  },
-  {
-   "type": "joke",
-   "at": 190.0,
-   "dur": 3.0,
-   "text": "Over make-up!",
-   "sfx": "boing"
-  },
-  {
-   "type": "joke",
-   "at": 549.5,
-   "dur": 3.5,
-   "text": "Tak ada helmet, tak ada 29k!",
-   "sfx": "badumtss",
-   "size": 50
-  },
-  {
-   "type": "joke",
-   "at": 627.4,
-   "dur": 2.6,
-   "text": "Cari muka sendiri!",
-   "sfx": "boing",
-   "punch": 1.08
-  },
-  {
    "type": "now",
    "at": 2721.4,
    "until": 4679.9,
@@ -392,22 +338,11 @@
   {
    "type": "now",
    "at": 4680.2,
-   "until": 4775.0,
+   "until": 4773.3,
    "kicker": "Penutup",
    "text": "Jumpa Selasa Depan",
    "apps": [
     "TASTY TUESDAY"
-   ],
-   "sfx": ""
-  },
-  {
-   "type": "now",
-   "at": 164.0,
-   "until": 629.0,
-   "kicker": "Bonus",
-   "text": "Blooper",
-   "apps": [
-    "BEHIND THE SCENES"
    ],
    "sfx": ""
   }

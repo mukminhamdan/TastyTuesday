@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.join(ROOT, "tools"))
 import build  # noqa: E402
 
 SHEET = os.path.join(ROOT, "TEKS-SKRIN.txt")
-ORDER = ["reels", "menu-1-pes-sup", "menu-2-red-velvet", "menu-3-siakap-stim", "menu-4-ubi-lambung", "youtube-full"]
+ORDER = ["reels", "menu-1-pes-sup", "menu-2-red-velvet", "menu-3-siakap-stim", "menu-4-ubi-lambung", "bloopers", "youtube-full"]
 FIELDS = {
     "hook": ["kicker", "text", "highlight"], "tip": ["title", "text"], "label": ["title", "text"],
     "fact": ["title", "text"], "menu": ["num", "text", "apps"], "joke": ["text"], "lower": ["name", "role"],

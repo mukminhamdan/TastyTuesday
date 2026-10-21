@@ -69,3 +69,9 @@ Panel kanan sentiasa tunjuk: jenama, kad "Sedang dimasak" setiap bab, kad tip/la
 3. "Cooven Food Engine" — whisper dengar "Current Food Engine"; caption tulis "Cooven Food Engine".
 4. Testimoni "dapat Cooven secara percuma" (promo combo) masih ada dalam video YouTube kerana itu kata-kata live — buang jika promo dah tamat.
 5. Ida sebut "chop 5 minit" (mungkin maksud 5 saat) — kad tidak menyebut angka.
+
+## Kemas kini v6
+
+- **YouTube:** video pembuka (`shared/brand/youtube-opening.mp4`) di 0:00, kemudian cuplikan hook. Video tamat terus selepas "bye bye" (tiada blooper / kad penutup). Durasi 44:22.
+- **Blooper:** video menegak berasingan (`videos/bloopers/`, 0:46) — filter make-up, "nervous", suara bergema, "tak ada 29k", "cari muka sendiri", "red red red", "I'm not a baker", sakit pinggang, "rampas limelight", "kesiannya". Logo + lagu Tasty Tuesday seperti Reels.
+- **Reels + menu:** logo bulat Tasty Tuesday di penjuru, kad penutup berlogo dengan nyanyian "Tasty Tuesday!", instrumental lagu sebagai muzik latar.
