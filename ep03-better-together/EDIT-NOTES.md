@@ -8,7 +8,7 @@ Sumber: rakaman TikTok Live 92 min (640×1280, 25 fps). Transkrip penuh di `data
 |---|---|---|---|
 | 1 | **YouTube — sesi penuh** (16:9) | 45:00 | Cold open 30s: oven Cooven menyala (red velvet), "Siakap kedai RM40++ vs < RM20", "Patutlah nama ubi lambung!", "Regular customer… patutlah happy" → kad tajuk |
 | 2 | **Reels rumusan** (9:16) | 0:51 | "Thermomix tak boleh bakar? Di sinilah datangnya Cooven" atas b-roll oven menyala |
-| 3 | **Menu 1 · Paste Sup** (Kak Salma) | 0:51 | "Bawang sekilo… dalam Cooven sekali harung je!" |
+| 3 | **Menu 1 · Pes Sup** (Kak Salma) | 0:51 | "Bawang sekilo… dalam Cooven sekali harung je!" |
 | 4 | **Menu 2 · Red Velvet Cupcake** (Piah) | 0:50 | Oven menyala + "15 minit tanpa preheat" |
 | 5 | **Menu 3 · Siakap Stim** (Ida) | 0:54 | "Siakap steam kat kedai RM40 lebih… total bahan tak sampai RM20!" |
 | 6 | **Menu 4 · Ubi Lambung** (Mukmin) | 0:54 | "Kenapa nama dia ubi lambung?" → "Patutlah!" |
@@ -19,7 +19,7 @@ Reels dan semua video menu bawah 1 minit (v2, atas permintaan). Versi ~3 minit (
 
 1. Cold open → kad tajuk *Tasty Tuesday · Episod 3 · Better Together · Cooven × Thermomix*
 2. Pembukaan — kenapa "Better Together" (Thermomix blend/adun, Cooven bakar/goreng/steam; bukan saingan)
-3. Menu 1 · Paste Sup — Kak Salma
+3. Menu 1 · Pes Sup — Kak Salma
 4. Menu 2 · Red Velvet Cupcake
 5. Menu 3 · Siakap Stim — Ida
 6. Menu 4 · Ubi Lambung — Mukmin
@@ -41,7 +41,7 @@ Panel kanan sentiasa tunjuk: jenama, kad "Sedang dimasak" setiap bab, kad tip/la
 
 - Blend rempah tanpa air — terus guna minyak; buat 2–3 batch kalau banyak; 30 s × 2 dah halus
 - Cooven Mode Cooker 140 °C, 30 min — kacau setiap 5–10 min; 160–180 °C kalau nak cepat (kerap kacau)
-- Paste dah garing bila berbiji, tak bergumpal; lebihan minyak simpan untuk tumis next round
+- Pes dah garing bila berbiji, tak bergumpal; lebihan minyak simpan untuk tumis next round
 - Cupcake: isi satu sudu (bukan 3/4); Cooven Mode Oven 145 °C, 15 min tanpa preheat; muat 14–16 cup
 - Frosting tanpa nozzle → sapu guna pisau; tabur crumbs untuk sembunyi cacat-cela
 - Ikan: kelar badan; serai bawah & dalam perut; berus darah hitam dalam perut guna berus gigi khas (tak hanyir)

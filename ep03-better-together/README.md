@@ -6,7 +6,7 @@ Suntingan rakaman live (92 min, 640×1280) menjadi 6 video, dibina dengan [Hyper
 |---|---|---|
 | YouTube — sesi penuh (disunting) | 1920×1080 | `videos/youtube-full/` |
 | Reels rumusan (< 2 min) | 1080×1920 | `videos/reels/` |
-| Menu 1 · Paste Sup (Kak Salma) | 1080×1920 | `videos/menu-1-paste-sup/` |
+| Menu 1 · Pes Sup (Kak Salma) | 1080×1920 | `videos/menu-1-pes-sup/` |
 | Menu 2 · Red Velvet Cupcake | 1080×1920 | `videos/menu-2-red-velvet/` |
 | Menu 3 · Ikan Siakap Stim (Ida) | 1080×1920 | `videos/menu-3-siakap-stim/` |
 | Menu 4 · Ubi Lambung (Mukmin) | 1080×1920 | `videos/menu-4-ubi-lambung/` |

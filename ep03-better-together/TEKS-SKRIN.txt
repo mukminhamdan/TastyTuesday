@@ -76,43 +76,43 @@ Cara edit:
 ### Tasty Tuesday EP3 · Menu 1 · Pes Sup Kak Salma  ·  0:51.4
 
 
-[menu-1-paste-sup.o00] 0:00.2 HOOK
+[menu-1-pes-sup.o00] 0:00.2 HOOK
   kicker = Pes Sup Homemade
   text = BAWANG 1KG SEKALI HARUNG!
   highlight = 1KG
 
-[menu-1-paste-sup.o01] 0:11.4 KAD MENU
+[menu-1-pes-sup.o01] 0:11.4 KAD MENU
   num = MENU 1 · KAK SALMA
   text = Pes Sup
   apps = THERMOMIX | COOVEN
 
-[menu-1-paste-sup.o02] 0:14.7 TIP
+[menu-1-pes-sup.o02] 0:14.7 TIP
   title = TIP RASA
   text = Rempah [biji-biji] — fresh from scratch!
 
-[menu-1-paste-sup.o03] 0:18.7 TIP
+[menu-1-pes-sup.o03] 0:18.7 TIP
   title = TIP BLEND
   text = Tak letak air — terus guna [minyak].
 
-[menu-1-paste-sup.o04] 0:22.6 LABEL
+[menu-1-pes-sup.o04] 0:22.6 LABEL
   title = THERMOMIX
   text = [30 saat × 2] je, terus halus!
 
-[menu-1-paste-sup.o05] 0:29.4 LABEL
+[menu-1-pes-sup.o05] 0:29.4 LABEL
   title = COOVEN · MODE COOKER
   text = [140°C] · 30 min · tumis perlahan
 
-[menu-1-paste-sup.o06] 0:35.7 LAWAK
+[menu-1-pes-sup.o06] 0:35.7 LAWAK
   text = Regular customer!
 
-[menu-1-paste-sup.o07] 0:39.4 LAWAK
+[menu-1-pes-sup.o07] 0:39.4 LAWAK
   text = Patutlah happy!
 
-[menu-1-paste-sup.o08] 0:42.6 HASIL
+[menu-1-pes-sup.o08] 0:42.6 HASIL
   text = SIAP!
   sub = Kering, tak melepek
 
-[menu-1-paste-sup.g09] 0:48.9 KAD OUTRO
+[menu-1-pes-sup.g09] 0:48.9 KAD OUTRO
   l1 = PES SUP
   l2 = Thermomix blend × Cooven masak
   l3 = FOLLOW + SHARE
