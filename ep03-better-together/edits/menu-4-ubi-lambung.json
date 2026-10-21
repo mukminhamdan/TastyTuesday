@@ -11,7 +11,7 @@
  "origin": "50% 45%",
  "voice_volume": 1.0,
  "bgm": {
-  "volume": 0.05
+  "volume": 0.08
  },
  "segments": [
   {
@@ -76,7 +76,7 @@
   },
   {
    "gfx": "outro",
-   "dur": 2.5,
+   "dur": 4.0,
    "l1": "UBI LAMBUNG",
    "l2": "Thermomix adun × Cooven goreng",
    "l3": "FOLLOW + SHARE",
@@ -169,5 +169,9 @@
    "dur": 3.0,
    "text": "KENYAL!"
   }
- ]
+ ],
+ "brand": {
+  "logo": true,
+  "song": true
+ }
 }

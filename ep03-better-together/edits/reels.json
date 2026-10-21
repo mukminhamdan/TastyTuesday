@@ -10,7 +10,7 @@
  "jump_zoom": 1.1,
  "origin": "50% 45%",
  "bgm": {
-  "volume": 0.06
+  "volume": 0.08
  },
  "segments": [
   {
@@ -76,9 +76,9 @@
   },
   {
    "gfx": "outro",
-   "dur": 2.5,
-   "l1": "TASTY TUESDAY",
-   "l2": "Live setiap Selasa",
+   "dur": 4.0,
+   "l1": "BETTER TOGETHER",
+   "l2": "Live setiap Selasa di TikTok",
    "l3": "FOLLOW + SHARE",
    "sfx": "chime"
   }
@@ -212,5 +212,9 @@
    "size": 100,
    "sfx": "sparkle"
   }
- ]
+ ],
+ "brand": {
+  "logo": true,
+  "song": true
+ }
 }

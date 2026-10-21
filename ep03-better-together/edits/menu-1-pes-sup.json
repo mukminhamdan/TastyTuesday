@@ -10,7 +10,7 @@
  "jump_zoom": 1.1,
  "origin": "45% 45%",
  "bgm": {
-  "volume": 0.05
+  "volume": 0.08
  },
  "segments": [
   {
@@ -60,7 +60,7 @@
   },
   {
    "gfx": "outro",
-   "dur": 2.5,
+   "dur": 4.0,
    "l1": "PES SUP",
    "l2": "Thermomix blend × Cooven masak",
    "l3": "FOLLOW + SHARE",
@@ -145,5 +145,9 @@
    "text": "SIAP!",
    "sub": "Kering, tak melepek"
   }
- ]
+ ],
+ "brand": {
+  "logo": true,
+  "song": true
+ }
 }

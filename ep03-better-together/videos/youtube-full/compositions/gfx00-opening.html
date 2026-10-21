@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+        #root { position: absolute; inset: 0; 
+  --cream: #FFF3DF; --tomato: #E8402A; --mustard: #FFB81C; --cocoa: #2A1810;
+  --leaf: #2F9E5B; --ink: #1B0F09; --white: #FFFFFF;
+ font-family: Montserrat, 'Archivo Black', sans-serif; }
+        
+        .obg { position: absolute; inset: 0; background: #EFE3CC; }
+        #op-blur { position: absolute; inset: -80px; width: calc(100% + 160px); height: calc(100% + 160px); object-fit: cover; filter: blur(40px) brightness(0.95); }
+        #op-main { position: absolute; top: 0; height: 100%; left: 50%; width: 608px; margin-left: -304px; object-fit: cover;
+                   box-shadow: 0 0 80px rgba(42,24,16,0.35); }
+      </style>
+      <div id="root" data-composition-id="gfx00-opening" data-width="1920" data-height="1080">
+        <div class="obg"></div>
+        <video id="op-blur" class="clip" src="assets/opening.mp4" data-start="0" data-duration="10.000" data-media-start="0" data-track-index="0" muted playsinline></video>
+        <video id="op-main" class="clip" src="assets/opening.mp4" data-start="0" data-duration="10.000" data-media-start="0" data-track-index="1" playsinline data-has-audio="true"></video>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          const q = (s) => document.querySelector('[data-composition-id="gfx00-opening"] ' + s);
+
+          window.__timelines["gfx00-opening"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

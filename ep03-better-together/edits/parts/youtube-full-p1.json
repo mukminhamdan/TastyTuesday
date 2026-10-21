@@ -46,12 +46,9 @@
    "note": "cold open: regular customer, patutlah happy"
   },
   {
-   "gfx": "intro",
-   "dur": 4.5,
-   "l1": "TASTY TUESDAY",
-   "l2": "Episod 3 · Better Together",
-   "l3": "COOVEN × THERMOMIX",
-   "sfx": "impact-bass-2"
+   "gfx": "opening",
+   "dur": 10.0,
+   "sfx": ""
   },
   {
    "in": 666.7,

@@ -35,7 +35,7 @@
           const tl = gsap.timeline({ paused: true });
           const q = (s) => document.querySelector('[data-composition-id="stage"] ' + s);
           q('.hdr') && tl.fromTo(q('.hdr'), { y: -200 }, { y: 0, duration: 0.6, ease: 'power3.out' }, 0);
-          q('.blob') && tl.fromTo(q('.blob'), { scale: 0.96 }, { scale: 1.04, duration: 6, yoyo: true, repeat: 449, ease: 'sine.inOut' }, 0);
+          q('.blob') && tl.fromTo(q('.blob'), { scale: 0.96 }, { scale: 1.04, duration: 6, yoyo: true, repeat: 450, ease: 'sine.inOut' }, 0);
           window.__timelines["stage"] = tl;
         })();
       </script>

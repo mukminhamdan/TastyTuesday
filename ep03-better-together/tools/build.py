@@ -529,6 +529,42 @@ SFX_VOL = {"impact-bass-1": 0.45, "impact-bass-2": 0.45, "pop": 0.55, "whoosh": 
 def gfx_html(b, fmt, W, H):
     kind = b["gfx"]
     V = fmt == "vertical"
+    if kind == "opening":  # supplied opening clip (vertical) shown full-frame over a blurred copy of itself
+        css = """
+        .obg { position: absolute; inset: 0; background: #EFE3CC; }
+        #op-blur { position: absolute; inset: -80px; width: calc(100% + 160px); height: calc(100% + 160px); object-fit: cover; filter: blur(40px) brightness(0.95); }
+        #op-main { position: absolute; top: 0; height: 100%; left: 50%; width: 608px; margin-left: -304px; object-fit: cover;
+                   box-shadow: 0 0 80px rgba(42,24,16,0.35); }"""
+        d = b["dur"]
+        body = f"""        <div class="obg"></div>
+        <video id="op-blur" class="clip" src="assets/opening.mp4" data-start="0" data-duration="{d:.3f}" data-media-start="0" data-track-index="0" muted playsinline></video>
+        <video id="op-main" class="clip" src="assets/opening.mp4" data-start="0" data-duration="{d:.3f}" data-media-start="0" data-track-index="1" playsinline data-has-audio="true"></video>"""
+        return css, body, ""
+    if kind == "outro" and b.get("_logo"):  # branded end card: Tasty Tuesday logo + dish + follow
+        l1, l2, l3 = b.get("l1", ""), b.get("l2", ""), b.get("l3", "FOLLOW + SHARE")
+        css = f"""
+        .bg {{ position: absolute; inset: 0; background: var(--cream); }}
+        .dots {{ position: absolute; inset: -40px; background-image: radial-gradient(rgba(42,24,16,0.12) 3px, transparent 3.5px); background-size: 46px 46px; }}
+        .ray {{ position: absolute; left: 50%; top: 560px; width: 1500px; height: 1500px; margin: -750px 0 0 -750px; border-radius: 50%;
+                background: repeating-conic-gradient(rgba(255,184,28,0.22) 0deg 10deg, transparent 10deg 20deg); }}
+        .logo {{ position: absolute; left: 50%; top: 170px; width: 780px; height: 780px; margin-left: -390px; border-radius: 50%;
+                 box-shadow: 0 24px 60px rgba(42,24,16,0.25); }}
+        .wrap {{ position: absolute; left: 60px; right: 60px; top: 1040px; text-align: center; }}
+        .l1 {{ font-family: 'Archivo Black', sans-serif; font-size: 112px; line-height: 0.95; color: var(--tomato); -webkit-text-stroke: 10px var(--cocoa);
+               paint-order: stroke fill; text-shadow: 0 10px 0 var(--cocoa); text-transform: uppercase; }}
+        .l2 {{ margin-top: 26px; font-weight: 900; font-size: 44px; color: var(--cocoa); }}
+        .l3 {{ display: inline-block; margin-top: 30px; font-weight: 900; font-size: 46px; letter-spacing: 0.1em; color: var(--cream);
+               background: var(--cocoa); padding: 16px 40px; border-radius: 999px; }}"""
+        body = f"""        <div class="bg"></div><div class="dots"></div><div class="ray" data-layout-allow-overflow></div>
+        <img class="logo" src="assets/logo-round.png" alt="Tasty Tuesday" />
+        <div class="wrap">{'<div class="l1">' + E(l1) + '</div>' if l1 else ''}{'<div class="l2">' + E(l2) + '</div>' if l2 else ''}<div><span class="l3">{E(l3)}</span></div></div>"""
+        js = f"""          tl.fromTo(q('.ray'), {{ rotation: 0 }}, {{ rotation: 40, duration: {b['dur']}, ease: 'none' }}, 0);
+          tl.fromTo(q('.logo'), {{ scale: 0.2, rotation: -30, opacity: 0 }}, {{ scale: 1, rotation: 0, opacity: 1, duration: 0.6, ease: 'back.out(1.7)' }}, 0.05);
+          tl.to(q('.logo'), {{ scale: 1.04, duration: 0.4, yoyo: true, repeat: 1, ease: 'sine.inOut' }}, 1.6);
+          tl.fromTo(q('.l1'), {{ y: 60, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.4, ease: 'back.out(2)' }}, 0.45);
+          tl.fromTo(q('.l2'), {{ opacity: 0 }}, {{ opacity: 1, duration: 0.3 }}, 0.7);
+          tl.fromTo(q('.l3'), {{ scale: 0 }}, {{ scale: 1, duration: 0.35, ease: 'back.out(3)' }}, 0.9);"""
+        return css, body, js
     if kind in ("intro", "outro", "title"):
         l1 = b.get("l1", "TASTY TUESDAY")
         l2 = b.get("l2", "Episod 3 · Better Together")
@@ -566,7 +602,12 @@ def stage_html(fmt, W, H, edl):
         .b1 { font-family: 'Archivo Black', sans-serif; font-size: 30px; color: var(--cream); background: var(--tomato); padding: 8px 18px;
               border-radius: 12px; border: 4px solid var(--cocoa); }
         .b2 { font-weight: 900; font-size: 26px; color: var(--cocoa); background: var(--mustard); padding: 8px 16px; border-radius: 12px; border: 4px solid var(--cocoa); }"""
-        body = f"""        <div class="bug"><span class="b1">TASTY TUESDAY</span><span class="b2">{E(edl.get('bug', 'EP 3'))}</span></div>"""
+        if edl.get("brand"):
+            css += """
+        .blogo { width: 132px; height: 132px; border-radius: 50%; box-shadow: 0 6px 18px rgba(0,0,0,0.35); }"""
+            body = f"""        <div class="bug"><img class="blogo" src="assets/logo-round.png" alt="Tasty Tuesday" /><span class="b2">{E(edl.get('bug', 'EP 3'))}</span></div>"""
+        else:
+            body = f"""        <div class="bug"><span class="b1">TASTY TUESDAY</span><span class="b2">{E(edl.get('bug', 'EP 3'))}</span></div>"""
         js = """          tl.fromTo(q('.bug'), { x: -400 }, { x: 0, duration: 0.5, ease: 'power3.out' }, 0.3);"""
         return css, body, js
     css = """
@@ -717,11 +758,16 @@ def build(edl_path):
         if o.get("punch"):
             o["_start"] = st
     # gfx beats
+    brand = edl.get("brand") or {}
     for k, b in enumerate(beats):
         cid = f"gfx{k:02d}-{b['gfx']}"
+        b = {**b, "_logo": bool(brand.get("logo"))}
         css, body, js = gfx_html(b, fmt, W, H)
         comps.append((cid, b["start"], b["dur"], 4, "graphics", sub_comp(cid, W, H, css, body, js)))
-        for s in (b.get("sfx") or "impact-bass-2").split("+"):
+        sfx = b.get("sfx", "impact-bass-2")
+        if b["gfx"] == "outro" and brand.get("song"):
+            sfx = ""  # the Tasty Tuesday jingle carries the end card
+        for s in [x for x in sfx.split("+") if x]:
             used_sfx.add(s)
             audio.append((f"gfx-sfx-{k}-{s}", f"assets/sfx/{s}.mp3", b["start"] + (0.2 if s.startswith("impact") else 0), None, SFX_VOL.get(s, 0.45), ""))
 
@@ -746,9 +792,31 @@ def build(edl_path):
         css, body, js = frame_overlay_html(fmt, W, H)
         comps.append(("framebadge", 0, total, 5, "graphics", sub_comp("framebadge", W, H, css, body, js)))
 
+    # brand assets
+    for name, flag in (("logo-round.png", "logo"), ("tasty-tuesday-song.mp3", "song")):
+        if brand.get(flag):
+            shutil.copy(os.path.join(ROOT, "shared", "brand", name), os.path.join(pdir, "assets", name))
+    if any(b["gfx"] == "opening" for b in beats):
+        shutil.copy(os.path.join(ROOT, "shared", "brand", "youtube-opening.mp4"), os.path.join(pdir, "assets", "opening.mp4"))
+
     # music bed
     bgm = edl.get("bgm")
-    if bgm:
+    if brand.get("song"):
+        # Tasty Tuesday song: instrumental section (4.4-17.4 s) looped quietly under the talk,
+        # then the sung "Tasty Tuesday!" hook (3.2 s into the song) lands 1.6 s into the end card.
+        song = "assets/tasty-tuesday-song.mp3"
+        outro = next((b for b in beats if b["gfx"] == "outro"), None)
+        bed_end = outro["start"] if outro else total
+        t0, n, LOOP = 0.0, 0, 13.0
+        while t0 < bed_end - 0.5:
+            d = min(LOOP, bed_end - t0)
+            audio.append((f"bgm-song-{n}", song, t0, d, (bgm or {}).get("volume", 0.07),
+                          f' data-media-start="4.4" data-fade-in="{0.8 if n == 0 else 0.3}" data-fade-out="{0.6 if t0 + d >= bed_end - 0.01 else 0.3}"'))
+            t0 += d; n += 1
+        if outro:
+            audio.append(("jingle", song, outro["start"], outro["dur"], 0.9,
+                          f' data-media-start="1.6" data-fade-out="0.5"'))
+    elif bgm:
         used_sfx.add("bgm-kitchen")
         ranges = bgm.get("ranges", [[0, total]])
         for ri, (r0, r1) in enumerate(ranges):

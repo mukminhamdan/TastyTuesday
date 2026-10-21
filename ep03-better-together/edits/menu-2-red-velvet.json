@@ -10,7 +10,7 @@
  "jump_zoom": 1.1,
  "origin": "50% 45%",
  "bgm": {
-  "volume": 0.05
+  "volume": 0.08
  },
  "segments": [
   {
@@ -65,7 +65,7 @@
   },
   {
    "gfx": "outro",
-   "dur": 2.5,
+   "dur": 4.0,
    "l1": "RED VELVET",
    "l2": "Thermomix adun × Cooven bakar",
    "l3": "FOLLOW + SHARE",
@@ -151,5 +151,9 @@
    "y": 280,
    "sfx": "sparkle"
   }
- ]
+ ],
+ "brand": {
+  "logo": true,
+  "song": true
+ }
 }

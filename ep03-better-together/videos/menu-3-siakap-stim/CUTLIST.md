@@ -1,6 +1,6 @@
 # Tasty Tuesday EP3 · Menu 3 · Ikan Siakap Stim Ida
 
-Duration: 54.0s (0.9 min), 14 clips
+Duration: 55.5s (0.9 min), 14 clips
 
 | # | out start | source in | source out | len |
 |---|---|---|---|---|

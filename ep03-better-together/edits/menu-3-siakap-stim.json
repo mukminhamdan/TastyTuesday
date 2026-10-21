@@ -10,7 +10,7 @@
  "jump_zoom": 1.1,
  "origin": "50% 45%",
  "bgm": {
-  "volume": 0.05
+  "volume": 0.08
  },
  "segments": [
   {
@@ -70,7 +70,7 @@
   },
   {
    "gfx": "outro",
-   "dur": 2.5,
+   "dur": 4.0,
    "l1": "SIAKAP STIM",
    "l2": "Cooven steam × Thermomix chop",
    "l3": "FOLLOW + SHARE",
@@ -158,5 +158,9 @@
    "text": "SEDAPNYA!",
    "sub": "Settle dinner"
   }
- ]
+ ],
+ "brand": {
+  "logo": true,
+  "song": true
+ }
 }

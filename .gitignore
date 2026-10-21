@@ -9,3 +9,4 @@
 node_modules/
 __pycache__/
 **/assets/edit.key
+!ep03-better-together/shared/brand/*.mp4

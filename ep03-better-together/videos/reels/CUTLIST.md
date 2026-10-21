@@ -1,6 +1,6 @@
 # Tasty Tuesday EP3 · Better Together · Reels
 
-Duration: 50.9s (0.8 min), 18 clips
+Duration: 52.4s (0.9 min), 18 clips
 
 | # | out start | source in | source out | len |
 |---|---|---|---|---|
