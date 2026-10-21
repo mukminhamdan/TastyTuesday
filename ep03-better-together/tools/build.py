@@ -41,10 +41,17 @@ def load_words():
     word_fix = {k.lower(): v for k, v in fixes.get("words", {}).items()}
     words = []
     for seg in data:
+        merged = []  # whisper splits reduplication ("Pocak", "-pocak"); join it back into one word
         for w in seg["words"]:
             txt = w["w"].strip()
             if not txt:
                 continue
+            if merged and txt.startswith("-") and not w["w"].startswith(" "):
+                merged[-1] = {**merged[-1], "w": merged[-1]["w"].strip() + txt, "e": w["e"]}
+            else:
+                merged.append({**w, "w": txt})
+        for w in merged:
+            txt = w["w"]
             core = re.sub(r"[^\w'-]", "", txt).lower()
             if core in word_fix:
                 txt = re.sub(re.escape(re.sub(r"[^\w'-]", "", txt)), word_fix[core], txt, count=1)
