@@ -62,6 +62,44 @@ def words_in(words, a, b):
 
 # ---------------------------------------------------------------- timeline
 
+def prerender_cuts(clips, pdir):
+    """Join the kept source ranges into assets/edit.mp4: video segments re-encoded and concatenated,
+    audio cut as PCM (sample exact, 40 ms edge fades, per-clip gain) so A/V never drifts."""
+    import hashlib, subprocess, tempfile
+    from concurrent.futures import ThreadPoolExecutor
+    key = hashlib.sha1(json.dumps([[c["in"], c["out"], c["vol"]] for c in clips]).encode()).hexdigest()[:16]
+    out = os.path.join(pdir, "assets", "edit.mp4")
+    stamp = os.path.join(pdir, "assets", "edit.key")
+    if os.path.exists(out) and os.path.exists(stamp) and open(stamp).read() == key:
+        return
+    tmp = tempfile.mkdtemp(prefix="tt-cuts-")
+
+    def cut(k):
+        c = clips[k]
+        d = c["out"] - c["in"]
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{c['in']:.3f}", "-i", SOURCE, "-t", f"{d:.3f}", "-an",
+                        "-vf", "fps=25,setpts=PTS-STARTPTS", "-frames:v", str(round(d * FPS)),
+                        "-c:v", "libx264", "-preset", "veryfast", "-crf", "16", "-pix_fmt", "yuv420p", "-g", "25",
+                        os.path.join(tmp, f"v{k:04d}.mp4")], check=True)
+        fo = max(0.0, d - 0.04)
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{c['in']:.3f}", "-i", SOURCE, "-t", f"{d:.3f}", "-vn",
+                        "-af", f"volume={c['vol']},afade=t=in:d=0.04,afade=t=out:st={fo:.3f}:d=0.04,apad=whole_dur={d:.3f}",
+                        "-ar", "44100", "-ac", "2", "-c:a", "pcm_s16le", os.path.join(tmp, f"a{k:04d}.wav")], check=True)
+
+    with ThreadPoolExecutor(4) as ex:
+        list(ex.map(cut, range(len(clips))))
+    with open(os.path.join(tmp, "v.txt"), "w") as f:
+        f.writelines(f"file 'v{k:04d}.mp4'\n" for k in range(len(clips)))
+    with open(os.path.join(tmp, "a.txt"), "w") as f:
+        f.writelines(f"file 'a{k:04d}.wav'\n" for k in range(len(clips)))
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", os.path.join(tmp, "v.txt"),
+                    "-f", "concat", "-safe", "0", "-i", os.path.join(tmp, "a.txt"),
+                    "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
+                    "-movflags", "+faststart", out], check=True)
+    open(stamp, "w").write(key)
+    shutil.rmtree(tmp)
+
+
 _alen = {}
 
 
@@ -739,12 +777,22 @@ def build(edl_path):
     else:
         cam_css = ("#cam { position: absolute; left: 100px; top: 40px; width: 520px; height: 1000px; overflow: hidden; border-radius: 28px; z-index: 1; "
                    "background: #000; }")
-    vids = []
-    for k, c in enumerate(clips):
-        vids.append(
-            f'          <video id="v{k:03d}" class="clip" src="assets/source.mp4" data-start="{c["start"]:.3f}" '
-            f'data-duration="{c["out"] - c["in"]:.3f}" data-media-start="{c["in"]:.3f}" data-track-index="0" '
-            f'data-volume="{c["vol"]}" data-fade-in="0.04" data-fade-out="0.04" playsinline data-has-audio="true"></video>')
+    # All cuts are pre-joined into assets/edit.mp4 (frame/sample exact), so the page holds one <video>
+    # per continuous run between graphic beats instead of hundreds of elements on the 1.6 GB source.
+    prerender_cuts(clips, pdir)
+    vids, run, off = [], [], 0.0
+    for c in clips + [None]:
+        if run and (c is None or abs(c["start"] - (run[-1]["start"] + run[-1]["out"] - run[-1]["in"])) > 0.02):
+            st = run[0]["start"]
+            dur = run[-1]["start"] + run[-1]["out"] - run[-1]["in"] - st
+            vids.append(
+                f'          <video id="run{len(vids):02d}" class="clip" src="assets/edit.mp4" data-start="{st:.3f}" '
+                f'data-duration="{dur:.3f}" data-media-start="{off:.3f}" data-track-index="0" '
+                f'playsinline data-has-audio="true"></video>')
+            off += dur
+            run = []
+        if c is not None:
+            run.append(c)
     bvids = [
         f'        <video id="{b["id"]}" class="clip" src="assets/source.mp4" data-start="{b["start"]:.3f}" '
         f'data-duration="{b["dur"]:.3f}" data-media-start="{b["src"]:.3f}" data-track-index="1" muted playsinline></video>'

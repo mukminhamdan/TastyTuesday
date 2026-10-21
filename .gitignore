@@ -8,3 +8,4 @@
 **/previews/
 node_modules/
 __pycache__/
+**/assets/edit.key
