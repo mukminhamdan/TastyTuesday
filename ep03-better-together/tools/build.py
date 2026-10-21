@@ -542,7 +542,7 @@ def gfx_html(b, fmt, W, H):
         .wrap {{ position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }}
         .l1 {{ font-family: 'Archivo Black', sans-serif; font-size: {150 if V else 170}px; line-height: 0.9; color: var(--cream);
                -webkit-text-stroke: 16px var(--cocoa); paint-order: stroke fill; text-shadow: 0 16px 0 var(--cocoa); letter-spacing: -0.02em; width: {W - 120}px; }}
-        .l2 {{ margin-top: 40px; font-weight: 900; font-size: {56 if V else 56}px; color: var(--cream); text-shadow: 0 4px 0 var(--cocoa); }}
+        .l2 {{ margin-top: 40px; font-weight: 900; font-size: {44 if V else 56}px; color: var(--cream); text-shadow: 0 4px 0 var(--cocoa); }}
         .l3 {{ margin-top: 28px; display: inline-block; font-weight: 900; font-size: {44 if V else 42}px; letter-spacing: 0.12em; color: var(--cream);
                background: var(--cocoa); padding: 14px 34px; border-radius: 999px; }}"""
         body = f"""        <div class="bg"></div><div class="dots"></div><div class="stripe" data-layout-allow-overflow></div>
