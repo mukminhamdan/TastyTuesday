@@ -226,7 +226,7 @@ Cara edit:
   apps = THERMOMIX | COOVEN DEEP FRY
 
 [menu-4-ubi-lambung.o03] 0:11.8 TIP
-  title = BETTER TOGETHER
+  title = GANDINGAN MANTAP
   text = Thermomix [adun], Cooven [goreng].
 
 [menu-4-ubi-lambung.o04] 0:20.3 LABEL
