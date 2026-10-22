@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Apply the Tasty Tuesday grade to every footage clip of a project.
+# Apply the Dapur Acik Sal grade to every footage clip of a project.
 #   base: brighter, cleaner food-pop look with a little contrast and a soft vignette
 #   warm: shots lit by the grill element get cooler white balance and an HSL key
 #         that pulls the orange spill off the hijab, skin and wall tiles

@@ -1,4 +1,4 @@
-# TastyTuesday
+# TastyTuesday — Dapur Acik Sal
 
 Short-form edits of Makcik's TikTok Live cooking session (*Ikan Parang Masak Lemak Cili Padi + Jantung Pisang*,
 source `VID_20261021_234942_070.mp4`, 51 min), built with [HyperFrames](https://hyperframes.heygen.com).

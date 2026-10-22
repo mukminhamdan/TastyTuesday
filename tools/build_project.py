@@ -31,6 +31,7 @@ SFX_DIR = "/opt/node22/lib/node_modules/hyperframes/dist/skills/media-use/audio/
 DEFAULT_SRC = "/home/user/src_video/VID.mp4"
 GSAP_SRC = os.path.join(ROOT, "assets", "vendor", "gsap.min.js")  # gsap@3.14.2, vendored: renders run offline
 
+BRAND = "DAPUR ACIK SAL"
 # Brand: warm cream, ink, turmeric (masak lemak) and chilli.
 INK = "#17130F"
 CREAM = "#FFF6E6"
@@ -324,7 +325,7 @@ def overlays_html(edl, segs, total, cid, sfx):
                 spans = spans.replace(f'id="{oid}-w{accent}"', f'id="{oid}-w{accent}" data-accent="1"')
             items.append(f'''    <div class="clip ov" id="{oid}" data-start="{t0:.3f}" data-duration="{t1 - t0:.3f}" data-track-index="0">
       <div class="hook" id="{oid}-in">
-        <div class="kicker" id="{oid}-k">{esc(ov.get("kicker", "TASTY TUESDAY"))}</div>
+        <div class="kicker" id="{oid}-k">{esc(ov.get("kicker", BRAND))}</div>
         <div class="hook-title">{spans}</div>
       </div>
     </div>''')
@@ -380,7 +381,7 @@ def overlays_html(edl, segs, total, cid, sfx):
         items.append(f'''    <div class="clip ov" id="{oid}" data-start="{t0:.3f}" data-duration="{total - t0:.3f}" data-track-index="4">
       <div class="end" id="{oid}-bg"></div>
       <div class="end-in">
-        <div class="end-k" id="{oid}-k">TASTY TUESDAY</div>
+        <div class="end-k" id="{oid}-k">{BRAND}</div>
         <div class="end-t" id="{oid}-t">{esc(ov["title"])}</div>
         <div class="end-rule" id="{oid}-r"></div>
         <div class="end-cta" id="{oid}-c">{esc(ov.get("cta", "Follow untuk resepi Makcik seterusnya"))}</div>
