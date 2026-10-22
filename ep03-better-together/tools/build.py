@@ -598,7 +598,7 @@ def gfx_html(b, fmt, W, H):
         .wrap {{ position: absolute; left: 60px; right: 60px; top: 1040px; text-align: center; }}
         .l1 {{ font-family: 'Archivo Black', sans-serif; font-size: 112px; line-height: 0.95; color: var(--tomato); -webkit-text-stroke: 10px var(--cocoa);
                paint-order: stroke fill; text-shadow: 0 10px 0 var(--cocoa); text-transform: uppercase; }}
-        .l2 {{ margin-top: 26px; font-weight: 900; font-size: 44px; color: var(--cocoa); }}
+        .l2 {{ margin-top: 26px; font-weight: 900; font-size: 44px; color: var(--cocoa); white-space: pre-line; }}
         .l3 {{ display: inline-block; margin-top: 30px; font-weight: 900; font-size: 46px; letter-spacing: 0.1em; color: var(--cream);
                background: var(--cocoa); padding: 16px 40px; border-radius: 999px; }}"""
         body = f"""        <div class="bg"></div><div class="dots"></div><div class="ray" data-layout-allow-overflow></div>

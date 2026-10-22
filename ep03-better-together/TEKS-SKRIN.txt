@@ -61,7 +61,8 @@ Cara edit:
 
 [menu-1-pes-sup.g04] 0:23.4 KAD OUTRO
   l1 = TASTY TUESDAY
-  l2 = Pes Sup : Thermomix blend : Cooven cooker
+  l2 = Pes Sup
+Thermomix blend : Cooven cooker
   l3 = FOLLOW + SHARE
 
 
@@ -79,7 +80,8 @@ Cara edit:
 
 [menu-2-red-velvet.g05] 0:23.1 KAD OUTRO
   l1 = TASTY TUESDAY
-  l2 = Red Velvet : Thermomix adun : Cooven oven
+  l2 = Red Velvet
+Thermomix adun : Cooven oven
   l3 = FOLLOW + SHARE
 
 
@@ -101,7 +103,8 @@ Cara edit:
 
 [menu-3-siakap-stim.g06] 0:26.2 KAD OUTRO
   l1 = TASTY TUESDAY
-  l2 = Siakap Stim : Thermomix chop : Cooven steam
+  l2 = Siakap Stim
+Thermomix chop : Cooven steam
   l3 = FOLLOW + SHARE
 
 
@@ -135,7 +138,8 @@ Cara edit:
 
 [menu-4-ubi-lambung.g09] 0:45.1 KAD OUTRO
   l1 = TASTY TUESDAY
-  l2 = Ubi Lambung : Thermomix adun : Cooven deep fry
+  l2 = Ubi Lambung
+Thermomix adun : Cooven deep fry
   l3 = FOLLOW + SHARE
 
 
