@@ -41,13 +41,6 @@
    "text": "Siakap Stim"
   },
   {
-   "type": "joke",
-   "at": 1705.8,
-   "dur": 2.6,
-   "text": "Terus ke Thailand!",
-   "sfx": "whoosh"
-  },
-  {
    "type": "lower",
    "at": 1715.2,
    "dur": 4.0,
@@ -60,14 +53,6 @@
    "dur": 5.0,
    "title": "TIP SEDAP",
    "text": "[Kelar-kelar] badan ikan dulu supaya rasa meresap."
-  },
-  {
-   "type": "joke",
-   "at": 1759.0,
-   "dur": 2.6,
-   "text": "Cedera parah!",
-   "sfx": "boing",
-   "punch": 1.08
   },
   {
    "type": "label",
@@ -91,26 +76,11 @@
    "text": "Lebih kurang [1 liter] — bawah paras tanda."
   },
   {
-   "type": "joke",
-   "at": 1991.0,
-   "dur": 3.0,
-   "text": "Sahabat kamching!",
-   "sfx": "pop"
-  },
-  {
    "type": "fact",
    "at": 2045.7,
    "dur": 6.0,
    "title": "DAPUR KECIL?",
    "text": "Dua gadget je — [dapur lengkap] untuk rumah kecil & minimalis."
-  },
-  {
-   "type": "joke",
-   "at": 2090.6,
-   "dur": 3.0,
-   "text": "Mak malas!",
-   "sfx": "badumtss",
-   "punch": 1.08
   },
   {
    "type": "tip",

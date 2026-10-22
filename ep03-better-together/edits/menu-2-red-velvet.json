@@ -29,11 +29,6 @@
    "note": "adunan blend dalam Thermomix"
   },
   {
-   "in": 1503.1,
-   "out": 1510.0,
-   "note": "JOKE OCD"
-  },
-  {
    "in": 1564.5,
    "out": 1569.3,
    "note": "satu sudu cukup"
@@ -42,11 +37,6 @@
    "in": 1641.2,
    "out": 1649.6,
    "note": "145, 15 minit"
-  },
-  {
-   "in": 2734.0,
-   "out": 2741.4,
-   "note": "JOKE red red red"
   },
   {
    "in": 2751.9,
@@ -104,14 +94,6 @@
    "y": 280
   },
   {
-   "type": "joke",
-   "at": 1504.8,
-   "dur": 2.4,
-   "text": "OCD sikit!",
-   "sfx": "boing",
-   "punch": 1.12
-  },
-  {
    "type": "tip",
    "at": 1564.6,
    "dur": 4.2,
@@ -127,14 +109,6 @@
    "title": "COOVEN · MODE OVEN",
    "text": "[145°C] · 15 minit · tanpa preheat",
    "y": 280
-  },
-  {
-   "type": "joke",
-   "at": 2737.1,
-   "dur": 2.4,
-   "text": "Red... red... red?!",
-   "sfx": "boing",
-   "punch": 1.12
   },
   {
    "type": "reveal",
@@ -173,5 +147,6 @@
   "details": {
    "vignette": 0.16
   }
- }
+ },
+ "captions": "none"
 }

@@ -50,11 +50,6 @@
    "volume": 1.3
   },
   {
-   "in": 1301.9,
-   "out": 1308.8,
-   "note": "cold open: regular customer, patutlah happy"
-  },
-  {
    "in": 666.7,
    "out": 727.4,
    "note": "OPENING: assalamualaikum, minggu ketiga, tema better together, combine dua gadget"
@@ -297,21 +292,6 @@
    "sfx": "ding"
   },
   {
-   "type": "joke",
-   "at": 2657.8,
-   "dur": 2.2,
-   "text": "Patutlah!",
-   "sfx": "badumtss",
-   "punch": 1.1
-  },
-  {
-   "type": "joke",
-   "at": 1306.2,
-   "dur": 2.2,
-   "text": "Patutlah happy!",
-   "sfx": "boing"
-  },
-  {
    "type": "chapter",
    "at": 666.8,
    "dur": 4.0,
@@ -411,14 +391,6 @@
    "text": "Bawang besar [1 kg] sekali masak."
   },
   {
-   "type": "joke",
-   "at": 1301.8,
-   "dur": 2.6,
-   "text": "Regular customer!",
-   "sfx": "badumtss",
-   "punch": 1.08
-  },
-  {
    "type": "tip",
    "at": 1320.0,
    "dur": 5.0,
@@ -445,14 +417,6 @@
    "dur": 5.0,
    "title": "MUAT BERAPA?",
    "text": "Satu loyang Cooven muat [14–16] cupcake."
-  },
-  {
-   "type": "joke",
-   "at": 1504.8,
-   "dur": 2.6,
-   "text": "OCD sikit!",
-   "sfx": "boing",
-   "punch": 1.08
   },
   {
    "type": "tip",
@@ -484,13 +448,6 @@
    "text": "Siakap Stim"
   },
   {
-   "type": "joke",
-   "at": 1705.8,
-   "dur": 2.6,
-   "text": "Terus ke Thailand!",
-   "sfx": "whoosh"
-  },
-  {
    "type": "lower",
    "at": 1715.2,
    "dur": 4.0,
@@ -503,14 +460,6 @@
    "dur": 5.0,
    "title": "TIP SEDAP",
    "text": "[Kelar-kelar] badan ikan dulu supaya rasa meresap."
-  },
-  {
-   "type": "joke",
-   "at": 1759.0,
-   "dur": 2.6,
-   "text": "Cedera parah!",
-   "sfx": "boing",
-   "punch": 1.08
   },
   {
    "type": "label",
@@ -534,26 +483,11 @@
    "text": "Lebih kurang [1 liter] — bawah paras tanda."
   },
   {
-   "type": "joke",
-   "at": 1991.0,
-   "dur": 3.0,
-   "text": "Sahabat kamching!",
-   "sfx": "pop"
-  },
-  {
    "type": "fact",
    "at": 2045.7,
    "dur": 6.0,
    "title": "DAPUR KECIL?",
    "text": "Dua gadget je — [dapur lengkap] untuk rumah kecil & minimalis."
-  },
-  {
-   "type": "joke",
-   "at": 2090.6,
-   "dur": 3.0,
-   "text": "Mak malas!",
-   "sfx": "badumtss",
-   "punch": 1.08
   },
   {
    "type": "tip",
@@ -649,14 +583,6 @@
    "text": "Hasil & Tips Akhir"
   },
   {
-   "type": "joke",
-   "at": 2737.1,
-   "dur": 2.4,
-   "text": "Red... red... red?!",
-   "sfx": "boing",
-   "punch": 1.08
-  },
-  {
    "type": "reveal",
    "at": 2759.7,
    "dur": 3.0,
@@ -708,35 +634,11 @@
    "cols": 2
   },
   {
-   "type": "joke",
-   "at": 3382.0,
-   "dur": 3.0,
-   "text": "Masak satu, jadi macam-macam!",
-   "sfx": "pop",
-   "size": 50
-  },
-  {
-   "type": "joke",
-   "at": 3413.0,
-   "dur": 2.8,
-   "text": "I'm not a baker!",
-   "sfx": "boing",
-   "punch": 1.08
-  },
-  {
    "type": "tip",
    "at": 3786.0,
    "dur": 7.0,
    "title": "SUHU RENDAH VS TINGGI",
    "text": "Nak tinggal-tinggal: [suhu rendah] · Duduk tepi & nak cepat: [suhu tinggi]."
-  },
-  {
-   "type": "joke",
-   "at": 3742.4,
-   "dur": 2.6,
-   "text": "Jangan cabar saya!",
-   "sfx": "badumtss",
-   "punch": 1.08
   },
   {
    "type": "hook",
@@ -782,13 +684,6 @@
    "title": "TIP BIJAK",
    "text": "Masak [nasi] terus dalam bowl Thermomix yang berlada — air beras bantu 'cuci' bowl!",
    "sfx": "ding"
-  },
-  {
-   "type": "joke",
-   "at": 4580.0,
-   "dur": 2.8,
-   "text": "Rampas limelight!",
-   "sfx": "pop"
   },
   {
    "type": "reveal",

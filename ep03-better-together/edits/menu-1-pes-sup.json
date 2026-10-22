@@ -49,11 +49,6 @@
    "note": "140 darjah, slowkan penumisan"
   },
   {
-   "in": 1301.9,
-   "out": 1308.8,
-   "note": "JOKE regular customer, patutlah happy"
-  },
-  {
    "in": 4126.7,
    "out": 4134.9,
    "note": "FINAL kering tak melepet"
@@ -123,22 +118,6 @@
    "y": 280
   },
   {
-   "type": "joke",
-   "at": 1302.0,
-   "dur": 2.6,
-   "text": "Regular customer!",
-   "sfx": "badumtss",
-   "punch": 1.12
-  },
-  {
-   "type": "joke",
-   "at": 1306.2,
-   "dur": 2.2,
-   "text": "Patutlah happy!",
-   "sfx": "boing",
-   "y": 520
-  },
-  {
    "type": "reveal",
    "at": 4127.3,
    "dur": 3.4,
@@ -167,5 +146,6 @@
   "details": {
    "vignette": 0.16
   }
- }
+ },
+ "captions": "none"
 }

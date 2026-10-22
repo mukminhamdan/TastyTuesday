@@ -188,14 +188,6 @@
    "y": 280
   },
   {
-   "type": "joke",
-   "at": 2657.8,
-   "dur": 1.8,
-   "text": "Patutlah!",
-   "sfx": "badumtss",
-   "punch": 1.12
-  },
-  {
    "type": "reveal",
    "at": 4633.5,
    "dur": 2.4,
@@ -234,5 +226,6 @@
   "details": {
    "vignette": 0.16
   }
- }
+ },
+ "captions": "none"
 }

@@ -53,13 +53,6 @@
  ],
  "overlays": [
   {
-   "type": "joke",
-   "at": 1306.2,
-   "dur": 2.2,
-   "text": "Patutlah happy!",
-   "sfx": "boing"
-  },
-  {
    "type": "chapter",
    "at": 820.2,
    "dur": 4.0,
@@ -136,14 +129,6 @@
    "dur": 4.5,
    "title": "SKALA",
    "text": "Bawang besar [1 kg] sekali masak."
-  },
-  {
-   "type": "joke",
-   "at": 1301.8,
-   "dur": 2.6,
-   "text": "Regular customer!",
-   "sfx": "badumtss",
-   "punch": 1.08
   },
   {
    "type": "tip",

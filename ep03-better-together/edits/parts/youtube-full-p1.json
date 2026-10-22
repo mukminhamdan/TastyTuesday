@@ -46,11 +46,6 @@
    "volume": 1.3
   },
   {
-   "in": 1301.9,
-   "out": 1308.8,
-   "note": "cold open: regular customer, patutlah happy"
-  },
-  {
    "in": 666.7,
    "out": 727.4,
    "note": "OPENING: assalamualaikum, minggu ketiga, tema better together, combine dua gadget"
@@ -86,21 +81,6 @@
    "text": "SENDIRI: < RM20!",
    "highlight": "RM20!",
    "sfx": "ding"
-  },
-  {
-   "type": "joke",
-   "at": 2657.8,
-   "dur": 2.2,
-   "text": "Patutlah!",
-   "sfx": "badumtss",
-   "punch": 1.1
-  },
-  {
-   "type": "joke",
-   "at": 1306.2,
-   "dur": 2.2,
-   "text": "Patutlah happy!",
-   "sfx": "boing"
   },
   {
    "type": "chapter",

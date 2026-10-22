@@ -54,9 +54,9 @@
    "note": "TIP berus gigi"
   },
   {
-   "in": 1987.3,
-   "out": 1994.2,
-   "note": "JOKE sahabat kamceng"
+   "in": 3247.2,
+   "out": 3255.6,
+   "note": "sos curah: bahan"
   },
   {
    "in": 3320.1,
@@ -136,14 +136,6 @@
    "sfx": "ding"
   },
   {
-   "type": "joke",
-   "at": 1991.2,
-   "dur": 2.8,
-   "text": "Sahabat kamching!",
-   "sfx": "pop",
-   "y": 520
-  },
-  {
    "type": "label",
    "at": 3320.2,
    "dur": 3.6,
@@ -157,6 +149,20 @@
    "dur": 3.2,
    "text": "SEDAPNYA!",
    "sub": "Settle dinner"
+  },
+  {
+   "type": "ingredients",
+   "at": 3247.3,
+   "dur": 4.6,
+   "title": "Sos curah",
+   "items": [
+    "Bawang putih",
+    "Chicken stock",
+    "Lada",
+    "Daun ketumbar",
+    "Sos ikan",
+    "Limau nipis"
+   ]
   }
  ],
  "brand": {
@@ -180,5 +186,6 @@
   "details": {
    "vignette": 0.16
   }
- }
+ },
+ "captions": "none"
 }
