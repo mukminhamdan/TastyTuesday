@@ -93,12 +93,19 @@ def clip_light(c):
             f":u='clip(val+{du:.2f}\\,16\\,240)':v='clip(val+{dv:.2f}\\,16\\,240)',")
 
 
-def prerender_cuts(clips, pdir, light=False):
+# ffmpeg stand-in for the shared "premium" data-color-grading look (matched on frame stats against the
+# WebGL shader): slight black lift + gamma, +30% saturation, a touch warmer, soft vignette. Used for the
+# long YouTube edit, where the software-rendered shader would multiply render time ~4x.
+GRADE_BAKE = ("lutyuv=y='clip(16+pow(max(val-16\\,0)/219\\,0.95)*219*0.98+4\\,16\\,235)',eq=saturation=1.3,"
+              "lutyuv=u='clip(val+1.4\\,16\\,240)':v='clip(val+2.0\\,16\\,240)',vignette=angle=PI/9,")
+
+
+def prerender_cuts(clips, pdir, light=False, bake=False):
     """Join the kept source ranges into assets/edit.mp4: video segments re-encoded and concatenated,
     audio cut as PCM (sample exact, 40 ms edge fades, per-clip gain) so A/V never drifts."""
     import hashlib, subprocess, tempfile
     from concurrent.futures import ThreadPoolExecutor
-    key = hashlib.sha1(json.dumps([[c["in"], c["out"], c["vol"]] for c in clips] + [light, 2]).encode()).hexdigest()[:16]
+    key = hashlib.sha1(json.dumps([[c["in"], c["out"], c["vol"]] for c in clips] + [light, 2] + (["bake"] if bake else [])).encode()).hexdigest()[:16]
     out = os.path.join(pdir, "assets", "edit.mp4")
     stamp = os.path.join(pdir, "assets", "edit.key")
     if os.path.exists(out) and os.path.exists(stamp) and open(stamp).read() == key:
@@ -109,7 +116,7 @@ def prerender_cuts(clips, pdir, light=False):
         c = clips[k]
         d = c["out"] - c["in"]
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{c['in']:.3f}", "-i", SOURCE, "-t", f"{d:.3f}", "-an",
-                        "-vf", (clip_light(c) if light else "") + "fps=25,setpts=PTS-STARTPTS", "-frames:v", str(round(d * FPS)),
+                        "-vf", (clip_light(c) if light else "") + (GRADE_BAKE if bake else "") + "fps=25,setpts=PTS-STARTPTS", "-frames:v", str(round(d * FPS)),
                         "-c:v", "libx264", "-preset", "veryfast", "-crf", "16", "-pix_fmt", "yuv420p", "-g", "25",
                         os.path.join(tmp, f"v{k:04d}.mp4")], check=True)
         fo = max(0.0, d - 0.04)
@@ -878,8 +885,9 @@ def build(edl_path):
                    "background: #000; }")
     # All cuts are pre-joined into assets/edit.mp4 (frame/sample exact), so the page holds one <video>
     # per continuous run between graphic beats instead of hundreds of elements on the 1.6 GB source.
-    prerender_cuts(clips, pdir, light=bool(edl.get("light")))
-    grade_attr = f" data-color-grading='{json.dumps(edl['grade'])}'" if edl.get("grade") else ""
+    prerender_cuts(clips, pdir, light=bool(edl.get("light")), bake=bool(edl.get("grade_bake")))
+    grade_attr = (f" data-color-grading='{json.dumps(edl['grade'])}'"
+                  if edl.get("grade") and not edl.get("grade_bake") else "")
     vids, run, off = [], [], 0.0
     for c in clips + [None]:
         if run and (c is None or abs(c["start"] - (run[-1]["start"] + run[-1]["out"] - run[-1]["in"])) > 0.02):

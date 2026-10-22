@@ -912,5 +912,6 @@
   "details": {
    "vignette": 0.16
   }
- }
+ },
+ "grade_bake": true
 }
