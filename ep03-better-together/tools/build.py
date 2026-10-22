@@ -336,7 +336,7 @@ def ov_html(o, i, fmt, W, H):
     out = max(d - 0.45, 0.5)
     V = fmt == "vertical"
     # landscape overlays live in the right-hand panel
-    PX, PW = (0, W) if V else (720, 1120)
+    PX, PW = (0, W) if V else (850, 1010)
 
     if t == "hook":
         lines = o["text"]
@@ -525,7 +525,7 @@ def ov_html(o, i, fmt, W, H):
     if t == "now":  # persistent "sedang dimasak" card for the landscape panel
         apps = "".join(f'<span class="na n{k}">{E(a)}</span>' for k, a in enumerate(o.get("apps", [])))
         css = f"""
-        .now {{ position: absolute; left: {PX + 40}px; width: {PW - 80}px; top: {o.get('y', 610)}px; height: 190px; border-radius: 28px;
+        .now {{ position: absolute; left: {PX + 40}px; width: {PW - 80}px; top: {o.get('y', 780)}px; height: 190px; border-radius: 28px;
                 background: rgba(255,243,223,0.07); border: 3px solid rgba(255,243,223,0.18); padding: 24px 34px; }}
         .nk {{ font-weight: 900; font-size: 24px; letter-spacing: 0.14em; color: var(--mustard); text-transform: uppercase; }}
         .nt {{ margin-top: 6px; font-family: 'Archivo Black', sans-serif; font-size: 58px; line-height: 1; color: var(--cream); text-transform: uppercase; }}
@@ -660,10 +660,10 @@ def stage_html(fmt, W, H, edl):
         .bg { position: absolute; inset: 0; background: var(--cocoa); }
         .dots { position: absolute; inset: 0; background-image: radial-gradient(rgba(255,243,223,0.09) 3px, transparent 3.5px); background-size: 40px 40px; }
         .blob { position: absolute; width: 900px; height: 900px; left: -420px; bottom: -480px; border-radius: 50%; background: var(--tomato); opacity: 0.9; }
-        .blob2 { position: absolute; width: 380px; height: 380px; right: 160px; top: -200px; border-radius: 50%; background: var(--mustard); opacity: 0.95; }
-        .frame { position: absolute; left: 92px; top: 32px; width: 536px; height: 1016px; border-radius: 34px; border: 8px solid var(--mustard);
+        .blob2 { position: absolute; width: 380px; height: 380px; right: 30px; top: -200px; border-radius: 50%; background: var(--mustard); opacity: 0.95; }
+        .frame { position: absolute; left: 62px; top: 32px; width: 736px; height: 1016px; border-radius: 34px; border: 8px solid var(--mustard);
                  box-shadow: 0 0 0 8px var(--cocoa), 0 24px 60px rgba(0,0,0,0.5); }
-        .hdr { position: absolute; left: 760px; top: 56px; }
+        .hdr { position: absolute; left: 870px; top: 56px; }
         .h1 { font-family: 'Archivo Black', sans-serif; font-size: 64px; color: var(--cream); letter-spacing: -0.01em; line-height: 1; }
         .h2 { margin-top: 12px; display: flex; gap: 12px; }
         .h2 span { font-weight: 900; font-size: 26px; letter-spacing: 0.08em; padding: 8px 18px; border-radius: 999px; }
@@ -683,7 +683,7 @@ def stage_html(fmt, W, H, edl):
 def frame_overlay_html(fmt, W, H):
     """Live badge drawn over the footage in landscape (sits above the video)."""
     css = """
-        .live { position: absolute; left: 124px; top: 64px; font-weight: 900; font-size: 22px; letter-spacing: 0.12em; color: var(--cream);
+        .live { position: absolute; left: 94px; top: 64px; font-weight: 900; font-size: 22px; letter-spacing: 0.12em; color: var(--cream);
                 background: var(--tomato); padding: 6px 14px; border-radius: 8px; border: 3px solid var(--cocoa); }"""
     body = """        <div class="live">● LIVE REPLAY</div>"""
     js = """          tl.fromTo(q('.live'), { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.5);"""
@@ -702,7 +702,7 @@ def captions_html(groups, fmt, W, H, cid):
         .cw.on { color: var(--mustard); }"""
     else:
         css = """
-        .cg { position: absolute; left: 760px; width: 1060px; top: 850px; height: 180px; display: flex; align-items: center; justify-content: flex-start;
+        .cg { position: absolute; left: 870px; width: 990px; top: 850px; height: 180px; display: flex; align-items: center; justify-content: flex-start;
               flex-wrap: wrap; align-content: center; opacity: 0; }
         .cw { display: inline-block; margin-right: 0.26em; font-weight: 800; font-size: 50px; line-height: 1.18; color: var(--cream); }
         .cw.on { color: var(--mustard); }"""
@@ -889,8 +889,8 @@ def build(edl_path):
     if fmt == "vertical":
         cam_css = "#cam { position: absolute; inset: 0; overflow: hidden; z-index: 1; }"
     else:
-        cam_css = ("#cam { position: absolute; left: 100px; top: 40px; width: 520px; height: 1000px; overflow: hidden; border-radius: 28px; z-index: 1; "
-                   "background: #000; }")
+        cam_css = ("#cam { position: absolute; left: 70px; top: 40px; width: 720px; height: 1000px; overflow: hidden; border-radius: 28px; z-index: 1; "
+                   "background: #000; }\n      #cam video { object-position: 50% 40%; }")  # 1:2 footage in a ~3:4 frame: trim a little more off the bottom
     # All cuts are pre-joined into assets/edit.mp4 (frame/sample exact), so the page holds one <video>
     # per continuous run between graphic beats instead of hundreds of elements on the 1.6 GB source.
     prerender_cuts(clips, pdir, light=bool(edl.get("light")), bake=bool(edl.get("grade_bake")))
