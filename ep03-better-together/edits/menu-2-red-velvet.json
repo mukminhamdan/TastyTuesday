@@ -14,11 +14,6 @@
  },
  "segments": [
   {
-   "in": 1660.2,
-   "out": 1665.9,
-   "note": "HOOK glow, tak preheat masuk terus"
-  },
-  {
    "in": 1410.6,
    "out": 1417.5,
    "note": "red velvet cupcake, mode oven"
@@ -63,15 +58,6 @@
   }
  ],
  "overlays": [
-  {
-   "type": "hook",
-   "at": 1660.3,
-   "dur": 3.4,
-   "kicker": "Red Velvet Cupcake",
-   "text": "15 MINIT TANPA PREHEAT!",
-   "highlight": "15 MINIT",
-   "y": 230
-  },
   {
    "type": "menu",
    "at": 1410.7,

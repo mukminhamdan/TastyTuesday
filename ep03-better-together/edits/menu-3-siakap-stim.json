@@ -14,21 +14,6 @@
  },
  "segments": [
   {
-   "in": 3276.8,
-   "out": 3280.1,
-   "note": "HOOK siakap steam kat kedai"
-  },
-  {
-   "in": 3291.8,
-   "out": 3295.3,
-   "note": "sekarang RM40 lebih"
-  },
-  {
-   "in": 3306.6,
-   "out": 3314.2,
-   "note": "tak sampai RM10, total < RM20"
-  },
-  {
    "in": 1731.9,
    "out": 1737.5,
    "note": "ikan steam, siakap"
@@ -78,26 +63,6 @@
   }
  ],
  "overlays": [
-  {
-   "type": "hook",
-   "at": 3277.0,
-   "dur": 3.0,
-   "kicker": "Siakap Steam",
-   "text": "KAT KEDAI RM40++?",
-   "highlight": "RM40++?",
-   "y": 230,
-   "sfx": "impact-bass-1"
-  },
-  {
-   "type": "hook",
-   "at": 3308.6,
-   "dur": 3.4,
-   "kicker": "Buat sendiri",
-   "text": "TOTAL BAHAN < RM20!",
-   "highlight": "RM20!",
-   "y": 230,
-   "sfx": "ding"
-  },
   {
    "type": "menu",
    "at": 1732.0,

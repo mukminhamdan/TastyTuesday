@@ -44,14 +44,14 @@
    "note": "M2 cucuk"
   },
   {
-   "in": 3291.8,
-   "out": 3295.3,
-   "note": "M3 RM40"
+   "in": 1801.6,
+   "out": 1803.7,
+   "note": "M3 mode steam"
   },
   {
-   "in": 3311.6,
-   "out": 3314.2,
-   "note": "M3 < RM20"
+   "in": 1828.9,
+   "out": 1832.1,
+   "note": "M3 15 minit"
   },
   {
    "in": 4221.7,
@@ -89,16 +89,6 @@
    "at": 783.2,
    "dur": 3.4,
    "src_in": 1662.0
-  },
-  {
-   "type": "hook",
-   "at": 783.2,
-   "dur": 3.4,
-   "kicker": "Tasty Tuesday · EP3",
-   "text": "THERMOMIX TAK BOLEH BAKAR?",
-   "highlight": "BAKAR?",
-   "y": 230,
-   "size": 98
   },
   {
    "type": "hook",
@@ -149,7 +139,7 @@
   },
   {
    "type": "menu",
-   "at": 3291.9,
+   "at": 1801.7,
    "dur": 2.4,
    "num": "MENU 3 · IDA",
    "text": "Siakap Stim",
@@ -158,16 +148,6 @@
     "THERMOMIX"
    ],
    "y": 280
-  },
-  {
-   "type": "hook",
-   "at": 3311.7,
-   "dur": 2.6,
-   "text": "SENDIRI: < RM20!",
-   "highlight": "RM20!",
-   "y": 300,
-   "size": 110,
-   "sfx": "ding"
   },
   {
    "type": "reveal",
@@ -203,6 +183,13 @@
    "y": 300,
    "size": 100,
    "sfx": "sparkle"
+  },
+  {
+   "type": "label",
+   "at": 1829.0,
+   "dur": 3.0,
+   "title": "COOVEN · MODE STEAM",
+   "text": "[P3] · 15 minit"
   }
  ],
  "brand": {

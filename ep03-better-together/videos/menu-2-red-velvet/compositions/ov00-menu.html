@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+        #root { position: absolute; inset: 0; 
+  --cream: #FFF3DF; --tomato: #E8402A; --mustard: #FFB81C; --cocoa: #2A1810;
+  --leaf: #2F9E5B; --ink: #1B0F09; --white: #FFFFFF;
+ font-family: Montserrat, 'Archivo Black', sans-serif; }
+        
+        .menu { position: absolute; left: 60px; width: 960px; top: 280px; text-align: center; }
+        .num { display: inline-block; font-family: 'Archivo Black', sans-serif; font-size: 44px; color: var(--cocoa);
+                background: var(--mustard); padding: 10px 34px; border-radius: 18px; border: 5px solid var(--cocoa); transform-origin: 50% 100%; }
+        .dish { margin-top: 22px; font-family: 'Archivo Black', sans-serif; font-size: 96px; line-height: 0.98;
+                 color: var(--cream); text-transform: uppercase; letter-spacing: -0.02em; -webkit-text-stroke: 12px var(--cocoa);
+                 paint-order: stroke fill; text-shadow: 0 12px 0 var(--tomato); }
+        .pills { margin-top: 34px; }
+        .pill { display: inline-block; margin: 0 10px; font-weight: 900; font-size: 34px; letter-spacing: 0.08em;
+                 padding: 12px 26px; border-radius: 999px; border: 4px solid var(--cocoa); }
+        .p0 { background: var(--tomato); color: var(--cream); }
+        .p1 { background: var(--leaf); color: var(--cream); }
+        .p2 { background: var(--cream); color: var(--cocoa); }
+      </style>
+      <div id="root" data-composition-id="ov00-menu" data-width="1080" data-height="1920">
+        <div class="menu">
+          <div class="num">MENU 2 · SAFIAH</div>
+          <div class="dish">Red Velvet Cupcake</div>
+          <div class="pills"><span class="pill p0">THERMOMIX</span><span class="pill p1">COOVEN OVEN</span></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          const q = (s) => document.querySelector('[data-composition-id="ov00-menu"] ' + s);
+          q('.num') && tl.fromTo(q('.num'), { scaleY: 0 }, { scaleY: 1, duration: 0.3, ease: 'back.out(3)' }, 0);
+          q('.dish') && tl.fromTo(q('.dish'), { scale: 2.2, opacity: 0, rotation: -6 }, { scale: 1, opacity: 1, rotation: 0, duration: 0.4, ease: 'back.out(1.8)' }, 0.15);
+          q('.pills') && tl.fromTo(q('.pills').children, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: 'back.out(2)', stagger: 0.12 }, 0.5);
+          q('.menu') && tl.to(q('.menu'), { scale: 0.85, opacity: 0, duration: 0.35, ease: 'power2.in' }, 2.75);
+          window.__timelines["ov00-menu"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

@@ -34,16 +34,6 @@
    "note": "COLD OPEN: oven glow tanpa preheat"
   },
   {
-   "in": 3290.6,
-   "out": 3296.9,
-   "note": "cold open: siakap RM40"
-  },
-  {
-   "in": 3305.2,
-   "out": 3314.2,
-   "note": "cold open: < RM20"
-  },
-  {
    "in": 2649.7,
    "out": 2659.6,
    "note": "cold open: patutlah ubi lambung",
@@ -186,8 +176,13 @@
   },
   {
    "in": 3150.4,
+   "out": 3268.5,
+   "note": "Ida ikan dah masak, buang air, sos curah"
+  },
+  {
+   "in": 3315.3,
    "out": 3410.0,
-   "note": "Ida ikan dah masak, buang air, sos curah, RM40 vs RM20, bawang goreng, peserta buat macam-macam"
+   "note": "sambung P3, bawang goreng, peserta buat macam-macam"
   },
   {
    "in": 3410.0,
@@ -274,22 +269,6 @@
    "text": "4 MENU · 2 GADGET · 1 DAPUR",
    "highlight": "2 GADGET",
    "sfx": "impact-bass-1"
-  },
-  {
-   "type": "hook",
-   "at": 3291.0,
-   "dur": 3.0,
-   "text": "KEDAI: RM40++",
-   "highlight": "RM40++",
-   "sfx": "error"
-  },
-  {
-   "type": "hook",
-   "at": 3306.6,
-   "dur": 3.4,
-   "text": "SENDIRI: < RM20!",
-   "highlight": "RM20!",
-   "sfx": "ding"
   },
   {
    "type": "chapter",

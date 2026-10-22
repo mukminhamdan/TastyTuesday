@@ -14,16 +14,6 @@
  },
  "segments": [
   {
-   "in": 1272.4,
-   "out": 1279.0,
-   "note": "HOOK bawang sekilo"
-  },
-  {
-   "in": 1204.4,
-   "out": 1211.1,
-   "note": "Thermomix 2x, Cooven sekali harung"
-  },
-  {
    "in": 849.0,
    "out": 852.3,
    "note": "hari ni pes sup"
@@ -49,6 +39,11 @@
    "note": "140 darjah, slowkan penumisan"
   },
   {
+   "in": 1204.4,
+   "out": 1211.1,
+   "note": "Thermomix 2x, Cooven sekali harung"
+  },
+  {
    "in": 4126.7,
    "out": 4134.9,
    "note": "FINAL kering tak melepet"
@@ -63,15 +58,6 @@
   }
  ],
  "overlays": [
-  {
-   "type": "hook",
-   "at": 1272.6,
-   "dur": 3.2,
-   "kicker": "Pes Sup Homemade",
-   "text": "BAWANG 1KG SEKALI HARUNG!",
-   "highlight": "1KG",
-   "y": 230
-  },
   {
    "type": "menu",
    "at": 849.1,
@@ -123,6 +109,14 @@
    "dur": 3.4,
    "text": "SIAP!",
    "sub": "Kering, tak melepek"
+  },
+  {
+   "type": "tip",
+   "at": 1204.5,
+   "dur": 4.0,
+   "title": "COOVEN",
+   "text": "Masak banyak pun [sekali harung] je.",
+   "y": 280
   }
  ],
  "brand": {

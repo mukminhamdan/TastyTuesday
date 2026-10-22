@@ -23,27 +23,16 @@
   },
   {
    "in": 3150.4,
+   "out": 3268.5,
+   "note": "Ida ikan dah masak, buang air, sos curah"
+  },
+  {
+   "in": 3315.3,
    "out": 3410.0,
-   "note": "Ida ikan dah masak, buang air, sos curah, RM40 vs RM20, bawang goreng, peserta buat macam-macam"
+   "note": "sambung P3, bawang goreng, peserta buat macam-macam"
   }
  ],
  "overlays": [
-  {
-   "type": "hook",
-   "at": 3291.0,
-   "dur": 3.0,
-   "text": "KEDAI: RM40++",
-   "highlight": "RM40++",
-   "sfx": "error"
-  },
-  {
-   "type": "hook",
-   "at": 3306.6,
-   "dur": 3.4,
-   "text": "SENDIRI: < RM20!",
-   "highlight": "RM20!",
-   "sfx": "ding"
-  },
   {
    "type": "tip",
    "at": 2986.4,

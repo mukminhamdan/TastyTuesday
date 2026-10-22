@@ -15,12 +15,6 @@
  },
  "segments": [
   {
-   "in": 2648.6,
-   "out": 2659.6,
-   "note": "HOOK lambung, patutlah",
-   "volume": 1.3
-  },
-  {
    "in": 2309.8,
    "out": 2318.5,
    "note": "ubi lambung guna Thermomix + bahan",
@@ -63,6 +57,12 @@
    "volume": 1.3
   },
   {
+   "in": 2648.6,
+   "out": 2659.6,
+   "note": "kocak basket, lambung-lambung",
+   "volume": 1.3
+  },
+  {
    "in": 4633.4,
    "out": 4637.9,
    "note": "RESULT kenyal",
@@ -78,16 +78,6 @@
   }
  ],
  "overlays": [
-  {
-   "type": "hook",
-   "at": 2648.8,
-   "dur": 3.6,
-   "kicker": "Ubi Lambung",
-   "text": "KENAPA NAMA DIA UBI LAMBUNG?",
-   "highlight": "LAMBUNG?",
-   "y": 230,
-   "size": 96
-  },
   {
    "type": "menu",
    "at": 2309.9,
@@ -159,6 +149,14 @@
     "Baking soda 1 sdt",
     "Garam secubit"
    ]
+  },
+  {
+   "type": "tip",
+   "at": 2649.0,
+   "dur": 4.0,
+   "title": "TIP GORENG",
+   "text": "Kocak-kocak [basket] — biar ubi melambung.",
+   "y": 280
   }
  ],
  "brand": {
