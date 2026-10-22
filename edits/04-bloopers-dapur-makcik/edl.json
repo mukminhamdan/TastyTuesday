@@ -18,7 +18,7 @@
   {
    "s": 1673.8,
    "e": 1678.25,
-   "cap": "Tak ada air, saya terlupa. Banjir habis rumah saya."
+   "cap": "Tadah air Coway, saya terlupa. Banjir habis rumah saya."
   },
   {
    "s": 217.9,
@@ -68,12 +68,12 @@
   {
    "s": 1603.1,
    "e": 1606.0,
-   "cap": "Mumin, are you there? Mumin, lepas ni kita nak save macam mana?"
+   "cap": "Mukmin, are you there? Mukmin, lepas ni kita nak save macam mana?"
   },
   {
    "s": 1620.1,
    "e": 1621.05,
-   "cap": "Mumin, are you there?"
+   "cap": "Mukmin, are you there?"
   },
   {
    "s": 2520.9,
@@ -166,7 +166,7 @@
     "src": 1603.1
    },
    "dur": 1.2,
-   "text": "Mumin?!",
+   "text": "Mukmin?!",
    "y": 640
   },
   {
