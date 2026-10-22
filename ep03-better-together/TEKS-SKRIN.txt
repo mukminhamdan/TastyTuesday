@@ -13,48 +13,41 @@ Cara edit:
 ### Tasty Tuesday EP3 · Better Together · Reels  ·  0:51.6
 
 
-[reels.o01] 0:07.1 HOOK
+[reels.o01] 0:00.2 HOOK
+  kicker = Tasty Tuesday · EP3
+  text = THERMOMIX TAK BOLEH BAKAR?
+  highlight = BAKAR?
+
+[reels.o02] 0:07.1 HOOK
   kicker = Cooven × Thermomix
   text = BUKAN SAINGAN — BETTER TOGETHER
   highlight = BETTER TOGETHER
 
-[reels.o02] 0:12.8 KAD MENU
+[reels.o03] 0:12.8 KAD MENU
   num = MENU 1 · KAK SALMA
   text = Pes Sup
   apps = THERMOMIX | COOVEN
-
-[reels.o03] 0:19.5 HASIL
-  text = SIAP!
 
 [reels.o04] 0:22.0 KAD MENU
   num = MENU 2 · SAFIAH
   text = Red Velvet
   apps = THERMOMIX | COOVEN OVEN
 
-[reels.o05] 0:27.7 HASIL
-  text = CANTIK!
-
-[reels.o06] 0:30.3 KAD MENU
+[reels.o05] 0:30.3 KAD MENU
   num = MENU 3 · IDA
   text = Siakap Stim
   apps = COOVEN STEAM | THERMOMIX
 
-[reels.o11] 0:32.4 LABEL
+[reels.o08] 0:32.4 LABEL
   title = COOVEN · MODE STEAM
   text = [P3] · 15 minit
 
-[reels.o07] 0:35.6 HASIL
-  text = SEDAPNYA!
-
-[reels.o08] 0:38.3 KAD MENU
+[reels.o06] 0:38.3 KAD MENU
   num = MENU 4 · MUKMIN
   text = Ubi Lambung
   apps = THERMOMIX | COOVEN DEEP FRY
 
-[reels.o09] 0:42.2 HASIL
-  text = KENYAL!
-
-[reels.o10] 0:44.4 HOOK
+[reels.o07] 0:44.4 HOOK
   kicker = Testimoni
   text = LAGI RAJIN MASAK!
   highlight = RAJIN
@@ -65,7 +58,7 @@ Cara edit:
   l3 = FOLLOW + SHARE
 
 
-### Tasty Tuesday EP3 · Menu 1 · Pes Sup Kak Salma  ·  0:41.9
+### Tasty Tuesday EP3 · Menu 1 · Pes Sup Kak Salma  ·  0:27.4
 
 
 [menu-1-pes-sup.o00] 0:00.1 KAD MENU
@@ -73,37 +66,21 @@ Cara edit:
   text = Pes Sup
   apps = THERMOMIX | COOVEN
 
-[menu-1-pes-sup.o01] 0:03.4 TIP
-  title = TIP RASA
-  text = Rempah [biji-biji] — fresh from scratch!
-
-[menu-1-pes-sup.o02] 0:07.4 TIP
-  title = TIP BLEND
-  text = Tak letak air — terus guna [minyak].
-
-[menu-1-pes-sup.o03] 0:11.3 LABEL
-  title = THERMOMIX
-  text = [30 saat × 2] je, terus halus!
-
-[menu-1-pes-sup.o04] 0:18.0 LABEL
+[menu-1-pes-sup.o01] 0:03.5 LABEL
   title = COOVEN · MODE COOKER
   text = [140°C] · 30 min · tumis perlahan
 
-[menu-1-pes-sup.o06] 0:24.4 TIP
+[menu-1-pes-sup.o02] 0:09.9 TIP
   title = COOVEN
   text = Masak banyak pun [sekali harung] je.
 
-[menu-1-pes-sup.o05] 0:31.6 HASIL
-  text = SIAP!
-  sub = Kering, tak melepek
-
-[menu-1-pes-sup.g07] 0:37.9 KAD OUTRO
+[menu-1-pes-sup.g04] 0:23.4 KAD OUTRO
   l1 = TASTY TUESDAY
   l2 = Pes Sup · Thermomix blend × Cooven masak
   l3 = FOLLOW + SHARE
 
 
-### Tasty Tuesday EP3 · Menu 2 · Red Velvet Cupcake Safiah  ·  0:34.3
+### Tasty Tuesday EP3 · Menu 2 · Red Velvet Cupcake Safiah  ·  0:27.1
 
 
 [menu-2-red-velvet.o00] 0:00.1 KAD MENU
@@ -111,32 +88,17 @@ Cara edit:
   text = Red Velvet Cupcake
   apps = THERMOMIX | COOVEN OVEN
 
-[menu-2-red-velvet.o01] 0:07.0 LABEL
-  title = THERMOMIX
-  text = Adunan dah [blend] siap.
-
-[menu-2-red-velvet.o02] 0:09.4 TIP
-  title = TIP ISI CUP
-  text = [Satu sudu] je — jangan 3/4, nanti melimpah.
-
-[menu-2-red-velvet.o03] 0:13.2 LABEL
+[menu-2-red-velvet.o01] 0:10.8 LABEL
   title = COOVEN · MODE OVEN
   text = [145°C] · 15 minit · tanpa preheat
 
-[menu-2-red-velvet.o04] 0:23.4 HASIL
-  text = CANTIK!
-
-[menu-2-red-velvet.o05] 0:25.6 TIP
-  title = TIP DEKOR
-  text = Tabur [crumbs] — sembunyi cacat-cela!
-
-[menu-2-red-velvet.g07] 0:30.3 KAD OUTRO
+[menu-2-red-velvet.g05] 0:23.1 KAD OUTRO
   l1 = TASTY TUESDAY
   l2 = Red Velvet · Thermomix adun × Cooven bakar
   l3 = FOLLOW + SHARE
 
 
-### Tasty Tuesday EP3 · Menu 3 · Ikan Siakap Stim Ida  ·  0:40.8
+### Tasty Tuesday EP3 · Menu 3 · Ikan Siakap Stim Ida  ·  0:30.2
 
 
 [menu-3-siakap-stim.o00] 0:00.1 KAD MENU
@@ -144,37 +106,21 @@ Cara edit:
   text = Siakap Stim
   apps = COOVEN STEAM | THERMOMIX
 
-[menu-3-siakap-stim.o01] 0:05.0 TIP
-  title = TIP
-  text = [Kelar] badan ikan dulu.
-
-[menu-3-siakap-stim.o02] 0:08.5 LABEL
+[menu-3-siakap-stim.o01] 0:05.0 LABEL
   title = COOVEN · MODE STEAM
   text = [P3] (suhu tinggi) · 15 minit
 
-[menu-3-siakap-stim.o03] 0:13.7 TIP
-  title = TIP TAK HANYIR
-  text = Berus [darah hitam] perut ikan guna berus gigi khas!
-
-[menu-3-siakap-stim.o06] 0:20.9 BAHAN
-  title = Sos curah
-  items = Bawang putih | Chicken stock | Lada | Daun ketumbar | Sos ikan | Limau nipis
-
-[menu-3-siakap-stim.o04] 0:26.9 LABEL
+[menu-3-siakap-stim.o02] 0:16.2 LABEL
   title = SAMBUNG
   text = Curah sos → [P3 · 2 minit] lagi.
 
-[menu-3-siakap-stim.o05] 0:30.8 HASIL
-  text = SEDAPNYA!
-  sub = Settle dinner
-
-[menu-3-siakap-stim.g08] 0:36.8 KAD OUTRO
+[menu-3-siakap-stim.g06] 0:26.2 KAD OUTRO
   l1 = TASTY TUESDAY
   l2 = Siakap Stim · Cooven steam × Thermomix chop
   l3 = FOLLOW + SHARE
 
 
-### Tasty Tuesday EP3 · Menu 4 · Ubi Lambung Mukmin  ·  0:53.9
+### Tasty Tuesday EP3 · Menu 4 · Ubi Lambung Mukmin  ·  0:49.1
 
 
 [menu-4-ubi-lambung.o00] 0:00.1 KAD MENU
@@ -182,38 +128,27 @@ Cara edit:
   text = Ubi Lambung
   apps = THERMOMIX | COOVEN DEEP FRY
 
-[menu-4-ubi-lambung.o07] 0:03.6 BAHAN
-  title = Bahan Ubi Lambung
-  items = Keledek 400 g | Tepung ubi 100 g | Tepung pulut 20 g | Baking soda 1 sdt | Garam secubit
-
-[menu-4-ubi-lambung.o01] 0:08.8 TIP
-  title = GANDINGAN MANTAP
-  text = Thermomix [adun], Cooven [goreng].
-
-[menu-4-ubi-lambung.o02] 0:17.3 LABEL
+[menu-4-ubi-lambung.o01] 0:12.5 LABEL
   title = COOVEN · MODE DEEP FRY
   text = Preheat [1–2 minit] je.
 
-[menu-4-ubi-lambung.o03] 0:20.2 FAKTA
+[menu-4-ubi-lambung.o02] 0:15.4 FAKTA
   title = BONUS
   text = [Basket] goreng dapat sekali.
 
-[menu-4-ubi-lambung.o04] 0:24.6 TIP
+[menu-4-ubi-lambung.o03] 0:19.8 TIP
   title = KENAPA SEDAP?
   text = Suhu [stabil] — masak sekata.
 
-[menu-4-ubi-lambung.o05] 0:32.5 TIP
+[menu-4-ubi-lambung.o04] 0:27.7 TIP
   title = TAK PAYAH TEKA
   text = Cooven [bagitahu] bila minyak dah panas.
 
-[menu-4-ubi-lambung.o08] 0:38.4 TIP
+[menu-4-ubi-lambung.o05] 0:33.6 TIP
   title = TIP GORENG
   text = Kocak-kocak [basket] — biar ubi melambung.
 
-[menu-4-ubi-lambung.o06] 0:46.4 HASIL
-  text = KENYAL!
-
-[menu-4-ubi-lambung.g09] 0:49.9 KAD OUTRO
+[menu-4-ubi-lambung.g09] 0:45.1 KAD OUTRO
   l1 = TASTY TUESDAY
   l2 = Ubi Lambung · Thermomix adun × Cooven goreng
   l3 = FOLLOW + SHARE
@@ -280,7 +215,7 @@ Cara edit:
   kicker = Pembukaan
   text = Kenapa Better Together?
 
-[youtube-full.o57] 0:26.7 PANEL 'SEDANG DIMASAK'
+[youtube-full.o33] 0:26.7 PANEL 'SEDANG DIMASAK'
   kicker = Pembukaan
   text = Better Together
   apps = THERMOMIX | COOVEN
@@ -297,7 +232,7 @@ Cara edit:
   kicker = Menu 1 · Kak Salma
   text = Pes Sup
 
-[youtube-full.o58] 2:37.2 PANEL 'SEDANG DIMASAK'
+[youtube-full.o34] 2:37.2 PANEL 'SEDANG DIMASAK'
   kicker = Menu 1 · Kak Salma
   text = Pes Sup
   apps = THERMOMIX | COOVEN COOKER
@@ -306,236 +241,140 @@ Cara edit:
   name = Kak Salma
   role = Pes Sup
 
-[youtube-full.o06] 3:08.4 LABEL
-  title = BUAT BANYAK?
-  text = Mesin ikut [2–3 batch] supaya semua halus.
-
-[youtube-full.o07] 3:29.1 TIP
-  title = TIP BLEND
-  text = Tak letak air — terus guna [minyak] masa mesin.
-
-[youtube-full.o08] 3:34.2 LABEL
-  title = THERMOMIX
-  text = [30 saat × 2] = 1 minit je, terus halus!
-
-[youtube-full.o09] 4:56.2 TIP
-  title = TIP RASA
-  text = Guna rempah [biji-biji] — fresh from scratch, bukan serbuk siap.
-
-[youtube-full.o10] 5:41.9 LABEL
+[youtube-full.o06] 5:41.9 LABEL
   title = COOVEN · MODE COOKER
   text = [140°C] · 30 minit · tumis perlahan-lahan
 
-[youtube-full.o11] 6:31.1 TIP
+[youtube-full.o07] 6:31.1 TIP
   title = NAK CEPAT?
   text = Boleh naik [160–180°C], tapi kena kerap kacau.
 
-[youtube-full.o12] 6:57.0 TIP
+[youtube-full.o08] 6:57.0 TIP
   title = TIP
   text = Kacau setiap [5–10 minit] je — tak perlu duduk tepi dapur.
 
-[youtube-full.o13] 7:31.3 FAKTA
+[youtube-full.o09] 7:31.3 FAKTA
   title = BETTER TOGETHER
   text = Thermomix: 2 kali tumis · Cooven: [sekali harung]!
 
-[youtube-full.o14] 8:22.9 FAKTA
-  title = SKALA
-  text = Bawang besar [1 kg] sekali masak.
-
-[youtube-full.o15] 9:03.2 TIP
-  title = BONUS
-  text = Pes ni boleh [perap ayam bakar] juga!
-
-[youtube-full.o16] 9:38.8 BAB
+[youtube-full.o10] 9:38.8 BAB
   kicker = Menu 2 · Safiah
   text = Red Velvet Cupcake
 
-[youtube-full.o59] 9:39.0 PANEL 'SEDANG DIMASAK'
+[youtube-full.o35] 9:39.0 PANEL 'SEDANG DIMASAK'
   kicker = Menu 2 · Safiah
   text = Red Velvet Cupcake
   apps = THERMOMIX | COOVEN OVEN
 
-[youtube-full.o64] 9:47.4 NAMA
+[youtube-full.o40] 9:47.4 NAMA
   name = Safiah
   role = Red Velvet Cupcake
 
-[youtube-full.o17] 9:58.8 LABEL
-  title = THERMOMIX
-  text = Adunan & [frosting] di-blend siap dulu.
-
-[youtube-full.o18] 10:59.0 FAKTA
+[youtube-full.o11] 10:59.0 FAKTA
   title = MUAT BERAPA?
   text = Satu loyang Cooven muat [14–16] cupcake.
 
-[youtube-full.o19] 11:45.6 TIP
-  title = TIP ISI CUP
-  text = Jangan isi 3/4 — [satu sudu] je dah cukup, tak melimpah.
-
-[youtube-full.o20] 12:10.9 TIP
-  title = BONUS
-  text = Burnt cheesecake? Gaul dalam Thermomix, bakar [30 minit] je.
-
-[youtube-full.o21] 12:54.6 LABEL
+[youtube-full.o12] 12:54.6 LABEL
   title = COOVEN · MODE OVEN
   text = [145°C] · 15 minit · tanpa preheat
 
-[youtube-full.o22] 13:47.5 BAB
+[youtube-full.o13] 13:47.5 BAB
   kicker = Menu 3 · Ida
   text = Siakap Stim
 
-[youtube-full.o60] 13:47.7 PANEL 'SEDANG DIMASAK'
+[youtube-full.o36] 13:47.7 PANEL 'SEDANG DIMASAK'
   kicker = Menu 3 · Ida
   text = Siakap Stim
   apps = COOVEN STEAM | THERMOMIX
 
-[youtube-full.o23] 13:59.2 NAMA
+[youtube-full.o14] 13:59.2 NAMA
   name = Ida
   role = Ikan Siakap Stim
 
-[youtube-full.o24] 14:21.8 TIP
-  title = TIP SEDAP
-  text = [Kelar-kelar] badan ikan dulu supaya rasa meresap.
-
-[youtube-full.o25] 15:26.7 LABEL
+[youtube-full.o15] 15:26.7 LABEL
   title = COOVEN · MODE STEAM
   text = [P3] (suhu tinggi) · 15 minit
 
-[youtube-full.o26] 15:47.4 FAKTA
+[youtube-full.o16] 15:47.4 FAKTA
   title = P1 · P2 · P3
   text = P1 = suhu rendah · P2 = sederhana · [P3 = tinggi]
 
-[youtube-full.o27] 16:10.2 LABEL
+[youtube-full.o17] 16:10.2 LABEL
   title = AIR
   text = Lebih kurang [1 liter] — bawah paras tanda.
 
-[youtube-full.o28] 17:54.5 FAKTA
+[youtube-full.o18] 17:54.5 FAKTA
   title = DAPUR KECIL?
   text = Dua gadget je — [dapur lengkap] untuk rumah kecil & minimalis.
 
-[youtube-full.o29] 19:09.9 TIP
-  title = TIP TAK HANYIR
-  text = Berus [darah hitam] dalam perut ikan guna berus gigi khas dapur!
-
-[youtube-full.o30] 20:29.0 FAKTA
+[youtube-full.o19] 20:29.0 FAKTA
   title = KENAPA COOVEN?
   text = Rack [stabil], steam lebih laju, ruang lebih besar.
 
-[youtube-full.o31] 21:10.8 TIP
-  title = TAK ADA THERMOMIX?
-  text = Guna [blender / chopper] biasa pun boleh.
-
-[youtube-full.o32] 21:43.8 BAB
+[youtube-full.o20] 21:43.8 BAB
   kicker = Menu 4 · Mukmin
   text = Ubi Lambung
 
-[youtube-full.o61] 21:44.0 PANEL 'SEDANG DIMASAK'
+[youtube-full.o37] 21:44.0 PANEL 'SEDANG DIMASAK'
   kicker = Menu 4 · Mukmin
   text = Ubi Lambung
   apps = THERMOMIX | COOVEN DEEP FRY
 
-[youtube-full.o33] 22:02.7 NAMA
+[youtube-full.o21] 22:02.7 NAMA
   name = Mukmin
   role = Ubi Lambung
 
-[youtube-full.o34] 22:32.8 FAKTA
-  title = TAHU TAK?
-  text = Orang Indonesia panggil [ondol-ondol].
-
-[youtube-full.o35] 23:06.4 TIP
-  title = BETTER TOGETHER
-  text = Thermomix [adun], Cooven [goreng] — sebab Thermomix tak boleh deep fry.
-
-[youtube-full.o36] 23:47.0 LABEL
+[youtube-full.o22] 23:47.0 LABEL
   title = COOVEN · MODE DEEP FRY
   text = Preheat [1–2 minit] je dah boleh masuk.
 
-[youtube-full.o37] 24:29.0 FAKTA
+[youtube-full.o23] 24:29.0 FAKTA
   title = BONUS
   text = [Basket] goreng dapat sekali — tak perlu beli asing.
 
-[youtube-full.o38] 24:39.2 TIP
+[youtube-full.o24] 24:39.2 TIP
   title = KENAPA SEDAP?
   text = Suhu [stabil] — masak sekata, tak hangus, tak mentah.
 
-[youtube-full.o39] 24:56.0 FAKTA
+[youtube-full.o25] 24:56.0 FAKTA
   title = KAPASITI
   text = Periuk [8 liter], tapi minyak [±1 liter] pun cukup.
 
-[youtube-full.o40] 25:38.0 TIP
+[youtube-full.o26] 25:38.0 TIP
   title = TAK PAYAH TEKA
   text = Cooven [bagitahu] bila minyak dah cukup panas.
 
-[youtube-full.o41] 26:13.2 BAB
+[youtube-full.o27] 26:13.2 BAB
   kicker = Bahagian 5
   text = Hasil & Tips Akhir
 
-[youtube-full.o62] 26:13.4 PANEL 'SEDANG DIMASAK'
+[youtube-full.o38] 26:13.4 PANEL 'SEDANG DIMASAK'
   kicker = Hasil & tips akhir
   text = 4 Menu Siap!
   apps = PES SUP | RED VELVET | SIAKAP · UBI
 
-[youtube-full.o42] 26:41.7 HASIL
-  text = CANTIK!
-  sub = Red velvet siap
-
-[youtube-full.o43] 27:30.3 TIP
+[youtube-full.o28] 27:30.3 TIP
   title = PES DAH GARING?
   text = Tengok — dah masak bila [berbiji, tak bergumpal].
 
-[youtube-full.o44] 29:14.4 TIP
-  title = TAK ADA NOZZLE?
-  text = Beginner? Sapu frosting guna [pisau] je!
-
-[youtube-full.o45] 30:15.3 TIP
-  title = TIP DECOR
-  text = Tabur [crumbs] red velvet — sembunyi segala cacat-cela!
-
-[youtube-full.o46] 31:14.5 TIP
+[youtube-full.o29] 31:14.5 TIP
   title = MUDAH
   text = Air ikan? [Jongket tray] je, tak payah ke sinki.
 
-[youtube-full.o47] 31:59.5 BAHAN
-  title = Sos curah siakap
-  items = Bawang putih | Chicken stock | Lada | Daun ketumbar | Sos ikan | Limau nipis
-
-[youtube-full.o48] 35:33.6 TIP
+[youtube-full.o30] 35:33.6 TIP
   title = SUHU RENDAH VS TINGGI
   text = Nak tinggal-tinggal: [suhu rendah] · Duduk tepi & nak cepat: [suhu tinggi].
 
-[youtube-full.o49] 36:54.5 HOOK
+[youtube-full.o31] 36:54.5 HOOK
   kicker = Testimoni
   text = LAGI RAJIN MASAK!
   highlight = RAJIN
 
-[youtube-full.o50] 37:10.1 TIP
-  title = TIP
-  text = Masak banyak, [simpan frozen] — 2–3 hari lagi boleh makan.
-
-[youtube-full.o51] 37:59.3 HASIL
-  text = SIAP!
-  sub = Pes sup kering, tak melepek
-
-[youtube-full.o52] 38:15.4 TIP
-  title = TIP JIMAT
-  text = Lebihan [minyak] boleh simpan untuk tumis next round.
-
-[youtube-full.o53] 38:54.0 HASIL
-  text = SEDAPNYA!
-  sub = Siakap stim siap
-
-[youtube-full.o54] 39:14.6 TIP
-  title = TIP BIJAK
-  text = Masak [nasi] terus dalam bowl Thermomix yang berlada — air beras bantu 'cuci' bowl!
-
-[youtube-full.o55] 40:30.0 HASIL
-  text = KENYAL!
-  sub = Ubi lambung siap
-
-[youtube-full.o63] 40:41.4 PANEL 'SEDANG DIMASAK'
+[youtube-full.o39] 40:41.4 PANEL 'SEDANG DIMASAK'
   kicker = Penutup
   text = Jumpa Selasa Depan
   apps = TASTY TUESDAY
 
-[youtube-full.o56] 40:53.9 BAB
+[youtube-full.o32] 40:53.9 BAB
   kicker = 4 menu · 1 live
   text = Semua sedap!

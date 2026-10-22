@@ -16,8 +16,8 @@
  "segments": [
   {
    "in": 2309.8,
-   "out": 2318.5,
-   "note": "ubi lambung guna Thermomix + bahan",
+   "out": 2313.7,
+   "note": "ubi lambung",
    "volume": 1.3
   },
   {
@@ -91,14 +91,6 @@
    "y": 280
   },
   {
-   "type": "tip",
-   "at": 2379.4,
-   "dur": 5.0,
-   "title": "GANDINGAN MANTAP",
-   "text": "Thermomix [adun], Cooven [goreng].",
-   "y": 280
-  },
-  {
    "type": "label",
    "at": 2424.9,
    "dur": 3.6,
@@ -130,25 +122,6 @@
    "title": "TAK PAYAH TEKA",
    "text": "Cooven [bagitahu] bila minyak dah panas.",
    "y": 280
-  },
-  {
-   "type": "reveal",
-   "at": 4634.0,
-   "dur": 3.0,
-   "text": "KENYAL!"
-  },
-  {
-   "type": "ingredients",
-   "at": 2313.4,
-   "dur": 4.6,
-   "title": "Bahan Ubi Lambung",
-   "items": [
-    "Keledek 400 g",
-    "Tepung ubi 100 g",
-    "Tepung pulut 20 g",
-    "Baking soda 1 sdt",
-    "Garam secubit"
-   ]
   },
   {
    "type": "tip",

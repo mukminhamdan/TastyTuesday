@@ -35,40 +35,10 @@
  "overlays": [
   {
    "type": "tip",
-   "at": 2986.4,
-   "dur": 6.0,
-   "title": "TAK ADA NOZZLE?",
-   "text": "Beginner? Sapu frosting guna [pisau] je!"
-  },
-  {
-   "type": "tip",
-   "at": 3105.3,
-   "dur": 6.0,
-   "title": "TIP DECOR",
-   "text": "Tabur [crumbs] red velvet — sembunyi segala cacat-cela!",
-   "sfx": "sparkle"
-  },
-  {
-   "type": "tip",
    "at": 3196.0,
    "dur": 5.0,
    "title": "MUDAH",
    "text": "Air ikan? [Jongket tray] je, tak payah ke sinki."
-  },
-  {
-   "type": "ingredients",
-   "at": 3247.0,
-   "dur": 8.0,
-   "title": "Sos curah siakap",
-   "items": [
-    "Bawang putih",
-    "Chicken stock",
-    "Lada",
-    "Daun ketumbar",
-    "Sos ikan",
-    "Limau nipis"
-   ],
-   "cols": 2
   },
   {
    "type": "now",

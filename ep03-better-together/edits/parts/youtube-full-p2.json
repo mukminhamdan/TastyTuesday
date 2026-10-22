@@ -68,35 +68,6 @@
   },
   {
    "type": "label",
-   "at": 861.0,
-   "dur": 4.5,
-   "title": "BUAT BANYAK?",
-   "text": "Mesin ikut [2–3 batch] supaya semua halus."
-  },
-  {
-   "type": "tip",
-   "at": 884.6,
-   "dur": 5.0,
-   "title": "TIP BLEND",
-   "text": "Tak letak air — terus guna [minyak] masa mesin."
-  },
-  {
-   "type": "label",
-   "at": 892.0,
-   "dur": 5.0,
-   "title": "THERMOMIX",
-   "text": "[30 saat × 2] = 1 minit je, terus halus!",
-   "sfx": "ding"
-  },
-  {
-   "type": "tip",
-   "at": 1000.8,
-   "dur": 5.5,
-   "title": "TIP RASA",
-   "text": "Guna rempah [biji-biji] — fresh from scratch, bukan serbuk siap."
-  },
-  {
-   "type": "label",
    "at": 1083.0,
    "dur": 6.0,
    "title": "COOVEN · MODE COOKER",
@@ -122,20 +93,6 @@
    "dur": 5.5,
    "title": "BETTER TOGETHER",
    "text": "Thermomix: 2 kali tumis · Cooven: [sekali harung]!"
-  },
-  {
-   "type": "fact",
-   "at": 1272.6,
-   "dur": 4.5,
-   "title": "SKALA",
-   "text": "Bawang besar [1 kg] sekali masak."
-  },
-  {
-   "type": "tip",
-   "at": 1320.0,
-   "dur": 5.0,
-   "title": "BONUS",
-   "text": "Pes ni boleh [perap ayam bakar] juga!"
   },
   {
    "type": "now",

@@ -19,11 +19,6 @@
    "note": "red velvet cupcake, mode oven"
   },
   {
-   "in": 1430.6,
-   "out": 1433.0,
-   "note": "adunan blend dalam Thermomix"
-  },
-  {
    "in": 1564.5,
    "out": 1569.3,
    "note": "satu sudu cukup"
@@ -42,11 +37,6 @@
    "in": 2757.6,
    "out": 2761.8,
    "note": "satu sudu, cantik"
-  },
-  {
-   "in": 3105.2,
-   "out": 3110.5,
-   "note": "crumbs sembunyi cacat-cela"
   },
   {
    "gfx": "outro",
@@ -73,43 +63,11 @@
   },
   {
    "type": "label",
-   "at": 1430.7,
-   "dur": 2.6,
-   "title": "THERMOMIX",
-   "text": "Adunan dah [blend] siap.",
-   "y": 280
-  },
-  {
-   "type": "tip",
-   "at": 1564.6,
-   "dur": 4.2,
-   "title": "TIP ISI CUP",
-   "text": "[Satu sudu] je — jangan 3/4, nanti melimpah.",
-   "y": 280,
-   "sfx": "ding"
-  },
-  {
-   "type": "label",
    "at": 1641.3,
    "dur": 5.0,
    "title": "COOVEN · MODE OVEN",
    "text": "[145°C] · 15 minit · tanpa preheat",
    "y": 280
-  },
-  {
-   "type": "reveal",
-   "at": 2759.7,
-   "dur": 2.4,
-   "text": "CANTIK!"
-  },
-  {
-   "type": "tip",
-   "at": 3105.3,
-   "dur": 4.4,
-   "title": "TIP DEKOR",
-   "text": "Tabur [crumbs] — sembunyi cacat-cela!",
-   "y": 280,
-   "sfx": "sparkle"
   }
  ],
  "brand": {

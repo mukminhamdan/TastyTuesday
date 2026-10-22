@@ -307,35 +307,6 @@
   },
   {
    "type": "label",
-   "at": 861.0,
-   "dur": 4.5,
-   "title": "BUAT BANYAK?",
-   "text": "Mesin ikut [2–3 batch] supaya semua halus."
-  },
-  {
-   "type": "tip",
-   "at": 884.6,
-   "dur": 5.0,
-   "title": "TIP BLEND",
-   "text": "Tak letak air — terus guna [minyak] masa mesin."
-  },
-  {
-   "type": "label",
-   "at": 892.0,
-   "dur": 5.0,
-   "title": "THERMOMIX",
-   "text": "[30 saat × 2] = 1 minit je, terus halus!",
-   "sfx": "ding"
-  },
-  {
-   "type": "tip",
-   "at": 1000.8,
-   "dur": 5.5,
-   "title": "TIP RASA",
-   "text": "Guna rempah [biji-biji] — fresh from scratch, bukan serbuk siap."
-  },
-  {
-   "type": "label",
    "at": 1083.0,
    "dur": 6.0,
    "title": "COOVEN · MODE COOKER",
@@ -363,20 +334,6 @@
    "text": "Thermomix: 2 kali tumis · Cooven: [sekali harung]!"
   },
   {
-   "type": "fact",
-   "at": 1272.6,
-   "dur": 4.5,
-   "title": "SKALA",
-   "text": "Bawang besar [1 kg] sekali masak."
-  },
-  {
-   "type": "tip",
-   "at": 1320.0,
-   "dur": 5.0,
-   "title": "BONUS",
-   "text": "Pes ni boleh [perap ayam bakar] juga!"
-  },
-  {
    "type": "chapter",
    "at": 1401.4,
    "dur": 4.0,
@@ -384,33 +341,11 @@
    "text": "Red Velvet Cupcake"
   },
   {
-   "type": "label",
-   "at": 1425.0,
-   "dur": 5.0,
-   "title": "THERMOMIX",
-   "text": "Adunan & [frosting] di-blend siap dulu."
-  },
-  {
    "type": "fact",
    "at": 1495.2,
    "dur": 5.0,
    "title": "MUAT BERAPA?",
    "text": "Satu loyang Cooven muat [14–16] cupcake."
-  },
-  {
-   "type": "tip",
-   "at": 1556.0,
-   "dur": 7.0,
-   "title": "TIP ISI CUP",
-   "text": "Jangan isi 3/4 — [satu sudu] je dah cukup, tak melimpah.",
-   "sfx": "ding"
-  },
-  {
-   "type": "tip",
-   "at": 1586.3,
-   "dur": 6.0,
-   "title": "BONUS",
-   "text": "Burnt cheesecake? Gaul dalam Thermomix, bakar [30 minit] je."
   },
   {
    "type": "label",
@@ -432,13 +367,6 @@
    "dur": 4.0,
    "name": "Ida",
    "role": "Ikan Siakap Stim"
-  },
-  {
-   "type": "tip",
-   "at": 1740.0,
-   "dur": 5.0,
-   "title": "TIP SEDAP",
-   "text": "[Kelar-kelar] badan ikan dulu supaya rasa meresap."
   },
   {
    "type": "label",
@@ -469,26 +397,11 @@
    "text": "Dua gadget je — [dapur lengkap] untuk rumah kecil & minimalis."
   },
   {
-   "type": "tip",
-   "at": 2125.0,
-   "dur": 8.0,
-   "title": "TIP TAK HANYIR",
-   "text": "Berus [darah hitam] dalam perut ikan guna berus gigi khas dapur!",
-   "sfx": "ding"
-  },
-  {
    "type": "fact",
    "at": 2205.4,
    "dur": 6.0,
    "title": "KENAPA COOVEN?",
    "text": "Rack [stabil], steam lebih laju, ruang lebih besar."
-  },
-  {
-   "type": "tip",
-   "at": 2247.2,
-   "dur": 6.0,
-   "title": "TAK ADA THERMOMIX?",
-   "text": "Guna [blender / chopper] biasa pun boleh."
   },
   {
    "type": "chapter",
@@ -503,20 +416,6 @@
    "dur": 4.0,
    "name": "Mukmin",
    "role": "Ubi Lambung"
-  },
-  {
-   "type": "fact",
-   "at": 2340.8,
-   "dur": 4.5,
-   "title": "TAHU TAK?",
-   "text": "Orang Indonesia panggil [ondol-ondol]."
-  },
-  {
-   "type": "tip",
-   "at": 2380.4,
-   "dur": 6.0,
-   "title": "BETTER TOGETHER",
-   "text": "Thermomix [adun], Cooven [goreng] — sebab Thermomix tak boleh deep fry."
   },
   {
    "type": "label",
@@ -562,13 +461,6 @@
    "text": "Hasil & Tips Akhir"
   },
   {
-   "type": "reveal",
-   "at": 2759.7,
-   "dur": 3.0,
-   "text": "CANTIK!",
-   "sub": "Red velvet siap"
-  },
-  {
    "type": "tip",
    "at": 2831.6,
    "dur": 6.0,
@@ -577,40 +469,10 @@
   },
   {
    "type": "tip",
-   "at": 2986.4,
-   "dur": 6.0,
-   "title": "TAK ADA NOZZLE?",
-   "text": "Beginner? Sapu frosting guna [pisau] je!"
-  },
-  {
-   "type": "tip",
-   "at": 3105.3,
-   "dur": 6.0,
-   "title": "TIP DECOR",
-   "text": "Tabur [crumbs] red velvet — sembunyi segala cacat-cela!",
-   "sfx": "sparkle"
-  },
-  {
-   "type": "tip",
    "at": 3196.0,
    "dur": 5.0,
    "title": "MUDAH",
    "text": "Air ikan? [Jongket tray] je, tak payah ke sinki."
-  },
-  {
-   "type": "ingredients",
-   "at": 3247.0,
-   "dur": 8.0,
-   "title": "Sos curah siakap",
-   "items": [
-    "Bawang putih",
-    "Chicken stock",
-    "Lada",
-    "Daun ketumbar",
-    "Sos ikan",
-    "Limau nipis"
-   ],
-   "cols": 2
   },
   {
    "type": "tip",
@@ -627,49 +489,6 @@
    "text": "LAGI RAJIN MASAK!",
    "highlight": "RAJIN",
    "sfx": "sparkle"
-  },
-  {
-   "type": "tip",
-   "at": 3955.0,
-   "dur": 6.0,
-   "title": "TIP",
-   "text": "Masak banyak, [simpan frozen] — 2–3 hari lagi boleh makan."
-  },
-  {
-   "type": "reveal",
-   "at": 4127.3,
-   "dur": 3.0,
-   "text": "SIAP!",
-   "sub": "Pes sup kering, tak melepek"
-  },
-  {
-   "type": "tip",
-   "at": 4149.6,
-   "dur": 6.0,
-   "title": "TIP JIMAT",
-   "text": "Lebihan [minyak] boleh simpan untuk tumis next round."
-  },
-  {
-   "type": "reveal",
-   "at": 4221.8,
-   "dur": 3.0,
-   "text": "SEDAPNYA!",
-   "sub": "Siakap stim siap"
-  },
-  {
-   "type": "tip",
-   "at": 4243.2,
-   "dur": 7.0,
-   "title": "TIP BIJAK",
-   "text": "Masak [nasi] terus dalam bowl Thermomix yang berlada — air beras bantu 'cuci' bowl!",
-   "sfx": "ding"
-  },
-  {
-   "type": "reveal",
-   "at": 4634.4,
-   "dur": 3.0,
-   "text": "KENYAL!",
-   "sub": "Ubi lambung siap"
   },
   {
    "type": "chapter",

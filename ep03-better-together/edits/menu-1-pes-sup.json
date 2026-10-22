@@ -19,21 +19,6 @@
    "note": "hari ni pes sup"
   },
   {
-   "in": 999.2,
-   "out": 1003.4,
-   "note": "fresh from scratch"
-  },
-  {
-   "in": 884.4,
-   "out": 888.2,
-   "note": "tak letak air, terus minyak"
-  },
-  {
-   "in": 890.8,
-   "out": 898.2,
-   "note": "30 saat x2 satu minit"
-  },
-  {
    "in": 1103.6,
    "out": 1110.4,
    "note": "140 darjah, slowkan penumisan"
@@ -71,44 +56,12 @@
    "y": 280
   },
   {
-   "type": "tip",
-   "at": 999.3,
-   "dur": 3.6,
-   "title": "TIP RASA",
-   "text": "Rempah [biji-biji] — fresh from scratch!",
-   "y": 280
-  },
-  {
-   "type": "tip",
-   "at": 884.5,
-   "dur": 3.5,
-   "title": "TIP BLEND",
-   "text": "Tak letak air — terus guna [minyak].",
-   "y": 280
-  },
-  {
-   "type": "label",
-   "at": 891.0,
-   "dur": 3.6,
-   "title": "THERMOMIX",
-   "text": "[30 saat × 2] je, terus halus!",
-   "y": 280,
-   "sfx": "ding"
-  },
-  {
    "type": "label",
    "at": 1103.8,
    "dur": 4.0,
    "title": "COOVEN · MODE COOKER",
    "text": "[140°C] · 30 min · tumis perlahan",
    "y": 280
-  },
-  {
-   "type": "reveal",
-   "at": 4127.3,
-   "dur": 3.4,
-   "text": "SIAP!",
-   "sub": "Kering, tak melepek"
   },
   {
    "type": "tip",

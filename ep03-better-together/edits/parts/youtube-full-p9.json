@@ -48,27 +48,6 @@
    "sfx": "sparkle"
   },
   {
-   "type": "tip",
-   "at": 3955.0,
-   "dur": 6.0,
-   "title": "TIP",
-   "text": "Masak banyak, [simpan frozen] — 2–3 hari lagi boleh makan."
-  },
-  {
-   "type": "reveal",
-   "at": 4127.3,
-   "dur": 3.0,
-   "text": "SIAP!",
-   "sub": "Pes sup kering, tak melepek"
-  },
-  {
-   "type": "tip",
-   "at": 4149.6,
-   "dur": 6.0,
-   "title": "TIP JIMAT",
-   "text": "Lebihan [minyak] boleh simpan untuk tumis next round."
-  },
-  {
    "type": "now",
    "at": 3846.05,
    "until": 4679.9,

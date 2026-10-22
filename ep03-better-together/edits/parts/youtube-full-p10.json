@@ -42,28 +42,6 @@
  ],
  "overlays": [
   {
-   "type": "reveal",
-   "at": 4221.8,
-   "dur": 3.0,
-   "text": "SEDAPNYA!",
-   "sub": "Siakap stim siap"
-  },
-  {
-   "type": "tip",
-   "at": 4243.2,
-   "dur": 7.0,
-   "title": "TIP BIJAK",
-   "text": "Masak [nasi] terus dalam bowl Thermomix yang berlada — air beras bantu 'cuci' bowl!",
-   "sfx": "ding"
-  },
-  {
-   "type": "reveal",
-   "at": 4634.4,
-   "dur": 3.0,
-   "text": "KENYAL!",
-   "sub": "Ubi lambung siap"
-  },
-  {
    "type": "chapter",
    "at": 4692.7,
    "dur": 6.0,

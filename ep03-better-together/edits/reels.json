@@ -92,6 +92,16 @@
   },
   {
    "type": "hook",
+   "at": 783.2,
+   "dur": 3.4,
+   "kicker": "Tasty Tuesday · EP3",
+   "text": "THERMOMIX TAK BOLEH BAKAR?",
+   "highlight": "BAKAR?",
+   "y": 230,
+   "size": 98
+  },
+  {
+   "type": "hook",
    "at": 790.2,
    "dur": 4.6,
    "kicker": "Cooven × Thermomix",
@@ -114,12 +124,6 @@
    "y": 280
   },
   {
-   "type": "reveal",
-   "at": 4127.4,
-   "dur": 2.4,
-   "text": "SIAP!"
-  },
-  {
    "type": "menu",
    "at": 1660.3,
    "dur": 3.0,
@@ -130,12 +134,6 @@
     "COOVEN OVEN"
    ],
    "y": 280
-  },
-  {
-   "type": "reveal",
-   "at": 2752.0,
-   "dur": 2.4,
-   "text": "CANTIK!"
   },
   {
    "type": "menu",
@@ -150,12 +148,6 @@
    "y": 280
   },
   {
-   "type": "reveal",
-   "at": 4221.8,
-   "dur": 2.4,
-   "text": "SEDAPNYA!"
-  },
-  {
    "type": "menu",
    "at": 2653.0,
    "dur": 3.0,
@@ -166,12 +158,6 @@
     "COOVEN DEEP FRY"
    ],
    "y": 280
-  },
-  {
-   "type": "reveal",
-   "at": 4633.5,
-   "dur": 2.4,
-   "text": "KENYAL!"
   },
   {
    "type": "hook",

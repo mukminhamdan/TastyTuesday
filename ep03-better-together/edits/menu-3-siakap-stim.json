@@ -19,11 +19,6 @@
    "note": "ikan steam, siakap"
   },
   {
-   "in": 1739.9,
-   "out": 1743.4,
-   "note": "kelar-kelar"
-  },
-  {
    "in": 1801.6,
    "out": 1803.7,
    "note": "mode steam"
@@ -32,11 +27,6 @@
    "in": 1828.9,
    "out": 1832.1,
    "note": "15 minit"
-  },
-  {
-   "in": 2139.4,
-   "out": 2146.6,
-   "note": "TIP berus gigi"
   },
   {
    "in": 3247.2,
@@ -76,14 +66,6 @@
    "y": 280
   },
   {
-   "type": "tip",
-   "at": 1740.0,
-   "dur": 3.2,
-   "title": "TIP",
-   "text": "[Kelar] badan ikan dulu.",
-   "y": 280
-  },
-  {
    "type": "label",
    "at": 1801.7,
    "dur": 4.4,
@@ -92,42 +74,12 @@
    "y": 280
   },
   {
-   "type": "tip",
-   "at": 2139.5,
-   "dur": 6.0,
-   "title": "TIP TAK HANYIR",
-   "text": "Berus [darah hitam] perut ikan guna berus gigi khas!",
-   "y": 280,
-   "sfx": "ding"
-  },
-  {
    "type": "label",
    "at": 3320.2,
    "dur": 3.6,
    "title": "SAMBUNG",
    "text": "Curah sos → [P3 · 2 minit] lagi.",
    "y": 280
-  },
-  {
-   "type": "reveal",
-   "at": 4221.8,
-   "dur": 3.2,
-   "text": "SEDAPNYA!",
-   "sub": "Settle dinner"
-  },
-  {
-   "type": "ingredients",
-   "at": 3247.3,
-   "dur": 4.6,
-   "title": "Sos curah",
-   "items": [
-    "Bawang putih",
-    "Chicken stock",
-    "Lada",
-    "Daun ketumbar",
-    "Sos ikan",
-    "Limau nipis"
-   ]
   }
  ],
  "brand": {

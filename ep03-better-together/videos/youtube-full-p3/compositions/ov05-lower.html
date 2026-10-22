@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+        #root { position: absolute; inset: 0; 
+  --cream: #FFF3DF; --tomato: #E8402A; --mustard: #FFB81C; --cocoa: #2A1810;
+  --leaf: #2F9E5B; --ink: #1B0F09; --white: #FFFFFF;
+ font-family: Montserrat, 'Archivo Black', sans-serif; }
+        
+        .lt { position: absolute; left: 120px; top: 880px; }
+        .nm { display: inline-block; font-family: 'Archivo Black', sans-serif; font-size: 52px; color: var(--cocoa);
+               background: var(--mustard); padding: 12px 30px; border: 5px solid var(--cocoa); border-radius: 16px; }
+        .rl { display: block; width: fit-content; margin-top: 10px; margin-left: 24px; font-weight: 800; font-size: 30px;
+               color: var(--cream); background: var(--cocoa); padding: 8px 22px; border-radius: 12px; }
+      </style>
+      <div id="root" data-composition-id="ov05-lower" data-width="1920" data-height="1080">
+        <div class="lt">
+          <div class="nm">Safiah</div>
+          <div class="rl">Red Velvet Cupcake</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          const q = (s) => document.querySelector('[data-composition-id="ov05-lower"] ' + s);
+          q('.nm') && tl.fromTo(q('.nm'), { x: -700 }, { x: 0, duration: 0.45, ease: 'power3.out' }, 0);
+          q('.rl') && tl.fromTo(q('.rl'), { x: -700 }, { x: 0, duration: 0.45, ease: 'power3.out' }, 0.12);
+          q('.lt') && tl.to(q('.lt'), { x: -900, duration: 0.4, ease: 'power3.in' }, 3.55);
+          window.__timelines["ov05-lower"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

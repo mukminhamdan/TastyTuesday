@@ -48,13 +48,6 @@
    "role": "Ikan Siakap Stim"
   },
   {
-   "type": "tip",
-   "at": 1740.0,
-   "dur": 5.0,
-   "title": "TIP SEDAP",
-   "text": "[Kelar-kelar] badan ikan dulu supaya rasa meresap."
-  },
-  {
    "type": "label",
    "at": 1824.8,
    "dur": 5.0,
@@ -83,26 +76,11 @@
    "text": "Dua gadget je — [dapur lengkap] untuk rumah kecil & minimalis."
   },
   {
-   "type": "tip",
-   "at": 2125.0,
-   "dur": 8.0,
-   "title": "TIP TAK HANYIR",
-   "text": "Berus [darah hitam] dalam perut ikan guna berus gigi khas dapur!",
-   "sfx": "ding"
-  },
-  {
    "type": "fact",
    "at": 2205.4,
    "dur": 6.0,
    "title": "KENAPA COOVEN?",
    "text": "Rack [stabil], steam lebih laju, ruang lebih besar."
-  },
-  {
-   "type": "tip",
-   "at": 2247.2,
-   "dur": 6.0,
-   "title": "TAK ADA THERMOMIX?",
-   "text": "Guna [blender / chopper] biasa pun boleh."
   },
   {
    "type": "now",
