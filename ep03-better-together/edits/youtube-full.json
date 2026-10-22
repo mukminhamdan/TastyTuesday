@@ -215,11 +215,6 @@
    "note": "support group resepi & tips"
   },
   {
-   "in": 3671.0,
-   "out": 3700.0,
-   "note": "combo promo"
-  },
-  {
    "in": 3723.0,
    "out": 3750.0,
    "note": "piping vs sudu, cabar"
@@ -256,13 +251,8 @@
   },
   {
    "in": 4187.0,
-   "out": 4309.0,
-   "note": "ikan final, nasi, contact, F.R.E.E"
-  },
-  {
-   "in": 4351.0,
-   "out": 4366.0,
-   "note": "contact untuk promo"
+   "out": 4282.4,
+   "note": "ikan final, nasi dalam Thermomix (promo dibuang)"
   },
   {
    "in": 4565.0,
@@ -439,7 +429,7 @@
    "type": "chapter",
    "at": 1401.4,
    "dur": 4.0,
-   "kicker": "Menu 2 · Piah",
+   "kicker": "Menu 2 · Safiah",
    "text": "Red Velvet Cupcake"
   },
   {
@@ -794,14 +784,6 @@
   },
   {
    "type": "joke",
-   "at": 4300.0,
-   "dur": 3.0,
-   "text": "F.R.E.E? Shhh!",
-   "sfx": "boing",
-   "punch": 1.08
-  },
-  {
-   "type": "joke",
    "at": 4580.0,
    "dur": 2.8,
    "text": "Rampas limelight!",
@@ -849,7 +831,7 @@
    "type": "now",
    "at": 1401.6,
    "until": 1699.9,
-   "kicker": "Menu 2 · Piah",
+   "kicker": "Menu 2 · Safiah",
    "text": "Red Velvet Cupcake",
    "apps": [
     "THERMOMIX",
@@ -909,7 +891,7 @@
    "type": "lower",
    "at": 1410.7,
    "dur": 4.0,
-   "name": "Piah",
+   "name": "Safiah",
    "role": "Red Velvet Cupcake"
   }
  ]

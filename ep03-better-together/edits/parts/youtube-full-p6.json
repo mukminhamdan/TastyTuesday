@@ -12,65 +12,63 @@
  "bgm": null,
  "segments": [
   {
-   "in": 3846.0,
-   "out": 3870.0,
-   "note": "first time jadi"
+   "in": 3410.0,
+   "out": 3423.5,
+   "note": "I'm not a baker"
   },
   {
-   "in": 3880.0,
-   "out": 3895.0,
-   "note": "rezeki neighbor"
+   "in": 3463.0,
+   "out": 3483.5,
+   "note": "breakfast table: Thermomix & Cooven sebelah"
   },
   {
-   "in": 3907.6,
-   "out": 3975.0,
-   "note": "rajin masak, frozen, bekal anak"
+   "in": 3528.0,
+   "out": 3548.5,
+   "note": "support group cook along"
   },
   {
-   "in": 4079.0,
-   "out": 4100.0,
-   "note": "nutella cucu, achievement"
+   "in": 3629.0,
+   "out": 3650.5,
+   "note": "support group resepi & tips"
   },
   {
-   "in": 4100.0,
-   "out": 4166.0,
-   "note": "pes final, tips minyak"
+   "in": 3723.0,
+   "out": 3750.0,
+   "note": "piping vs sudu, cabar"
+  },
+  {
+   "in": 3770.0,
+   "out": 3830.0,
+   "note": "suhu tinggi kalau duduk tepi, panas"
   }
  ],
  "overlays": [
   {
-   "type": "hook",
-   "at": 3913.1,
-   "dur": 3.4,
-   "kicker": "Testimoni",
-   "text": "LAGI RAJIN MASAK!",
-   "highlight": "RAJIN",
-   "sfx": "sparkle"
+   "type": "joke",
+   "at": 3413.0,
+   "dur": 2.8,
+   "text": "I'm not a baker!",
+   "sfx": "boing",
+   "punch": 1.08
   },
   {
    "type": "tip",
-   "at": 3955.0,
-   "dur": 6.0,
-   "title": "TIP",
-   "text": "Masak banyak, [simpan frozen] — 2–3 hari lagi boleh makan."
+   "at": 3786.0,
+   "dur": 7.0,
+   "title": "SUHU RENDAH VS TINGGI",
+   "text": "Nak tinggal-tinggal: [suhu rendah] · Duduk tepi & nak cepat: [suhu tinggi]."
   },
   {
-   "type": "reveal",
-   "at": 4127.3,
-   "dur": 3.0,
-   "text": "SIAP!",
-   "sub": "Pes sup kering, tak melepek"
-  },
-  {
-   "type": "tip",
-   "at": 4149.6,
-   "dur": 6.0,
-   "title": "TIP JIMAT",
-   "text": "Lebihan [minyak] boleh simpan untuk tumis next round."
+   "type": "joke",
+   "at": 3742.4,
+   "dur": 2.6,
+   "text": "Jangan cabar saya!",
+   "sfx": "badumtss",
+   "punch": 1.08
   },
   {
    "type": "now",
-   "at": 3846.05,
+   "at": 3410.05,
    "until": 4679.9,
    "kicker": "Hasil & tips akhir",
    "text": "4 Menu Siap!",

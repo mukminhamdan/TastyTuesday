@@ -1,6 +1,6 @@
 {
  "id": "menu-2-red-velvet",
- "title": "Tasty Tuesday EP3 · Menu 2 · Red Velvet Cupcake Piah",
+ "title": "Tasty Tuesday EP3 · Menu 2 · Red Velvet Cupcake Safiah",
  "format": "vertical",
  "bug": "MENU 2",
  "tighten": {
@@ -86,7 +86,7 @@
    "type": "menu",
    "at": 1410.7,
    "dur": 3.2,
-   "num": "MENU 2 · PIAH",
+   "num": "MENU 2 · SAFIAH",
    "text": "Red Velvet Cupcake",
    "apps": [
     "THERMOMIX",

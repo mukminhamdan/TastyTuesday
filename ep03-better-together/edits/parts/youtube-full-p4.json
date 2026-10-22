@@ -12,85 +12,54 @@
  "bgm": null,
  "segments": [
   {
-   "in": 2960.6,
-   "out": 3063.5,
-   "note": "frosting tanpa nozzle"
+   "in": 2721.1,
+   "out": 2806.8,
+   "note": "CH5 results: red velvet masak, cucuk cantik, Kak Salma belum"
   },
   {
-   "in": 3097.8,
-   "out": 3134.5,
-   "note": "crumbs cacat-cela"
+   "in": 2806.7,
+   "out": 2877.8,
+   "note": "pes naik minyak, tips garing"
   },
   {
-   "in": 3150.4,
-   "out": 3410.0,
-   "note": "Ida ikan dah masak, buang air, sos curah, RM40 vs RM20, bawang goreng, peserta buat macam-macam"
+   "in": 2917.3,
+   "out": 2960.7,
+   "note": "Kak Salma red velvet sambil-sambil"
   }
  ],
  "overlays": [
   {
-   "type": "hook",
-   "at": 3291.0,
-   "dur": 3.0,
-   "text": "KEDAI: RM40++",
-   "highlight": "RM40++",
-   "sfx": "error"
-  },
-  {
-   "type": "hook",
-   "at": 3306.6,
-   "dur": 3.4,
-   "text": "SENDIRI: < RM20!",
-   "highlight": "RM20!",
-   "sfx": "ding"
-  },
-  {
-   "type": "tip",
-   "at": 2986.4,
-   "dur": 6.0,
-   "title": "TAK ADA NOZZLE?",
-   "text": "Beginner? Sapu frosting guna [pisau] je!"
-  },
-  {
-   "type": "tip",
-   "at": 3105.3,
-   "dur": 6.0,
-   "title": "TIP DECOR",
-   "text": "Tabur [crumbs] red velvet — sembunyi segala cacat-cela!",
-   "sfx": "sparkle"
-  },
-  {
-   "type": "tip",
-   "at": 3196.0,
-   "dur": 5.0,
-   "title": "MUDAH",
-   "text": "Air ikan? [Jongket tray] je, tak payah ke sinki."
-  },
-  {
-   "type": "ingredients",
-   "at": 3247.0,
-   "dur": 8.0,
-   "title": "Sos curah siakap",
-   "items": [
-    "Bawang putih",
-    "Chicken stock",
-    "Lada",
-    "Daun ketumbar",
-    "Sos ikan",
-    "Limau nipis"
-   ]
+   "type": "chapter",
+   "at": 2721.2,
+   "dur": 4.0,
+   "kicker": "Bahagian 5",
+   "text": "Hasil & Tips Akhir"
   },
   {
    "type": "joke",
-   "at": 3382.0,
+   "at": 2737.1,
+   "dur": 2.4,
+   "text": "Red... red... red?!",
+   "sfx": "boing",
+   "punch": 1.08
+  },
+  {
+   "type": "reveal",
+   "at": 2759.7,
    "dur": 3.0,
-   "text": "Masak satu, jadi macam-macam!",
-   "sfx": "pop",
-   "size": 50
+   "text": "CANTIK!",
+   "sub": "Red velvet siap"
+  },
+  {
+   "type": "tip",
+   "at": 2831.6,
+   "dur": 6.0,
+   "title": "PES DAH GARING?",
+   "text": "Tengok — dah masak bila [berbiji, tak bergumpal]."
   },
   {
    "type": "now",
-   "at": 2960.65,
+   "at": 2721.4,
    "until": 4679.9,
    "kicker": "Hasil & tips akhir",
    "text": "4 Menu Siap!",

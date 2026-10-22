@@ -12,68 +12,85 @@
  "bgm": null,
  "segments": [
   {
-   "in": 3410.0,
-   "out": 3423.5,
-   "note": "I'm not a baker"
+   "in": 2960.6,
+   "out": 3063.5,
+   "note": "frosting tanpa nozzle"
   },
   {
-   "in": 3463.0,
-   "out": 3483.5,
-   "note": "breakfast table: Thermomix & Cooven sebelah"
+   "in": 3097.8,
+   "out": 3134.5,
+   "note": "crumbs cacat-cela"
   },
   {
-   "in": 3528.0,
-   "out": 3548.5,
-   "note": "support group cook along"
-  },
-  {
-   "in": 3629.0,
-   "out": 3650.5,
-   "note": "support group resepi & tips"
-  },
-  {
-   "in": 3671.0,
-   "out": 3700.0,
-   "note": "combo promo"
-  },
-  {
-   "in": 3723.0,
-   "out": 3750.0,
-   "note": "piping vs sudu, cabar"
-  },
-  {
-   "in": 3770.0,
-   "out": 3830.0,
-   "note": "suhu tinggi kalau duduk tepi, panas"
+   "in": 3150.4,
+   "out": 3410.0,
+   "note": "Ida ikan dah masak, buang air, sos curah, RM40 vs RM20, bawang goreng, peserta buat macam-macam"
   }
  ],
  "overlays": [
   {
-   "type": "joke",
-   "at": 3413.0,
-   "dur": 2.8,
-   "text": "I'm not a baker!",
-   "sfx": "boing",
-   "punch": 1.08
+   "type": "hook",
+   "at": 3291.0,
+   "dur": 3.0,
+   "text": "KEDAI: RM40++",
+   "highlight": "RM40++",
+   "sfx": "error"
+  },
+  {
+   "type": "hook",
+   "at": 3306.6,
+   "dur": 3.4,
+   "text": "SENDIRI: < RM20!",
+   "highlight": "RM20!",
+   "sfx": "ding"
   },
   {
    "type": "tip",
-   "at": 3786.0,
-   "dur": 7.0,
-   "title": "SUHU RENDAH VS TINGGI",
-   "text": "Nak tinggal-tinggal: [suhu rendah] · Duduk tepi & nak cepat: [suhu tinggi]."
+   "at": 2986.4,
+   "dur": 6.0,
+   "title": "TAK ADA NOZZLE?",
+   "text": "Beginner? Sapu frosting guna [pisau] je!"
+  },
+  {
+   "type": "tip",
+   "at": 3105.3,
+   "dur": 6.0,
+   "title": "TIP DECOR",
+   "text": "Tabur [crumbs] red velvet — sembunyi segala cacat-cela!",
+   "sfx": "sparkle"
+  },
+  {
+   "type": "tip",
+   "at": 3196.0,
+   "dur": 5.0,
+   "title": "MUDAH",
+   "text": "Air ikan? [Jongket tray] je, tak payah ke sinki."
+  },
+  {
+   "type": "ingredients",
+   "at": 3247.0,
+   "dur": 8.0,
+   "title": "Sos curah siakap",
+   "items": [
+    "Bawang putih",
+    "Chicken stock",
+    "Lada",
+    "Daun ketumbar",
+    "Sos ikan",
+    "Limau nipis"
+   ]
   },
   {
    "type": "joke",
-   "at": 3742.4,
-   "dur": 2.6,
-   "text": "Jangan cabar saya!",
-   "sfx": "badumtss",
-   "punch": 1.08
+   "at": 3382.0,
+   "dur": 3.0,
+   "text": "Masak satu, jadi macam-macam!",
+   "sfx": "pop",
+   "size": 50
   },
   {
    "type": "now",
-   "at": 3410.05,
+   "at": 2960.65,
    "until": 4679.9,
    "kicker": "Hasil & tips akhir",
    "text": "4 Menu Siap!",

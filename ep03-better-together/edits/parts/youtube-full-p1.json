@@ -98,17 +98,6 @@
    "in": 1342.8,
    "out": 1360.0,
    "note": "seronok masak ramai-ramai"
-  },
-  {
-   "in": 1392.9,
-   "out": 1700.0,
-   "note": "CH2 red velvet: thermomix adunan, 14-16 cup, 3/4, burnt cheesecake, 145 15 min no preheat",
-   "skip": [
-    [
-     1532.6,
-     1540.6
-    ]
-   ]
   }
  ],
  "overlays": [
@@ -267,57 +256,6 @@
    "text": "Pes ni boleh [perap ayam bakar] juga!"
   },
   {
-   "type": "chapter",
-   "at": 1401.4,
-   "dur": 4.0,
-   "kicker": "Menu 2 · Piah",
-   "text": "Red Velvet Cupcake"
-  },
-  {
-   "type": "label",
-   "at": 1425.0,
-   "dur": 5.0,
-   "title": "THERMOMIX",
-   "text": "Adunan & [frosting] di-blend siap dulu."
-  },
-  {
-   "type": "fact",
-   "at": 1495.2,
-   "dur": 5.0,
-   "title": "MUAT BERAPA?",
-   "text": "Satu loyang Cooven muat [14–16] cupcake."
-  },
-  {
-   "type": "joke",
-   "at": 1504.8,
-   "dur": 2.6,
-   "text": "OCD sikit!",
-   "sfx": "boing",
-   "punch": 1.08
-  },
-  {
-   "type": "tip",
-   "at": 1556.0,
-   "dur": 7.0,
-   "title": "TIP ISI CUP",
-   "text": "Jangan isi 3/4 — [satu sudu] je dah cukup, tak melimpah.",
-   "sfx": "ding"
-  },
-  {
-   "type": "tip",
-   "at": 1586.3,
-   "dur": 6.0,
-   "title": "BONUS",
-   "text": "Burnt cheesecake? Gaul dalam Thermomix, bakar [30 minit] je."
-  },
-  {
-   "type": "label",
-   "at": 1641.0,
-   "dur": 7.0,
-   "title": "COOVEN · MODE OVEN",
-   "text": "[145°C] · 15 minit · tanpa preheat"
-  },
-  {
    "type": "now",
    "at": 667.2,
    "until": 820.0,
@@ -343,22 +281,15 @@
   },
   {
    "type": "now",
-   "at": 1401.6,
+   "at": 1660.25,
    "until": 1699.9,
-   "kicker": "Menu 2 · Piah",
+   "kicker": "Menu 2 · Safiah",
    "text": "Red Velvet Cupcake",
    "apps": [
     "THERMOMIX",
     "COOVEN OVEN"
    ],
    "sfx": ""
-  },
-  {
-   "type": "lower",
-   "at": 1410.7,
-   "dur": 4.0,
-   "name": "Piah",
-   "role": "Red Velvet Cupcake"
   }
  ]
 }
