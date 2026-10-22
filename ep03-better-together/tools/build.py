@@ -56,6 +56,8 @@ def load_words():
             core = re.sub(r"[^\w'-]", "", txt).lower()
             if f"{w['s']:.2f}" in at_fix:
                 txt = at_fix[f"{w['s']:.2f}"]
+                if not txt:  # "" drops a word whisper heard but nobody said
+                    continue
             elif core in word_fix:
                 txt = re.sub(re.escape(re.sub(r"[^\w'-]", "", txt)), word_fix[core], txt, count=1)
             words.append({"s": w["s"], "e": w["e"], "w": txt})
