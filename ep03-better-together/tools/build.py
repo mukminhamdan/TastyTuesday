@@ -469,6 +469,9 @@ def ov_html(o, i, fmt, W, H):
         .it {{ display: flex; align-items: center; font-weight: 800; font-size: {fs}px; color: var(--ink); line-height: 1.25; margin: 8px 0; }}
         .ck {{ flex: 0 0 auto; width: {fs}px; height: {fs}px; border-radius: 10px; background: var(--leaf); margin-right: 20px; border: 4px solid var(--cocoa); }}"""
         lis = "".join(f'<div class="it"><span class="ck"></span><span>{E(x)}</span></div>' for x in items)
+        if o.get("cols", 1) > 1:  # long lists: grid so the card stays clear of the panel below it
+            css += f"\n        .il {{ display: grid; grid-template-columns: repeat({o['cols']}, 1fr); column-gap: 28px; }}"
+            lis = f'<div class="il">{lis}</div>'
         body = f"""        <div class="ing">
           <div class="ih">{E(o.get('title', 'Bahan-bahan'))}</div>
           {lis}
