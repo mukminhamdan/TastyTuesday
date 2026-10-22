@@ -11,15 +11,17 @@ Ikan parang masak lemak cili padi + jantung pisang. Masam, pedas, lemak. Cukup s
 Resepi Acik Sal dalam 5 langkah:
 1️⃣ Oka ikan dulu (food detoxifier) untuk buang toksin & lendir
 2️⃣ Blend cili padi segenggam, 10 saat
-3️⃣ Kecutkan ikan, 140°C, 15 minit
+3️⃣ Kecutkan ikan dalam Cooven, 140°C, 15 minit
 4️⃣ 2 keping asam keping, tutup 10 minit
 5️⃣ Santan + jantung pisang yang dah dicelur
 
 Tip: hati-hati dengan asam limau, nanti kuah pecah minyak!
 
+Semua lauk hari ni Acik Sal masak dalam Cooven 🔥
+
 Save dulu, nanti senang nak masak 📌
 
-#DapurAcikSal #MasakLemakCiliPadi #IkanParang #JantungPisang #ResepiMudah #MasakanMelayu #ResepiKampung #FYP
+#DapurAcikSal #Cooven #MasakLemakCiliPadi #IkanParang #JantungPisang #ResepiMudah #MasakanMelayu #ResepiKampung #FYP
 
 ---
 
@@ -39,7 +41,7 @@ Korang cuci ikan macam mana? Komen bawah 👇
 
 Malas perah limau satu-satu? Acik Sal pun malas 😂🍋
 
-Hack dia: masukkan limau + sikit air dalam mesin, turbo 2 saat (bukan 2 minit ya 🤭), tapis. Jus limau siap, tangan tak pedih!
+Hack dia: masukkan limau + sikit air dalam mesin, turbo 2 saat, tapis. Jus limau siap, tangan tak pedih!
 
 Tag kawan yang selalu malas perah limau 👇
 
@@ -68,11 +70,11 @@ Siapa pernah jadi macam ni masa masak? Angkat tangan 🙋‍♀️
 
 First time Acik Sal bakar terung hijau. Jadi ke tak? 👀🍆
 
-Terung hijau special yang Acik Sal jumpa di Kuala Perlis. Grill kering je, tak payah spray minyak, lagi wangi. 10 minit... lembik, sedap, makan dengan sambal belacan 🤤
+Terung hijau special yang Acik Sal jumpa di Kuala Perlis. Grill kering dalam Cooven je, tak payah spray minyak, lagi wangi. 10 minit... lembik, sedap, makan dengan sambal belacan 🤤
 
 Korang pernah cuba terung hijau? 👇
 
-#DapurAcikSal #TerungBakar #TerungHijau #KualaPerlis #SambalBelacan #MasakanKampung #ResepiMudah #FYP
+#DapurAcikSal #Cooven #TerungBakar #TerungHijau #KualaPerlis #SambalBelacan #MasakanKampung #ResepiMudah #FYP
 
 ---
 
@@ -83,7 +85,8 @@ Kenapa kuah masak lemak korang selalu pecah minyak? 🤔
 Rahsia Acik Sal:
 🥥 Santan segar & pekat. Acik Sal beli di kedai "santan kayu api" (jual santan, sambil jual kayu api!)
 🍋 Hati-hati dengan asam limau, dia mudah buat kuah pecah minyak
+🍚 Cooven ada rice function, nasi & lauk boleh masak sekali
 
 Hari ni Alhamdulillah, tak pecah minyak! Save untuk rujukan 📌
 
-#DapurAcikSal #MasakLemak #RahsiaMasak #SantanKayuApi #TipsMasak #MasakanMelayu #ResepiKampung #FYP
+#DapurAcikSal #Cooven #MasakLemak #RahsiaMasak #SantanKayuApi #TipsMasak #MasakanMelayu #ResepiKampung #FYP
