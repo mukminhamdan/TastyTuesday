@@ -69,12 +69,36 @@ def words_in(words, a, b):
 
 # ---------------------------------------------------------------- timeline
 
-def prerender_cuts(clips, pdir):
+def clip_light(c):
+    """Measure a clip's centre (guest strip excluded) and return a lutyuv filter that evens out exposure
+    (gamma toward a mid-grey mean) and removes ~40% of its colour cast, keeping some of the kitchen's warmth."""
+    import subprocess
+    d = c["out"] - c["in"]
+    r = subprocess.run(["ffmpeg", "-v", "error", "-ss", f"{c['in']:.3f}", "-t", f"{min(d, 6):.3f}", "-i", SOURCE, "-an",
+                        "-vf", "fps=2,crop=440:900:20:190,scale=110:-1,signalstats,metadata=print:file=-", "-f", "null", "-"],
+                       capture_output=True, text=True).stdout
+    vals = {"YAVG": [], "UAVG": [], "VAVG": []}
+    for line in r.splitlines():
+        for k in vals:
+            if f".{k}=" in line:
+                vals[k].append(float(line.split("=")[1]))
+    if not vals["YAVG"]:
+        return ""
+    y, u, v = (sum(vals[k]) / len(vals[k]) for k in ("YAVG", "UAVG", "VAVG"))
+    m = min(max((y - 16) / 219, 0.05), 0.95)
+    g = min(max(math.log(0.47) / math.log(m), 0.72), 1.12)
+    du = max(-5.0, min(5.0, -0.4 * (u - 128)))
+    dv = max(-5.0, min(5.0, -0.4 * (v - 128)))
+    return (f"lutyuv=y='clip(pow(max(val-16\\,0)/219\\,{g:.3f})*219+16\\,16\\,235)'"
+            f":u='clip(val+{du:.2f}\\,16\\,240)':v='clip(val+{dv:.2f}\\,16\\,240)',")
+
+
+def prerender_cuts(clips, pdir, light=False):
     """Join the kept source ranges into assets/edit.mp4: video segments re-encoded and concatenated,
     audio cut as PCM (sample exact, 40 ms edge fades, per-clip gain) so A/V never drifts."""
     import hashlib, subprocess, tempfile
     from concurrent.futures import ThreadPoolExecutor
-    key = hashlib.sha1(json.dumps([[c["in"], c["out"], c["vol"]] for c in clips]).encode()).hexdigest()[:16]
+    key = hashlib.sha1(json.dumps([[c["in"], c["out"], c["vol"]] for c in clips] + [light, 2]).encode()).hexdigest()[:16]
     out = os.path.join(pdir, "assets", "edit.mp4")
     stamp = os.path.join(pdir, "assets", "edit.key")
     if os.path.exists(out) and os.path.exists(stamp) and open(stamp).read() == key:
@@ -85,7 +109,7 @@ def prerender_cuts(clips, pdir):
         c = clips[k]
         d = c["out"] - c["in"]
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{c['in']:.3f}", "-i", SOURCE, "-t", f"{d:.3f}", "-an",
-                        "-vf", "fps=25,setpts=PTS-STARTPTS", "-frames:v", str(round(d * FPS)),
+                        "-vf", (clip_light(c) if light else "") + "fps=25,setpts=PTS-STARTPTS", "-frames:v", str(round(d * FPS)),
                         "-c:v", "libx264", "-preset", "veryfast", "-crf", "16", "-pix_fmt", "yuv420p", "-g", "25",
                         os.path.join(tmp, f"v{k:04d}.mp4")], check=True)
         fo = max(0.0, d - 0.04)
@@ -854,7 +878,8 @@ def build(edl_path):
                    "background: #000; }")
     # All cuts are pre-joined into assets/edit.mp4 (frame/sample exact), so the page holds one <video>
     # per continuous run between graphic beats instead of hundreds of elements on the 1.6 GB source.
-    prerender_cuts(clips, pdir)
+    prerender_cuts(clips, pdir, light=bool(edl.get("light")))
+    grade_attr = f" data-color-grading='{json.dumps(edl['grade'])}'" if edl.get("grade") else ""
     vids, run, off = [], [], 0.0
     for c in clips + [None]:
         if run and (c is None or abs(c["start"] - (run[-1]["start"] + run[-1]["out"] - run[-1]["in"])) > 0.02):
@@ -863,14 +888,14 @@ def build(edl_path):
             vids.append(
                 f'          <video id="run{len(vids):02d}" class="clip" src="assets/edit.mp4" data-start="{st:.3f}" '
                 f'data-duration="{dur:.3f}" data-media-start="{off:.3f}" data-track-index="0" '
-                f'playsinline data-has-audio="true"></video>')
+                f'playsinline data-has-audio="true"{grade_attr}></video>')
             off += dur
             run = []
         if c is not None:
             run.append(c)
     bvids = [
         f'        <video id="{b["id"]}" class="clip" src="assets/source.mp4" data-start="{b["start"]:.3f}" '
-        f'data-duration="{b["dur"]:.3f}" data-media-start="{b["src"]:.3f}" data-track-index="1" muted playsinline></video>'
+        f'data-duration="{b["dur"]:.3f}" data-media-start="{b["src"]:.3f}" data-track-index="1" muted playsinline{grade_attr}></video>'
         for b in brolls]
     hosts = []
     for cid, st, dur, tr, kind, _ in sorted(comps, key=lambda c: (c[3], c[1])):

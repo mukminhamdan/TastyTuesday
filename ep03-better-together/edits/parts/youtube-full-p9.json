@@ -1,0 +1,103 @@
+{
+ "id": "youtube-full-p9",
+ "title": "Tasty Tuesday EP3 · Better Together · Cooven × Thermomix (Full Session) (part 9)",
+ "format": "landscape",
+ "tighten": {
+  "max_gap": 0.7,
+  "pad": 0.12
+ },
+ "jump_zoom": 1.06,
+ "origin": "50% 45%",
+ "captions": "panel",
+ "bgm": null,
+ "segments": [
+  {
+   "in": 3846.0,
+   "out": 3870.0,
+   "note": "first time jadi"
+  },
+  {
+   "in": 3880.0,
+   "out": 3895.0,
+   "note": "rezeki neighbor"
+  },
+  {
+   "in": 3907.6,
+   "out": 3975.0,
+   "note": "rajin masak, frozen, bekal anak"
+  },
+  {
+   "in": 4079.0,
+   "out": 4100.0,
+   "note": "nutella cucu, achievement"
+  },
+  {
+   "in": 4100.0,
+   "out": 4166.0,
+   "note": "pes final, tips minyak"
+  }
+ ],
+ "overlays": [
+  {
+   "type": "hook",
+   "at": 3913.1,
+   "dur": 3.4,
+   "kicker": "Testimoni",
+   "text": "LAGI RAJIN MASAK!",
+   "highlight": "RAJIN",
+   "sfx": "sparkle"
+  },
+  {
+   "type": "tip",
+   "at": 3955.0,
+   "dur": 6.0,
+   "title": "TIP",
+   "text": "Masak banyak, [simpan frozen] — 2–3 hari lagi boleh makan."
+  },
+  {
+   "type": "reveal",
+   "at": 4127.3,
+   "dur": 3.0,
+   "text": "SIAP!",
+   "sub": "Pes sup kering, tak melepek"
+  },
+  {
+   "type": "tip",
+   "at": 4149.6,
+   "dur": 6.0,
+   "title": "TIP JIMAT",
+   "text": "Lebihan [minyak] boleh simpan untuk tumis next round."
+  },
+  {
+   "type": "now",
+   "at": 3846.05,
+   "until": 4679.9,
+   "kicker": "Hasil & tips akhir",
+   "text": "4 Menu Siap!",
+   "apps": [
+    "PES SUP",
+    "RED VELVET",
+    "SIAKAP · UBI"
+   ],
+   "sfx": ""
+  }
+ ],
+ "light": true,
+ "grade": {
+  "intensity": 0.85,
+  "adjust": {
+   "exposure": 0.03,
+   "contrast": 0.11,
+   "highlights": -0.14,
+   "shadows": 0.13,
+   "whites": 0.03,
+   "blacks": -0.05,
+   "temperature": 0.04,
+   "vibrance": 0.14,
+   "saturation": 0.06
+  },
+  "details": {
+   "vignette": 0.16
+  }
+ }
+}

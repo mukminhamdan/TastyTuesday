@@ -12,63 +12,54 @@
  "bgm": null,
  "segments": [
   {
-   "in": 3410.0,
-   "out": 3423.5,
-   "note": "I'm not a baker"
+   "in": 2721.1,
+   "out": 2806.8,
+   "note": "CH5 results: red velvet masak, cucuk cantik, Kak Salma belum"
   },
   {
-   "in": 3463.0,
-   "out": 3483.5,
-   "note": "breakfast table: Thermomix & Cooven sebelah"
+   "in": 2806.7,
+   "out": 2877.8,
+   "note": "pes naik minyak, tips garing"
   },
   {
-   "in": 3528.0,
-   "out": 3548.5,
-   "note": "support group cook along"
-  },
-  {
-   "in": 3629.0,
-   "out": 3650.5,
-   "note": "support group resepi & tips"
-  },
-  {
-   "in": 3723.0,
-   "out": 3750.0,
-   "note": "piping vs sudu, cabar"
-  },
-  {
-   "in": 3770.0,
-   "out": 3830.0,
-   "note": "suhu tinggi kalau duduk tepi, panas"
+   "in": 2917.3,
+   "out": 2960.7,
+   "note": "Kak Salma red velvet sambil-sambil"
   }
  ],
  "overlays": [
   {
+   "type": "chapter",
+   "at": 2721.2,
+   "dur": 4.0,
+   "kicker": "Bahagian 5",
+   "text": "Hasil & Tips Akhir"
+  },
+  {
    "type": "joke",
-   "at": 3413.0,
-   "dur": 2.8,
-   "text": "I'm not a baker!",
+   "at": 2737.1,
+   "dur": 2.4,
+   "text": "Red... red... red?!",
    "sfx": "boing",
    "punch": 1.08
   },
   {
-   "type": "tip",
-   "at": 3786.0,
-   "dur": 7.0,
-   "title": "SUHU RENDAH VS TINGGI",
-   "text": "Nak tinggal-tinggal: [suhu rendah] · Duduk tepi & nak cepat: [suhu tinggi]."
+   "type": "reveal",
+   "at": 2759.7,
+   "dur": 3.0,
+   "text": "CANTIK!",
+   "sub": "Red velvet siap"
   },
   {
-   "type": "joke",
-   "at": 3742.4,
-   "dur": 2.6,
-   "text": "Jangan cabar saya!",
-   "sfx": "badumtss",
-   "punch": 1.08
+   "type": "tip",
+   "at": 2831.6,
+   "dur": 6.0,
+   "title": "PES DAH GARING?",
+   "text": "Tengok — dah masak bila [berbiji, tak bergumpal]."
   },
   {
    "type": "now",
-   "at": 3410.05,
+   "at": 2721.4,
    "until": 4679.9,
    "kicker": "Hasil & tips akhir",
    "text": "4 Menu Siap!",
@@ -79,5 +70,23 @@
    ],
    "sfx": ""
   }
- ]
+ ],
+ "light": true,
+ "grade": {
+  "intensity": 0.85,
+  "adjust": {
+   "exposure": 0.03,
+   "contrast": 0.11,
+   "highlights": -0.14,
+   "shadows": 0.13,
+   "whites": 0.03,
+   "blacks": -0.05,
+   "temperature": 0.04,
+   "vibrance": 0.14,
+   "saturation": 0.06
+  },
+  "details": {
+   "vignette": 0.16
+  }
+ }
 }

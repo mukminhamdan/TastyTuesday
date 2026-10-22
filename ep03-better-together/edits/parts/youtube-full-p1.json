@@ -59,45 +59,6 @@
    "in": 744.2,
    "out": 818.5,
    "note": "Thermomix tak boleh bakar, Cooven melengkapkan, bukan saingan"
-  },
-  {
-   "in": 820.1,
-   "out": 837.2,
-   "note": "CH1 Kak Salma ready, pes sup"
-  },
-  {
-   "in": 841.1,
-   "out": 842.4
-  },
-  {
-   "in": 845.5,
-   "out": 959.0,
-   "note": "pes sup: mesin separuh, tak letak air, 30 saat x2"
-  },
-  {
-   "in": 966.0,
-   "out": 1031.0,
-   "note": "jintan susah halus, rempah from scratch"
-  },
-  {
-   "in": 1053.2,
-   "out": 1058.9,
-   "note": "Cooven guna mode apa"
-  },
-  {
-   "in": 1069.2,
-   "out": 1261.1,
-   "note": "mode cooker 140, kacau, Thermomix vs Cooven sekali harung"
-  },
-  {
-   "in": 1272.4,
-   "out": 1333.8,
-   "note": "bawang sekilo, regular customer, marinate ayam bakar"
-  },
-  {
-   "in": 1342.8,
-   "out": 1360.0,
-   "note": "seronok masak ramai-ramai"
   }
  ],
  "overlays": [
@@ -163,99 +124,6 @@
    "text": "Dua gadget ni [saling melengkapi] di dapur."
   },
   {
-   "type": "chapter",
-   "at": 820.2,
-   "dur": 4.0,
-   "kicker": "Menu 1 · Kak Salma",
-   "text": "Pes Sup"
-  },
-  {
-   "type": "lower",
-   "at": 849.2,
-   "dur": 4.0,
-   "name": "Kak Salma",
-   "role": "Pes Sup"
-  },
-  {
-   "type": "label",
-   "at": 861.0,
-   "dur": 4.5,
-   "title": "BUAT BANYAK?",
-   "text": "Mesin ikut [2–3 batch] supaya semua halus."
-  },
-  {
-   "type": "tip",
-   "at": 884.6,
-   "dur": 5.0,
-   "title": "TIP BLEND",
-   "text": "Tak letak air — terus guna [minyak] masa mesin."
-  },
-  {
-   "type": "label",
-   "at": 892.0,
-   "dur": 5.0,
-   "title": "THERMOMIX",
-   "text": "[30 saat × 2] = 1 minit je, terus halus!",
-   "sfx": "ding"
-  },
-  {
-   "type": "tip",
-   "at": 1000.8,
-   "dur": 5.5,
-   "title": "TIP RASA",
-   "text": "Guna rempah [biji-biji] — fresh from scratch, bukan serbuk siap."
-  },
-  {
-   "type": "label",
-   "at": 1083.0,
-   "dur": 6.0,
-   "title": "COOVEN · MODE COOKER",
-   "text": "[140°C] · 30 minit · tumis perlahan-lahan"
-  },
-  {
-   "type": "tip",
-   "at": 1137.0,
-   "dur": 5.0,
-   "title": "NAK CEPAT?",
-   "text": "Boleh naik [160–180°C], tapi kena kerap kacau."
-  },
-  {
-   "type": "tip",
-   "at": 1168.0,
-   "dur": 5.5,
-   "title": "TIP",
-   "text": "Kacau setiap [5–10 minit] je — tak perlu duduk tepi dapur."
-  },
-  {
-   "type": "fact",
-   "at": 1205.0,
-   "dur": 5.5,
-   "title": "BETTER TOGETHER",
-   "text": "Thermomix: 2 kali tumis · Cooven: [sekali harung]!"
-  },
-  {
-   "type": "fact",
-   "at": 1272.6,
-   "dur": 4.5,
-   "title": "SKALA",
-   "text": "Bawang besar [1 kg] sekali masak."
-  },
-  {
-   "type": "joke",
-   "at": 1301.8,
-   "dur": 2.6,
-   "text": "Regular customer!",
-   "sfx": "badumtss",
-   "punch": 1.08
-  },
-  {
-   "type": "tip",
-   "at": 1320.0,
-   "dur": 5.0,
-   "title": "BONUS",
-   "text": "Pes ni boleh [perap ayam bakar] juga!"
-  },
-  {
    "type": "now",
    "at": 667.2,
    "until": 820.0,
@@ -264,18 +132,6 @@
    "apps": [
     "THERMOMIX",
     "COOVEN"
-   ],
-   "sfx": ""
-  },
-  {
-   "type": "now",
-   "at": 820.4,
-   "until": 1392.8,
-   "kicker": "Menu 1 · Kak Salma",
-   "text": "Pes Sup",
-   "apps": [
-    "THERMOMIX",
-    "COOVEN COOKER"
    ],
    "sfx": ""
   },
@@ -291,5 +147,23 @@
    ],
    "sfx": ""
   }
- ]
+ ],
+ "light": true,
+ "grade": {
+  "intensity": 0.85,
+  "adjust": {
+   "exposure": 0.03,
+   "contrast": 0.11,
+   "highlights": -0.14,
+   "shadows": 0.13,
+   "whites": 0.03,
+   "blacks": -0.05,
+   "temperature": 0.04,
+   "vibrance": 0.14,
+   "saturation": 0.06
+  },
+  "details": {
+   "vignette": 0.16
+  }
+ }
 }

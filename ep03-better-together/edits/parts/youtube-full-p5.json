@@ -12,94 +12,138 @@
  "bgm": null,
  "segments": [
   {
-   "in": 2960.6,
-   "out": 3063.5,
-   "note": "frosting tanpa nozzle"
+   "in": 2280.7,
+   "out": 2295.3,
+   "note": "CH4 Mukmin",
+   "volume": 1.3
   },
   {
-   "in": 3097.8,
-   "out": 3134.5,
-   "note": "crumbs cacat-cela"
+   "in": 2296.3,
+   "out": 2511.2,
+   "note": "ubi lambung part 1",
+   "volume": 1.3
   },
   {
-   "in": 3150.4,
-   "out": 3410.0,
-   "note": "Ida ikan dah masak, buang air, sos curah, RM40 vs RM20, bawang goreng, peserta buat macam-macam"
+   "in": 2544.4,
+   "out": 2575.2,
+   "note": "8 liter",
+   "volume": 1.3
+  },
+  {
+   "in": 2601.7,
+   "out": 2667.6,
+   "note": "lambung",
+   "volume": 1.3
+  },
+  {
+   "in": 2697.2,
+   "out": 2720.0,
+   "note": "semudah itu",
+   "volume": 1.3
   }
  ],
  "overlays": [
   {
-   "type": "hook",
-   "at": 3291.0,
-   "dur": 3.0,
-   "text": "KEDAI: RM40++",
-   "highlight": "RM40++",
-   "sfx": "error"
+   "type": "joke",
+   "at": 2657.8,
+   "dur": 2.2,
+   "text": "Patutlah!",
+   "sfx": "badumtss",
+   "punch": 1.1
   },
   {
-   "type": "hook",
-   "at": 3306.6,
-   "dur": 3.4,
-   "text": "SENDIRI: < RM20!",
-   "highlight": "RM20!",
+   "type": "chapter",
+   "at": 2282.2,
+   "dur": 4.0,
+   "kicker": "Menu 4 · Mukmin",
+   "text": "Ubi Lambung"
+  },
+  {
+   "type": "lower",
+   "at": 2306.4,
+   "dur": 4.0,
+   "name": "Mukmin",
+   "role": "Ubi Lambung"
+  },
+  {
+   "type": "fact",
+   "at": 2340.8,
+   "dur": 4.5,
+   "title": "TAHU TAK?",
+   "text": "Orang Indonesia panggil [ondol-ondol]."
+  },
+  {
+   "type": "tip",
+   "at": 2380.4,
+   "dur": 6.0,
+   "title": "BETTER TOGETHER",
+   "text": "Thermomix [adun], Cooven [goreng] — sebab Thermomix tak boleh deep fry."
+  },
+  {
+   "type": "label",
+   "at": 2425.0,
+   "dur": 5.0,
+   "title": "COOVEN · MODE DEEP FRY",
+   "text": "Preheat [1–2 minit] je dah boleh masuk."
+  },
+  {
+   "type": "fact",
+   "at": 2476.6,
+   "dur": 5.0,
+   "title": "BONUS",
+   "text": "[Basket] goreng dapat sekali — tak perlu beli asing."
+  },
+  {
+   "type": "tip",
+   "at": 2491.7,
+   "dur": 6.5,
+   "title": "KENAPA SEDAP?",
+   "text": "Suhu [stabil] — masak sekata, tak hangus, tak mentah.",
    "sfx": "ding"
   },
   {
-   "type": "tip",
-   "at": 2986.4,
-   "dur": 6.0,
-   "title": "TAK ADA NOZZLE?",
-   "text": "Beginner? Sapu frosting guna [pisau] je!"
-  },
-  {
-   "type": "tip",
-   "at": 3105.3,
-   "dur": 6.0,
-   "title": "TIP DECOR",
-   "text": "Tabur [crumbs] red velvet — sembunyi segala cacat-cela!",
-   "sfx": "sparkle"
-  },
-  {
-   "type": "tip",
-   "at": 3196.0,
+   "type": "fact",
+   "at": 2546.0,
    "dur": 5.0,
-   "title": "MUDAH",
-   "text": "Air ikan? [Jongket tray] je, tak payah ke sinki."
+   "title": "KAPASITI",
+   "text": "Periuk [8 liter], tapi minyak [±1 liter] pun cukup."
   },
   {
-   "type": "ingredients",
-   "at": 3247.0,
-   "dur": 8.0,
-   "title": "Sos curah siakap",
-   "items": [
-    "Bawang putih",
-    "Chicken stock",
-    "Lada",
-    "Daun ketumbar",
-    "Sos ikan",
-    "Limau nipis"
-   ]
-  },
-  {
-   "type": "joke",
-   "at": 3382.0,
-   "dur": 3.0,
-   "text": "Masak satu, jadi macam-macam!",
-   "sfx": "pop",
-   "size": 50
+   "type": "tip",
+   "at": 2632.0,
+   "dur": 5.5,
+   "title": "TAK PAYAH TEKA",
+   "text": "Cooven [bagitahu] bila minyak dah cukup panas."
   },
   {
    "type": "now",
-   "at": 2960.65,
-   "until": 4679.9,
-   "kicker": "Hasil & tips akhir",
-   "text": "4 Menu Siap!",
+   "at": 2282.4,
+   "until": 2721.0,
+   "kicker": "Menu 4 · Mukmin",
+   "text": "Ubi Lambung",
    "apps": [
-    "PES SUP",
-    "RED VELVET",
-    "SIAKAP · UBI"
+    "THERMOMIX",
+    "COOVEN DEEP FRY"
    ],
    "sfx": ""
   }
- ]
+ ],
+ "light": true,
+ "grade": {
+  "intensity": 0.85,
+  "adjust": {
+   "exposure": 0.03,
+   "contrast": 0.11,
+   "highlights": -0.14,
+   "shadows": 0.13,
+   "whites": 0.03,
+   "blacks": -0.05,
+   "temperature": 0.04,
+   "vibrance": 0.14,
+   "saturation": 0.06
+  },
+  "details": {
+   "vignette": 0.16
+  }
+ }
 }

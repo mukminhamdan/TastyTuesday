@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ms" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Tasty Tuesday EP3 · Better Together · Cooven × Thermomix (Full Session) (part 9)</title>
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #2A1810; }
+      #root { width: 100%; height: 100%; position: relative; overflow: hidden; }
+      #cam { position: absolute; left: 100px; top: 40px; width: 520px; height: 1000px; overflow: hidden; border-radius: 28px; z-index: 1; background: #000; }
+      #punch, #zoom { position: absolute; inset: 0; }
+      #cam video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="130.040" data-width="1920" data-height="1080">
+      <div id="cam">
+        <div id="punch"><div id="zoom">
+          <video id="run00" class="clip" src="assets/edit.mp4" data-start="0.000" data-duration="130.040" data-media-start="0.000" data-track-index="0" playsinline data-has-audio="true" data-color-grading='{"intensity": 0.85, "adjust": {"exposure": 0.03, "contrast": 0.11, "highlights": -0.14, "shadows": 0.13, "whites": 0.03, "blacks": -0.05, "temperature": 0.04, "vibrance": 0.14, "saturation": 0.06}, "details": {"vignette": 0.16}}'></video>
+        </div></div>
+
+      </div>
+      <div id="stage" data-composition-id="stage" data-composition-src="compositions/stage.html" data-start="0.000" data-duration="130.040" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080" style="position:absolute;inset:0;z-index:0"></div>
+      <div id="ov04-now" data-composition-id="ov04-now" data-composition-src="compositions/ov04-now.html" data-start="0.040" data-duration="130.000" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080" style="position:absolute;inset:0;z-index:3"></div>
+      <div id="captions-00" data-composition-id="captions-00" data-composition-src="compositions/captions-00.html" data-start="0.000" data-duration="48.240" data-track-index="2" data-track-kind="captions" data-width="1920" data-height="1080" style="position:absolute;inset:0;z-index:4"></div>
+      <div id="captions-01" data-composition-id="captions-01" data-composition-src="compositions/captions-01.html" data-start="48.240" data-duration="49.360" data-track-index="2" data-track-kind="captions" data-width="1920" data-height="1080" style="position:absolute;inset:0;z-index:4"></div>
+      <div id="captions-02" data-composition-id="captions-02" data-composition-src="compositions/captions-02.html" data-start="97.600" data-duration="32.440" data-track-index="2" data-track-kind="captions" data-width="1920" data-height="1080" style="position:absolute;inset:0;z-index:4"></div>
+      <div id="ov00-hook" data-composition-id="ov00-hook" data-composition-src="compositions/ov00-hook.html" data-start="37.360" data-duration="3.400" data-track-index="3" data-track-kind="graphics" data-width="1920" data-height="1080" style="position:absolute;inset:0;z-index:5"></div>
+      <div id="ov01-tip" data-composition-id="ov01-tip" data-composition-src="compositions/ov01-tip.html" data-start="53.000" data-duration="6.000" data-track-index="3" data-track-kind="graphics" data-width="1920" data-height="1080" style="position:absolute;inset:0;z-index:5"></div>
+      <div id="ov02-reveal" data-composition-id="ov02-reveal" data-composition-src="compositions/ov02-reveal.html" data-start="102.160" data-duration="3.000" data-track-index="3" data-track-kind="graphics" data-width="1920" data-height="1080" style="position:absolute;inset:0;z-index:5"></div>
+      <div id="ov03-tip" data-composition-id="ov03-tip" data-composition-src="compositions/ov03-tip.html" data-start="118.360" data-duration="6.000" data-track-index="3" data-track-kind="graphics" data-width="1920" data-height="1080" style="position:absolute;inset:0;z-index:5"></div>
+      <div id="framebadge" data-composition-id="framebadge" data-composition-src="compositions/framebadge.html" data-start="0.000" data-duration="130.040" data-track-index="5" data-track-kind="graphics" data-width="1920" data-height="1080" style="position:absolute;inset:0;z-index:4"></div>
+      <audio id="sfx-00-0" src="assets/sfx/sparkle.mp3" data-start="37.360" data-duration="1.802" data-track-index="5" data-volume="0.45"></audio>
+      <audio id="sfx-01-0" src="assets/sfx/pop.mp3" data-start="53.000" data-duration="0.720" data-track-index="5" data-volume="0.55"></audio>
+      <audio id="sfx-02-0" src="assets/sfx/sparkle.mp3" data-start="102.160" data-duration="1.802" data-track-index="5" data-volume="0.45"></audio>
+      <audio id="sfx-03-0" src="assets/sfx/pop.mp3" data-start="118.360" data-duration="0.720" data-track-index="5" data-volume="0.55"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 0.000);
+      tl.set('#zoom', { scale: 1.060, transformOrigin: '50% 45%' }, 1.320);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 18.280);
+      tl.set('#zoom', { scale: 1.060, transformOrigin: '50% 45%' }, 19.920);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 21.480);
+      tl.set('#zoom', { scale: 1.060, transformOrigin: '50% 45%' }, 30.440);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 31.760);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 33.080);
+      tl.set('#zoom', { scale: 1.060, transformOrigin: '50% 45%' }, 34.760);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 42.560);
+      tl.set('#zoom', { scale: 1.060, transformOrigin: '50% 45%' }, 46.360);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 49.320);
+      tl.set('#zoom', { scale: 1.060, transformOrigin: '50% 45%' }, 50.400);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 67.120);
+      tl.set('#zoom', { scale: 1.060, transformOrigin: '50% 45%' }, 68.160);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 71.920);
+      tl.set('#zoom', { scale: 1.060, transformOrigin: '50% 45%' }, 73.320);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 75.000);
+      tl.set('#zoom', { scale: 1.060, transformOrigin: '50% 45%' }, 77.880);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 79.400);
+      tl.set('#zoom', { scale: 1.060, transformOrigin: '50% 45%' }, 81.600);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 86.920);
+      tl.set('#zoom', { scale: 1.060, transformOrigin: '50% 45%' }, 90.000);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 95.200);
+      tl.set('#zoom', { scale: 1.060, transformOrigin: '50% 45%' }, 95.960);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 97.520);
+      tl.set('#zoom', { scale: 1.060, transformOrigin: '50% 45%' }, 100.720);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 101.520);
+      tl.set('#zoom', { scale: 1.060, transformOrigin: '50% 45%' }, 107.080);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 110.760);
+      tl.set('#zoom', { scale: 1.060, transformOrigin: '50% 45%' }, 121.520);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 122.320);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

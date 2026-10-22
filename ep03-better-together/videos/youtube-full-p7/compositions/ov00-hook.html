@@ -20,8 +20,8 @@
       </style>
       <div id="root" data-composition-id="ov00-hook" data-width="1920" data-height="1080">
         <div class="hook">
-          <div class="kick">Testimoni</div>
-          <div class="htext"><span class="hw">LAGI</span><span class="hw hl">RAJIN</span><span class="hw">MASAK!</span></div>
+          
+          <div class="htext"><span class="hw">KEDAI:</span><span class="hw">RM40++</span></div>
         </div>
       </div>
       <script>
@@ -30,7 +30,7 @@
           const q = (s) => document.querySelector('[data-composition-id="ov00-hook"] ' + s);
           q('.kick') && tl.fromTo(q('.kick'), { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: 'back.out(2.5)' }, 0);
           q('.htext') && tl.fromTo(q('.htext').children, { y: 60, scale: 1.6, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.28, ease: 'back.out(2)', stagger: 0.07 }, 0.1);
-          q('.hook') && tl.to(q('.hook'), { opacity: 0, y: -40, duration: 0.3, ease: 'power2.in' }, 2.9499999999999997);
+          q('.hook') && tl.to(q('.hook'), { opacity: 0, y: -40, duration: 0.3, ease: 'power2.in' }, 2.55);
           window.__timelines["ov00-hook"] = tl;
         })();
       </script>

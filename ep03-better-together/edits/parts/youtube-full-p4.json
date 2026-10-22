@@ -12,63 +12,157 @@
  "bgm": null,
  "segments": [
   {
-   "in": 2721.1,
-   "out": 2806.8,
-   "note": "CH5 results: red velvet masak, cucuk cantik, Kak Salma belum"
+   "in": 1700.0,
+   "out": 1908.4,
+   "note": "CH3 Ida: Thailand joke, siakap, kelar, serai, mode steam P1-P3, air 1L"
   },
   {
-   "in": 2806.7,
-   "out": 2877.8,
-   "note": "pes naik minyak, tips garing"
+   "in": 1936.7,
+   "out": 1949.3,
+   "note": "15 minit, blend bahan"
   },
   {
-   "in": 2917.3,
-   "out": 2960.7,
-   "note": "Kak Salma red velvet sambil-sambil"
+   "in": 1968.7,
+   "out": 2009.1,
+   "note": "sos ikan, Thermomix sebelah, kamceng, blend"
+  },
+  {
+   "in": 2019.3,
+   "out": 2280.8,
+   "note": "dapur kecil minimalis, hasil chop, malas alih bowl, basuh ikan, berus gigi, steam 15 min, tray stabil, chopper boleh"
   }
  ],
  "overlays": [
   {
    "type": "chapter",
-   "at": 2721.2,
+   "at": 1700.1,
    "dur": 4.0,
-   "kicker": "Bahagian 5",
-   "text": "Hasil & Tips Akhir"
+   "kicker": "Menu 3 · Ida",
+   "text": "Siakap Stim"
   },
   {
    "type": "joke",
-   "at": 2737.1,
-   "dur": 2.4,
-   "text": "Red... red... red?!",
+   "at": 1705.8,
+   "dur": 2.6,
+   "text": "Terus ke Thailand!",
+   "sfx": "whoosh"
+  },
+  {
+   "type": "lower",
+   "at": 1715.2,
+   "dur": 4.0,
+   "name": "Ida",
+   "role": "Ikan Siakap Stim"
+  },
+  {
+   "type": "tip",
+   "at": 1740.0,
+   "dur": 5.0,
+   "title": "TIP SEDAP",
+   "text": "[Kelar-kelar] badan ikan dulu supaya rasa meresap."
+  },
+  {
+   "type": "joke",
+   "at": 1759.0,
+   "dur": 2.6,
+   "text": "Cedera parah!",
    "sfx": "boing",
    "punch": 1.08
   },
   {
-   "type": "reveal",
-   "at": 2759.7,
+   "type": "label",
+   "at": 1824.8,
+   "dur": 5.0,
+   "title": "COOVEN · MODE STEAM",
+   "text": "[P3] (suhu tinggi) · 15 minit"
+  },
+  {
+   "type": "fact",
+   "at": 1847.2,
+   "dur": 6.0,
+   "title": "P1 · P2 · P3",
+   "text": "P1 = suhu rendah · P2 = sederhana · [P3 = tinggi]"
+  },
+  {
+   "type": "label",
+   "at": 1870.0,
+   "dur": 5.0,
+   "title": "AIR",
+   "text": "Lebih kurang [1 liter] — bawah paras tanda."
+  },
+  {
+   "type": "joke",
+   "at": 1991.0,
    "dur": 3.0,
-   "text": "CANTIK!",
-   "sub": "Red velvet siap"
+   "text": "Sahabat kamching!",
+   "sfx": "pop"
+  },
+  {
+   "type": "fact",
+   "at": 2045.7,
+   "dur": 6.0,
+   "title": "DAPUR KECIL?",
+   "text": "Dua gadget je — [dapur lengkap] untuk rumah kecil & minimalis."
+  },
+  {
+   "type": "joke",
+   "at": 2090.6,
+   "dur": 3.0,
+   "text": "Mak malas!",
+   "sfx": "badumtss",
+   "punch": 1.08
   },
   {
    "type": "tip",
-   "at": 2831.6,
+   "at": 2125.0,
+   "dur": 8.0,
+   "title": "TIP TAK HANYIR",
+   "text": "Berus [darah hitam] dalam perut ikan guna berus gigi khas dapur!",
+   "sfx": "ding"
+  },
+  {
+   "type": "fact",
+   "at": 2205.4,
    "dur": 6.0,
-   "title": "PES DAH GARING?",
-   "text": "Tengok — dah masak bila [berbiji, tak bergumpal]."
+   "title": "KENAPA COOVEN?",
+   "text": "Rack [stabil], steam lebih laju, ruang lebih besar."
+  },
+  {
+   "type": "tip",
+   "at": 2247.2,
+   "dur": 6.0,
+   "title": "TAK ADA THERMOMIX?",
+   "text": "Guna [blender / chopper] biasa pun boleh."
   },
   {
    "type": "now",
-   "at": 2721.4,
-   "until": 4679.9,
-   "kicker": "Hasil & tips akhir",
-   "text": "4 Menu Siap!",
+   "at": 1700.3,
+   "until": 2280.6,
+   "kicker": "Menu 3 · Ida",
+   "text": "Siakap Stim",
    "apps": [
-    "PES SUP",
-    "RED VELVET",
-    "SIAKAP · UBI"
+    "COOVEN STEAM",
+    "THERMOMIX"
    ],
    "sfx": ""
   }
- ]
+ ],
+ "light": true,
+ "grade": {
+  "intensity": 0.85,
+  "adjust": {
+   "exposure": 0.03,
+   "contrast": 0.11,
+   "highlights": -0.14,
+   "shadows": 0.13,
+   "whites": 0.03,
+   "blacks": -0.05,
+   "temperature": 0.04,
+   "vibrance": 0.14,
+   "saturation": 0.06
+  },
+  "details": {
+   "vignette": 0.16
+  }
+ }
 }

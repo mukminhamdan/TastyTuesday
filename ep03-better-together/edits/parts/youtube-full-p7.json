@@ -12,65 +12,85 @@
  "bgm": null,
  "segments": [
   {
-   "in": 3846.0,
-   "out": 3870.0,
-   "note": "first time jadi"
+   "in": 2960.6,
+   "out": 3063.5,
+   "note": "frosting tanpa nozzle"
   },
   {
-   "in": 3880.0,
-   "out": 3895.0,
-   "note": "rezeki neighbor"
+   "in": 3097.8,
+   "out": 3134.5,
+   "note": "crumbs cacat-cela"
   },
   {
-   "in": 3907.6,
-   "out": 3975.0,
-   "note": "rajin masak, frozen, bekal anak"
-  },
-  {
-   "in": 4079.0,
-   "out": 4100.0,
-   "note": "nutella cucu, achievement"
-  },
-  {
-   "in": 4100.0,
-   "out": 4166.0,
-   "note": "pes final, tips minyak"
+   "in": 3150.4,
+   "out": 3410.0,
+   "note": "Ida ikan dah masak, buang air, sos curah, RM40 vs RM20, bawang goreng, peserta buat macam-macam"
   }
  ],
  "overlays": [
   {
    "type": "hook",
-   "at": 3913.1,
+   "at": 3291.0,
+   "dur": 3.0,
+   "text": "KEDAI: RM40++",
+   "highlight": "RM40++",
+   "sfx": "error"
+  },
+  {
+   "type": "hook",
+   "at": 3306.6,
    "dur": 3.4,
-   "kicker": "Testimoni",
-   "text": "LAGI RAJIN MASAK!",
-   "highlight": "RAJIN",
+   "text": "SENDIRI: < RM20!",
+   "highlight": "RM20!",
+   "sfx": "ding"
+  },
+  {
+   "type": "tip",
+   "at": 2986.4,
+   "dur": 6.0,
+   "title": "TAK ADA NOZZLE?",
+   "text": "Beginner? Sapu frosting guna [pisau] je!"
+  },
+  {
+   "type": "tip",
+   "at": 3105.3,
+   "dur": 6.0,
+   "title": "TIP DECOR",
+   "text": "Tabur [crumbs] red velvet — sembunyi segala cacat-cela!",
    "sfx": "sparkle"
   },
   {
    "type": "tip",
-   "at": 3955.0,
-   "dur": 6.0,
-   "title": "TIP",
-   "text": "Masak banyak, [simpan frozen] — 2–3 hari lagi boleh makan."
+   "at": 3196.0,
+   "dur": 5.0,
+   "title": "MUDAH",
+   "text": "Air ikan? [Jongket tray] je, tak payah ke sinki."
   },
   {
-   "type": "reveal",
-   "at": 4127.3,
+   "type": "ingredients",
+   "at": 3247.0,
+   "dur": 8.0,
+   "title": "Sos curah siakap",
+   "items": [
+    "Bawang putih",
+    "Chicken stock",
+    "Lada",
+    "Daun ketumbar",
+    "Sos ikan",
+    "Limau nipis"
+   ]
+  },
+  {
+   "type": "joke",
+   "at": 3382.0,
    "dur": 3.0,
-   "text": "SIAP!",
-   "sub": "Pes sup kering, tak melepek"
-  },
-  {
-   "type": "tip",
-   "at": 4149.6,
-   "dur": 6.0,
-   "title": "TIP JIMAT",
-   "text": "Lebihan [minyak] boleh simpan untuk tumis next round."
+   "text": "Masak satu, jadi macam-macam!",
+   "sfx": "pop",
+   "size": 50
   },
   {
    "type": "now",
-   "at": 3846.05,
+   "at": 2960.65,
    "until": 4679.9,
    "kicker": "Hasil & tips akhir",
    "text": "4 Menu Siap!",
@@ -81,5 +101,23 @@
    ],
    "sfx": ""
   }
- ]
+ ],
+ "light": true,
+ "grade": {
+  "intensity": 0.85,
+  "adjust": {
+   "exposure": 0.03,
+   "contrast": 0.11,
+   "highlights": -0.14,
+   "shadows": 0.13,
+   "whites": 0.03,
+   "blacks": -0.05,
+   "temperature": 0.04,
+   "vibrance": 0.14,
+   "saturation": 0.06
+  },
+  "details": {
+   "vignette": 0.16
+  }
+ }
 }

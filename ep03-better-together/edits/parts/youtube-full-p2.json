@@ -12,96 +12,175 @@
  "bgm": null,
  "segments": [
   {
-   "in": 1392.9,
-   "out": 1700.0,
-   "note": "CH2 red velvet: thermomix adunan, 14-16 cup, 3/4, burnt cheesecake, 145 15 min no preheat",
-   "skip": [
-    [
-     1532.6,
-     1540.6
-    ]
-   ]
+   "in": 820.1,
+   "out": 837.2,
+   "note": "CH1 Kak Salma ready, pes sup"
+  },
+  {
+   "in": 841.1,
+   "out": 842.4
+  },
+  {
+   "in": 845.5,
+   "out": 959.0,
+   "note": "pes sup: mesin separuh, tak letak air, 30 saat x2"
+  },
+  {
+   "in": 966.0,
+   "out": 1031.0,
+   "note": "jintan susah halus, rempah from scratch"
+  },
+  {
+   "in": 1053.2,
+   "out": 1058.9,
+   "note": "Cooven guna mode apa"
+  },
+  {
+   "in": 1069.2,
+   "out": 1261.1,
+   "note": "mode cooker 140, kacau, Thermomix vs Cooven sekali harung"
+  },
+  {
+   "in": 1272.4,
+   "out": 1333.8,
+   "note": "bawang sekilo, regular customer, marinate ayam bakar"
+  },
+  {
+   "in": 1342.8,
+   "out": 1360.0,
+   "note": "seronok masak ramai-ramai"
   }
  ],
  "overlays": [
   {
-   "type": "hook",
-   "at": 1660.4,
-   "dur": 4.0,
-   "kicker": "Hari ni dalam Tasty Tuesday",
-   "text": "4 MENU · 2 GADGET · 1 DAPUR",
-   "highlight": "2 GADGET",
-   "sfx": "impact-bass-1"
+   "type": "joke",
+   "at": 1306.2,
+   "dur": 2.2,
+   "text": "Patutlah happy!",
+   "sfx": "boing"
   },
   {
    "type": "chapter",
-   "at": 1401.4,
+   "at": 820.2,
    "dur": 4.0,
-   "kicker": "Menu 2 · Safiah",
-   "text": "Red Velvet Cupcake"
+   "kicker": "Menu 1 · Kak Salma",
+   "text": "Pes Sup"
+  },
+  {
+   "type": "lower",
+   "at": 849.2,
+   "dur": 4.0,
+   "name": "Kak Salma",
+   "role": "Pes Sup"
   },
   {
    "type": "label",
-   "at": 1425.0,
-   "dur": 5.0,
-   "title": "THERMOMIX",
-   "text": "Adunan & [frosting] di-blend siap dulu."
-  },
-  {
-   "type": "fact",
-   "at": 1495.2,
-   "dur": 5.0,
-   "title": "MUAT BERAPA?",
-   "text": "Satu loyang Cooven muat [14–16] cupcake."
-  },
-  {
-   "type": "joke",
-   "at": 1504.8,
-   "dur": 2.6,
-   "text": "OCD sikit!",
-   "sfx": "boing",
-   "punch": 1.08
+   "at": 861.0,
+   "dur": 4.5,
+   "title": "BUAT BANYAK?",
+   "text": "Mesin ikut [2–3 batch] supaya semua halus."
   },
   {
    "type": "tip",
-   "at": 1556.0,
-   "dur": 7.0,
-   "title": "TIP ISI CUP",
-   "text": "Jangan isi 3/4 — [satu sudu] je dah cukup, tak melimpah.",
+   "at": 884.6,
+   "dur": 5.0,
+   "title": "TIP BLEND",
+   "text": "Tak letak air — terus guna [minyak] masa mesin."
+  },
+  {
+   "type": "label",
+   "at": 892.0,
+   "dur": 5.0,
+   "title": "THERMOMIX",
+   "text": "[30 saat × 2] = 1 minit je, terus halus!",
    "sfx": "ding"
   },
   {
    "type": "tip",
-   "at": 1586.3,
-   "dur": 6.0,
-   "title": "BONUS",
-   "text": "Burnt cheesecake? Gaul dalam Thermomix, bakar [30 minit] je."
+   "at": 1000.8,
+   "dur": 5.5,
+   "title": "TIP RASA",
+   "text": "Guna rempah [biji-biji] — fresh from scratch, bukan serbuk siap."
   },
   {
    "type": "label",
-   "at": 1641.0,
-   "dur": 7.0,
-   "title": "COOVEN · MODE OVEN",
-   "text": "[145°C] · 15 minit · tanpa preheat"
+   "at": 1083.0,
+   "dur": 6.0,
+   "title": "COOVEN · MODE COOKER",
+   "text": "[140°C] · 30 minit · tumis perlahan-lahan"
+  },
+  {
+   "type": "tip",
+   "at": 1137.0,
+   "dur": 5.0,
+   "title": "NAK CEPAT?",
+   "text": "Boleh naik [160–180°C], tapi kena kerap kacau."
+  },
+  {
+   "type": "tip",
+   "at": 1168.0,
+   "dur": 5.5,
+   "title": "TIP",
+   "text": "Kacau setiap [5–10 minit] je — tak perlu duduk tepi dapur."
+  },
+  {
+   "type": "fact",
+   "at": 1205.0,
+   "dur": 5.5,
+   "title": "BETTER TOGETHER",
+   "text": "Thermomix: 2 kali tumis · Cooven: [sekali harung]!"
+  },
+  {
+   "type": "fact",
+   "at": 1272.6,
+   "dur": 4.5,
+   "title": "SKALA",
+   "text": "Bawang besar [1 kg] sekali masak."
+  },
+  {
+   "type": "joke",
+   "at": 1301.8,
+   "dur": 2.6,
+   "text": "Regular customer!",
+   "sfx": "badumtss",
+   "punch": 1.08
+  },
+  {
+   "type": "tip",
+   "at": 1320.0,
+   "dur": 5.0,
+   "title": "BONUS",
+   "text": "Pes ni boleh [perap ayam bakar] juga!"
   },
   {
    "type": "now",
-   "at": 1401.6,
-   "until": 1699.9,
-   "kicker": "Menu 2 · Safiah",
-   "text": "Red Velvet Cupcake",
+   "at": 820.4,
+   "until": 1392.8,
+   "kicker": "Menu 1 · Kak Salma",
+   "text": "Pes Sup",
    "apps": [
     "THERMOMIX",
-    "COOVEN OVEN"
+    "COOVEN COOKER"
    ],
    "sfx": ""
-  },
-  {
-   "type": "lower",
-   "at": 1410.7,
-   "dur": 4.0,
-   "name": "Safiah",
-   "role": "Red Velvet Cupcake"
   }
- ]
+ ],
+ "light": true,
+ "grade": {
+  "intensity": 0.85,
+  "adjust": {
+   "exposure": 0.03,
+   "contrast": 0.11,
+   "highlights": -0.14,
+   "shadows": 0.13,
+   "whites": 0.03,
+   "blacks": -0.05,
+   "temperature": 0.04,
+   "vibrance": 0.14,
+   "saturation": 0.06
+  },
+  "details": {
+   "vignette": 0.16
+  }
+ }
 }

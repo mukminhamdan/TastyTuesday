@@ -9,88 +9,66 @@
  "jump_zoom": 1.06,
  "origin": "50% 45%",
  "captions": "panel",
- "bgm": {
-  "volume": 0.07,
-  "ranges": [
-   [
-    -22,
-    -0.01
-   ]
-  ]
- },
+ "bgm": null,
  "segments": [
   {
-   "in": 4187.0,
-   "out": 4282.4,
-   "note": "ikan final, nasi dalam Thermomix (promo dibuang)"
+   "in": 3410.0,
+   "out": 3423.5,
+   "note": "I'm not a baker"
   },
   {
-   "in": 4565.0,
-   "out": 4605.0,
-   "note": "showcase, rampas limelight"
+   "in": 3463.0,
+   "out": 3483.5,
+   "note": "breakfast table: Thermomix & Cooven sebelah"
   },
   {
-   "in": 4626.0,
-   "out": 4650.0,
-   "note": "kenyal"
+   "in": 3528.0,
+   "out": 3548.5,
+   "note": "support group cook along"
   },
   {
-   "in": 4680.0,
-   "out": 4773.4,
-   "note": "CLOSING: semua sedap, terima kasih, minggu depan, bye bye (video tamat di sini)"
+   "in": 3629.0,
+   "out": 3650.5,
+   "note": "support group resepi & tips"
+  },
+  {
+   "in": 3723.0,
+   "out": 3750.0,
+   "note": "piping vs sudu, cabar"
+  },
+  {
+   "in": 3770.0,
+   "out": 3830.0,
+   "note": "suhu tinggi kalau duduk tepi, panas"
   }
  ],
  "overlays": [
   {
-   "type": "reveal",
-   "at": 4221.8,
-   "dur": 3.0,
-   "text": "SEDAPNYA!",
-   "sub": "Siakap stim siap"
+   "type": "joke",
+   "at": 3413.0,
+   "dur": 2.8,
+   "text": "I'm not a baker!",
+   "sfx": "boing",
+   "punch": 1.08
   },
   {
    "type": "tip",
-   "at": 4243.2,
+   "at": 3786.0,
    "dur": 7.0,
-   "title": "TIP BIJAK",
-   "text": "Masak [nasi] terus dalam bowl Thermomix yang berlada — air beras bantu 'cuci' bowl!",
-   "sfx": "ding"
+   "title": "SUHU RENDAH VS TINGGI",
+   "text": "Nak tinggal-tinggal: [suhu rendah] · Duduk tepi & nak cepat: [suhu tinggi]."
   },
   {
    "type": "joke",
-   "at": 4580.0,
-   "dur": 2.8,
-   "text": "Rampas limelight!",
-   "sfx": "pop"
-  },
-  {
-   "type": "reveal",
-   "at": 4634.4,
-   "dur": 3.0,
-   "text": "KENYAL!",
-   "sub": "Ubi lambung siap"
-  },
-  {
-   "type": "chapter",
-   "at": 4692.7,
-   "dur": 6.0,
-   "kicker": "4 menu · 1 live",
-   "text": "Semua sedap!"
+   "at": 3742.4,
+   "dur": 2.6,
+   "text": "Jangan cabar saya!",
+   "sfx": "badumtss",
+   "punch": 1.08
   },
   {
    "type": "now",
-   "at": 4680.2,
-   "until": 4773.3,
-   "kicker": "Penutup",
-   "text": "Jumpa Selasa Depan",
-   "apps": [
-    "TASTY TUESDAY"
-   ],
-   "sfx": ""
-  },
-  {
-   "type": "now",
-   "at": 4187.05,
+   "at": 3410.05,
    "until": 4679.9,
    "kicker": "Hasil & tips akhir",
    "text": "4 Menu Siap!",
@@ -101,5 +79,23 @@
    ],
    "sfx": ""
   }
- ]
+ ],
+ "light": true,
+ "grade": {
+  "intensity": 0.85,
+  "adjust": {
+   "exposure": 0.03,
+   "contrast": 0.11,
+   "highlights": -0.14,
+   "shadows": 0.13,
+   "whites": 0.03,
+   "blacks": -0.05,
+   "temperature": 0.04,
+   "vibrance": 0.14,
+   "saturation": 0.06
+  },
+  "details": {
+   "vignette": 0.16
+  }
+ }
 }

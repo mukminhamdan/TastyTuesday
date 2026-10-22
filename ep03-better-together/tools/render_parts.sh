@@ -10,7 +10,7 @@ N=$(ls -d "$ROOT"/videos/youtube-full-p* | wc -l)
 for k in $(seq 1 "$N"); do
   f="$OUT/part-p$k.mp4"
   [ -s "$f" ] && continue
-  ( cd "$ROOT/videos/youtube-full-p$k" && npx --prefix /home/user/tools hyperframes render -q "$Q" -f 25 --video-bitrate "$BR" -o "$f.tmp.mp4" > "$OUT/p$k.log" 2>&1 ) \
+  ( cd "$ROOT/videos/youtube-full-p$k" && npx --prefix /home/user/tools hyperframes render -q "$Q" -f 25 $( [ "${BR#crf:}" != "$BR" ] && echo --crf "${BR#crf:}" || echo --video-bitrate "$BR") -o "$f.tmp.mp4" > "$OUT/p$k.log" 2>&1 ) \
     && mv "$f.tmp.mp4" "$f" && echo "RENDERED p$k" >> "$OUT/progress.log" || { echo "FAILED p$k" >> "$OUT/progress.log"; exit 1; }
 done
 for k in $(seq 1 "$N"); do echo "file '$OUT/part-p$k.mp4'"; done > "$OUT/parts.txt"
