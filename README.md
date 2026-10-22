@@ -6,7 +6,7 @@ source `VID_20261021_234942_070.mp4`, 51 min), built with [HyperFrames](https://
 | Project | What it is |
 | --- | --- |
 | `edits/01-ikan-parang-masak-lemak` | Full recipe in under 90 s: 5 steps, 2 tips, tasting |
-| `edits/02-cuci-ikan-guna-okah` | Tip: cleaning fish with the *okah* machine (the slime reveal) |
+| `edits/02-cuci-ikan-guna-oka` | Tip: cleaning fish with the *oka* food detoxifier (the slime reveal) |
 | `edits/03-hack-jus-limau` | Hack: blend limes instead of squeezing ("dua minit... eh, dua saat!") |
 | `edits/04-bloopers-dapur-makcik` | Bloopers: banjir, garam x2, rebung, nasi lupa masak, "Mumin, are you there?" |
 | `edits/05-terung-hijau-bakar` | First-time grilled green brinjal from Kuala Perlis |

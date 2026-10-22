@@ -273,6 +273,13 @@ def captions_html(segs, words, total, cid, stop_at):
 
 # ---------------------------------------------------------------- overlays
 
+def seg_of(segs, ref):
+    """The segment an overlay reference points into."""
+    if isinstance(ref, dict):
+        return next(seg for seg in segs if seg["a0"] - 0.05 <= ref["src"] <= seg["a1"] + 0.05)
+    return segs[ref[0]]
+
+
 def seg_time(segs, ref):
     """ref -> output seconds. ref is [segment index, seconds into it] or
     {"src": source seconds}, which follows the word through the cuts."""
@@ -301,6 +308,10 @@ def overlays_html(edl, segs, total, cid, sfx):
             continue
         t0 = seg_time(segs, ov["at"])
         t1 = fr(min(t0 + ov.get("dur", 2.5), total))
+        if ov["type"] == "punch":  # a joke word belongs to its shot: gone before the cut
+            seg = seg_of(segs, ov["at"])
+            t1 = min(t1, fr(seg["start"] + seg["dur"] + 0.1))
+            t1 = max(t1, fr(t0 + 0.8))
         if ov["type"] in ("card", "chip") and t0 < hook_end:
             t0 = fr(hook_end + 0.1)
             t1 = max(t1, fr(t0 + 1.8))

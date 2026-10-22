@@ -1,5 +1,5 @@
 {
- "title": "Cuci Ikan Guna Okah - Buang Lendir & Toksin",
+ "title": "Cuci Ikan Guna Oka - Buang Lendir & Toksin",
  "music": {
   "name": "cozy",
   "volume": 0.1
@@ -13,12 +13,12 @@
   {
    "s": 149.85,
    "e": 154.0,
-   "cap": "Ikan parang I dah basuh. Sebelum I nak masak, I nak okahkan dia dulu."
+   "cap": "Ikan parang I dah basuh. Sebelum I nak masak, I nak okakan dia dulu."
   },
   {
    "s": 163.75,
    "e": 169.0,
-   "cap": "Tujuan I okah, I nak buang semua toxic-toxic yang ada dekat ikan ni."
+   "cap": "Tujuan I oka, I nak buang semua toxic-toxic yang ada dekat ikan ni."
   },
   {
    "s": 172.55,
@@ -28,17 +28,17 @@
   {
    "s": 227.7,
    "e": 233.5,
-   "cap": "Okey, ini agak berbau sikit bila kita tengah okah tu."
+   "cap": "Okey, ini agak berbau sikit bila kita tengah oka tu."
   },
   {
    "s": 244.2,
    "e": 248.1,
-   "cap": "Selalunya bila I okah ikan ke apa, I akan jauhkan diri I daripada ni."
+   "cap": "Selalunya bila I oka ikan ke apa, I akan jauhkan diri I daripada ni."
   },
   {
    "s": 843.0,
    "e": 846.8,
-   "cap": "Can you see ikan yang saya dah okah? Dah siap okah. Kita tengok.",
+   "cap": "Can you see ikan yang saya dah oka? Dah siap oka. Kita tengok.",
    "audio": [
     838.4,
     842.2
@@ -47,7 +47,7 @@
   {
    "s": 871.0,
    "e": 875.15,
-   "cap": "Biasanya ikan bila kita okah, tengok all dia punya"
+   "cap": "Biasanya ikan bila kita oka, tengok all dia punya"
   },
   {
    "s": 880.9,
@@ -92,10 +92,10 @@
     2,
     0.2
    ],
-   "dur": 5.0,
+   "dur": 5.5,
    "tone": "tip",
-   "label": "KENAPA OKAH?",
-   "text": "Buang toksin, lendir & bau hanyir pada ikan"
+   "label": "KENAPA OKA?",
+   "text": "Oka = food detoxifier. Buang toksin, lendir & bau hanyir"
   },
   {
    "type": "punch",
@@ -121,7 +121,7 @@
    "type": "end",
    "dur": 3.2,
    "extend": 1.6,
-   "title": "Cuci Ikan Guna Okah"
+   "title": "Cuci Ikan Guna Oka"
   }
  ],
  "shakes": [
