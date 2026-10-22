@@ -75,3 +75,10 @@ Panel kanan sentiasa tunjuk: jenama, kad "Sedang dimasak" setiap bab, kad tip/la
 - **YouTube:** video pembuka (`shared/brand/youtube-opening.mp4`) di 0:00, kemudian cuplikan hook. Video tamat terus selepas "bye bye" (tiada blooper / kad penutup). Durasi 44:22.
 - **Blooper:** video menegak berasingan (`videos/bloopers/`, 0:46) — filter make-up, "nervous", suara bergema, "tak ada 29k", "cari muka sendiri", "red red red", "I'm not a baker", sakit pinggang, "rampas limelight", "kesiannya". Logo + lagu Tasty Tuesday seperti Reels.
 - **Reels + menu:** logo bulat Tasty Tuesday di penjuru, kad penutup berlogo dengan nyanyian "Tasty Tuesday!", instrumental lagu sebagai muzik latar.
+
+## Kemas kini v7 — render final
+
+- **Color grade "premium"** pada semua video: exposure +, kontras ringan, highlight diturunkan, shadow diangkat, sedikit lebih hangat, vibrance/saturasi naik, vignette lembut. Video pendek guna `data-color-grading` HyperFrames; YouTube guna padanan ffmpeg (`GRADE_BAKE` dalam `tools/build.py`, `"grade_bake": true`) supaya render 43 minit tidak 4× lebih lambat.
+- **Lighting per klip** (`"light": true`): setiap potongan diukur dan didedahkan semula ke tahap kecerahan yang sama, buang ~40% colour cast.
+- Caption: Difry → deep fry, Faisal → function, "Laman" dibuang (tak disebut). Pembetulan satu perkataan ikut masa: `"at"` dalam `data/corrections.json`.
+- YouTube: kad panel "Red Velvet" tidak lagi bertindih dengan kad pembukaan di cold open; kad bahan sos siakap dua lajur.
