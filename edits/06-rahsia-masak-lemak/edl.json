@@ -11,11 +11,6 @@
    "cap": "Alhamdulillah, dia tak pecah minyak!"
   },
   {
-   "s": 1354.3,
-   "e": 1355.75,
-   "cap": "I pakai santan kotak. Sorry!"
-  },
-  {
    "s": 1357.8,
    "e": 1359.35,
    "cap": "Selalu pakai santan biasa."
@@ -59,6 +54,11 @@
    "s": 1742.7,
    "e": 1748.05,
    "cap": "Sedapnya bau, wanginya bau. Saya masukkan asam limau, wangi bau dia."
+  },
+  {
+   "s": 2604.3,
+   "e": 2607.9,
+   "cap": "Kita boleh masak nasi sekali kat dalam ni. Dia ada rice function."
   }
  ],
  "overlays": [
@@ -68,35 +68,26 @@
     0,
     0.1
    ],
-   "dur": 3.2,
+   "dur": 3.0,
    "kicker": "RAHSIA MASAK LEMAK",
    "title": "Kuah lemak tak pecah minyak",
    "accent": 3
   },
   {
-   "type": "punch",
-   "at": {
-    "src": 1355.42
-   },
-   "dur": 1.3,
-   "text": "Sorry!",
-   "y": 640
-  },
-  {
    "type": "card",
    "at": [
-    4,
-    0.6
+    3,
+    0.4
    ],
-   "dur": 6.5,
+   "dur": 6.0,
    "tone": "info",
    "label": "SANTAN KAYU API",
-   "text": "Kedai jual santan... sambil jual kayu api!"
+   "text": "Kedai jual santan segar... sambil jual kayu api"
   },
   {
    "type": "card",
    "at": [
-    6,
+    5,
     0.1
    ],
    "dur": 2.8,
@@ -107,19 +98,33 @@
   {
    "type": "card",
    "at": [
-    8,
+    7,
     0.4
    ],
-   "dur": 6.5,
+   "dur": 6.0,
    "tone": "tip",
    "label": "TIP 2",
    "text": "Asam limau mudah buat kuah pecah minyak - hati-hati"
   },
   {
+   "type": "card",
+   "at": [
+    10,
+    0.0
+   ],
+   "dur": 4.0,
+   "tone": "cooven",
+   "label": "COOVEN",
+   "text": "Ada rice function - nasi & lauk masak sekali"
+  },
+  {
    "type": "end",
    "dur": 3.2,
-   "extend": 1.6,
-   "title": "Masak Lemak Cili Padi"
+   "extend": 2.6,
+   "title": "Masak Lemak Cili Padi",
+   "cta": "Follow untuk resepi seterusnya"
   }
- ]
+ ],
+ "captions": false,
+ "punch_zoom": 1.05
 }

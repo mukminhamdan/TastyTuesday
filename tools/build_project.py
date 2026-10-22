@@ -101,7 +101,7 @@ def plan(edl, vad, words):
         for b0, b1 in ranges:
             zoom = seg.get("zoom")
             if zoom is None:
-                zoom = 1.1 if zoom_toggle else 1.0
+                zoom = edl.get("punch_zoom", 1.1) if zoom_toggle else 1.0
                 zoom_toggle = not zoom_toggle
             c = dict(idx=len(clips), seg=i, a0=b0, dur=fr(b1 - b0), v0=b0 + v_off, lcut=lcut,
                      start=fr(t), zoom=zoom, ox=seg.get("ox", 50), oy=seg.get("oy", 46),
@@ -212,9 +212,9 @@ def group(words, seg_end, max_words=4):
     return timed
 
 
-def captions_html(segs, words, total, cid, stop_at):
+def captions_html(segs, words, total, cid, stop_at, enabled=True):
     all_groups = []
-    for seg in segs:
+    for seg in (segs if enabled else []):
         if seg.get("nocap"):
             continue
         ws = [(w, to_out(seg, a), to_out(seg, b)) for w, a, b in align(seg, words)]
@@ -348,7 +348,7 @@ def overlays_html(edl, segs, total, cid, sfx):
             tl.append(f'tl.to("#{oid}-in", {{ opacity: 0, filter: "blur(8px)", duration: 0.22, ease: "power2.in" }}, {t1 - 0.24:.3f});')
             sfx.append(("whoosh-short", t0 + 0.12))
         elif kind == "card":
-            color = {"tip": TURMERIC, "step": LEAF, "info": CREAM}.get(ov.get("tone", "tip"), TURMERIC)
+            color = {"tip": TURMERIC, "step": LEAF, "info": CREAM, "cooven": CHILLI}.get(ov.get("tone", "tip"), TURMERIC)
             items.append(f'''    <div class="clip ov" id="{oid}" data-start="{t0:.3f}" data-duration="{t1 - t0:.3f}" data-track-index="1">
       <div class="card" id="{oid}-in">
         <div class="pill" style="background:{color}">{esc(ov["label"])}</div>
@@ -358,7 +358,7 @@ def overlays_html(edl, segs, total, cid, sfx):
             tl.append(f'tl.fromTo("#{oid}-in", {{ opacity: 0, y: -40, scale: 0.94 }}, '
                       f'{{ opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "expo.out" }}, {t0:.3f});')
             tl.append(f'tl.to("#{oid}-in", {{ opacity: 0, y: -24, duration: 0.28, ease: "power3.in" }}, {t1 - 0.3:.3f});')
-            sfx.append(("pop" if ov.get("tone", "tip") == "tip" else "click-soft", t0 + 0.05))
+            sfx.append(("click-soft", t0 + 0.05))
         elif kind == "punch":
             rot = ov.get("rot", -4)
             color = ov.get("color", TURMERIC)
@@ -577,7 +577,7 @@ def main():
     sfx = []
     stop = total - (end.get("dur", 3.0) if end else 0) + 0.3
     open(os.path.join(proj, "compositions", "captions.html"), "w").write(
-        captions_html(segs, words, total, "captions", stop))
+        captions_html(segs, words, total, "captions", stop, edl.get("captions", True)))
     open(os.path.join(proj, "compositions", "overlays.html"), "w").write(
         overlays_html(edl, segs, total, "overlays", sfx))
     for name, t in edl.get("sfx", []):

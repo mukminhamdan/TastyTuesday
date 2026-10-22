@@ -33,11 +33,6 @@
    "cap": "Sekarang saya tengah okakan dia. Tujuan saya okakan dia untuk nak buang semua toksin."
   },
   {
-   "s": 873.1,
-   "e": 879.95,
-   "cap": "Tengok all dia punya lendir-lendir ni semua. Geli eh tengok!"
-  },
-  {
    "s": 333.45,
    "e": 337.25,
    "cap": "So, limau ni I malas nak perah-perah, belah-belah, potong-potong."
@@ -68,17 +63,12 @@
    "cap": "Tadi cili padi akak dah blend. Akak masukkan dalam ni."
   },
   {
-   "s": 1049.05,
-   "e": 1053.1,
-   "cap": "I akan kecutkan dulu ikan ni dulu."
+   "s": 1069.35,
+   "e": 1072.4,
+   "cap": "I masak pakai Cooven. I cook-kan dia dulu."
   },
   {
-   "s": 1057.8,
-   "e": 1061.25,
-   "cap": "My mother ajar, panggil kata kecut. I cook-kan dia dulu."
-  },
-  {
-   "s": 1072.35,
+   "s": 1072.4,
    "e": 1073.4,
    "cap": "140,"
   },
@@ -109,13 +99,8 @@
   },
   {
    "s": 1285.6,
-   "e": 1289.3,
-   "cap": "jantung pisang. Saya suka makan jantung pisang."
-  },
-  {
-   "s": 1291.5,
-   "e": 1295.5,
-   "cap": "Jantung pisang banyak khasiat. It's very good for your health."
+   "e": 1287.4,
+   "cap": "jantung pisang."
   },
   {
    "s": 1868.4,
@@ -138,6 +123,16 @@
    "cap": "Sedap cukup, masam dia cukup, masin dia pun cukup."
   },
   {
+   "s": 2458.9,
+   "e": 2461.55,
+   "cap": "Saya masak semua ni hari ni, saya gunakan Cooven."
+  },
+  {
+   "s": 2470.95,
+   "e": 2474.55,
+   "cap": "Alat gadget yang mesti ada di setiap rumah."
+  },
+  {
    "s": 1300.3,
    "e": 1303.05,
    "cap": "Masak ni senang, simple, sekejap sahaja."
@@ -150,19 +145,10 @@
     0,
     0.15
    ],
-   "dur": 3.6,
-   "kicker": "RESEPI MAKCIK",
+   "dur": 3.4,
+   "kicker": "RESEPI DAPUR ACIK SAL",
    "title": "Ikan Parang Masak Lemak Cili Padi",
    "accent": 3
-  },
-  {
-   "type": "chip",
-   "at": [
-    2,
-    1.6
-   ],
-   "dur": 2.6,
-   "text": "+ Jantung Pisang"
   },
   {
    "type": "card",
@@ -173,58 +159,48 @@
    "dur": 4.6,
    "tone": "step",
    "label": "LANGKAH 1",
-   "text": "Oka ikan dulu (food detoxifier) - buang toksin & lendir"
-  },
-  {
-   "type": "punch",
-   "at": {
-    "src": 878.3
-   },
-   "dur": 1.6,
-   "text": "Geli!",
-   "color": "#E8452C",
-   "y": 560
+   "text": "Oka ikan (food detoxifier) - buang toksin & lendir"
   },
   {
    "type": "card",
    "at": [
-    5,
+    4,
     0.2
    ],
-   "dur": 5.6,
+   "dur": 8.0,
    "tone": "tip",
-   "label": "TIP MALAS",
-   "text": "Tak payah perah limau - blend dengan air, tapis je"
+   "label": "TIP",
+   "text": "Limau: blend dengan sedikit air, tapis. Tak payah perah"
   },
   {
    "type": "card",
    "at": [
-    8,
+    7,
     0.2
    ],
-   "dur": 6.4,
+   "dur": 6.2,
    "tone": "step",
    "label": "LANGKAH 2",
-   "text": "Cili padi segenggam - blend 10 saat"
+   "text": "Cili padi segenggam - blend 10 saat, masuk periuk"
   },
   {
    "type": "card",
    "at": [
-    11,
+    10,
     0.2
    ],
-   "dur": 8.6,
-   "tone": "step",
-   "label": "LANGKAH 3",
-   "text": "Kecutkan ikan - 140°C, 15 minit"
+   "dur": 6.5,
+   "tone": "cooven",
+   "label": "LANGKAH 3 · COOVEN",
+   "text": "Kecutkan ikan dalam Cooven - 140°C, 15 minit"
   },
   {
    "type": "card",
    "at": [
-    15,
+    13,
     0.2
    ],
-   "dur": 6.6,
+   "dur": 6.0,
    "tone": "step",
    "label": "LANGKAH 4",
    "text": "2 keping asam keping, tutup 10 minit"
@@ -232,10 +208,10 @@
   {
    "type": "card",
    "at": [
-    17,
+    15,
     0.2
    ],
-   "dur": 9.0,
+   "dur": 5.0,
    "tone": "step",
    "label": "LANGKAH 5",
    "text": "Santan + jantung pisang yang dah dicelur"
@@ -243,74 +219,33 @@
   {
    "type": "card",
    "at": [
-    21,
-    1.6
+    18,
+    1.4
    ],
-   "dur": 5.4,
+   "dur": 6.0,
    "tone": "tip",
    "label": "TIP",
-   "text": "Asam limau boleh buat kuah pecah minyak - hati-hati"
+   "text": "Asam limau mudah buat kuah pecah minyak - hati-hati"
   },
   {
-   "type": "punch",
-   "at": {
-    "src": 1962.0
-   },
-   "dur": 1.8,
-   "text": "Cukup rasa!",
-   "y": 600
+   "type": "card",
+   "at": [
+    22,
+    0.2
+   ],
+   "dur": 5.6,
+   "tone": "cooven",
+   "label": "COOVEN",
+   "text": "Semua lauk hari ini dimasak dalam Cooven"
   },
   {
    "type": "end",
    "dur": 3.2,
    "extend": 1.6,
-   "title": "Ikan Parang Masak Lemak Cili Padi"
+   "title": "Ikan Parang Masak Lemak Cili Padi",
+   "cta": "Follow untuk resepi seterusnya"
   }
  ],
- "progress": [
-  [
-   [
-    3,
-    0.2
-   ],
-   0.2
-  ],
-  [
-   [
-    8,
-    0.2
-   ],
-   0.4
-  ],
-  [
-   [
-    11,
-    0.2
-   ],
-   0.6
-  ],
-  [
-   [
-    15,
-    0.2
-   ],
-   0.8
-  ],
-  [
-   [
-    17,
-    0.2
-   ],
-   1.0
-  ]
- ],
- "sfx": [
-  [
-   "sparkle",
-   [
-    23,
-    0.1
-   ]
-  ]
- ]
+ "captions": false,
+ "punch_zoom": 1.05
 }

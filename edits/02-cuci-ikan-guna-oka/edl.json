@@ -31,11 +31,6 @@
    "cap": "Okey, ini agak berbau sikit bila kita tengah oka tu."
   },
   {
-   "s": 244.2,
-   "e": 248.1,
-   "cap": "Selalunya bila I oka ikan ke apa, I akan jauhkan diri I daripada ni."
-  },
-  {
    "s": 843.0,
    "e": 846.8,
    "cap": "Can you see ikan yang saya dah oka? Dah siap oka. Kita tengok.",
@@ -62,29 +57,21 @@
     0,
     0.1
    ],
-   "dur": 2.4,
-   "kicker": "TIP DAPUR MAKCIK",
+   "dur": 2.6,
+   "kicker": "TIP DAPUR ACIK SAL",
    "title": "Ikan dah basuh, tapi tengok ni...",
    "accent": 4
   },
   {
-   "type": "punch",
-   "at": {
-    "src": 878.25
-   },
-   "dur": 1.5,
-   "text": "Geli!",
-   "color": "#E8452C",
-   "y": 560
-  },
-  {
-   "type": "chip",
+   "type": "card",
    "at": [
     1,
     0.3
    ],
-   "dur": 3.6,
-   "text": "Ikan parang - baru beli"
+   "dur": 4.0,
+   "tone": "step",
+   "label": "SEBELUM MASAK",
+   "text": "Oka ikan dulu walaupun dah basuh"
   },
   {
    "type": "card",
@@ -92,24 +79,15 @@
     2,
     0.2
    ],
-   "dur": 5.5,
+   "dur": 5.0,
    "tone": "tip",
    "label": "KENAPA OKA?",
    "text": "Oka = food detoxifier. Buang toksin, lendir & bau hanyir"
   },
   {
-   "type": "punch",
-   "at": {
-    "src": 246.9
-   },
-   "dur": 1.6,
-   "text": "Jauhkan diri!",
-   "y": 620
-  },
-  {
    "type": "card",
    "at": [
-    7,
+    6,
     0.2
    ],
    "dur": 4.0,
@@ -121,15 +99,10 @@
    "type": "end",
    "dur": 3.2,
    "extend": 1.6,
-   "title": "Cuci Ikan Guna Oka"
+   "title": "Cuci Ikan Guna Oka",
+   "cta": "Follow untuk tip dapur seterusnya"
   }
  ],
- "shakes": [
-  [
-   {
-    "src": 878.25
-   },
-   1.0
-  ]
- ]
+ "captions": false,
+ "punch_zoom": 1.05
 }

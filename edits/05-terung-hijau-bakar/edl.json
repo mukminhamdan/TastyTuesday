@@ -41,16 +41,6 @@
    "cap": "Wah, dia dah berkedut dah. Dia dah masak dah."
   },
   {
-   "s": 2709.5,
-   "e": 2716.4,
-   "cap": "Dia suruh flip eh. Apa benda aku nak flip kan. Tak payah nak flip pun. Tapi tak apa, dia suruh flip kita flip kan."
-  },
-  {
-   "s": 2721.35,
-   "e": 2723.7,
-   "cap": "Wah, cantiklah!"
-  },
-  {
    "s": 3048.5,
    "e": 3049.1,
    "cap": "Lembik dah."
@@ -77,9 +67,9 @@
     0,
     0.1
    ],
-   "dur": 3.6,
-   "kicker": "FIRST TIME MAKCIK",
-   "title": "Terung hijau bakar - jadi ke tak?",
+   "dur": 3.4,
+   "kicker": "DAPUR ACIK SAL",
+   "title": "Terung hijau bakar dalam Cooven",
    "accent": 1
   },
   {
@@ -88,18 +78,18 @@
     1,
     2.4
    ],
-   "dur": 4.4,
+   "dur": 4.0,
    "text": "Terung hijau - Kuala Perlis"
   },
   {
    "type": "card",
    "at": [
     3,
-    1.6
+    0.4
    ],
-   "dur": 6.2,
-   "tone": "tip",
-   "label": "TIP",
+   "dur": 6.5,
+   "tone": "cooven",
+   "label": "COOVEN · GRILL",
    "text": "Tak payah spray minyak - grill kering lagi wangi"
   },
   {
@@ -109,43 +99,18 @@
     0.0
    ],
    "dur": 1.9,
-   "tone": "step",
+   "tone": "cooven",
    "label": "MASA",
    "text": "Grill 10 minit"
-  },
-  {
-   "type": "punch",
-   "at": {
-    "src": 2710.3
-   },
-   "dur": 1.8,
-   "text": "Flip?!",
-   "y": 640
-  },
-  {
-   "type": "punch",
-   "at": {
-    "src": 3062.7
-   },
-   "dur": 2.2,
-   "text": "Jadi!",
-   "color": "#5FA36A",
-   "y": 620
   },
   {
    "type": "end",
    "dur": 3.2,
    "extend": 1.6,
-   "title": "Terung Hijau Bakar"
+   "title": "Terung Hijau Bakar",
+   "cta": "Follow untuk resepi seterusnya"
   }
  ],
- "sfx": [
-  [
-   "sparkle",
-   [
-    11,
-    0.15
-   ]
-  ]
- ]
+ "captions": false,
+ "punch_zoom": 1.05
 }
