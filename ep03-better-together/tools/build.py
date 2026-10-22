@@ -39,6 +39,7 @@ def load_words():
     data = json.load(open(os.path.join(ROOT, "data", "transcript.json")))
     fixes = json.load(open(os.path.join(ROOT, "data", "corrections.json")))
     word_fix = {k.lower(): v for k, v in fixes.get("words", {}).items()}
+    at_fix = fixes.get("at", {})  # one-off fixes for a single word, keyed by its start time ("2425.68")
     words = []
     for seg in data:
         merged = []  # whisper splits reduplication ("Pocak", "-pocak"); join it back into one word
@@ -53,7 +54,9 @@ def load_words():
         for w in merged:
             txt = w["w"]
             core = re.sub(r"[^\w'-]", "", txt).lower()
-            if core in word_fix:
+            if f"{w['s']:.2f}" in at_fix:
+                txt = at_fix[f"{w['s']:.2f}"]
+            elif core in word_fix:
                 txt = re.sub(re.escape(re.sub(r"[^\w'-]", "", txt)), word_fix[core], txt, count=1)
             words.append({"s": w["s"], "e": w["e"], "w": txt})
     words.sort(key=lambda w: w["s"])
