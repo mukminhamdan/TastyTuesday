@@ -91,27 +91,6 @@
    "src_in": 1662.0
   },
   {
-   "type": "hook",
-   "at": 783.2,
-   "dur": 3.4,
-   "kicker": "Tasty Tuesday · EP3",
-   "text": "THERMOMIX TAK BOLEH BAKAR?",
-   "highlight": "BAKAR?",
-   "y": 230,
-   "size": 98
-  },
-  {
-   "type": "hook",
-   "at": 790.2,
-   "dur": 4.6,
-   "kicker": "Cooven × Thermomix",
-   "text": "BUKAN SAINGAN — BETTER TOGETHER",
-   "highlight": "BETTER TOGETHER",
-   "y": 230,
-   "size": 92,
-   "sfx": "whoosh"
-  },
-  {
    "type": "menu",
    "at": 1204.5,
    "dur": 3.0,
@@ -158,17 +137,6 @@
     "COOVEN DEEP FRY"
    ],
    "y": 280
-  },
-  {
-   "type": "hook",
-   "at": 3913.1,
-   "dur": 3.0,
-   "kicker": "Testimoni",
-   "text": "LAGI RAJIN MASAK!",
-   "highlight": "RAJIN",
-   "y": 300,
-   "size": 100,
-   "sfx": "sparkle"
   },
   {
    "type": "label",

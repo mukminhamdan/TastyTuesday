@@ -22,22 +22,22 @@
         .p1 { background: var(--leaf); color: var(--cream); }
         .p2 { background: var(--cream); color: var(--cocoa); }
       </style>
-      <div id="root" data-composition-id="ov05-menu" data-width="1080" data-height="1920">
+      <div id="root" data-composition-id="ov02-menu" data-width="1080" data-height="1920">
         <div class="menu">
-          <div class="num">MENU 3 · IDA</div>
-          <div class="dish">Siakap Stim</div>
-          <div class="pills"><span class="pill p0">COOVEN STEAM</span><span class="pill p1">THERMOMIX</span></div>
+          <div class="num">MENU 2 · SAFIAH</div>
+          <div class="dish">Red Velvet</div>
+          <div class="pills"><span class="pill p0">THERMOMIX</span><span class="pill p1">COOVEN OVEN</span></div>
         </div>
       </div>
       <script>
         (function () {
           const tl = gsap.timeline({ paused: true });
-          const q = (s) => document.querySelector('[data-composition-id="ov05-menu"] ' + s);
+          const q = (s) => document.querySelector('[data-composition-id="ov02-menu"] ' + s);
           q('.num') && tl.fromTo(q('.num'), { scaleY: 0 }, { scaleY: 1, duration: 0.3, ease: 'back.out(3)' }, 0);
           q('.dish') && tl.fromTo(q('.dish'), { scale: 2.2, opacity: 0, rotation: -6 }, { scale: 1, opacity: 1, rotation: 0, duration: 0.4, ease: 'back.out(1.8)' }, 0.15);
           q('.pills') && tl.fromTo(q('.pills').children, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: 'back.out(2)', stagger: 0.12 }, 0.5);
-          q('.menu') && tl.to(q('.menu'), { scale: 0.85, opacity: 0, duration: 0.35, ease: 'power2.in' }, 1.95);
-          window.__timelines["ov05-menu"] = tl;
+          q('.menu') && tl.to(q('.menu'), { scale: 0.85, opacity: 0, duration: 0.35, ease: 'power2.in' }, 2.55);
+          window.__timelines["ov02-menu"] = tl;
         })();
       </script>
     </template>

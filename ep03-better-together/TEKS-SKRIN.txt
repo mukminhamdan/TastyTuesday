@@ -13,44 +13,29 @@ Cara edit:
 ### Tasty Tuesday EP3 · Better Together · Reels  ·  0:51.6
 
 
-[reels.o01] 0:00.2 HOOK
-  kicker = Tasty Tuesday · EP3
-  text = THERMOMIX TAK BOLEH BAKAR?
-  highlight = BAKAR?
-
-[reels.o02] 0:07.1 HOOK
-  kicker = Cooven × Thermomix
-  text = BUKAN SAINGAN — BETTER TOGETHER
-  highlight = BETTER TOGETHER
-
-[reels.o03] 0:12.8 KAD MENU
+[reels.o01] 0:12.8 KAD MENU
   num = MENU 1 · KAK SALMA
   text = Pes Sup
   apps = THERMOMIX | COOVEN
 
-[reels.o04] 0:22.0 KAD MENU
+[reels.o02] 0:22.0 KAD MENU
   num = MENU 2 · SAFIAH
   text = Red Velvet
   apps = THERMOMIX | COOVEN OVEN
 
-[reels.o05] 0:30.3 KAD MENU
+[reels.o03] 0:30.3 KAD MENU
   num = MENU 3 · IDA
   text = Siakap Stim
   apps = COOVEN STEAM | THERMOMIX
 
-[reels.o08] 0:32.4 LABEL
+[reels.o05] 0:32.4 LABEL
   title = COOVEN · MODE STEAM
   text = [P3] · 15 minit
 
-[reels.o06] 0:38.3 KAD MENU
+[reels.o04] 0:38.3 KAD MENU
   num = MENU 4 · MUKMIN
   text = Ubi Lambung
   apps = THERMOMIX | COOVEN DEEP FRY
-
-[reels.o07] 0:44.4 HOOK
-  kicker = Testimoni
-  text = LAGI RAJIN MASAK!
-  highlight = RAJIN
 
 [reels.g12] 0:47.6 KAD OUTRO
   l1 = TASTY TUESDAY
