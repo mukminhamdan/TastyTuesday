@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ms" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Tasty Tuesday EP3 · Better Together · Cooven × Thermomix (Full Session) (part 5)</title>
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #2A1810; }
+      #root { width: 100%; height: 100%; position: relative; overflow: hidden; }
+      #cam { position: absolute; left: 100px; top: 40px; width: 520px; height: 1000px; overflow: hidden; border-radius: 28px; z-index: 1; background: #000; }
+      #punch, #zoom { position: absolute; inset: 0; }
+      #cam video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="180.440" data-width="1920" data-height="1080">
+      <div id="cam">
+        <div id="punch"><div id="zoom">
+          <video id="run00" class="clip" src="assets/edit.mp4" data-start="0.000" data-duration="180.440" data-media-start="0.000" data-track-index="0" playsinline data-has-audio="true"></video>
+        </div></div>
+
+      </div>
+      <div id="stage" data-composition-id="stage" data-composition-src="compositions/stage.html" data-start="0.000" data-duration="180.440" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080" style="position:absolute;inset:0;z-index:0"></div>
+      <div id="ov03-now" data-composition-id="ov03-now" data-composition-src="compositions/ov03-now.html" data-start="0.040" data-duration="180.400" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080" style="position:absolute;inset:0;z-index:3"></div>
+      <div id="captions-00" data-composition-id="captions-00" data-composition-src="compositions/captions-00.html" data-start="0.000" data-duration="57.760" data-track-index="2" data-track-kind="captions" data-width="1920" data-height="1080" style="position:absolute;inset:0;z-index:4"></div>
+      <div id="captions-01" data-composition-id="captions-01" data-composition-src="compositions/captions-01.html" data-start="57.760" data-duration="61.760" data-track-index="2" data-track-kind="captions" data-width="1920" data-height="1080" style="position:absolute;inset:0;z-index:4"></div>
+      <div id="captions-02" data-composition-id="captions-02" data-composition-src="compositions/captions-02.html" data-start="119.520" data-duration="52.240" data-track-index="2" data-track-kind="captions" data-width="1920" data-height="1080" style="position:absolute;inset:0;z-index:4"></div>
+      <div id="captions-03" data-composition-id="captions-03" data-composition-src="compositions/captions-03.html" data-start="171.760" data-duration="8.680" data-track-index="2" data-track-kind="captions" data-width="1920" data-height="1080" style="position:absolute;inset:0;z-index:4"></div>
+      <div id="ov00-joke" data-composition-id="ov00-joke" data-composition-src="compositions/ov00-joke.html" data-start="2.080" data-duration="2.800" data-track-index="3" data-track-kind="graphics" data-width="1920" data-height="1080" style="position:absolute;inset:0;z-index:5"></div>
+      <div id="ov02-joke" data-composition-id="ov02-joke" data-composition-src="compositions/ov02-joke.html" data-start="117.240" data-duration="2.600" data-track-index="3" data-track-kind="graphics" data-width="1920" data-height="1080" style="position:absolute;inset:0;z-index:5"></div>
+      <div id="ov01-tip" data-composition-id="ov01-tip" data-composition-src="compositions/ov01-tip.html" data-start="136.960" data-duration="7.000" data-track-index="3" data-track-kind="graphics" data-width="1920" data-height="1080" style="position:absolute;inset:0;z-index:5"></div>
+      <div id="framebadge" data-composition-id="framebadge" data-composition-src="compositions/framebadge.html" data-start="0.000" data-duration="180.440" data-track-index="5" data-track-kind="graphics" data-width="1920" data-height="1080" style="position:absolute;inset:0;z-index:4"></div>
+      <audio id="sfx-00-0" src="assets/sfx/boing.mp3" data-start="2.080" data-duration="0.940" data-track-index="5" data-volume="0.35"></audio>
+      <audio id="sfx-02-0" src="assets/sfx/badumtss.mp3" data-start="117.240" data-duration="2.429" data-track-index="5" data-volume="0.45"></audio>
+      <audio id="sfx-01-0" src="assets/sfx/pop.mp3" data-start="136.960" data-duration="0.720" data-track-index="5" data-volume="0.55"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 0.000);
+      tl.set('#zoom', { scale: 1.060, transformOrigin: '50% 45%' }, 1.280);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 2.080);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 11.760);
+      tl.set('#zoom', { scale: 1.060, transformOrigin: '50% 45%' }, 20.680);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 28.520);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 30.440);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 50.920);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 72.400);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 101.400);
+      tl.set('#zoom', { scale: 1.060, transformOrigin: '50% 45%' }, 108.440);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 115.800);
+      tl.set('#zoom', { scale: 1.060, transformOrigin: '50% 45%' }, 116.560);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 124.840);
+      tl.set('#zoom', { scale: 1.060, transformOrigin: '50% 45%' }, 128.080);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 131.840);
+      tl.set('#zoom', { scale: 1.060, transformOrigin: '50% 45%' }, 135.240);
+      tl.set('#zoom', { scale: 1.000, transformOrigin: '50% 45%' }, 139.960);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

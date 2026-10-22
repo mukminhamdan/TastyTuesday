@@ -1,0 +1,105 @@
+{
+ "id": "youtube-full-p4",
+ "title": "Tasty Tuesday EP3 · Better Together · Cooven × Thermomix (Full Session) (part 4)",
+ "format": "landscape",
+ "tighten": {
+  "max_gap": 0.7,
+  "pad": 0.12
+ },
+ "jump_zoom": 1.06,
+ "origin": "50% 45%",
+ "captions": "panel",
+ "bgm": null,
+ "segments": [
+  {
+   "in": 2960.6,
+   "out": 3063.5,
+   "note": "frosting tanpa nozzle"
+  },
+  {
+   "in": 3097.8,
+   "out": 3134.5,
+   "note": "crumbs cacat-cela"
+  },
+  {
+   "in": 3150.4,
+   "out": 3410.0,
+   "note": "Ida ikan dah masak, buang air, sos curah, RM40 vs RM20, bawang goreng, peserta buat macam-macam"
+  }
+ ],
+ "overlays": [
+  {
+   "type": "hook",
+   "at": 3291.0,
+   "dur": 3.0,
+   "text": "KEDAI: RM40++",
+   "highlight": "RM40++",
+   "sfx": "error"
+  },
+  {
+   "type": "hook",
+   "at": 3306.6,
+   "dur": 3.4,
+   "text": "SENDIRI: < RM20!",
+   "highlight": "RM20!",
+   "sfx": "ding"
+  },
+  {
+   "type": "tip",
+   "at": 2986.4,
+   "dur": 6.0,
+   "title": "TAK ADA NOZZLE?",
+   "text": "Beginner? Sapu frosting guna [pisau] je!"
+  },
+  {
+   "type": "tip",
+   "at": 3105.3,
+   "dur": 6.0,
+   "title": "TIP DECOR",
+   "text": "Tabur [crumbs] red velvet — sembunyi segala cacat-cela!",
+   "sfx": "sparkle"
+  },
+  {
+   "type": "tip",
+   "at": 3196.0,
+   "dur": 5.0,
+   "title": "MUDAH",
+   "text": "Air ikan? [Jongket tray] je, tak payah ke sinki."
+  },
+  {
+   "type": "ingredients",
+   "at": 3247.0,
+   "dur": 8.0,
+   "title": "Sos curah siakap",
+   "items": [
+    "Bawang putih",
+    "Chicken stock",
+    "Lada",
+    "Daun ketumbar",
+    "Sos ikan",
+    "Limau nipis"
+   ]
+  },
+  {
+   "type": "joke",
+   "at": 3382.0,
+   "dur": 3.0,
+   "text": "Masak satu, jadi macam-macam!",
+   "sfx": "pop",
+   "size": 50
+  },
+  {
+   "type": "now",
+   "at": 2960.65,
+   "until": 4679.9,
+   "kicker": "Hasil & tips akhir",
+   "text": "4 Menu Siap!",
+   "apps": [
+    "PES SUP",
+    "RED VELVET",
+    "SIAKAP · UBI"
+   ],
+   "sfx": ""
+  }
+ ]
+}

@@ -20,6 +20,12 @@ for k in range(len(bounds) - 1):
     p["segments"] = segs[bounds[k]:bounds[k + 1]]
     srcs = [(s["in"], s["out"]) for s in p["segments"] if "in" in s]
     p["overlays"] = [o for o in e["overlays"] if "at" in o and any(a <= o["at"] <= b for a, b in srcs)]
+    # persistent panel cards ("now" with an `until`) continue into later parts: restart them at the part's first segment
+    if srcs:
+        lo, hi = srcs[0][0], srcs[-1][1]
+        for o in e["overlays"]:
+            if o["type"] == "now" and "until" in o and o["at"] < lo < o["until"] and o not in p["overlays"]:
+                p["overlays"].append({**o, "at": lo + 0.05})
     if e.get("bgm"):
         rng = []
         if k == 0: rng.append(e["bgm"]["ranges"][0])

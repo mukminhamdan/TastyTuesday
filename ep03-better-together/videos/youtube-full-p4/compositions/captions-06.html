@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+        #root { position: absolute; inset: 0; 
+  --cream: #FFF3DF; --tomato: #E8402A; --mustard: #FFB81C; --cocoa: #2A1810;
+  --leaf: #2F9E5B; --ink: #1B0F09; --white: #FFFFFF;
+ font-family: Montserrat, 'Archivo Black', sans-serif; }
+        
+        .cg { position: absolute; left: 760px; width: 1060px; top: 850px; height: 180px; display: flex; align-items: center; justify-content: flex-start;
+              flex-wrap: wrap; align-content: center; opacity: 0; }
+        .cw { display: inline-block; margin-right: 0.26em; font-weight: 800; font-size: 50px; line-height: 1.18; color: var(--cream); }
+        .cw.on { color: var(--mustard); }
+      </style>
+      <div id="root" data-composition-id="captions-06" data-width="1920" data-height="1080">
+        <div class="cg" id="captions-06-g0"><span class="cw" id="captions-06-w0-0">ni</span><span class="cw" id="captions-06-w0-1">dah</span><span class="cw" id="captions-06-w0-2">Dah</span><span class="cw" id="captions-06-w0-3">siap</span><span class="cw" id="captions-06-w0-4">dah</span><span class="cw" id="captions-06-w0-5">Punya</span></div>
+        <div class="cg" id="captions-06-g1"><span class="cw" id="captions-06-w1-0">Frosting</span></div>
+        <div class="cg" id="captions-06-g2"><span class="cw" id="captions-06-w2-0">Ha</span><span class="cw" id="captions-06-w2-1">Mari</span><span class="cw" id="captions-06-w2-2">kita</span><span class="cw" id="captions-06-w2-3">pergi</span></div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          const q = (s) => document.querySelector('[data-composition-id="captions-06"] ' + s);
+          tl.set('#captions-06-g0', { opacity: 1 }, 0.030);
+          tl.set('#captions-06-w0-0', { color: '#FFB81C' }, 0.030);
+          tl.set('#captions-06-w0-0', { color: '#FFF3DF' }, 0.290);
+          tl.set('#captions-06-w0-1', { color: '#FFB81C' }, 0.290);
+          tl.set('#captions-06-w0-1', { color: '#FFF3DF' }, 0.470);
+          tl.set('#captions-06-w0-2', { color: '#FFB81C' }, 0.470);
+          tl.set('#captions-06-w0-2', { color: '#FFF3DF' }, 0.650);
+          tl.set('#captions-06-w0-3', { color: '#FFB81C' }, 0.650);
+          tl.set('#captions-06-w0-3', { color: '#FFF3DF' }, 0.890);
+          tl.set('#captions-06-w0-4', { color: '#FFB81C' }, 0.890);
+          tl.set('#captions-06-w0-4', { color: '#FFF3DF' }, 1.010);
+          tl.set('#captions-06-w0-5', { color: '#FFB81C' }, 1.010);
+          tl.set('#captions-06-w0-5', { color: '#FFF3DF' }, 1.700);
+          tl.set('#captions-06-g0', { opacity: 0 }, 1.700);
+          tl.set('#captions-06-g1', { opacity: 1 }, 1.790);
+          tl.set('#captions-06-w1-0', { color: '#FFB81C' }, 1.790);
+          tl.set('#captions-06-w1-0', { color: '#FFF3DF' }, 2.420);
+          tl.set('#captions-06-g1', { opacity: 0 }, 2.420);
+          tl.set('#captions-06-g2', { opacity: 1 }, 2.510);
+          tl.set('#captions-06-w2-0', { color: '#FFB81C' }, 2.510);
+          tl.set('#captions-06-w2-0', { color: '#FFF3DF' }, 2.990);
+          tl.set('#captions-06-w2-1', { color: '#FFB81C' }, 2.990);
+          tl.set('#captions-06-w2-1', { color: '#FFF3DF' }, 3.350);
+          tl.set('#captions-06-w2-2', { color: '#FFB81C' }, 3.350);
+          tl.set('#captions-06-w2-2', { color: '#FFF3DF' }, 3.510);
+          tl.set('#captions-06-w2-3', { color: '#FFB81C' }, 3.510);
+          tl.set('#captions-06-w2-3', { color: '#FFF3DF' }, 3.870);
+          tl.set('#captions-06-g2', { opacity: 0 }, 3.870);
+          window.__timelines["captions-06"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

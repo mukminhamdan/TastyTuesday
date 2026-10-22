@@ -1,0 +1,118 @@
+{
+ "id": "youtube-full-p7",
+ "title": "Tasty Tuesday EP3 · Better Together · Cooven × Thermomix (Full Session) (part 7)",
+ "format": "landscape",
+ "tighten": {
+  "max_gap": 0.7,
+  "pad": 0.12
+ },
+ "jump_zoom": 1.06,
+ "origin": "50% 45%",
+ "captions": "panel",
+ "bgm": {
+  "volume": 0.07,
+  "ranges": [
+   [
+    -22,
+    -0.01
+   ]
+  ]
+ },
+ "segments": [
+  {
+   "in": 4187.0,
+   "out": 4309.0,
+   "note": "ikan final, nasi, contact, F.R.E.E"
+  },
+  {
+   "in": 4351.0,
+   "out": 4366.0,
+   "note": "contact untuk promo"
+  },
+  {
+   "in": 4565.0,
+   "out": 4605.0,
+   "note": "showcase, rampas limelight"
+  },
+  {
+   "in": 4626.0,
+   "out": 4650.0,
+   "note": "kenyal"
+  },
+  {
+   "in": 4680.0,
+   "out": 4773.4,
+   "note": "CLOSING: semua sedap, terima kasih, minggu depan, bye bye (video tamat di sini)"
+  }
+ ],
+ "overlays": [
+  {
+   "type": "reveal",
+   "at": 4221.8,
+   "dur": 3.0,
+   "text": "SEDAPNYA!",
+   "sub": "Siakap stim siap"
+  },
+  {
+   "type": "tip",
+   "at": 4243.2,
+   "dur": 7.0,
+   "title": "TIP BIJAK",
+   "text": "Masak [nasi] terus dalam bowl Thermomix yang berlada — air beras bantu 'cuci' bowl!",
+   "sfx": "ding"
+  },
+  {
+   "type": "joke",
+   "at": 4300.0,
+   "dur": 3.0,
+   "text": "F.R.E.E? Shhh!",
+   "sfx": "boing",
+   "punch": 1.08
+  },
+  {
+   "type": "joke",
+   "at": 4580.0,
+   "dur": 2.8,
+   "text": "Rampas limelight!",
+   "sfx": "pop"
+  },
+  {
+   "type": "reveal",
+   "at": 4634.4,
+   "dur": 3.0,
+   "text": "KENYAL!",
+   "sub": "Ubi lambung siap"
+  },
+  {
+   "type": "chapter",
+   "at": 4692.7,
+   "dur": 6.0,
+   "kicker": "4 menu · 1 live",
+   "text": "Semua sedap!"
+  },
+  {
+   "type": "now",
+   "at": 4680.2,
+   "until": 4773.3,
+   "kicker": "Penutup",
+   "text": "Jumpa Selasa Depan",
+   "apps": [
+    "TASTY TUESDAY"
+   ],
+   "sfx": ""
+  },
+  {
+   "type": "now",
+   "at": 4187.05,
+   "until": 4679.9,
+   "kicker": "Hasil & tips akhir",
+   "text": "4 Menu Siap!",
+   "apps": [
+    "PES SUP",
+    "RED VELVET",
+    "SIAKAP · UBI"
+   ],
+   "sfx": ""
+  }
+ ]
+}

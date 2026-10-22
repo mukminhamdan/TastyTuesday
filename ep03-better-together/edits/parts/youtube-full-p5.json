@@ -1,0 +1,88 @@
+{
+ "id": "youtube-full-p5",
+ "title": "Tasty Tuesday EP3 · Better Together · Cooven × Thermomix (Full Session) (part 5)",
+ "format": "landscape",
+ "tighten": {
+  "max_gap": 0.7,
+  "pad": 0.12
+ },
+ "jump_zoom": 1.06,
+ "origin": "50% 45%",
+ "captions": "panel",
+ "bgm": null,
+ "segments": [
+  {
+   "in": 3410.0,
+   "out": 3423.5,
+   "note": "I'm not a baker"
+  },
+  {
+   "in": 3463.0,
+   "out": 3483.5,
+   "note": "breakfast table: Thermomix & Cooven sebelah"
+  },
+  {
+   "in": 3528.0,
+   "out": 3548.5,
+   "note": "support group cook along"
+  },
+  {
+   "in": 3629.0,
+   "out": 3650.5,
+   "note": "support group resepi & tips"
+  },
+  {
+   "in": 3671.0,
+   "out": 3700.0,
+   "note": "combo promo"
+  },
+  {
+   "in": 3723.0,
+   "out": 3750.0,
+   "note": "piping vs sudu, cabar"
+  },
+  {
+   "in": 3770.0,
+   "out": 3830.0,
+   "note": "suhu tinggi kalau duduk tepi, panas"
+  }
+ ],
+ "overlays": [
+  {
+   "type": "joke",
+   "at": 3413.0,
+   "dur": 2.8,
+   "text": "I'm not a baker!",
+   "sfx": "boing",
+   "punch": 1.08
+  },
+  {
+   "type": "tip",
+   "at": 3786.0,
+   "dur": 7.0,
+   "title": "SUHU RENDAH VS TINGGI",
+   "text": "Nak tinggal-tinggal: [suhu rendah] · Duduk tepi & nak cepat: [suhu tinggi]."
+  },
+  {
+   "type": "joke",
+   "at": 3742.4,
+   "dur": 2.6,
+   "text": "Jangan cabar saya!",
+   "sfx": "badumtss",
+   "punch": 1.08
+  },
+  {
+   "type": "now",
+   "at": 3410.05,
+   "until": 4679.9,
+   "kicker": "Hasil & tips akhir",
+   "text": "4 Menu Siap!",
+   "apps": [
+    "PES SUP",
+    "RED VELVET",
+    "SIAKAP · UBI"
+   ],
+   "sfx": ""
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+        #root { position: absolute; inset: 0; 
+  --cream: #FFF3DF; --tomato: #E8402A; --mustard: #FFB81C; --cocoa: #2A1810;
+  --leaf: #2F9E5B; --ink: #1B0F09; --white: #FFFFFF;
+ font-family: Montserrat, 'Archivo Black', sans-serif; }
+        
+        .live { position: absolute; left: 124px; top: 64px; font-weight: 900; font-size: 22px; letter-spacing: 0.12em; color: var(--cream);
+                background: var(--tomato); padding: 6px 14px; border-radius: 8px; border: 3px solid var(--cocoa); }
+      </style>
+      <div id="root" data-composition-id="framebadge" data-width="1920" data-height="1080">
+        <div class="live">● LIVE REPLAY</div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          const q = (s) => document.querySelector('[data-composition-id="framebadge"] ' + s);
+          q('.live') && tl.fromTo(q('.live'), { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.5);
+          window.__timelines["framebadge"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

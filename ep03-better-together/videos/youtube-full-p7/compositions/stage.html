@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+        #root { position: absolute; inset: 0; 
+  --cream: #FFF3DF; --tomato: #E8402A; --mustard: #FFB81C; --cocoa: #2A1810;
+  --leaf: #2F9E5B; --ink: #1B0F09; --white: #FFFFFF;
+ font-family: Montserrat, 'Archivo Black', sans-serif; }
+        
+        .bg { position: absolute; inset: 0; background: var(--cocoa); }
+        .dots { position: absolute; inset: 0; background-image: radial-gradient(rgba(255,243,223,0.09) 3px, transparent 3.5px); background-size: 40px 40px; }
+        .blob { position: absolute; width: 900px; height: 900px; left: -420px; bottom: -480px; border-radius: 50%; background: var(--tomato); opacity: 0.9; }
+        .blob2 { position: absolute; width: 380px; height: 380px; right: 160px; top: -200px; border-radius: 50%; background: var(--mustard); opacity: 0.95; }
+        .frame { position: absolute; left: 92px; top: 32px; width: 536px; height: 1016px; border-radius: 34px; border: 8px solid var(--mustard);
+                 box-shadow: 0 0 0 8px var(--cocoa), 0 24px 60px rgba(0,0,0,0.5); }
+        .hdr { position: absolute; left: 760px; top: 56px; }
+        .h1 { font-family: 'Archivo Black', sans-serif; font-size: 64px; color: var(--cream); letter-spacing: -0.01em; line-height: 1; }
+        .h2 { margin-top: 12px; display: flex; gap: 12px; }
+        .h2 span { font-weight: 900; font-size: 26px; letter-spacing: 0.08em; padding: 8px 18px; border-radius: 999px; }
+        .s1 { background: var(--mustard); color: var(--cocoa); }
+        .s2 { background: var(--cream); color: var(--cocoa); }
+        .live { position: absolute; left: 116px; top: 60px; font-weight: 900; font-size: 22px; letter-spacing: 0.12em; color: var(--cream);
+                background: var(--tomato); padding: 6px 14px; border-radius: 8px; }
+      </style>
+      <div id="root" data-composition-id="stage" data-width="1920" data-height="1080">
+        <div class="bg"></div><div class="dots"></div><div class="blob" data-layout-allow-overflow></div><div class="blob2" data-layout-allow-overflow></div>
+        <div class="frame"></div>
+        <div class="hdr"><div class="h1">TASTY TUESDAY</div>
+          <div class="h2"><span class="s1">EPISOD 3 · BETTER TOGETHER</span><span class="s2">COOVEN × THERMOMIX</span></div></div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          const q = (s) => document.querySelector('[data-composition-id="stage"] ' + s);
+          q('.hdr') && tl.fromTo(q('.hdr'), { y: -200 }, { y: 0, duration: 0.6, ease: 'power3.out' }, 0);
+          q('.blob') && tl.fromTo(q('.blob'), { scale: 0.96 }, { scale: 1.04, duration: 6, yoyo: true, repeat: 43, ease: 'sine.inOut' }, 0);
+          window.__timelines["stage"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

@@ -9,15 +9,7 @@
  "jump_zoom": 1.06,
  "origin": "50% 45%",
  "captions": "panel",
- "bgm": {
-  "volume": 0.07,
-  "ranges": [
-   [
-    -22,
-    -0.01
-   ]
-  ]
- },
+ "bgm": null,
  "segments": [
   {
    "in": 2721.1,
@@ -33,125 +25,9 @@
    "in": 2917.3,
    "out": 2960.7,
    "note": "Kak Salma red velvet sambil-sambil"
-  },
-  {
-   "in": 2960.6,
-   "out": 3063.5,
-   "note": "frosting tanpa nozzle"
-  },
-  {
-   "in": 3097.8,
-   "out": 3134.5,
-   "note": "crumbs cacat-cela"
-  },
-  {
-   "in": 3150.4,
-   "out": 3410.0,
-   "note": "Ida ikan dah masak, buang air, sos curah, RM40 vs RM20, bawang goreng, peserta buat macam-macam"
-  },
-  {
-   "in": 3410.0,
-   "out": 3423.5,
-   "note": "I'm not a baker"
-  },
-  {
-   "in": 3463.0,
-   "out": 3483.5,
-   "note": "breakfast table: Thermomix & Cooven sebelah"
-  },
-  {
-   "in": 3528.0,
-   "out": 3548.5,
-   "note": "support group cook along"
-  },
-  {
-   "in": 3629.0,
-   "out": 3650.5,
-   "note": "support group resepi & tips"
-  },
-  {
-   "in": 3671.0,
-   "out": 3700.0,
-   "note": "combo promo"
-  },
-  {
-   "in": 3723.0,
-   "out": 3750.0,
-   "note": "piping vs sudu, cabar"
-  },
-  {
-   "in": 3770.0,
-   "out": 3830.0,
-   "note": "suhu tinggi kalau duduk tepi, panas"
-  },
-  {
-   "in": 3846.0,
-   "out": 3870.0,
-   "note": "first time jadi"
-  },
-  {
-   "in": 3880.0,
-   "out": 3895.0,
-   "note": "rezeki neighbor"
-  },
-  {
-   "in": 3907.6,
-   "out": 3975.0,
-   "note": "rajin masak, frozen, bekal anak"
-  },
-  {
-   "in": 4079.0,
-   "out": 4100.0,
-   "note": "nutella cucu, achievement"
-  },
-  {
-   "in": 4100.0,
-   "out": 4166.0,
-   "note": "pes final, tips minyak"
-  },
-  {
-   "in": 4187.0,
-   "out": 4309.0,
-   "note": "ikan final, nasi, contact, F.R.E.E"
-  },
-  {
-   "in": 4351.0,
-   "out": 4366.0,
-   "note": "contact untuk promo"
-  },
-  {
-   "in": 4565.0,
-   "out": 4605.0,
-   "note": "showcase, rampas limelight"
-  },
-  {
-   "in": 4626.0,
-   "out": 4650.0,
-   "note": "kenyal"
-  },
-  {
-   "in": 4680.0,
-   "out": 4773.4,
-   "note": "CLOSING: semua sedap, terima kasih, minggu depan, bye bye (video tamat di sini)"
   }
  ],
  "overlays": [
-  {
-   "type": "hook",
-   "at": 3291.0,
-   "dur": 3.0,
-   "text": "KEDAI: RM40++",
-   "highlight": "RM40++",
-   "sfx": "error"
-  },
-  {
-   "type": "hook",
-   "at": 3306.6,
-   "dur": 3.4,
-   "text": "SENDIRI: < RM20!",
-   "highlight": "RM20!",
-   "sfx": "ding"
-  },
   {
    "type": "chapter",
    "at": 2721.2,
@@ -182,147 +58,6 @@
    "text": "Tengok — dah masak bila [berbiji, tak bergumpal]."
   },
   {
-   "type": "tip",
-   "at": 2986.4,
-   "dur": 6.0,
-   "title": "TAK ADA NOZZLE?",
-   "text": "Beginner? Sapu frosting guna [pisau] je!"
-  },
-  {
-   "type": "tip",
-   "at": 3105.3,
-   "dur": 6.0,
-   "title": "TIP DECOR",
-   "text": "Tabur [crumbs] red velvet — sembunyi segala cacat-cela!",
-   "sfx": "sparkle"
-  },
-  {
-   "type": "tip",
-   "at": 3196.0,
-   "dur": 5.0,
-   "title": "MUDAH",
-   "text": "Air ikan? [Jongket tray] je, tak payah ke sinki."
-  },
-  {
-   "type": "ingredients",
-   "at": 3247.0,
-   "dur": 8.0,
-   "title": "Sos curah siakap",
-   "items": [
-    "Bawang putih",
-    "Chicken stock",
-    "Lada",
-    "Daun ketumbar",
-    "Sos ikan",
-    "Limau nipis"
-   ]
-  },
-  {
-   "type": "joke",
-   "at": 3382.0,
-   "dur": 3.0,
-   "text": "Masak satu, jadi macam-macam!",
-   "sfx": "pop",
-   "size": 50
-  },
-  {
-   "type": "joke",
-   "at": 3413.0,
-   "dur": 2.8,
-   "text": "I'm not a baker!",
-   "sfx": "boing",
-   "punch": 1.08
-  },
-  {
-   "type": "tip",
-   "at": 3786.0,
-   "dur": 7.0,
-   "title": "SUHU RENDAH VS TINGGI",
-   "text": "Nak tinggal-tinggal: [suhu rendah] · Duduk tepi & nak cepat: [suhu tinggi]."
-  },
-  {
-   "type": "joke",
-   "at": 3742.4,
-   "dur": 2.6,
-   "text": "Jangan cabar saya!",
-   "sfx": "badumtss",
-   "punch": 1.08
-  },
-  {
-   "type": "hook",
-   "at": 3913.1,
-   "dur": 3.4,
-   "kicker": "Testimoni",
-   "text": "LAGI RAJIN MASAK!",
-   "highlight": "RAJIN",
-   "sfx": "sparkle"
-  },
-  {
-   "type": "tip",
-   "at": 3955.0,
-   "dur": 6.0,
-   "title": "TIP",
-   "text": "Masak banyak, [simpan frozen] — 2–3 hari lagi boleh makan."
-  },
-  {
-   "type": "reveal",
-   "at": 4127.3,
-   "dur": 3.0,
-   "text": "SIAP!",
-   "sub": "Pes sup kering, tak melepek"
-  },
-  {
-   "type": "tip",
-   "at": 4149.6,
-   "dur": 6.0,
-   "title": "TIP JIMAT",
-   "text": "Lebihan [minyak] boleh simpan untuk tumis next round."
-  },
-  {
-   "type": "reveal",
-   "at": 4221.8,
-   "dur": 3.0,
-   "text": "SEDAPNYA!",
-   "sub": "Siakap stim siap"
-  },
-  {
-   "type": "tip",
-   "at": 4243.2,
-   "dur": 7.0,
-   "title": "TIP BIJAK",
-   "text": "Masak [nasi] terus dalam bowl Thermomix yang berlada — air beras bantu 'cuci' bowl!",
-   "sfx": "ding"
-  },
-  {
-   "type": "joke",
-   "at": 4300.0,
-   "dur": 3.0,
-   "text": "F.R.E.E? Shhh!",
-   "sfx": "boing",
-   "punch": 1.08
-  },
-  {
-   "type": "joke",
-   "at": 4580.0,
-   "dur": 2.8,
-   "text": "Rampas limelight!",
-   "sfx": "pop"
-  },
-  {
-   "type": "reveal",
-   "at": 4634.4,
-   "dur": 3.0,
-   "text": "KENYAL!",
-   "sub": "Ubi lambung siap"
-  },
-  {
-   "type": "chapter",
-   "at": 4692.7,
-   "dur": 6.0,
-   "kicker": "4 menu · 1 live",
-   "text": "Semua sedap!"
-  },
-  {
    "type": "now",
    "at": 2721.4,
    "until": 4679.9,
@@ -332,17 +67,6 @@
     "PES SUP",
     "RED VELVET",
     "SIAKAP · UBI"
-   ],
-   "sfx": ""
-  },
-  {
-   "type": "now",
-   "at": 4680.2,
-   "until": 4773.3,
-   "kicker": "Penutup",
-   "text": "Jumpa Selasa Depan",
-   "apps": [
-    "TASTY TUESDAY"
    ],
    "sfx": ""
   }
