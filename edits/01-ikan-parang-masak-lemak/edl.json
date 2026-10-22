@@ -1,0 +1,316 @@
+{
+ "title": "Ikan Parang Masak Lemak Cili Padi + Jantung Pisang",
+ "music": {
+  "name": "cozy",
+  "volume": 0.1
+ },
+ "segments": [
+  {
+   "s": 2180.4,
+   "e": 2188.15,
+   "audio": [
+    2011.85,
+    2019.6
+   ],
+   "cap": "Sedapnya ikan parang... Sedapnya ikan parang masak lemak cili padi! Pedas pun sedap!",
+   "zoom": 1.3,
+   "ox": 72,
+   "oy": 96
+  },
+  {
+   "s": 292.0,
+   "e": 294.0,
+   "cap": "Hari ini saya nak masak"
+  },
+  {
+   "s": 297.02,
+   "e": 301.75,
+   "cap": "ikan parang masak lemak cili padi dengan jantung pisang."
+  },
+  {
+   "s": 305.82,
+   "e": 311.6,
+   "cap": "Sekarang saya tengah okahkan dia. Tujuan saya okahkan dia untuk nak buang semua toksin."
+  },
+  {
+   "s": 873.1,
+   "e": 879.95,
+   "cap": "Tengok all dia punya lendir-lendir ni semua. Geli eh tengok!"
+  },
+  {
+   "s": 333.45,
+   "e": 337.25,
+   "cap": "So, limau ni I malas nak perah-perah, belah-belah, potong-potong."
+  },
+  {
+   "s": 347.5,
+   "e": 349.95,
+   "cap": "I akan mesinkan guna my Thermomix."
+  },
+  {
+   "s": 442.45,
+   "e": 444.95,
+   "cap": "I akan tapiskan dia je."
+  },
+  {
+   "s": 464.4,
+   "e": 468.35,
+   "cap": "Cili padi, cili padi. I buat dalam segenggam lebih sikit."
+  },
+  {
+   "s": 474.5,
+   "e": 478.0,
+   "cap": "I akan blend 10 saat."
+  },
+  {
+   "s": 970.15,
+   "e": 975.95,
+   "cap": "Tadi cili padi akak dah blend. Akak masukkan dalam ni."
+  },
+  {
+   "s": 1049.05,
+   "e": 1053.1,
+   "cap": "I akan kecutkan dulu ikan ni dulu."
+  },
+  {
+   "s": 1057.8,
+   "e": 1061.25,
+   "cap": "My mother ajar, panggil kata kecut. I cook-kan dia dulu."
+  },
+  {
+   "s": 1072.35,
+   "e": 1073.4,
+   "cap": "140,"
+  },
+  {
+   "s": 1074.7,
+   "e": 1075.85,
+   "cap": "15 minit."
+  },
+  {
+   "s": 1105.0,
+   "e": 1108.05,
+   "cap": "Masukkan 2 keping asam keping."
+  },
+  {
+   "s": 1110.0,
+   "e": 1113.9,
+   "cap": "Lepas tu kita tutupkan. Tunggu agak-agak dalam 10 minit."
+  },
+  {
+   "s": 1116.45,
+   "e": 1118.1,
+   "cap": "Lepas tu kita akan masukkan santan."
+  },
+  {
+   "s": 1282.05,
+   "e": 1284.2,
+   "cap": "Kita masukkan"
+  },
+  {
+   "s": 1285.6,
+   "e": 1289.3,
+   "cap": "jantung pisang. Saya suka makan jantung pisang."
+  },
+  {
+   "s": 1291.5,
+   "e": 1295.5,
+   "cap": "Jantung pisang banyak khasiat. It's very good for your health."
+  },
+  {
+   "s": 1868.4,
+   "e": 1873.8,
+   "cap": "Alhamdulillah dia tak pecah minyak. Selalu kita kalau masak lemak cili padi ni, bila kita tambahkan dengan"
+  },
+  {
+   "s": 1874.85,
+   "e": 1876.8,
+   "cap": "asam limau, dia akan pecah minyak tau."
+  },
+  {
+   "s": 1959.1,
+   "e": 1960.1,
+   "cap": "Sedap."
+  },
+  {
+   "s": 1960.85,
+   "e": 1966.45,
+   "cap": "Sedap cukup, masam dia cukup, masin dia pun cukup."
+  },
+  {
+   "s": 1300.3,
+   "e": 1303.05,
+   "cap": "Masak ni senang, simple, sekejap sahaja."
+  }
+ ],
+ "overlays": [
+  {
+   "type": "hook",
+   "at": [
+    0,
+    0.15
+   ],
+   "dur": 3.6,
+   "kicker": "RESEPI MAKCIK",
+   "title": "Ikan Parang Masak Lemak Cili Padi",
+   "accent": 3
+  },
+  {
+   "type": "chip",
+   "at": [
+    2,
+    1.6
+   ],
+   "dur": 2.6,
+   "text": "+ Jantung Pisang"
+  },
+  {
+   "type": "card",
+   "at": [
+    3,
+    0.2
+   ],
+   "dur": 4.6,
+   "tone": "step",
+   "label": "LANGKAH 1",
+   "text": "Okah ikan dulu - buang toksin & lendir"
+  },
+  {
+   "type": "punch",
+   "at": {
+    "src": 878.3
+   },
+   "dur": 1.6,
+   "text": "Geli!",
+   "color": "#E8452C",
+   "y": 560
+  },
+  {
+   "type": "card",
+   "at": [
+    5,
+    0.2
+   ],
+   "dur": 5.6,
+   "tone": "tip",
+   "label": "TIP MALAS",
+   "text": "Tak payah perah limau - blend dengan air, tapis je"
+  },
+  {
+   "type": "card",
+   "at": [
+    8,
+    0.2
+   ],
+   "dur": 6.4,
+   "tone": "step",
+   "label": "LANGKAH 2",
+   "text": "Cili padi segenggam - blend 10 saat"
+  },
+  {
+   "type": "card",
+   "at": [
+    11,
+    0.2
+   ],
+   "dur": 8.6,
+   "tone": "step",
+   "label": "LANGKAH 3",
+   "text": "Kecutkan ikan - 140°C, 15 minit"
+  },
+  {
+   "type": "card",
+   "at": [
+    15,
+    0.2
+   ],
+   "dur": 6.6,
+   "tone": "step",
+   "label": "LANGKAH 4",
+   "text": "2 keping asam keping, tutup 10 minit"
+  },
+  {
+   "type": "card",
+   "at": [
+    17,
+    0.2
+   ],
+   "dur": 9.0,
+   "tone": "step",
+   "label": "LANGKAH 5",
+   "text": "Santan + jantung pisang yang dah dicelur"
+  },
+  {
+   "type": "card",
+   "at": [
+    21,
+    1.6
+   ],
+   "dur": 5.4,
+   "tone": "tip",
+   "label": "TIP",
+   "text": "Asam limau boleh buat kuah pecah minyak - hati-hati"
+  },
+  {
+   "type": "punch",
+   "at": {
+    "src": 1962.0
+   },
+   "dur": 1.8,
+   "text": "Cukup rasa!",
+   "y": 600
+  },
+  {
+   "type": "end",
+   "dur": 3.2,
+   "extend": 1.6,
+   "title": "Ikan Parang Masak Lemak Cili Padi"
+  }
+ ],
+ "progress": [
+  [
+   [
+    3,
+    0.2
+   ],
+   0.2
+  ],
+  [
+   [
+    8,
+    0.2
+   ],
+   0.4
+  ],
+  [
+   [
+    11,
+    0.2
+   ],
+   0.6
+  ],
+  [
+   [
+    15,
+    0.2
+   ],
+   0.8
+  ],
+  [
+   [
+    17,
+    0.2
+   ],
+   1.0
+  ]
+ ],
+ "sfx": [
+  [
+   "sparkle",
+   [
+    23,
+    0.1
+   ]
+  ]
+ ]
+}

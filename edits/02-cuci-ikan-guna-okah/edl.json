@@ -1,0 +1,135 @@
+{
+ "title": "Cuci Ikan Guna Okah - Buang Lendir & Toksin",
+ "music": {
+  "name": "cozy",
+  "volume": 0.1
+ },
+ "segments": [
+  {
+   "s": 875.75,
+   "e": 879.95,
+   "cap": "Lendir-lendir ni semua. Geli eh tengok!"
+  },
+  {
+   "s": 149.85,
+   "e": 154.0,
+   "cap": "Ikan parang I dah basuh. Sebelum I nak masak, I nak okahkan dia dulu."
+  },
+  {
+   "s": 163.75,
+   "e": 169.0,
+   "cap": "Tujuan I okah, I nak buang semua toxic-toxic yang ada dekat ikan ni."
+  },
+  {
+   "s": 172.55,
+   "e": 175.05,
+   "cap": "So, masukkan je dalam ni."
+  },
+  {
+   "s": 227.7,
+   "e": 233.5,
+   "cap": "Okey, ini agak berbau sikit bila kita tengah okah tu."
+  },
+  {
+   "s": 244.2,
+   "e": 248.1,
+   "cap": "Selalunya bila I okah ikan ke apa, I akan jauhkan diri I daripada ni."
+  },
+  {
+   "s": 843.0,
+   "e": 846.8,
+   "cap": "Can you see ikan yang saya dah okah? Dah siap okah. Kita tengok.",
+   "audio": [
+    838.4,
+    842.2
+   ]
+  },
+  {
+   "s": 871.0,
+   "e": 875.15,
+   "cap": "Biasanya ikan bila kita okah, tengok all dia punya"
+  },
+  {
+   "s": 880.9,
+   "e": 888.35,
+   "cap": "So ikan parang ni tak berapa banyak. Ini dia punya lendir-lendir ni. So kita nak buang air ni."
+  }
+ ],
+ "overlays": [
+  {
+   "type": "hook",
+   "at": [
+    0,
+    0.1
+   ],
+   "dur": 2.4,
+   "kicker": "TIP DAPUR MAKCIK",
+   "title": "Ikan dah basuh, tapi tengok ni...",
+   "accent": 4
+  },
+  {
+   "type": "punch",
+   "at": {
+    "src": 878.25
+   },
+   "dur": 1.5,
+   "text": "Geli!",
+   "color": "#E8452C",
+   "y": 560
+  },
+  {
+   "type": "chip",
+   "at": [
+    1,
+    0.3
+   ],
+   "dur": 3.6,
+   "text": "Ikan parang - baru beli"
+  },
+  {
+   "type": "card",
+   "at": [
+    2,
+    0.2
+   ],
+   "dur": 5.0,
+   "tone": "tip",
+   "label": "KENAPA OKAH?",
+   "text": "Buang toksin, lendir & bau hanyir pada ikan"
+  },
+  {
+   "type": "punch",
+   "at": {
+    "src": 246.9
+   },
+   "dur": 1.6,
+   "text": "Jauhkan diri!",
+   "y": 620
+  },
+  {
+   "type": "card",
+   "at": [
+    7,
+    0.2
+   ],
+   "dur": 4.0,
+   "tone": "step",
+   "label": "HASILNYA",
+   "text": "Lendir keluar - buang air, bilas ikan"
+  },
+  {
+   "type": "end",
+   "dur": 3.2,
+   "extend": 1.6,
+   "title": "Cuci Ikan Guna Okah"
+  }
+ ],
+ "shakes": [
+  [
+   {
+    "src": 878.25
+   },
+   1.0
+  ]
+ ]
+}

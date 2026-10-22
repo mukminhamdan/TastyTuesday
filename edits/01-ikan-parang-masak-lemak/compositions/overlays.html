@@ -1,0 +1,143 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; pointer-events: none; }
+    .ov { position: absolute; inset: 0; overflow: visible; }
+    .hook { position: absolute; left: 70px; right: 70px; top: 240px; text-align: center; }
+    .kicker {
+      display: inline-block; font-family: "Poppins", sans-serif; font-weight: 700; font-size: 28px;
+      letter-spacing: 0.28em; color: #17130F; background: #FFC23D; padding: 10px 22px 10px 28px;
+      border-radius: 999px; margin-bottom: 26px;
+    }
+    .hook-title {
+      font-family: "Playfair Display", serif; font-weight: 800; font-size: 92px; line-height: 1.04;
+      color: #FFF6E6; letter-spacing: -0.015em;
+      text-shadow: 0 4px 28px rgba(0,0,0,0.55), 0 2px 6px rgba(0,0,0,0.5);
+    }
+    .hw { display: inline-block; }
+    .hw[data-accent] { color: #FFC23D; font-style: italic; }
+    .card {
+      position: absolute; left: 60px; right: 60px; top: 230px; padding: 30px 36px 34px;
+      background: rgba(18, 14, 10, 0.80); border: 1px solid rgba(255, 246, 230, 0.16);
+      border-radius: 34px; box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+    }
+    .pill {
+      display: inline-block; font-family: "Poppins", sans-serif; font-weight: 800; font-size: 30px;
+      letter-spacing: 0.2em; color: #17130F; padding: 8px 18px 8px 22px; border-radius: 999px; margin-bottom: 16px;
+    }
+    .card-text {
+      font-family: "Poppins", sans-serif; font-weight: 700; font-size: 50px; line-height: 1.16; color: #FFF6E6;
+    }
+    .punch-wrap { position: absolute; left: 0; right: 0; display: flex; justify-content: center; }
+    .punch {
+      font-family: "Archivo Black", sans-serif; font-size: 112px; line-height: 0.98; text-align: center;
+      max-width: 940px; text-transform: uppercase;
+      -webkit-text-stroke: 14px #17130F; paint-order: stroke fill;
+      text-shadow: 0 10px 0 #17130F, 0 18px 40px rgba(0,0,0,0.45);
+    }
+    .chip {
+      position: absolute; left: 60px; top: 200px; display: flex; align-items: center; gap: 16px;
+      font-family: "Poppins", sans-serif; font-weight: 700; font-size: 38px; color: #17130F;
+      background: #FFF6E6; padding: 16px 30px 16px 24px; border-radius: 999px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .dot { width: 18px; height: 18px; border-radius: 50%; background: #E8452C; display: inline-block; }
+    .prog {
+      position: absolute; left: 60px; right: 60px; top: 178px; height: 8px; border-radius: 8px;
+      background: rgba(255, 246, 230, 0.28); overflow: hidden;
+    }
+    .prog-fill { width: 100%; height: 100%; background: #FFC23D; transform-origin: 0 50%; }
+    .end { position: absolute; inset: 0; background: #17130F; }
+    .end-in { position: absolute; left: 80px; right: 80px; top: 640px; text-align: center; }
+    .end-k {
+      font-family: "Poppins", sans-serif; font-weight: 700; font-size: 34px; letter-spacing: 0.34em;
+      color: #FFC23D; margin-bottom: 30px;
+    }
+    .end-t {
+      font-family: "Playfair Display", serif; font-weight: 800; font-style: italic; font-size: 96px;
+      line-height: 1.04; color: #FFF6E6;
+    }
+    .end-rule { width: 220px; height: 6px; background: #E8452C; margin: 46px auto 40px; border-radius: 6px; }
+    .end-cta { font-family: "Poppins", sans-serif; font-weight: 600; font-size: 40px; color: rgba(255,246,230,0.86); }
+  </style>
+  <div id="root" data-composition-id="overlays" data-width="1080" data-height="1920">
+    <div class="clip ov" id="hook0" data-start="0.133" data-duration="3.600" data-track-index="0">
+      <div class="hook" id="hook0-in">
+        <div class="kicker" id="hook0-k">RESEPI MAKCIK</div>
+        <div class="hook-title"><span class="hw" id="hook0-w0">Ikan</span> <span class="hw" id="hook0-w1">Parang</span> <span class="hw" id="hook0-w2">Masak</span> <span class="hw" id="hook0-w3" data-accent="1">Lemak</span> <span class="hw" id="hook0-w4">Cili</span> <span class="hw" id="hook0-w5">Padi</span></div>
+      </div>
+    </div>
+    <div class="clip ov" id="chip1" data-start="9.467" data-duration="2.600" data-track-index="1">
+      <div class="chip" id="chip1-in"><span class="dot"></span>+ Jantung Pisang</div>
+    </div>
+    <div class="clip ov" id="card2" data-start="12.800" data-duration="4.600" data-track-index="1">
+      <div class="card" id="card2-in">
+        <div class="pill" style="background:#5FA36A">LANGKAH 1</div>
+        <div class="card-text">Okah ikan dulu - buang toksin &amp; lendir</div>
+      </div>
+    </div>
+    <div class="clip ov" id="punch3" data-start="22.033" data-duration="1.600" data-track-index="2">
+      <div class="punch-wrap" style="top:560px">
+        <div class="punch" id="punch3-in" style="color:#E8452C">Geli!</div>
+      </div>
+    </div>
+    <div class="clip ov" id="card4" data-start="23.233" data-duration="5.600" data-track-index="1">
+      <div class="card" id="card4-in">
+        <div class="pill" style="background:#FFC23D">TIP MALAS</div>
+        <div class="card-text">Tak payah perah limau - blend dengan air, tapis je</div>
+      </div>
+    </div>
+    <div class="clip ov" id="card5" data-start="31.433" data-duration="6.400" data-track-index="1">
+      <div class="card" id="card5-in">
+        <div class="pill" style="background:#5FA36A">LANGKAH 2</div>
+        <div class="card-text">Cili padi segenggam - blend 10 saat</div>
+      </div>
+    </div>
+    <div class="clip ov" id="card6" data-start="43.667" data-duration="8.600" data-track-index="1">
+      <div class="card" id="card6-in">
+        <div class="pill" style="background:#5FA36A">LANGKAH 3</div>
+        <div class="card-text">Kecutkan ikan - 140°C, 15 minit</div>
+      </div>
+    </div>
+    <div class="clip ov" id="card7" data-start="52.433" data-duration="6.167" data-track-index="1">
+      <div class="card" id="card7-in">
+        <div class="pill" style="background:#5FA36A">LANGKAH 4</div>
+        <div class="card-text">2 keping asam keping, tutup 10 minit</div>
+      </div>
+    </div>
+    <div class="clip ov" id="card8" data-start="58.633" data-duration="9.000" data-track-index="1">
+      <div class="card" id="card8-in">
+        <div class="pill" style="background:#5FA36A">LANGKAH 5</div>
+        <div class="card-text">Santan + jantung pisang yang dah dicelur</div>
+      </div>
+    </div>
+    <div class="clip ov" id="card9" data-start="70.000" data-duration="5.400" data-track-index="1">
+      <div class="card" id="card9-in">
+        <div class="pill" style="background:#FFC23D">TIP</div>
+        <div class="card-text">Asam limau boleh buat kuah pecah minyak - hati-hati</div>
+      </div>
+    </div>
+    <div class="clip ov" id="punch10" data-start="76.767" data-duration="1.800" data-track-index="2">
+      <div class="punch-wrap" style="top:600px">
+        <div class="punch" id="punch10-in" style="color:#FFC23D">Cukup rasa!</div>
+      </div>
+    </div>
+    <div class="clip ov" id="prog" data-start="0" data-duration="84.233" data-track-index="3">
+      <div class="prog"><div class="prog-fill" id="prog-fill"></div></div>
+    </div>
+    <div class="clip ov" id="end11" data-start="81.033" data-duration="3.200" data-track-index="4">
+      <div class="end" id="end11-bg"></div>
+      <div class="end-in">
+        <div class="end-k" id="end11-k">TASTY TUESDAY</div>
+        <div class="end-t" id="end11-t">Ikan Parang Masak Lemak Cili Padi</div>
+        <div class="end-rule" id="end11-r"></div>
+        <div class="end-cta" id="end11-c">Follow untuk resepi Makcik seterusnya</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    
+tl.fromTo("#hook0-k", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 0.0 + 0.133);    tl.fromTo("#hook0-w0", { opacity: 0, filter: "blur(10px)", y: 10 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.22, ease: "power4.out" }, 0.253);    tl.fromTo("#hook0-w1", { opacity: 0, filter: "blur(10px)", y: 10 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.22, ease: "power4.out" }, 0.333);    tl.fromTo("#hook0-w2", { opacity: 0, filter: "blur(10px)", y: 10 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.22, ease: "power4.out" }, 0.413);    tl.fromTo("#hook0-w3", { opacity: 0, filter: "blur(10px)", y: 10 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.22, ease: "power4.out" }, 0.493);    tl.fromTo("#hook0-w4", { opacity: 0, filter: "blur(10px)", y: 10 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.22, ease: "power4.out" }, 0.573);    tl.fromTo("#hook0-w5", { opacity: 0, filter: "blur(10px)", y: 10 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.22, ease: "power4.out" }, 0.653);    tl.to("#hook0-in", { opacity: 0, filter: "blur(8px)", duration: 0.22, ease: "power2.in" }, 3.493);    tl.fromTo("#chip1-in", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.45, ease: "expo.out" }, 9.467);    tl.to("#chip1-in", { opacity: 0, x: -30, duration: 0.25, ease: "power3.in" }, 11.797);    tl.fromTo("#card2-in", { opacity: 0, y: -40, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "expo.out" }, 12.800);    tl.to("#card2-in", { opacity: 0, y: -24, duration: 0.28, ease: "power3.in" }, 17.100);    tl.fromTo("#punch3-in", { opacity: 0, scale: 0.4, rotation: -12 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.42, ease: "back.out(1.7)" }, 22.033);    tl.to("#punch3-in", { opacity: 0, scale: 1.12, filter: "blur(6px)", duration: 0.2, ease: "power3.in" }, 23.413);    tl.fromTo("#card4-in", { opacity: 0, y: -40, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "expo.out" }, 23.233);    tl.to("#card4-in", { opacity: 0, y: -24, duration: 0.28, ease: "power3.in" }, 28.533);    tl.fromTo("#card5-in", { opacity: 0, y: -40, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "expo.out" }, 31.433);    tl.to("#card5-in", { opacity: 0, y: -24, duration: 0.28, ease: "power3.in" }, 37.533);    tl.fromTo("#card6-in", { opacity: 0, y: -40, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "expo.out" }, 43.667);    tl.to("#card6-in", { opacity: 0, y: -24, duration: 0.28, ease: "power3.in" }, 51.967);    tl.fromTo("#card7-in", { opacity: 0, y: -40, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "expo.out" }, 52.433);    tl.to("#card7-in", { opacity: 0, y: -24, duration: 0.28, ease: "power3.in" }, 58.300);    tl.fromTo("#card8-in", { opacity: 0, y: -40, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "expo.out" }, 58.633);    tl.to("#card8-in", { opacity: 0, y: -24, duration: 0.28, ease: "power3.in" }, 67.333);    tl.fromTo("#card9-in", { opacity: 0, y: -40, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "expo.out" }, 70.000);    tl.to("#card9-in", { opacity: 0, y: -24, duration: 0.28, ease: "power3.in" }, 75.100);    tl.fromTo("#punch10-in", { opacity: 0, scale: 0.4, rotation: -12 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.42, ease: "back.out(1.7)" }, 76.767);    tl.to("#punch10-in", { opacity: 0, scale: 1.12, filter: "blur(6px)", duration: 0.2, ease: "power3.in" }, 78.347);    tl.fromTo("#prog-fill", { scaleX: 0 }, { scaleX: 0, duration: 0.01 }, 0);    tl.to("#prog-fill", { scaleX: 0.2, duration: 0.5, ease: "power2.inOut" }, 12.800);    tl.to("#prog-fill", { scaleX: 0.4, duration: 0.5, ease: "power2.inOut" }, 31.433);    tl.to("#prog-fill", { scaleX: 0.6, duration: 0.5, ease: "power2.inOut" }, 43.667);    tl.to("#prog-fill", { scaleX: 0.8, duration: 0.5, ease: "power2.inOut" }, 52.433);    tl.to("#prog-fill", { scaleX: 1.0, duration: 0.5, ease: "power2.inOut" }, 58.633);    tl.fromTo("#end11-bg", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 81.033);    tl.fromTo("#end11-k", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 81.383);    tl.fromTo("#end11-t", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.45, ease: "power4.out" }, 81.533);    tl.fromTo("#end11-r", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "expo.out" }, 81.833);    tl.fromTo("#end11-c", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 82.033);
+    window.__timelines["overlays"] = tl;
+  </script>
+</template>

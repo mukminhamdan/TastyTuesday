@@ -1,0 +1,219 @@
+{
+ "title": "Bloopers Dapur Makcik",
+ "music": {
+  "name": "playful",
+  "volume": 0.11
+ },
+ "segments": [
+  {
+   "s": 1660.0,
+   "e": 1662.75,
+   "cap": "Eh, astaghfirullahalazim, banjir!"
+  },
+  {
+   "s": 1665.0,
+   "e": 1666.1,
+   "cap": "Dah banjir."
+  },
+  {
+   "s": 1673.8,
+   "e": 1678.25,
+   "cap": "Tak ada air, saya terlupa. Banjir habis rumah saya."
+  },
+  {
+   "s": 217.9,
+   "e": 220.3,
+   "cap": "And then... no, no, no. Acik salah."
+  },
+  {
+   "s": 984.3,
+   "e": 985.15,
+   "cap": "Garam."
+  },
+  {
+   "s": 1000.5,
+   "e": 1001.55,
+   "cap": "Ini garam salah."
+  },
+  {
+   "s": 1003.95,
+   "e": 1005.4,
+   "cap": "Dua-dua ini garam rupanya!"
+  },
+  {
+   "s": 1013.6,
+   "e": 1016.45,
+   "cap": "Satu garam halus, satu garam kasar."
+  },
+  {
+   "s": 1026.45,
+   "e": 1027.25,
+   "cap": "Mana kunyit?"
+  },
+  {
+   "s": 1145.55,
+   "e": 1148.8,
+   "cap": "Bismillah. Rebung... Eh, jantung pisang!"
+  },
+  {
+   "s": 1425.2,
+   "e": 1429.3,
+   "cap": "Wah, sebelum balikkan, nasi tak masak lagi, lupa! Ya Allah."
+  },
+  {
+   "s": 1432.1,
+   "e": 1433.9,
+   "cap": "Nasi saya belum masak lagi!"
+  },
+  {
+   "s": 1603.1,
+   "e": 1606.0,
+   "cap": "Mumin, are you there? Mumin, lepas ni kita nak save macam mana?"
+  },
+  {
+   "s": 1620.1,
+   "e": 1621.05,
+   "cap": "Mumin, are you there?"
+  },
+  {
+   "s": 2520.9,
+   "e": 2522.9,
+   "cap": "Jangan datang dapur, jangan datang dapur!"
+  },
+  {
+   "s": 2529.7,
+   "e": 2533.35,
+   "cap": "Robot tengah vacuum dalam. Takut dia datang ke dapur."
+  },
+  {
+   "s": 3021.55,
+   "e": 3023.7,
+   "cap": "Okay, bye-bye. Macam mana? Macam mana nak end live?"
+  }
+ ],
+ "overlays": [
+  {
+   "type": "hook",
+   "at": [
+    0,
+    0.1
+   ],
+   "dur": 3.2,
+   "kicker": "BLOOPERS DAPUR MAKCIK",
+   "title": "Live masak... apa boleh jadi?",
+   "accent": 3
+  },
+  {
+   "type": "punch",
+   "at": {
+    "src": 1665.1
+   },
+   "dur": 1.3,
+   "text": "Banjir!",
+   "color": "#E8452C",
+   "y": 640
+  },
+  {
+   "type": "punch",
+   "at": {
+    "src": 219.7
+   },
+   "dur": 1.2,
+   "text": "Acik salah!",
+   "y": 640
+  },
+  {
+   "type": "punch",
+   "at": {
+    "src": 1004.0
+   },
+   "dur": 1.6,
+   "text": "Dua-dua garam?!",
+   "y": 600
+  },
+  {
+   "type": "punch",
+   "at": {
+    "src": 1026.5
+   },
+   "dur": 1.2,
+   "text": "Mana kunyit?",
+   "color": "#E8452C",
+   "y": 640
+  },
+  {
+   "type": "punch",
+   "at": {
+    "src": 1147.2
+   },
+   "dur": 1.8,
+   "text": "Rebung?!",
+   "y": 640
+  },
+  {
+   "type": "punch",
+   "at": {
+    "src": 1432.1
+   },
+   "dur": 1.7,
+   "text": "Nasi lupa masak!",
+   "color": "#E8452C",
+   "y": 600
+  },
+  {
+   "type": "punch",
+   "at": {
+    "src": 1603.1
+   },
+   "dur": 1.2,
+   "text": "Mumin?!",
+   "y": 640
+  },
+  {
+   "type": "punch",
+   "at": {
+    "src": 2529.8
+   },
+   "dur": 2.4,
+   "text": "Robot vacuum!",
+   "y": 620
+  },
+  {
+   "type": "punch",
+   "at": {
+    "src": 3023.15
+   },
+   "dur": 1.6,
+   "text": "End live macam mana?",
+   "color": "#E8452C",
+   "y": 600
+  },
+  {
+   "type": "end",
+   "dur": 3.2,
+   "extend": 1.6,
+   "title": "Bloopers Dapur Makcik",
+   "cta": "Follow - live seterusnya mesti ada lagi!"
+  }
+ ],
+ "shakes": [
+  [
+   {
+    "src": 1665.1
+   },
+   1.0
+  ],
+  [
+   {
+    "src": 1004.0
+   },
+   0.8
+  ],
+  [
+   {
+    "src": 1432.1
+   },
+   0.8
+  ]
+ ]
+}

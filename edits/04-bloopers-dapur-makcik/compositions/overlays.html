@@ -1,0 +1,125 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; pointer-events: none; }
+    .ov { position: absolute; inset: 0; overflow: visible; }
+    .hook { position: absolute; left: 70px; right: 70px; top: 240px; text-align: center; }
+    .kicker {
+      display: inline-block; font-family: "Poppins", sans-serif; font-weight: 700; font-size: 28px;
+      letter-spacing: 0.28em; color: #17130F; background: #FFC23D; padding: 10px 22px 10px 28px;
+      border-radius: 999px; margin-bottom: 26px;
+    }
+    .hook-title {
+      font-family: "Playfair Display", serif; font-weight: 800; font-size: 92px; line-height: 1.04;
+      color: #FFF6E6; letter-spacing: -0.015em;
+      text-shadow: 0 4px 28px rgba(0,0,0,0.55), 0 2px 6px rgba(0,0,0,0.5);
+    }
+    .hw { display: inline-block; }
+    .hw[data-accent] { color: #FFC23D; font-style: italic; }
+    .card {
+      position: absolute; left: 60px; right: 60px; top: 230px; padding: 30px 36px 34px;
+      background: rgba(18, 14, 10, 0.80); border: 1px solid rgba(255, 246, 230, 0.16);
+      border-radius: 34px; box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+    }
+    .pill {
+      display: inline-block; font-family: "Poppins", sans-serif; font-weight: 800; font-size: 30px;
+      letter-spacing: 0.2em; color: #17130F; padding: 8px 18px 8px 22px; border-radius: 999px; margin-bottom: 16px;
+    }
+    .card-text {
+      font-family: "Poppins", sans-serif; font-weight: 700; font-size: 50px; line-height: 1.16; color: #FFF6E6;
+    }
+    .punch-wrap { position: absolute; left: 0; right: 0; display: flex; justify-content: center; }
+    .punch {
+      font-family: "Archivo Black", sans-serif; font-size: 112px; line-height: 0.98; text-align: center;
+      max-width: 940px; text-transform: uppercase;
+      -webkit-text-stroke: 14px #17130F; paint-order: stroke fill;
+      text-shadow: 0 10px 0 #17130F, 0 18px 40px rgba(0,0,0,0.45);
+    }
+    .chip {
+      position: absolute; left: 60px; top: 200px; display: flex; align-items: center; gap: 16px;
+      font-family: "Poppins", sans-serif; font-weight: 700; font-size: 38px; color: #17130F;
+      background: #FFF6E6; padding: 16px 30px 16px 24px; border-radius: 999px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .dot { width: 18px; height: 18px; border-radius: 50%; background: #E8452C; display: inline-block; }
+    .prog {
+      position: absolute; left: 60px; right: 60px; top: 178px; height: 8px; border-radius: 8px;
+      background: rgba(255, 246, 230, 0.28); overflow: hidden;
+    }
+    .prog-fill { width: 100%; height: 100%; background: #FFC23D; transform-origin: 0 50%; }
+    .end { position: absolute; inset: 0; background: #17130F; }
+    .end-in { position: absolute; left: 80px; right: 80px; top: 640px; text-align: center; }
+    .end-k {
+      font-family: "Poppins", sans-serif; font-weight: 700; font-size: 34px; letter-spacing: 0.34em;
+      color: #FFC23D; margin-bottom: 30px;
+    }
+    .end-t {
+      font-family: "Playfair Display", serif; font-weight: 800; font-style: italic; font-size: 96px;
+      line-height: 1.04; color: #FFF6E6;
+    }
+    .end-rule { width: 220px; height: 6px; background: #E8452C; margin: 46px auto 40px; border-radius: 6px; }
+    .end-cta { font-family: "Poppins", sans-serif; font-weight: 600; font-size: 40px; color: rgba(255,246,230,0.86); }
+  </style>
+  <div id="root" data-composition-id="overlays" data-width="1080" data-height="1920">
+    <div class="clip ov" id="hook0" data-start="0.100" data-duration="3.200" data-track-index="0">
+      <div class="hook" id="hook0-in">
+        <div class="kicker" id="hook0-k">BLOOPERS DAPUR MAKCIK</div>
+        <div class="hook-title"><span class="hw" id="hook0-w0">Live</span> <span class="hw" id="hook0-w1">masak...</span> <span class="hw" id="hook0-w2">apa</span> <span class="hw" id="hook0-w3" data-accent="1">boleh</span> <span class="hw" id="hook0-w4">jadi?</span></div>
+      </div>
+    </div>
+    <div class="clip ov" id="punch1" data-start="2.300" data-duration="1.300" data-track-index="2">
+      <div class="punch-wrap" style="top:640px">
+        <div class="punch" id="punch1-in" style="color:#E8452C">Banjir!</div>
+      </div>
+    </div>
+    <div class="clip ov" id="punch2" data-start="8.300" data-duration="1.200" data-track-index="2">
+      <div class="punch-wrap" style="top:640px">
+        <div class="punch" id="punch2-in" style="color:#FFC23D">Acik salah!</div>
+      </div>
+    </div>
+    <div class="clip ov" id="punch3" data-start="10.833" data-duration="1.600" data-track-index="2">
+      <div class="punch-wrap" style="top:600px">
+        <div class="punch" id="punch3-in" style="color:#FFC23D">Dua-dua garam?!</div>
+      </div>
+    </div>
+    <div class="clip ov" id="punch4" data-start="15.133" data-duration="1.200" data-track-index="2">
+      <div class="punch-wrap" style="top:640px">
+        <div class="punch" id="punch4-in" style="color:#E8452C">Mana kunyit?</div>
+      </div>
+    </div>
+    <div class="clip ov" id="punch5" data-start="16.867" data-duration="1.800" data-track-index="2">
+      <div class="punch-wrap" style="top:640px">
+        <div class="punch" id="punch5-in" style="color:#FFC23D">Rebung?!</div>
+      </div>
+    </div>
+    <div class="clip ov" id="punch6" data-start="22.133" data-duration="1.700" data-track-index="2">
+      <div class="punch-wrap" style="top:600px">
+        <div class="punch" id="punch6-in" style="color:#E8452C">Nasi lupa masak!</div>
+      </div>
+    </div>
+    <div class="clip ov" id="punch7" data-start="23.933" data-duration="1.200" data-track-index="2">
+      <div class="punch-wrap" style="top:640px">
+        <div class="punch" id="punch7-in" style="color:#FFC23D">Mumin?!</div>
+      </div>
+    </div>
+    <div class="clip ov" id="punch8" data-start="29.900" data-duration="2.400" data-track-index="2">
+      <div class="punch-wrap" style="top:620px">
+        <div class="punch" id="punch8-in" style="color:#FFC23D">Robot vacuum!</div>
+      </div>
+    </div>
+    <div class="clip ov" id="end10" data-start="34.000" data-duration="3.200" data-track-index="4">
+      <div class="end" id="end10-bg"></div>
+      <div class="end-in">
+        <div class="end-k" id="end10-k">TASTY TUESDAY</div>
+        <div class="end-t" id="end10-t">Bloopers Dapur Makcik</div>
+        <div class="end-rule" id="end10-r"></div>
+        <div class="end-cta" id="end10-c">Follow - live seterusnya mesti ada lagi!</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    
+tl.fromTo("#hook0-k", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 0.0 + 0.100);    tl.fromTo("#hook0-w0", { opacity: 0, filter: "blur(10px)", y: 10 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.22, ease: "power4.out" }, 0.220);    tl.fromTo("#hook0-w1", { opacity: 0, filter: "blur(10px)", y: 10 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.22, ease: "power4.out" }, 0.300);    tl.fromTo("#hook0-w2", { opacity: 0, filter: "blur(10px)", y: 10 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.22, ease: "power4.out" }, 0.380);    tl.fromTo("#hook0-w3", { opacity: 0, filter: "blur(10px)", y: 10 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.22, ease: "power4.out" }, 0.460);    tl.fromTo("#hook0-w4", { opacity: 0, filter: "blur(10px)", y: 10 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.22, ease: "power4.out" }, 0.540);    tl.to("#hook0-in", { opacity: 0, filter: "blur(8px)", duration: 0.22, ease: "power2.in" }, 3.060);    tl.fromTo("#punch1-in", { opacity: 0, scale: 0.4, rotation: -12 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.42, ease: "back.out(1.7)" }, 2.300);    tl.to("#punch1-in", { opacity: 0, scale: 1.12, filter: "blur(6px)", duration: 0.2, ease: "power3.in" }, 3.380);    tl.fromTo("#punch2-in", { opacity: 0, scale: 0.4, rotation: -12 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.42, ease: "back.out(1.7)" }, 8.300);    tl.to("#punch2-in", { opacity: 0, scale: 1.12, filter: "blur(6px)", duration: 0.2, ease: "power3.in" }, 9.280);    tl.fromTo("#punch3-in", { opacity: 0, scale: 0.4, rotation: -12 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.42, ease: "back.out(1.7)" }, 10.833);    tl.to("#punch3-in", { opacity: 0, scale: 1.12, filter: "blur(6px)", duration: 0.2, ease: "power3.in" }, 12.213);    tl.fromTo("#punch4-in", { opacity: 0, scale: 0.4, rotation: -12 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.42, ease: "back.out(1.7)" }, 15.133);    tl.to("#punch4-in", { opacity: 0, scale: 1.12, filter: "blur(6px)", duration: 0.2, ease: "power3.in" }, 16.113);    tl.fromTo("#punch5-in", { opacity: 0, scale: 0.4, rotation: -12 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.42, ease: "back.out(1.7)" }, 16.867);    tl.to("#punch5-in", { opacity: 0, scale: 1.12, filter: "blur(6px)", duration: 0.2, ease: "power3.in" }, 18.447);    tl.fromTo("#punch6-in", { opacity: 0, scale: 0.4, rotation: -12 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.42, ease: "back.out(1.7)" }, 22.133);    tl.to("#punch6-in", { opacity: 0, scale: 1.12, filter: "blur(6px)", duration: 0.2, ease: "power3.in" }, 23.613);    tl.fromTo("#punch7-in", { opacity: 0, scale: 0.4, rotation: -12 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.42, ease: "back.out(1.7)" }, 23.933);    tl.to("#punch7-in", { opacity: 0, scale: 1.12, filter: "blur(6px)", duration: 0.2, ease: "power3.in" }, 24.913);    tl.fromTo("#punch8-in", { opacity: 0, scale: 0.4, rotation: -12 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.42, ease: "back.out(1.7)" }, 29.900);    tl.to("#punch8-in", { opacity: 0, scale: 1.12, filter: "blur(6px)", duration: 0.2, ease: "power3.in" }, 32.080);    tl.fromTo("#end10-bg", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, 34.000);    tl.fromTo("#end10-k", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 34.350);    tl.fromTo("#end10-t", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.45, ease: "power4.out" }, 34.500);    tl.fromTo("#end10-r", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "expo.out" }, 34.800);    tl.fromTo("#end10-c", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 35.000);
+    window.__timelines["overlays"] = tl;
+  </script>
+</template>

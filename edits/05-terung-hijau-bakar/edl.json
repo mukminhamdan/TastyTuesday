@@ -1,0 +1,151 @@
+{
+ "title": "Terung Hijau Bakar - First Time!",
+ "music": {
+  "name": "cozy",
+  "volume": 0.1
+ },
+ "segments": [
+  {
+   "s": 2704.5,
+   "e": 2708.35,
+   "cap": "Oh sedapnya. Nampak? Sedapnya terung hijau ni."
+  },
+  {
+   "s": 2145.0,
+   "e": 2152.1,
+   "cap": "Terung hijau. Terung hijau ni special eh, hanya di Kuala Perlis sahaja I jumpa."
+  },
+  {
+   "s": 2392.3,
+   "e": 2393.95,
+   "cap": "Saya just masukkan ini."
+  },
+  {
+   "s": 2395.7,
+   "e": 2403.9,
+   "cap": "Terung hijau. I grill je. Spray minyak ke tak payahlah, biar dia kering macam tu sedap. Dia wangi sikit."
+  },
+  {
+   "s": 2417.4,
+   "e": 2419.25,
+   "cap": "10 minit insyaAllah empuk kot."
+  },
+  {
+   "s": 2562.7,
+   "e": 2568.9,
+   "cap": "Ini my first time eh. I nak bakar terung hijau ni. Saya tak tahu jadi ke tidak. Jadilah kot. Bismillah."
+  },
+  {
+   "s": 2692.15,
+   "e": 2695.0,
+   "cap": "Wah, dia dah berkedut dah. Dia dah masak dah."
+  },
+  {
+   "s": 2709.5,
+   "e": 2716.4,
+   "cap": "Dia suruh flip eh. Apa benda aku nak flip kan. Tak payah nak flip pun. Tapi tak apa, dia suruh flip kita flip kan."
+  },
+  {
+   "s": 2721.35,
+   "e": 2723.7,
+   "cap": "Wah, cantiklah!"
+  },
+  {
+   "s": 3048.5,
+   "e": 3049.1,
+   "cap": "Lembik dah."
+  },
+  {
+   "s": 3071.0,
+   "e": 3072.4,
+   "cap": "Ya Allah, sedapnya.",
+   "audio": [
+    3053.15,
+    3054.55
+   ]
+  },
+  {
+   "s": 3062.7,
+   "e": 3065.45,
+   "cap": "Sedap. Lembiknya, sedapnya."
+  }
+ ],
+ "overlays": [
+  {
+   "type": "hook",
+   "at": [
+    0,
+    0.1
+   ],
+   "dur": 3.6,
+   "kicker": "FIRST TIME MAKCIK",
+   "title": "Terung hijau bakar - jadi ke tak?",
+   "accent": 1
+  },
+  {
+   "type": "chip",
+   "at": [
+    1,
+    2.4
+   ],
+   "dur": 4.4,
+   "text": "Terung hijau - Kuala Perlis"
+  },
+  {
+   "type": "card",
+   "at": [
+    3,
+    1.6
+   ],
+   "dur": 6.2,
+   "tone": "tip",
+   "label": "TIP",
+   "text": "Tak payah spray minyak - grill kering lagi wangi"
+  },
+  {
+   "type": "card",
+   "at": [
+    4,
+    0.0
+   ],
+   "dur": 1.9,
+   "tone": "step",
+   "label": "MASA",
+   "text": "Grill 10 minit"
+  },
+  {
+   "type": "punch",
+   "at": {
+    "src": 2710.3
+   },
+   "dur": 1.8,
+   "text": "Flip?!",
+   "y": 640
+  },
+  {
+   "type": "punch",
+   "at": {
+    "src": 3062.7
+   },
+   "dur": 2.2,
+   "text": "Jadi!",
+   "color": "#5FA36A",
+   "y": 620
+  },
+  {
+   "type": "end",
+   "dur": 3.2,
+   "extend": 1.6,
+   "title": "Terung Hijau Bakar"
+  }
+ ],
+ "sfx": [
+  [
+   "sparkle",
+   [
+    11,
+    0.15
+   ]
+  ]
+ ]
+}

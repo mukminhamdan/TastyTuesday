@@ -1,0 +1,9 @@
+# Large media is rebuilt from the source footage by tools/build_project.py
+edits/*/assets/selects.mp4
+edits/*/assets/selects-audio.m4a
+edits/*/renders/
+edits/*/.hyperframes/
+edits/*/.media/
+previews/
+node_modules/
+__pycache__/
