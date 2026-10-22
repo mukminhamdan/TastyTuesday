@@ -82,14 +82,6 @@
    "cols": 2
   },
   {
-   "type": "joke",
-   "at": 3382.0,
-   "dur": 3.0,
-   "text": "Masak satu, jadi macam-macam!",
-   "sfx": "pop",
-   "size": 50
-  },
-  {
    "type": "now",
    "at": 2960.65,
    "until": 4679.9,

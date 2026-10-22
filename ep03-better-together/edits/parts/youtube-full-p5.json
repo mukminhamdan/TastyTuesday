@@ -44,14 +44,6 @@
  ],
  "overlays": [
   {
-   "type": "joke",
-   "at": 2657.8,
-   "dur": 2.2,
-   "text": "Patutlah!",
-   "sfx": "badumtss",
-   "punch": 1.1
-  },
-  {
    "type": "chapter",
    "at": 2282.2,
    "dur": 4.0,

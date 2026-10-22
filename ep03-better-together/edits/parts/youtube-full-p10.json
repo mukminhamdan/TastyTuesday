@@ -57,13 +57,6 @@
    "sfx": "ding"
   },
   {
-   "type": "joke",
-   "at": 4580.0,
-   "dur": 2.8,
-   "text": "Rampas limelight!",
-   "sfx": "pop"
-  },
-  {
    "type": "reveal",
    "at": 4634.4,
    "dur": 3.0,

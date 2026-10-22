@@ -15,7 +15,7 @@
         .cn { font-weight: 900; font-size: 30px; letter-spacing: 0.14em; color: var(--cocoa); text-transform: uppercase; }
         .ct { font-family: 'Archivo Black', sans-serif; font-size: 74px; color: var(--cream); text-transform: uppercase; line-height: 1.02; }
       </style>
-      <div id="root" data-composition-id="ov01-chapter" data-width="1920" data-height="1080">
+      <div id="root" data-composition-id="ov00-chapter" data-width="1920" data-height="1080">
         <div class="ch"><div class="band">
           <div class="cn">Menu 4 · Mukmin</div>
           <div class="ct">Ubi Lambung</div>
@@ -24,12 +24,12 @@
       <script>
         (function () {
           const tl = gsap.timeline({ paused: true });
-          const q = (s) => document.querySelector('[data-composition-id="ov01-chapter"] ' + s);
+          const q = (s) => document.querySelector('[data-composition-id="ov00-chapter"] ' + s);
           q('.band') && tl.fromTo(q('.band'), { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: 'power4.out' }, 0);
           q('.ct') && tl.fromTo(q('.ct'), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.3 }, 0.25);
           q('.cn') && tl.fromTo(q('.cn'), { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.2);
           q('.band') && tl.to(q('.band'), { scaleX: 0, opacity: 0, duration: 0.35, ease: 'power3.in' }, 3.55);
-          window.__timelines["ov01-chapter"] = tl;
+          window.__timelines["ov00-chapter"] = tl;
         })();
       </script>
     </template>

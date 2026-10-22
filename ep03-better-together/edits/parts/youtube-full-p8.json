@@ -44,27 +44,11 @@
  ],
  "overlays": [
   {
-   "type": "joke",
-   "at": 3413.0,
-   "dur": 2.8,
-   "text": "I'm not a baker!",
-   "sfx": "boing",
-   "punch": 1.08
-  },
-  {
    "type": "tip",
    "at": 3786.0,
    "dur": 7.0,
    "title": "SUHU RENDAH VS TINGGI",
    "text": "Nak tinggal-tinggal: [suhu rendah] · Duduk tepi & nak cepat: [suhu tinggi]."
-  },
-  {
-   "type": "joke",
-   "at": 3742.4,
-   "dur": 2.6,
-   "text": "Jangan cabar saya!",
-   "sfx": "badumtss",
-   "punch": 1.08
   },
   {
    "type": "now",
