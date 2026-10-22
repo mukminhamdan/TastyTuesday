@@ -27,4 +27,4 @@ cd edits/01-ikan-parang-masak-lemak && npx hyperframes preview   # Studio previe
 Each project's `edl.json` is the edit: source ranges with corrected captions, overlay cards, joke punches,
 shakes and sound effects. `build_project.py` turns it into `index.html` + `compositions/` and cuts
 `assets/selects.mp4` (upscaled, voice cleaned, loudness-normalised). Pauses longer than 0.5 s inside a
-range are removed automatically. Music beds in `assets/bgm/` were generated locally with MusicGen.
+range are removed automatically. The live was recorded mirrored, so the cut flips it back (`hflip`). Music beds in `assets/bgm/` were generated locally with MusicGen.

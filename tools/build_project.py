@@ -130,7 +130,8 @@ def build_selects(pieces, src, out_dir):
         args += ["-ss", f"{s:.3f}", "-t", f"{d:.4f}", "-i", src]
     fc = []
     for k, (_, d) in enumerate(pieces):
-        fc.append(f"[{k}:v]fps={FPS},scale=1080:2160:flags=lanczos,unsharp=5:5:0.6:5:5:0.0,"
+        # hflip: the live was recorded mirrored (front camera)
+        fc.append(f"[{k}:v]fps={FPS},hflip,scale=1080:2160:flags=lanczos,unsharp=5:5:0.6:5:5:0.0,"
                   f"trim=duration={d:.4f},setpts=PTS-STARTPTS[v{k}]")
         fc.append(f"[{k}:a]aresample=48000,atrim=duration={d:.4f},apad=whole_dur={d:.4f},"
                   f"asetpts=PTS-STARTPTS[a{k}]")
