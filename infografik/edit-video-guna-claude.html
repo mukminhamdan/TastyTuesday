@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>Edit Video Guna Claude</title>
+<style>
+  :root{
+    --bg:#1a1714; --card:#262220; --line:#3a3431; --ink:#f4efe9; --muted:#b6aca3;
+    --accent:#d97757; --accent2:#f0b49b; --ok:#7fc8a9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  @page{size:1080px 2700px;margin:0}
+  html,body{background:var(--bg)}
+  body{width:1080px;font-family:"Helvetica Neue",Arial,sans-serif;color:var(--ink);padding:64px 64px 56px;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .tag{display:inline-block;font-size:20px;letter-spacing:.18em;font-weight:700;color:var(--bg);
+    background:var(--accent2);padding:8px 16px;border-radius:8px}
+  h1{font-size:84px;line-height:1.02;font-weight:900;margin:22px 0 14px;letter-spacing:-.02em}
+  h1 em{font-style:normal;color:var(--accent)}
+  .sub{font-size:28px;color:var(--muted);line-height:1.4;max-width:900px}
+  .prep{margin-top:40px;display:flex;gap:18px}
+  .prep div{flex:1;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px}
+  .prep b{display:block;font-size:24px;margin-bottom:6px}
+  .prep span{font-size:20px;color:var(--muted);line-height:1.4}
+  .label{font-size:20px;letter-spacing:.16em;color:var(--accent2);font-weight:700;margin:48px 0 18px}
+  .step{display:flex;gap:26px;background:var(--card);border:1px solid var(--line);border-radius:24px;
+    padding:30px 32px;margin-bottom:20px}
+  .num{flex:none;width:86px;height:86px;border-radius:50%;background:var(--accent);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:900}
+  .step h2{font-size:36px;font-weight:800;margin:4px 0 4px}
+  .step .k{font-size:18px;letter-spacing:.14em;color:var(--accent2);font-weight:700}
+  .step ul{list-style:none;margin-top:12px}
+  .step li{font-size:23px;line-height:1.45;color:#e6ded6;padding-left:28px;position:relative;margin-bottom:6px}
+  .step li:before{content:"";position:absolute;left:4px;top:13px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+  .chip{display:inline-block;font-family:Menlo,monospace;font-size:19px;background:#332d2a;border:1px solid var(--line);
+    padding:2px 10px;border-radius:7px;color:var(--accent2)}
+  .warn{margin-top:12px;font-size:20px;color:#ffd7c4;background:#3b2a22;border-left:5px solid var(--accent);
+    padding:12px 16px;border-radius:8px;line-height:1.4}
+  .prompt{background:#f4efe9;color:#1a1714;border-radius:24px;padding:34px 38px;margin-top:8px;position:relative}
+  .prompt .pt{font-size:18px;letter-spacing:.16em;font-weight:800;color:var(--accent)}
+  .prompt p{font-family:Menlo,monospace;font-size:24px;line-height:1.55;margin-top:14px}
+  .prompt p mark{background:#f6d3c3;color:inherit;padding:0 4px;border-radius:4px}
+  .why{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+  .why div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;font-size:21px;line-height:1.4;color:#e6ded6}
+  .why b{color:var(--ok)}
+  .foot{margin-top:40px;display:flex;justify-content:space-between;align-items:center;font-size:22px;color:var(--muted);
+    border-top:1px solid var(--line);padding-top:24px}
+  .foot b{color:var(--ink)}
+</style>
+</head>
+<body>
+  <span class="tag">TUTORIAL STEP BY STEP</span>
+  <h1>Edit video guna <em>Claude</em><br>pakai phone 📱</h1>
+  <p class="sub">Claude Code (cloud) boleh transcribe, potong, dan cadangkan animasi untuk video kau — semua dari app Claude di telefon. Tak perlu laptop.</p>
+
+  <div class="prep">
+    <div><b>✅ App Claude</b><span>Download dari App Store / Play Store &amp; log masuk.</span></div>
+    <div><b>✅ App GitHub</b><span>Untuk buat repo tempat Claude simpan kerja.</span></div>
+    <div><b>✅ Google Drive</b><span>Tempat upload video mentah.</span></div>
+  </div>
+
+  <div class="label">5 LANGKAH</div>
+
+  <div class="step"><div class="num">1</div><div>
+    <div class="k">LANGKAH 1/5</div><h2>Pilih environment &amp; repo</h2>
+    <ul>
+      <li>Buka app Claude → menu → <b>Code</b> → <b>New session</b>.</li>
+      <li>Tekan <span class="chip">Default</span> → pilih <b>Cloud environment: Default</b>.</li>
+      <li>Tekan <span class="chip">Add repository</span> untuk sambung repo GitHub.</li>
+    </ul>
+  </div></div>
+
+  <div class="step"><div class="num">2</div><div>
+    <div class="k">LANGKAH 2/5</div><h2>Buat repo GitHub</h2>
+    <ul>
+      <li>Buka app GitHub → <b>+</b> → <b>New Repository</b>.</li>
+      <li>Beri nama (cth. <span class="chip">Video-Claudee</span>), set <b>Private</b>, on <b>Add README</b> → <b>Create</b>.</li>
+      <li>Balik ke Claude → <b>Add repository</b> → pilih repo baru tadi.</li>
+    </ul>
+  </div></div>
+
+  <div class="step"><div class="num">3</div><div>
+    <div class="k">LANGKAH 3/5</div><h2>Ambil link Google Drive</h2>
+    <ul>
+      <li>Upload video ke satu folder dalam Google Drive.</li>
+      <li>Folder → <b>Manage access</b> → General access: <b>Anyone with the link</b>.</li>
+      <li>Copy link folder tu.</li>
+    </ul>
+    <div class="warn">⚠️ Kenapa Drive? Upload terus dalam Claude dihadkan <b>30 MB</b> — video biasanya lebih besar.</div>
+  </div></div>
+
+  <div class="step"><div class="num">4</div><div>
+    <div class="k">LANGKAH 4/5</div><h2>Paste link &amp; prompt</h2>
+    <ul>
+      <li>Paste link Drive dalam kotak chat, kemudian tulis prompt (bawah).</li>
+      <li>Tukar effort model dari <b>Low</b> ke <b>High</b> untuk hasil lebih teliti.</li>
+    </ul>
+  </div></div>
+
+  <div class="step"><div class="num">5</div><div>
+    <div class="k">LANGKAH 5/5</div><h2>Submit &amp; biar dia jalan</h2>
+    <ul>
+      <li>Tekan butang hantar ↑. Bila Claude minta kebenaran run command, pilih <b>Always allow for this session</b>.</li>
+      <li>Claude akan transcribe &amp; proses — anggaran <b>20–25 minit</b>. Boleh tutup app.</li>
+      <li>Semak <b>preview</b> dulu, baru minta render final.</li>
+    </ul>
+  </div></div>
+
+  <div class="label">PROMPT YANG DIGUNA</div>
+  <div class="prompt">
+    <div class="pt">📋 COPY &amp; PASTE</div>
+    <p>[link Google Drive]<br><br>Edit video ni. <mark>Transcribe dulu</mark> so kau tau mana nak letak animation, motion graphics, sound fx dekat mana yang patut. <mark>Buang yg repetable, awkward pauses</mark> dan <mark>cari hook yg kuat</mark>. <mark>Jangan render dulu final file. Preview dulu.</mark></p>
+  </div>
+
+  <div class="why">
+    <div><b>Transcribe dulu</b> — Claude faham isi video sebelum edit.</div>
+    <div><b>Buang ulangan &amp; pause</b> — video jadi padat.</div>
+    <div><b>Cari hook kuat</b> — pembukaan yang tarik perhatian.</div>
+    <div><b>Preview dulu</b> — jimat masa &amp; usage sebelum render.</div>
+  </div>
+
+  <div class="foot"><span>Ringkasan dari video tutorial <b>“Edit Video Guna Claude Pakai Phone”</b></span><span>Draf v1</span></div>
+</body>
+</html>
