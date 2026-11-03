@@ -18,8 +18,8 @@ const PANEL_X = CARD.x + CARD_W + 110;
 const chapterAt = (data: Timeline, f: number) => {
   let cur: string | null = null;
   for (const c of data.chapters) if (f >= c.frm) cur = c.key;
-  const outro = data.overlays.find((o) => o.type === 'recap');
-  if (outro && f >= outro.frm - 120) return null;
+  const outro = data.pieces.find((p) => p.tag === 'outro');
+  if (outro && f >= outro.frm) return null;
   return cur;
 };
 
