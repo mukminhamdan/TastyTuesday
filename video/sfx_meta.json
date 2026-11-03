@@ -1,0 +1,147 @@
+{
+ "whoosh-medium-medium": {
+  "sync": 0.209,
+  "dur": 0.517,
+  "lufs": -20.5
+ },
+ "whoosh-fast-soft": {
+  "sync": 0.099,
+  "dur": 0.25,
+  "lufs": -24
+ },
+ "whoosh-fast-hard": {
+  "sync": 0.092,
+  "dur": 0.252,
+  "lufs": -17
+ },
+ "whoosh-medium-hard": {
+  "sync": 0.201,
+  "dur": 0.55,
+  "lufs": -17
+ },
+ "reverse-whoosh-medium-strong": {
+  "sync": 0.682,
+  "dur": 0.836,
+  "lufs": -20
+ },
+ "reverse-whoosh-short-soft": {
+  "sync": 0.336,
+  "dur": 0.509,
+  "lufs": -24
+ },
+ "riser-2s-soft": {
+  "sync": 1.994,
+  "dur": 2.189,
+  "lufs": -24
+ },
+ "riser-1s-soft": {
+  "sync": 0.982,
+  "dur": 1.19,
+  "lufs": -24
+ },
+ "cinematic-slam-big": {
+  "sync": 0.011,
+  "dur": 2.225,
+  "lufs": -20
+ },
+ "boom-hit-medium": {
+  "sync": 0.038,
+  "dur": 1.301,
+  "lufs": -24.5
+ },
+ "pop-small-in": {
+  "sync": 0.01,
+  "dur": 0.04,
+  "lufs": -25
+ },
+ "pop-medium-in": {
+  "sync": 0.011,
+  "dur": 0.06,
+  "lufs": -22.5
+ },
+ "tone-ding-mid": {
+  "sync": 0,
+  "dur": 1.064,
+  "lufs": -23
+ },
+ "tone-ding-high": {
+  "sync": 0,
+  "dur": 0.812,
+  "lufs": -23
+ },
+ "notification-success-sparkle": {
+  "sync": 0,
+  "dur": 0.632,
+  "lufs": -22.5
+ },
+ "shimmer-short-sparkle": {
+  "sync": 0.012,
+  "dur": 0.53,
+  "lufs": -22.5
+ },
+ "shimmer-medium-bright": {
+  "sync": 0.011,
+  "dur": 1.109,
+  "lufs": -23.5
+ },
+ "click-tap-soft": {
+  "sync": 0.009,
+  "dur": 0.016,
+  "lufs": -29
+ },
+ "click-toggle-on-soft": {
+  "sync": 0.03,
+  "dur": 0.038,
+  "lufs": -29
+ },
+ "time-timer": {
+  "sync": 0.139,
+  "dur": 1.102,
+  "lufs": -22
+ },
+ "time-clock": {
+  "sync": 0,
+  "dur": 3.037,
+  "lufs": -27
+ },
+ "sting-warm-short": {
+  "sync": 0.107,
+  "dur": 1.672,
+  "lufs": -23
+ },
+ "sting-bold-short": {
+  "sync": 0.304,
+  "dur": 1.708,
+  "lufs": -20.5
+ },
+ "mechanical-shutter-light": {
+  "sync": 0.01,
+  "dur": 0.11,
+  "lufs": -25
+ },
+ "swish-soft": {
+  "sync": 0.085,
+  "dur": 0.223,
+  "lufs": -24
+ },
+ "swish-medium": {
+  "sync": 0.076,
+  "dur": 0.201,
+  "lufs": -21
+ },
+ "celebration-confetti": {
+  "sync": 0.166,
+  "dur": 2.05,
+  "lufs": -27
+ },
+ "zip-in-soft": {
+  "sync": 0.294,
+  "dur": 0.414,
+  "lufs": -24
+ },
+ "impact-light-soft": {
+  "sync": 0.012,
+  "dur": 0.166,
+  "lufs": -25
+ }
+}
