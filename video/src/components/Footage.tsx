@@ -1,5 +1,8 @@
 import React from 'react';
-import {AbsoluteFill, Audio, Img, OffthreadVideo, Sequence, interpolate, staticFile, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, Audio, Img, OffthreadVideo, Sequence, getInputProps, interpolate, staticFile, useCurrentFrame} from 'remotion';
+
+// `--props='{"lo":true}'` renders previews from the 540px proxy (4x faster)
+const PROXY = (getInputProps() as {lo?: boolean}).lo ? 'media/proxy_lo.mp4' : 'media/proxy.mp4';
 import {Piece} from '../theme';
 
 export const FW = 1080; // short frame width
@@ -71,7 +74,7 @@ const PieceVideo: React.FC<{p: Piece; enter: boolean}> = ({p, enter}) => {
         }}
       >
         <OffthreadVideo
-          src={staticFile('media/proxy.mp4')}
+          src={staticFile(PROXY)}
           trimBefore={Math.round((p.vsrc ?? p.src) * 30)}
           muted
           style={{width: '100%', height: '100%'}}

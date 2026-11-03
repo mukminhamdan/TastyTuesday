@@ -5,5 +5,5 @@ cd "$(dirname "$0")/.."
 mkdir -p out/preview
 for id in "$@"; do
   npx remotion render "$id" "out/preview/$id.mp4" --scale=0.5 --concurrency=4 --crf=26 \
-    --audio-bitrate=128k --log=error
+    --audio-bitrate=128k --log=error --timeout=120000 --props='{"lo":true}'
 done

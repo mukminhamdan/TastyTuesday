@@ -24,7 +24,9 @@ CHEFS = {
                   accent="#FFB000", music="m_170_04"),
 }
 
-CTA = [(3347.4, 3352.7, dict(tag="cta", ov=[("cta", 3347.5, {})]))]
+def cta(broll):
+    """Host's follow/comment line, played over B-roll of that menu's finished dish."""
+    return [(3347.4, 3352.7, dict(tag="cta", broll=broll, zoom=1.06, push=0.05, ov=[("cta", 3347.5, {})]))]
 
 
 def hook(a, b, headline, sub=None, align=None, **kw):
@@ -55,7 +57,7 @@ SHORTS["roll"] = [
     (1207.0, 1217.3, {}),
     (1337.2, 1348.2, dict(ov=[("stat", 1340.6, dict(big="180°C", label="Hasil elok, tak hangit"))])),
     (3067.8, 3073.3, dict(ov=[("stat", 3069.9, dict(big="< 20 min", label="Satu buku roti siap"))])),
-] + CTA
+] + cta(3062.7)
 
 # ---------------------------------------------------------------- 2. TORTILLA
 SHORTS["wrap"] = [
@@ -70,7 +72,7 @@ SHORTS["wrap"] = [
     (1969.6, 1970.3, {}),
     (3103.3, 3115.2, dict(ov=[("reveal", 3104.6, dict(text="Spicy Tuna Wrap"))])),
     (3119.2, 3122.6, {}),
-] + CTA
+] + cta(3107.6)
 
 # ---------------------------------------------------------------- 3. SARDIN PUFF
 SHORTS["puff"] = [
@@ -84,7 +86,7 @@ SHORTS["puff"] = [
     (2425.8, 2432.4, dict(ov=[("reveal", 2425.9, dict(text="Dah siap!"))])),
     (3200.6, 3207.5, {}),
     (3178.9, 3193.4, dict(ov=[("tip", 3179.9, dict(text="Tip: half-cook 7 minit", sub="Simpan beku, bakar bila nak"))])),
-] + CTA
+] + cta(3196.3)
 
 # ---------------------------------------------------------------- 4. SAMBAL SARDIN
 SHORTS["sambal"] = [
@@ -101,7 +103,7 @@ SHORTS["sambal"] = [
     (2357.1, 2365.0, dict(ov=[("step", 2363.0, dict(n=3, text="Air & sardin"))])),
     (2385.4, 2387.7, {}),
     (3240.5, 3247.0, dict(ov=[("reveal", 3240.6, dict(text="Makan dengan nasi atau roti"))])),
-] + CTA
+] + cta(3240.5)
 
 # ---------------------------------------------------------------- 5. PIZZA TUNA
 SHORTS["pizza"] = [
@@ -117,7 +119,7 @@ SHORTS["pizza"] = [
     (2834.2, 2839.9, {}),
     (3274.2, 3275.7, dict(ov=[("reveal", 3274.3, dict(text="Lembut & fluffy"))])),
     (3283.4, 3289.0, {}),
-] + CTA
+] + cta(3283.4)
 
 # ---------------------------------------------------------------- FULL YOUTUBE
 FULL = [
