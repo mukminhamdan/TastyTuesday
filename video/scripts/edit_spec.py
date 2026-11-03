@@ -27,9 +27,11 @@ CHEFS = {
 CTA = [(3347.4, 3352.7, dict(tag="cta", ov=[("cta", 3347.5, {})]))]
 
 
-def hook(a, b, headline, sub=None, **kw):
-    return (a, b, dict(tag="hook", zoom=1.12, push=0.07,
-                       ov=[("hook", a + 0.05, dict(text=headline, sub=sub))], **kw))
+def hook(a, b, headline, sub=None, align=None, **kw):
+    props = dict(text=headline, sub=sub)
+    if align:
+        props["align"] = align
+    return (a, b, dict(tag="hook", zoom=1.12, push=0.07, ov=[("hook", a + 0.05, props)], **kw))
 
 
 def title(key, a, b, **kw):
@@ -42,7 +44,7 @@ SHORTS = {}
 
 # ---------------------------------------------------------------- 1. SARDIN ROLL
 SHORTS["roll"] = [
-    hook(3075.3, 3079.9, "Goreng tanpa risau hangus", sub="Sardin Roll · Cooven"),
+    hook(3075.3, 3079.9, "Goreng tanpa risau hangus", sub="Sardin Roll · Cooven", align="right"),
     title("roll", 1094.6, 1110.0, ov2=[("chip", 1106.6, dict(text="Mode Deep Fry", icon="flame"))]),
     (1118.4, 1129.4, dict(ov=[("step", 1118.5, dict(n=1, text="Letak sardin & gulung"))])),
     (1133.4, 1135.5, dict(ov=[("step", 1133.5, dict(n=2, text="Sapu telur untuk lekat"))])),
@@ -103,7 +105,7 @@ SHORTS["sambal"] = [
 
 # ---------------------------------------------------------------- 5. PIZZA TUNA
 SHORTS["pizza"] = [
-    hook(2742.4, 2753.0, "“Pizza ni beli eh?”", sub="Pizza Tuna · 6 minit"),
+    hook(2742.4, 2753.0, "“Pizza ni beli eh?”", sub="Pizza Tuna · 6 minit", broll=3270.4),
     title("pizza", 2460.5, 2462.9),
     (2471.9, 2476.6, {}),
     (2482.3, 2488.4, dict(ov=[("tip", 2483.4, dict(text="Tunggu 'Add Food'", sub="Dah cukup panas"))])),
@@ -120,7 +122,7 @@ SHORTS["pizza"] = [
 # ---------------------------------------------------------------- FULL YOUTUBE
 FULL = [
     # cold open: best moments
-    (2745.7, 2752.7, dict(tag="cold", zoom=1.1, push=0.05)),
+    (2745.7, 2752.7, dict(tag="cold", zoom=1.1, push=0.05, broll=3270.4)),
     (3234.9, 3235.9, dict(tag="cold", zoom=1.12)),
     (1955.7, 1957.5, dict(tag="cold", zoom=1.1)),
     (3077.8, 3079.9, dict(tag="cold", zoom=1.1)),
@@ -176,7 +178,7 @@ FULL += chapter("sambal", strip(SHORTS["sambal"][2:]) + [
     (2308.8, 2311.5, {}),
 ])
 FULL += chapter("pizza", strip(SHORTS["pizza"][1:]) + [
-    (2742.4, 2759.5, dict(ov=[("quote", 2745.7, dict(text="“My mum buat.”"))])),
+    (2742.4, 2759.5, dict(broll=3268.2, ov=[("quote", 2745.7, dict(text="“My mum buat.”"))])),
     (2807.2, 2815.9, {}),
     (2588.8, 2596.8, dict(ov=[("tip", 2588.9, dict(text="Lapik air fryer paper", sub="Tak perlu pizza pan"))])),
 ])

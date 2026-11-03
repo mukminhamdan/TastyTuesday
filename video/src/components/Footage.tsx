@@ -33,7 +33,9 @@ export const faceBox = (p: Piece | undefined) => {
   const cy = t.top + p.face.y * t.vh;
   const hh = (p.face.h * t.vh) / 2;
   // extend down a little: chin / hands / food in front of the face
-  return {y0: cy - hh * 1.35, y1: cy + hh * 1.6};
+  const cx = t.left + p.face.x * t.vw;
+  const hw = (p.face.w * t.vw) / 2;
+  return {y0: cy - hh * 1.35, y1: cy + hh * 1.6, x0: cx - hw * 1.5, x1: cx + hw * 1.5, cx};
 };
 
 export const pieceAt = (pieces: Piece[], f: number) => {
@@ -70,7 +72,7 @@ const PieceVideo: React.FC<{p: Piece; enter: boolean}> = ({p, enter}) => {
       >
         <OffthreadVideo
           src={staticFile('media/proxy.mp4')}
-          trimBefore={Math.round(p.src * 30)}
+          trimBefore={Math.round((p.vsrc ?? p.src) * 30)}
           muted
           style={{width: '100%', height: '100%'}}
           pauseWhenBuffering

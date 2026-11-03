@@ -81,7 +81,7 @@ export const Captions: React.FC<{caps: Caption[]; pieces: Piece[]; accent: strin
               position: 'relative',
               display: 'inline-block',
               color: w.hl ? C.gold : C.white,
-              opacity: on ? 1 : 0.38,
+              opacity: on ? 1 : 0.72,
               transform: `translateY(${on ? interpolate(pop, [0, 1], [10, 0]) : 10}px) scale(${active ? 1.06 : 1})`,
               WebkitTextStroke: '10px rgba(10,6,2,0.92)',
               paintOrder: 'stroke fill',

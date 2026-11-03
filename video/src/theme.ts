@@ -47,7 +47,7 @@ export const loadFonts = () => {
 };
 
 export type Face = {x: number; y: number; w: number; h: number} | null;
-export type Piece = {src: number; dur: number; frm: number; zoom: number; push: number; face: Face; clip: number; tag: string};
+export type Piece = {src: number; vsrc?: number; dur: number; frm: number; zoom: number; push: number; face: Face; clip: number; tag: string};
 export type CapWord = {t: string; f: number; hl: boolean};
 export type Caption = {frm: number; end: number; words: CapWord[]};
 export type Overlay = {type: string; frm: number; dur: number; props: Record<string, any>; clip: number};

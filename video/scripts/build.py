@@ -208,6 +208,11 @@ def build(vid, clips, layout, music_plan):
             push = o.get("push", 0.0)
             pc = dict(src=round(x - T0, 3), dur=nf, frm=f0, zoom=round(z, 3), push=push,
                       face=face_for(x, y), clip=ci, tag=o.get("tag", "body"))
+            if o.get("broll") is not None:
+                # picture from elsewhere (J-cut / B-roll), sound stays on the speaker
+                vb = o["broll"] + (x - parts[0][0])
+                pc["vsrc"] = round(vb - T0, 3)
+                pc["face"] = face_for(vb, vb + (y - x))
             pieces.append(pc)
             clip_pieces.append((x, y, pc))
             cur += nf
@@ -284,6 +289,16 @@ def build(vid, clips, layout, music_plan):
             dur = int(d * FPS) if d else None
             overlays.append(dict(type=typ, frm=f, dur=dur, props=props, clip=ci))
     total = cur
+
+    # graphics never stack: trim an overlay when the next one arrives
+    BIGT = {"hook", "title", "cta", "chapter", "bigtitle", "lineup", "recap", "endcard"}
+    small = sorted([o for o in overlays if o["type"] not in BIGT], key=lambda o: o["frm"])
+    for i in range(len(small) - 1):
+        a_, b_ = small[i], small[i + 1]
+        if a_["frm"] + (a_["dur"] or 0) > b_["frm"] - 2:
+            a_["dur"] = max(20, b_["frm"] - 2 - a_["frm"])
+            if a_["frm"] + a_["dur"] > b_["frm"]:
+                b_["frm"] = a_["frm"] + a_["dur"] + 2
 
     # fill open-ended overlays (cta / endcard) to end
     for ov in overlays:

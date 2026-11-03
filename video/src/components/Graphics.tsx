@@ -2,7 +2,7 @@ import React from 'react';
 import {Easing, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import {C, F} from '../theme';
 
-export type GProps = {props: Record<string, any>; dur: number; accent: string};
+export type GProps = {props: Record<string, any>; dur: number; accent: string; align?: 'left' | 'right'};
 
 const useAnim = (dur: number) => {
   const f = useCurrentFrame();
@@ -57,11 +57,11 @@ const glass: React.CSSProperties = {
 };
 
 /* ------------------------------------------------------------------ HOOK */
-export const Hook: React.FC<GProps> = ({props, dur, accent}) => {
+export const Hook: React.FC<GProps> = ({props, dur, accent, align}) => {
   const {f, fps, out} = useAnim(dur);
   const words = String(props.text).split(' ');
   return (
-    <div style={{width: '100%', opacity: 1 - out, transform: `translateY(${-30 * out}px)`}}>
+    <div style={{width: '100%', textAlign: align ?? 'left', opacity: 1 - out, transform: `translateY(${-30 * out}px)`}}>
       <div
         style={{
           display: 'inline-flex',
@@ -78,7 +78,7 @@ export const Hook: React.FC<GProps> = ({props, dur, accent}) => {
           letterSpacing: 3,
           textTransform: 'uppercase',
           transform: `scale(${spring({frame: f, fps, config: {damping: 12}})})`,
-          transformOrigin: 'left center',
+          transformOrigin: align === 'right' ? 'right center' : 'left center',
         }}
       >
         <span style={{width: 12, height: 12, borderRadius: 6, background: C.ink, opacity: Math.round(f / 8) % 2 ? 1 : 0.35}} />
@@ -96,6 +96,7 @@ export const Hook: React.FC<GProps> = ({props, dur, accent}) => {
           textTransform: 'uppercase',
           display: 'flex',
           flexWrap: 'wrap',
+          justifyContent: align === 'right' ? 'flex-end' : 'flex-start',
           gap: '0 22px',
         }}
       >
@@ -138,17 +139,17 @@ export const Hook: React.FC<GProps> = ({props, dur, accent}) => {
 };
 
 /* ------------------------------------------------------------------ TITLE */
-export const Title: React.FC<GProps> = ({props, dur, accent}) => {
+export const Title: React.FC<GProps> = ({props, dur, accent, align}) => {
   const {f, fps, out} = useAnim(dur);
   const wipe = interpolate(f, [0, 10], [0, 100], {extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
   const words = String(props.menu).toUpperCase().split(' ');
   return (
-    <div style={{opacity: 1 - out, transform: `translateX(${-80 * out}px)`}}>
-      <div style={{display: 'flex', alignItems: 'center', gap: 16, fontFamily: F.wide, fontWeight: 800, fontStretch: '125%', fontSize: 24, letterSpacing: 4, color: accent}}>
+    <div style={{opacity: 1 - out, textAlign: align ?? 'left', transform: `translateX(${(align === 'right' ? 80 : -80) * out}px)`}}>
+      <div style={{display: 'flex', justifyContent: align === 'right' ? 'flex-end' : 'flex-start', alignItems: 'center', gap: 16, fontFamily: F.wide, fontWeight: 800, fontStretch: '125%', fontSize: 24, letterSpacing: 4, color: accent}}>
         <span style={{height: 3, width: interpolate(f, [0, 12], [0, 70], {extrapolateRight: 'clamp'}), background: accent}} />
         {String(props.role).toUpperCase()} · MODE {String(props.mode).toUpperCase()}
       </div>
-      <div style={{clipPath: `inset(0 ${100 - wipe}% 0 0)`, marginTop: 10}}>
+      <div style={{clipPath: align === 'right' ? `inset(0 0 0 ${100 - wipe}%)` : `inset(0 ${100 - wipe}% 0 0)`, marginTop: 10}}>
         {words.map((w, i) => (
           <div
             key={i}
