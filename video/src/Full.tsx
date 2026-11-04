@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, Easing, Img, Sequence, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Easing, Img, Sequence, getInputProps, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {Footage, Voice} from './components/Footage';
 import {PanelCaptions} from './components/Captions';
 import {GRAPHICS} from './components/Graphics';
@@ -8,6 +8,12 @@ import {C, F, MENUS, Timeline, loadFonts} from './theme';
 import {PreviewBug} from './Short';
 
 loadFonts();
+
+// `--props='{"bg":"granite"}'` → white granite worktop with dark panel text
+const LIGHT = (getInputProps() as {bg?: string}).bg === 'granite';
+const T = LIGHT
+  ? {text: '#1B1612', sub: '#4A3F36', muted: 'rgba(27,22,18,0.55)', bar: 'rgba(27,22,18,0.16)', capHl: '#B5530F'}
+  : {text: C.white, sub: C.cream, muted: C.muted, bar: 'rgba(255,243,226,0.18)', capHl: C.gold};
 
 const ORDER = ['roll', 'wrap', 'puff', 'sambal', 'pizza'];
 const CARD = {x: 130, y: 96, h: 944};
@@ -44,19 +50,36 @@ export const Full: React.FC<{data: Timeline; preview?: boolean}> = ({data, previ
           overflow: 'hidden',
           // dark glass bezel + thin brass line, like a monitor on set
           boxShadow:
-            '0 40px 90px rgba(0,0,0,0.6), 0 0 0 1px rgba(212,175,110,0.55), 0 0 0 10px rgba(14,11,9,0.85), 0 0 0 11px rgba(212,175,110,0.22)',
+            LIGHT
+              ? '0 30px 70px rgba(40,30,20,0.35), 0 0 0 1px rgba(160,120,60,0.6), 0 0 0 10px rgba(255,255,255,0.9), 0 0 0 11px rgba(160,120,60,0.35)'
+              : '0 40px 90px rgba(0,0,0,0.6), 0 0 0 1px rgba(212,175,110,0.55), 0 0 0 10px rgba(14,11,9,0.85), 0 0 0 11px rgba(212,175,110,0.22)',
         }}
       >
         <div style={{width: 1080, height: 1920, transform: `scale(${SCALE})`, transformOrigin: '0 0'}}>
           <Footage pieces={data.pieces} look="cinema" />
         </div>
       </div>
+      {LIGHT && (
+        // matte card behind the text column so small type stays legible on the granite
+        <div
+          style={{
+            position: 'absolute',
+            left: PANEL_X - 56,
+            top: 36,
+            right: 56,
+            bottom: 36,
+            borderRadius: 28,
+            background: 'linear-gradient(160deg, rgba(252,250,246,0.94), rgba(246,242,236,0.9))',
+            boxShadow: '0 24px 60px rgba(40,30,20,0.18), 0 0 0 1px rgba(160,120,60,0.25)',
+          }}
+        />
+      )}
       {/* side panel */}
       <div style={{position: 'absolute', left: PANEL_X, top: 0, width: 1920 - PANEL_X - 100, height: 1080}}>
         <Brand />
         {ch ? <ChapterHead k={ch} data={data} /> : <ShowHead data={data} />}
         <div style={{position: 'absolute', left: 0, right: 0, top: 862, height: 170, display: 'flex', alignItems: 'flex-start'}}>
-          <PanelCaptions caps={data.captions} accent={accent} />
+          <PanelCaptions caps={data.captions} accent={accent} color={T.text} hl={T.capHl} />
         </div>
         {panelOverlays.map((o, i) => {
           const G = GRAPHICS[o.type];
@@ -112,17 +135,17 @@ const Backdrop: React.FC<{accent: string; ch: string | null}> = ({accent, ch}) =
       const y = r * 150 + drift * 0.5;
       cells.push(
         <g key={`${r}-${c}`} transform={`translate(${x} ${y}) rotate(${((r * 37 + c * 53) % 50) - 25} 24 24) scale(2)`}>
-          <path d={DOODLES[i]} fill="none" stroke="#FFF3E2" strokeWidth={0.9} strokeLinecap="round" strokeLinejoin="round" />
+          <path d={DOODLES[i]} fill="none" stroke={LIGHT ? "#2A221C" : "#FFF3E2"} strokeWidth={0.9} strokeLinecap="round" strokeLinejoin="round" />
         </g>,
       );
     }
   }
   return (
     <AbsoluteFill>
-      <Img src={staticFile('bg/kitchen.png')} style={{width: '100%', height: '100%'}} />
+      <Img src={staticFile(LIGHT ? 'bg/granite.png' : 'bg/kitchen.png')} style={{width: '100%', height: '100%'}} />
       {/* per-menu colour wash, kept low so the slate stays the hero */}
-      <AbsoluteFill style={{background: `radial-gradient(900px 640px at 78% 28%, ${accent}22, transparent 70%)`, mixBlendMode: 'screen'}} />
-      <svg width={1920} height={1080} style={{position: 'absolute', inset: 0, opacity: 0.045}}>
+      <AbsoluteFill style={{background: `radial-gradient(900px 640px at 78% 28%, ${accent}${LIGHT ? '14' : '22'}, transparent 70%)`, mixBlendMode: LIGHT ? 'multiply' : 'screen'}} />
+      <svg width={1920} height={1080} style={{position: 'absolute', inset: 0, opacity: LIGHT ? 0.07 : 0.045}}>
         {cells}
       </svg>
       {n > 0 && (
@@ -143,7 +166,7 @@ const Backdrop: React.FC<{accent: string; ch: string | null}> = ({accent, ch}) =
           0{n}
         </div>
       )}
-      <AbsoluteFill style={{backgroundImage: `url(${staticFile('noise.png')})`, backgroundPosition: `${(f * 37) % 256}px ${(f * 91) % 256}px`, opacity: 0.05, mixBlendMode: 'overlay'}} />
+      <AbsoluteFill style={{backgroundImage: `url(${staticFile('noise.png')})`, backgroundPosition: `${(f * 37) % 256}px ${(f * 91) % 256}px`, opacity: LIGHT ? 0.02 : 0.05, mixBlendMode: 'overlay'}} />
     </AbsoluteFill>
   );
 };
@@ -152,9 +175,9 @@ const Backdrop: React.FC<{accent: string; ch: string | null}> = ({accent, ch}) =
 const LiveTag: React.FC = () => {
   const f = useCurrentFrame();
   return (
-    <div style={{position: 'absolute', left: CARD.x + 4, top: 44, display: 'flex', alignItems: 'center', gap: 12}}>
+    <div style={{position: 'absolute', left: CARD.x + 4, top: 40, display: 'flex', alignItems: 'center', gap: 12, ...(LIGHT ? {padding: '6px 16px', borderRadius: 100, background: 'rgba(252,250,246,0.94)', boxShadow: '0 6px 18px rgba(40,30,20,0.15)'} : {})}}>
       <div style={{width: 12, height: 12, borderRadius: 6, background: '#FF3B30', boxShadow: '0 0 12px #FF3B30', opacity: 0.55 + 0.45 * Math.abs(Math.sin(f / 18))}} />
-      <div style={{fontFamily: F.wide, fontWeight: 900, fontStretch: '125%', fontSize: 19, letterSpacing: 5, color: C.cream}}>LIVE DARI DAPUR</div>
+      <div style={{fontFamily: F.wide, fontWeight: 900, fontStretch: '125%', fontSize: 19, letterSpacing: 5, color: T.sub}}>LIVE DARI DAPUR</div>
       <div style={{height: 1, width: 120, background: 'linear-gradient(90deg, rgba(212,175,110,0.7), transparent)'}} />
     </div>
   );
@@ -163,8 +186,8 @@ const LiveTag: React.FC = () => {
 const Brand: React.FC = () => (
   <div style={{position: 'absolute', top: 70, left: 0, display: 'flex', alignItems: 'center', gap: 16}}>
     <div style={{width: 14, height: 14, borderRadius: 7, background: '#FF8A2A'}} />
-    <div style={{fontFamily: F.wide, fontWeight: 900, fontStretch: '125%', fontSize: 22, letterSpacing: 5, color: C.cream}}>TASTY TUESDAY</div>
-    <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 30, color: C.muted}}>edisi Tuna & Sardin</div>
+    <div style={{fontFamily: F.wide, fontWeight: 900, fontStretch: '125%', fontSize: 22, letterSpacing: 5, color: T.sub}}>TASTY TUESDAY</div>
+    <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 30, color: T.muted}}>edisi Tuna & Sardin</div>
   </div>
 );
 
@@ -180,14 +203,14 @@ const ChapterHead: React.FC<{k: string; data: Timeline}> = ({k, data}) => {
       <div style={{fontFamily: F.wide, fontWeight: 800, fontStretch: '125%', fontSize: 24, letterSpacing: 5, color: m.accent}}>
         MENU 0{m.n} / 05 · MODE {m.mode.toUpperCase()}
       </div>
-      <div style={{fontFamily: F.display, fontWeight: 900, fontSize: words.length > 2 ? 84 : 104, lineHeight: 0.98, letterSpacing: -3, color: C.white, marginTop: 14}}>
+      <div style={{fontFamily: F.display, fontWeight: 900, fontSize: words.length > 2 ? 84 : 104, lineHeight: 0.98, letterSpacing: -3, color: T.text, marginTop: 14}}>
         {words.map((w, i) => (
-          <div key={i} style={{color: i === words.length - 1 ? m.accent : C.white}}>
+          <div key={i} style={{color: i === words.length - 1 ? m.accent : T.text}}>
             {w}
           </div>
         ))}
       </div>
-      <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 52, color: C.cream, marginTop: 10}}>oleh {m.chef}</div>
+      <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 52, color: T.sub, marginTop: 10}}>oleh {m.chef}</div>
     </div>
   );
 };
@@ -195,12 +218,12 @@ const ChapterHead: React.FC<{k: string; data: Timeline}> = ({k, data}) => {
 const ShowHead: React.FC<{data: Timeline}> = () => {
   return (
     <div style={{position: 'absolute', top: 150, left: 0, right: 0}}>
-      <div style={{fontFamily: F.display, fontWeight: 900, fontSize: 118, lineHeight: 0.95, letterSpacing: -4, color: C.white}}>
+      <div style={{fontFamily: F.display, fontWeight: 900, fontSize: 118, lineHeight: 0.95, letterSpacing: -4, color: T.text}}>
         TASTY
         <br />
         <span style={{color: '#FF8A2A'}}>TUESDAY</span>
       </div>
-      <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 56, color: C.cream, marginTop: 14}}>5 chef · 5 menu · 1 Cooven</div>
+      <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 56, color: T.sub, marginTop: 14}}>5 chef · 5 menu · 1 Cooven</div>
     </div>
   );
 };
@@ -212,8 +235,8 @@ const ChapterBar: React.FC<{data: Timeline; ch: string | null}> = ({ch}) => (
       const on = k === ch;
       return (
         <div key={k} style={{flex: 1}}>
-          <div style={{height: 5, borderRadius: 3, background: on ? m.accent : 'rgba(255,243,226,0.18)'}} />
-          <div style={{marginTop: 8, fontFamily: F.wide, fontWeight: 800, fontStretch: '110%', fontSize: 15, letterSpacing: 1.5, color: on ? C.white : 'rgba(255,243,226,0.4)', textTransform: 'uppercase', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'}}>
+          <div style={{height: 5, borderRadius: 3, background: on ? m.accent : T.bar}} />
+          <div style={{marginTop: 8, fontFamily: F.wide, fontWeight: 800, fontStretch: '110%', fontSize: 15, letterSpacing: 1.5, color: on ? T.text : T.muted, textTransform: 'uppercase', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'}}>
             {m.menu}
           </div>
         </div>
@@ -253,7 +276,7 @@ const BigTitle: React.FC<SP> = ({dur}) => {
   return (
     <div style={{position: 'absolute', left: PANEL_X, top: 470, opacity: out}}>
       <div style={{fontFamily: F.wide, fontWeight: 900, fontStretch: '125%', fontSize: 28, letterSpacing: 6, color: '#FF8A2A', transform: `translateX(${interpolate(s, [0, 1], [-60, 0])}px)`}}>HANYA TUNA & SARDIN</div>
-      <div style={{fontFamily: F.display, fontWeight: 900, fontSize: 132, color: C.white, letterSpacing: -5, lineHeight: 1, transform: `scale(${interpolate(s, [0, 1], [1.4, 1])})`, transformOrigin: 'left center', opacity: s}}>
+      <div style={{fontFamily: F.display, fontWeight: 900, fontSize: 132, color: T.text, letterSpacing: -5, lineHeight: 1, transform: `scale(${interpolate(s, [0, 1], [1.4, 1])})`, transformOrigin: 'left center', opacity: s}}>
         5 MENU.
       </div>
     </div>
@@ -273,8 +296,8 @@ const Lineup: React.FC<SP> = ({dur}) => {
         return (
           <div key={i} style={{display: 'flex', alignItems: 'baseline', gap: 22, height: 74, opacity: s, transform: `translateX(${interpolate(s, [0, 1], [50, 0])}px)`}}>
             <div style={{fontFamily: F.display, fontWeight: 900, fontSize: 30, color: m.accent, width: 50}}>0{m.n}</div>
-            <div style={{fontFamily: F.display, fontWeight: 800, fontSize: 46, color: C.white, letterSpacing: -1}}>{m.menu}</div>
-            <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 36, color: C.muted}}>{m.chef}</div>
+            <div style={{fontFamily: F.display, fontWeight: 800, fontSize: 46, color: T.text, letterSpacing: -1}}>{m.menu}</div>
+            <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 36, color: T.muted}}>{m.chef}</div>
           </div>
         );
       })}

@@ -98,7 +98,7 @@ export const Captions: React.FC<{caps: Caption[]; pieces: Piece[]; accent: strin
 };
 
 /** Caption block used in the YouTube side panel. */
-export const PanelCaptions: React.FC<{caps: Caption[]; accent: string}> = ({caps, accent}) => {
+export const PanelCaptions: React.FC<{caps: Caption[]; accent: string; color?: string; hl?: string}> = ({caps, color = C.cream, hl = C.gold}) => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
   const c = capAt(caps, f);
@@ -128,7 +128,7 @@ export const PanelCaptions: React.FC<{caps: Caption[]; accent: string}> = ({caps
           <span
             key={i}
             style={{
-              color: active || w.hl ? C.gold : C.cream,
+              color: active || w.hl ? hl : color,
               borderRadius: 12,
               padding: '0 10px',
               opacity: on ? 1 : 0.3,
