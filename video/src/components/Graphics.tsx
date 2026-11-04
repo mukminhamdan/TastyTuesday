@@ -82,14 +82,15 @@ export const Hook: React.FC<GProps> = ({props, dur, accent, align}) => {
         }}
       >
         <span style={{width: 12, height: 12, borderRadius: 6, background: C.ink}} />
-        Tasty Tuesday
+        {props.kicker ?? 'Tasty Tuesday'}
       </div>
       <div
         style={{
           marginTop: 18,
           fontFamily: F.display,
           fontWeight: 800,
-          fontSize: words.join(' ').length > 22 ? 74 : 86,
+          // longest word must fit the column (Unbounded caps ≈ 0.8 em per glyph)
+          fontSize: Math.min(words.join(' ').length > 22 ? 74 : 86, Math.floor((align === 'right' ? 540 : 860) / (Math.max(...words.map((w) => w.length)) * 0.8))),
           lineHeight: 1.02,
           letterSpacing: -2,
           color: C.white,
@@ -98,26 +99,24 @@ export const Hook: React.FC<GProps> = ({props, dur, accent, align}) => {
           flexWrap: 'wrap',
           justifyContent: align === 'right' ? 'flex-end' : 'flex-start',
           gap: '0 22px',
+          // readable on frame 0 (thumbnail), then a quick settle — scaled as one block so words never overlap
+          transform: `scale(${interpolate(spring({frame: f, fps, config: {damping: 14, stiffness: 260, mass: 0.5}}), [0, 1], [1.08, 1])})`,
+          transformOrigin: align === 'right' ? 'right top' : 'left top',
         }}
       >
-        {words.map((w, i) => {
-          // fully readable on frame 0 (thumbnail / first impression), then a quick settle
-          const s = spring({frame: f, fps, config: {damping: 14, stiffness: 260, mass: 0.5}});
-          return (
-            <span
-              key={i}
-              style={{
-                display: 'inline-block',
-                transform: `scale(${interpolate(s, [0, 1], [1.22, 1])})`,
-                WebkitTextStroke: '12px rgba(10,6,2,0.9)',
-                paintOrder: 'stroke fill',
-                textShadow: '0 12px 30px rgba(0,0,0,0.5)',
-              }}
-            >
-              {w}
-            </span>
-          );
-        })}
+        {words.map((w, i) => (
+          <span
+            key={i}
+            style={{
+              display: 'inline-block',
+              WebkitTextStroke: '12px rgba(10,6,2,0.9)',
+              paintOrder: 'stroke fill',
+              textShadow: '0 12px 30px rgba(0,0,0,0.5)',
+            }}
+          >
+            {w}
+          </span>
+        ))}
       </div>
       {props.sub && (
         <div
@@ -356,7 +355,28 @@ export const Quote: React.FC<GProps> = ({props, dur, accent}) => {
 };
 
 /* ------------------------------------------------------------------ CTA */
-export const Cta: React.FC<GProps> = ({dur, accent}) => {
+export const Cta: React.FC<GProps> = (p) => (p.props?.part2 ? <Part2Card {...p} /> : <FollowCta {...p} />);
+
+/** Teaser end card: points viewers to the full cooking video (Part 2). */
+const Part2Card: React.FC<GProps> = ({dur, accent}) => {
+  const {f, fps, out} = useAnim(dur + 20);
+  const s = spring({frame: f, fps, config: {damping: 11, stiffness: 180}});
+  const arrow = interpolate(Math.sin(f / 4), [-1, 1], [0, 14]);
+  return (
+    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10, opacity: 1 - out, transform: `scale(${interpolate(s, [0, 1], [0.7, 1])})`}}>
+      <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 60, color: C.cream, textShadow: '0 4px 18px rgba(0,0,0,0.85)'}}>Nak tahu cara buat?</div>
+      <div style={{display: 'flex', alignItems: 'center', gap: 22, padding: '18px 40px', borderRadius: 26, background: accent, color: C.ink, boxShadow: '0 12px 0 rgba(10,6,2,0.9), 0 24px 50px rgba(0,0,0,0.4)'}}>
+        <div style={{fontFamily: F.display, fontWeight: 900, fontSize: 92, letterSpacing: -3, lineHeight: 1}}>PART 2</div>
+        <svg width={70} height={70} viewBox="0 0 24 24" style={{transform: `translateX(${arrow}px)`}}>
+          <path d="M5 4l14 8-14 8z" fill={C.ink} />
+        </svg>
+      </div>
+      <div style={{fontFamily: F.wide, fontWeight: 900, fontStretch: '125%', fontSize: 30, letterSpacing: 4, color: C.white, textShadow: '0 4px 16px rgba(0,0,0,0.9)', marginTop: 8}}>CARA MASAK PENUH · FOLLOW</div>
+    </div>
+  );
+};
+
+const FollowCta: React.FC<GProps> = ({dur, accent}) => {
   const {f, fps, out} = useAnim(dur + 20);
   const s = spring({frame: f, fps, config: {damping: 12}});
   const press = f > 24 && f < 32 ? 0.92 : 1;

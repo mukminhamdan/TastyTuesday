@@ -512,12 +512,15 @@ def full_plan(pieces, overlays, total):
 
 
 if __name__ == "__main__":
-    only = sys.argv[2:] or list(SPEC.SHORTS) + ["reel", "bloopers", "full"]
+    only = sys.argv[2:] or list(SPEC.SHORTS) + ["reel", "bloopers"] + ["t_" + m for m in SPEC.TEASERS] + ["full"]
     for key in only:
         if key == "reel":
             build("reel", SPEC.REEL, "short", lambda p, o, t: [(0, t / FPS, "m_192_05", 30)])
         elif key == "bloopers":
             build("bloopers", SPEC.BLOOPERS, "short", lambda p, o, t: [(0, t / FPS, "m_003_05", 0)])
+        elif key.startswith("t_"):
+            m = key[2:]
+            build(key, SPEC.TEASERS[m], "short", short_plan(m))
         elif key == "full":
             build("full", SPEC.FULL, "wide", full_plan)
         else:

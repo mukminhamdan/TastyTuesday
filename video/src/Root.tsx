@@ -11,6 +11,11 @@ import pizza from './data/pizza.json';
 import full from './data/full.json';
 import reel from './data/reel.json';
 import bloopers from './data/bloopers.json';
+import t_roll from './data/t_roll.json';
+import t_wrap from './data/t_wrap.json';
+import t_puff from './data/t_puff.json';
+import t_sambal from './data/t_sambal.json';
+import t_pizza from './data/t_pizza.json';
 
 const SHORTS: [string, string, Timeline][] = [
   ['Short-1-SardinRoll', 'roll', roll as unknown as Timeline],
@@ -20,6 +25,11 @@ const SHORTS: [string, string, Timeline][] = [
   ['Short-5-PizzaTuna', 'pizza', pizza as unknown as Timeline],
   ['Reel-5Menu', 'reel', reel as unknown as Timeline],
   ['Bloopers', 'bloopers', bloopers as unknown as Timeline],
+  ['Teaser-1-SardinRoll', 'roll', t_roll as unknown as Timeline],
+  ['Teaser-2-TortillaTuna', 'wrap', t_wrap as unknown as Timeline],
+  ['Teaser-3-SardinPuff', 'puff', t_puff as unknown as Timeline],
+  ['Teaser-4-SambalSardin', 'sambal', t_sambal as unknown as Timeline],
+  ['Teaser-5-PizzaTuna', 'pizza', t_pizza as unknown as Timeline],
 ];
 
 export const RemotionRoot: React.FC = () => (

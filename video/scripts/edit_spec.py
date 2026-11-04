@@ -230,3 +230,71 @@ FULL += [
     (3347.4, 3356.7, {}),
     (3381.9, 3398.9, dict(ov=[("endcard", 3392.0, {})])),
 ]
+
+
+# ---------------------------------------------------------------- TEASERS (Part 1, < 45 s each)
+def thook(a, b, headline, sub, **kw):
+    c = hook(a, b, headline, sub=sub, **kw)
+    c[2]["ov"][0][2]["kicker"] = "Part 1"
+    c[2]["cap"] = False
+    return c
+
+
+def part2(broll):
+    return [(3347.4, 3352.7, dict(tag="cta", broll=broll, zoom=1.06, push=0.05, ov=[("cta", 3347.5, dict(part2=True))]))]
+
+
+def joke(a, b, sticker=None, t=None, **kw):
+    o = dict(cap=True, **kw)
+    if sticker:
+        o["ov"] = [("sticker", t if t is not None else a + 0.1, dict(text=sticker))]
+    return (a, b, o)
+
+
+TEASERS = {}
+TEASERS["roll"] = [
+    thook(3075.3, 3079.9, "Roti biasa jadi sardin roll?!", "Sardin Roll · Mukmin", align="right"),
+    joke(3640.6, 3649.1, "Kena soal siasat", 3641.0),
+    joke(3650.5, 3651.9),
+    (1121.0, 1125.0, {}),
+    joke(1207.0, 1217.3, "Goreng sambil rehat", 1214.9),
+    joke(3580.7, 3583.4, "Host paling besar", 3580.8),
+    (3067.8, 3073.3, k(ov=[("stat", 3069.9, dict(big="< 20 min", label="Satu buku roti siap"))])),
+] + part2(DISHES["roll"])
+
+TEASERS["wrap"] = [
+    thook(1955.7, 1957.5, "Wrap cafe tanpa pergi cafe", "Tortilla Spicy Tuna · Kak Hani"),
+    joke(3110.1, 3115.2, "Cafe Kak Hani dah buka", 3112.8),
+    (1385.3, 1390.3, {}),
+    joke(1502.2, 1512.3, "Mesin pun pandai suruh", 1510.6),
+    (1958.8, 1967.8, k(ov=[("reveal", 1959.9, dict(text="Belang-belang!"))])),
+    joke(3119.2, 3122.6),
+] + part2(DISHES["wrap"])
+
+TEASERS["puff"] = [
+    thook(3160.7, 3163.3, "Puff segera, rasa kedai", "Sardin Puff · Kak Salma"),
+    joke(1630.8, 1631.9, "Kamera, oh kamera", 1630.85),
+    joke(1638.2, 1644.2),
+    joke(3507.5, 3510.7, "Petak-petak menyerang", 3508.8),
+    (1686.5, 1693.0, {}),
+    (1765.1, 1769.9, k(ov=[("stat", 1766.9, dict(big="180°C", label="10 minit"))])),
+    joke(3186.3, 3193.4, "Stok untuk berdua", 3189.9),
+] + part2(DISHES["puff"])
+
+TEASERS["sambal"] = [
+    thook(3233.6, 3235.9, "Sambal Mak, stok berbulan", "Sambal Sardin · Mak Ida"),
+    joke(2000.3, 2002.5, "Tak dengar!", 2000.35),
+    joke(2029.8, 2031.1, "Mic vs Mak: 0-1", 2029.85),
+    (2291.4, 2300.8, k(ov=[("stat", 2294.9, dict(big="8 Liter", label="Masak stok berbulan"))])),
+    joke(2341.2, 2345.1),
+    joke(3247.5, 3252.3, "Rumah terbuka", 3248.0),
+    joke(3257.0, 3257.9, "Tak sabar!", 3257.05),
+] + part2(DISHES["sambal"])
+
+TEASERS["pizza"] = [
+    thook(2745.7, 2752.7, "“Pizza ni beli eh?”", "Pizza Tuna · Kak Pia", broll=3270.4),
+    joke(3021.5, 3027.5, "Pizza tak sabar", 3022.4),
+    (2641.5, 2644.7, k(ov=[("stat", 2643.7, dict(big="6 min", label="Mode Pizza Cooven"))])),
+    joke(3547.6, 3553.2, "Pizza besar sangat", 3551.5),
+    joke(3283.4, 3294.0, "Habis dah?!", 3292.0),
+] + part2(DISHES["pizza"])
