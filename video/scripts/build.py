@@ -87,6 +87,7 @@ PHRASE_FIX = [
     (["food", "and", "improvement"], "Food Engine"),
     (["mod", "tukar"], "mode cooker"),
     (["suruh", "180"], "suhu 180"),
+    (["gula", "-gula"], "garis-garis"),
     (["8", "sejuk"], "peti sejuk"),
     (["kuai", "jean", "-kuai"], "Cooven"),
     (["pak", "haji"], ""),
