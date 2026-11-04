@@ -7,7 +7,9 @@
    "e": 48,
    "beat": "hook",
    "sync": false,
-   "label": null
+   "label": null,
+   "zoom": 1.4,
+   "origin": "85% 95%"
   },
   {
    "file": "clips/c02.mp4",
@@ -15,7 +17,9 @@
    "e": 83,
    "beat": "hook",
    "sync": false,
-   "label": null
+   "label": null,
+   "zoom": null,
+   "origin": null
   },
   {
    "file": "clips/c03.mp4",
@@ -23,7 +27,9 @@
    "e": 122,
    "beat": "s1",
    "sync": false,
-   "label": "3x"
+   "label": "3x",
+   "zoom": null,
+   "origin": null
   },
   {
    "file": "clips/c04.mp4",
@@ -31,7 +37,9 @@
    "e": 158,
    "beat": "s1",
    "sync": false,
-   "label": "4x"
+   "label": "4x",
+   "zoom": null,
+   "origin": null
   },
   {
    "file": "clips/c05.mp4",
@@ -39,7 +47,9 @@
    "e": 203,
    "beat": "s1",
    "sync": false,
-   "label": null
+   "label": null,
+   "zoom": null,
+   "origin": null
   },
   {
    "file": "clips/c06.mp4",
@@ -47,7 +57,9 @@
    "e": 263,
    "beat": "s2",
    "sync": false,
-   "label": null
+   "label": null,
+   "zoom": null,
+   "origin": null
   },
   {
    "file": "clips/c07.mp4",
@@ -55,7 +67,9 @@
    "e": 317,
    "beat": "s3",
    "sync": false,
-   "label": null
+   "label": null,
+   "zoom": null,
+   "origin": null
   },
   {
    "file": "clips/c08.mp4",
@@ -63,7 +77,9 @@
    "e": 365,
    "beat": "s4",
    "sync": false,
-   "label": null
+   "label": null,
+   "zoom": null,
+   "origin": null
   },
   {
    "file": "clips/c09.mp4",
@@ -71,7 +87,9 @@
    "e": 413,
    "beat": "s4",
    "sync": false,
-   "label": "3x"
+   "label": "3x",
+   "zoom": null,
+   "origin": null
   },
   {
    "file": "clips/c10.mp4",
@@ -79,7 +97,9 @@
    "e": 470,
    "beat": "s5",
    "sync": false,
-   "label": null
+   "label": null,
+   "zoom": null,
+   "origin": null
   },
   {
    "file": "clips/c11.mp4",
@@ -87,7 +107,9 @@
    "e": 521,
    "beat": "s6",
    "sync": false,
-   "label": null
+   "label": null,
+   "zoom": null,
+   "origin": null
   },
   {
    "file": "clips/c12.mp4",
@@ -95,7 +117,9 @@
    "e": 562,
    "beat": "s6",
    "sync": false,
-   "label": null
+   "label": null,
+   "zoom": null,
+   "origin": null
   },
   {
    "file": "clips/c13.mp4",
@@ -103,7 +127,9 @@
    "e": 601,
    "beat": "s7",
    "sync": false,
-   "label": null
+   "label": null,
+   "zoom": null,
+   "origin": null
   },
   {
    "file": "clips/c14.mp4",
@@ -111,7 +137,9 @@
    "e": 637,
    "beat": "s7",
    "sync": false,
-   "label": null
+   "label": null,
+   "zoom": null,
+   "origin": null
   },
   {
    "file": "clips/c15.mp4",
@@ -119,7 +147,9 @@
    "e": 697,
    "beat": "s7",
    "sync": false,
-   "label": null
+   "label": null,
+   "zoom": null,
+   "origin": null
   },
   {
    "file": "clips/c16.mp4",
@@ -127,7 +157,9 @@
    "e": 730,
    "beat": "s8",
    "sync": false,
-   "label": "4x"
+   "label": "4x",
+   "zoom": null,
+   "origin": null
   },
   {
    "file": "clips/c17.mp4",
@@ -135,7 +167,9 @@
    "e": 775,
    "beat": "s8",
    "sync": false,
-   "label": null
+   "label": null,
+   "zoom": null,
+   "origin": null
   },
   {
    "file": "clips/c18.mp4",
@@ -143,23 +177,19 @@
    "e": 802,
    "beat": "end",
    "sync": false,
-   "label": null
+   "label": null,
+   "zoom": null,
+   "origin": null
   },
   {
    "file": "clips/c19.mp4",
    "s": 802,
-   "e": 847,
-   "beat": "end",
-   "sync": false,
-   "label": null
-  },
-  {
-   "file": "clips/c20.mp4",
-   "s": 847,
    "e": 910,
    "beat": "end",
    "sync": false,
-   "label": null
+   "label": null,
+   "zoom": 1.4,
+   "origin": "85% 95%"
   }
  ],
  "voice": [],

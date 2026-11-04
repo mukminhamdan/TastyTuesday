@@ -7,13 +7,13 @@ import { Graphics } from "./components/Graphics";
 import { SafeZoneGuide } from "./components/SafeZoneGuide";
 import { COLORS, FONT_BODY, SAFE } from "./theme";
 
-type TClip = { file: string; s: number; e: number; beat: string; sync: boolean; label: string | null };
+type TClip = { file: string; s: number; e: number; beat: string; sync: boolean; label: string | null; zoom?: number | null; origin?: string | null };
 const clips = timeline.clips as TClip[];
 
 /** Face sits around x≈0.72, y≈0.42 on talking shots: zoom toward it so it never gets cropped. */
 const ORIGIN_TALK = "72% 42%";
 
-const Shot: React.FC<{ clip: TClip; index: number; hero: boolean }> = ({ clip, index, hero }) => {
+const Shot: React.FC<{ clip: TClip; index: number }> = ({ clip, index }) => {
   const frame = useCurrentFrame(); // local to the Sequence
   const dur = clip.e - clip.s;
   let scale: number;
@@ -21,16 +21,16 @@ const Shot: React.FC<{ clip: TClip; index: number; hero: boolean }> = ({ clip, i
     // jump-cut punch: alternate framing between consecutive talking pieces
     const base = index % 2 === 0 ? 1.0 : 1.1;
     scale = base + interpolate(frame, [0, dur], [0, 0.03]);
-  } else if (hero) {
-    // hero plate sits low in frame: push in toward it
-    scale = 1.22 + interpolate(frame, [0, dur], [0, 0.08]);
+  } else if (clip.zoom) {
+    // framed shot (e.g. bowl sits low in frame): push in toward the given origin
+    scale = clip.zoom + interpolate(frame, [0, dur], [0, 0.07]);
   } else {
     // b-roll: slow push-in plus a quick settle from the cut
     scale = 1.04 + interpolate(frame, [0, dur], [0, 0.06]) + interpolate(frame, [0, 6], [0.06, 0], { extrapolateRight: "clamp" });
   }
   return (
     <AbsoluteFill style={{ overflow: "hidden", background: "black" }}>
-      <OffthreadVideo src={staticFile(clip.file)} muted style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${scale})`, transformOrigin: clip.sync ? ORIGIN_TALK : hero ? "50% 92%" : "50% 50%" }} />
+      <OffthreadVideo src={staticFile(clip.file)} muted style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${scale})`, transformOrigin: clip.sync ? ORIGIN_TALK : clip.origin ? clip.origin : "50% 50%" }} />
       {clip.label ? <SpeedBadge text={clip.label} /> : null}
     </AbsoluteFill>
   );
@@ -67,7 +67,7 @@ export const TastyTuesday: React.FC<{ showSafeZone?: boolean }> = ({ showSafeZon
     <AbsoluteFill style={{ background: "black" }}>
       {clips.map((c, i) => (
         <Sequence key={c.file} from={c.s} durationInFrames={c.e - c.s} premountFor={30}>
-          <Shot clip={c} index={clips.filter((x, j) => j < i && x.sync && x.beat === c.beat).length} hero={i === clips.length - 1} />
+          <Shot clip={c} index={clips.filter((x, j) => j < i && x.sync && x.beat === c.beat).length} />
         </Sequence>
       ))}
 

@@ -24,7 +24,7 @@ BEATS = [
     # Cooking-only cut (v2): no talking-head shots, voice only as VO over food.
     dict(id="hook", pre=0.9, lead=0.0, tail=0.45,
          voice=[(738.55, 739.98, "Tak payah|nak tukar bekas")],
-         shots=[dict(src=1904.0, dur=1.6, speed=1.0),
+         shots=[dict(src=1920.6, dur=1.6, speed=0.8, zoom=1.4, origin="85% 95%"),
                 dict(src=1690.0, dur=None, speed=1.2)]),
     dict(id="s1", pre=4.0, lead=0.0, tail=0.0, voice=[],          # goreng ikan (Aircrisp)
          shots=[dict(src=1096.0, dur=1.3, speed=3.0, label="3x"),
@@ -55,8 +55,7 @@ BEATS = [
     dict(id="end", pre=0.0, lead=0.1, tail=3.6,
          voice=[(1813.45, 1814.25, "Siap!")],
          shots=[dict(src=1812.8, voice=0, speed=1.0),
-                dict(src=1893.0, dur=1.5, speed=1.0),
-                dict(src=1903.0, dur=None, speed=0.8)]),
+                dict(src=1920.4, dur=None, speed=0.75, zoom=1.4, origin="85% 95%")]),
 ]
 GAP = 0.08  # breath between voice pieces inside a beat (dead air removed)
 
@@ -130,7 +129,8 @@ for beat in BEATS:
              "-vf", vf, "-frames:v", str(dur_f), "-c:v", "libx264", "-preset", "veryfast",
              "-crf", "18", "-pix_fmt", "yuv420p", "-g", "15", os.path.join(CLIPS, name)])
         timeline["clips"].append(dict(file=f"clips/{name}", s=f(s), e=f(s) + dur_f,
-                                      beat=beat["id"], sync="sync" in sh, label=sh.get("label")))
+                                      beat=beat["id"], sync="sync" in sh, label=sh.get("label"),
+                                      zoom=sh.get("zoom"), origin=sh.get("origin")))
 
     # --- captions (hand-corrected text, timing from whisper / even spread)
     for o, a, b, text in vplaced:

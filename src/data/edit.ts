@@ -42,7 +42,7 @@ export const graphics: Graphic[] = [
 
   // ---------- END ----------
   { kind: "stamp", s: V("end", 0).s, e: V("end", 0).s + 50, text: "Siap!", sub: "✅ semua dalam 1 periuk", x: CX, y: TOP + 30, rotate: -5 },
-  { kind: "cta", s: V("end", 0).s + 50, e: B("end").e, text: "Save & cuba!", sub: "Follow untuk #TastyTuesday 🍽️", y: TOP + 20 },
+  { kind: "cta", s: V("end", 0).s + 50, e: B("end").e, text: "Save & cuba!", sub: "Follow untuk resepi seterusnya 🍽️", y: TOP + 20 },
 ];
 
 const whoosh = "sfx/short-video-whoosh-01.mp3";
