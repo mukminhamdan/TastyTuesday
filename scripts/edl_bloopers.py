@@ -22,7 +22,7 @@ BEATS = [
     # reading live comments
     dict(id="komen", lead=0.1, tail=0.3,
          voice=[(486.80, 488.95, "Eh, orang dekat ofis.|TikTok ke?"),
-                (507.35, 508.55, "Ami balik dah ke?"),
+                (507.35, 508.55, "Auni balik dah ke?"),
                 (509.95, 511.05, "Oh, nak balik dah")],
          shots=[dict(sync=0), dict(sync=1), dict(sync=2)]),
     # take 1 / take 2
