@@ -1,0 +1,451 @@
+{
+ "id": "04-48-minit-dalam-30-saat",
+ "title": "48 minit di dapur, dalam 30 saat",
+ "durationInFrames": 951,
+ "segments": [
+  {
+   "dur": 75,
+   "srcStart": 2668.3,
+   "speed": 1,
+   "zoom": 1.6,
+   "origin": [
+    0.5,
+    0.8
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "cut",
+   "from": 0
+  },
+  {
+   "dur": 60,
+   "srcStart": 392,
+   "speed": 6,
+   "zoom": 1.2,
+   "origin": [
+    0.818,
+    0.533
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "whip",
+   "from": 75
+  },
+  {
+   "dur": 90,
+   "srcStart": 566,
+   "speed": 8,
+   "zoom": 1.5,
+   "origin": [
+    0.48,
+    0.72
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "whip",
+   "from": 135
+  },
+  {
+   "dur": 107,
+   "srcStart": 600,
+   "speed": 14,
+   "zoom": 1.4,
+   "origin": [
+    0.48,
+    0.72
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "whip",
+   "from": 225
+  },
+  {
+   "dur": 132,
+   "srcStart": 700,
+   "speed": 250,
+   "zoom": 1.0,
+   "origin": [
+    0.824,
+    0.373
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "zoomblur",
+   "from": 332
+  },
+  {
+   "dur": 72,
+   "srcStart": 1832,
+   "speed": 5,
+   "zoom": 1.5,
+   "origin": [
+    0.42,
+    0.71
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "whip",
+   "from": 464
+  },
+  {
+   "dur": 80,
+   "srcStart": 1950,
+   "speed": 15,
+   "zoom": 1.2,
+   "origin": [
+    0.743,
+    0.317
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "whip",
+   "from": 536
+  },
+  {
+   "dur": 72,
+   "srcStart": 2164,
+   "speed": 5,
+   "zoom": 1.2,
+   "origin": [
+    0.761,
+    0.34
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "whip",
+   "from": 616
+  },
+  {
+   "dur": 71,
+   "srcStart": 2205,
+   "speed": 150,
+   "zoom": 1.15,
+   "origin": [
+    0.85,
+    0.354
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "zoomblur",
+   "from": 688
+  },
+  {
+   "dur": 72,
+   "srcStart": 2644,
+   "speed": 10,
+   "zoom": 1.15,
+   "origin": [
+    0.714,
+    0.354
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "whip",
+   "from": 759
+  },
+  {
+   "dur": 120,
+   "srcStart": 2802,
+   "speed": 1,
+   "zoom": 1.3,
+   "origin": [
+    0.5,
+    0.8
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "flash",
+   "from": 831
+  }
+ ],
+ "words": [],
+ "overlays": [
+  {
+   "kind": "speed",
+   "from": 336,
+   "dur": 124,
+   "props": {
+    "speed": 250
+   }
+  },
+  {
+   "kind": "speed",
+   "from": 692,
+   "dur": 63,
+   "props": {
+    "speed": 150
+   }
+  },
+  {
+   "kind": "flash",
+   "from": 831,
+   "dur": 8
+  },
+  {
+   "kind": "hook",
+   "from": 0,
+   "dur": 78,
+   "props": {
+    "kicker": "Prep sebelum Tasty Tuesday",
+    "line1": "48 minit",
+    "line2": "dalam 30 saat.",
+    "y": 240,
+    "maxW": 650,
+    "align": "left"
+   }
+  },
+  {
+   "kind": "word",
+   "from": 335,
+   "dur": 66,
+   "props": {
+    "text": "×250",
+    "y": 330,
+    "x": 80
+   }
+  },
+  {
+   "kind": "snap",
+   "from": 464,
+   "dur": 72,
+   "props": {
+    "label": "SARDIN ROLL"
+   }
+  },
+  {
+   "kind": "end",
+   "from": 831,
+   "dur": 120,
+   "props": {
+    "line1": "Mana satu",
+    "line2": "nak cuba dulu?"
+   }
+  }
+ ],
+ "sfx": [
+  {
+   "name": "whoosh",
+   "from": -2,
+   "vol": 0.35
+  },
+  {
+   "name": "impact",
+   "from": 0,
+   "vol": 0.42
+  },
+  {
+   "name": "whoosh",
+   "from": 69,
+   "vol": 0.45
+  },
+  {
+   "name": "whoosh",
+   "from": 129,
+   "vol": 0.45
+  },
+  {
+   "name": "whoosh",
+   "from": 219,
+   "vol": 0.45
+  },
+  {
+   "name": "whoosh_long",
+   "from": 320,
+   "vol": 0.4
+  },
+  {
+   "name": "impact",
+   "from": 335,
+   "vol": 0.38
+  },
+  {
+   "name": "bass_drop",
+   "from": 335,
+   "vol": 0.25
+  },
+  {
+   "name": "whoosh",
+   "from": 458,
+   "vol": 0.45
+  },
+  {
+   "name": "shutter",
+   "from": 464,
+   "vol": 0.6
+  },
+  {
+   "name": "whoosh",
+   "from": 530,
+   "vol": 0.45
+  },
+  {
+   "name": "whoosh",
+   "from": 610,
+   "vol": 0.45
+  },
+  {
+   "name": "whoosh_long",
+   "from": 676,
+   "vol": 0.4
+  },
+  {
+   "name": "whoosh",
+   "from": 753,
+   "vol": 0.45
+  },
+  {
+   "name": "impact",
+   "from": 831,
+   "vol": 0.35
+  },
+  {
+   "name": "sparkle",
+   "from": 835,
+   "vol": 0.4
+  }
+ ],
+ "music": {
+  "src": "music/groove_104.wav",
+  "vol": 0.5,
+  "duck": 0.065
+ },
+ "face": [
+  [
+   1.03,
+   0.115,
+   0.155
+  ],
+  [
+   1.03,
+   0.115,
+   0.155
+  ],
+  [
+   1.058,
+   0.099,
+   0.198
+  ],
+  [
+   0.879,
+   0.533,
+   0.12
+  ],
+  [
+   0.602,
+   0.688,
+   0.14
+  ],
+  [
+   1.035,
+   0.127,
+   0.201
+  ],
+  [
+   0.91,
+   0.211,
+   0.132
+  ],
+  [
+   1.008,
+   0.182,
+   0.167
+  ],
+  null,
+  null,
+  [
+   0.778,
+   0.214,
+   0.198
+  ],
+  null,
+  null,
+  [
+   0.797,
+   0.374,
+   0.128
+  ],
+  [
+   0.826,
+   0.376,
+   0.126
+  ],
+  [
+   0.81,
+   0.362,
+   0.105
+  ],
+  [
+   1.049,
+   0.174,
+   0.216
+  ],
+  [
+   1.017,
+   0.139,
+   0.181
+  ],
+  [
+   0.737,
+   0.311,
+   0.14
+  ],
+  [
+   0.645,
+   0.329,
+   0.124
+  ],
+  [
+   0.863,
+   0.327,
+   0.126
+  ],
+  [
+   0.85,
+   0.35,
+   0.155
+  ],
+  null,
+  [
+   0.907,
+   0.327,
+   0.101
+  ],
+  [
+   0.841,
+   0.359,
+   0.144
+  ],
+  null,
+  [
+   0.858,
+   0.535,
+   0.097
+  ],
+  [
+   0.706,
+   0.32,
+   0.185
+  ],
+  [
+   1.01,
+   0.223,
+   0.121
+  ],
+  [
+   1.01,
+   0.223,
+   0.121
+  ],
+  [
+   1.01,
+   0.223,
+   0.121
+  ],
+  [
+   0.826,
+   0.501,
+   0.104
+  ]
+ ],
+ "captionY": 1140
+}

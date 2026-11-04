@@ -1,0 +1,334 @@
+{
+ "id": "03-satu-periuk-nasi",
+ "title": "Satu periuk nasi jadi berbekas-bekas",
+ "durationInFrames": 851,
+ "segments": [
+  {
+   "dur": 120,
+   "srcStart": 2802,
+   "speed": 1,
+   "zoom": 1.3,
+   "origin": [
+    0.5,
+    0.8
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "cut",
+   "from": 0
+  },
+  {
+   "dur": 150,
+   "srcStart": 1950,
+   "speed": 9,
+   "zoom": 1.2,
+   "origin": [
+    0.724,
+    0.335
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "whip",
+   "from": 120
+  },
+  {
+   "dur": 266,
+   "srcStart": 2205,
+   "speed": 40,
+   "zoom": 1.15,
+   "origin": [
+    0.85,
+    0.354
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "zoomblur",
+   "from": 270
+  },
+  {
+   "dur": 150,
+   "srcStart": 2740,
+   "speed": 12,
+   "zoom": 1.2,
+   "origin": [
+    0.5,
+    0.8
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "whip",
+   "from": 536
+  },
+  {
+   "dur": 165,
+   "srcStart": 2836,
+   "speed": 1,
+   "zoom": 1.35,
+   "origin": [
+    0.5,
+    0.8
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "flash",
+   "from": 686
+  }
+ ],
+ "words": [],
+ "overlays": [
+  {
+   "kind": "speed",
+   "from": 124,
+   "dur": 142,
+   "props": {
+    "speed": 9
+   }
+  },
+  {
+   "kind": "speed",
+   "from": 274,
+   "dur": 258,
+   "props": {
+    "speed": 40
+   }
+  },
+  {
+   "kind": "speed",
+   "from": 540,
+   "dur": 142,
+   "props": {
+    "speed": 12
+   }
+  },
+  {
+   "kind": "flash",
+   "from": 686,
+   "dur": 8
+  },
+  {
+   "kind": "hook",
+   "from": 0,
+   "dur": 114,
+   "props": {
+    "kicker": "Prep bahan Tasty Tuesday",
+    "line1": "1 periuk nasi",
+    "line2": "jadi semua ni.",
+    "y": 240,
+    "maxW": 682,
+    "align": "left"
+   }
+  },
+  {
+   "kind": "step",
+   "from": 126,
+   "dur": 126,
+   "props": {
+    "n": "01",
+    "label": "Gaul nasi panas"
+   }
+  },
+  {
+   "kind": "step",
+   "from": 279,
+   "dur": 150,
+   "props": {
+    "n": "02",
+    "label": "Tekap guna mangkuk"
+   }
+  },
+  {
+   "kind": "word",
+   "from": 438,
+   "dur": 60,
+   "props": {
+    "text": "Kemas.",
+    "serif": true,
+    "y": 360,
+    "color": "#FFC94A",
+    "size": 170,
+    "x": 80
+   }
+  },
+  {
+   "kind": "step",
+   "from": 542,
+   "dur": 126,
+   "props": {
+    "n": "03",
+    "label": "Susun dalam bekas"
+   }
+  },
+  {
+   "kind": "end",
+   "from": 686,
+   "dur": 165,
+   "props": {
+    "line1": "Prep sekali,",
+    "line2": "senang seminggu."
+   }
+  }
+ ],
+ "sfx": [
+  {
+   "name": "whoosh",
+   "from": -2,
+   "vol": 0.35
+  },
+  {
+   "name": "impact",
+   "from": 0,
+   "vol": 0.42
+  },
+  {
+   "name": "whoosh",
+   "from": 114,
+   "vol": 0.45
+  },
+  {
+   "name": "pop",
+   "from": 126,
+   "vol": 0.5
+  },
+  {
+   "name": "whoosh_long",
+   "from": 258,
+   "vol": 0.4
+  },
+  {
+   "name": "pop",
+   "from": 279,
+   "vol": 0.5
+  },
+  {
+   "name": "impact",
+   "from": 438,
+   "vol": 0.38
+  },
+  {
+   "name": "bass_drop",
+   "from": 438,
+   "vol": 0.25
+  },
+  {
+   "name": "whoosh",
+   "from": 530,
+   "vol": 0.45
+  },
+  {
+   "name": "pop",
+   "from": 542,
+   "vol": 0.5
+  },
+  {
+   "name": "impact",
+   "from": 686,
+   "vol": 0.35
+  },
+  {
+   "name": "sparkle",
+   "from": 690,
+   "vol": 0.4
+  }
+ ],
+ "music": {
+  "src": "music/groove_104.wav",
+  "vol": 0.5,
+  "duck": 0.065
+ },
+ "face": [
+  [
+   1.01,
+   0.223,
+   0.121
+  ],
+  [
+   1.01,
+   0.223,
+   0.121
+  ],
+  [
+   1.01,
+   0.223,
+   0.121
+  ],
+  [
+   0.826,
+   0.501,
+   0.104
+  ],
+  [
+   0.747,
+   0.298,
+   0.13
+  ],
+  [
+   0.93,
+   0.31,
+   0.107
+  ],
+  [
+   0.648,
+   0.325,
+   0.124
+  ],
+  [
+   0.634,
+   0.344,
+   0.17
+  ],
+  null,
+  [
+   0.871,
+   0.341,
+   0.163
+  ],
+  [
+   0.836,
+   0.361,
+   0.145
+  ],
+  [
+   0.842,
+   0.354,
+   0.135
+  ],
+  null,
+  [
+   0.841,
+   0.359,
+   0.144
+  ],
+  [
+   0.847,
+   0.351,
+   0.151
+  ],
+  null,
+  null,
+  [
+   0.792,
+   0.402,
+   0.14
+  ],
+  null,
+  null,
+  [
+   0.916,
+   0.256,
+   0.18
+  ],
+  null,
+  [
+   0.925,
+   0.246,
+   0.134
+  ],
+  null,
+  null,
+  null,
+  null,
+  null,
+  null
+ ],
+ "captionY": 1140
+}

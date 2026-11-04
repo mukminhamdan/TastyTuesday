@@ -1,0 +1,7 @@
+*.log
+node_modules/
+out/
+public/music/*.wav
+public/source.mp4
+public/voice_clean.wav
+__pycache__/

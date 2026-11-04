@@ -1,0 +1,675 @@
+{
+ "id": "01-sardin-roll-roti-biasa",
+ "title": "Sardin roll guna roti biasa",
+ "durationInFrames": 1245,
+ "segments": [
+  {
+   "dur": 37,
+   "srcStart": 709.78,
+   "speed": 1,
+   "zoom": 1.0,
+   "origin": [
+    0.794,
+    0.372
+   ],
+   "cropY": 120,
+   "voice": true,
+   "trans": "cut",
+   "from": 0
+  },
+  {
+   "dur": 124,
+   "srcStart": 711.82,
+   "speed": 1,
+   "zoom": 1.14,
+   "origin": [
+    0.786,
+    0.376
+   ],
+   "cropY": 120,
+   "voice": true,
+   "trans": "punch",
+   "from": 37
+  },
+  {
+   "dur": 90,
+   "srcStart": 392,
+   "speed": 4,
+   "zoom": 1.25,
+   "origin": [
+    0.5,
+    0.72
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "whip",
+   "from": 161
+  },
+  {
+   "dur": 120,
+   "srcStart": 568,
+   "speed": 3,
+   "zoom": 1.55,
+   "origin": [
+    0.48,
+    0.72
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "zoomblur",
+   "from": 251
+  },
+  {
+   "dur": 214,
+   "srcStart": 600,
+   "speed": 7,
+   "zoom": 1.45,
+   "origin": [
+    0.48,
+    0.72
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "whip",
+   "from": 371
+  },
+  {
+   "dur": 90,
+   "srcStart": 1200,
+   "speed": 30,
+   "zoom": 1.0,
+   "origin": [
+    0.829,
+    0.354
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "zoomblur",
+   "from": 585
+  },
+  {
+   "dur": 120,
+   "srcStart": 1832,
+   "speed": 3,
+   "zoom": 1.5,
+   "origin": [
+    0.42,
+    0.71
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "whip",
+   "from": 675
+  },
+  {
+   "dur": 120,
+   "srcStart": 2164,
+   "speed": 3,
+   "zoom": 1.2,
+   "origin": [
+    0.761,
+    0.34
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "zoomblur",
+   "from": 795
+  },
+  {
+   "dur": 120,
+   "srcStart": 2644,
+   "speed": 6,
+   "zoom": 1.15,
+   "origin": [
+    0.714,
+    0.354
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "whip",
+   "from": 915
+  },
+  {
+   "dur": 75,
+   "srcStart": 2668.3,
+   "speed": 1,
+   "zoom": 1.6,
+   "origin": [
+    0.5,
+    0.8
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "flash",
+   "from": 1035
+  },
+  {
+   "dur": 135,
+   "srcStart": 1843,
+   "speed": 1,
+   "zoom": 1.5,
+   "origin": [
+    0.42,
+    0.71
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "zoomblur",
+   "from": 1110
+  }
+ ],
+ "words": [
+  {
+   "t": 0.1,
+   "e": 0.66,
+   "w": "Masak"
+  },
+  {
+   "t": 0.66,
+   "e": 0.86,
+   "w": "apa"
+  },
+  {
+   "t": 0.86,
+   "e": 1.08,
+   "w": "tu?"
+  },
+  {
+   "t": 1.333,
+   "e": 1.686,
+   "w": "Oh,"
+  },
+  {
+   "t": 1.804,
+   "e": 2.157,
+   "w": "Sol"
+  },
+  {
+   "t": 2.275,
+   "e": 2.627,
+   "w": "nak"
+  },
+  {
+   "t": 2.745,
+   "e": 3.216,
+   "w": "buat"
+  },
+  {
+   "t": 3.333,
+   "e": 3.686,
+   "w": "ni,"
+  },
+  {
+   "t": 3.804,
+   "e": 4.51,
+   "w": "sardin",
+   "emph": true
+  },
+  {
+   "t": 4.627,
+   "e": 5.216,
+   "w": "roll."
+  }
+ ],
+ "overlays": [
+  {
+   "kind": "speed",
+   "from": 165,
+   "dur": 82,
+   "props": {
+    "speed": 4
+   }
+  },
+  {
+   "kind": "speed",
+   "from": 255,
+   "dur": 112,
+   "props": {
+    "speed": 3
+   }
+  },
+  {
+   "kind": "speed",
+   "from": 375,
+   "dur": 206,
+   "props": {
+    "speed": 7
+   }
+  },
+  {
+   "kind": "speed",
+   "from": 589,
+   "dur": 82,
+   "props": {
+    "speed": 30
+   }
+  },
+  {
+   "kind": "speed",
+   "from": 679,
+   "dur": 112,
+   "props": {
+    "speed": 3
+   }
+  },
+  {
+   "kind": "speed",
+   "from": 799,
+   "dur": 112,
+   "props": {
+    "speed": 3
+   }
+  },
+  {
+   "kind": "speed",
+   "from": 919,
+   "dur": 112,
+   "props": {
+    "speed": 6
+   }
+  },
+  {
+   "kind": "flash",
+   "from": 1035,
+   "dur": 8
+  },
+  {
+   "kind": "hook",
+   "from": 0,
+   "dur": 102,
+   "props": {
+    "kicker": "Prep untuk Tasty Tuesday",
+    "line1": "Sardin roll",
+    "line2": "guna roti biasa je.",
+    "y": 240,
+    "maxW": 604,
+    "align": "left"
+   }
+  },
+  {
+   "kind": "step",
+   "from": 167,
+   "dur": 84,
+   "props": {
+    "n": "01",
+    "label": "Ambil roti putih"
+   }
+  },
+  {
+   "kind": "step",
+   "from": 257,
+   "dur": 114,
+   "props": {
+    "n": "02",
+    "label": "Leperkan nipis-nipis"
+   }
+  },
+  {
+   "kind": "step",
+   "from": 377,
+   "dur": 102,
+   "props": {
+    "n": "03",
+    "label": "Letak inti sardin"
+   }
+  },
+  {
+   "kind": "step",
+   "from": 482,
+   "dur": 99,
+   "props": {
+    "n": "04",
+    "label": "Gulung ketat-ketat"
+   }
+  },
+  {
+   "kind": "word",
+   "from": 591,
+   "dur": 78,
+   "props": {
+    "text": "Ulang",
+    "sub": "sampai habis roti",
+    "y": 330,
+    "x": 80
+   }
+  },
+  {
+   "kind": "snap",
+   "from": 675,
+   "dur": 120,
+   "props": {
+    "label": "SIAP DIGULUNG"
+   }
+  },
+  {
+   "kind": "step",
+   "from": 801,
+   "dur": 108,
+   "props": {
+    "n": "05",
+    "label": "Masuk air fryer"
+   }
+  },
+  {
+   "kind": "word",
+   "from": 1038,
+   "dur": 69,
+   "props": {
+    "text": "garing.",
+    "serif": true,
+    "y": 360,
+    "color": "#FFC94A",
+    "size": 170,
+    "x": 80
+   }
+  },
+  {
+   "kind": "end",
+   "from": 1116,
+   "dur": 126,
+   "props": {
+    "line1": "Save dulu,",
+    "line2": "buat petang ni."
+   }
+  }
+ ],
+ "sfx": [
+  {
+   "name": "whoosh",
+   "from": -2,
+   "vol": 0.35
+  },
+  {
+   "name": "impact",
+   "from": 0,
+   "vol": 0.42
+  },
+  {
+   "name": "whoosh",
+   "from": 155,
+   "vol": 0.45
+  },
+  {
+   "name": "pop",
+   "from": 167,
+   "vol": 0.5
+  },
+  {
+   "name": "whoosh_long",
+   "from": 239,
+   "vol": 0.4
+  },
+  {
+   "name": "pop",
+   "from": 257,
+   "vol": 0.5
+  },
+  {
+   "name": "whoosh",
+   "from": 365,
+   "vol": 0.45
+  },
+  {
+   "name": "pop",
+   "from": 377,
+   "vol": 0.5
+  },
+  {
+   "name": "pop",
+   "from": 482,
+   "vol": 0.5
+  },
+  {
+   "name": "whoosh_long",
+   "from": 573,
+   "vol": 0.4
+  },
+  {
+   "name": "impact",
+   "from": 591,
+   "vol": 0.38
+  },
+  {
+   "name": "bass_drop",
+   "from": 591,
+   "vol": 0.25
+  },
+  {
+   "name": "whoosh",
+   "from": 669,
+   "vol": 0.45
+  },
+  {
+   "name": "shutter",
+   "from": 675,
+   "vol": 0.6
+  },
+  {
+   "name": "whoosh_long",
+   "from": 783,
+   "vol": 0.4
+  },
+  {
+   "name": "pop",
+   "from": 801,
+   "vol": 0.5
+  },
+  {
+   "name": "whoosh",
+   "from": 909,
+   "vol": 0.45
+  },
+  {
+   "name": "impact",
+   "from": 1035,
+   "vol": 0.35
+  },
+  {
+   "name": "sizzle",
+   "from": 1035,
+   "vol": 0.4
+  },
+  {
+   "name": "impact",
+   "from": 1038,
+   "vol": 0.38
+  },
+  {
+   "name": "bass_drop",
+   "from": 1038,
+   "vol": 0.25
+  },
+  {
+   "name": "whoosh_long",
+   "from": 1098,
+   "vol": 0.4
+  },
+  {
+   "name": "sparkle",
+   "from": 1120,
+   "vol": 0.4
+  }
+ ],
+ "music": {
+  "src": "music/groove_104.wav",
+  "vol": 0.5,
+  "duck": 0.065
+ },
+ "face": [
+  [
+   0.794,
+   0.372,
+   0.103
+  ],
+  [
+   0.794,
+   0.372,
+   0.103
+  ],
+  [
+   0.78,
+   0.375,
+   0.118
+  ],
+  [
+   0.769,
+   0.376,
+   0.119
+  ],
+  [
+   0.769,
+   0.393,
+   0.123
+  ],
+  [
+   0.786,
+   0.389,
+   0.128
+  ],
+  [
+   0.961,
+   0.486,
+   0.125
+  ],
+  [
+   0.897,
+   0.293,
+   0.201
+  ],
+  [
+   0.834,
+   0.285,
+   0.114
+  ],
+  [
+   1.054,
+   0.107,
+   0.208
+  ],
+  [
+   0.207,
+   0.646,
+   0.255
+  ],
+  [
+   0.925,
+   0.194,
+   0.136
+  ],
+  [
+   0.922,
+   0.203,
+   0.133
+  ],
+  [
+   0.995,
+   0.16,
+   0.17
+  ],
+  null,
+  null,
+  null,
+  [
+   0.789,
+   0.195,
+   0.206
+  ],
+  [
+   0.674,
+   0.321,
+   0.209
+  ],
+  null,
+  [
+   0.847,
+   0.356,
+   0.132
+  ],
+  [
+   0.81,
+   0.346,
+   0.136
+  ],
+  null,
+  [
+   1.049,
+   0.174,
+   0.216
+  ],
+  [
+   1.145,
+   0.142,
+   0.14
+  ],
+  [
+   1.017,
+   0.139,
+   0.181
+  ],
+  [
+   0.989,
+   0.181,
+   0.17
+  ],
+  [
+   0.85,
+   0.35,
+   0.155
+  ],
+  null,
+  null,
+  [
+   0.761,
+   0.324,
+   0.161
+  ],
+  [
+   0.711,
+   0.336,
+   0.172
+  ],
+  [
+   0.858,
+   0.535,
+   0.097
+  ],
+  [
+   0.701,
+   0.342,
+   0.107
+  ],
+  [
+   0.8,
+   0.38,
+   0.097
+  ],
+  [
+   1.03,
+   0.115,
+   0.155
+  ],
+  [
+   1.058,
+   0.099,
+   0.198
+  ],
+  [
+   1.026,
+   0.174,
+   0.17
+  ],
+  [
+   1.026,
+   0.174,
+   0.17
+  ],
+  [
+   1.026,
+   0.174,
+   0.17
+  ],
+  null,
+  null
+ ],
+ "captionY": 1140
+}
