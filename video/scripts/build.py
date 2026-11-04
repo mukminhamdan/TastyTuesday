@@ -80,7 +80,7 @@ TOKEN_FIX = {
     "green,": "grill,", "gerai": "grill", "gerai,": "grill,", "grip": "grill", "pak": "Mak",
     "awak": "Mak", "derol": "roll", "fri": "fryer", "fried": "fryer", "menit": "minit",
     "daslah": "rasa", "daram": "garam", "fabric": "", "feel": "rasa", "paste": "sapu",
-    "pandang": "panggang", "mercik": "merecik", "gelombang": "gelembung", "-gelombang": "-gelembung", "-mercik": "-merecik", "mercik.": "merecik.", "efek": "effect", "kadiri": "", "lah": "lah",
+    "pandang": "panggang", "mercik": "merecik", "kabo": "carbo", "gelombang": "gelembung", "-gelombang": "-gelembung", "-mercik": "-merecik", "mercik.": "merecik.", "efek": "effect", "kadiri": "", "lah": "lah",
 }
 PHRASE_FIX = [
     (["gunakan", "lembut", "refry", "ni"], "guna mode deep fry ni"),
