@@ -18,7 +18,7 @@ os.makedirs(OUT, exist_ok=True)
 os.makedirs(os.path.join(PUB, "music"), exist_ok=True)
 
 FPS = 30
-T0 = 1040.0  # proxy/voice start in source seconds
+T0 = 990.0  # proxy/voice start in source seconds (media covers 990s–3800s)
 SFX = json.load(open(os.path.join(ROOT, "sfx_meta.json")))
 
 # ------------------------------------------------------------------ inputs
@@ -27,7 +27,7 @@ WORDS = [dict(w=w["w"].strip(), s=float(w["s"]), e=float(w["e"])) for s in segs 
 RMS = np.load(os.path.join(WORK, "rms10ms.npy"))  # 10 ms frames, t=0 at T0
 RMS_S = np.convolve(RMS, np.ones(5) / 5, mode="same")
 try:
-    FACES = json.load(open(os.path.join(WORK, "faces.json")))
+    FACES = json.load(open(os.path.join(WORK, "faces_all.json")))
 except FileNotFoundError:
     FACES = []
 FACE_T = np.array([f["t"] for f in FACES]) if FACES else np.array([])
@@ -164,7 +164,7 @@ def face_for(a, b):
 
 # ------------------------------------------------------------------ core
 OV_DUR = dict(hook=2.6, title=2.6, chip=2.2, step=2.4, tip=2.8, stat=2.3, reveal=2.4, cta=None,
-              chapter=3.0, bigtitle=3.4, lineup=6.5, recap=6.0, endcard=None, quote=2.6)
+              chapter=3.0, bigtitle=3.4, menutag=None, sticker=1.9, bloopertitle=1.8, lineup=6.5, recap=6.0, endcard=None, quote=2.6)
 
 
 def build(vid, clips, layout, music_plan):
@@ -196,6 +196,24 @@ def build(vid, clips, layout, music_plan):
             p0 = s1 - KEEP_PAD
         parts.append((p0, en))
         parts = [(x, y) for x, y in parts if y - x >= 0.22]
+        seg_of = None
+        if o.get("brolls"):
+            # montage: split the kept speech evenly across several B-roll shots
+            L = sum(y - x for x, y in parts)
+            n = len(o["brolls"])
+            bounds = [L * i / n for i in range(1, n)]
+            split, acc = [], 0.0
+            for x, y in parts:
+                cuts_ = [x + (b - acc) for b in bounds if acc < b < acc + (y - x)]
+                pts = [x] + cuts_ + [y]
+                split += list(zip(pts[:-1], pts[1:]))
+                acc += y - x
+            parts = [(x, y) for x, y in split if y - x >= 0.05]
+            seg_of, acc = [], 0.0
+            for x, y in parts:
+                i = min(n - 1, int((acc + 1e-6) / (L / n)))
+                seg_of.append((i, acc - i * L / n))
+                acc += y - x
         base_zoom = o.get("zoom", 1.0)
         clip_pieces = []
         for k, (x, y) in enumerate(parts):
@@ -204,11 +222,16 @@ def build(vid, clips, layout, music_plan):
             jump = k > 0 or (prev_src_end is not None and abs(x - prev_src_end) < 3)
             if jump:
                 zflip ^= 1
-            z = base_zoom * (1.0 + 0.09 * zflip) if o.get("tag") not in ("hook", "cold") else base_zoom
+            z = base_zoom * (1.0 + 0.05 * zflip) if o.get("tag") not in ("hook", "cold") else base_zoom
             push = o.get("push", 0.0)
             pc = dict(src=round(x - T0, 3), dur=nf, frm=f0, zoom=round(z, 3), push=push,
                       face=face_for(x, y), clip=ci, tag=o.get("tag", "body"))
-            if o.get("broll") is not None:
+            if seg_of is not None:
+                i, off = seg_of[k]
+                vb = o["brolls"][i] + off
+                pc["vsrc"] = round(vb - T0, 3)
+                pc["face"] = face_for(vb, vb + (y - x))
+            elif o.get("broll") is not None:
                 # picture from elsewhere (J-cut / B-roll), sound stays on the speaker
                 vb = o["broll"] + (x - parts[0][0])
                 pc["vsrc"] = round(vb - T0, 3)
@@ -264,7 +287,8 @@ def build(vid, clips, layout, music_plan):
                                                  hl=bool(HL_WORDS.match(c["t"]))) for c in chunk]))
                 chunk.clear()
 
-        for w in out_words:
+        show_caps = o.get("cap") or o.get("tag") == "hook"
+        for w in (out_words if show_caps else []):
             if w["t"].lower() in FILLER and not chunk:
                 continue
             if chunk and w["t"][:1].isupper() and w["t"] not in KEEP_CAPS:
@@ -286,6 +310,8 @@ def build(vid, clips, layout, music_plan):
             d = OV_DUR.get(typ)
             if typ in ("hook",):
                 d = max(2.6, (clip_end - f) / FPS)
+            if typ == "menutag":
+                d = max(2.0, (clip_end - f) / FPS)
             dur = int(d * FPS) if d else None
             overlays.append(dict(type=typ, frm=f, dur=dur, props=props, clip=ci))
     total = cur
@@ -376,14 +402,14 @@ def build(vid, clips, layout, music_plan):
                 add("pop-small-in", f + 6 + k * 8, 0.4)
         elif t == "endcard":
             add("sting-warm-short", f + 2, 0.45)
-    # subtle whoosh on hard source jumps between sections (not jump cuts)
-    for i in range(1, len(pieces)):
-        p, q = pieces[i - 1], pieces[i]
-        if p["clip"] != q["clip"] and abs((q["src"]) - (p["src"] + p["dur"] / FPS)) > 30:
-            near = any(abs(s["frm"] - q["frm"]) < 20 for s in sfx)
-            if not near:
-                add("whoosh-fast-soft", q["frm"], 0.22)
-
+        elif t == "menutag":
+            add("whoosh-fast-soft", f + 1, 0.4)
+            add("pop-small-in", f + 5, 0.4)
+        elif t == "sticker":
+            add("move-spring", f + 2, 0.5)
+        elif t == "bloopertitle":
+            add("notification-failure-wobble", f + 2, 0.5)
+            add("boom-hit-medium", f + 1, 0.35)
     # ------------------------------------------------ music bed
     music_file = f"music/{vid}.wav"
     make_music(os.path.join(PUB, music_file), music_plan(pieces, overlays, total), total / FPS)
@@ -446,9 +472,13 @@ def full_plan(pieces, overlays, total):
 
 
 if __name__ == "__main__":
-    only = sys.argv[2:] or list(SPEC.SHORTS) + ["full"]
+    only = sys.argv[2:] or list(SPEC.SHORTS) + ["reel", "bloopers", "full"]
     for key in only:
-        if key == "full":
+        if key == "reel":
+            build("reel", SPEC.REEL, "short", lambda p, o, t: [(0, t / FPS, "m_192_05", 30)])
+        elif key == "bloopers":
+            build("bloopers", SPEC.BLOOPERS, "short", lambda p, o, t: [(0, t / FPS, "m_003_05", 0)])
+        elif key == "full":
             build("full", SPEC.FULL, "wide", full_plan)
         else:
             build(key, SPEC.SHORTS[key], "short", short_plan(key))

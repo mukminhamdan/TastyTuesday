@@ -80,28 +80,15 @@ export const Captions: React.FC<{caps: Caption[]; pieces: Piece[]; accent: strin
             style={{
               position: 'relative',
               display: 'inline-block',
-              color: w.hl ? C.gold : C.white,
-              opacity: on ? 1 : 0.72,
-              transform: `translateY(${on ? interpolate(pop, [0, 1], [10, 0]) : 10}px) scale(${active ? 1.06 : 1})`,
+              color: active || w.hl ? C.gold : C.white,
+              opacity: on ? 1 : 0.8,
+              transform: `translateY(${on ? interpolate(pop, [0, 1], [6, 0]) : 6}px)`,
               WebkitTextStroke: '10px rgba(10,6,2,0.92)',
               paintOrder: 'stroke fill',
               textShadow: '0 8px 22px rgba(0,0,0,0.45)',
               padding: '0 6px',
             }}
           >
-            {active && (
-              <span
-                style={{
-                  position: 'absolute',
-                  inset: '-2px -4px 2px -4px',
-                  background: accent,
-                  borderRadius: 14,
-                  transform: `rotate(-1.5deg) scaleX(${interpolate(pop, [0, 1], [0.6, 1])})`,
-                  zIndex: -1,
-                  boxShadow: '0 6px 18px rgba(0,0,0,0.35)',
-                }}
-              />
-            )}
             {w.t}
           </span>
         );
@@ -141,8 +128,7 @@ export const PanelCaptions: React.FC<{caps: Caption[]; accent: string}> = ({caps
           <span
             key={i}
             style={{
-              color: active ? C.ink : w.hl ? C.gold : C.cream,
-              background: active ? accent : 'transparent',
+              color: active || w.hl ? C.gold : C.cream,
               borderRadius: 12,
               padding: '0 10px',
               opacity: on ? 1 : 0.3,

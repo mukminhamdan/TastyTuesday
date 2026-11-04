@@ -9,6 +9,8 @@ import puff from './data/puff.json';
 import sambal from './data/sambal.json';
 import pizza from './data/pizza.json';
 import full from './data/full.json';
+import reel from './data/reel.json';
+import bloopers from './data/bloopers.json';
 
 const SHORTS: [string, string, Timeline][] = [
   ['Short-1-SardinRoll', 'roll', roll as unknown as Timeline],
@@ -16,6 +18,8 @@ const SHORTS: [string, string, Timeline][] = [
   ['Short-3-SardinPuff', 'puff', puff as unknown as Timeline],
   ['Short-4-SambalSardin', 'sambal', sambal as unknown as Timeline],
   ['Short-5-PizzaTuna', 'pizza', pizza as unknown as Timeline],
+  ['Reel-5Menu', 'reel', reel as unknown as Timeline],
+  ['Bloopers', 'bloopers', bloopers as unknown as Timeline],
 ];
 
 export const RemotionRoot: React.FC = () => (

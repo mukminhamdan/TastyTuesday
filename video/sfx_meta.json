@@ -143,5 +143,35 @@
   "sync": 0.012,
   "dur": 0.166,
   "lufs": -25
+ },
+ "move-spring": {
+  "sync": 0,
+  "dur": 0.899,
+  "lufs": -24
+ },
+ "move-bounce": {
+  "sync": 0.011,
+  "dur": 0.926,
+  "lufs": -24
+ },
+ "notification-failure-wobble": {
+  "sync": 0,
+  "dur": 0.535,
+  "lufs": -23.5
+ },
+ "transform-deflate": {
+  "sync": 0,
+  "dur": 0.891,
+  "lufs": -25
+ },
+ "celebration-applause-small": {
+  "sync": 0,
+  "dur": 2.938,
+  "lufs": -24
+ },
+ "move-zoom-in": {
+  "sync": 0.489,
+  "dur": 0.566,
+  "lufs": -22
  }
 }

@@ -81,7 +81,7 @@ export const Hook: React.FC<GProps> = ({props, dur, accent, align}) => {
           transformOrigin: align === 'right' ? 'right center' : 'left center',
         }}
       >
-        <span style={{width: 12, height: 12, borderRadius: 6, background: C.ink, opacity: Math.round(f / 8) % 2 ? 1 : 0.35}} />
+        <span style={{width: 12, height: 12, borderRadius: 6, background: C.ink}} />
         Tasty Tuesday
       </div>
       <div
@@ -375,7 +375,73 @@ export const Cta: React.FC<GProps> = ({dur, accent}) => {
   );
 };
 
+/* ------------------------------------------------------------------ MENU TAG (reel) */
+const TAG_MENUS: Record<string, {n: number; menu: string; chef: string; mode: string; accent: string}> = {
+  roll: {n: 1, menu: 'Sardin Roll', chef: 'Mukmin', mode: 'Deep Fry', accent: '#FF7A1A'},
+  wrap: {n: 2, menu: 'Tortilla Spicy Tuna', chef: 'Kak Hani', mode: 'Grill', accent: '#FF5436'},
+  puff: {n: 3, menu: 'Sardin Puff', chef: 'Kak Salma', mode: 'Oven', accent: '#F2A93B'},
+  sambal: {n: 4, menu: 'Sambal Sardin', chef: 'Mak Ida', mode: 'Cooker', accent: '#E8344E'},
+  pizza: {n: 5, menu: 'Pizza Tuna', chef: 'Kak Pia', mode: 'Pizza', accent: '#FFB000'},
+};
+export const MenuTag: React.FC<GProps> = ({props, dur}) => {
+  const {f, fps, out} = useAnim(dur);
+  const m = TAG_MENUS[props.key];
+  const s = spring({frame: f, fps, config: {damping: 15, stiffness: 200}});
+  return (
+    <div style={{display: 'flex', alignItems: 'center', gap: 22, opacity: 1 - out, transform: `translateX(${interpolate(s, [0, 1], [-50, 0])}px)`}}>
+      <div style={{fontFamily: F.display, fontWeight: 900, fontSize: 120, lineHeight: 0.9, color: m.accent, WebkitTextStroke: '10px rgba(10,6,2,0.85)', paintOrder: 'stroke fill', letterSpacing: -6}}>0{m.n}</div>
+      <div>
+        <div style={{fontFamily: F.display, fontWeight: 800, fontSize: 54, color: C.white, lineHeight: 1, letterSpacing: -1, textTransform: 'uppercase', WebkitTextStroke: '9px rgba(10,6,2,0.85)', paintOrder: 'stroke fill'}}>{m.menu}</div>
+        <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 40, color: C.cream, marginTop: 4, textShadow: '0 3px 14px rgba(0,0,0,0.8)'}}>
+          {m.chef} · Mode {m.mode}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* ------------------------------------------------------------------ STICKER (bloopers) */
+export const Sticker: React.FC<GProps> = ({props, dur, accent}) => {
+  const {f, fps, out} = useAnim(dur);
+  const s = spring({frame: f, fps, config: {damping: 8, stiffness: 260, mass: 0.6}});
+  return (
+    <div
+      style={{
+        display: 'inline-block',
+        padding: '14px 28px',
+        borderRadius: 18,
+        background: accent,
+        color: C.ink,
+        fontFamily: F.display,
+        fontWeight: 900,
+        fontSize: 52,
+        letterSpacing: -1,
+        textTransform: 'uppercase',
+        boxShadow: '0 10px 0 rgba(10,6,2,0.9), 0 20px 40px rgba(0,0,0,0.35)',
+        transform: `scale(${s * (1 - out)}) rotate(${interpolate(s, [0, 1], [-14, -4])}deg)`,
+      }}
+    >
+      {props.text}
+    </div>
+  );
+};
+
+export const BlooperTitle: React.FC<GProps> = ({dur, accent}) => {
+  const {f, fps, out} = useAnim(dur);
+  const s = spring({frame: f, fps, config: {damping: 9, stiffness: 220}});
+  return (
+    <div style={{opacity: 1 - out, transform: `scale(${interpolate(s, [0, 1], [1.6, 1])}) rotate(-3deg)`, transformOrigin: 'left center'}}>
+      <div style={{fontFamily: F.wide, fontWeight: 900, fontStretch: '125%', fontSize: 26, letterSpacing: 6, color: accent}}>TASTY TUESDAY</div>
+      <div style={{fontFamily: F.display, fontWeight: 900, fontSize: 132, lineHeight: 0.95, letterSpacing: -5, color: C.white, WebkitTextStroke: '12px rgba(10,6,2,0.9)', paintOrder: 'stroke fill'}}>BLOOPERS</div>
+      <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 54, color: C.cream, textShadow: '0 4px 18px rgba(0,0,0,0.85)'}}>di sebalik live</div>
+    </div>
+  );
+};
+
 export const GRAPHICS: Record<string, React.FC<GProps>> = {
+  menutag: MenuTag,
+  sticker: Sticker,
+  bloopertitle: BlooperTitle,
   hook: Hook,
   title: Title,
   chip: Chip,

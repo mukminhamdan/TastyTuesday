@@ -72,4 +72,6 @@ export const MENUS: Record<string, {menu: string; chef: string; mode: string; ac
   puff: {menu: 'Sardin Puff', chef: 'Kak Salma', mode: 'Oven', accent: '#F2A93B', n: 3},
   sambal: {menu: 'Sambal Sardin', chef: 'Mak Ida', mode: 'Cooker', accent: '#E8344E', n: 4},
   pizza: {menu: 'Pizza Tuna', chef: 'Kak Pia', mode: 'Pizza', accent: '#FFB000', n: 5},
+  reel: {menu: '5 Menu', chef: '', mode: '', accent: '#FF8A2A', n: 0},
+  bloopers: {menu: 'Bloopers', chef: '', mode: '', accent: '#FFC94D', n: 0},
 };

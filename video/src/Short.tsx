@@ -8,7 +8,7 @@ import {C, F, MENUS, Timeline, loadFonts} from './theme';
 
 loadFonts();
 
-const BIG = new Set(['hook', 'title', 'cta']);
+const BIG = new Set(['hook', 'title', 'cta', 'bloopertitle']);
 
 export const Short: React.FC<{data: Timeline; menuKey: string; preview?: boolean}> = ({data, menuKey, preview}) => {
   const accent = MENUS[menuKey].accent;
@@ -60,7 +60,6 @@ export const Short: React.FC<{data: Timeline; menuKey: string; preview?: boolean
         );
       })}
       <Captions caps={data.captions} pieces={data.pieces} accent={accent} hidden={hidden} />
-      <Progress total={data.total} accent={accent} />
       {preview && <PreviewBug />}
       <Voice pieces={data.pieces} />
       <Music src={data.music} speech={data.speech} total={data.total} />

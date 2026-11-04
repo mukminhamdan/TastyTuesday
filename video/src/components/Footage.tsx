@@ -57,8 +57,8 @@ export const pieceAt = (pieces: Piece[], f: number) => {
 const PieceVideo: React.FC<{p: Piece; enter: boolean}> = ({p, enter}) => {
   const f = useCurrentFrame();
   const t = pieceTransform(p, f);
-  const blur = enter ? interpolate(f, [0, 5], [10, 0], {extrapolateRight: 'clamp'}) : 0;
-  const kick = enter ? interpolate(f, [0, 6], [1.07, 1], {extrapolateRight: 'clamp'}) : 1;
+  const blur = 0;
+  const kick = enter ? interpolate(f, [0, 6], [1.03, 1], {extrapolateRight: 'clamp'}) : 1;
   return (
     <AbsoluteFill style={{overflow: 'hidden', backgroundColor: '#000'}}>
       <div
@@ -134,7 +134,7 @@ export const Grade: React.FC = () => {
         style={{
           backgroundImage: `url(${staticFile('noise.png')})`,
           backgroundPosition: `${ox}px ${oy}px`,
-          opacity: 0.07,
+          opacity: 0.04,
           mixBlendMode: 'overlay',
         }}
       />
