@@ -98,7 +98,7 @@ SHORTS["puff"] = [
 
 # ---------------------------------------------------------------- 4. SAMBAL SARDIN
 SHORTS["sambal"] = [
-    hook(3233.6, 3235.9, "Sambal tak mercik ke dinding", sub="Sambal Sardin · Mode Cooker"),
+    hook(3233.6, 3235.9, "Sambal tak merecik ke dinding", sub="Sambal Sardin · Mode Cooker"),
     (2329.0, 2333.0, k(zoom=1.06)),
     title("sambal", 2048.5, 2051.9),
     (2056.9, 2063.5, {}),
