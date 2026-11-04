@@ -1,0 +1,528 @@
+{
+ "S1": {
+  "video": "roll",
+  "phrases": {
+   "S1-01": 7,
+   "S1-02": 8,
+   "S1-03": 10
+  },
+  "graphics": {
+   "S1-G1": [
+    "hook",
+    {
+     "text": "Goreng tanpa risau hangus",
+     "sub": "Sardin Roll · Cooven",
+     "align": "right"
+    }
+   ],
+   "S1-G2": [
+    "title",
+    {
+     "menu": "Sardin Roll",
+     "chef": "Mukmin",
+     "role": "Chef #1",
+     "mode": "Deep Fry"
+    }
+   ],
+   "S1-G3": [
+    "chip",
+    {
+     "text": "Mode Deep Fry",
+     "icon": "flame"
+    }
+   ],
+   "S1-G4": [
+    "tip",
+    {
+     "text": "Suhu kekal stabil",
+     "sub": "Tak naik, tak turun"
+    }
+   ],
+   "S1-G5": [
+    "stat",
+    {
+     "big": "180°C",
+     "label": "Hasil elok, tak hangit"
+    }
+   ],
+   "S1-G6": [
+    "stat",
+    {
+     "big": "< 20 min",
+     "label": "Satu buku roti siap"
+    }
+   ]
+  }
+ },
+ "S2": {
+  "video": "wrap",
+  "phrases": {
+   "S2-01": 1,
+   "S2-02": 6,
+   "S2-03": 7,
+   "S2-04": 8,
+   "S2-05": 10
+  },
+  "graphics": {
+   "S2-G1": [
+    "hook",
+    {
+     "text": "Wrap ala cafe dalam 4 minit",
+     "sub": "Tortilla Spicy Tuna"
+    }
+   ],
+   "S2-G2": [
+    "title",
+    {
+     "menu": "Tortilla Spicy Tuna",
+     "chef": "Kak Hani",
+     "role": "Chef #2",
+     "mode": "Grill"
+    }
+   ],
+   "S2-G3": [
+    "chip",
+    {
+     "text": "Mode Grill",
+     "icon": "grill"
+    }
+   ],
+   "S2-G4": [
+    "stat",
+    {
+     "big": "8 min",
+     "label": "Mode Grill · Medium"
+    }
+   ],
+   "S2-G5": [
+    "tip",
+    {
+     "text": "Separuh masa: terbalikkan",
+     "sub": "Mesin akan ingatkan"
+    }
+   ],
+   "S2-G6": [
+    "reveal",
+    {
+     "text": "Spicy Tuna Wrap"
+    }
+   ]
+  }
+ },
+ "S3": {
+  "video": "puff",
+  "phrases": {
+   "S3-01": 6,
+   "S3-02": 9
+  },
+  "graphics": {
+   "S3-G1": [
+    "hook",
+    {
+     "text": "Sardin puff siap 10 minit",
+     "sub": "Mode Oven · Cooven"
+    }
+   ],
+   "S3-G2": [
+    "title",
+    {
+     "menu": "Sardin Puff",
+     "chef": "Kak Salma",
+     "role": "Chef #3",
+     "mode": "Oven"
+    }
+   ],
+   "S3-G3": [
+    "chip",
+    {
+     "text": "Mode Oven",
+     "icon": "oven"
+    }
+   ],
+   "S3-G4": [
+    "stat",
+    {
+     "big": "180°C",
+     "label": "10 minit"
+    }
+   ],
+   "S3-G5": [
+    "reveal",
+    {
+     "text": "Dah siap!"
+    }
+   ],
+   "S3-G6": [
+    "tip",
+    {
+     "text": "Tip: half-cook 7 minit",
+     "sub": "Simpan beku, bakar bila nak"
+    }
+   ]
+  }
+ },
+ "S4": {
+  "video": "sambal",
+  "phrases": {
+   "S4-01": 1,
+   "S4-02": 5,
+   "S4-03": 7,
+   "S4-04": 9,
+   "S4-05": 11
+  },
+  "graphics": {
+   "S4-G1": [
+    "hook",
+    {
+     "text": "Sambal tak mercik ke dinding",
+     "sub": "Sambal Sardin · Mode Cooker"
+    }
+   ],
+   "S4-G2": [
+    "title",
+    {
+     "menu": "Sambal Sardin",
+     "chef": "Mak Ida",
+     "role": "Chef #4",
+     "mode": "Cooker"
+    }
+   ],
+   "S4-G3": [
+    "tip",
+    {
+     "text": "Nak lagi laju?",
+     "sub": "Tukar ke Mode Deep Fry"
+    }
+   ],
+   "S4-G4": [
+    "stat",
+    {
+     "big": "8 Liter",
+     "label": "Masak stok berbulan"
+    }
+   ],
+   "S4-G5": [
+    "reveal",
+    {
+     "text": "Makan dengan nasi atau roti"
+    }
+   ]
+  }
+ },
+ "S5": {
+  "video": "pizza",
+  "phrases": {
+   "S5-01": 4,
+   "S5-02": 6,
+   "S5-03": 9,
+   "S5-04": 11
+  },
+  "graphics": {
+   "S5-G1": [
+    "hook",
+    {
+     "text": "“Pizza ni beli eh?”",
+     "sub": "Pizza Tuna · 6 minit"
+    }
+   ],
+   "S5-G2": [
+    "title",
+    {
+     "menu": "Pizza Tuna",
+     "chef": "Kak Pia",
+     "role": "Chef #5",
+     "mode": "Pizza"
+    }
+   ],
+   "S5-G3": [
+    "stat",
+    {
+     "big": "15 min",
+     "label": "Oven biasa",
+     "strike": true
+    }
+   ],
+   "S5-G4": [
+    "chip",
+    {
+     "text": "Mode Pizza",
+     "icon": "pizza"
+    }
+   ],
+   "S5-G5": [
+    "stat",
+    {
+     "big": "6 min",
+     "label": "Mode Pizza Cooven"
+    }
+   ],
+   "S5-G6": [
+    "reveal",
+    {
+     "text": "Lembut & fluffy"
+    }
+   ]
+  }
+ },
+ "RL": {
+  "video": "reel",
+  "phrases": {
+   "RL-01": 1,
+   "RL-02": 2,
+   "RL-03": 3,
+   "RL-04": 4,
+   "RL-05": 5,
+   "RL-06": 6,
+   "RL-07": 7
+  },
+  "graphics": {
+   "RL-G1": [
+    "hook",
+    {
+     "text": "1 bahan. 5 menu.",
+     "sub": "Tuna & Sardin · Tasty Tuesday"
+    }
+   ]
+  }
+ },
+ "BL": {
+  "video": "bloopers",
+  "phrases": {
+   "BL-01": 0,
+   "BL-02": 1,
+   "BL-03": 2,
+   "BL-04": 3,
+   "BL-05": 4,
+   "BL-06": 5,
+   "BL-07": 6,
+   "BL-08": 7,
+   "BL-09": 8,
+   "BL-10": 9,
+   "BL-11": 10
+  },
+  "graphics": {
+   "BL-G1": [
+    "sticker",
+    {
+     "text": "Mic, mana mic?"
+    }
+   ],
+   "BL-G2": [
+    "sticker",
+    {
+     "text": "Apron belum gosok"
+    }
+   ],
+   "BL-G3": [
+    "sticker",
+    {
+     "text": "Kamera, oh kamera"
+    }
+   ],
+   "BL-G4": [
+    "sticker",
+    {
+     "text": "Tak dengar!"
+    }
+   ],
+   "BL-G5": [
+    "sticker",
+    {
+     "text": "Pizza tak sabar"
+    }
+   ],
+   "BL-G6": [
+    "sticker",
+    {
+     "text": "Habis dah?!"
+    }
+   ],
+   "BL-G7": [
+    "sticker",
+    {
+     "text": "Sesi screenshot"
+    }
+   ],
+   "BL-G8": [
+    "sticker",
+    {
+     "text": "Sibuk tunjuk makan"
+    }
+   ]
+  }
+ },
+ "YT": {
+  "video": "full",
+  "phrases": {
+   "YT-01": 0,
+   "YT-02": 1,
+   "YT-03": 2,
+   "YT-04": 3,
+   "YT-05": 4,
+   "YT-06": 5,
+   "YT-07": 13,
+   "YT-08": 14,
+   "YT-09": 18,
+   "YT-10": 25,
+   "YT-11": 29,
+   "YT-12": 30,
+   "YT-13": 32,
+   "YT-14": 39,
+   "YT-15": 43,
+   "YT-16": 48,
+   "YT-17": 51,
+   "YT-18": 55,
+   "YT-19": 57,
+   "YT-20": 64,
+   "YT-21": 66,
+   "YT-22": 70,
+   "YT-23": 73,
+   "YT-24": 74
+  },
+  "graphics": {
+   "YT-G1": [
+    "chip",
+    {
+     "text": "Mode Deep Fry",
+     "icon": "flame"
+    }
+   ],
+   "YT-G2": [
+    "tip",
+    {
+     "text": "Suhu kekal stabil",
+     "sub": "Tak naik, tak turun"
+    }
+   ],
+   "YT-G3": [
+    "tip",
+    {
+     "text": "Promo: Utensil Set 7 pcs",
+     "sub": "Untuk pembelian sekarang"
+    }
+   ],
+   "YT-G4": [
+    "stat",
+    {
+     "big": "180°C",
+     "label": "Hasil elok, tak hangit"
+    }
+   ],
+   "YT-G5": [
+    "stat",
+    {
+     "big": "< 20 min",
+     "label": "Satu buku roti siap"
+    }
+   ],
+   "YT-G6": [
+    "chip",
+    {
+     "text": "Mode Grill",
+     "icon": "grill"
+    }
+   ],
+   "YT-G7": [
+    "stat",
+    {
+     "big": "8 min",
+     "label": "Mode Grill · Medium"
+    }
+   ],
+   "YT-G8": [
+    "tip",
+    {
+     "text": "Separuh masa: terbalikkan",
+     "sub": "Mesin akan ingatkan"
+    }
+   ],
+   "YT-G9": [
+    "reveal",
+    {
+     "text": "Spicy Tuna Wrap"
+    }
+   ],
+   "YT-G10": [
+    "chip",
+    {
+     "text": "Mode Oven",
+     "icon": "oven"
+    }
+   ],
+   "YT-G11": [
+    "stat",
+    {
+     "big": "180°C",
+     "label": "10 minit"
+    }
+   ],
+   "YT-G12": [
+    "reveal",
+    {
+     "text": "Dah siap!"
+    }
+   ],
+   "YT-G13": [
+    "tip",
+    {
+     "text": "Tip: half-cook 7 minit",
+     "sub": "Simpan beku, bakar bila nak"
+    }
+   ],
+   "YT-G14": [
+    "tip",
+    {
+     "text": "Nak lagi laju?",
+     "sub": "Tukar ke Mode Deep Fry"
+    }
+   ],
+   "YT-G15": [
+    "stat",
+    {
+     "big": "8 Liter",
+     "label": "Masak stok berbulan"
+    }
+   ],
+   "YT-G16": [
+    "reveal",
+    {
+     "text": "Makan dengan nasi atau roti"
+    }
+   ],
+   "YT-G17": [
+    "stat",
+    {
+     "big": "15 min",
+     "label": "Oven biasa",
+     "strike": true
+    }
+   ],
+   "YT-G18": [
+    "chip",
+    {
+     "text": "Mode Pizza",
+     "icon": "pizza"
+    }
+   ],
+   "YT-G19": [
+    "stat",
+    {
+     "big": "6 min",
+     "label": "Mode Pizza Cooven"
+    }
+   ],
+   "YT-G20": [
+    "quote",
+    {
+     "text": "“My mum buat.”"
+    }
+   ],
+   "YT-G21": [
+    "reveal",
+    {
+     "text": "Lembut & fluffy"
+    }
+   ]
+  }
+ }
+}

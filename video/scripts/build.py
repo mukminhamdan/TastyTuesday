@@ -20,6 +20,9 @@ os.makedirs(os.path.join(PUB, "music"), exist_ok=True)
 FPS = 30
 T0 = 990.0  # proxy/voice start in source seconds (media covers 990s–3800s)
 SFX = json.load(open(os.path.join(ROOT, "sfx_meta.json")))
+# caption edits from the review doc: {video: {clip_index: "new sentence" | "BUANG"}}
+_ovp = os.path.join(ROOT, "scripts", "caption_overrides.json")
+OVERRIDES = json.load(open(_ovp)) if os.path.exists(_ovp) else {}
 
 # ------------------------------------------------------------------ inputs
 segs = json.load(open(os.path.join(WORK, "full.json")))
@@ -70,7 +73,7 @@ TOKEN_FIX = {
     "sadin": "sardin", "sadid": "sardin", "saling": "sardin", "sadib": "sardin", "sardine": "sardin",
     "sanding": "sardin", "sadeh": "sardin", "tunah": "tuna", "kuven": "Cooven", "cuven": "Cooven",
     "kuwen": "Cooven", "cuvan": "Cooven", "kuven.": "Cooven.", "kuwen.": "Cooven.", "tuhu": "suhu",
-    "suruh": "suhu", "hangis": "hangit", "menggorek": "menggoreng", "mengorek": "menggoreng",
+"hangis": "hangit", "menggorek": "menggoreng", "mengorek": "menggoreng",
     "dipkan": "celupkan", "pav": "puff", "kefe": "cafe", "lembur": "lembut", "front": "prompt",
     "jaring": "garing", "caramalize": "caramelize", "menyambar": "menyambal", "visa": "pizza",
     "sepas": "lepas", "testitusi": "Tasty Tuesday", "glisskan": "sapukan", "green": "grill",
@@ -83,6 +86,7 @@ PHRASE_FIX = [
     (["gunakan", "lembut", "refry", "ni"], "guna mode deep fry ni"),
     (["food", "and", "improvement"], "Food Engine"),
     (["mod", "tukar"], "mode cooker"),
+    (["suruh", "180"], "suhu 180"),
     (["8", "sejuk"], "peti sejuk"),
     (["kuai", "jean", "-kuai"], "Cooven"),
     (["pak", "haji"], ""),
@@ -286,12 +290,27 @@ def build(vid, clips, layout, music_plan):
 
         def flush():
             if chunk:
-                captions.append(dict(frm=chunk[0]["f0"], end=chunk[-1]["f1"],
+                captions.append(dict(frm=chunk[0]["f0"], end=chunk[-1]["f1"], clip=ci,
                                      words=[dict(t=c["t"], f=c["f0"] - chunk[0]["f0"],
                                                  hl=bool(HL_WORDS.match(c["t"]))) for c in chunk]))
                 chunk.clear()
 
         show_caps = o.get("cap") or o.get("tag") == "hook"
+        ov_txt = OVERRIDES.get(vid, {}).get(str(ci))
+        if ov_txt is not None and out_words:
+            if ov_txt.strip().upper() == "BUANG":
+                show_caps = False
+            else:
+                # user-edited sentence: keep the original rhythm, spread new words over old word times
+                new = ov_txt.split()
+                n_old = len(out_words)
+                rebuilt = []
+                for j, t in enumerate(new):
+                    src = out_words[min(n_old - 1, int(j * n_old / len(new)))]
+                    nxt = out_words[min(n_old - 1, int((j + 1) * n_old / len(new)))]
+                    f0 = src["f0"] if not rebuilt else max(src["f0"], rebuilt[-1]["f0"] + 2)
+                    rebuilt.append(dict(t=t, f0=f0, f1=max(f0 + 3, nxt["f0"] if nxt is not src else src["f1"])))
+                out_words = rebuilt
         for w in (out_words if show_caps else []):
             if w["t"].lower() in FILLER and not chunk:
                 continue
@@ -430,7 +449,8 @@ def build(vid, clips, layout, music_plan):
 
     # ------------------------------------------------ music bed
     music_file = f"music/{vid}.wav"
-    make_music(os.path.join(PUB, music_file), music_plan(pieces, overlays, total), total / FPS)
+    if not os.environ.get("NO_MUSIC"):  # NO_MUSIC=1: keep existing beds (safe while a render reads them)
+        make_music(os.path.join(PUB, music_file), music_plan(pieces, overlays, total), total / FPS)
 
     data = dict(id=vid, fps=FPS, layout=layout, style=style, punch=punch, whips=whips, total=total, pieces=pieces, captions=captions,
                 overlays=overlays, sfx=sfx, speech=merged, music=music_file,
