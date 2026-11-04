@@ -61,7 +61,7 @@ def k(**kw):
 
 # ---------------------------------------------------------------- 1. SARDIN ROLL
 SHORTS["roll"] = [
-    hook(3075.3, 3079.9, "Goreng tanpa risau hangus", sub="Sardin Roll · Cooven", align="right"),
+    hook(3075.3, 3079.9, "Goreng tanpa risau hangus", sub="Sardin Roll · Food Engine Cooven", align="right"),
     title("roll", 1094.6, 1110.0, ov2=[("chip", 1106.6, dict(text="Mode Deep Fry", icon="flame"))]),
     (1118.4, 1129.4, {}),
     (1133.4, 1135.5, {}),
@@ -91,7 +91,7 @@ SHORTS["wrap"] = [
 
 # ---------------------------------------------------------------- 3. SARDIN PUFF
 SHORTS["puff"] = [
-    hook(3160.7, 3163.3, "Sardin puff siap 10 minit", sub="Mode Oven · Cooven"),
+    hook(3160.7, 3163.3, "Sardin puff siap 10 minit", sub="Food Engine Cooven"),
     title("puff", 1658.2, 1664.3),
     (1672.0, 1679.4, {}),
     (1686.5, 1697.0, {}),
@@ -128,7 +128,7 @@ SHORTS["pizza"] = [
     (2482.3, 2488.4, {}),
     (2620.2, 2626.9, k(ov=[("stat", 2625.4, dict(big="15 min", label="Oven biasa", strike=True))])),
     (2631.9, 2637.7, dict(ov=[("chip", 2635.9, dict(text="Mode Pizza", icon="pizza"))])),
-    (2641.5, 2644.7, k(ov=[("stat", 2643.7, dict(big="6 min", label="Mode Pizza Cooven"))])),
+    (2641.5, 2644.7, k(ov=[("stat", 2643.7, dict(big="6 min", label="Mode Pizza · Food Engine Cooven"))])),
     (2898.0, 2900.8, {}),
     (2659.8, 2666.3, {}),
     (2834.2, 2839.9, K),
@@ -205,7 +205,6 @@ def strip(clips):
 
 
 FULL += chapter("roll", strip(SHORTS["roll"][1:]) + [
-    (1315.1, 1328.7, dict(ov=[("tip", 1325.5, dict(text="Promo: Utensil Set 7 pcs", sub="Untuk pembelian sekarang"))])),
     (1352.8, 1358.7, {}),
     (3075.3, 3079.9, {}),
 ])
@@ -300,7 +299,7 @@ TEASERS["sambal"] = [
 TEASERS["pizza"] = [
     thook(2745.7, 2752.7, "“Pizza ni beli eh?”", "Pizza Tuna · Kak Piah", brolls=PIZZA_BROLL),
     joke(3021.5, 3027.5, "Pizza tak sabar", 3022.4),
-    (2641.5, 2644.7, k(ov=[("stat", 2643.7, dict(big="6 min", label="Mode Pizza Cooven"))])),
+    (2641.5, 2644.7, k(ov=[("stat", 2643.7, dict(big="6 min", label="Mode Pizza · Food Engine Cooven"))])),
     joke(3547.6, 3553.2, "Pizza besar sangat", 3551.5),
     joke(3283.4, 3294.0, "Habis dah?!", 3292.0),
 ] + part2(DISHES["pizza"])

@@ -223,7 +223,7 @@ const ShowHead: React.FC<{data: Timeline}> = () => {
         <br />
         <span style={{color: '#FF8A2A'}}>TUESDAY</span>
       </div>
-      <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 56, color: T.sub, marginTop: 14}}>5 chef · 5 menu · 1 Cooven</div>
+      <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 56, color: T.sub, marginTop: 14}}>5 chef · 5 menu · 1 Food Engine Cooven</div>
     </div>
   );
 };
