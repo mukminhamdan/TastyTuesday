@@ -19,7 +19,7 @@ export const Short: React.FC<{data: Timeline; menuKey: string; preview?: boolean
   const hidden = (f: number) => bigRanges.some(([a, b]) => f >= a && f < b);
   return (
     <AbsoluteFill style={{backgroundColor: C.ink}}>
-      <Footage pieces={data.pieces} />
+      <Footage pieces={data.pieces} look="snappy" punch={data.punch} whips={data.whips} />
       {data.overlays.map((o, i) => {
         const G = GRAPHICS[o.type];
         if (!G) return null;

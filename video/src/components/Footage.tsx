@@ -54,11 +54,21 @@ export const pieceAt = (pieces: Piece[], f: number) => {
   return pieces[Math.max(0, Math.min(pieces.length - 1, lo))];
 };
 
-const PieceVideo: React.FC<{p: Piece; enter: boolean}> = ({p, enter}) => {
+export type Look = 'snappy' | 'cinema';
+const FILTER: Record<Look, string> = {
+  snappy: 'saturate(1.2) contrast(1.05) brightness(1.05)',
+  cinema: 'saturate(1.04) contrast(1.1) brightness(0.99)',
+};
+
+const PieceVideo: React.FC<{p: Piece; enter: boolean; whip: boolean; punchAt: number | null; look: Look}> = ({p, enter, whip, punchAt, look}) => {
   const f = useCurrentFrame();
   const t = pieceTransform(p, f);
-  const blur = 0;
-  const kick = enter ? interpolate(f, [0, 6], [1.03, 1], {extrapolateRight: 'clamp'}) : 1;
+  // whip-in: short horizontal slide with motion blur at section changes (snappy)
+  const blur = whip ? interpolate(f, [0, 5], [9, 0], {extrapolateRight: 'clamp'}) : 0;
+  const slide = whip ? interpolate(f, [0, 5], [7, 0], {extrapolateRight: 'clamp'}) : 0;
+  // punch-in: snap 10% closer on a reveal / stat and hold for the rest of the shot
+  const punch = punchAt !== null && f >= punchAt ? 1 + 0.1 * Math.min(1, (f - punchAt) / 3) : 1;
+  const kick = (enter && !whip ? interpolate(f, [0, 6], [1.03, 1], {extrapolateRight: 'clamp'}) : 1) * punch;
   return (
     <AbsoluteFill style={{overflow: 'hidden', backgroundColor: '#000'}}>
       <div
@@ -68,9 +78,9 @@ const PieceVideo: React.FC<{p: Piece; enter: boolean}> = ({p, enter}) => {
           top: t.top,
           width: t.vw,
           height: t.vh,
-          transform: `scale(${kick})`,
+          transform: `translateX(${slide}%) scale(${kick})`,
           transformOrigin: '50% 40%',
-          filter: `saturate(1.12) contrast(1.06) brightness(1.02)${blur ? ` blur(${blur}px)` : ''}`,
+          filter: `${FILTER[look]}${blur ? ` blur(${blur}px)` : ''}`,
         }}
       >
         <OffthreadVideo
@@ -85,19 +95,20 @@ const PieceVideo: React.FC<{p: Piece; enter: boolean}> = ({p, enter}) => {
   );
 };
 
-export const Footage: React.FC<{pieces: Piece[]}> = ({pieces}) => {
+export const Footage: React.FC<{pieces: Piece[]; look?: Look; punch?: number[]; whips?: number[]}> = ({pieces, look = 'snappy', punch = [], whips = []}) => {
   return (
     <AbsoluteFill>
       {pieces.map((p, i) => {
         const prev = pieces[i - 1];
         const enter = !!prev && prev.clip !== p.clip && Math.abs(prev.src + prev.dur / 30 - p.src) > 30;
+        const pf = punch.find((x) => x >= p.frm && x < p.frm + p.dur);
         return (
           <Sequence key={i} from={p.frm} durationInFrames={p.dur} layout="none">
-            <PieceVideo p={p} enter={enter} />
+            <PieceVideo p={p} enter={enter} whip={whips.includes(p.frm)} punchAt={pf === undefined ? null : pf - p.frm} look={look} />
           </Sequence>
         );
       })}
-      <Grade />
+      <Grade look={look} />
     </AbsoluteFill>
   );
 };
@@ -117,7 +128,7 @@ export const Voice: React.FC<{pieces: Piece[]}> = ({pieces}) => (
 );
 
 /** Warm cinematic grade: vignette + film grain. */
-export const Grade: React.FC = () => {
+export const Grade: React.FC<{look?: Look}> = ({look = 'snappy'}) => {
   const f = useCurrentFrame();
   const ox = (f * 37) % 256;
   const oy = (f * 91) % 256;
@@ -126,15 +137,21 @@ export const Grade: React.FC = () => {
       <AbsoluteFill
         style={{
           background:
-            'radial-gradient(ellipse 80% 70% at 50% 42%, rgba(0,0,0,0) 55%, rgba(10,6,2,0.42) 100%)',
+            look === 'cinema'
+              ? 'radial-gradient(ellipse 78% 68% at 50% 42%, rgba(0,0,0,0) 50%, rgba(6,4,2,0.55) 100%)'
+              : 'radial-gradient(ellipse 85% 75% at 50% 42%, rgba(0,0,0,0) 60%, rgba(10,6,2,0.22) 100%)',
         }}
       />
-      <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(255,170,90,0.05), rgba(0,0,0,0) 40%, rgba(40,20,0,0.08))', mixBlendMode: 'soft-light'}} />
+      {look === 'cinema' ? (
+        <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(255,160,80,0.10), rgba(0,0,0,0) 45%, rgba(0,60,80,0.14))', mixBlendMode: 'soft-light'}} />
+      ) : (
+        <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(255,190,110,0.07), rgba(0,0,0,0) 50%)', mixBlendMode: 'soft-light'}} />
+      )}
       <AbsoluteFill
         style={{
           backgroundImage: `url(${staticFile('noise.png')})`,
           backgroundPosition: `${ox}px ${oy}px`,
-          opacity: 0.04,
+          opacity: look === 'cinema' ? 0.05 : 0,
           mixBlendMode: 'overlay',
         }}
       />

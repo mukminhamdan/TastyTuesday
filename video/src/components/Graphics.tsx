@@ -77,7 +77,7 @@ export const Hook: React.FC<GProps> = ({props, dur, accent, align}) => {
           fontSize: 26,
           letterSpacing: 3,
           textTransform: 'uppercase',
-          transform: `scale(${spring({frame: f, fps, config: {damping: 12}})})`,
+          transform: `scale(${interpolate(spring({frame: f, fps, config: {damping: 12}}), [0, 1], [1.2, 1])})`,
           transformOrigin: align === 'right' ? 'right center' : 'left center',
         }}
       >
@@ -101,14 +101,14 @@ export const Hook: React.FC<GProps> = ({props, dur, accent, align}) => {
         }}
       >
         {words.map((w, i) => {
-          const s = spring({frame: f - 3 - i * 3, fps, config: {damping: 13, stiffness: 200, mass: 0.6}});
+          // fully readable on frame 0 (thumbnail / first impression), then a quick settle
+          const s = spring({frame: f, fps, config: {damping: 14, stiffness: 260, mass: 0.5}});
           return (
             <span
               key={i}
               style={{
                 display: 'inline-block',
-                transform: `translateY(${interpolate(s, [0, 1], [60, 0])}px) rotate(${interpolate(s, [0, 1], [6, 0])}deg)`,
-                opacity: s,
+                transform: `scale(${interpolate(s, [0, 1], [1.22, 1])})`,
                 WebkitTextStroke: '12px rgba(10,6,2,0.9)',
                 paintOrder: 'stroke fill',
                 textShadow: '0 12px 30px rgba(0,0,0,0.5)',
@@ -127,7 +127,7 @@ export const Hook: React.FC<GProps> = ({props, dur, accent, align}) => {
             fontStyle: 'italic',
             fontSize: 52,
             color: C.cream,
-            opacity: interpolate(f, [12, 22], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}),
+            opacity: interpolate(f, [4, 12], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}),
             textShadow: '0 4px 18px rgba(0,0,0,0.8)',
           }}
         >

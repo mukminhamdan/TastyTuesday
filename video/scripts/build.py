@@ -168,6 +168,7 @@ OV_DUR = dict(hook=2.6, title=2.6, chip=2.2, step=2.4, tip=2.8, stat=2.3, reveal
 
 
 def build(vid, clips, layout, music_plan):
+    style = "cinema" if layout == "wide" else "snappy"
     pieces = []  # output pieces
     captions, overlays, sfx, speech = [], [], [], []
     cur = 0  # frames
@@ -222,8 +223,11 @@ def build(vid, clips, layout, music_plan):
             jump = k > 0 or (prev_src_end is not None and abs(x - prev_src_end) < 3)
             if jump:
                 zflip ^= 1
-            z = base_zoom * (1.0 + 0.05 * zflip) if o.get("tag") not in ("hook", "cold") else base_zoom
-            push = o.get("push", 0.0)
+            if style == "cinema":
+                z, push = base_zoom, o.get("push", 0.035)  # no jump-zoom; slow push-in everywhere
+            else:
+                z = base_zoom * (1.0 + 0.06 * zflip) if o.get("tag") not in ("hook", "cold") else base_zoom
+                push = o.get("push", 0.0)
             pc = dict(src=round(x - T0, 3), dur=nf, frm=f0, zoom=round(z, 3), push=push,
                       face=face_for(x, y), clip=ci, tag=o.get("tag", "body"))
             if seg_of is not None:
@@ -307,6 +311,8 @@ def build(vid, clips, layout, music_plan):
         clip_end = clip_pieces[-1][2]["frm"] + clip_pieces[-1][2]["dur"] if clip_pieces else cur
         for typ, t, props in list(o.get("ov", [])) + list(o.get("ov2", [])):
             f = int(map_t(t))
+            if typ == "hook" and ci == 0:
+                f = 0  # readable on the very first frame (thumbnail / first impression)
             d = OV_DUR.get(typ)
             if typ in ("hook",):
                 d = max(2.6, (clip_end - f) / FPS)
@@ -410,11 +416,23 @@ def build(vid, clips, layout, music_plan):
         elif t == "bloopertitle":
             add("notification-failure-wobble", f + 2, 0.5)
             add("boom-hit-medium", f + 1, 0.35)
+    # ------------------------------------------------ style: punch-ins & whips (snappy)
+    punch, whips = [], []
+    if style == "snappy":
+        punch = sorted(ov["frm"] + 2 for ov in overlays if ov["type"] in ("stat", "reveal", "menutag", "sticker"))
+        for i in range(1, len(pieces)):
+            p, q = pieces[i - 1], pieces[i]
+            src_p = p.get("vsrc", p["src"]) + p["dur"] / FPS
+            if p["clip"] != q["clip"] and (p["tag"] != q["tag"] or abs(q.get("vsrc", q["src"]) - src_p) > 20):
+                whips.append(q["frm"])
+                if not any(abs(s["frm"] - q["frm"]) < 12 for s in sfx):
+                    add("whoosh-fast-soft", q["frm"], 0.3)
+
     # ------------------------------------------------ music bed
     music_file = f"music/{vid}.wav"
     make_music(os.path.join(PUB, music_file), music_plan(pieces, overlays, total), total / FPS)
 
-    data = dict(id=vid, fps=FPS, layout=layout, total=total, pieces=pieces, captions=captions,
+    data = dict(id=vid, fps=FPS, layout=layout, style=style, punch=punch, whips=whips, total=total, pieces=pieces, captions=captions,
                 overlays=overlays, sfx=sfx, speech=merged, music=music_file,
                 chapters=[dict(key=ov["props"]["key"], frm=ov["frm"], menu=ov["props"]["menu"])
                           for ov in overlays if ov["type"] == "chapter"])

@@ -45,7 +45,7 @@ export const Full: React.FC<{data: Timeline; preview?: boolean}> = ({data, previ
         }}
       >
         <div style={{width: 1080, height: 1920, transform: `scale(${SCALE})`, transformOrigin: '0 0'}}>
-          <Footage pieces={data.pieces} />
+          <Footage pieces={data.pieces} look="cinema" />
         </div>
       </div>
       {/* side panel */}
@@ -182,18 +182,22 @@ const ChapterBar: React.FC<{data: Timeline; ch: string | null}> = ({ch}) => (
 
 type SP = {dur: number; props: Record<string, any>};
 
-/** Full-screen chapter sweep (~1 s), clears before the cook speaks. */
-const ChapterSweep: React.FC<SP> = ({dur, props}) => {
+/** Cinematic chapter card: dip, serif kicker + title, then back to picture (~1.4 s). */
+const ChapterSweep: React.FC<SP> = ({props}) => {
   const f = useCurrentFrame();
   const m = MENUS[props.key];
-  const inX = interpolate(f, [0, 9], [-110, 0], {extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const outX = interpolate(f, [24, 34], [0, 110], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.in(Easing.cubic)});
-  if (f > 36) return null;
+  if (f > 44) return null;
+  const dim = interpolate(f, [0, 8, 30, 44], [0, 0.88, 0.88, 0], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.cubic)});
+  const txt = interpolate(f, [6, 14, 28, 38], [0, 1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const rise = interpolate(f, [6, 20], [24, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const line = interpolate(f, [8, 22], [0, 220], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
   return (
-    <AbsoluteFill style={{transform: `translateX(${inX + outX}%) skewX(-8deg)`, background: m.accent, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-      <div style={{transform: 'skewX(8deg)', textAlign: 'center', color: C.ink}}>
-        <div style={{fontFamily: F.wide, fontWeight: 900, fontStretch: '125%', fontSize: 34, letterSpacing: 10}}>MENU 0{m.n}</div>
-        <div style={{fontFamily: F.display, fontWeight: 900, fontSize: 150, letterSpacing: -5, lineHeight: 1}}>{m.menu.toUpperCase()}</div>
+    <AbsoluteFill style={{background: `rgba(8,6,4,${dim})`, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+      <div style={{textAlign: 'center', opacity: txt, transform: `translateY(${rise}px)`}}>
+        <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 54, color: m.accent}}>Menu {m.n} daripada 5</div>
+        <div style={{fontFamily: F.display, fontWeight: 800, fontSize: 120, letterSpacing: -4, lineHeight: 1.02, color: C.cream}}>{m.menu}</div>
+        <div style={{height: 2, width: line, background: m.accent, margin: '22px auto 0'}} />
+        <div style={{fontFamily: F.wide, fontWeight: 800, fontStretch: '125%', fontSize: 22, letterSpacing: 8, color: C.muted, marginTop: 18}}>{m.chef.toUpperCase()} · MODE {m.mode.toUpperCase()}</div>
       </div>
     </AbsoluteFill>
   );
