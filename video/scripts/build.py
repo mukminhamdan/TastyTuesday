@@ -236,16 +236,20 @@ def build(vid, clips, layout, music_plan):
                 push = o.get("push", 0.0)
             pc = dict(src=round(x - T0, 3), dur=nf, frm=f0, zoom=round(z, 3), push=push,
                       face=face_for(x, y), clip=ci, tag=o.get("tag", "body"))
+            def use_broll(spec, off):
+                # spec = time | (time, zoom, centre_y): picture from elsewhere, sound stays on the speaker
+                t, bz, cy = (spec, None, None) if not isinstance(spec, (tuple, list)) else (tuple(spec) + (None, None))[:3]
+                vb = t + off
+                pc["vsrc"] = round(vb - T0, 3)
+                if cy is not None:  # fixed crop on the dish, no face tracking
+                    pc["zoom"], pc["cy"], pc["face"] = bz or 1.0, cy, None
+                else:
+                    pc["face"] = face_for(vb, vb + (y - x))
             if seg_of is not None:
                 i, off = seg_of[k]
-                vb = o["brolls"][i] + off
-                pc["vsrc"] = round(vb - T0, 3)
-                pc["face"] = face_for(vb, vb + (y - x))
+                use_broll(o["brolls"][i], off)
             elif o.get("broll") is not None:
-                # picture from elsewhere (J-cut / B-roll), sound stays on the speaker
-                vb = o["broll"] + (x - parts[0][0])
-                pc["vsrc"] = round(vb - T0, 3)
-                pc["face"] = face_for(vb, vb + (y - x))
+                use_broll(o["broll"], x - parts[0][0])
             pieces.append(pc)
             clip_pieces.append((x, y, pc))
             cur += nf

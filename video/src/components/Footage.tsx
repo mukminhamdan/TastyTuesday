@@ -18,7 +18,11 @@ export const pieceTransform = (p: Piece, local: number) => {
   const vh = PH * z;
   let left: number;
   let top: number;
-  if (p.face) {
+  if (p.cy !== undefined) {
+    // fixed B-roll crop centred on the dish
+    left = (FW - vw) / 2;
+    top = Math.min(0, Math.max(FH - vh, FH / 2 - p.cy * vh));
+  } else if (p.face) {
     left = Math.min(0, Math.max(FW - vw, FW / 2 - p.face.x * vw));
     top = Math.min(0, Math.max(FH - vh, FH * FACE_TARGET_Y - p.face.y * vh));
   } else {

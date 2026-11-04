@@ -24,6 +24,13 @@ CHEFS = {
                   accent="#FFB000", music="m_170_04"),
 }
 
+# Clean dish shots for B-roll: (source time, zoom, centre-y of the crop). No visible talking
+# face, so B-roll never shows lips that don't match the audio.
+DISHES = dict(roll=(3068.0, 1.4, 0.62), wrap=(3096.6, 1.15, 0.55), puff=(2417.0, 1.1, 0.5),
+              sambal=(3240.5, 2.2, 0.83), pizza=(2828.0, 1.1, 0.55))
+PIZZA_BROLL = [(2812.0, 1.1, 0.5), (2822.0, 1.1, 0.5), (2830.0, 1.15, 0.55)]
+
+
 def cta(broll):
     """Host's follow/comment line, played over B-roll of that menu's finished dish."""
     return [(3347.4, 3352.7, dict(tag="cta", broll=broll, zoom=1.06, push=0.05, ov=[("cta", 3347.5, {})]))]
@@ -65,7 +72,7 @@ SHORTS["roll"] = [
     (1207.0, 1217.3, K),
     (1337.2, 1348.2, dict(ov=[("stat", 1340.6, dict(big="180°C", label="Hasil elok, tak hangit"))])),
     (3067.8, 3073.3, k(ov=[("stat", 3069.9, dict(big="< 20 min", label="Satu buku roti siap"))])),
-] + cta(3062.7)
+] + cta(DISHES["roll"])
 
 # ---------------------------------------------------------------- 2. TORTILLA
 SHORTS["wrap"] = [
@@ -80,7 +87,7 @@ SHORTS["wrap"] = [
     (1969.6, 1970.3, K),
     (3103.3, 3115.2, dict(ov=[("reveal", 3104.6, dict(text="Spicy Tuna Wrap"))])),
     (3119.2, 3122.6, K),
-] + cta(3107.6)
+] + cta(DISHES["wrap"])
 
 # ---------------------------------------------------------------- 3. SARDIN PUFF
 SHORTS["puff"] = [
@@ -94,7 +101,7 @@ SHORTS["puff"] = [
     (2425.8, 2432.4, dict(ov=[("reveal", 2425.9, dict(text="Dah siap!"))])),
     (3200.6, 3207.5, {}),
     (3178.9, 3193.4, k(ov=[("tip", 3179.9, dict(text="Tip: half-cook 7 minit", sub="Simpan beku, bakar bila nak"))])),
-] + cta(3196.3)
+] + cta(DISHES["puff"])
 
 # ---------------------------------------------------------------- 4. SAMBAL SARDIN
 SHORTS["sambal"] = [
@@ -111,11 +118,11 @@ SHORTS["sambal"] = [
     (2357.1, 2365.0, {}),
     (2385.4, 2387.7, K),
     (3240.5, 3247.0, dict(ov=[("reveal", 3240.6, dict(text="Makan dengan nasi atau roti"))])),
-] + cta(3240.5)
+] + cta(DISHES["sambal"])
 
 # ---------------------------------------------------------------- 5. PIZZA TUNA
 SHORTS["pizza"] = [
-    hook(2742.4, 2753.0, "\u201cPizza ni beli eh?\u201d", sub="Pizza Tuna · 6 minit", broll=3270.4),
+    hook(2742.4, 2753.0, "\u201cPizza ni beli eh?\u201d", sub="Pizza Tuna · 6 minit", brolls=PIZZA_BROLL),
     title("pizza", 2460.5, 2462.9),
     (2471.9, 2476.6, {}),
     (2482.3, 2488.4, {}),
@@ -127,10 +134,9 @@ SHORTS["pizza"] = [
     (2834.2, 2839.9, K),
     (3274.2, 3275.7, dict(ov=[("reveal", 3274.3, dict(text="Lembut & fluffy"))])),
     (3283.4, 3289.0, K),
-] + cta(3283.4)
+] + cta(DISHES["pizza"])
 
 # ---------------------------------------------------------------- REEL: 5 MENU < 45 s
-DISHES = dict(roll=3062.7, wrap=3107.6, puff=3196.3, sambal=3240.5, pizza=3283.4)
 REEL = [
     (3333.0, 3340.0, dict(tag="hook", zoom=1.06, push=0.05,
                           brolls=[DISHES[x] for x in ("roll", "wrap", "puff", "sambal", "pizza")],
@@ -140,10 +146,10 @@ REEL = [
     (1974.6, 1977.6, k(zoom=1.04)),
     (3160.7, 3163.3, k(zoom=1.08, ov=[("menutag", 3160.75, dict(key="puff"))])),
     (3233.6, 3235.9, k(zoom=1.08, ov=[("menutag", 3233.65, dict(key="sambal"))])),
-    (2341.2, 2345.1, k(broll=3241.5)),
-    (2745.7, 2752.7, k(broll=3270.4, ov=[("menutag", 2745.75, dict(key="pizza"))])),
+    (2341.2, 2345.1, k(broll=DISHES["sambal"])),
+    (2745.7, 2752.7, k(brolls=PIZZA_BROLL, ov=[("menutag", 2745.75, dict(key="pizza"))])),
     (3340.1, 3346.3, dict(tag="outro", zoom=1.06,
-                          brolls=[DISHES[x] + 1.5 for x in ("roll", "puff", "wrap", "pizza", "sambal")],
+                          brolls=[(DISHES[x][0] + 1.5,) + DISHES[x][1:] for x in ("roll", "puff", "wrap", "pizza", "sambal")],
                           ov=[("cta", 3340.15, {})])),
 ]
 
@@ -165,7 +171,7 @@ BLOOPERS = [
 # ---------------------------------------------------------------- FULL YOUTUBE
 FULL = [
     # cold open: best moments
-    (2745.7, 2752.7, dict(tag="cold", zoom=1.1, push=0.05, broll=3270.4, cap=True)),
+    (2745.7, 2752.7, dict(tag="cold", zoom=1.1, push=0.05, brolls=PIZZA_BROLL, cap=True)),
     (3234.9, 3235.9, dict(tag="cold", zoom=1.12, cap=True)),
     (1955.7, 1957.5, dict(tag="cold", zoom=1.1, cap=True)),
     (3077.8, 3079.9, dict(tag="cold", zoom=1.1, cap=True)),
@@ -221,7 +227,7 @@ FULL += chapter("sambal", strip(SHORTS["sambal"][2:]) + [
     (2308.8, 2311.5, {}),
 ])
 FULL += chapter("pizza", strip(SHORTS["pizza"][1:]) + [
-    (2742.4, 2759.5, dict(broll=3268.2, ov=[("quote", 2745.7, dict(text="“My mum buat.”"))])),
+    (2742.4, 2759.5, dict(brolls=PIZZA_BROLL + [DISHES["pizza"]], ov=[("quote", 2745.7, dict(text="“My mum buat.”"))])),
     (2807.2, 2815.9, {}),
     (2588.8, 2596.8, {}),
 ])
@@ -292,7 +298,7 @@ TEASERS["sambal"] = [
 ] + part2(DISHES["sambal"])
 
 TEASERS["pizza"] = [
-    thook(2745.7, 2752.7, "“Pizza ni beli eh?”", "Pizza Tuna · Kak Pia", broll=3270.4),
+    thook(2745.7, 2752.7, "“Pizza ni beli eh?”", "Pizza Tuna · Kak Pia", brolls=PIZZA_BROLL),
     joke(3021.5, 3027.5, "Pizza tak sabar", 3022.4),
     (2641.5, 2644.7, k(ov=[("stat", 2643.7, dict(big="6 min", label="Mode Pizza Cooven"))])),
     joke(3547.6, 3553.2, "Pizza besar sangat", 3551.5),
