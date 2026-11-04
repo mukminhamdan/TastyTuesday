@@ -243,8 +243,9 @@
    "from": 1666,
    "dur": 126,
    "props": {
-    "line1": "Jumpa petang ni,",
-    "line2": "dalam live.",
+    "line1": "Suka video ni?",
+    "line2": "Komen & follow.",
+    "cta": "KOMEN + FOLLOW",
     "y": 300
    }
   }

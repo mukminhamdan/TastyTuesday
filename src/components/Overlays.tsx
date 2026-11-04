@@ -290,7 +290,7 @@ export const Snap: React.FC<{dur: number; label?: string}> = ({dur, label = 'SIA
 };
 
 /** Outro CTA */
-export const EndCard: React.FC<{dur: number; line1: string; line2: string; y?: number}> = ({dur, line1, line2, y = SAFE.top + 20}) => {
+export const EndCard: React.FC<{dur: number; line1: string; line2: string; y?: number; cta?: string}> = ({dur, line1, line2, y = SAFE.top + 20, cta = 'SAVE + FOLLOW'}) => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
   const s = spring({frame: f - 6, fps, config: {damping: 14, stiffness: 140}});
@@ -326,7 +326,7 @@ export const EndCard: React.FC<{dur: number; line1: string; line2: string; y?: n
           <svg width="30" height="34" viewBox="0 0 30 34">
             <path d="M3 2 h24 v30 l-12 -9 l-12 9 z" fill={C.ink} />
           </svg>
-          SAVE + FOLLOW
+          {cta}
         </div>
       </div>
     </AbsoluteFill>

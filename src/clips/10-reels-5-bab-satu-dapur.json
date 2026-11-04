@@ -273,8 +273,9 @@
    "from": 1638,
    "dur": 156,
    "props": {
-    "line1": "Semua siap,",
-    "line2": "jumpa petang ni.",
+    "line1": "Semua siap.",
+    "line2": "Komen & follow.",
+    "cta": "KOMEN + FOLLOW",
     "y": 300
    }
   }

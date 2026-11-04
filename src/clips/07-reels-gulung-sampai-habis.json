@@ -216,8 +216,9 @@
    "from": 1638,
    "dur": 156,
    "props": {
-    "line1": "Siap digulung,",
-    "line2": "jumpa dalam live.",
+    "line1": "Siap digulung.",
+    "line2": "Komen & follow.",
+    "cta": "KOMEN + FOLLOW",
     "y": 300
    }
   }

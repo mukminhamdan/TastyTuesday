@@ -80,7 +80,7 @@ CLIPS = [
             {"part": 0, "dt": 0.0, "dur": 3.6, "kind": "hook", "h": 330, "props": {"kicker": "Tema live petang ni", "line1": "Sardin & tuna", "line2": "semua menu.", "y": "auto"}},
             {"part": 2, "dt": 0.2, "dur": 3.4, "kind": "step", "props": {"n": "01", "label": "Sardin roll"}},
             {"part": 4, "dt": 0.2, "dur": 3.6, "kind": "step", "props": {"n": "02", "label": "Nasi, siap bekas"}},
-            {"part": 6, "dt": 0.0, "dur": 4.8, "kind": "end", "props": {"line1": "Jumpa dalam", "line2": "live petang ni."}},
+            {"part": 6, "dt": 0.0, "dur": 4.8, "kind": "end", "props": {"line1": "Sardin & tuna.", "line2": "Komen & follow.", "cta": "KOMEN + FOLLOW"}},
         ],
     },
     # ------------------------------------------------------------------ 3
@@ -173,7 +173,7 @@ CLIPS = [
             {"part": 5, "dt": 0.5, "dur": 7.0, "kind": "quote", "h": 320, "props": {"n": "03", "text": "Sabar itu bahan paling penting.", "accent": "sabar", "y": "auto"}},
             {"part": 7, "dt": 0.4, "dur": 5.2, "kind": "quote", "h": 320, "props": {"n": "04", "text": "Kerja kecil pagi ni, live lancar petang nanti.", "accent": "lancar", "y": "auto"}},
             {"part": 8, "dt": 0.4, "dur": 5.2, "kind": "quote", "h": 320, "props": {"n": "05", "text": "Rezeki datang pada yang bersedia.", "accent": "bersedia", "y": "auto"}},
-            {"part": 9, "dt": 0.3, "dur": 4.2, "kind": "end", "props": {"line1": "Jumpa petang ni,", "line2": "dalam live.", "y": 300}},
+            {"part": 9, "dt": 0.3, "dur": 4.2, "kind": "end", "props": {"line1": "Suka video ni?", "line2": "Komen & follow.", "cta": "KOMEN + FOLLOW", "y": 300}},
         ],
     },
 
@@ -197,7 +197,7 @@ def story(id, title, hook, shots, quotes, end, steps=(), top_y=280):
         ov.append({"part": pi, "dt": 0.5, "dur": 5.0, "kind": "quote", "h": 320, "props": {"n": n, "text": text, "accent": accent, "y": "auto"}})
     for pi, n, label in steps:
         ov.append({"part": pi, "dt": 0.2, "dur": 5.4, "kind": "step", "props": {"n": n, "label": label, "y": 290}})
-    ov.append({"part": len(shots) - 1, "dt": 0.6, "dur": 5.2, "kind": "end", "props": {"line1": end[0], "line2": end[1], "y": 300}})
+    ov.append({"part": len(shots) - 1, "dt": 0.6, "dur": 5.2, "kind": "end", "props": {"line1": end[0], "line2": end[1], "cta": "KOMEN + FOLLOW", "y": 300}})
     return {"id": id, "title": title, "silent": True, "progress": False, "topY": top_y, "parts": parts, "overlays": ov}
 
 
@@ -211,7 +211,7 @@ CLIPS += [
            (3, "Bukan laju yang penting. Kemas.", "kemas", "02"),
            (5, "Sikit-sikit, lama-lama jadi sepinggan.", "sepinggan", "03"),
            (7, "Penat? Sikit. Puas? Banyak.", "puas", "04")],
-          ("Siap digulung,", "jumpa dalam live.")),
+          ("Siap digulung.", "Komen & follow.")),
     story("08-reels-senyum-di-dapur", "Senyum di dapur (1 minit)",
           ("Prep bahan", "Senyum dulu,", "baru masak."),
           [(1050, 1056, 1, 1.25, None), (945, 957, 2, 1.2, None), (1080, 1092, 2, 1.2, None), (1125, 1137, 2, 1.25, None),
@@ -221,7 +221,7 @@ CLIPS += [
            (3, "Masak dengan tenang, rasa pun jadi tenang.", "tenang", "02"),
            (5, "Yang buat sedap: seronok masa masak.", "seronok", "03"),
            (7, "Nikmati prosesnya.", "prosesnya", "04")],
-          ("Senyum sikit,", "jumpa dalam live.")),
+          ("Senyum sikit.", "Komen & follow.")),
     story("09-reels-satu-periuk-nasi", "Satu periuk, satu-satu bekas (1 minit)",
           ("Prep bahan", "Satu periuk,", "satu-satu bekas."),
           [(2808, 2814, 1, 1.3, [0.5, 0.82]), (1950, 1968, 3, 1.2, None), (1968, 1992, 4, 1.25, None), (2235, 2253, 3, 1.2, None),
@@ -231,7 +231,7 @@ CLIPS += [
            (4, "Kerja berulang, tapi tak pernah sama.", "berulang", "02"),
            (6, "Kemas itu tanda hormat pada yang makan.", "hormat", "03"),
            (8, "Siap satu, sambung lagi.", "sambung", "04")],
-          ("Nasi siap,", "jumpa petang ni.")),
+          ("Nasi siap.", "Komen & follow.")),
     story("10-reels-5-bab-satu-dapur", "5 bab, satu dapur (1 minit)",
           ("Prep bahan", "5 bab,", "satu dapur."),
           [(375, 387, 2, 1.2, None), (555, 573, 3, 1.45, HANDS), (618, 630, 2, 1.45, HANDS), (1600, 1618, 3, 1.35, HANDS),
@@ -242,7 +242,7 @@ CLIPS += [
            (3, "Gulung dengan sabar.", "sabar", None),
            (5, "Biar haba buat kerjanya.", "haba", None),
            (7, "Bahagi sama rata.", "rata", None)],
-          ("Semua siap,", "jumpa petang ni."),
+          ("Semua siap.", "Komen & follow."),
           steps=[(1, "01", "Roti"), (2, "02", "Inti sardin"), (3, "03", "Gulung"), (5, "04", "Food Engine Cooven"), (7, "05", "Nasi")],
           top_y=400),
 ]
