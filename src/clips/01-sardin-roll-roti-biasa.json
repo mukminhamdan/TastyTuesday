@@ -188,14 +188,6 @@
   },
   {
    "kind": "speed",
-   "from": 758,
-   "dur": 112,
-   "props": {
-    "speed": 3
-   }
-  },
-  {
-   "kind": "speed",
    "from": 878,
    "dur": 112,
    "props": {
@@ -276,9 +268,20 @@
    }
   },
   {
-   "kind": "step",
+   "kind": "word",
    "from": 760,
-   "dur": 108,
+   "dur": 96,
+   "props": {
+    "text": "Bonus",
+    "sub": "lebihan sardin atas sourdough",
+    "y": 330,
+    "x": 80
+   }
+  },
+  {
+   "kind": "step",
+   "from": 880,
+   "dur": 102,
    "props": {
     "n": "05",
     "label": "Masuk Food Engine Cooven"
@@ -384,14 +387,24 @@
    "vol": 0.4
   },
   {
-   "name": "pop",
+   "name": "impact",
    "from": 760,
-   "vol": 0.5
+   "vol": 0.38
+  },
+  {
+   "name": "bass_drop",
+   "from": 760,
+   "vol": 0.25
   },
   {
    "name": "whoosh",
    "from": 868,
    "vol": 0.45
+  },
+  {
+   "name": "pop",
+   "from": 880,
+   "vol": 0.5
   },
   {
    "name": "impact",
