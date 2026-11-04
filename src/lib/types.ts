@@ -1,4 +1,4 @@
-export type Transition = 'cut' | 'punch' | 'whip' | 'flash' | 'zoomblur';
+export type Transition = 'cut' | 'punch' | 'whip' | 'flash' | 'zoomblur' | 'fade';
 
 export type Segment = {
   /** first output frame */
@@ -47,7 +47,9 @@ export type ClipData = {
   words: Word[];
   overlays: Overlay[];
   sfx: Sfx[];
-  music: {src: string; vol: number; duck: number; offset?: number};
+  music: {src: string; vol: number; duck: number; offset?: number} | null;
+  /** hide the top progress line (IG Stories draw their own) */
+  progress?: boolean;
   /** face box per output second: [cx, cy, h] in output coords 0..1 (null = no face) */
   face: ([number, number, number] | null)[];
   captionY: number;

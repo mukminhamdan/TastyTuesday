@@ -1,6 +1,6 @@
 # Prep Tasty Tuesday — short-form edits (Remotion)
 
-Five vertical videos (1080x1920, 30fps) cut from a 48-minute live of prepping ingredients for Tasty Tuesday.
+Six vertical videos (1080x1920, 30fps) cut from a 48-minute live of prepping ingredients for Tasty Tuesday.
 The live was mostly quiet cooking with a little talking in between.
 
 | id | idea | length |
@@ -10,6 +10,7 @@ The live was mostly quiet cooking with a little talking in between.
 | `03-satu-periuk-nasi` | portioning rice, timelapse, ends on the containers lined up | ~28s |
 | `04-48-minit-dalam-30-saat` | the whole session, speed-ramped | ~32s |
 | `05-dugong-ketawa-atas-sampan` | funny story about the "laughing dugong" | ~18s |
+| `06-reels-story-1-minit` | 60s cinematic montage with quotes for IG Stories/Reels, no audio (add music in IG), fade transitions | ~60s |
 
 ## Pipeline
 

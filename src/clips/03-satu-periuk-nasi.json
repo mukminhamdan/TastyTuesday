@@ -110,7 +110,7 @@
    "from": 0,
    "dur": 114,
    "props": {
-    "kicker": "Prep bahan Tasty Tuesday",
+    "kicker": "Prep bahan live",
     "line1": "1 periuk nasi",
     "line2": "jadi semua ni.",
     "y": 240,
@@ -235,6 +235,7 @@
   "vol": 0.5,
   "duck": 0.065
  },
+ "progress": true,
  "face": [
   [
    1.01,

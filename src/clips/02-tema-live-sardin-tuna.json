@@ -586,7 +586,7 @@
    "from": 0,
    "dur": 108,
    "props": {
-    "kicker": "Tema Tasty Tuesday petang ni",
+    "kicker": "Tema live petang ni",
     "line1": "Sardin & tuna",
     "line2": "semua menu.",
     "y": 240,
@@ -684,6 +684,7 @@
   "vol": 0.42,
   "duck": 0.065
  },
+ "progress": true,
  "face": [
   [
    0.654,

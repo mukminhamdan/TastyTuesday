@@ -139,13 +139,16 @@ def build(spec):
             if speed >= 2 and part.get("tag", True):
                 overlays.append({"kind": "speed", "from": frame + 4, "dur": max(20, dur - 8), "props": {"speed": speed}})
             frame += dur
-        if trans in ("whip",):
+        if spec.get("silent"):
+            pass
+        elif trans in ("whip",):
             sfx.append({"name": "whoosh", "from": part_start[-1] - 6, "vol": 0.45})
-        if trans == "zoomblur":
+        if trans == "zoomblur" and not spec.get("silent"):
             sfx.append({"name": "whoosh_long", "from": part_start[-1] - 12, "vol": 0.4})
         if trans == "flash":
             overlays.append({"kind": "flash", "from": part_start[-1], "dur": 8})
-            sfx.append({"name": "impact", "from": part_start[-1], "vol": 0.35})
+            if not spec.get("silent"):
+                sfx.append({"name": "impact", "from": part_start[-1], "vol": 0.35})
     total = frame
     part_start.append(total)
 
@@ -168,6 +171,7 @@ def build(spec):
 
     def top_free_y(fr0, fr1, block_h):
         """y for a top-band graphic of height block_h that doesn't hit the face."""
+        Y0 = spec.get("topY", 240)
         worst = None
         for fr in range(fr0, fr1, 6):
             f = face_out(fr)
@@ -175,9 +179,9 @@ def build(spec):
                 top = f[1] - f[2] * 0.75
                 bot = f[1] + f[2] * 0.75
                 worst = (min(worst[0], top), max(worst[1], bot)) if worst else (top, bot)
-        if not worst or worst[0] > 240 + block_h + 20:
-            return 240
-        return int(min(max(worst[1] + 30, 240), 1500 - block_h - 260))
+        if not worst or worst[0] > Y0 + block_h + 20:
+            return Y0
+        return int(min(max(worst[1] + 30, Y0), 1500 - block_h - 260))
 
     def place_top(fr0, fr1, block_h):
         """keep top-band graphics in the top band but beside the face (never on it)."""
@@ -187,7 +191,7 @@ def build(spec):
             if f:
                 hw = f[2] * 0.55  # face half-width ~ 0.55 * height (+ hair margin)
                 boxes.append((f[0] - hw, f[0] + hw, f[1] - f[2] * 0.8, f[1] + f[2] * 0.7))
-        y = 240
+        y = spec.get("topY", 240)
         if not boxes:
             return {"y": y}
         l = min(b[0] for b in boxes); r = max(b[1] for b in boxes); t = min(b[2] for b in boxes)
@@ -224,7 +228,7 @@ def build(spec):
         auto = {"hook": [("impact", 0, 0.42), ("whoosh", -2, 0.35)], "step": [("pop", 0, 0.5)], "word": [("impact", 0, 0.38), ("bass_drop", 0, 0.25)],
                 "counter": [("typing", 2, 0.35), ("ding", 26, 0.35)], "arrow": [("swipe", 0, 0.4)], "snap": [("shutter", 0, 0.6)], "end": [("sparkle", 4, 0.4)],
                 "speed": []}
-        for name, off, vol in auto.get(k, []):
+        for name, off, vol in ([] if spec.get("silent") else auto.get(k, [])):
             sfx.append({"name": name, "from": fr + off, "vol": vol})
     for s in spec.get("sfx", []):
         p = s["part"] if s["part"] >= 0 else len(spec["parts"]) + s["part"]
@@ -247,7 +251,8 @@ def build(spec):
         "words": words,
         "overlays": overlays,
         "sfx": sorted(sfx, key=lambda x: x["from"]),
-        "music": spec.get("music", {"src": "music/groove_92.wav", "vol": 0.22, "duck": 0.06}),
+        "music": None if spec.get("silent") else spec.get("music", {"src": "music/groove_92.wav", "vol": 0.22, "duck": 0.06}),
+        "progress": spec.get("progress", True),
         "face": face_track,
         "captionY": spec.get("captionY", 1140),
     }

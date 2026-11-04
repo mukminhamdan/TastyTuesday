@@ -5,4 +5,5 @@ import c1 from './02-tema-live-sardin-tuna.json';
 import c2 from './03-satu-periuk-nasi.json';
 import c3 from './04-48-minit-dalam-30-saat.json';
 import c4 from './05-dugong-ketawa-atas-sampan.json';
-export const CLIPS = [c0, c1, c2, c3, c4] as unknown as ClipData[];
+import c5 from './06-reels-story-1-minit.json';
+export const CLIPS = [c0, c1, c2, c3, c4, c5] as unknown as ClipData[];

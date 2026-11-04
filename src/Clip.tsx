@@ -10,7 +10,8 @@ loadFonts();
 
 /** Music bed that ducks under the voice (sidechain-style, smoothed). */
 const MusicBed: React.FC<{data: ClipData}> = ({data}) => {
-  const {music, durationInFrames, words, segments} = data;
+  const {durationInFrames, words, segments} = data;
+  const music = data.music!;
   const gain = useMemo(() => {
     const speak = new Float32Array(durationInFrames);
     for (const w of words) {
@@ -69,7 +70,7 @@ export const Clip: React.FC<{data: ClipData}> = ({data}) => {
         <Footage segments={data.segments} />
       </AbsoluteFill>
       <Grade />
-      <Progress total={data.durationInFrames} />
+      {data.progress === false ? null : <Progress total={data.durationInFrames} />}
       {data.overlays.map((o, i) => {
         const Comp = OVERLAYS[o.kind];
         if (!Comp) return null;
@@ -80,7 +81,7 @@ export const Clip: React.FC<{data: ClipData}> = ({data}) => {
         );
       })}
       <Captions words={data.words} y={data.captionY} />
-      <MusicBed data={data} />
+      {data.music ? <MusicBed data={data} /> : null}
       {data.sfx.map((s, i) => (
         <Sequence key={`sfx${i}`} from={Math.max(0, s.from)} name={`sfx ${s.name}`}>
           <Audio src={staticFile(`sfx/${s.name}.wav`)} volume={s.vol ?? 0.5} />

@@ -44,6 +44,12 @@ const SegmentView: React.FC<{seg: Segment; next?: Segment}> = ({seg, next}) => {
     blur = interpolate(k, [0, 1], [0, 14]);
   }
 
+  // soft dip-to-black for cinematic montages
+  let opacity = 1;
+  const FADE = 12;
+  if (seg.trans === 'fade' && f < FADE) opacity = Easing.inOut(Easing.cubic)(f / FADE);
+  if (next && next.trans === 'fade' && f > seg.dur - FADE) opacity = Math.min(opacity, Easing.inOut(Easing.cubic)((seg.dur - f) / FADE));
+
   const [ox, oy] = seg.origin;
   const startFrom = Math.round(seg.srcStart * FPS);
   return (
@@ -56,6 +62,7 @@ const SegmentView: React.FC<{seg: Segment; next?: Segment}> = ({seg, next}) => {
           transform: `translate(${tx}px, ${ty}px) rotate(${rot}deg) scale(${scale})`,
           transformOrigin: `${ox * 100}% ${oy * 100}%`,
           filter: blur > 0.3 ? `blur(${blur}px)` : undefined,
+          opacity,
         }}
       >
         <OffthreadVideo

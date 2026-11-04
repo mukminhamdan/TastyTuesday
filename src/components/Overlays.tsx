@@ -345,7 +345,76 @@ export const Progress: React.FC<{total: number}> = ({total}) => {
   );
 };
 
+
+/** Editorial quote: index label + serif-italic lines revealed word by word. */
+export const Quote: React.FC<{dur: number; text: string; n?: string; accent?: string; y?: number; maxW?: number; align?: 'left' | 'right' | 'center'}> = ({
+  dur,
+  text,
+  n,
+  accent,
+  y = SAFE.top + 40,
+  maxW,
+  align = 'left',
+}) => {
+  const f = useCurrentFrame();
+  const width = Math.min(maxW ?? SAFE.right - SAFE.left, SAFE.right - SAFE.left);
+  const k = Math.min(1, Math.max(0.7, width / 720));
+  const out = eio(interpolate(f, [dur - 14, dur], [1, 0], clamp));
+  const words = text.split(' ');
+  const line = interpolate(f, [0, 18], [0, 1], {...clamp, easing: eo});
+  const left = align === 'right' ? SAFE.right - width + 70 : align === 'center' ? (W - width) / 2 : SAFE.left;
+  return (
+    <AbsoluteFill style={{pointerEvents: 'none'}}>
+      <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(0,0,0,0.38) 0%, rgba(0,0,0,0) 38%)', opacity: out * line}} />
+      <div style={{position: 'absolute', left, top: y, width, textAlign: align, opacity: out, transform: `translateY(${(1 - out) * -16}px)`}}>
+        {n ? (
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: align === 'right' ? 'flex-end' : align === 'center' ? 'center' : 'flex-start',
+              gap: 14,
+              fontFamily: F.mono,
+              fontSize: 26,
+              letterSpacing: '0.2em',
+              color: C.paper,
+              opacity: 0.85,
+              marginBottom: 18,
+            }}
+          >
+            <span style={{display: 'inline-block', width: 64 * line, height: 2, background: C.butter}} />
+            {n}
+          </div>
+        ) : null}
+        <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 92 * k, lineHeight: 1.02, letterSpacing: '-0.01em', color: C.paper, textShadow: '0 6px 30px rgba(0,0,0,0.55)'}}>
+          {words.map((w, i) => {
+            const d = 6 + i * 3.2;
+            const p = eo(interpolate(f, [d, d + 14], [0, 1], clamp));
+            const isAccent = accent && w.toLowerCase().replace(/[^\w]/g, '') === accent.toLowerCase();
+            return (
+              <span
+                key={i}
+                style={{
+                  display: 'inline-block',
+                  marginRight: '0.26em',
+                  opacity: p,
+                  filter: p < 0.98 ? `blur(${(1 - p) * 10}px)` : undefined,
+                  transform: `translateY(${(1 - p) * 22}px)`,
+                  color: isAccent ? C.butter : undefined,
+                }}
+              >
+                {w}
+              </span>
+            );
+          })}
+        </div>
+      </div>
+    </AbsoluteFill>
+  );
+};
+
 export const OVERLAYS: Record<string, React.FC<any>> = {
+  quote: Quote,
   hook: HookTitle,
   step: StepChip,
   speed: SpeedTag,

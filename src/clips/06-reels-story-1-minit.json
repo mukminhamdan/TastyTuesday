@@ -1,0 +1,474 @@
+{
+ "id": "06-reels-story-1-minit",
+ "title": "Sebelum live, ada dapur ni (1 minit)",
+ "durationInFrames": 1792,
+ "segments": [
+  {
+   "dur": 90,
+   "srcStart": 2668.3,
+   "speed": 1,
+   "zoom": 1.6,
+   "origin": [
+    0.5,
+    0.8
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "cut",
+   "from": 0
+  },
+  {
+   "dur": 150,
+   "srcStart": 394,
+   "speed": 2,
+   "zoom": 1.2,
+   "origin": [
+    0.5,
+    0.72
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "fade",
+   "from": 90
+  },
+  {
+   "dur": 180,
+   "srcStart": 568,
+   "speed": 2,
+   "zoom": 1.5,
+   "origin": [
+    0.48,
+    0.72
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "fade",
+   "from": 240
+  },
+  {
+   "dur": 257,
+   "srcStart": 600,
+   "speed": 3.5,
+   "zoom": 1.4,
+   "origin": [
+    0.48,
+    0.72
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "fade",
+   "from": 420
+  },
+  {
+   "dur": 180,
+   "srcStart": 1832,
+   "speed": 2,
+   "zoom": 1.5,
+   "origin": [
+    0.42,
+    0.71
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "fade",
+   "from": 677
+  },
+  {
+   "dur": 240,
+   "srcStart": 1950,
+   "speed": 3,
+   "zoom": 1.2,
+   "origin": [
+    0.748,
+    0.321
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "fade",
+   "from": 857
+  },
+  {
+   "dur": 200,
+   "srcStart": 2440,
+   "speed": 15,
+   "zoom": 1.15,
+   "origin": [
+    0.85,
+    0.378
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "fade",
+   "from": 1097
+  },
+  {
+   "dur": 180,
+   "srcStart": 2164,
+   "speed": 2,
+   "zoom": 1.2,
+   "origin": [
+    0.761,
+    0.34
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "fade",
+   "from": 1297
+  },
+  {
+   "dur": 180,
+   "srcStart": 2740,
+   "speed": 10,
+   "zoom": 1.2,
+   "origin": [
+    0.5,
+    0.8
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "fade",
+   "from": 1477
+  },
+  {
+   "dur": 135,
+   "srcStart": 2802,
+   "speed": 1,
+   "zoom": 1.3,
+   "origin": [
+    0.5,
+    0.8
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "fade",
+   "from": 1657
+  }
+ ],
+ "words": [],
+ "overlays": [
+  {
+   "kind": "speed",
+   "from": 1101,
+   "dur": 192,
+   "props": {
+    "speed": 15
+   }
+  },
+  {
+   "kind": "hook",
+   "from": 0,
+   "dur": 90,
+   "props": {
+    "kicker": "Prep bahan pagi ni",
+    "line1": "Sebelum live,",
+    "line2": "ada dapur ni.",
+    "y": 280,
+    "maxW": 833,
+    "align": "left"
+   }
+  },
+  {
+   "kind": "quote",
+   "from": 105,
+   "dur": 132,
+   "props": {
+    "n": "01",
+    "text": "Tak ada yang instant. Semua bermula dengan prep.",
+    "accent": "prep",
+    "y": 280,
+    "maxW": 470,
+    "align": "left"
+   }
+  },
+  {
+   "kind": "quote",
+   "from": 435,
+   "dur": 228,
+   "props": {
+    "n": "02",
+    "text": "Satu-satu. Leper, isi, gulung. Ulang.",
+    "accent": "ulang",
+    "y": 280,
+    "maxW": 708,
+    "align": "left"
+   }
+  },
+  {
+   "kind": "snap",
+   "from": 689,
+   "dur": 150,
+   "props": {
+    "label": "SARDIN ROLL"
+   }
+  },
+  {
+   "kind": "quote",
+   "from": 872,
+   "dur": 210,
+   "props": {
+    "n": "03",
+    "text": "Sabar itu bahan paling penting.",
+    "accent": "sabar",
+    "y": 280,
+    "maxW": 463,
+    "align": "left"
+   }
+  },
+  {
+   "kind": "quote",
+   "from": 1309,
+   "dur": 156,
+   "props": {
+    "n": "04",
+    "text": "Kerja kecil pagi ni, live lancar petang nanti.",
+    "accent": "lancar",
+    "y": 280,
+    "maxW": 519,
+    "align": "left"
+   }
+  },
+  {
+   "kind": "quote",
+   "from": 1489,
+   "dur": 156,
+   "props": {
+    "n": "05",
+    "text": "Rezeki datang pada yang bersedia.",
+    "accent": "bersedia",
+    "y": 920
+   }
+  },
+  {
+   "kind": "end",
+   "from": 1666,
+   "dur": 126,
+   "props": {
+    "line1": "Jumpa petang ni,",
+    "line2": "dalam live.",
+    "y": 300
+   }
+  }
+ ],
+ "sfx": [],
+ "music": null,
+ "progress": false,
+ "face": [
+  [
+   1.03,
+   0.115,
+   0.155
+  ],
+  [
+   1.03,
+   0.115,
+   0.155
+  ],
+  [
+   1.058,
+   0.099,
+   0.198
+  ],
+  [
+   0.943,
+   0.495,
+   0.12
+  ],
+  [
+   0.943,
+   0.495,
+   0.12
+  ],
+  [
+   0.882,
+   0.31,
+   0.193
+  ],
+  [
+   0.786,
+   0.54,
+   0.1
+  ],
+  [
+   0.666,
+   0.65,
+   0.14
+  ],
+  [
+   1.026,
+   0.139,
+   0.174
+  ],
+  [
+   1.035,
+   0.127,
+   0.201
+  ],
+  [
+   0.216,
+   0.648,
+   0.246
+  ],
+  [
+   0.216,
+   0.648,
+   0.246
+  ],
+  [
+   0.91,
+   0.211,
+   0.132
+  ],
+  [
+   0.91,
+   0.211,
+   0.132
+  ],
+  [
+   1.068,
+   0.146,
+   0.131
+  ],
+  [
+   0.969,
+   0.166,
+   0.225
+  ],
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  [
+   1.049,
+   0.174,
+   0.216
+  ],
+  [
+   1.049,
+   0.174,
+   0.216
+  ],
+  [
+   1.145,
+   0.142,
+   0.14
+  ],
+  [
+   1.145,
+   0.142,
+   0.14
+  ],
+  [
+   0.947,
+   0.182,
+   0.143
+  ],
+  [
+   1.026,
+   0.174,
+   0.17
+  ],
+  [
+   0.736,
+   0.31,
+   0.14
+  ],
+  null,
+  [
+   0.782,
+   0.302,
+   0.134
+  ],
+  [
+   0.91,
+   0.368,
+   0.131
+  ],
+  [
+   0.719,
+   0.313,
+   0.155
+  ],
+  [
+   0.7,
+   0.325,
+   0.124
+  ],
+  [
+   0.773,
+   0.31,
+   0.158
+  ],
+  [
+   0.672,
+   0.354,
+   0.136
+  ],
+  null,
+  null,
+  null,
+  null,
+  null,
+  [
+   0.879,
+   0.329,
+   0.147
+  ],
+  [
+   0.886,
+   0.672,
+   0.101
+  ],
+  [
+   0.85,
+   0.35,
+   0.155
+  ],
+  [
+   0.85,
+   0.35,
+   0.155
+  ],
+  null,
+  null,
+  [
+   0.761,
+   0.324,
+   0.161
+  ],
+  [
+   0.702,
+   0.343,
+   0.13
+  ],
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  [
+   1.01,
+   0.223,
+   0.121
+  ],
+  [
+   1.01,
+   0.223,
+   0.121
+  ],
+  [
+   0.826,
+   0.501,
+   0.104
+  ],
+  [
+   0.826,
+   0.501,
+   0.104
+  ]
+ ],
+ "captionY": 1140
+}

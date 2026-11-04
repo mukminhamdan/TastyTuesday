@@ -186,7 +186,7 @@
    "from": 0,
    "dur": 78,
    "props": {
-    "kicker": "Prep sebelum Tasty Tuesday",
+    "kicker": "Prep sebelum live",
     "line1": "48 minit",
     "line2": "dalam 30 saat.",
     "y": 240,
@@ -309,6 +309,7 @@
   "vol": 0.5,
   "duck": 0.065
  },
+ "progress": true,
  "face": [
   [
    1.03,

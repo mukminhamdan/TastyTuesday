@@ -49,7 +49,7 @@ CLIPS = [
             {"type": "hold", "src": [1843, 1847.5], "trans": "zoomblur", "zoom": 1.5, "origin": [0.42, 0.71], "voice": False},
         ],
         "overlays": [
-            {"part": 0, "dt": 0.0, "dur": 3.4, "kind": "hook", "h": 330, "props": {"kicker": "Prep untuk Tasty Tuesday", "line1": "Sardin roll", "line2": "guna roti biasa je.", "y": "auto"}},
+            {"part": 0, "dt": 0.0, "dur": 3.4, "kind": "hook", "h": 330, "props": {"kicker": "Prep untuk live", "line1": "Sardin roll", "line2": "guna roti biasa je.", "y": "auto"}},
             {"part": 1, "dt": 0.2, "dur": 2.8, "kind": "step", "props": {"n": "01", "label": "Ambil roti putih"}},
             {"part": 2, "dt": 0.2, "dur": 3.8, "kind": "step", "props": {"n": "02", "label": "Leperkan nipis-nipis"}},
             {"part": 3, "dt": 0.2, "dur": 3.4, "kind": "step", "props": {"n": "03", "label": "Letak inti sardin"}},
@@ -77,7 +77,7 @@ CLIPS = [
             {"type": "broll", "src": [1832, 1844], "speed": 2.5, "trans": "zoomblur", "zoom": 1.5, "origin": [0.42, 0.71]},
         ],
         "overlays": [
-            {"part": 0, "dt": 0.0, "dur": 3.6, "kind": "hook", "h": 330, "props": {"kicker": "Tema Tasty Tuesday petang ni", "line1": "Sardin & tuna", "line2": "semua menu.", "y": "auto"}},
+            {"part": 0, "dt": 0.0, "dur": 3.6, "kind": "hook", "h": 330, "props": {"kicker": "Tema live petang ni", "line1": "Sardin & tuna", "line2": "semua menu.", "y": "auto"}},
             {"part": 2, "dt": 0.2, "dur": 3.4, "kind": "step", "props": {"n": "01", "label": "Sardin roll"}},
             {"part": 4, "dt": 0.2, "dur": 3.6, "kind": "step", "props": {"n": "02", "label": "Nasi, siap bekas"}},
             {"part": 6, "dt": 0.0, "dur": 4.8, "kind": "end", "props": {"line1": "Jumpa dalam", "line2": "live petang ni."}},
@@ -96,7 +96,7 @@ CLIPS = [
             {"type": "hold", "src": [2836, 2841.5], "trans": "flash", "zoom": 1.35, "origin": [0.5, 0.82], "voice": False},
         ],
         "overlays": [
-            {"part": 0, "dt": 0.0, "dur": 3.8, "kind": "hook", "h": 330, "props": {"kicker": "Prep bahan Tasty Tuesday", "line1": "1 periuk nasi", "line2": "jadi semua ni.", "y": "auto"}},
+            {"part": 0, "dt": 0.0, "dur": 3.8, "kind": "hook", "h": 330, "props": {"kicker": "Prep bahan live", "line1": "1 periuk nasi", "line2": "jadi semua ni.", "y": "auto"}},
             {"part": 1, "dt": 0.2, "dur": 4.2, "kind": "step", "props": {"n": "01", "label": "Gaul nasi panas"}},
             {"part": 2, "dt": 0.3, "dur": 5.0, "kind": "step", "props": {"n": "02", "label": "Tekap guna mangkuk"}},
             {"part": 2, "dt": 5.6, "dur": 2.0, "kind": "word", "props": {"text": "Kemas.", "serif": True, "y": 360, "color": "#FFC94A", "size": 170}},
@@ -123,7 +123,7 @@ CLIPS = [
             {"type": "hold", "src": [2802, 2806], "trans": "flash", "zoom": 1.3, "origin": [0.5, 0.82], "voice": False},
         ],
         "overlays": [
-            {"part": 0, "dt": 0.0, "dur": 2.6, "kind": "hook", "h": 330, "props": {"kicker": "Prep sebelum Tasty Tuesday", "line1": "48 minit", "line2": "dalam 30 saat.", "y": "auto"}},
+            {"part": 0, "dt": 0.0, "dur": 2.6, "kind": "hook", "h": 330, "props": {"kicker": "Prep sebelum live", "line1": "48 minit", "line2": "dalam 30 saat.", "y": "auto"}},
             {"part": 4, "dt": 0.1, "dur": 2.2, "kind": "word", "props": {"text": "×250", "y": 330}},
             {"part": 5, "dt": 0.0, "dur": 2.4, "kind": "snap", "props": {"label": "SARDIN ROLL"}},
             {"part": 10, "dt": 0.0, "dur": 4.0, "kind": "end", "props": {"line1": "Mana satu", "line2": "nak cuba dulu?"}},
@@ -143,6 +143,37 @@ CLIPS = [
             {"part": 0, "dt": 0.0, "dur": 3.2, "kind": "hook", "h": 330, "props": {"kicker": "Sambil prep bahan", "line1": "Dugong ketawa", "line2": "ikan datang?", "y": "auto"}},
             {"part": 1, "dt": 3.6, "dur": 1.6, "kind": "word", "props": {"text": "Siren?!", "y": 330}},
             {"part": 2, "dt": 0.0, "dur": 2.6, "kind": "end", "props": {"line1": "Pernah dengar?", "line2": "Komen bawah."}},
+        ],
+    },
+    # ------------------------------------------------------------------ 6
+    # 60s cinematic montage for IG Stories / Reels: no audio (add IG library music in-app), quotes.
+    {
+        "id": "06-reels-story-1-minit",
+        "title": "Sebelum live, ada dapur ni (1 minit)",
+        "silent": True,
+        "progress": False,
+        "topY": 280,  # IG Story header bar
+        "parts": [
+            {"type": "hold", "src": [2668.3, 2671.3], "zoom": 1.6, "origin": [0.5, 0.8], "voice": False},
+            {"type": "broll", "src": [394, 404], "speed": 2, "trans": "fade", "zoom": 1.2, "origin": HANDS, "tag": False},
+            {"type": "broll", "src": [568, 580], "speed": 2, "trans": "fade", "zoom": 1.5, "origin": [0.48, 0.72], "tag": False},
+            {"type": "broll", "src": [600, 630], "speed": 3.5, "trans": "fade", "zoom": 1.4, "origin": [0.48, 0.72], "tag": False},
+            {"type": "broll", "src": [1832, 1844], "speed": 2, "trans": "fade", "zoom": 1.5, "origin": [0.42, 0.71], "tag": False},
+            {"type": "broll", "src": [1950, 1974], "speed": 3, "trans": "fade", "zoom": 1.2, "tag": False},
+            {"type": "broll", "src": [2440, 2540], "speed": 15, "trans": "fade", "zoom": 1.15},
+            {"type": "broll", "src": [2164, 2176], "speed": 2, "trans": "fade", "zoom": 1.2, "tag": False},
+            {"type": "broll", "src": [2740, 2800], "speed": 10, "trans": "fade", "zoom": 1.2, "origin": [0.5, 0.82], "tag": False},
+            {"type": "hold", "src": [2802, 2806.5], "trans": "fade", "zoom": 1.3, "origin": [0.5, 0.82], "voice": False},
+        ],
+        "overlays": [
+            {"part": 0, "dt": 0.0, "dur": 3.0, "kind": "hook", "h": 330, "props": {"kicker": "Prep bahan pagi ni", "line1": "Sebelum live,", "line2": "ada dapur ni.", "y": "auto"}},
+            {"part": 1, "dt": 0.5, "dur": 4.4, "kind": "quote", "h": 320, "props": {"n": "01", "text": "Tak ada yang instant. Semua bermula dengan prep.", "accent": "prep", "y": "auto"}},
+            {"part": 3, "dt": 0.5, "dur": 7.6, "kind": "quote", "h": 320, "props": {"n": "02", "text": "Satu-satu. Leper, isi, gulung. Ulang.", "accent": "ulang", "y": "auto"}},
+            {"part": 4, "dt": 0.4, "dur": 5.0, "kind": "snap", "props": {"label": "SARDIN ROLL"}},
+            {"part": 5, "dt": 0.5, "dur": 7.0, "kind": "quote", "h": 320, "props": {"n": "03", "text": "Sabar itu bahan paling penting.", "accent": "sabar", "y": "auto"}},
+            {"part": 7, "dt": 0.4, "dur": 5.2, "kind": "quote", "h": 320, "props": {"n": "04", "text": "Kerja kecil pagi ni, live lancar petang nanti.", "accent": "lancar", "y": "auto"}},
+            {"part": 8, "dt": 0.4, "dur": 5.2, "kind": "quote", "h": 320, "props": {"n": "05", "text": "Rezeki datang pada yang bersedia.", "accent": "bersedia", "y": "auto"}},
+            {"part": 9, "dt": 0.3, "dur": 4.2, "kind": "end", "props": {"line1": "Jumpa petang ni,", "line2": "dalam live.", "y": 300}},
         ],
     },
 ]
