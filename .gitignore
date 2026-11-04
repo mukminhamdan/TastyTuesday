@@ -1,0 +1,7 @@
+node_modules/
+out/
+# Raw footage, proxies and audio are large — keep them out of git
+public/clips/
+public/media/
+*.mp4
+*.wav
