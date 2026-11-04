@@ -254,5 +254,5 @@ CLIPS += [
            (7, "Bahagi sama rata.", "rata", None)],
           ("Semua siap.", "Komen & follow."),
           steps=[(1, "01", "Roti"), (2, "02", "Inti sardin"), (3, "03", "Gulung"), (5, "04", "Food Engine Cooven"), (7, "05", "Nasi")],
-          top_y=400, music=cc0("cc0_funk_trumpet")),
+          top_y=400, music=cc0("cc0_funk_guitar_100")),
 ]

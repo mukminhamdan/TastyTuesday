@@ -6,7 +6,7 @@ no attribution required). Tracks are named s<shard>_<row>.wav (shard file train-
 Usage: python3 scripts/prep_music.py <dir-with-source-wavs> public/music
 
 Each bed: start = anchor - 6*speed, so the anchor beat (usually the drop) lands at 6.0s,
-the first cut in clips 07-10. 07-09 cut every 6s = an exact number of bars at the bed's tempo.
+the first cut in clips 07-10. 07-10 cut every 6s = a whole number of beats (07-09: whole bars).
 """
 import subprocess, sys, json, os
 
@@ -19,7 +19,7 @@ BEDS = {
     "cc0_lofi_80": ("s241_5.wav", 12.037, 1.0, 6.0, "nostalgic lo-fi hip-hop - 80bpm, drop on first cut"),
     "cc0_jazzhop_80": ("s438_4.wav", 12.037, 1.0, 6.0, "chill jazz-piano hip-hop - 80bpm, drop on first cut"),
     "cc0_groove_160": ("s348_4.wav", 21.205, 160 / 169.99, 6.0, "groovy chill jazz - 170 -> 160bpm (6s = 4 bars)"),
-    "cc0_funk_trumpet": ("s487_3.wav", 1.068, 120 / 118.97, 0.0, "funky jazz, trumpet - ~119 -> 120bpm"),
+    "cc0_funk_guitar_100": ("s192_5.wav", 0.035, 100 / 99.0, 0.0, "funky upbeat guitar/bass/keys - 99 -> 100bpm (6s = 10 beats)"),
 }
 
 

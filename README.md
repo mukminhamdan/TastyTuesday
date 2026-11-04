@@ -48,7 +48,7 @@ ffmpeg -i public/source.mp4 -vn -af "highpass=f=80,afftdn=nf=-32:nr=10,equalizer
 
 **Clips 06–10:** CC0 (public-domain) instrumentals from Hugging Face `mrfakename/cc0-music-captioned`. They are cut, beat-aligned and normalised by
 `scripts/prep_music.py`, and the result is committed as `public/music/cc0_*.mp3`. Sources and licence are in `public/music/CREDITS.md`.
-In 07–09 every 6-second cut lands on a beat.
+In 07–10 every 6-second cut lands on a beat.
 
 **Clips 01–05:** the build machine can't reach the stock SFX/music libraries, so the SFX and the two talking-clip music beds in `public/` were made procedurally
 (`scripts/sound_design.py`). To use library sounds (Artlist, Epidemic, etc.), drop files with the **same names** into `public/sfx/` and `public/music/`.

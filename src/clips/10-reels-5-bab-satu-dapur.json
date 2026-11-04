@@ -282,7 +282,7 @@
  ],
  "sfx": [],
  "music": {
-  "src": "music/cc0_funk_trumpet.mp3",
+  "src": "music/cc0_funk_guitar_100.mp3",
   "vol": 0.9,
   "duck": 0.9
  },

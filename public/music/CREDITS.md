@@ -13,10 +13,10 @@ Each track was checked with Whisper for hidden vocals. Two "instrumental" tracks
 | `cc0_lofi_80.mp3` | 07 | 241 / 5 | "A nostalgic, lo-fi hip-hop track with a chill, upbeat vibe." | 80 bpm, drop on the first cut |
 | `cc0_jazzhop_80.mp3` | 08 | 438 / 4 | "A chill, upbeat hip-hop track with a jazz-inspired piano sample and a smooth flow." | 80 bpm, drop on the first cut |
 | `cc0_groove_160.mp3` | 09 | 348 / 4 | "A groovy, chill jazz-inspired beat perfect for a relaxed yet lively atmosphere." | 170 → 160 bpm |
-| `cc0_funk_trumpet.mp3` | 10 | 487 / 3 | "A funky jazz piece with an upbeat groove and a trumpet solo section." | ~119 → 120 bpm |
+| `cc0_funk_guitar_100.mp3` | 10 | 192 / 5 | "A funky, upbeat instrumental track featuring guitar, bass, drums, and keyboards." | 99 → 100 bpm |
 
 The source parquet file is `data/train-<shard>-of-00591.parquet`, and the row is the index within it.
 All beds are normalised to −14 LUFS with true peak ≤ −1.2 dBTP (`scripts/prep_music.py`).
-For 07–09, a cut every 6 s lands on a beat, within one frame.
+For 07–10, a cut every 6 s lands on a beat, within one frame.
 
 `groove_92.wav` / `groove_104.wav` (clips 01–05) are procedural, made by `scripts/sound_design.py`, so they have no third-party rights.
