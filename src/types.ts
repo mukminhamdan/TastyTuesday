@@ -25,4 +25,5 @@ export type Graphic =
   | { kind: "checklist"; s: number; e: number; items: { at: number; text: string }[]; y: number }
   | { kind: "ingredients"; s: number; e: number; items: string[]; y: number }
   | { kind: "flash"; s: number }
+  | { kind: "step"; s: number; e: number; n: number; total: number; title: string; sub?: string; y: number }
   | { kind: "cta"; s: number; e: number; text: string; sub: string; y: number };

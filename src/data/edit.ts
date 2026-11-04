@@ -1,7 +1,6 @@
 /**
- * Creative layer: motion graphics + sound design, anchored to the timeline
- * produced by scripts/build.py (beats, voice pieces, caption words), so the
- * edit stays in sync if the cut is rebuilt.
+ * Creative layer (v2, cooking-only): step cards, stamps and sound design,
+ * anchored to the beats in timeline.json produced by scripts/build.py.
  */
 import timeline from "./timeline.json";
 import type { CaptionChunk, Graphic, Sfx } from "../types";
@@ -17,98 +16,66 @@ const B = (id: string) => {
   return b;
 };
 const V = (id: string, i: number) => B(id).voice[i];
-/** frame at which a caption word is spoken (first match after `after`) */
-const W = (word: string, after = 0) => {
-  for (const c of captions) for (const w of c.words) if (w.s >= after && w.t.toLowerCase().replace(/[^\p{L}\d-]/gu, "") === word.toLowerCase()) return w.s;
-  throw new Error(`word ${word} not found`);
-};
 
-const TOP = SAFE.top + 30; // graphics band above the face line on talking shots
+const TOP = SAFE.top + 30;
 const CX = (SAFE.left + SAFE.right) / 2;
+
+const STEPS: { id: string; title: string; sub?: string }[] = [
+  { id: "s1", title: "Goreng ikan talang", sub: "mode Aircrisp • tanpa minyak" },
+  { id: "s2", title: "Ketepikan ikan", sub: "tolak tepi je dalam pot" },
+  { id: "s3", title: "Masukkan minyak" },
+  { id: "s4", title: "Masuk ibu sambal", sub: "masak sampai pecah minyak" },
+  { id: "s5", title: "+ Jintan putih", sub: "ni rahsia dia ✨" },
+  { id: "s6", title: "+ Kicap sikit", sub: "jadi sambal hitam" },
+  { id: "s7", title: "Gaul dengan ikan" },
+];
 
 export const graphics: Graphic[] = [
   // ---------- HOOK ----------
-  { kind: "hook", s: 0, e: V("hook", 1).s, lines: ["Goreng + masak sambal", "1 periuk je?!"], accent: 1 },
-  { kind: "pill", s: V("hook", 1).s, e: V("hook", 2).s + 4, text: "Tanpa minyak", emoji: "🚫🛢️", x: SAFE.left + 20, y: TOP + 40 },
-  { kind: "stamp", s: V("hook", 3).s, e: B("hook").e, text: "Tak payah", sub: "tukar bekas / periuk lain", x: CX, y: TOP + 20, rotate: -4 },
-  { kind: "flash", s: B("product").s },
+  { kind: "hook", s: 0, e: B("hook").e, lines: ["Ikan talang", "sambal hitam", "1 periuk je!"], accent: 2 },
 
-  // ---------- PRODUCT ----------
-  { kind: "stamp", s: W("cooven") - 2, e: B("product").e, text: "Cooven", sub: "Food Engine • all-in-one", x: 360, y: TOP + 10, rotate: -3 },
-
-  // ---------- RECIPE ----------
-  { kind: "ingredients", s: B("recipe").s + 6, e: V("recipe", 3).s, y: TOP, items: ["🐟 Ikan kembung", "🌶️ Sambal", "🟤 Serbuk jintan", "🥢 Kicap", "🧅 Bawang"] },
-  { kind: "pill", s: W("jintan", B("recipe").s) - 3, e: V("recipe", 4).s, text: "+ Jintan = rahsia", emoji: "✨", x: SAFE.left + 20, y: TOP + 30 },
-  { kind: "pill", s: W("kicap", B("recipe").s) - 3, e: V("recipe", 5).s, text: "+ Kicap sikit", emoji: "🥢", x: SAFE.left + 20, y: TOP + 30, from: "right" },
-  { kind: "stamp", s: W("hitam", B("recipe").s) - 4, e: B("recipe").e, text: "Sambal hitam", sub: "versi Tasty Tuesday", x: CX, y: TOP + 20, rotate: 3 },
-
-  // ---------- FRY MONTAGE ----------
-  { kind: "pill", s: B("fry").s + 2, e: B("fry").s + 27, text: "Air fry 140°C", emoji: "🔥", x: SAFE.left + 20, y: TOP + 520 },
-  { kind: "stamp", s: V("fry", 0).s, e: B("fry").e, text: "Nampak mudah?", sub: "memang mudah 👌", x: CX, y: TOP + 40, rotate: -3 },
-
-  // ---------- FEATURES ----------
-  { kind: "stamp", s: W("8", B("features").s) - 3, e: V("features", 1).s, text: "8 liter", sub: "muat satu family", x: 380, y: TOP, rotate: -4 },
-  {
-    kind: "checklist", s: V("features", 1).s, e: B("features").e, y: TOP,
-    items: [
-      { at: W("2", B("features").s), text: "🍚 Nasi 2kg+" },
-      { at: W("kek", B("features").s), text: "🎂 Bakar kek" },
-      { at: W("oven", B("features").s), text: "🚫 Tak perlu oven" },
-      { at: W("percik", B("features").s), text: "🍗 Ayam percik" },
-    ],
-  },
-  { kind: "flash", s: B("sauce").s },
-
-  // ---------- SAUCE MONTAGE ----------
-  { kind: "pill", s: B("sauce").s + 3, e: B("sauce").s + 50, text: "Masuk bawang", emoji: "🧅", x: SAFE.left + 20, y: TOP + 40 },
-  { kind: "pill", s: B("sauce").s + 56, e: V("sauce", 0).s, text: "Tutup, biar meresap", emoji: "⏳", x: SAFE.left + 20, y: TOP + 40, from: "right" },
-  { kind: "stamp", s: V("sauce", 1).s, e: B("sauce").e, text: "Siap!", sub: "✅ 1 periuk je", x: CX, y: TOP + 30, rotate: -5 },
+  // ---------- STEPS ----------
+  ...STEPS.map((st, i): Graphic => ({ kind: "step", s: B(st.id).s + 2, e: B(st.id).e, n: i + 1, total: STEPS.length, title: st.title, sub: st.sub, y: TOP })),
+  { kind: "stamp", s: B("s2").s + 22, e: B("s2").e, text: "X payah bekas lain", x: CX, y: 1000, rotate: -4 },
+  { kind: "pill", s: B("s7").s + 40, e: B("s7").s + 75, text: "+ Bawang besar", emoji: "🧅", x: SAFE.left + 20, y: 760 },
+  { kind: "pill", s: B("s8").s + 2, e: B("s8").e, text: "Tutup, biar meresap", emoji: "⏳", x: SAFE.left + 20, y: TOP + 20 },
 
   // ---------- END ----------
-  { kind: "cta", s: V("end", 2).e + 4, e: B("end").e, text: "Save & cuba!", sub: "Follow untuk #TastyTuesday 🍽️", y: TOP + 20 },
+  { kind: "stamp", s: V("end", 0).s, e: V("end", 0).s + 50, text: "Siap!", sub: "✅ semua dalam 1 periuk", x: CX, y: TOP + 30, rotate: -5 },
+  { kind: "cta", s: V("end", 0).s + 50, e: B("end").e, text: "Save & cuba!", sub: "Follow untuk #TastyTuesday 🍽️", y: TOP + 20 },
 ];
 
 const whoosh = "sfx/short-video-whoosh-01.mp3";
 const pop = "sfx/cartoon-pop-01.mp3";
-const tick = "sfx/ready-pop-01.mp3";
+const stepIds = ["s1", "s2", "s3", "s4", "s5", "s6", "s7", "s8", "end"];
 
-/** sound design — whooshes on cuts, pops on graphics, impacts on stamps */
 export const sfx: Sfx[] = [
   { at: 0, file: "sfx/short-video-impact-01.mp3", vol: 0.55 },
   { at: 4, file: "sfx/sparkle-pop-pickup.mp3", vol: 0.35 },
-  { at: V("hook", 1).s - 1, file: pop, vol: 0.45 },
-  { at: V("hook", 3).s - 1, file: "sfx/reveal-impact-01.mp3", vol: 0.5 },
-  { at: B("product").s - 6, file: whoosh, vol: 0.5 },
-  { at: W("cooven") - 3, file: "sfx/logo-reveal-01.mp3", vol: 0.3 },
-  { at: B("recipe").s - 4, file: whoosh, vol: 0.4 },
-  ...[0, 1, 2, 3, 4].map((i) => ({ at: B("recipe").s + 14 + i * 6, file: tick, vol: 0.4 })),
-  { at: V("recipe", 3).s - 4, file: whoosh, vol: 0.35 },
-  { at: W("jintan", B("recipe").s) - 3, file: "sfx/short-magic-sparkle.mp3", vol: 0.4 },
-  { at: W("kicap", B("recipe").s) - 3, file: pop, vol: 0.4 },
-  { at: W("hitam", B("recipe").s) - 4, file: "sfx/short-video-impact-01.mp3", vol: 0.45 },
-  { at: B("fry").s - 5, file: "sfx/transition-riser-01.mp3", vol: 0.25 },
-  { at: B("fry").s + 2, file: "sfx/ui-toast-08.mp3", vol: 0.3 },
-  { at: B("fry").s + 26, file: whoosh, vol: 0.4 },
-  { at: B("fry").s + 30, file: "sfx/cauldron-bubbling-01.mp3", vol: 0.35 },
-  { at: B("fry").s + 66, file: whoosh, vol: 0.35 },
-  { at: V("fry", 0).s - 2, file: "sfx/reveal-impact-01.mp3", vol: 0.4 },
-  { at: B("features").s - 5, file: whoosh, vol: 0.45 },
-  { at: W("8", B("features").s) - 3, file: "sfx/short-video-impact-01.mp3", vol: 0.45 },
-  { at: W("2", B("features").s), file: "sfx/ready-coin-04.mp3", vol: 0.3 },
-  { at: W("kek", B("features").s), file: "sfx/ready-coin-04.mp3", vol: 0.3 },
-  { at: W("oven", B("features").s), file: "sfx/ready-coin-04.mp3", vol: 0.3 },
-  { at: W("percik", B("features").s), file: "sfx/feedback-achievement-39.mp3", vol: 0.35 },
-  { at: B("sauce").s - 4, file: whoosh, vol: 0.45 },
-  { at: B("sauce").s + 4, file: "sfx/water-bubble-36.mp3", vol: 0.3 },
-  { at: B("sauce").s + 27, file: whoosh, vol: 0.3 },
-  { at: B("sauce").s + 54, file: whoosh, vol: 0.3 },
-  { at: V("sauce", 1).s - 1, file: "sfx/tada-04.mp3", vol: 0.45 },
-  { at: B("end").s - 4, file: whoosh, vol: 0.45 },
-  { at: B("end").s + 2, file: "sfx/glass-clink-01.mp3", vol: 0.3 },
-  { at: V("end", 2).e + 4, file: "sfx/sparkle-pop-pickup.mp3", vol: 0.4 },
+  { at: 12, file: pop, vol: 0.35 },
+  { at: V("hook", 0).s - 1, file: "sfx/reveal-impact-01.mp3", vol: 0.4 },
+  // whoosh into every step + a pop when the step badge lands
+  ...stepIds.map((id) => ({ at: B(id).s - 5, file: whoosh, vol: 0.42 })),
+  ...["s1", "s2", "s3", "s4", "s5", "s6", "s7"].map((id) => ({ at: B(id).s + 5, file: pop, vol: 0.38 })),
+  // in-step cuts and textures
+  { at: B("s1").s + 30, file: whoosh, vol: 0.3 },
+  { at: B("s1").s + 32, file: "sfx/ui-toast-08.mp3", vol: 0.22 },
+  { at: B("s1").s + 75, file: whoosh, vol: 0.3 },
+  { at: B("s2").s + 22, file: "sfx/short-video-impact-01.mp3", vol: 0.4 },
+  { at: B("s3").s + 6, file: "sfx/water-bubble-36.mp3", vol: 0.28 },
+  { at: B("s4").s + 10, file: "sfx/cauldron-bubbling-01.mp3", vol: 0.32 },
+  { at: B("s4").s + 48, file: whoosh, vol: 0.3 },
+  { at: B("s5").s + 8, file: "sfx/short-magic-sparkle.mp3", vol: 0.4 },
+  { at: B("s6").s + 8, file: "sfx/water-bubble-36.mp3", vol: 0.22 },
+  { at: V("s7", 0).s - 2, file: "sfx/reveal-impact-01.mp3", vol: 0.35 },
+  { at: B("s7").s + 39, file: whoosh, vol: 0.3 },
+  { at: B("s7").s + 40, file: pop, vol: 0.3 },
+  { at: B("s8").s + 33, file: whoosh, vol: 0.3 },
+  { at: V("end", 0).s - 1, file: "sfx/tada-04.mp3", vol: 0.45 },
+  { at: V("end", 0).s + 48, file: whoosh, vol: 0.35 },
+  { at: V("end", 0).s + 52, file: "sfx/sparkle-pop-pickup.mp3", vol: 0.4 },
 ];
 
-/** voice windows used to duck the music */
 export const voiceWindows = beats.flatMap((b) => b.voice);
-/** beats that are music-forward montages */
-export const montageBeats = ["fry", "sauce"].map(B);
+/** music-forward stretches (no VO): everything between hook and end */
+export const montageBeats = ["s1", "s2", "s3", "s4", "s7", "s8"].map(B);

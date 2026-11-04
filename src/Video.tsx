@@ -13,7 +13,7 @@ const clips = timeline.clips as TClip[];
 /** Face sits around x≈0.72, y≈0.42 on talking shots: zoom toward it so it never gets cropped. */
 const ORIGIN_TALK = "72% 42%";
 
-const Shot: React.FC<{ clip: TClip; index: number }> = ({ clip, index }) => {
+const Shot: React.FC<{ clip: TClip; index: number; hero: boolean }> = ({ clip, index, hero }) => {
   const frame = useCurrentFrame(); // local to the Sequence
   const dur = clip.e - clip.s;
   let scale: number;
@@ -21,7 +21,7 @@ const Shot: React.FC<{ clip: TClip; index: number }> = ({ clip, index }) => {
     // jump-cut punch: alternate framing between consecutive talking pieces
     const base = index % 2 === 0 ? 1.0 : 1.1;
     scale = base + interpolate(frame, [0, dur], [0, 0.03]);
-  } else if (clip.beat === "end") {
+  } else if (hero) {
     // hero plate sits low in frame: push in toward it
     scale = 1.22 + interpolate(frame, [0, dur], [0, 0.08]);
   } else {
@@ -30,7 +30,7 @@ const Shot: React.FC<{ clip: TClip; index: number }> = ({ clip, index }) => {
   }
   return (
     <AbsoluteFill style={{ overflow: "hidden", background: "black" }}>
-      <OffthreadVideo src={staticFile(clip.file)} muted style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${scale})`, transformOrigin: clip.sync ? ORIGIN_TALK : clip.beat === "end" ? "50% 92%" : "50% 50%" }} />
+      <OffthreadVideo src={staticFile(clip.file)} muted style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${scale})`, transformOrigin: clip.sync ? ORIGIN_TALK : hero ? "50% 92%" : "50% 50%" }} />
       {clip.label ? <SpeedBadge text={clip.label} /> : null}
     </AbsoluteFill>
   );
@@ -40,7 +40,7 @@ const SpeedBadge: React.FC<{ text: string }> = ({ text }) => {
   const frame = useCurrentFrame();
   const o = interpolate(frame, [0, 4], [0, 1], { extrapolateRight: "clamp" });
   return (
-    <div style={{ position: "absolute", right: 1080 - SAFE.right + 10, top: SAFE.top + 20, opacity: o, fontFamily: FONT_BODY, fontWeight: 900, fontSize: 40, color: COLORS.ink, background: COLORS.kunyit, borderRadius: 14, padding: "6px 18px" }}>
+    <div style={{ position: "absolute", right: 1080 - SAFE.right + 10, top: SAFE.top + 300, opacity: o, fontFamily: FONT_BODY, fontWeight: 900, fontSize: 40, color: COLORS.ink, background: COLORS.kunyit, borderRadius: 14, padding: "6px 18px" }}>
       {text.includes("x") ? `⏩ ${text}` : text}
     </div>
   );
@@ -67,7 +67,7 @@ export const TastyTuesday: React.FC<{ showSafeZone?: boolean }> = ({ showSafeZon
     <AbsoluteFill style={{ background: "black" }}>
       {clips.map((c, i) => (
         <Sequence key={c.file} from={c.s} durationInFrames={c.e - c.s} premountFor={30}>
-          <Shot clip={c} index={clips.filter((x, j) => j < i && x.sync && x.beat === c.beat).length} />
+          <Shot clip={c} index={clips.filter((x, j) => j < i && x.sync && x.beat === c.beat).length} hero={i === clips.length - 1} />
         </Sequence>
       ))}
 

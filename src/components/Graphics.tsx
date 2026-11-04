@@ -161,6 +161,49 @@ const CTA: React.FC<Extract<Graphic, { kind: "cta" }>> = ({ s, e, text, sub, y }
   );
 };
 
+const Step: React.FC<Extract<Graphic, { kind: "step" }>> = ({ s, e, n, total, title, sub, y }) => {
+  const { fps } = useVideoConfig();
+  const { out, local } = useIO(s, e, 5);
+  const card = spring({ frame: local, fps, config: { damping: 13, stiffness: 200, mass: 0.6 } });
+  const badge = spring({ frame: local - 3, fps, config: { damping: 8, stiffness: 260, mass: 0.5 } });
+  const subIn = spring({ frame: local - 8, fps, config: { damping: 14, stiffness: 200 } });
+  return (
+    <div style={{ position: "absolute", left: SAFE.left + 10, top: y, width: SAFE.right - SAFE.left - 20, opacity: out }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 22, transform: `translateX(${interpolate(card, [0, 1], [-700, 0])}px)` }}>
+        <div
+          style={{
+            flex: "0 0 auto", width: 118, height: 118, borderRadius: 999, background: COLORS.kunyit, color: COLORS.ink,
+            display: "flex", alignItems: "center", justifyContent: "center", fontFamily: FONT_DISPLAY, fontSize: 76,
+            boxShadow: `0 8px 0 ${COLORS.sambal}`, transform: `scale(${interpolate(badge, [0, 1], [0.3, 1])}) rotate(${interpolate(badge, [0, 1], [-90, 0])}deg)`,
+          }}
+        >
+          {n}
+        </div>
+        <div
+          style={{
+            fontFamily: FONT_DISPLAY, fontSize: 84, lineHeight: 1.02, color: COLORS.cream, textTransform: "uppercase",
+            WebkitTextStroke: "4px #140b07", paintOrder: "stroke fill", textShadow: "0 8px 0 rgba(0,0,0,0.55)",
+          }}
+        >
+          {title}
+        </div>
+      </div>
+      {sub ? (
+        <div style={{ marginTop: 18, marginLeft: 140, opacity: subIn, transform: `translateY(${interpolate(subIn, [0, 1], [24, 0])}px)` }}>
+          <span style={{ display: "inline-block", fontFamily: FONT_BODY, fontWeight: 800, fontSize: 40, lineHeight: 1.25, color: COLORS.ink, background: COLORS.cream, padding: "8px 20px", borderRadius: 14, boxShadow: "0 6px 0 rgba(0,0,0,0.3)" }}>
+            {sub}
+          </span>
+        </div>
+      ) : null}
+      <div style={{ display: "flex", gap: 10, marginTop: 22, marginLeft: 140 }}>
+        {Array.from({ length: total }).map((_, i) => (
+          <div key={i} style={{ width: i + 1 === n ? 46 : 16, height: 16, borderRadius: 99, background: i + 1 <= n ? COLORS.kunyit : "rgba(255,246,229,0.5)", boxShadow: "0 3px 0 rgba(0,0,0,0.35)" }} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const Flash: React.FC<{ s: number }> = ({ s }) => {
   const frame = useCurrentFrame();
   const o = interpolate(frame, [s, s + 1, s + 6], [0, 0.85, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
@@ -181,6 +224,7 @@ export const Graphics: React.FC<{ items: Graphic[] }> = ({ items }) => {
           case "ingredients": return <Ingredients key={i} {...g} />;
           case "checklist": return <Checklist key={i} {...g} />;
           case "cta": return <CTA key={i} {...g} />;
+          case "step": return <Step key={i} {...g} />;
           default: return null;
         }
       })}

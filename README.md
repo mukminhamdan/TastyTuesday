@@ -2,9 +2,9 @@
 
 Short-form (TikTok / IG Reels) edits built with [Remotion](https://remotion.dev).
 
-## Episode: Ikan sambal hitam — 1 periuk (Cooven Food Engine)
+## Episode: Ikan talang sambal hitam — 1 periuk (Cooven Food Engine)
 
-~50s vertical cut (1080x1920, 30fps) from a 32-minute live recording.
+~30s cooking-only vertical cut (1080x1920, 30fps) from a 32-minute live recording: 7 step cards (Aircrisp fish → ketepikan → minyak → ibu sambal → jintan putih → kicap → gaul), VO only over food.
 
 ### Pipeline
 
