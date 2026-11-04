@@ -1,0 +1,427 @@
+{
+ "id": "09-reels-satu-periuk-nasi",
+ "title": "Satu periuk, satu-satu bekas (1 minit)",
+ "durationInFrames": 1800,
+ "segments": [
+  {
+   "dur": 180,
+   "srcStart": 2808,
+   "speed": 1,
+   "zoom": 1.3,
+   "origin": [
+    0.5,
+    0.8
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "cut",
+   "from": 0
+  },
+  {
+   "dur": 180,
+   "srcStart": 1950,
+   "speed": 3,
+   "zoom": 1.2,
+   "origin": [
+    0.743,
+    0.314
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "fade",
+   "from": 180
+  },
+  {
+   "dur": 180,
+   "srcStart": 1968,
+   "speed": 4,
+   "zoom": 1.25,
+   "origin": [
+    0.653,
+    0.351
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "fade",
+   "from": 360
+  },
+  {
+   "dur": 180,
+   "srcStart": 2235,
+   "speed": 3,
+   "zoom": 1.2,
+   "origin": [
+    0.838,
+    0.359
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "fade",
+   "from": 540
+  },
+  {
+   "dur": 180,
+   "srcStart": 2253,
+   "speed": 7,
+   "zoom": 1.3,
+   "origin": [
+    0.45,
+    0.75
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "zoomblur",
+   "from": 720
+  },
+  {
+   "dur": 180,
+   "srcStart": 2340,
+   "speed": 7,
+   "zoom": 1.2,
+   "origin": [
+    0.815,
+    0.358
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "fade",
+   "from": 900
+  },
+  {
+   "dur": 180,
+   "srcStart": 2520,
+   "speed": 5,
+   "zoom": 1.2,
+   "origin": [
+    0.822,
+    0.363
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "fade",
+   "from": 1080
+  },
+  {
+   "dur": 180,
+   "srcStart": 2625,
+   "speed": 3,
+   "zoom": 1.25,
+   "origin": [
+    0.5,
+    0.55
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "fade",
+   "from": 1260
+  },
+  {
+   "dur": 180,
+   "srcStart": 2720,
+   "speed": 10,
+   "zoom": 1.2,
+   "origin": [
+    0.5,
+    0.8
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "zoomblur",
+   "from": 1440
+  },
+  {
+   "dur": 180,
+   "srcStart": 2850,
+   "speed": 2,
+   "zoom": 1.3,
+   "origin": [
+    0.5,
+    0.8
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "fade",
+   "from": 1620
+  }
+ ],
+ "words": [],
+ "overlays": [
+  {
+   "kind": "hook",
+   "from": 0,
+   "dur": 96,
+   "props": {
+    "kicker": "Prep bahan",
+    "line1": "Satu periuk,",
+    "line2": "satu-satu bekas.",
+    "y": 910
+   }
+  },
+  {
+   "kind": "quote",
+   "from": 375,
+   "dur": 150,
+   "props": {
+    "n": "01",
+    "text": "Sukat sama rata. Adil untuk setiap bekas.",
+    "accent": "adil",
+    "y": 280,
+    "maxW": 425,
+    "align": "left"
+   }
+  },
+  {
+   "kind": "quote",
+   "from": 735,
+   "dur": 150,
+   "props": {
+    "n": "02",
+    "text": "Kerja berulang, tapi tak pernah sama.",
+    "accent": "berulang",
+    "y": 280,
+    "maxW": 725,
+    "align": "left"
+   }
+  },
+  {
+   "kind": "quote",
+   "from": 1095,
+   "dur": 150,
+   "props": {
+    "n": "03",
+    "text": "Kemas itu tanda hormat pada yang makan.",
+    "accent": "hormat",
+    "y": 280,
+    "maxW": 544,
+    "align": "left"
+   }
+  },
+  {
+   "kind": "quote",
+   "from": 1455,
+   "dur": 150,
+   "props": {
+    "n": "04",
+    "text": "Siap satu, sambung lagi.",
+    "accent": "sambung",
+    "y": 920
+   }
+  },
+  {
+   "kind": "end",
+   "from": 1638,
+   "dur": 156,
+   "props": {
+    "line1": "Nasi siap,",
+    "line2": "jumpa petang ni.",
+    "y": 300
+   }
+  }
+ ],
+ "sfx": [],
+ "music": null,
+ "progress": false,
+ "face": [
+  [
+   0.31,
+   0.495,
+   0.202
+  ],
+  [
+   0.937,
+   0.191,
+   0.171
+  ],
+  [
+   0.937,
+   0.191,
+   0.171
+  ],
+  [
+   0.937,
+   0.191,
+   0.171
+  ],
+  [
+   0.937,
+   0.191,
+   0.171
+  ],
+  null,
+  [
+   0.743,
+   0.302,
+   0.13
+  ],
+  [
+   0.737,
+   0.312,
+   0.14
+  ],
+  [
+   0.783,
+   0.304,
+   0.134
+  ],
+  [
+   0.927,
+   0.314,
+   0.107
+  ],
+  [
+   0.911,
+   0.37,
+   0.131
+  ],
+  [
+   0.699,
+   0.331,
+   0.116
+  ],
+  [
+   0.663,
+   0.321,
+   0.129
+  ],
+  [
+   0.64,
+   0.376,
+   0.087
+  ],
+  [
+   0.642,
+   0.366,
+   0.152
+  ],
+  [
+   0.884,
+   0.339,
+   0.115
+  ],
+  [
+   0.875,
+   0.346,
+   0.136
+  ],
+  null,
+  [
+   0.844,
+   0.364,
+   0.111
+  ],
+  [
+   0.779,
+   0.349,
+   0.135
+  ],
+  [
+   0.836,
+   0.359,
+   0.131
+  ],
+  [
+   0.838,
+   0.361,
+   0.151
+  ],
+  [
+   0.65,
+   0.677,
+   0.169
+  ],
+  [
+   0.848,
+   0.353,
+   0.144
+  ],
+  [
+   0.974,
+   0.232,
+   0.155
+  ],
+  [
+   0.941,
+   0.236,
+   0.171
+  ],
+  [
+   0.883,
+   0.258,
+   0.121
+  ],
+  [
+   1.01,
+   0.201,
+   0.146
+  ],
+  null,
+  [
+   0.961,
+   0.235,
+   0.164
+  ],
+  null,
+  [
+   0.817,
+   0.36,
+   0.139
+  ],
+  [
+   0.865,
+   0.368,
+   0.155
+  ],
+  [
+   0.811,
+   0.356,
+   0.163
+  ],
+  [
+   0.757,
+   0.346,
+   0.184
+  ],
+  null,
+  [
+   0.865,
+   0.33,
+   0.124
+  ],
+  [
+   0.796,
+   0.402,
+   0.146
+  ],
+  null,
+  null,
+  [
+   0.881,
+   0.363,
+   0.14
+  ],
+  [
+   0.822,
+   0.359,
+   0.127
+  ],
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null
+ ],
+ "captionY": 1140
+}

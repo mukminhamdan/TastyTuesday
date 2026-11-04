@@ -1,0 +1,508 @@
+{
+ "id": "10-reels-5-bab-satu-dapur",
+ "title": "5 bab, satu dapur (1 minit)",
+ "durationInFrames": 1800,
+ "segments": [
+  {
+   "dur": 180,
+   "srcStart": 375,
+   "speed": 2,
+   "zoom": 1.2,
+   "origin": [
+    0.726,
+    0.321
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "cut",
+   "from": 0
+  },
+  {
+   "dur": 180,
+   "srcStart": 555,
+   "speed": 3,
+   "zoom": 1.45,
+   "origin": [
+    0.5,
+    0.72
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "fade",
+   "from": 180
+  },
+  {
+   "dur": 180,
+   "srcStart": 618,
+   "speed": 2,
+   "zoom": 1.45,
+   "origin": [
+    0.5,
+    0.72
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "fade",
+   "from": 360
+  },
+  {
+   "dur": 180,
+   "srcStart": 1600,
+   "speed": 3,
+   "zoom": 1.35,
+   "origin": [
+    0.5,
+    0.72
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "fade",
+   "from": 540
+  },
+  {
+   "dur": 180,
+   "srcStart": 1836,
+   "speed": 1.5,
+   "zoom": 1.5,
+   "origin": [
+    0.42,
+    0.71
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "zoomblur",
+   "from": 720
+  },
+  {
+   "dur": 180,
+   "srcStart": 2160,
+   "speed": 3,
+   "zoom": 1.2,
+   "origin": [
+    0.849,
+    0.348
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "fade",
+   "from": 900
+  },
+  {
+   "dur": 180,
+   "srcStart": 2644,
+   "speed": 3,
+   "zoom": 1.15,
+   "origin": [
+    0.711,
+    0.346
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "fade",
+   "from": 1080
+  },
+  {
+   "dur": 180,
+   "srcStart": 2280,
+   "speed": 7,
+   "zoom": 1.2,
+   "origin": [
+    0.835,
+    0.355
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "fade",
+   "from": 1260
+  },
+  {
+   "dur": 180,
+   "srcStart": 2760,
+   "speed": 5,
+   "zoom": 1.2,
+   "origin": [
+    0.5,
+    0.8
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "zoomblur",
+   "from": 1440
+  },
+  {
+   "dur": 180,
+   "srcStart": 2826,
+   "speed": 1.3333,
+   "zoom": 1.35,
+   "origin": [
+    0.5,
+    0.8
+   ],
+   "cropY": 120,
+   "voice": false,
+   "trans": "fade",
+   "from": 1620
+  }
+ ],
+ "words": [],
+ "overlays": [
+  {
+   "kind": "hook",
+   "from": 0,
+   "dur": 96,
+   "props": {
+    "kicker": "Prep bahan",
+    "line1": "5 bab,",
+    "line2": "satu dapur.",
+    "y": 400,
+    "maxW": 513,
+    "align": "left"
+   }
+  },
+  {
+   "kind": "quote",
+   "from": 195,
+   "dur": 150,
+   "props": {
+    "n": null,
+    "text": "Mula dengan yang ringkas.",
+    "accent": "ringkas",
+    "y": 920
+   }
+  },
+  {
+   "kind": "quote",
+   "from": 375,
+   "dur": 150,
+   "props": {
+    "n": null,
+    "text": "Isi dengan yang ikhlas.",
+    "accent": "ikhlas",
+    "y": 400
+   }
+  },
+  {
+   "kind": "quote",
+   "from": 555,
+   "dur": 150,
+   "props": {
+    "n": null,
+    "text": "Gulung dengan sabar.",
+    "accent": "sabar",
+    "y": 400,
+    "maxW": 644,
+    "align": "left"
+   }
+  },
+  {
+   "kind": "quote",
+   "from": 915,
+   "dur": 150,
+   "props": {
+    "n": null,
+    "text": "Biar haba buat kerjanya.",
+    "accent": "haba",
+    "y": 400,
+    "maxW": 486,
+    "align": "left"
+   }
+  },
+  {
+   "kind": "quote",
+   "from": 1275,
+   "dur": 150,
+   "props": {
+    "n": null,
+    "text": "Bahagi sama rata.",
+    "accent": "rata",
+    "y": 920
+   }
+  },
+  {
+   "kind": "step",
+   "from": 186,
+   "dur": 162,
+   "props": {
+    "n": "01",
+    "label": "Roti",
+    "y": 290
+   }
+  },
+  {
+   "kind": "step",
+   "from": 366,
+   "dur": 162,
+   "props": {
+    "n": "02",
+    "label": "Inti sardin",
+    "y": 290
+   }
+  },
+  {
+   "kind": "step",
+   "from": 546,
+   "dur": 162,
+   "props": {
+    "n": "03",
+    "label": "Gulung",
+    "y": 290
+   }
+  },
+  {
+   "kind": "step",
+   "from": 906,
+   "dur": 162,
+   "props": {
+    "n": "04",
+    "label": "Air fryer",
+    "y": 290
+   }
+  },
+  {
+   "kind": "step",
+   "from": 1266,
+   "dur": 162,
+   "props": {
+    "n": "05",
+    "label": "Nasi",
+    "y": 290
+   }
+  },
+  {
+   "kind": "end",
+   "from": 1638,
+   "dur": 156,
+   "props": {
+    "line1": "Semua siap,",
+    "line2": "jumpa petang ni.",
+    "y": 300
+   }
+  }
+ ],
+ "sfx": [],
+ "music": null,
+ "progress": false,
+ "face": [
+  [
+   0.908,
+   0.304,
+   0.112
+  ],
+  [
+   0.754,
+   0.308,
+   0.1
+  ],
+  [
+   0.709,
+   0.308,
+   0.144
+  ],
+  [
+   0.708,
+   0.332,
+   0.116
+  ],
+  [
+   0.7,
+   0.327,
+   0.121
+  ],
+  [
+   0.726,
+   0.331,
+   0.111
+  ],
+  [
+   0.407,
+   0.634,
+   0.163
+  ],
+  [
+   0.391,
+   0.636,
+   0.15
+  ],
+  null,
+  [
+   0.403,
+   0.636,
+   0.173
+  ],
+  [
+   0.939,
+   0.186,
+   0.254
+  ],
+  [
+   1.007,
+   0.147,
+   0.194
+  ],
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  [
+   0.858,
+   0.224,
+   0.188
+  ],
+  [
+   0.875,
+   0.213,
+   0.19
+  ],
+  [
+   0.882,
+   0.254,
+   0.118
+  ],
+  [
+   1.017,
+   0.254,
+   0.14
+  ],
+  [
+   0.843,
+   0.257,
+   0.112
+  ],
+  [
+   0.843,
+   0.248,
+   0.112
+  ],
+  null,
+  [
+   1.145,
+   0.142,
+   0.14
+  ],
+  [
+   1.145,
+   0.142,
+   0.14
+  ],
+  [
+   1.017,
+   0.147,
+   0.17
+  ],
+  [
+   0.959,
+   0.194,
+   0.162
+  ],
+  [
+   1.026,
+   0.174,
+   0.17
+  ],
+  [
+   0.872,
+   0.359,
+   0.115
+  ],
+  [
+   0.884,
+   0.354,
+   0.116
+  ],
+  [
+   0.832,
+   0.348,
+   0.155
+  ],
+  null,
+  [
+   0.743,
+   0.322,
+   0.161
+  ],
+  [
+   0.701,
+   0.336,
+   0.148
+  ],
+  [
+   0.711,
+   0.337,
+   0.172
+  ],
+  [
+   0.711,
+   0.337,
+   0.172
+  ],
+  [
+   0.718,
+   0.348,
+   0.162
+  ],
+  [
+   0.858,
+   0.536,
+   0.097
+  ],
+  null,
+  [
+   0.702,
+   0.343,
+   0.107
+  ],
+  null,
+  [
+   0.845,
+   0.354,
+   0.151
+  ],
+  [
+   0.539,
+   0.7,
+   0.1
+  ],
+  [
+   0.839,
+   0.358,
+   0.159
+  ],
+  [
+   0.833,
+   0.352,
+   0.15
+  ],
+  [
+   0.866,
+   0.336,
+   0.169
+  ],
+  null,
+  [
+   0.916,
+   0.256,
+   0.18
+  ],
+  null,
+  [
+   0.586,
+   0.614,
+   0.154
+  ],
+  [
+   0.927,
+   0.243,
+   0.173
+  ],
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null
+ ],
+ "captionY": 1140
+}

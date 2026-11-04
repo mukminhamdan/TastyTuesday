@@ -176,4 +176,73 @@ CLIPS = [
             {"part": 9, "dt": 0.3, "dur": 4.2, "kind": "end", "props": {"line1": "Jumpa petang ni,", "line2": "dalam live.", "y": 300}},
         ],
     },
+
+]
+
+# ---------------------------------------------------------------------------
+# 60s silent quote montages for IG Stories / Reels (07–10). Each uses different
+# source moments so the series doesn't repeat shots.
+# shot: (src_a, src_b, speed, zoom, origin | None=face)
+
+def story(id, title, hook, shots, quotes, end, steps=(), top_y=280):
+    parts = []
+    for i, (a, b, sp, z, org) in enumerate(shots):
+        part = {"type": "hold" if sp == 1 else "broll", "src": [a, b], "speed": sp, "zoom": z, "voice": False, "tag": False,
+                "trans": "cut" if i == 0 else ("zoomblur" if i % 4 == 0 else "fade")}
+        if org:
+            part["origin"] = org
+        parts.append(part)
+    ov = [{"part": 0, "dt": 0.0, "dur": 3.2, "kind": "hook", "h": 330, "props": {"kicker": hook[0], "line1": hook[1], "line2": hook[2], "y": "auto"}}]
+    for pi, text, accent, n in quotes:
+        ov.append({"part": pi, "dt": 0.5, "dur": 5.0, "kind": "quote", "h": 320, "props": {"n": n, "text": text, "accent": accent, "y": "auto"}})
+    for pi, n, label in steps:
+        ov.append({"part": pi, "dt": 0.2, "dur": 5.4, "kind": "step", "props": {"n": n, "label": label, "y": 290}})
+    ov.append({"part": len(shots) - 1, "dt": 0.6, "dur": 5.2, "kind": "end", "props": {"line1": end[0], "line2": end[1], "y": 300}})
+    return {"id": id, "title": title, "silent": True, "progress": False, "topY": top_y, "parts": parts, "overlays": ov}
+
+
+CLIPS += [
+    story("07-reels-gulung-sampai-habis", "Gulung sampai habis (1 minit)",
+          ("Prep bahan", "Gulung", "sampai habis."),
+          [(1830, 1836, 1, 1.5, [0.42, 0.71]), (765, 777, 2, 1.4, HANDS), (870, 888, 3, 1.35, HANDS), (960, 978, 3, 1.3, None),
+           (1050, 1062, 2, 1.15, None), (1170, 1182, 2, 1.45, HANDS), (1425, 1443, 3, 1.4, HANDS), (1500, 1518, 3, 1.3, None),
+           (1680, 1698, 3, 1.35, HANDS), (1838, 1847, 1.5, 1.5, [0.42, 0.71])],
+          [(1, "Tangan yang sama, gulungan yang sama.", "sama", "01"),
+           (3, "Bukan laju yang penting. Kemas.", "kemas", "02"),
+           (5, "Sikit-sikit, lama-lama jadi sepinggan.", "sepinggan", "03"),
+           (7, "Penat? Sikit. Puas? Banyak.", "puas", "04")],
+          ("Siap digulung,", "jumpa dalam live.")),
+    story("08-reels-senyum-di-dapur", "Senyum di dapur (1 minit)",
+          ("Prep bahan", "Senyum dulu,", "baru masak."),
+          [(1050, 1056, 1, 1.25, None), (945, 957, 2, 1.2, None), (1080, 1092, 2, 1.2, None), (1125, 1137, 2, 1.25, None),
+           (1245, 1257, 2, 1.2, None), (1560, 1572, 2, 1.2, None), (1770, 1782, 2, 1.2, None), (2115, 2133, 3, 1.3, None),
+           (2205, 2217, 2, 1.2, None), (2430, 2442, 2, 1.2, None)],
+          [(1, "Kerja penat jadi ringan bila hati senang.", "senang", "01"),
+           (3, "Masak dengan tenang, rasa pun jadi tenang.", "tenang", "02"),
+           (5, "Yang buat sedap: seronok masa masak.", "seronok", "03"),
+           (7, "Nikmati prosesnya.", "prosesnya", "04")],
+          ("Senyum sikit,", "jumpa dalam live.")),
+    story("09-reels-satu-periuk-nasi", "Satu periuk, satu-satu bekas (1 minit)",
+          ("Prep bahan", "Satu periuk,", "satu-satu bekas."),
+          [(2808, 2814, 1, 1.3, [0.5, 0.82]), (1950, 1968, 3, 1.2, None), (1968, 1992, 4, 1.25, None), (2235, 2253, 3, 1.2, None),
+           (2253, 2295, 7, 1.3, [0.45, 0.75]), (2340, 2382, 7, 1.2, None), (2520, 2550, 5, 1.2, None), (2625, 2643, 3, 1.25, None),
+           (2720, 2780, 10, 1.2, [0.5, 0.82]), (2850, 2862, 2, 1.3, [0.5, 0.8])],
+          [(2, "Sukat sama rata. Adil untuk setiap bekas.", "adil", "01"),
+           (4, "Kerja berulang, tapi tak pernah sama.", "berulang", "02"),
+           (6, "Kemas itu tanda hormat pada yang makan.", "hormat", "03"),
+           (8, "Siap satu, sambung lagi.", "sambung", "04")],
+          ("Nasi siap,", "jumpa petang ni.")),
+    story("10-reels-5-bab-satu-dapur", "5 bab, satu dapur (1 minit)",
+          ("Prep bahan", "5 bab,", "satu dapur."),
+          [(375, 387, 2, 1.2, None), (555, 573, 3, 1.45, HANDS), (618, 630, 2, 1.45, HANDS), (1600, 1618, 3, 1.35, HANDS),
+           (1836, 1845, 1.5, 1.5, [0.42, 0.71]), (2160, 2178, 3, 1.2, None), (2644, 2662, 3, 1.15, None), (2280, 2322, 7, 1.2, None),
+           (2760, 2790, 5, 1.2, [0.5, 0.82]), (2826, 2834, 1.3333, 1.35, [0.5, 0.82])],
+          [(1, "Mula dengan yang ringkas.", "ringkas", None),
+           (2, "Isi dengan yang ikhlas.", "ikhlas", None),
+           (3, "Gulung dengan sabar.", "sabar", None),
+           (5, "Biar haba buat kerjanya.", "haba", None),
+           (7, "Bahagi sama rata.", "rata", None)],
+          ("Semua siap,", "jumpa petang ni."),
+          steps=[(1, "01", "Roti"), (2, "02", "Inti sardin"), (3, "03", "Gulung"), (5, "04", "Air fryer"), (7, "05", "Nasi")],
+          top_y=400),
 ]
