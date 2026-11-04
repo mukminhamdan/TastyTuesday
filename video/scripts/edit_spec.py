@@ -24,10 +24,10 @@ CHEFS = {
                   accent="#FFB000", music="m_170_04"),
 }
 
-# Clean dish shots for B-roll: (source time, zoom, centre-y of the crop). No visible talking
-# face, so B-roll never shows lips that don't match the audio.
-DISHES = dict(roll=(3068.0, 1.4, 0.62), wrap=(3096.6, 1.15, 0.55), puff=(2417.0, 1.1, 0.5),
-              sambal=(3240.5, 2.2, 0.83), pizza=(2828.0, 1.1, 0.55))
+# B-roll of each finished dish. Pizza uses a close-up (time, zoom, centre-y) because the
+# showcase shot has Kak Piah talking, which would not match the audio laid over it.
+DISHES = dict(roll=3062.7, wrap=3107.6, puff=3196.3, sambal=3240.5,
+              pizza=(2828.0, 1.1, 0.55))  # pizza: close-up, no talking face (lip-sync)
 PIZZA_BROLL = [(2812.0, 1.1, 0.5), (2822.0, 1.1, 0.5), (2830.0, 1.15, 0.55)]
 
 
@@ -146,10 +146,10 @@ REEL = [
     (1974.6, 1977.6, k(zoom=1.04)),
     (3160.7, 3163.3, k(zoom=1.08, ov=[("menutag", 3160.75, dict(key="puff"))])),
     (3233.6, 3235.9, k(zoom=1.08, ov=[("menutag", 3233.65, dict(key="sambal"))])),
-    (2341.2, 2345.1, k(broll=DISHES["sambal"])),
+    (2341.2, 2345.1, k(broll=3241.5)),
     (2745.7, 2752.7, k(brolls=PIZZA_BROLL, ov=[("menutag", 2745.75, dict(key="pizza"))])),
     (3340.1, 3346.3, dict(tag="outro", zoom=1.06,
-                          brolls=[(DISHES[x][0] + 1.5,) + DISHES[x][1:] for x in ("roll", "puff", "wrap", "pizza", "sambal")],
+                          brolls=[(DISHES[x][0] + 1.5,) + DISHES[x][1:] if isinstance(DISHES[x], tuple) else DISHES[x] + 1.5 for x in ("roll", "puff", "wrap", "pizza", "sambal")],
                           ov=[("cta", 3340.15, {})])),
 ]
 
