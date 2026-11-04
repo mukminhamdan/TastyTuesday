@@ -28,7 +28,7 @@ BEATS = [
     # take 1 / take 2
     dict(id="take", lead=0.1, tail=0.3,
          voice=[(716.95, 719.25, "Masak guna apa tu ni?"),
-                (720.00, 721.90, "Masak guna apa ni?")],
+                (720.00, 722.85, "Masak guna apa ni?|Food Engine Cooven")],
          shots=[dict(sync=0), dict(sync=1)]),
     # said it twice
     dict(id="ulang", lead=0.1, tail=0.3,
