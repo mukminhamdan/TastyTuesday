@@ -1,6 +1,6 @@
 """Build the edit: cut proxies + clean voice track + timeline.json for Remotion.
 
-Usage: python3 -I build.py <raw.mp4> <transcript.json> <repo_dir>
+Usage: python3 -I build.py <raw.mp4> <transcript.json> <repo_dir> [edl name: main | bloopers]
 """
 import json, os, subprocess, sys
 
@@ -9,54 +9,24 @@ FPS = 30
 PUB = os.path.join(REPO, "public")
 CLIPS = os.path.join(PUB, "clips")
 MEDIA = os.path.join(PUB, "media")
-TMP = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "work", "build_tmp")
-for d in (CLIPS, MEDIA, TMP):
+for d in (CLIPS, MEDIA):
     os.makedirs(d, exist_ok=True)
 
 words_all = [w for s in json.load(open(TRANSCRIPT)) for w in s["words"]]
 
 # ----------------------------------------------------------------------------
-# EDIT DECISION LIST
-# voice: (src_in, src_out, caption text) — caption text is hand-corrected
-# shots: dict(src, dur | None (fills), speed, sync=True to lock to voice[i])
+# EDIT DECISION LIST — loaded from scripts/edl_<name>.py
+#   voice: (src_in, src_out, caption text; "|" forces a caption line break)
+#   shots: dict(src, dur | None (fills), speed, sync=i | voice=i, label, zoom, origin)
 # ----------------------------------------------------------------------------
-BEATS = [
-    # Cooking-only cut (v2): no talking-head shots, voice only as VO over food.
-    dict(id="hook", pre=0.9, lead=0.0, tail=0.45,
-         voice=[(738.55, 739.98, "Tak payah|nak tukar bekas")],
-         shots=[dict(src=1920.6, dur=1.6, speed=0.8, zoom=1.4, origin="85% 95%"),
-                dict(src=1690.0, dur=None, speed=1.2)]),
-    dict(id="s1", pre=4.0, lead=0.0, tail=0.0, voice=[],          # goreng ikan (Aircrisp)
-         shots=[dict(src=1096.0, dur=1.3, speed=3.0, label="3x"),
-                dict(src=1200.0, dur=1.2, speed=4.0, label="4x"),
-                dict(src=1181.0, dur=None, speed=1.3)]),
-    dict(id="s2", pre=2.0, lead=0.0, tail=0.0, voice=[],          # ketepikan ikan
-         shots=[dict(src=1255.5, dur=None, speed=1.4)]),
-    dict(id="s3", pre=1.8, lead=0.0, tail=0.0, voice=[],          # masukkan minyak
-         shots=[dict(src=1270.9, dur=None, speed=1.0)]),
-    dict(id="s4", pre=3.2, lead=0.0, tail=0.0, voice=[],          # ibu sambal
-         shots=[dict(src=1325.0, dur=1.6, speed=1.6),
-                dict(src=1341.0, dur=None, speed=3.0, label="3x")]),
-    dict(id="s5", pre=0.0, lead=0.15, tail=0.35,                 # jintan putih
-         voice=[(596.60, 598.00, "Yang beza ni,|jintan")],
-         shots=[dict(src=1358.3, dur=None, speed=1.0)]),
-    dict(id="s6", pre=0.0, lead=0.15, tail=0.3,                  # kicap sikit
-         voice=[(598.20, 600.80, "Taruk kicap sikit,|nanti jadi sambal")],
-         shots=[dict(src=1454.3, dur=1.7, speed=1.0),
-                dict(src=1498.0, dur=None, speed=1.5)]),
-    dict(id="s7", pre=2.6, lead=0.0, tail=0.4,                   # gaul dengan ikan
-         voice=[(600.85, 602.35, "Sambal hitam")],
-         shots=[dict(src=1484.0, dur=1.3, speed=1.5),
-                dict(src=1512.0, dur=1.2, speed=2.0),
-                dict(src=1560.0, dur=None, speed=2.0)]),
-    dict(id="s8", pre=2.6, lead=0.0, tail=0.0, voice=[],          # tutup, biar meresap
-         shots=[dict(src=1636.0, dur=1.1, speed=4.0, label="4x"),
-                dict(src=1692.0, dur=None, speed=1.0)]),
-    dict(id="end", pre=0.0, lead=0.1, tail=3.6,
-         voice=[(1813.45, 1814.25, "Siap!")],
-         shots=[dict(src=1812.8, voice=0, speed=1.0),
-                dict(src=1920.4, dur=None, speed=0.75, zoom=1.4, origin="85% 95%")]),
-]
+import importlib.util
+EDL = sys.argv[4] if len(sys.argv) > 4 else "main"
+_spec = importlib.util.spec_from_file_location(f"edl_{EDL}", os.path.join(os.path.dirname(os.path.abspath(__file__)), f"edl_{EDL}.py"))
+_mod = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(_mod)
+BEATS = _mod.BEATS
+SUFFIX = "" if EDL == "main" else f"_{EDL}"
+CLIP_DIR = "clips" if EDL == "main" else f"clips/{EDL}"
+os.makedirs(os.path.join(PUB, CLIP_DIR), exist_ok=True)
 GAP = 0.08  # breath between voice pieces inside a beat (dead air removed)
 
 def f(sec):
@@ -127,8 +97,8 @@ for beat in BEATS:
               "eq=saturation=1.12:contrast=1.04")
         run(["ffmpeg", "-y", "-ss", f"{src:.3f}", "-t", f"{src_len:.3f}", "-i", RAW, "-an",
              "-vf", vf, "-frames:v", str(dur_f), "-c:v", "libx264", "-preset", "veryfast",
-             "-crf", "18", "-pix_fmt", "yuv420p", "-g", "15", os.path.join(CLIPS, name)])
-        timeline["clips"].append(dict(file=f"clips/{name}", s=f(s), e=f(s) + dur_f,
+             "-crf", "18", "-pix_fmt", "yuv420p", "-g", "15", os.path.join(PUB, CLIP_DIR, name)])
+        timeline["clips"].append(dict(file=f"{CLIP_DIR}/{name}", s=f(s), e=f(s) + dur_f,
                                       beat=beat["id"], sync="sync" in sh, label=sh.get("label"),
                                       zoom=sh.get("zoom"), origin=sh.get("origin")))
 
@@ -148,7 +118,7 @@ for beat in BEATS:
                 times.append((acc, acc + d)); acc += d
         words = [dict(t=x, s=f(o + (ts - a)), e=f(o + (te - a))) for x, (ts, te) in zip(toks, times)]
         # chunk to single lines (<= 3 words / ~17 chars) so captions never climb onto the face
-        if len(groups) > 1:
+        if len(groups) > 1 or len(text) <= 20:  # explicit breaks, or short enough for one line
             k = 0
             for gi, g in enumerate(groups):
                 cw = words[k:k + len(g)]; k += len(g)
@@ -192,9 +162,9 @@ filters.append(
     "acompressor=threshold=-24dB:ratio=3.5:attack=8:release=120:makeup=4,"
     f"loudnorm=I=-15:TP=-1.5:LRA=7,apad,atrim=0:{total_f / FPS:.3f}[out]")
 run(["ffmpeg", "-y", *inputs, "-filter_complex", ";".join(filters), "-map", "[out]",
-     "-ar", "48000", "-ac", "1", os.path.join(MEDIA, "voice.wav")])
+     "-ar", "48000", "-ac", "1", os.path.join(MEDIA, f"voice{SUFFIX}.wav")])
 
-json.dump(timeline, open(os.path.join(REPO, "src", "data", "timeline.json"), "w"), indent=1, ensure_ascii=False)
+json.dump(timeline, open(os.path.join(REPO, "src", "data", f"timeline{SUFFIX}.json"), "w"), indent=1, ensure_ascii=False)
 print("duration", total_f / FPS, "s;", len(timeline["clips"]), "clips;", len(caps), "caption chunks")
 for bt in timeline["beats"]:
     print(bt["id"], bt["s"] / FPS, "->", bt["e"] / FPS)

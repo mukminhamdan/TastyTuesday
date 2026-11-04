@@ -1,0 +1,835 @@
+{
+ "fps": 30,
+ "clips": [
+  {
+   "file": "clips/bloopers/c01.mp4",
+   "s": 0,
+   "e": 106,
+   "beat": "hook",
+   "sync": false,
+   "label": null,
+   "zoom": null,
+   "origin": null
+  },
+  {
+   "file": "clips/bloopers/c02.mp4",
+   "s": 106,
+   "e": 151,
+   "beat": "reveal",
+   "sync": false,
+   "label": null,
+   "zoom": 1.12,
+   "origin": "88% 55%"
+  },
+  {
+   "file": "clips/bloopers/c03.mp4",
+   "s": 151,
+   "e": 190,
+   "beat": "cam",
+   "sync": false,
+   "label": "3x",
+   "zoom": null,
+   "origin": null
+  },
+  {
+   "file": "clips/bloopers/c04.mp4",
+   "s": 190,
+   "e": 231,
+   "beat": "cam",
+   "sync": false,
+   "label": "3x",
+   "zoom": null,
+   "origin": null
+  },
+  {
+   "file": "clips/bloopers/c05.mp4",
+   "s": 231,
+   "e": 270,
+   "beat": "cam",
+   "sync": true,
+   "label": null,
+   "zoom": null,
+   "origin": null
+  },
+  {
+   "file": "clips/bloopers/c06.mp4",
+   "s": 270,
+   "e": 296,
+   "beat": "tv",
+   "sync": true,
+   "label": null,
+   "zoom": null,
+   "origin": null
+  },
+  {
+   "file": "clips/bloopers/c07.mp4",
+   "s": 296,
+   "e": 388,
+   "beat": "tv",
+   "sync": true,
+   "label": null,
+   "zoom": null,
+   "origin": null
+  },
+  {
+   "file": "clips/bloopers/c08.mp4",
+   "s": 388,
+   "e": 458,
+   "beat": "komen",
+   "sync": true,
+   "label": null,
+   "zoom": null,
+   "origin": null
+  },
+  {
+   "file": "clips/bloopers/c09.mp4",
+   "s": 458,
+   "e": 496,
+   "beat": "komen",
+   "sync": true,
+   "label": null,
+   "zoom": null,
+   "origin": null
+  },
+  {
+   "file": "clips/bloopers/c10.mp4",
+   "s": 496,
+   "e": 538,
+   "beat": "komen",
+   "sync": true,
+   "label": null,
+   "zoom": null,
+   "origin": null
+  },
+  {
+   "file": "clips/bloopers/c11.mp4",
+   "s": 538,
+   "e": 613,
+   "beat": "take",
+   "sync": true,
+   "label": null,
+   "zoom": null,
+   "origin": null
+  },
+  {
+   "file": "clips/bloopers/c12.mp4",
+   "s": 613,
+   "e": 679,
+   "beat": "take",
+   "sync": true,
+   "label": null,
+   "zoom": null,
+   "origin": null
+  },
+  {
+   "file": "clips/bloopers/c13.mp4",
+   "s": 679,
+   "e": 774,
+   "beat": "ulang",
+   "sync": true,
+   "label": null,
+   "zoom": null,
+   "origin": null
+  },
+  {
+   "file": "clips/bloopers/c14.mp4",
+   "s": 774,
+   "e": 841,
+   "beat": "ulang",
+   "sync": true,
+   "label": null,
+   "zoom": null,
+   "origin": null
+  },
+  {
+   "file": "clips/bloopers/c15.mp4",
+   "s": 841,
+   "e": 904,
+   "beat": "salam",
+   "sync": true,
+   "label": null,
+   "zoom": null,
+   "origin": null
+  },
+  {
+   "file": "clips/bloopers/c16.mp4",
+   "s": 904,
+   "e": 988,
+   "beat": "hello",
+   "sync": true,
+   "label": null,
+   "zoom": null,
+   "origin": null
+  },
+  {
+   "file": "clips/bloopers/c17.mp4",
+   "s": 988,
+   "e": 1085,
+   "beat": "outro",
+   "sync": true,
+   "label": null,
+   "zoom": null,
+   "origin": null
+  },
+  {
+   "file": "clips/bloopers/c18.mp4",
+   "s": 1085,
+   "e": 1163,
+   "beat": "outro",
+   "sync": false,
+   "label": null,
+   "zoom": 1.08,
+   "origin": "92% 55%"
+  }
+ ],
+ "voice": [],
+ "captions": [
+  {
+   "s": 4,
+   "e": 48,
+   "words": [
+    {
+     "t": "Sorry,",
+     "s": 4,
+     "e": 22
+    },
+    {
+     "t": "siapa",
+     "s": 22,
+     "e": 36
+    },
+    {
+     "t": "yang",
+     "s": 36,
+     "e": 48
+    }
+   ]
+  },
+  {
+   "s": 48,
+   "e": 111,
+   "words": [
+    {
+     "t": "tak",
+     "s": 48,
+     "e": 56
+    },
+    {
+     "t": "dapat",
+     "s": 56,
+     "e": 71
+    },
+    {
+     "t": "tengok",
+     "s": 71,
+     "e": 88
+    },
+    {
+     "t": "muka",
+     "s": 88,
+     "e": 99
+    },
+    {
+     "t": "tu",
+     "s": 99,
+     "e": 105
+    }
+   ]
+  },
+  {
+   "s": 233,
+   "e": 265,
+   "words": [
+    {
+     "t": "Tak",
+     "s": 233,
+     "e": 239
+    },
+    {
+     "t": "ada",
+     "s": 239,
+     "e": 243
+    },
+    {
+     "t": "bunyi",
+     "s": 243,
+     "e": 250
+    },
+    {
+     "t": "pun?",
+     "s": 250,
+     "e": 258
+    }
+   ]
+  },
+  {
+   "s": 271,
+   "e": 298,
+   "words": [
+    {
+     "t": "Bunyi",
+     "s": 271,
+     "e": 279
+    },
+    {
+     "t": "suara",
+     "s": 279,
+     "e": 286
+    },
+    {
+     "t": "orang?",
+     "s": 286,
+     "e": 294
+    }
+   ]
+  },
+  {
+   "s": 298,
+   "e": 349,
+   "words": [
+    {
+     "t": "Oh,",
+     "s": 298,
+     "e": 310
+    },
+    {
+     "t": "ada",
+     "s": 324,
+     "e": 333
+    },
+    {
+     "t": "anak",
+     "s": 333,
+     "e": 340
+    },
+    {
+     "t": "buah",
+     "s": 340,
+     "e": 349
+    }
+   ]
+  },
+  {
+   "s": 349,
+   "e": 364,
+   "words": [
+    {
+     "t": "kat",
+     "s": 349,
+     "e": 354
+    },
+    {
+     "t": "rumah",
+     "s": 354,
+     "e": 360
+    },
+    {
+     "t": "ni",
+     "s": 360,
+     "e": 364
+    }
+   ]
+  },
+  {
+   "s": 364,
+   "e": 385,
+   "words": [
+    {
+     "t": "tengah",
+     "s": 364,
+     "e": 371
+    },
+    {
+     "t": "tengok",
+     "s": 371,
+     "e": 375
+    },
+    {
+     "t": "TV",
+     "s": 375,
+     "e": 379
+    }
+   ]
+  },
+  {
+   "s": 391,
+   "e": 434,
+   "words": [
+    {
+     "t": "Eh,",
+     "s": 391,
+     "e": 398
+    },
+    {
+     "t": "orang",
+     "s": 398,
+     "e": 410
+    },
+    {
+     "t": "dekat",
+     "s": 410,
+     "e": 422
+    },
+    {
+     "t": "ofis.",
+     "s": 422,
+     "e": 434
+    }
+   ]
+  },
+  {
+   "s": 434,
+   "e": 460,
+   "words": [
+    {
+     "t": "TikTok",
+     "s": 434,
+     "e": 448
+    },
+    {
+     "t": "ke?",
+     "s": 448,
+     "e": 455
+    }
+   ]
+  },
+  {
+   "s": 460,
+   "e": 498,
+   "words": [
+    {
+     "t": "Ami",
+     "s": 460,
+     "e": 478
+    },
+    {
+     "t": "balik",
+     "s": 478,
+     "e": 486
+    },
+    {
+     "t": "dah",
+     "s": 486,
+     "e": 488
+    },
+    {
+     "t": "ke?",
+     "s": 488,
+     "e": 492
+    }
+   ]
+  },
+  {
+   "s": 498,
+   "e": 535,
+   "words": [
+    {
+     "t": "Oh,",
+     "s": 498,
+     "e": 511
+    },
+    {
+     "t": "nak",
+     "s": 511,
+     "e": 516
+    },
+    {
+     "t": "balik",
+     "s": 516,
+     "e": 524
+    },
+    {
+     "t": "dah",
+     "s": 524,
+     "e": 527
+    }
+   ]
+  },
+  {
+   "s": 543,
+   "e": 585,
+   "words": [
+    {
+     "t": "Masak",
+     "s": 543,
+     "e": 561
+    },
+    {
+     "t": "guna",
+     "s": 561,
+     "e": 571
+    },
+    {
+     "t": "apa",
+     "s": 571,
+     "e": 585
+    }
+   ]
+  },
+  {
+   "s": 585,
+   "e": 615,
+   "words": [
+    {
+     "t": "tu",
+     "s": 585,
+     "e": 603
+    },
+    {
+     "t": "ni?",
+     "s": 603,
+     "e": 609
+    }
+   ]
+  },
+  {
+   "s": 615,
+   "e": 676,
+   "words": [
+    {
+     "t": "Masak",
+     "s": 615,
+     "e": 643
+    },
+    {
+     "t": "guna",
+     "s": 643,
+     "e": 653
+    },
+    {
+     "t": "apa",
+     "s": 653,
+     "e": 662
+    },
+    {
+     "t": "ni?",
+     "s": 662,
+     "e": 668
+    }
+   ]
+  },
+  {
+   "s": 683,
+   "e": 746,
+   "words": [
+    {
+     "t": "Senang,",
+     "s": 683,
+     "e": 712
+    },
+    {
+     "t": "tak",
+     "s": 712,
+     "e": 725
+    },
+    {
+     "t": "payah",
+     "s": 741,
+     "e": 746
+    }
+   ]
+  },
+  {
+   "s": 746,
+   "e": 776,
+   "words": [
+    {
+     "t": "nak",
+     "s": 746,
+     "e": 750
+    },
+    {
+     "t": "tukar",
+     "s": 750,
+     "e": 757
+    },
+    {
+     "t": "bekas",
+     "s": 757,
+     "e": 770
+    }
+   ]
+  },
+  {
+   "s": 776,
+   "e": 810,
+   "words": [
+    {
+     "t": "Senang,",
+     "s": 776,
+     "e": 799
+    },
+    {
+     "t": "tak",
+     "s": 799,
+     "e": 804
+    },
+    {
+     "t": "payah",
+     "s": 804,
+     "e": 810
+    }
+   ]
+  },
+  {
+   "s": 810,
+   "e": 838,
+   "words": [
+    {
+     "t": "tukar",
+     "s": 810,
+     "e": 820
+    },
+    {
+     "t": "bekas",
+     "s": 820,
+     "e": 831
+    }
+   ]
+  },
+  {
+   "s": 847,
+   "e": 877,
+   "words": [
+    {
+     "t": "Assalamualaikum,",
+     "s": 847,
+     "e": 861
+    },
+    {
+     "t": "Nas.",
+     "s": 864,
+     "e": 868
+    }
+   ]
+  },
+  {
+   "s": 877,
+   "e": 901,
+   "words": [
+    {
+     "t": "Pulang",
+     "s": 877,
+     "e": 886
+    },
+    {
+     "t": "balik.",
+     "s": 886,
+     "e": 893
+    }
+   ]
+  },
+  {
+   "s": 910,
+   "e": 954,
+   "words": [
+    {
+     "t": "Hello,",
+     "s": 910,
+     "e": 929
+    },
+    {
+     "t": "siapa",
+     "s": 929,
+     "e": 948
+    },
+    {
+     "t": "yang",
+     "s": 948,
+     "e": 954
+    }
+   ]
+  },
+  {
+   "s": 954,
+   "e": 985,
+   "words": [
+    {
+     "t": "ada",
+     "s": 954,
+     "e": 959
+    },
+    {
+     "t": "kat",
+     "s": 959,
+     "e": 963
+    },
+    {
+     "t": "dalam",
+     "s": 963,
+     "e": 970
+    },
+    {
+     "t": "ni?",
+     "s": 970,
+     "e": 975
+    }
+   ]
+  },
+  {
+   "s": 993,
+   "e": 1015,
+   "words": [
+    {
+     "t": "Sambung",
+     "s": 993,
+     "e": 1003
+    },
+    {
+     "t": "dah",
+     "s": 1003,
+     "e": 1006
+    },
+    {
+     "t": "balik.",
+     "s": 1006,
+     "e": 1015
+    }
+   ]
+  },
+  {
+   "s": 1015,
+   "e": 1091,
+   "words": [
+    {
+     "t": "Nak",
+     "s": 1015,
+     "e": 1039
+    },
+    {
+     "t": "solat",
+     "s": 1067,
+     "e": 1083
+    }
+   ]
+  }
+ ],
+ "beats": [
+  {
+   "id": "hook",
+   "s": 0,
+   "e": 106,
+   "voice": [
+    {
+     "s": 4,
+     "e": 105
+    }
+   ]
+  },
+  {
+   "id": "reveal",
+   "s": 106,
+   "e": 151,
+   "voice": []
+  },
+  {
+   "id": "cam",
+   "s": 151,
+   "e": 270,
+   "voice": [
+    {
+     "s": 231,
+     "e": 259
+    }
+   ]
+  },
+  {
+   "id": "tv",
+   "s": 270,
+   "e": 388,
+   "voice": [
+    {
+     "s": 271,
+     "e": 294
+    },
+    {
+     "s": 296,
+     "e": 379
+    }
+   ]
+  },
+  {
+   "id": "komen",
+   "s": 388,
+   "e": 538,
+   "voice": [
+    {
+     "s": 391,
+     "e": 455
+    },
+    {
+     "s": 458,
+     "e": 494
+    },
+    {
+     "s": 496,
+     "e": 529
+    }
+   ]
+  },
+  {
+   "id": "take",
+   "s": 538,
+   "e": 679,
+   "voice": [
+    {
+     "s": 541,
+     "e": 610
+    },
+    {
+     "s": 613,
+     "e": 670
+    }
+   ]
+  },
+  {
+   "id": "ulang",
+   "s": 679,
+   "e": 841,
+   "voice": [
+    {
+     "s": 682,
+     "e": 772
+    },
+    {
+     "s": 774,
+     "e": 832
+    }
+   ]
+  },
+  {
+   "id": "salam",
+   "s": 841,
+   "e": 904,
+   "voice": [
+    {
+     "s": 844,
+     "e": 895
+    }
+   ]
+  },
+  {
+   "id": "hello",
+   "s": 904,
+   "e": 988,
+   "voice": [
+    {
+     "s": 907,
+     "e": 979
+    }
+   ]
+  },
+  {
+   "id": "outro",
+   "s": 988,
+   "e": 1163,
+   "voice": [
+    {
+     "s": 991,
+     "e": 1085
+    }
+   ]
+  }
+ ],
+ "durationInFrames": 1163
+}

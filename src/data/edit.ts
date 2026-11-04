@@ -79,3 +79,6 @@ export const sfx: Sfx[] = [
 export const voiceWindows = beats.flatMap((b) => b.voice);
 /** music-forward stretches (no VO): everything between hook and end */
 export const montageBeats = ["s1", "s2", "s3", "s4", "s7", "s8"].map(B);
+
+import type { EditData } from "../Video";
+export const mainEdit: EditData = { timeline, captions, graphics, sfx, voiceWindows, montageBeats, voiceFile: "media/voice.wav" };
