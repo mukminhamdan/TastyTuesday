@@ -36,7 +36,7 @@ BEATS = [
                 (783.65, 785.60, "Senang, tak payah|tukar bekas")],
          shots=[dict(sync=0), dict(sync=1)]),
     dict(id="salam", lead=0.1, tail=0.3,
-         voice=[(955.05, 956.72, "Assalamualaikum, Nas.|Pulang balik.")],
+         voice=[(955.05, 956.72, "Assalamualaikum, Anas.|Pulang balik.")],
          shots=[dict(sync=0)]),
     dict(id="hello", lead=0.1, tail=0.3,
          voice=[(1540.95, 1543.35, "Hello, siapa yang|ada kat dalam ni?")],
