@@ -136,22 +136,6 @@ CLIPS = [
             {"part": 10, "dt": 0.0, "dur": 4.0, "kind": "end", "props": {"line1": "Mana satu", "line2": "nak cuba dulu?"}},
         ],
     },
-    # ------------------------------------------------------------------ 5
-    {
-        "id": "05-dugong-ketawa-atas-sampan",
-        "title": "Dugong ketawa atas sampan?",
-        "music": M92,
-        "parts": [
-            {"type": "talk", "src": [1094.1, 1102.3]},
-            {"type": "talk", "src": [1103.6, 1110.8], "trans": "whip"},
-            {"type": "broll", "src": [1110.8, 1116.0], "speed": 2, "trans": "zoomblur", "zoom": 1.45, "origin": [0.48, 0.72], "tag": False},
-        ],
-        "overlays": [
-            {"part": 0, "dt": 0.0, "dur": 3.2, "kind": "hook", "h": 330, "props": {"kicker": "Sambil prep bahan", "line1": "Dugong ketawa", "line2": "ikan datang?", "y": "auto"}},
-            {"part": 1, "dt": 3.6, "dur": 1.6, "kind": "word", "props": {"text": "Siren?!", "y": 330}},
-            {"part": 2, "dt": 0.0, "dur": 2.6, "kind": "end", "props": {"line1": "Pernah dengar?", "line2": "Komen bawah."}},
-        ],
-    },
     # ------------------------------------------------------------------ 6
     # 60s cinematic montage for IG Stories / Reels: CC0 music bed only (no voice/SFX), quotes.
     {
