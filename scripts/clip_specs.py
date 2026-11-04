@@ -101,7 +101,7 @@ CLIPS = [
             {"part": 2, "dt": 0.3, "dur": 5.0, "kind": "step", "props": {"n": "02", "label": "Tekap guna mangkuk"}},
             {"part": 2, "dt": 5.6, "dur": 2.0, "kind": "word", "props": {"text": "Kemas.", "serif": True, "y": 360, "color": "#FFC94A", "size": 170}},
             {"part": 3, "dt": 0.2, "dur": 4.2, "kind": "step", "props": {"n": "03", "label": "Susun dalam bekas"}},
-            {"part": 4, "dt": 0.0, "dur": 5.5, "kind": "end", "props": {"line1": "Prep sekali,", "line2": "senang seminggu."}},
+            {"part": 4, "dt": 0.0, "dur": 5.5, "kind": "end", "props": {"line1": "Prep siap awal,", "line2": "live jadi lancar."}},
         ],
     },
     # ------------------------------------------------------------------ 4
