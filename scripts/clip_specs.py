@@ -56,7 +56,7 @@ CLIPS = [
             {"part": 3, "dt": 3.7, "dur": 3.3, "kind": "step", "props": {"n": "04", "label": "Gulung ketat-ketat"}},
             {"part": 4, "dt": 0.2, "dur": 2.6, "kind": "word", "props": {"text": "Ulang", "sub": "sampai habis roti", "y": 330}},
             {"part": 5, "dt": 0.0, "dur": 4.0, "kind": "snap", "props": {"label": "SIAP DIGULUNG"}},
-            {"part": 6, "dt": 0.2, "dur": 3.6, "kind": "step", "props": {"n": "05", "label": "Masuk air fryer"}},
+            {"part": 6, "dt": 0.2, "dur": 3.6, "kind": "step", "props": {"n": "05", "label": "Masuk Food Engine Cooven"}},
             {"part": 8, "dt": 0.1, "dur": 2.3, "kind": "word", "props": {"text": "garing.", "serif": True, "y": 360, "color": "#FFC94A", "size": 170}},
             {"part": 9, "dt": 0.2, "dur": 4.2, "kind": "end", "props": {"line1": "Save dulu,", "line2": "buat petang ni."}},
         ],
@@ -243,6 +243,6 @@ CLIPS += [
            (5, "Biar haba buat kerjanya.", "haba", None),
            (7, "Bahagi sama rata.", "rata", None)],
           ("Semua siap,", "jumpa petang ni."),
-          steps=[(1, "01", "Roti"), (2, "02", "Inti sardin"), (3, "03", "Gulung"), (5, "04", "Air fryer"), (7, "05", "Nasi")],
+          steps=[(1, "01", "Roti"), (2, "02", "Inti sardin"), (3, "03", "Gulung"), (5, "04", "Food Engine Cooven"), (7, "05", "Nasi")],
           top_y=400),
 ]
