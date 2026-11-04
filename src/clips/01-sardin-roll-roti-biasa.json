@@ -1,35 +1,21 @@
 {
  "id": "01-sardin-roll-roti-biasa",
  "title": "Sardin roll guna roti biasa",
- "durationInFrames": 1245,
+ "durationInFrames": 1204,
  "segments": [
   {
-   "dur": 37,
-   "srcStart": 709.78,
-   "speed": 1,
-   "zoom": 1.0,
+   "dur": 120,
+   "srcStart": 1425,
+   "speed": 2,
+   "zoom": 1.12,
    "origin": [
-    0.794,
-    0.372
+    0.6,
+    0.45
    ],
    "cropY": 120,
-   "voice": true,
+   "voice": false,
    "trans": "cut",
    "from": 0
-  },
-  {
-   "dur": 124,
-   "srcStart": 711.82,
-   "speed": 1,
-   "zoom": 1.14,
-   "origin": [
-    0.786,
-    0.376
-   ],
-   "cropY": 120,
-   "voice": true,
-   "trans": "punch",
-   "from": 37
   },
   {
    "dur": 90,
@@ -43,7 +29,7 @@
    "cropY": 120,
    "voice": false,
    "trans": "whip",
-   "from": 161
+   "from": 120
   },
   {
    "dur": 120,
@@ -57,7 +43,7 @@
    "cropY": 120,
    "voice": false,
    "trans": "zoomblur",
-   "from": 251
+   "from": 210
   },
   {
    "dur": 214,
@@ -71,7 +57,7 @@
    "cropY": 120,
    "voice": false,
    "trans": "whip",
-   "from": 371
+   "from": 330
   },
   {
    "dur": 90,
@@ -85,7 +71,7 @@
    "cropY": 120,
    "voice": false,
    "trans": "zoomblur",
-   "from": 585
+   "from": 544
   },
   {
    "dur": 120,
@@ -99,7 +85,7 @@
    "cropY": 120,
    "voice": false,
    "trans": "whip",
-   "from": 675
+   "from": 634
   },
   {
    "dur": 120,
@@ -113,7 +99,7 @@
    "cropY": 120,
    "voice": false,
    "trans": "zoomblur",
-   "from": 795
+   "from": 754
   },
   {
    "dur": 120,
@@ -127,7 +113,7 @@
    "cropY": 120,
    "voice": false,
    "trans": "whip",
-   "from": 915
+   "from": 874
   },
   {
    "dur": 75,
@@ -141,7 +127,7 @@
    "cropY": 120,
    "voice": false,
    "trans": "flash",
-   "from": 1035
+   "from": 994
   },
   {
    "dur": 135,
@@ -155,66 +141,14 @@
    "cropY": 120,
    "voice": false,
    "trans": "zoomblur",
-   "from": 1110
+   "from": 1069
   }
  ],
- "words": [
-  {
-   "t": 0.1,
-   "e": 0.66,
-   "w": "Masak"
-  },
-  {
-   "t": 0.66,
-   "e": 0.86,
-   "w": "apa"
-  },
-  {
-   "t": 0.86,
-   "e": 1.08,
-   "w": "tu?"
-  },
-  {
-   "t": 1.333,
-   "e": 1.686,
-   "w": "Oh,"
-  },
-  {
-   "t": 1.804,
-   "e": 2.157,
-   "w": "Sol"
-  },
-  {
-   "t": 2.275,
-   "e": 2.627,
-   "w": "nak"
-  },
-  {
-   "t": 2.745,
-   "e": 3.216,
-   "w": "buat"
-  },
-  {
-   "t": 3.333,
-   "e": 3.686,
-   "w": "ni,"
-  },
-  {
-   "t": 3.804,
-   "e": 4.51,
-   "w": "sardin",
-   "emph": true
-  },
-  {
-   "t": 4.627,
-   "e": 5.216,
-   "w": "roll."
-  }
- ],
+ "words": [],
  "overlays": [
   {
    "kind": "speed",
-   "from": 165,
+   "from": 124,
    "dur": 82,
    "props": {
     "speed": 4
@@ -222,7 +156,7 @@
   },
   {
    "kind": "speed",
-   "from": 255,
+   "from": 214,
    "dur": 112,
    "props": {
     "speed": 3
@@ -230,7 +164,7 @@
   },
   {
    "kind": "speed",
-   "from": 375,
+   "from": 334,
    "dur": 206,
    "props": {
     "speed": 7
@@ -238,7 +172,7 @@
   },
   {
    "kind": "speed",
-   "from": 589,
+   "from": 548,
    "dur": 82,
    "props": {
     "speed": 30
@@ -246,7 +180,7 @@
   },
   {
    "kind": "speed",
-   "from": 679,
+   "from": 638,
    "dur": 112,
    "props": {
     "speed": 3
@@ -254,7 +188,7 @@
   },
   {
    "kind": "speed",
-   "from": 799,
+   "from": 758,
    "dur": 112,
    "props": {
     "speed": 3
@@ -262,7 +196,7 @@
   },
   {
    "kind": "speed",
-   "from": 919,
+   "from": 878,
    "dur": 112,
    "props": {
     "speed": 6
@@ -270,7 +204,7 @@
   },
   {
    "kind": "flash",
-   "from": 1035,
+   "from": 994,
    "dur": 8
   },
   {
@@ -282,13 +216,13 @@
     "line1": "Sardin roll",
     "line2": "guna roti biasa je.",
     "y": 240,
-    "maxW": 604,
+    "maxW": 667,
     "align": "left"
    }
   },
   {
    "kind": "step",
-   "from": 167,
+   "from": 126,
    "dur": 84,
    "props": {
     "n": "01",
@@ -297,7 +231,7 @@
   },
   {
    "kind": "step",
-   "from": 257,
+   "from": 216,
    "dur": 114,
    "props": {
     "n": "02",
@@ -306,7 +240,7 @@
   },
   {
    "kind": "step",
-   "from": 377,
+   "from": 336,
    "dur": 102,
    "props": {
     "n": "03",
@@ -315,7 +249,7 @@
   },
   {
    "kind": "step",
-   "from": 482,
+   "from": 441,
    "dur": 99,
    "props": {
     "n": "04",
@@ -324,7 +258,7 @@
   },
   {
    "kind": "word",
-   "from": 591,
+   "from": 550,
    "dur": 78,
    "props": {
     "text": "Ulang",
@@ -335,7 +269,7 @@
   },
   {
    "kind": "snap",
-   "from": 675,
+   "from": 634,
    "dur": 120,
    "props": {
     "label": "SIAP DIGULUNG"
@@ -343,7 +277,7 @@
   },
   {
    "kind": "step",
-   "from": 801,
+   "from": 760,
    "dur": 108,
    "props": {
     "n": "05",
@@ -352,7 +286,7 @@
   },
   {
    "kind": "word",
-   "from": 1038,
+   "from": 997,
    "dur": 69,
    "props": {
     "text": "garing.",
@@ -365,7 +299,7 @@
   },
   {
    "kind": "end",
-   "from": 1116,
+   "from": 1075,
    "dur": 126,
    "props": {
     "line1": "Save dulu,",
@@ -386,107 +320,107 @@
   },
   {
    "name": "whoosh",
-   "from": 155,
+   "from": 114,
    "vol": 0.45
   },
   {
    "name": "pop",
-   "from": 167,
+   "from": 126,
    "vol": 0.5
   },
   {
    "name": "whoosh_long",
-   "from": 239,
+   "from": 198,
    "vol": 0.4
   },
   {
    "name": "pop",
-   "from": 257,
+   "from": 216,
    "vol": 0.5
   },
   {
    "name": "whoosh",
-   "from": 365,
+   "from": 324,
    "vol": 0.45
   },
   {
    "name": "pop",
-   "from": 377,
+   "from": 336,
    "vol": 0.5
   },
   {
    "name": "pop",
-   "from": 482,
+   "from": 441,
    "vol": 0.5
   },
   {
    "name": "whoosh_long",
-   "from": 573,
+   "from": 532,
    "vol": 0.4
   },
   {
    "name": "impact",
-   "from": 591,
+   "from": 550,
    "vol": 0.38
   },
   {
    "name": "bass_drop",
-   "from": 591,
+   "from": 550,
    "vol": 0.25
   },
   {
    "name": "whoosh",
-   "from": 669,
+   "from": 628,
    "vol": 0.45
   },
   {
    "name": "shutter",
-   "from": 675,
+   "from": 634,
    "vol": 0.6
   },
   {
    "name": "whoosh_long",
-   "from": 783,
+   "from": 742,
    "vol": 0.4
   },
   {
    "name": "pop",
-   "from": 801,
+   "from": 760,
    "vol": 0.5
   },
   {
    "name": "whoosh",
-   "from": 909,
+   "from": 868,
    "vol": 0.45
   },
   {
    "name": "impact",
-   "from": 1035,
+   "from": 994,
    "vol": 0.35
   },
   {
    "name": "sizzle",
-   "from": 1035,
+   "from": 994,
    "vol": 0.4
   },
   {
    "name": "impact",
-   "from": 1038,
+   "from": 997,
    "vol": 0.38
   },
   {
    "name": "bass_drop",
-   "from": 1038,
+   "from": 997,
    "vol": 0.25
   },
   {
    "name": "whoosh_long",
-   "from": 1098,
+   "from": 1057,
    "vol": 0.4
   },
   {
    "name": "sparkle",
-   "from": 1120,
+   "from": 1079,
    "vol": 0.4
   }
  ],
@@ -498,34 +432,25 @@
  "progress": true,
  "face": [
   [
-   0.794,
-   0.372,
-   0.103
+   0.893,
+   0.333,
+   0.149
   ],
   [
-   0.794,
-   0.372,
-   0.103
-  ],
-  [
-   0.78,
-   0.375,
-   0.118
-  ],
-  [
-   0.769,
+   0.82,
    0.376,
-   0.119
+   0.111
   ],
   [
-   0.769,
-   0.393,
-   0.123
+   0.82,
+   0.376,
+   0.111
   ],
+  null,
   [
-   0.786,
-   0.389,
-   0.128
+   0.941,
+   0.224,
+   0.176
   ],
   [
    0.961,
@@ -533,19 +458,19 @@
    0.125
   ],
   [
-   0.897,
-   0.293,
-   0.201
+   0.797,
+   0.532,
+   0.104
   ],
   [
-   0.834,
-   0.285,
-   0.114
+   1.044,
+   0.119,
+   0.18
   ],
   [
-   1.054,
-   0.107,
-   0.208
+   0.207,
+   0.646,
+   0.255
   ],
   [
    0.207,
@@ -558,15 +483,11 @@
    0.136
   ],
   [
-   0.922,
-   0.203,
-   0.133
+   1.089,
+   0.125,
+   0.135
   ],
-  [
-   0.995,
-   0.16,
-   0.17
-  ],
+  null,
   null,
   null,
   null,
@@ -576,21 +497,17 @@
    0.206
   ],
   [
-   0.674,
-   0.321,
-   0.209
+   0.68,
+   0.318,
+   0.206
   ],
   null,
   [
-   0.847,
-   0.356,
-   0.132
+   0.811,
+   0.345,
+   0.137
   ],
-  [
-   0.81,
-   0.346,
-   0.136
-  ],
+  null,
   null,
   [
    1.049,
@@ -604,12 +521,12 @@
   ],
   [
    1.017,
-   0.139,
-   0.181
+   0.147,
+   0.17
   ],
   [
-   0.989,
-   0.181,
+   1.026,
+   0.174,
    0.17
   ],
   [
@@ -618,16 +535,20 @@
    0.155
   ],
   null,
-  null,
   [
    0.761,
    0.324,
    0.161
   ],
   [
-   0.711,
-   0.336,
-   0.172
+   0.702,
+   0.343,
+   0.13
+  ],
+  [
+   0.717,
+   0.347,
+   0.162
   ],
   [
    0.858,
@@ -635,14 +556,14 @@
    0.097
   ],
   [
-   0.701,
-   0.342,
-   0.107
+   0.706,
+   0.32,
+   0.185
   ],
   [
-   0.8,
-   0.38,
-   0.097
+   0.92,
+   0.321,
+   0.08
   ],
   [
    1.03,

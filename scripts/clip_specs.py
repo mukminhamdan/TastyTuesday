@@ -43,7 +43,8 @@ CLIPS = [
         "title": "Sardin roll guna roti biasa",
         "music": M104,
         "parts": [
-            {"type": "talk", "src": [709.6, 716.2]},                                     # "Masak apa tu? / Oh, nak buat ni... sardin roll"
+            # cold open (no talk: the "nak buat sardin roll" intro overlapped with clip 02's intro)
+            {"type": "broll", "src": [1425, 1433], "speed": 2, "zoom": 1.12, "origin": [0.6, 0.45], "tag": False},
             {"type": "broll", "src": [392, 404], "speed": 4, "trans": "whip", "zoom": 1.25, "origin": HANDS},
             {"type": "broll", "src": [568, 580], "speed": 3, "trans": "zoomblur", "zoom": 1.55, "origin": [0.48, 0.72]},
             {"type": "broll", "src": [600, 650], "speed": 7, "trans": "whip", "zoom": 1.45, "origin": [0.48, 0.72]},
