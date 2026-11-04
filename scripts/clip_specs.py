@@ -28,6 +28,12 @@ EMPH = {"sardin", "tuna", "nasi", "roti", "live", "dugong", "siren", "duyung", "
 M92 = {"src": "music/groove_92.wav", "vol": 0.42, "duck": 0.065}
 M104 = {"src": "music/groove_104.wav", "vol": 0.5, "duck": 0.065}
 
+# CC0 beds for the 1-minute Reels/Story clips (scripts/prep_music.py, credits in public/music/CREDITS.md).
+# No voice in these clips, so no ducking; beds are normalised to -14 LUFS.
+def cc0(name, vol=0.9):
+    return {"src": f"music/{name}.mp3", "vol": vol, "duck": vol}
+
+
 HANDS = [0.5, 0.72]  # counter / hands area in output coords
 
 CLIPS = [
@@ -146,11 +152,12 @@ CLIPS = [
         ],
     },
     # ------------------------------------------------------------------ 6
-    # 60s cinematic montage for IG Stories / Reels: no audio (add IG library music in-app), quotes.
+    # 60s cinematic montage for IG Stories / Reels: CC0 music bed only (no voice/SFX), quotes.
     {
         "id": "06-reels-story-1-minit",
         "title": "Sebelum live, ada dapur ni (1 minit)",
         "silent": True,
+        "music": cc0("cc0_rhodes_jazz"),
         "progress": False,
         "topY": 280,  # IG Story header bar
         "parts": [
@@ -180,11 +187,11 @@ CLIPS = [
 ]
 
 # ---------------------------------------------------------------------------
-# 60s silent quote montages for IG Stories / Reels (07–10). Each uses different
+# 60s quote montages (CC0 music, no voice/SFX) for IG Stories / Reels (07–10). Each uses different
 # source moments so the series doesn't repeat shots.
 # shot: (src_a, src_b, speed, zoom, origin | None=face)
 
-def story(id, title, hook, shots, quotes, end, steps=(), top_y=280):
+def story(id, title, hook, shots, quotes, end, steps=(), top_y=280, music=None):
     parts = []
     for i, (a, b, sp, z, org) in enumerate(shots):
         part = {"type": "hold" if sp == 1 else "broll", "src": [a, b], "speed": sp, "zoom": z, "voice": False, "tag": False,
@@ -198,7 +205,7 @@ def story(id, title, hook, shots, quotes, end, steps=(), top_y=280):
     for pi, n, label in steps:
         ov.append({"part": pi, "dt": 0.2, "dur": 5.4, "kind": "step", "props": {"n": n, "label": label, "y": 290}})
     ov.append({"part": len(shots) - 1, "dt": 0.6, "dur": 5.2, "kind": "end", "props": {"line1": end[0], "line2": end[1], "cta": "KOMEN + FOLLOW", "y": 300}})
-    return {"id": id, "title": title, "silent": True, "progress": False, "topY": top_y, "parts": parts, "overlays": ov}
+    return {"id": id, "title": title, "silent": True, "music": music, "progress": False, "topY": top_y, "parts": parts, "overlays": ov}
 
 
 CLIPS += [
@@ -211,7 +218,8 @@ CLIPS += [
            (3, "Bukan laju yang penting. Kemas.", "kemas", "02"),
            (5, "Sikit-sikit, lama-lama jadi sepinggan.", "sepinggan", "03"),
            (7, "Penat? Sikit. Puas? Banyak.", "puas", "04")],
-          ("Siap digulung.", "Komen & follow.")),
+          ("Siap digulung.", "Komen & follow."),
+          music=cc0("cc0_lofi_80")),
     story("08-reels-senyum-di-dapur", "Senyum di dapur (1 minit)",
           ("Prep bahan", "Senyum dulu,", "baru masak."),
           [(1050, 1056, 1, 1.25, None), (945, 957, 2, 1.2, None), (1080, 1092, 2, 1.2, None), (1125, 1137, 2, 1.25, None),
@@ -221,7 +229,8 @@ CLIPS += [
            (3, "Masak dengan tenang, rasa pun jadi tenang.", "tenang", "02"),
            (5, "Yang buat sedap: seronok masa masak.", "seronok", "03"),
            (7, "Nikmati prosesnya.", "prosesnya", "04")],
-          ("Senyum sikit.", "Komen & follow.")),
+          ("Senyum sikit.", "Komen & follow."),
+          music=cc0("cc0_jazzhop_80")),
     story("09-reels-satu-periuk-nasi", "Satu periuk, satu-satu bekas (1 minit)",
           ("Prep bahan", "Satu periuk,", "satu-satu bekas."),
           [(2808, 2814, 1, 1.3, [0.5, 0.82]), (1950, 1968, 3, 1.2, None), (1968, 1992, 4, 1.25, None), (2235, 2253, 3, 1.2, None),
@@ -231,7 +240,8 @@ CLIPS += [
            (4, "Kerja berulang, tapi tak pernah sama.", "berulang", "02"),
            (6, "Kemas itu tanda hormat pada yang makan.", "hormat", "03"),
            (8, "Siap satu, sambung lagi.", "sambung", "04")],
-          ("Nasi siap.", "Komen & follow.")),
+          ("Nasi siap.", "Komen & follow."),
+          music=cc0("cc0_groove_160")),
     story("10-reels-5-bab-satu-dapur", "5 bab, satu dapur (1 minit)",
           ("Prep bahan", "5 bab,", "satu dapur."),
           [(375, 387, 2, 1.2, None), (555, 573, 3, 1.45, HANDS), (618, 630, 2, 1.45, HANDS), (1600, 1618, 3, 1.35, HANDS),
@@ -244,5 +254,5 @@ CLIPS += [
            (7, "Bahagi sama rata.", "rata", None)],
           ("Semua siap.", "Komen & follow."),
           steps=[(1, "01", "Roti"), (2, "02", "Inti sardin"), (3, "03", "Gulung"), (5, "04", "Food Engine Cooven"), (7, "05", "Nasi")],
-          top_y=400),
+          top_y=400, music=cc0("cc0_funk_trumpet")),
 ]

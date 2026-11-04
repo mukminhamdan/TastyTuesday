@@ -251,7 +251,11 @@
   }
  ],
  "sfx": [],
- "music": null,
+ "music": {
+  "src": "music/cc0_rhodes_jazz.mp3",
+  "vol": 0.9,
+  "duck": 0.9
+ },
  "progress": false,
  "face": [
   [

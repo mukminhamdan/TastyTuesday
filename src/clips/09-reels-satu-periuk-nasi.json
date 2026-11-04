@@ -220,7 +220,11 @@
   }
  ],
  "sfx": [],
- "music": null,
+ "music": {
+  "src": "music/cc0_groove_160.mp3",
+  "vol": 0.9,
+  "duck": 0.9
+ },
  "progress": false,
  "face": [
   [

@@ -251,7 +251,8 @@ def build(spec):
         "words": words,
         "overlays": overlays,
         "sfx": sorted(sfx, key=lambda x: x["from"]),
-        "music": None if spec.get("silent") else spec.get("music", {"src": "music/groove_92.wav", "vol": 0.22, "duck": 0.06}),
+        # "silent" = no voice/SFX; a silent clip can still carry a music bed
+        "music": spec.get("music") if spec.get("silent") else spec.get("music", {"src": "music/groove_92.wav", "vol": 0.22, "duck": 0.06}),
         "progress": spec.get("progress", True),
         "face": face_track,
         "captionY": spec.get("captionY", 1140),

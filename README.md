@@ -10,7 +10,7 @@ The live was mostly quiet cooking with a little talking in between.
 | `03-satu-periuk-nasi` | portioning rice, timelapse, ends on the containers lined up | ~28s |
 | `04-48-minit-dalam-30-saat` | the whole session, speed-ramped | ~32s |
 | `05-dugong-ketawa-atas-sampan` | funny story about the "laughing dugong" | ~18s |
-| `06-reels-story-1-minit` | 60s cinematic montage with quotes for IG Stories/Reels, no audio (add music in IG), fade transitions | ~60s |
+| `06-reels-story-1-minit` | 60s cinematic montage with quotes for IG Stories/Reels, CC0 jazz bed, fade transitions | ~60s |
 | `07-reels-gulung-sampai-habis` | 60s quote montage: rolling sessions from across the live | 60s |
 | `08-reels-senyum-di-dapur` | 60s quote montage: candid smiles and looks at the camera | 60s |
 | `09-reels-satu-periuk-nasi` | 60s quote montage: rice, from the pot to the containers | 60s |
@@ -46,5 +46,9 @@ ffmpeg -i public/source.mp4 -vn -af "highpass=f=80,afftdn=nf=-32:nr=10,equalizer
 
 ## Sound
 
-The build machine can't reach the stock SFX/music libraries. The SFX and the two music beds in `public/` were made procedurally
+**Clips 06–10:** CC0 (public-domain) instrumentals from Hugging Face `mrfakename/cc0-music-captioned`. They are cut, beat-aligned and normalised by
+`scripts/prep_music.py`, and the result is committed as `public/music/cc0_*.mp3`. Sources and licence are in `public/music/CREDITS.md`.
+In 07–09 every 6-second cut lands on a beat.
+
+**Clips 01–05:** the build machine can't reach the stock SFX/music libraries, so the SFX and the two talking-clip music beds in `public/` were made procedurally
 (`scripts/sound_design.py`). To use library sounds (Artlist, Epidemic, etc.), drop files with the **same names** into `public/sfx/` and `public/music/`.
