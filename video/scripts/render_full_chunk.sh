@@ -5,4 +5,5 @@ cd "$(dirname "$0")/.."
 a=$1; b=$2
 npx remotion render Full-YouTube "out/chunks/full_${a}.mp4" --frames=${a}-${b} --muted --scale=0.5 \
   --concurrency=4 --crf=26 --log=error --timeout=120000 --props='{"lo":true}'
+rm -rf /tmp/remotion-webpack-bundle-* /tmp/remotion-v4*-assets* # bundles copy public/ (GBs)
 echo "CHUNK ${a}-${b} DONE" >> out/render.log
