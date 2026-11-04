@@ -12,7 +12,7 @@ mkdirSync('out/preview', {recursive: true});
 for (const id of ids) {
   console.log(`\n=== preview ${id}`);
   const silent = JSON.parse(readFileSync(`src/clips/${id}.json`, 'utf8')).music === null;
-  const args = ['remotion', 'render', 'src/index.ts', id, `out/preview/${id}.mp4`, '--scale=0.5', '--crf=26', '--x264-preset=veryfast'];
+  const args = ['remotion', 'render', 'src/index.ts', id, `out/preview/${id}.mp4`, `--scale=${process.env.PREVIEW_SCALE ?? '0.5'}`, '--crf=22', '--x264-preset=veryfast'];
   args.push(...(silent ? ['--muted'] : ['--audio-bitrate=128k']));
   execFileSync('npx', args, {stdio: 'inherit'});
 }

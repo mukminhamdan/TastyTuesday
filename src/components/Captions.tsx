@@ -64,7 +64,9 @@ const PageView: React.FC<{page: Page}> = ({page}) => {
           opacity: pastOrActive || life < 0.6 ? interpolate(s, [0, 1], [0, 1]) : 0.0,
           transform: `translateY(${interpolate(s, [0, 1], [26, 0])}px) scale(${active ? 1.04 : 1})`,
           filter: blur > 0.4 ? `blur(${blur}px)` : undefined,
-          textShadow: '0 3px 0 rgba(0,0,0,0.25), 0 8px 28px rgba(0,0,0,0.55)',
+          textShadow: '0 2px 3px rgba(0,0,0,0.65), 0 4px 0 rgba(0,0,0,0.25), 0 8px 28px rgba(0,0,0,0.55)',
+          WebkitTextStroke: '1.5px rgba(0,0,0,0.35)',
+          paintOrder: 'stroke fill',
           willChange: 'transform',
         };
         if (w.emph) {

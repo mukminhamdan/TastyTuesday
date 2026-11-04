@@ -3,6 +3,20 @@ import {AbsoluteFill, Easing, interpolate, spring, useCurrentFrame, useVideoConf
 import {C, F, SAFE, W} from '../lib/theme';
 
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
+/** tight contact shadow + soft halo: keeps type readable on busy footage */
+const LEGIBLE = '0 2px 3px rgba(0,0,0,0.6), 0 4px 22px rgba(0,0,0,0.5)';
+/** soft dark pool behind a text block (sits inside an isolated wrapper) */
+const Scrim: React.FC<{o?: number}> = ({o = 1}) => (
+  <div
+    style={{
+      position: 'absolute',
+      inset: '-70px -110px -70px -110px',
+      zIndex: -1,
+      background: 'radial-gradient(closest-side, rgba(10,8,6,0.55), rgba(10,8,6,0.28) 55%, rgba(10,8,6,0) 100%)',
+      opacity: o,
+    }}
+  />
+);
 const eo = Easing.out(Easing.cubic);
 const eio = Easing.inOut(Easing.cubic);
 
@@ -38,7 +52,7 @@ export const HookTitle: React.FC<{dur: number; kicker?: string; line1: string; l
 }) => {
   const width = maxW ?? SAFE.right - SAFE.left;
   // shrink display type when squeezed beside the face
-  const k = Math.min(1, Math.max(0.62, width / 700));
+  const k = Math.min(1, Math.max(0.72, width / 680));
   const f = useCurrentFrame();
   const barW = interpolate(f, [2, 16], [0, 1], {...clamp, easing: eo}) * interpolate(f, [dur - 8, dur], [1, 0], clamp);
   return (
@@ -53,25 +67,26 @@ export const HookTitle: React.FC<{dur: number; kicker?: string; line1: string; l
           display: 'flex',
           flexDirection: 'column',
           alignItems: align === 'center' ? 'center' : align === 'right' ? 'flex-end' : 'flex-start',
-          filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.45))',
+          isolation: 'isolate',
         }}
       >
+        <Scrim o={barW} />
         {kicker ? (
           <MaskLine delay={0} dur={dur}>
-            <div style={{display: 'flex', alignItems: 'center', gap: 14, fontFamily: F.mono, fontSize: 30 * Math.max(k, 0.8), letterSpacing: '0.16em', color: C.paper, textTransform: 'uppercase', flexWrap: 'wrap'}}>
+            <div style={{display: 'flex', alignItems: 'center', gap: 14, fontFamily: F.mono, fontWeight: 500, fontSize: 34, letterSpacing: '0.1em', color: C.paper, textTransform: 'uppercase', flexWrap: 'wrap', textShadow: LEGIBLE}}>
               <span style={{width: 14, height: 14, borderRadius: 7, background: C.chili, boxShadow: `0 0 18px ${C.chili}`}} />
               {kicker}
             </div>
           </MaskLine>
         ) : null}
         <MaskLine delay={4} dur={dur}>
-          <div style={{fontFamily: F.display, fontWeight: 900, fontStretch: '118%', fontSize: 112 * k, lineHeight: 0.92, letterSpacing: '-0.035em', color: C.paper, textTransform: 'uppercase'}}>
+          <div style={{fontFamily: F.display, fontWeight: 900, fontStretch: '118%', fontSize: 112 * k, lineHeight: 0.92, letterSpacing: '-0.03em', color: C.paper, textTransform: 'uppercase', textShadow: LEGIBLE}}>
             {line1}
           </div>
         </MaskLine>
         {line2 ? (
           <MaskLine delay={9} dur={dur}>
-            <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 104 * k, lineHeight: 1.0, color: C.butter, letterSpacing: '-0.01em'}}>{line2}</div>
+            <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 112 * k, lineHeight: 1.0, color: C.butter, letterSpacing: '0', textShadow: LEGIBLE}}>{line2}</div>
           </MaskLine>
         ) : null}
         <div style={{height: 6, marginTop: 16, width: 220 * barW, background: C.butter, borderRadius: 3}} />
@@ -115,7 +130,7 @@ export const StepChip: React.FC<{dur: number; n: string; label: string; y?: numb
             background: C.butter,
             color: C.ink,
             fontFamily: F.mono,
-            fontSize: 28,
+            fontSize: 30,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -123,7 +138,7 @@ export const StepChip: React.FC<{dur: number; n: string; label: string; y?: numb
         >
           {n}
         </div>
-        <div style={{fontFamily: F.display, fontWeight: 700, fontStretch: '108%', fontSize: 42, color: C.paper, letterSpacing: '-0.01em'}}>{label}</div>
+        <div style={{fontFamily: F.display, fontWeight: 700, fontStretch: '108%', fontSize: 46, color: C.paper, letterSpacing: '-0.005em'}}>{label}</div>
       </div>
     </AbsoluteFill>
   );
@@ -145,10 +160,11 @@ export const SpeedTag: React.FC<{dur: number; speed: number; y?: number}> = ({du
           alignItems: 'center',
           gap: 12,
           fontFamily: F.mono,
-          fontSize: 30,
+          fontSize: 32,
+          fontWeight: 500,
           color: C.paper,
-          letterSpacing: '0.12em',
-          textShadow: '0 2px 12px rgba(0,0,0,0.6)',
+          letterSpacing: '0.1em',
+          textShadow: LEGIBLE,
         }}
       >
         <svg width="40" height="26" viewBox="0 0 40 26" style={{opacity: blink}}>
@@ -200,7 +216,7 @@ export const KineticWord: React.FC<{dur: number; text: string; sub?: string; x?:
           {text}
         </div>
         {sub ? (
-          <div style={{marginTop: 10, fontFamily: F.mono, fontSize: 28, letterSpacing: '0.16em', color: C.paper, textTransform: 'uppercase'}}>{sub}</div>
+          <div style={{marginTop: 12, fontFamily: F.mono, fontWeight: 500, fontSize: 32, letterSpacing: '0.1em', color: C.paper, textTransform: 'uppercase', textShadow: LEGIBLE}}>{sub}</div>
         ) : null}
       </div>
     </AbsoluteFill>
@@ -281,7 +297,7 @@ export const Snap: React.FC<{dur: number; label?: string}> = ({dur, label = 'SIA
   return (
     <AbsoluteFill style={{pointerEvents: 'none'}}>
       <AbsoluteFill style={{boxShadow: `inset 0 0 0 ${inset}px ${C.paper}`}} />
-      <div style={{position: 'absolute', left: SAFE.left, bottom: 1920 - SAFE.bottom + 10, opacity: k, fontFamily: F.mono, fontSize: 30, letterSpacing: '0.2em', color: C.paper, textShadow: '0 2px 10px rgba(0,0,0,0.6)'}}>
+      <div style={{position: 'absolute', left: SAFE.left, bottom: 1920 - SAFE.bottom + 10, opacity: k, fontFamily: F.mono, fontWeight: 500, fontSize: 32, letterSpacing: '0.12em', color: C.paper, textShadow: '0 2px 10px rgba(0,0,0,0.6)'}}>
         ● {label}
       </div>
       <AbsoluteFill style={{background: '#fff', opacity: flash}} />
@@ -298,12 +314,13 @@ export const EndCard: React.FC<{dur: number; line1: string; line2: string; y?: n
   return (
     <AbsoluteFill style={{pointerEvents: 'none'}}>
       <AbsoluteFill style={{background: `linear-gradient(180deg, rgba(0,0,0,${dim + 0.15}) 0%, rgba(0,0,0,0) 45%)`}} />
-      <div style={{position: 'absolute', left: SAFE.left, width: SAFE.right - SAFE.left, top: y}}>
+      <div style={{position: 'absolute', left: SAFE.left, width: SAFE.right - SAFE.left, top: y, isolation: 'isolate'}}>
+        <Scrim o={interpolate(f, [0, 12], [0, 1], clamp)} />
         <MaskLine delay={0} dur={dur + 20}>
-          <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 92, color: C.butter, lineHeight: 1}}>{line1}</div>
+          <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 104, color: C.butter, lineHeight: 1, textShadow: LEGIBLE}}>{line1}</div>
         </MaskLine>
         <MaskLine delay={5} dur={dur + 20}>
-          <div style={{fontFamily: F.display, fontWeight: 900, fontStretch: '118%', fontSize: 96, color: C.paper, textTransform: 'uppercase', letterSpacing: '-0.035em', lineHeight: 0.95}}>{line2}</div>
+          <div style={{fontFamily: F.display, fontWeight: 900, fontStretch: '118%', fontSize: 100, color: C.paper, textTransform: 'uppercase', textShadow: LEGIBLE, letterSpacing: '-0.03em', lineHeight: 0.95}}>{line2}</div>
         </MaskLine>
         <div
           style={{
@@ -346,7 +363,7 @@ export const Progress: React.FC<{total: number}> = ({total}) => {
 };
 
 
-/** Editorial quote: index label + serif-italic lines revealed word by word. */
+/** Editorial quote: index label + bold sans lines (serif-italic accent word) revealed word by word. */
 export const Quote: React.FC<{dur: number; text: string; n?: string; accent?: string; y?: number; maxW?: number; align?: 'left' | 'right' | 'center'}> = ({
   dur,
   text,
@@ -358,15 +375,15 @@ export const Quote: React.FC<{dur: number; text: string; n?: string; accent?: st
 }) => {
   const f = useCurrentFrame();
   const width = Math.min(maxW ?? SAFE.right - SAFE.left, SAFE.right - SAFE.left);
-  const k = Math.min(1, Math.max(0.7, width / 720));
+  const k = Math.min(1, Math.max(0.8, width / 640));
   const out = eio(interpolate(f, [dur - 14, dur], [1, 0], clamp));
   const words = text.split(' ');
   const line = interpolate(f, [0, 18], [0, 1], {...clamp, easing: eo});
   const left = align === 'right' ? SAFE.right - width + 70 : align === 'center' ? (W - width) / 2 : SAFE.left;
   return (
     <AbsoluteFill style={{pointerEvents: 'none'}}>
-      <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(0,0,0,0.38) 0%, rgba(0,0,0,0) 38%)', opacity: out * line}} />
-      <div style={{position: 'absolute', left, top: y, width, textAlign: align, opacity: out, transform: `translateY(${(1 - out) * -16}px)`}}>
+      <div style={{position: 'absolute', left, top: y, width, textAlign: align, opacity: out, transform: `translateY(${(1 - out) * -16}px)`, isolation: 'isolate'}}>
+        <Scrim o={line} />
         {n ? (
           <div
             style={{
@@ -375,18 +392,19 @@ export const Quote: React.FC<{dur: number; text: string; n?: string; accent?: st
               justifyContent: align === 'right' ? 'flex-end' : align === 'center' ? 'center' : 'flex-start',
               gap: 14,
               fontFamily: F.mono,
-              fontSize: 26,
-              letterSpacing: '0.2em',
-              color: C.paper,
-              opacity: 0.85,
-              marginBottom: 18,
+              fontWeight: 500,
+              fontSize: 32,
+              letterSpacing: '0.12em',
+              color: C.butter,
+              textShadow: LEGIBLE,
+              marginBottom: 16,
             }}
           >
-            <span style={{display: 'inline-block', width: 64 * line, height: 2, background: C.butter}} />
+            <span style={{display: 'inline-block', width: 64 * line, height: 3, background: C.butter}} />
             {n}
           </div>
         ) : null}
-        <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 92 * k, lineHeight: 1.02, letterSpacing: '-0.01em', color: C.paper, textShadow: '0 6px 30px rgba(0,0,0,0.55)'}}>
+        <div style={{fontFamily: F.display, fontWeight: 700, fontStretch: '100%', fontSize: 68 * k, lineHeight: 1.1, letterSpacing: '-0.012em', color: C.paper, textShadow: LEGIBLE}}>
           {words.map((w, i) => {
             const d = 6 + i * 3.2;
             const p = eo(interpolate(f, [d, d + 14], [0, 1], clamp));
@@ -396,11 +414,11 @@ export const Quote: React.FC<{dur: number; text: string; n?: string; accent?: st
                 key={i}
                 style={{
                   display: 'inline-block',
-                  marginRight: '0.26em',
+                  marginRight: '0.24em',
                   opacity: p,
                   filter: p < 0.98 ? `blur(${(1 - p) * 10}px)` : undefined,
                   transform: `translateY(${(1 - p) * 22}px)`,
-                  color: isAccent ? C.butter : undefined,
+                  ...(isAccent ? {fontFamily: F.serif, fontStyle: 'italic', fontWeight: 400, fontSize: '1.3em', lineHeight: 0.9, color: C.butter} : {}),
                 }}
               >
                 {w}
