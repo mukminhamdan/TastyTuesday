@@ -135,6 +135,7 @@ CLIPS = [
             {"part": 0, "dt": 0.0, "dur": 2.6, "kind": "hook", "h": 330, "props": {"kicker": "Prep sebelum live", "line1": "48 minit", "line2": "dalam 30 saat.", "y": "auto"}},
             {"part": 4, "dt": 0.1, "dur": 2.2, "kind": "word", "props": {"text": "×250", "y": 330}},
             {"part": 5, "dt": 0.0, "dur": 2.4, "kind": "snap", "props": {"label": "SARDIN ROLL"}},
+            {"part": 7, "dt": 0.0, "dur": 2.4, "kind": "snap", "props": {"label": "SOURDOUGH SARDIN"}},  # leftover sardine on sourdough -> Cooven
             {"part": 10, "dt": 0.0, "dur": 4.0, "kind": "end", "props": {"line1": "Mana satu", "line2": "nak cuba dulu?"}},
         ],
     },
@@ -165,7 +166,7 @@ CLIPS = [
             {"part": 3, "dt": 0.5, "dur": 7.6, "kind": "quote", "h": 320, "props": {"n": "02", "text": "Satu-satu. Leper, isi, gulung. Ulang.", "accent": "ulang", "y": "auto"}},
             {"part": 4, "dt": 0.4, "dur": 5.0, "kind": "snap", "props": {"label": "SARDIN ROLL"}},
             {"part": 5, "dt": 0.5, "dur": 7.0, "kind": "quote", "h": 320, "props": {"n": "03", "text": "Sabar itu bahan paling penting.", "accent": "sabar", "y": "auto"}},
-            {"part": 7, "dt": 0.4, "dur": 5.2, "kind": "quote", "h": 320, "props": {"n": "04", "text": "Kerja kecil pagi ni, live lancar petang nanti.", "accent": "lancar", "y": "auto"}},
+            {"part": 7, "dt": 0.4, "dur": 5.2, "kind": "quote", "h": 320, "props": {"n": "04", "text": "Lebihan sardin? Jadi sourdough garing.", "accent": "garing", "y": "auto"}},
             {"part": 8, "dt": 0.4, "dur": 5.2, "kind": "quote", "h": 320, "props": {"n": "05", "text": "Rezeki datang pada yang bersedia.", "accent": "bersedia", "y": "auto"}},
             {"part": 9, "dt": 0.3, "dur": 4.2, "kind": "end", "props": {"line1": "Suka video ni?", "line2": "Komen & follow.", "cta": "KOMEN + FOLLOW", "y": 300}},
         ],
@@ -240,6 +241,6 @@ CLIPS += [
            (5, "Biar haba buat kerjanya.", "haba", None),
            (7, "Bahagi sama rata.", "rata", None)],
           ("Semua siap.", "Komen & follow."),
-          steps=[(1, "01", "Roti"), (2, "02", "Inti sardin"), (3, "03", "Gulung"), (5, "04", "Food Engine Cooven"), (7, "05", "Nasi")],
+          steps=[(1, "01", "Roti"), (2, "02", "Inti sardin"), (3, "03", "Gulung"), (5, "04", "Sourdough sardin → Cooven"), (7, "05", "Nasi")],
           top_y=400, music=cc0("cc0_funk_guitar_100")),
 ]

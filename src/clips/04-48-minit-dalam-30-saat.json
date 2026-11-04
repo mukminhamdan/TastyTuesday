@@ -213,6 +213,14 @@
    }
   },
   {
+   "kind": "snap",
+   "from": 616,
+   "dur": 72,
+   "props": {
+    "label": "SOURDOUGH SARDIN"
+   }
+  },
+  {
    "kind": "end",
    "from": 831,
    "dur": 120,
@@ -282,6 +290,11 @@
    "name": "whoosh",
    "from": 610,
    "vol": 0.45
+  },
+  {
+   "name": "shutter",
+   "from": 616,
+   "vol": 0.6
   },
   {
    "name": "whoosh_long",
