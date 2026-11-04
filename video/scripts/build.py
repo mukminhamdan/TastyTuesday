@@ -80,7 +80,7 @@ TOKEN_FIX = {
     "green,": "grill,", "gerai": "grill", "gerai,": "grill,", "grip": "grill", "pak": "Mak",
     "awak": "Mak", "derol": "roll", "fri": "fryer", "fried": "fryer", "menit": "minit",
     "daslah": "rasa", "daram": "garam", "fabric": "", "feel": "rasa", "paste": "sapu",
-    "pandang": "panggang", "mercik": "merecik", "kabo": "carbo", "gelombang": "gelembung", "-gelombang": "-gelembung", "-mercik": "-merecik", "mercik.": "merecik.", "efek": "effect", "kadiri": "", "lah": "lah",
+    "pandang": "panggang", "mercik": "merecik", "salma": "Salmah", "salma,": "Salmah,", "pia": "Piah", "pia,": "Piah,", "kabo": "carbo", "gelombang": "gelembung", "-gelombang": "-gelembung", "-mercik": "-merecik", "mercik.": "merecik.", "efek": "effect", "kadiri": "", "lah": "lah",
 }
 PHRASE_FIX = [
     (["gunakan", "lembut", "refry", "ni"], "guna mode deep fry ni"),
@@ -98,7 +98,7 @@ PHRASE_FIX = [
     (["bukan", "-kana"], "bukan"),
     (["boleh", "nak", "tahu", "in", "case", "kalau", "macam"], ""),
 ]
-KEEP_CAPS = {"Cooven", "Mak", "Kak", "Mukmin", "I", "Food", "Engine", "Tasty", "Tuesday", "Hani", "Salma", "Pia", "Ida"}
+KEEP_CAPS = {"Cooven", "Mak", "Kak", "Mukmin", "I", "Food", "Engine", "Tasty", "Tuesday", "Hani", "Salma", "Pia", "Ida", "Salmah", "Piah", "Salmah,", "Piah,"}
 FILLER = {"eh", "eh,", "haa", "haa,", "ha", "aa", "apa", "ni,"}
 HL_WORDS = re.compile(
     r"^(\d+|\d+°c|180|140|220|minit|minit\.|sardin|tuna|hangit|hangus|garing|lembut|crunchy|fluffy|pizza|"

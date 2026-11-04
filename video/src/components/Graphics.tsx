@@ -349,7 +349,7 @@ export const Quote: React.FC<GProps> = ({props, dur, accent}) => {
       <div style={{...glass, padding: '18px 34px', borderRadius: 34, borderBottomLeftRadius: 6}}>
         <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 84, color: C.white}}>{props.text}</div>
       </div>
-      <div style={{fontFamily: F.wide, fontWeight: 800, fontStretch: '125%', fontSize: 22, letterSpacing: 4, color: accent, marginTop: 10}}>— ANAK KAK PIA</div>
+      <div style={{fontFamily: F.wide, fontWeight: 800, fontStretch: '125%', fontSize: 22, letterSpacing: 4, color: accent, marginTop: 10}}>— ANAK KAK PIAH</div>
     </div>
   );
 };
@@ -399,9 +399,9 @@ const FollowCta: React.FC<GProps> = ({dur, accent}) => {
 const TAG_MENUS: Record<string, {n: number; menu: string; chef: string; mode: string; accent: string}> = {
   roll: {n: 1, menu: 'Sardin Roll', chef: 'Mukmin', mode: 'Deep Fry', accent: '#FF7A1A'},
   wrap: {n: 2, menu: 'Tortilla Spicy Tuna', chef: 'Kak Hani', mode: 'Grill', accent: '#FF5436'},
-  puff: {n: 3, menu: 'Sardin Puff', chef: 'Kak Salma', mode: 'Oven', accent: '#F2A93B'},
+  puff: {n: 3, menu: 'Sardin Puff', chef: 'Kak Salmah', mode: 'Oven', accent: '#F2A93B'},
   sambal: {n: 4, menu: 'Sambal Sardin', chef: 'Mak Ida', mode: 'Cooker', accent: '#E8344E'},
-  pizza: {n: 5, menu: 'Pizza Tuna', chef: 'Kak Pia', mode: 'Pizza', accent: '#FFB000'},
+  pizza: {n: 5, menu: 'Pizza Tuna', chef: 'Kak Piah', mode: 'Pizza', accent: '#FFB000'},
 };
 export const MenuTag: React.FC<GProps> = ({props, dur}) => {
   const {f, fps, out} = useAnim(dur);

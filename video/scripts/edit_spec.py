@@ -16,11 +16,11 @@ CHEFS = {
                  accent="#FF7A1A", music="m_192_05"),
     "wrap": dict(chef="Kak Hani", role="Chef #2", menu="Tortilla Spicy Tuna", mode="Grill",
                  accent="#E8462E", music="m_003_05"),
-    "puff": dict(chef="Kak Salma", role="Chef #3", menu="Sardin Puff", mode="Oven",
+    "puff": dict(chef="Kak Salmah", role="Chef #3", menu="Sardin Puff", mode="Oven",
                  accent="#F2A93B", music="m_157_03"),
     "sambal": dict(chef="Mak Ida", role="Chef #4", menu="Sambal Sardin", mode="Cooker",
                    accent="#D7263D", music="m_036_11"),
-    "pizza": dict(chef="Kak Pia", role="Chef #5", menu="Pizza Tuna", mode="Pizza",
+    "pizza": dict(chef="Kak Piah", role="Chef #5", menu="Pizza Tuna", mode="Pizza",
                   accent="#FFB000", music="m_170_04"),
 }
 
@@ -278,7 +278,7 @@ TEASERS["wrap"] = [
 ] + part2(DISHES["wrap"])
 
 TEASERS["puff"] = [
-    thook(3160.7, 3163.3, "Puff segera, rasa kedai", "Sardin Puff · Kak Salma"),
+    thook(3160.7, 3163.3, "Puff segera, rasa kedai", "Sardin Puff · Kak Salmah"),
     joke(1630.8, 1631.9, "Kamera, oh kamera", 1630.85),
     joke(1638.2, 1644.2),
     joke(3507.5, 3510.7, "Petak-petak menyerang", 3508.8),
@@ -298,7 +298,7 @@ TEASERS["sambal"] = [
 ] + part2(DISHES["sambal"])
 
 TEASERS["pizza"] = [
-    thook(2745.7, 2752.7, "“Pizza ni beli eh?”", "Pizza Tuna · Kak Pia", brolls=PIZZA_BROLL),
+    thook(2745.7, 2752.7, "“Pizza ni beli eh?”", "Pizza Tuna · Kak Piah", brolls=PIZZA_BROLL),
     joke(3021.5, 3027.5, "Pizza tak sabar", 3022.4),
     (2641.5, 2644.7, k(ov=[("stat", 2643.7, dict(big="6 min", label="Mode Pizza Cooven"))])),
     joke(3547.6, 3553.2, "Pizza besar sangat", 3551.5),

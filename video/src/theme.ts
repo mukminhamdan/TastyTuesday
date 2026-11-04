@@ -72,9 +72,9 @@ export type Timeline = {
 export const MENUS: Record<string, {menu: string; chef: string; mode: string; accent: string; n: number}> = {
   roll: {menu: 'Sardin Roll', chef: 'Mukmin', mode: 'Deep Fry', accent: '#FF7A1A', n: 1},
   wrap: {menu: 'Tortilla Spicy Tuna', chef: 'Kak Hani', mode: 'Grill', accent: '#FF5436', n: 2},
-  puff: {menu: 'Sardin Puff', chef: 'Kak Salma', mode: 'Oven', accent: '#F2A93B', n: 3},
+  puff: {menu: 'Sardin Puff', chef: 'Kak Salmah', mode: 'Oven', accent: '#F2A93B', n: 3},
   sambal: {menu: 'Sambal Sardin', chef: 'Mak Ida', mode: 'Cooker', accent: '#E8344E', n: 4},
-  pizza: {menu: 'Pizza Tuna', chef: 'Kak Pia', mode: 'Pizza', accent: '#FFB000', n: 5},
+  pizza: {menu: 'Pizza Tuna', chef: 'Kak Piah', mode: 'Pizza', accent: '#FFB000', n: 5},
   reel: {menu: '5 Menu', chef: '', mode: '', accent: '#FF8A2A', n: 0},
   bloopers: {menu: 'Bloopers', chef: '', mode: '', accent: '#FFC94D', n: 0},
 };
