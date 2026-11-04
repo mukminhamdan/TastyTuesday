@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, Easing, Sequence, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Easing, Img, Sequence, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {Footage, Voice} from './components/Footage';
 import {PanelCaptions} from './components/Captions';
 import {GRAPHICS} from './components/Graphics';
@@ -10,7 +10,7 @@ import {PreviewBug} from './Short';
 loadFonts();
 
 const ORDER = ['roll', 'wrap', 'puff', 'sambal', 'pizza'];
-const CARD = {x: 120, y: 40, h: 1000};
+const CARD = {x: 130, y: 96, h: 944};
 const SCALE = CARD.h / 1920;
 const CARD_W = 1080 * SCALE;
 const PANEL_X = CARD.x + CARD_W + 110;
@@ -31,6 +31,7 @@ export const Full: React.FC<{data: Timeline; preview?: boolean}> = ({data, previ
   return (
     <AbsoluteFill style={{backgroundColor: C.ink, overflow: 'hidden'}}>
       <Backdrop accent={accent} ch={ch} />
+      <LiveTag />
       {/* video card */}
       <div
         style={{
@@ -39,9 +40,11 @@ export const Full: React.FC<{data: Timeline; preview?: boolean}> = ({data, previ
           top: CARD.y,
           width: CARD_W,
           height: CARD.h,
-          borderRadius: 34,
+          borderRadius: 30,
           overflow: 'hidden',
-          boxShadow: '0 40px 90px rgba(0,0,0,0.55), 0 0 0 1.5px rgba(255,243,226,0.16)',
+          // dark glass bezel + thin brass line, like a monitor on set
+          boxShadow:
+            '0 40px 90px rgba(0,0,0,0.6), 0 0 0 1px rgba(212,175,110,0.55), 0 0 0 10px rgba(14,11,9,0.85), 0 0 0 11px rgba(212,175,110,0.22)',
         }}
       >
         <div style={{width: 1080, height: 1920, transform: `scale(${SCALE})`, transformOrigin: '0 0'}}>
@@ -85,36 +88,75 @@ export const Full: React.FC<{data: Timeline; preview?: boolean}> = ({data, previ
 };
 
 /* ---------------------------------------------------------------- pieces */
+/* Thin-line ingredient doodles (24×24 grid), drawn very faintly over the worktop. */
+const DOODLES: string[] = [
+  'M2 12c4-5 12-5 16 0-4 5-12 5-16 0zM18 12l4-3v6zM7 11.2h.01', // sardine
+  'M5 6h14v13a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2zM5 6c0-1.7 3-3 7-3s7 1.3 7 3M5 10h14M5 15h14', // tin
+  'M15 4c1 2 0 3-1 4-3 3-6 8-10 11 5-1 10-5 12-10 .6-1.6.4-3.4-1-5zM15 4c1-1 2-1 3-2', // chilli
+  'M12 4c-4 3-6 6-6 9a6 6 0 0 0 12 0c0-3-2-6-6-9zM12 4v17M9 8c-1 3-1 7 1 12M15 8c1 3 1 7-1 12', // garlic
+  'M7 3a3 4 0 1 0 0 .01M7 11v10', // spoon
+  'M12 21V11M12 11c-3 0-5-3-5-8M12 11c3 0 5-3 5-8M12 11c-1-3-1-6 0-8M12 11c1-3 1-6 0-8', // whisk
+  'M4 20c10 0 16-6 16-16-10 0-16 6-16 16zM4 20 14 10', // leaf
+  'M3 14h18M5 14a7 7 0 0 0 14 0M12 7v-3M9 8l-1-2M15 8l1-2', // bowl + steam
+];
+
 const Backdrop: React.FC<{accent: string; ch: string | null}> = ({accent, ch}) => {
   const f = useCurrentFrame();
   const n = ch ? MENUS[ch].n : 0;
+  const drift = (f * 0.15) % 160;
+  const cells: React.ReactNode[] = [];
+  for (let r = -1; r < 8; r++) {
+    for (let c = 0; c < 13; c++) {
+      const i = (r * 5 + c * 3 + 64) % DOODLES.length;
+      const x = c * 160 + (r % 2 ? 80 : 0) - drift;
+      const y = r * 150 + drift * 0.5;
+      cells.push(
+        <g key={`${r}-${c}`} transform={`translate(${x} ${y}) rotate(${((r * 37 + c * 53) % 50) - 25} 24 24) scale(2)`}>
+          <path d={DOODLES[i]} fill="none" stroke="#FFF3E2" strokeWidth={0.9} strokeLinecap="round" strokeLinejoin="round" />
+        </g>,
+      );
+    }
+  }
   return (
     <AbsoluteFill>
-      <AbsoluteFill
-        style={{
-          background: `radial-gradient(900px 700px at ${70 + Math.sin(f / 90) * 4}% ${30 + Math.cos(f / 120) * 5}%, ${accent}38, transparent 70%), radial-gradient(800px 600px at 10% 100%, ${accent}22, transparent 70%), linear-gradient(160deg, #17110C, #0B0907)`,
-        }}
-      />
+      <Img src={staticFile('bg/kitchen.png')} style={{width: '100%', height: '100%'}} />
+      {/* per-menu colour wash, kept low so the slate stays the hero */}
+      <AbsoluteFill style={{background: `radial-gradient(900px 640px at 78% 28%, ${accent}22, transparent 70%)`, mixBlendMode: 'screen'}} />
+      <svg width={1920} height={1080} style={{position: 'absolute', inset: 0, opacity: 0.045}}>
+        {cells}
+      </svg>
       {n > 0 && (
         <div
           style={{
             position: 'absolute',
-            right: -40,
-            bottom: -150,
+            right: -30,
+            bottom: -170,
             fontFamily: F.display,
             fontWeight: 900,
-            fontSize: 640,
+            fontSize: 600,
             lineHeight: 1,
             color: 'transparent',
-            WebkitTextStroke: `2px ${accent}40`,
+            WebkitTextStroke: `1.5px ${accent}30`,
             letterSpacing: -30,
           }}
         >
           0{n}
         </div>
       )}
-      <AbsoluteFill style={{backgroundImage: `url(${staticFile('noise.png')})`, backgroundPosition: `${(f * 37) % 256}px ${(f * 91) % 256}px`, opacity: 0.06, mixBlendMode: 'overlay'}} />
+      <AbsoluteFill style={{backgroundImage: `url(${staticFile('noise.png')})`, backgroundPosition: `${(f * 37) % 256}px ${(f * 91) % 256}px`, opacity: 0.05, mixBlendMode: 'overlay'}} />
     </AbsoluteFill>
+  );
+};
+
+/** Small "live from the kitchen" tag above the video frame. */
+const LiveTag: React.FC = () => {
+  const f = useCurrentFrame();
+  return (
+    <div style={{position: 'absolute', left: CARD.x + 4, top: 44, display: 'flex', alignItems: 'center', gap: 12}}>
+      <div style={{width: 12, height: 12, borderRadius: 6, background: '#FF3B30', boxShadow: '0 0 12px #FF3B30', opacity: 0.55 + 0.45 * Math.abs(Math.sin(f / 18))}} />
+      <div style={{fontFamily: F.wide, fontWeight: 900, fontStretch: '125%', fontSize: 19, letterSpacing: 5, color: C.cream}}>LIVE DARI DAPUR</div>
+      <div style={{height: 1, width: 120, background: 'linear-gradient(90deg, rgba(212,175,110,0.7), transparent)'}} />
+    </div>
   );
 };
 
