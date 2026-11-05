@@ -41,8 +41,10 @@ def probe(path):
 def transcribe(path, model):
     wav = os.path.join(ANA, os.path.basename(path) + ".16k.wav")
     sh("ffmpeg", "-y", "-v", "error", "-i", path, "-ac", "1", "-ar", "16000", wav)
+    import soundfile as sf
+    audio, _ = sf.read(wav, dtype="float32")
     segs, info = model.transcribe(
-        wav, language="ms", word_timestamps=True, vad_filter=True,
+        audio, language="ms", word_timestamps=True, vad_filter=True,
         vad_parameters={"min_silence_duration_ms": 300}, beam_size=5,
         initial_prompt="Resepi air barli madu. Rebus barli, tapis, tambah madu. Tasty Tuesday.",
     )

@@ -5,3 +5,5 @@ public/raw
 analysis/*.wav
 out/
 analysis/test.json
+analysis/*.log
+analysis/*_sheet.jpg
