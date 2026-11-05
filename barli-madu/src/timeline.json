@@ -362,7 +362,7 @@
   },
   {
    "start": 9.7,
-   "end": 11.61,
+   "end": 11.87,
    "words": [
     {
      "w": "Masuk",
@@ -375,32 +375,44 @@
      "e": 10.2
     },
     {
-     "w": "masak",
+     "w": "mode",
      "s": 10.22,
-     "e": 11.36
+     "e": 10.46
+    },
+    {
+     "w": "steam",
+     "s": 10.48,
+     "e": 11.62,
+     "hi": true
     }
    ],
    "pos": "low"
   },
   {
    "start": 12.9,
-   "end": 14.81,
+   "end": 15.07,
    "words": [
     {
-     "w": "Tunggu",
+     "w": "Set",
      "s": 12.9,
      "e": 13.14
     },
     {
-     "w": "sampai",
+     "w": "P2",
      "s": 13.16,
-     "e": 13.4
+     "e": 13.4,
+     "hi": true
     },
     {
-     "w": "lembut",
+     "w": "20",
      "s": 13.42,
-     "e": 14.56,
+     "e": 13.66,
      "hi": true
+    },
+    {
+     "w": "minit",
+     "s": 13.68,
+     "e": 14.82
     }
    ],
    "pos": "low"
@@ -706,7 +718,7 @@
    "dur": 2.6,
    "props": {
     "n": 2,
-    "label": "Masak"
+    "label": "Kukus (steam)"
    },
    "slot": "topLeft"
   },
@@ -715,8 +727,8 @@
    "at": 12.4,
    "dur": 2.0,
    "props": {
-    "minutes": 0,
-    "label": "SABAR..."
+    "minutes": 20,
+    "label": "MINIT"
    },
    "slot": "topRight"
   },
@@ -897,9 +909,9 @@
    "vol": 0.4
   },
   {
-   "name": "bubbles",
+   "name": "steam",
    "at": 12.3,
-   "vol": 0.45
+   "vol": 0.4
   },
   {
    "name": "tick",

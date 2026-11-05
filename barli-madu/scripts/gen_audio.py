@@ -382,3 +382,19 @@ if __name__ == "__main__":
     success()
     record_scratch_stop()
     make_music()
+
+
+def steam(name="steam", dur=2.4):
+    """Steam hiss: band-limited noise with slow flutter, swells in and out."""
+    t = t_axis(dur)
+    n = len(t)
+    hiss = svf_bandpass(rng.standard_normal(n), 5200 + 1500 * np.sin(2 * np.pi * 0.7 * t), q=0.9)
+    air = svf_lowpass(rng.standard_normal(n), 1800) * 0.25
+    flutter = 1 + 0.25 * np.sin(2 * np.pi * 7.5 * t) * np.sin(2 * np.pi * 0.9 * t)
+    env = np.minimum(1, t / 0.35) * np.minimum(1, (dur - t) / 0.6)
+    st = np.stack([hiss * flutter * env + air * env, np.roll(hiss, 211) * flutter * env + air * env], axis=1)
+    save(name, add_reverb(st, IR_SMALL, 0.2), peak_db=-4)
+
+
+if __name__ == "__main__" and "--only-steam" in sys.argv:
+    steam()

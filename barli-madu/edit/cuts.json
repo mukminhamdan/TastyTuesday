@@ -1,12 +1,15 @@
 {
  "ignore_faces": true,
  "emphasis": [
+  "20",
   "BARLI",
-  "MADU",
   "LEMBUT",
+  "MADU",
+  "P2",
   "RATA",
-  "TENGGELAM",
-  "SENDIRI"
+  "SENDIRI",
+  "STEAM",
+  "TENGGELAM"
  ],
  "music": {
   "src": "music/bgm.wav",
@@ -225,12 +228,12 @@
   {
    "on": "cook1",
    "off": 0.4,
-   "text": "Masuk periuk, masak"
+   "text": "Masuk periuk, mode steam"
   },
   {
    "on": "cook2",
    "off": 0.6,
-   "text": "Tunggu sampai lembut"
+   "text": "Set P2, 20 minit"
   },
   {
    "on": "reveal",
@@ -344,7 +347,7 @@
    "dur": 2.6,
    "props": {
     "n": 2,
-    "label": "Masak"
+    "label": "Kukus (steam)"
    }
   },
   {
@@ -353,8 +356,8 @@
    "off": 0.1,
    "dur": 2.0,
    "props": {
-    "minutes": 0,
-    "label": "SABAR..."
+    "minutes": 20,
+    "label": "MINIT"
    }
   },
   {
@@ -470,10 +473,10 @@
    "vol": 1.0
   },
   {
-   "name": "bubbles",
+   "name": "steam",
    "on": "cook2",
    "off": 0.0,
-   "vol": 0.45
+   "vol": 0.4
   },
   {
    "name": "riser",
