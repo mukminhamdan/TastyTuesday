@@ -330,19 +330,19 @@ def cta45(key):
     """Silent close on the finished dish (music only): no host voice on the chef shorts."""
     spec = DISHES[key]
     t = spec[0] if isinstance(spec, tuple) else spec
-    return (t, t + 3.4, dict(tag="cta", silent=True, broll=spec, zoom=1.06, push=0.05, ov=[("cta", t, {})]))
+    return (t, t + 3.4, dict(tag="cta", silent=True, broll=spec, zoom=1.0, push=0.04, ov=[("cta", t, {})]))
 
 
 def hook45(a, b, headline, **kw):
     a_, b_, o = hook(a, b, headline, **kw)
-    o.update(zoom=1.06, push=0.04)
+    o.update(zoom=1.0, push=0.03)  # full width: keep the food and the Cooven in shot
     return (a_, b_, o)
 
 
 CLEAN45 = {
     # only the steps done on the Food Engine Cooven (no ingredient prep)
     "roll": [
-        hook45(3067.8, 3071.4, "Satu buku roti, bawah 20 minit"),
+        hook45(3067.8, 3071.4, "Satu buku roti, bawah 20 minit", align="right"),
         (1106.5, 1110.1, dict(ov=[st(1106.6, 1, "Pilih Mode Deep Fry")])),
         (1338.4, 1345.4, dict(ov=[st(1338.5, 2, "Goreng pada 180°C")])),
         (1198.1, 1202.3, dict(ov=[st(1198.2, 3, "Biarkan, suhu kekal stabil")])),
@@ -358,7 +358,7 @@ CLEAN45 = {
         (1509.0, 1512.3, dict(ov=[st(1509.1, 3, "Terbalikkan bila mesin beri isyarat")])),
         (1958.8, 1960.7, {}),
         (1963.9, 1965.5, {}),
-        (1974.6, 1977.6, dict(zoom=1.08, ov=[st(1974.7, 0, "Siap · garis grill cantik")])),
+        (1974.6, 1977.6, dict(ov=[st(1974.7, 0, "Siap · garis grill cantik")])),
         (3119.2, 3122.6, {}),
         cta45("wrap"),
     ],
@@ -383,7 +383,7 @@ CLEAN45 = {
         cta45("sambal"),
     ],
     "pizza": [
-        hook45(2641.5, 2644.7, "Pizza siap 6 minit", brolls=[(2834.5, 1.12, 0.52), (2825.0, 1.12, 0.5)]),
+        hook45(2641.5, 2644.7, "Pizza siap 6 minit", brolls=[(2834.5, 1.0, 0.5), (2825.0, 1.0, 0.5)]),
         (2460.5, 2462.9, dict(ov=[ttl("pizza", 2460.55)])),
         (2631.9, 2637.7, dict(ov=[st(2632.0, 1, "Pilih Mode Pizza")])),
         (2898.0, 2900.8, dict(ov=[st(2898.1, 2, "Suhu 220°C")])),

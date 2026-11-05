@@ -255,8 +255,8 @@ def build(vid, clips, layout, music_plan, style=None):
             if style == "cinema":
                 z, push = base_zoom, o.get("push", 0.035)  # no jump-zoom; slow push-in everywhere
             elif style == "clean":
-                z = base_zoom * (1.0 + 0.035 * zflip) if o.get("tag") != "hook" else base_zoom
-                push = o.get("push", 0.02)  # gentle drift, no punch / whip
+                z = base_zoom * (1.0 + 0.025 * zflip) if o.get("tag") != "hook" else base_zoom
+                push = o.get("push", 0.015)  # gentle drift, no punch / whip
             else:
                 z = base_zoom * (1.0 + 0.06 * zflip) if o.get("tag") not in ("hook", "cold") else base_zoom
                 push = o.get("push", 0.0)

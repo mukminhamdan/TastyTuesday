@@ -14,13 +14,13 @@ const PH = 2808; // proxy height
 const FACE_TARGET_Y = 0.417;
 
 /** Where the footage sits in the frame (full bleed by default, or an inset card). */
-export type Box = {x: number; y: number; w: number; h: number; r?: number};
+export type Box = {x: number; y: number; w: number; h: number; r?: number; ty?: number}; // ty: where the face sits (0..1 of box height)
 export const FULL: Box = {x: 0, y: 0, w: FW, h: FH};
 
 export const pieceTransform = (p: Piece, local: number, box: Box = FULL) => {
   const BW = box.w;
   const BH = box.h;
-  const ty = box === FULL ? FACE_TARGET_Y : 0.38;
+  const ty = box.ty ?? (box === FULL ? FACE_TARGET_Y : 0.38);
   const prog = p.dur > 1 ? local / (p.dur - 1) : 0;
   const z = p.zoom * (1 + p.push * prog);
   const vw = PW * z;

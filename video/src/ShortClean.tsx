@@ -1,5 +1,5 @@
 import React, {useMemo} from 'react';
-import {AbsoluteFill, Img, Sequence, staticFile} from 'remotion';
+import {AbsoluteFill, Sequence} from 'remotion';
 import {Box, Footage, Voice, faceBox, pieceAt} from './components/Footage';
 import {Piece} from './theme';
 import {CLEAN_GRAPHICS, CleanCaptions, StepProgress} from './components/Clean';
@@ -11,9 +11,8 @@ loadFonts();
 
 const HIDE_CAPS = new Set(['hook', 'cta']);
 
-// footage sits in a rounded card on warm paper (a different frame from the earlier full-bleed cuts)
-export const CARD: Box = {x: 40, y: 200, w: 1000, h: 1470, r: 44};
-const PAPER = '#EEE5D6';
+// full frame, but framed higher on the chef so the food and the Cooven stay in shot
+export const CARD: Box = {x: 0, y: 0, w: 1080, h: 1920, r: 0, ty: 0.3};
 
 /** caption line for a shot: low in the card, or high when the face sits low */
 const capY = (p: Piece | undefined) => {
@@ -36,10 +35,7 @@ export const ShortClean: React.FC<{data: Timeline; menuKey: string; preview?: bo
   );
   const hidden = (f: number) => hideRanges.some(([a, b]) => f >= a && f < b);
   return (
-    <AbsoluteFill style={{backgroundColor: PAPER}}>
-      <AbsoluteFill style={{background: 'radial-gradient(ellipse 80% 60% at 50% 40%, rgba(255,250,240,0.6), rgba(0,0,0,0) 70%), linear-gradient(180deg, rgba(120,90,60,0.06), rgba(120,90,60,0.12))'}} />
-      <Img src={staticFile('noise.png')} style={{position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.07, mixBlendMode: 'multiply'}} />
-      <div style={{position: 'absolute', left: CARD.x, top: CARD.y, width: CARD.w, height: CARD.h, borderRadius: CARD.r, boxShadow: '0 28px 70px rgba(70,45,20,0.28), 0 4px 14px rgba(70,45,20,0.18)', background: C.ink}} />
+    <AbsoluteFill style={{backgroundColor: C.ink}}>
       <Footage pieces={data.pieces} look="clean" box={CARD} />
       {/* soft scrims inside the card keep type legible without boxes */}
       <div
@@ -50,7 +46,7 @@ export const ShortClean: React.FC<{data: Timeline; menuKey: string; preview?: bo
           width: CARD.w,
           height: CARD.h,
           borderRadius: CARD.r,
-          background: 'linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.28) 15%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 58%, rgba(0,0,0,0.36) 80%, rgba(0,0,0,0.3) 100%)',
+          background: 'linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 17%, rgba(0,0,0,0) 34%, rgba(0,0,0,0) 56%, rgba(0,0,0,0.34) 70%, rgba(0,0,0,0.34) 80%, rgba(0,0,0,0.1) 100%)',
         }}
       />
       <StepProgress overlays={data.overlays} accent={accent} total={data.total} />
