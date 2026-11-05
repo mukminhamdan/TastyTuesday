@@ -227,7 +227,11 @@ export const CleanCta: React.FC<CP> = ({accent, extra}) => {
   ];
   return (
     <AbsoluteFill>
-      <AbsoluteFill style={{background: 'rgba(12,8,5,0.45)', opacity: op}} />
+      {extra?.card ? (
+        <div style={{position: 'absolute', left: extra.card.x, top: extra.card.y, width: extra.card.w, height: extra.card.h, borderRadius: extra.card.r, background: 'rgba(12,8,5,0.45)', opacity: op}} />
+      ) : (
+        <AbsoluteFill style={{background: 'rgba(12,8,5,0.45)', opacity: op}} />
+      )}
       <div style={{position: 'absolute', top: extra?.top ?? 700, left: 70, right: 140, textAlign: 'center', opacity: op}}>
         <Kicker text="Suka resepi ni?" accent={accent} align="center" line={false} />
         <div
@@ -297,12 +301,12 @@ const capAt = (caps: Caption[], f: number) => {
   return f < c.end ? c : null;
 };
 
-export const CleanCaptions: React.FC<{caps: Caption[]; pieces: Piece[]; hidden?: (f: number) => boolean}> = ({caps, pieces, hidden}) => {
+export const CleanCaptions: React.FC<{caps: Caption[]; pieces: Piece[]; hidden?: (f: number) => boolean; capY?: (p: Piece | undefined) => number}> = ({caps, pieces, hidden, capY}) => {
   const f = useCurrentFrame();
   const c = capAt(caps, f);
   if (!c || (hidden && hidden(f))) return null;
   const local = f - c.frm;
-  const z = zones(pieceAt(pieces, c.frm));
+  const z = capY ? {cap: capY(pieceAt(pieces, c.frm))} : zones(pieceAt(pieces, c.frm));
   return (
     <div
       style={{

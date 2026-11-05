@@ -1,7 +1,7 @@
 import React, {useMemo} from 'react';
-import {AbsoluteFill, Sequence} from 'remotion';
-import {Footage, Voice, faceBox, pieceAt} from './components/Footage';
-import {zones} from './components/Captions';
+import {AbsoluteFill, Img, Sequence, staticFile} from 'remotion';
+import {Box, Footage, Voice, faceBox, pieceAt} from './components/Footage';
+import {Piece} from './theme';
 import {CLEAN_GRAPHICS, CleanCaptions, StepProgress} from './components/Clean';
 import {Music, SfxTrack} from './components/AudioBed';
 import {PreviewBug} from './Short';
@@ -10,6 +10,17 @@ import {C, MENUS, Timeline, loadFonts} from './theme';
 loadFonts();
 
 const HIDE_CAPS = new Set(['hook', 'cta']);
+
+// footage sits in a rounded card on warm paper (a different frame from the earlier full-bleed cuts)
+export const CARD: Box = {x: 40, y: 200, w: 1000, h: 1470, r: 44};
+const PAPER = '#EEE5D6';
+
+/** caption line for a shot: low in the card, or high when the face sits low */
+const capY = (p: Piece | undefined) => {
+  const fb = faceBox(p, CARD);
+  if (fb && fb.y1 > 1290 && fb.y0 > 700) return 470;
+  return 1385;
+};
 
 /** v2 menu shorts: "clean recipe" look (see components/Clean.tsx). */
 export const ShortClean: React.FC<{data: Timeline; menuKey: string; preview?: boolean}> = ({data, menuKey, preview}) => {
@@ -25,16 +36,29 @@ export const ShortClean: React.FC<{data: Timeline; menuKey: string; preview?: bo
   );
   const hidden = (f: number) => hideRanges.some(([a, b]) => f >= a && f < b);
   return (
-    <AbsoluteFill style={{backgroundColor: C.ink}}>
-      <Footage pieces={data.pieces} look="clean" />
-      {/* soft scrims keep type legible without boxes */}
-      <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 17%, rgba(0,0,0,0) 34%, rgba(0,0,0,0) 52%, rgba(0,0,0,0.34) 70%, rgba(0,0,0,0.34) 80%, rgba(0,0,0,0.1) 100%)'}} />
+    <AbsoluteFill style={{backgroundColor: PAPER}}>
+      <AbsoluteFill style={{background: 'radial-gradient(ellipse 80% 60% at 50% 40%, rgba(255,250,240,0.6), rgba(0,0,0,0) 70%), linear-gradient(180deg, rgba(120,90,60,0.06), rgba(120,90,60,0.12))'}} />
+      <Img src={staticFile('noise.png')} style={{position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.07, mixBlendMode: 'multiply'}} />
+      <div style={{position: 'absolute', left: CARD.x, top: CARD.y, width: CARD.w, height: CARD.h, borderRadius: CARD.r, boxShadow: '0 28px 70px rgba(70,45,20,0.28), 0 4px 14px rgba(70,45,20,0.18)', background: C.ink}} />
+      <Footage pieces={data.pieces} look="clean" box={CARD} />
+      {/* soft scrims inside the card keep type legible without boxes */}
+      <div
+        style={{
+          position: 'absolute',
+          left: CARD.x,
+          top: CARD.y,
+          width: CARD.w,
+          height: CARD.h,
+          borderRadius: CARD.r,
+          background: 'linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.28) 15%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 58%, rgba(0,0,0,0.36) 80%, rgba(0,0,0,0.3) 100%)',
+        }}
+      />
       <StepProgress overlays={data.overlays} accent={accent} total={data.total} />
       {data.overlays.map((o, i) => {
         const G = CLEAN_GRAPHICS[o.type];
         if (!G) return null;
         const p = pieceAt(data.pieces, o.frm);
-        const fb = faceBox(p);
+        const fb = faceBox(p, CARD);
         let pos: React.CSSProperties = {left: 70, right: 140};
         let align: 'left' | 'right' = 'left';
         let narrow = false;
@@ -42,13 +66,13 @@ export const ShortClean: React.FC<{data: Timeline; menuKey: string; preview?: bo
           // block is ~400px tall: sit under the face, or above it when the face is low
           let top = 700;
           for (const q of data.pieces.filter((q) => q.frm + q.dur > o.frm && q.frm < o.frm + o.dur)) {
-            const b = faceBox(q);
+            const b = faceBox(q, CARD);
             if (!b) continue;
             top = (b.y0 + b.y1) / 2 < 1000 ? Math.max(top, Math.min(1090, b.y1 + 40)) : Math.min(top, Math.max(300, b.y0 - 440));
           }
           return (
             <Sequence key={i} from={o.frm} durationInFrames={o.dur} layout="none">
-              <G props={o.props} dur={o.dur} accent={accent} extra={{top}} />
+              <G props={o.props} dur={o.dur} accent={accent} extra={{top, card: CARD}} />
             </Sequence>
           );
         }
@@ -66,7 +90,7 @@ export const ShortClean: React.FC<{data: Timeline; menuKey: string; preview?: bo
             y1 = 760;
           }
         } else if (o.type === 'cnote') {
-          const z = zones(p);
+          const z = {cap: capY(p)};
           if (z.cap < 900) {
             pos = {...pos, top: 1060};
             y0 = 1060;
@@ -102,7 +126,7 @@ export const ShortClean: React.FC<{data: Timeline; menuKey: string; preview?: bo
           </Sequence>
         );
       })}
-      <CleanCaptions caps={data.captions} pieces={data.pieces} hidden={hidden} />
+      <CleanCaptions caps={data.captions} pieces={data.pieces} hidden={hidden} capY={capY} />
       {preview && <PreviewBug />}
       <Voice pieces={data.pieces} />
       <Music src={data.music} speech={data.speech} total={data.total} under={0.12} open={0.32} />

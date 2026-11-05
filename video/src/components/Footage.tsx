@@ -13,7 +13,14 @@ const PW = 1080; // proxy width
 const PH = 2808; // proxy height
 const FACE_TARGET_Y = 0.417;
 
-export const pieceTransform = (p: Piece, local: number) => {
+/** Where the footage sits in the frame (full bleed by default, or an inset card). */
+export type Box = {x: number; y: number; w: number; h: number; r?: number};
+export const FULL: Box = {x: 0, y: 0, w: FW, h: FH};
+
+export const pieceTransform = (p: Piece, local: number, box: Box = FULL) => {
+  const BW = box.w;
+  const BH = box.h;
+  const ty = box === FULL ? FACE_TARGET_Y : 0.38;
   const prog = p.dur > 1 ? local / (p.dur - 1) : 0;
   const z = p.zoom * (1 + p.push * prog);
   const vw = PW * z;
@@ -22,27 +29,27 @@ export const pieceTransform = (p: Piece, local: number) => {
   let top: number;
   if (p.cy !== undefined) {
     // fixed B-roll crop centred on the dish
-    left = (FW - vw) / 2;
-    top = Math.min(0, Math.max(FH - vh, FH / 2 - p.cy * vh));
+    left = (BW - vw) / 2;
+    top = Math.min(0, Math.max(BH - vh, BH / 2 - p.cy * vh));
   } else if (p.face) {
-    left = Math.min(0, Math.max(FW - vw, FW / 2 - p.face.x * vw));
-    top = Math.min(0, Math.max(FH - vh, FH * FACE_TARGET_Y - p.face.y * vh));
+    left = Math.min(0, Math.max(BW - vw, BW / 2 - p.face.x * vw));
+    top = Math.min(0, Math.max(BH - vh, BH * ty - p.face.y * vh));
   } else {
-    left = (FW - vw) / 2;
-    top = (FH - vh) / 2 + vh * 0.04;
-    top = Math.min(0, Math.max(FH - vh, top));
+    left = (BW - vw) / 2;
+    top = (BH - vh) / 2 + vh * 0.04;
+    top = Math.min(0, Math.max(BH - vh, top));
   }
   return {z, vw, vh, left, top};
 };
 
 /** Face box in frame coordinates for a piece (or null). */
-export const faceBox = (p: Piece | undefined) => {
+export const faceBox = (p: Piece | undefined, box: Box = FULL) => {
   if (!p || !p.face) return null;
-  const t = pieceTransform(p, 0);
-  const cy = t.top + p.face.y * t.vh;
+  const t = pieceTransform(p, 0, box);
+  const cy = box.y + t.top + p.face.y * t.vh;
   const hh = (p.face.h * t.vh) / 2;
   // extend down a little: chin / hands / food in front of the face
-  const cx = t.left + p.face.x * t.vw;
+  const cx = box.x + t.left + p.face.x * t.vw;
   const hw = (p.face.w * t.vw) / 2;
   return {y0: cy - hh * 1.35, y1: cy + hh * 1.6, x0: cx - hw * 1.5, x1: cx + hw * 1.5, cx};
 };
@@ -64,12 +71,12 @@ export type Look = 'snappy' | 'cinema' | 'clean';
 const FILTER: Record<Look, string> = {
   snappy: 'saturate(1.2) contrast(1.05) brightness(1.05)',
   cinema: 'saturate(1.04) contrast(1.1) brightness(0.99)',
-  clean: 'saturate(1.06) contrast(1.02) brightness(1.04)',
+  clean: 'sepia(0.1) saturate(1.04) contrast(1.05) brightness(1.03)', // warm editorial
 };
 
-const PieceVideo: React.FC<{p: Piece; enter: boolean; whip: boolean; punchAt: number | null; look: Look}> = ({p, enter, whip, punchAt, look}) => {
+const PieceVideo: React.FC<{p: Piece; enter: boolean; whip: boolean; punchAt: number | null; look: Look; box: Box}> = ({p, enter, whip, punchAt, look, box}) => {
   const f = useCurrentFrame();
-  const t = pieceTransform(p, f);
+  const t = pieceTransform(p, f, box);
   // whip-in: short horizontal slide with motion blur at section changes (snappy)
   const blur = whip ? interpolate(f, [0, 5], [9, 0], {extrapolateRight: 'clamp'}) : 0;
   const slide = whip ? interpolate(f, [0, 5], [7, 0], {extrapolateRight: 'clamp'}) : 0;
@@ -102,16 +109,29 @@ const PieceVideo: React.FC<{p: Piece; enter: boolean; whip: boolean; punchAt: nu
   );
 };
 
-export const Footage: React.FC<{pieces: Piece[]; look?: Look; punch?: number[]; whips?: number[]}> = ({pieces, look = 'snappy', punch = [], whips = []}) => {
+export const Footage: React.FC<{pieces: Piece[]; look?: Look; punch?: number[]; whips?: number[]; box?: Box}> = ({
+  pieces,
+  look = 'snappy',
+  punch = [],
+  whips = [],
+  box = FULL,
+}) => {
+  const inset = box !== FULL;
   return (
-    <AbsoluteFill>
+    <AbsoluteFill
+      style={
+        inset
+          ? {left: box.x, top: box.y, width: box.w, height: box.h, overflow: 'hidden', borderRadius: box.r ?? 0}
+          : undefined
+      }
+    >
       {pieces.map((p, i) => {
         const prev = pieces[i - 1];
         const enter = !!prev && prev.clip !== p.clip && Math.abs(prev.src + prev.dur / 30 - p.src) > 30;
         const pf = punch.find((x) => x >= p.frm && x < p.frm + p.dur);
         return (
           <Sequence key={i} from={p.frm} durationInFrames={p.dur} layout="none">
-            <PieceVideo p={p} enter={enter} whip={whips.includes(p.frm)} punchAt={pf === undefined ? null : pf - p.frm} look={look} />
+            <PieceVideo p={p} enter={enter} whip={whips.includes(p.frm)} punchAt={pf === undefined ? null : pf - p.frm} look={look} box={box} />
           </Sequence>
         );
       })}
