@@ -30,7 +30,7 @@ export const Captions: React.FC<{pages: CaptionPage[]}> = ({pages}) => {
         flexWrap: 'wrap',
         justifyContent: 'center',
         alignContent: 'center',
-        gap: '6px 22px',
+        gap: '4px 36px',
         transform: `translateY(${interpolate(enter, [0, 1], [30, 0])}px) scale(${interpolate(enter, [0, 1], [0.85, 1])})`,
         opacity: enter,
       }}
@@ -46,7 +46,7 @@ export const Captions: React.FC<{pages: CaptionPage[]}> = ({pages}) => {
             style={{
               fontFamily: FONT_BODY,
               fontWeight: 800,
-              fontSize: w.hi ? 92 : 80,
+              fontSize: w.hi ? 88 : 80,
               lineHeight: 1.05,
               letterSpacing: -1,
               textTransform: 'uppercase',
@@ -55,6 +55,7 @@ export const Captions: React.FC<{pages: CaptionPage[]}> = ({pages}) => {
               textShadow: '0 6px 18px rgba(0,0,0,0.45)',
               transform: `scale(${scale}) rotate(${active ? -2 : 0}deg)`,
               display: 'inline-block',
+              transformOrigin: '50% 60%',
             }}
           >
             {w.w}

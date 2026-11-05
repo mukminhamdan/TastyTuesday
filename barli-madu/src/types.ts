@@ -10,6 +10,7 @@ export type Clip = {
   focus?: [number, number]; // transform origin (0..1), usually the face centre
   speed?: number; // playback rate for b-roll speed ramps
   muted?: boolean;
+  volume?: number;
 };
 
 export type CapWord = {w: string; s: number; e: number; hi?: boolean};

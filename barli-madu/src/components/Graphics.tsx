@@ -210,8 +210,14 @@ export const Timer: React.FC<{o: Overlay}> = ({o}) => {
           />
         </svg>
         <div style={{position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
-          <div style={{fontSize: 34}}>⏱️</div>
-          <div style={{fontFamily: FONT_TITLE, fontWeight: 900, fontSize: 64, color: C.brown, lineHeight: 0.95}}>{shown}</div>
+          {minutes > 0 ? (
+            <>
+              <div style={{fontSize: 34}}>⏱️</div>
+              <div style={{fontFamily: FONT_TITLE, fontWeight: 900, fontSize: 64, color: C.brown, lineHeight: 0.95}}>{shown}</div>
+            </>
+          ) : (
+            <div style={{fontSize: 84, transform: `rotate(${Math.floor(frame / 12) * 180}deg)`}}>⏳</div>
+          )}
           <div style={{fontFamily: FONT_TITLE, fontWeight: 900, fontSize: 24, color: C.amber, letterSpacing: 3}}>{label}</div>
         </div>
       </div>
@@ -341,10 +347,11 @@ export const CTA: React.FC<{o: Overlay}> = ({o}) => {
         style={{
           fontFamily: FONT_TITLE,
           fontWeight: 900,
-          fontSize: 86,
+          fontSize: 70,
+          whiteSpace: 'nowrap',
           color: C.ink,
           background: `linear-gradient(180deg, ${C.honey}, ${C.honeyDeep})`,
-          padding: '10px 36px 16px',
+          padding: '10px 30px 16px',
           borderRadius: 26,
           border: `6px solid ${C.ink}`,
           transform: `scale(${s1 * pulse}) rotate(-2deg)`,

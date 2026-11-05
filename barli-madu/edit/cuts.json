@@ -1,0 +1,520 @@
+{
+ "ignore_faces": true,
+ "emphasis": [
+  "BARLI",
+  "MADU",
+  "LEMBUT",
+  "RATA",
+  "TENGGELAM",
+  "SENDIRI"
+ ],
+ "music": {
+  "src": "music/bgm.wav",
+  "vol": 0.34,
+  "duck": 0.12
+ },
+ "clips": [
+  {
+   "id": "hook",
+   "clip": "VID_20261105_204259",
+   "from": 0.0,
+   "to": 2.5,
+   "jump": false,
+   "punch": true,
+   "zoom": 1.05,
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "volume": 1.0,
+   "tighten": false
+  },
+  {
+   "id": "tease",
+   "clip": "video_20261105_184910",
+   "from": 46.0,
+   "to": 49.6,
+   "speed": 1.5,
+   "broll": true,
+   "muted": true,
+   "punch": true,
+   "focus": [
+    0.5,
+    0.6
+   ]
+  },
+  {
+   "id": "wash1",
+   "clip": "video_20261105_175654",
+   "from": 0.5,
+   "to": 6.5,
+   "speed": 3.0,
+   "broll": true,
+   "muted": true,
+   "punch": true
+  },
+  {
+   "id": "wash3",
+   "clip": "video_20261105_175654",
+   "from": 46.0,
+   "to": 52.0,
+   "speed": 2.5,
+   "broll": true,
+   "muted": true
+  },
+  {
+   "id": "cook1",
+   "clip": "video_20261105_175654",
+   "from": 64.0,
+   "to": 70.0,
+   "speed": 2.0,
+   "broll": true,
+   "muted": true,
+   "punch": true
+  },
+  {
+   "id": "cook2",
+   "clip": "video_20261105_175654",
+   "from": 74.0,
+   "to": 80.0,
+   "speed": 3.0,
+   "broll": true,
+   "muted": true,
+   "zoom": 1.1,
+   "focus": [
+    0.4,
+    0.7
+   ]
+  },
+  {
+   "id": "reveal",
+   "clip": "video_20261105_182359",
+   "from": 0.0,
+   "to": 3.6,
+   "broll": true,
+   "volume": 0.5,
+   "punch": true
+  },
+  {
+   "id": "bowl",
+   "clip": "video_20261105_184910",
+   "from": 12.0,
+   "to": 20.0,
+   "speed": 3.0,
+   "broll": true,
+   "muted": true,
+   "punch": true
+  },
+  {
+   "id": "honey1",
+   "clip": "video_20261105_184910",
+   "from": 46.0,
+   "to": 52.0,
+   "speed": 1.5,
+   "broll": true,
+   "muted": true,
+   "zoom": 1.08,
+   "focus": [
+    0.45,
+    0.6
+   ]
+  },
+  {
+   "id": "mix",
+   "clip": "video_20261105_184910",
+   "from": 88.0,
+   "to": 100.0,
+   "speed": 4.0,
+   "broll": true,
+   "muted": true,
+   "punch": true
+  },
+  {
+   "id": "jar1",
+   "clip": "video_20261105_184910",
+   "from": 154.0,
+   "to": 166.0,
+   "speed": 4.0,
+   "broll": true,
+   "muted": true,
+   "punch": true
+  },
+  {
+   "id": "top",
+   "clip": "video_20261105_184910",
+   "from": 290.0,
+   "to": 302.0,
+   "speed": 4.0,
+   "broll": true,
+   "muted": true,
+   "punch": true
+  },
+  {
+   "id": "jars",
+   "clip": "video_20261105_184910",
+   "from": 372.0,
+   "to": 377.0,
+   "speed": 1.5,
+   "broll": true,
+   "muted": true,
+   "zoom": 1.06,
+   "focus": [
+    0.5,
+    0.75
+   ]
+  },
+  {
+   "id": "water",
+   "clip": "video_20261105_184910",
+   "from": 424.5,
+   "to": 428.5,
+   "speed": 1.5,
+   "broll": true,
+   "muted": true,
+   "punch": true
+  },
+  {
+   "id": "spoon",
+   "clip": "video_20261105_184910",
+   "from": 448.0,
+   "to": 451.5,
+   "speed": 1.2,
+   "broll": true,
+   "muted": true
+  },
+  {
+   "id": "glass",
+   "clip": "video_20261105_184910",
+   "from": 457.0,
+   "to": 460.0,
+   "speed": 1.0,
+   "broll": true,
+   "muted": true
+  },
+  {
+   "id": "end",
+   "clip": "VID_20261105_204259",
+   "from": 2.5,
+   "to": 6.5,
+   "broll": true,
+   "volume": 0.6,
+   "punch": true,
+   "focus": [
+    0.5,
+    0.45
+   ]
+  }
+ ],
+ "narration": [
+  {
+   "on": "tease",
+   "off": 0.15,
+   "text": "Jom buat stok sendiri!"
+  },
+  {
+   "on": "wash1",
+   "off": 0.9,
+   "text": "Basuh barli dulu"
+  },
+  {
+   "on": "wash3",
+   "off": 0.2,
+   "text": "Bilas sampai air jernih"
+  },
+  {
+   "on": "cook1",
+   "off": 0.4,
+   "text": "Masuk periuk, masak"
+  },
+  {
+   "on": "cook2",
+   "off": 0.6,
+   "text": "Tunggu sampai lembut"
+  },
+  {
+   "on": "reveal",
+   "off": 0.9,
+   "text": "Tengok tu... kembang!"
+  },
+  {
+   "on": "bowl",
+   "off": 0.3,
+   "text": "Pindah ke mangkuk"
+  },
+  {
+   "on": "honey1",
+   "off": 0.4,
+   "text": "Tuang madu banyak-banyak"
+  },
+  {
+   "on": "mix",
+   "off": 0.2,
+   "text": "Gaul sampai rata"
+  },
+  {
+   "on": "jar1",
+   "off": 0.3,
+   "text": "Isi dalam balang kaca"
+  },
+  {
+   "on": "top",
+   "off": 0.3,
+   "text": "Tambah madu sampai tenggelam"
+  },
+  {
+   "on": "jars",
+   "off": 0.4,
+   "text": "Siap! Stok barli madu",
+   "hold": 1.4
+  },
+  {
+   "on": "water",
+   "off": 0.2,
+   "text": "Nak minum? Bancuh dengan air"
+  },
+  {
+   "on": "glass",
+   "off": 0.3,
+   "text": "Kacau, siap!"
+  }
+ ],
+ "overlays": [
+  {
+   "type": "hook",
+   "on": "hook",
+   "off": 0.05,
+   "dur": 2.4,
+   "slot": "top",
+   "props": {
+    "lines": [
+     "MALAS REBUS",
+     "BARLI",
+     "HARI-HARI?"
+    ],
+    "accent": 1
+   }
+  },
+  {
+   "type": "flash",
+   "on": "tease",
+   "off": 0.0,
+   "dur": 0.3
+  },
+  {
+   "type": "ingredients",
+   "on": "tease",
+   "off": 0.2,
+   "dur": 2.15,
+   "slot": "midLeft",
+   "props": {
+    "items": [
+     {
+      "emoji": "🌾",
+      "name": "Barli",
+      "at": 0.1
+     },
+     {
+      "emoji": "🍯",
+      "name": "Madu",
+      "at": 0.45
+     },
+     {
+      "emoji": "💧",
+      "name": "Air",
+      "at": 0.8
+     }
+    ]
+   }
+  },
+  {
+   "type": "step",
+   "on": "wash1",
+   "off": 0.05,
+   "dur": 2.4,
+   "props": {
+    "n": 1,
+    "label": "Basuh barli"
+   }
+  },
+  {
+   "type": "step",
+   "on": "cook1",
+   "off": 0.05,
+   "dur": 2.6,
+   "props": {
+    "n": 2,
+    "label": "Masak"
+   }
+  },
+  {
+   "type": "timer",
+   "on": "cook2",
+   "off": 0.1,
+   "dur": 2.0,
+   "props": {
+    "minutes": 0,
+    "label": "SABAR..."
+   }
+  },
+  {
+   "type": "sticker",
+   "on": "reveal",
+   "off": 0.8,
+   "dur": 2.4,
+   "props": {
+    "emoji": "✨",
+    "x": 760,
+    "y": 600,
+    "size": 120
+   }
+  },
+  {
+   "type": "step",
+   "on": "bowl",
+   "off": 0.05,
+   "dur": 2.4,
+   "props": {
+    "n": 3,
+    "label": "Tuang madu"
+   }
+  },
+  {
+   "type": "sticker",
+   "on": "honey1",
+   "off": 0.4,
+   "dur": 3.2,
+   "props": {
+    "emoji": "🍯",
+    "x": 780,
+    "y": 720,
+    "size": 140
+   }
+  },
+  {
+   "type": "step",
+   "on": "mix",
+   "off": 0.05,
+   "dur": 2.4,
+   "props": {
+    "n": 4,
+    "label": "Gaul rata"
+   }
+  },
+  {
+   "type": "step",
+   "on": "jar1",
+   "off": 0.05,
+   "dur": 2.4,
+   "props": {
+    "n": 5,
+    "label": "Isi balang"
+   }
+  },
+  {
+   "type": "tip",
+   "on": "top",
+   "off": 0.4,
+   "dur": 2.6,
+   "slot": "top",
+   "props": {
+    "title": "TIPS",
+    "text": "Madu mesti tutup barli",
+    "emoji": "💡"
+   }
+  },
+  {
+   "type": "label",
+   "on": "jars",
+   "off": 0.1,
+   "dur": 3.1,
+   "slot": "top",
+   "props": {
+    "text": "SIAP! 🍯✨",
+    "size": 110
+   }
+  },
+  {
+   "type": "step",
+   "on": "water",
+   "off": 0.05,
+   "dur": 2.4,
+   "props": {
+    "n": 6,
+    "label": "Bancuh & minum"
+   }
+  },
+  {
+   "type": "flash",
+   "on": "end",
+   "off": 0.0,
+   "dur": 0.3
+  },
+  {
+   "type": "cta",
+   "on": "end",
+   "off": 0.25,
+   "dur": 3.75,
+   "slot": "top",
+   "props": {
+    "line1": "SAVE RESEPI NI",
+    "line2": "Follow untuk Tasty Tuesday seterusnya!"
+   }
+  }
+ ],
+ "sfx": [
+  {
+   "name": "bubbles",
+   "on": "cook2",
+   "off": 0.0,
+   "vol": 0.45
+  },
+  {
+   "name": "riser",
+   "on": "cook2",
+   "off": 1.3,
+   "vol": 0.3
+  },
+  {
+   "name": "sparkle",
+   "on": "reveal",
+   "off": 0.7,
+   "vol": 0.35
+  },
+  {
+   "name": "sparkle",
+   "on": "tease",
+   "off": 0.3,
+   "vol": 0.28
+  },
+  {
+   "name": "drip",
+   "on": "honey1",
+   "off": 0.9,
+   "vol": 0.35
+  },
+  {
+   "name": "drip",
+   "on": "honey1",
+   "off": 2.1,
+   "vol": 0.3
+  },
+  {
+   "name": "drip",
+   "on": "top",
+   "off": 1.2,
+   "vol": 0.3
+  },
+  {
+   "name": "sparkle",
+   "on": "jars",
+   "off": 0.1,
+   "vol": 0.35
+  },
+  {
+   "name": "pop",
+   "on": "glass",
+   "off": 0.5,
+   "vol": 0.3
+  }
+ ]
+}

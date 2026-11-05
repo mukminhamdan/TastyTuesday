@@ -1,288 +1,1041 @@
 {
- "duration": 5.14,
+ "duration": 49.483,
  "clips": [
   {
-   "clip": "test",
-   "from": 0.24,
-   "to": 3.38,
+   "clip": "VID_20261105_204259",
+   "from": 0.0,
+   "to": 2.5,
    "at": 0.0,
-   "zoom": 1.12,
-   "punch": false,
+   "zoom": 1.05,
+   "punch": true,
    "focus": [
     0.5,
-    0.695
+    0.45
    ],
    "speed": 1,
-   "muted": false
+   "muted": false,
+   "volume": 1.0
   },
   {
-   "clip": "test",
-   "from": 4.18,
-   "to": 6.18,
-   "at": 3.14,
+   "clip": "video_20261105_184910",
+   "from": 46.0,
+   "to": 49.6,
+   "at": 2.5,
    "zoom": 1.0,
    "punch": true,
    "focus": [
     0.5,
-    0.695
+    0.6
+   ],
+   "speed": 1.5,
+   "muted": true,
+   "volume": 1.0
+  },
+  {
+   "clip": "video_20261105_175654",
+   "from": 0.5,
+   "to": 6.5,
+   "at": 4.9,
+   "zoom": 1.0,
+   "punch": true,
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "speed": 3.0,
+   "muted": true,
+   "volume": 1.0
+  },
+  {
+   "clip": "video_20261105_175654",
+   "from": 46.0,
+   "to": 52.0,
+   "at": 6.9,
+   "zoom": 1.0,
+   "punch": false,
+   "focus": [
+    0.475,
+    0.615
+   ],
+   "speed": 2.5,
+   "muted": true,
+   "volume": 1.0
+  },
+  {
+   "clip": "video_20261105_175654",
+   "from": 64.0,
+   "to": 70.0,
+   "at": 9.3,
+   "zoom": 1.0,
+   "punch": true,
+   "focus": [
+    0.424,
+    0.555
+   ],
+   "speed": 2.0,
+   "muted": true,
+   "volume": 1.0
+  },
+  {
+   "clip": "video_20261105_175654",
+   "from": 74.0,
+   "to": 80.0,
+   "at": 12.3,
+   "zoom": 1.1,
+   "punch": false,
+   "focus": [
+    0.4,
+    0.7
+   ],
+   "speed": 3.0,
+   "muted": true,
+   "volume": 1.0
+  },
+  {
+   "clip": "video_20261105_182359",
+   "from": 0.0,
+   "to": 3.6,
+   "at": 14.3,
+   "zoom": 1.0,
+   "punch": true,
+   "focus": [
+    0.263,
+    0.161
    ],
    "speed": 1,
-   "muted": false
+   "muted": false,
+   "volume": 0.5
+  },
+  {
+   "clip": "video_20261105_184910",
+   "from": 12.0,
+   "to": 20.0,
+   "at": 17.9,
+   "zoom": 1.0,
+   "punch": true,
+   "focus": [
+    0.237,
+    0.073
+   ],
+   "speed": 3.0,
+   "muted": true,
+   "volume": 1.0
+  },
+  {
+   "clip": "video_20261105_184910",
+   "from": 46.0,
+   "to": 52.0,
+   "at": 20.567,
+   "zoom": 1.08,
+   "punch": false,
+   "focus": [
+    0.45,
+    0.6
+   ],
+   "speed": 1.5,
+   "muted": true,
+   "volume": 1.0
+  },
+  {
+   "clip": "video_20261105_184910",
+   "from": 88.0,
+   "to": 100.0,
+   "at": 24.567,
+   "zoom": 1.0,
+   "punch": true,
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "speed": 4.0,
+   "muted": true,
+   "volume": 1.0
+  },
+  {
+   "clip": "video_20261105_184910",
+   "from": 154.0,
+   "to": 166.0,
+   "at": 27.567,
+   "zoom": 1.0,
+   "punch": true,
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "speed": 4.0,
+   "muted": true,
+   "volume": 1.0
+  },
+  {
+   "clip": "video_20261105_184910",
+   "from": 290.0,
+   "to": 302.0,
+   "at": 30.567,
+   "zoom": 1.0,
+   "punch": true,
+   "focus": [
+    0.297,
+    0.866
+   ],
+   "speed": 4.0,
+   "muted": true,
+   "volume": 1.0
+  },
+  {
+   "clip": "video_20261105_184910",
+   "from": 372.0,
+   "to": 377.0,
+   "at": 33.567,
+   "zoom": 1.06,
+   "punch": false,
+   "focus": [
+    0.5,
+    0.75
+   ],
+   "speed": 1.5,
+   "muted": true,
+   "volume": 1.0
+  },
+  {
+   "clip": "video_20261105_184910",
+   "from": 424.5,
+   "to": 428.5,
+   "at": 36.9,
+   "zoom": 1.0,
+   "punch": true,
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "speed": 1.5,
+   "muted": true,
+   "volume": 1.0
+  },
+  {
+   "clip": "video_20261105_184910",
+   "from": 448.0,
+   "to": 451.5,
+   "at": 39.567,
+   "zoom": 1.0,
+   "punch": false,
+   "focus": [
+    0.412,
+    0.827
+   ],
+   "speed": 1.2,
+   "muted": true,
+   "volume": 1.0
+  },
+  {
+   "clip": "video_20261105_184910",
+   "from": 457.0,
+   "to": 460.0,
+   "at": 42.483,
+   "zoom": 1.0,
+   "punch": false,
+   "focus": [
+    0.52,
+    0.28
+   ],
+   "speed": 1.0,
+   "muted": true,
+   "volume": 1.0
+  },
+  {
+   "clip": "VID_20261105_204259",
+   "from": 2.5,
+   "to": 6.5,
+   "at": 45.483,
+   "zoom": 1.0,
+   "punch": true,
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "speed": 1,
+   "muted": false,
+   "volume": 0.6
   }
  ],
  "captions": [
   {
-   "start": 0.06,
-   "end": 1.2,
+   "start": 0.0,
+   "end": 1.45,
    "words": [
     {
-     "w": "Ini",
-     "s": 0.06,
-     "e": 0.36
+     "w": "Eh",
+     "s": 0.0,
+     "e": 0.54
     },
-    {
-     "w": "cara",
-     "s": 0.44,
-     "e": 0.74
-    },
-    {
-     "w": "paling",
-     "s": 0.82,
-     "e": 1.12
-    }
-   ],
-   "pos": "mid"
-  },
-  {
-   "start": 1.2,
-   "end": 2.34,
-   "words": [
-    {
-     "w": "senang",
-     "s": 1.2,
-     "e": 1.5
-    },
-    {
-     "w": "buat",
-     "s": 1.58,
-     "e": 1.88
-    },
-    {
-     "w": "air",
-     "s": 1.96,
-     "e": 2.26
-    }
-   ],
-   "pos": "high"
-  },
-  {
-   "start": 2.34,
-   "end": 3.2,
-   "words": [
     {
      "w": "barli",
-     "s": 2.34,
-     "e": 2.64,
+     "s": 0.64,
+     "e": 0.86,
      "hi": true
     },
     {
      "w": "madu",
-     "s": 2.72,
-     "e": 3.02,
+     "s": 0.86,
+     "e": 1.2,
      "hi": true
     }
    ],
-   "pos": "high"
+   "pos": "low"
   },
   {
-   "start": 3.2,
-   "end": 3.96,
+   "start": 2.65,
+   "end": 4.82,
    "words": [
     {
-     "w": "Pertama",
-     "s": 3.2,
-     "e": 3.5
+     "w": "Jom",
+     "s": 2.65,
+     "e": 2.89
     },
     {
-     "w": "rebus",
-     "s": 3.58,
-     "e": 3.88
+     "w": "buat",
+     "s": 2.91,
+     "e": 3.15
+    },
+    {
+     "w": "stok",
+     "s": 3.17,
+     "e": 3.41
+    },
+    {
+     "w": "sendiri",
+     "s": 3.43,
+     "e": 4.57,
+     "hi": true
     }
    ],
-   "pos": "high"
+   "pos": "low"
   },
   {
-   "start": 3.96,
-   "end": 5.27,
+   "start": 5.8,
+   "end": 7.1,
    "words": [
+    {
+     "w": "Basuh",
+     "s": 5.8,
+     "e": 6.04
+    },
     {
      "w": "barli",
-     "s": 3.96,
-     "e": 4.26,
+     "s": 6.06,
+     "e": 6.3,
      "hi": true
     },
     {
-     "w": "dengan",
-     "s": 4.34,
-     "e": 4.64
+     "w": "dulu",
+     "s": 6.32,
+     "e": 7.46
+    }
+   ],
+   "pos": "low"
+  },
+  {
+   "start": 7.1,
+   "end": 9.27,
+   "words": [
+    {
+     "w": "Bilas",
+     "s": 7.1,
+     "e": 7.34
+    },
+    {
+     "w": "sampai",
+     "s": 7.36,
+     "e": 7.6
     },
     {
      "w": "air",
-     "s": 4.72,
-     "e": 5.02
+     "s": 7.62,
+     "e": 7.86
+    },
+    {
+     "w": "jernih",
+     "s": 7.88,
+     "e": 9.02
     }
    ],
-   "pos": "high"
+   "pos": "low"
+  },
+  {
+   "start": 9.7,
+   "end": 11.61,
+   "words": [
+    {
+     "w": "Masuk",
+     "s": 9.7,
+     "e": 9.94
+    },
+    {
+     "w": "periuk",
+     "s": 9.96,
+     "e": 10.2
+    },
+    {
+     "w": "masak",
+     "s": 10.22,
+     "e": 11.36
+    }
+   ],
+   "pos": "low"
+  },
+  {
+   "start": 12.9,
+   "end": 14.81,
+   "words": [
+    {
+     "w": "Tunggu",
+     "s": 12.9,
+     "e": 13.14
+    },
+    {
+     "w": "sampai",
+     "s": 13.16,
+     "e": 13.4
+    },
+    {
+     "w": "lembut",
+     "s": 13.42,
+     "e": 14.56,
+     "hi": true
+    }
+   ],
+   "pos": "low"
+  },
+  {
+   "start": 15.2,
+   "end": 17.11,
+   "words": [
+    {
+     "w": "Tengok",
+     "s": 15.2,
+     "e": 15.44
+    },
+    {
+     "w": "tu",
+     "s": 15.46,
+     "e": 15.7
+    },
+    {
+     "w": "kembang",
+     "s": 15.72,
+     "e": 16.86
+    }
+   ],
+   "pos": "low"
+  },
+  {
+   "start": 18.2,
+   "end": 20.11,
+   "words": [
+    {
+     "w": "Pindah",
+     "s": 18.2,
+     "e": 18.44
+    },
+    {
+     "w": "ke",
+     "s": 18.46,
+     "e": 18.7
+    },
+    {
+     "w": "mangkuk",
+     "s": 18.72,
+     "e": 19.86
+    }
+   ],
+   "pos": "low"
+  },
+  {
+   "start": 20.967,
+   "end": 22.877,
+   "words": [
+    {
+     "w": "Tuang",
+     "s": 20.967,
+     "e": 21.207
+    },
+    {
+     "w": "madu",
+     "s": 21.227,
+     "e": 21.467,
+     "hi": true
+    },
+    {
+     "w": "banyak-banyak",
+     "s": 21.487,
+     "e": 22.627
+    }
+   ],
+   "pos": "low"
+  },
+  {
+   "start": 24.767,
+   "end": 26.677,
+   "words": [
+    {
+     "w": "Gaul",
+     "s": 24.767,
+     "e": 25.007
+    },
+    {
+     "w": "sampai",
+     "s": 25.027,
+     "e": 25.267
+    },
+    {
+     "w": "rata",
+     "s": 25.287,
+     "e": 26.427,
+     "hi": true
+    }
+   ],
+   "pos": "low"
+  },
+  {
+   "start": 27.867,
+   "end": 30.037,
+   "words": [
+    {
+     "w": "Isi",
+     "s": 27.867,
+     "e": 28.107
+    },
+    {
+     "w": "dalam",
+     "s": 28.127,
+     "e": 28.367
+    },
+    {
+     "w": "balang",
+     "s": 28.387,
+     "e": 28.627
+    },
+    {
+     "w": "kaca",
+     "s": 28.647,
+     "e": 29.787
+    }
+   ],
+   "pos": "low"
+  },
+  {
+   "start": 30.867,
+   "end": 33.037,
+   "words": [
+    {
+     "w": "Tambah",
+     "s": 30.867,
+     "e": 31.107
+    },
+    {
+     "w": "madu",
+     "s": 31.127,
+     "e": 31.367,
+     "hi": true
+    },
+    {
+     "w": "sampai",
+     "s": 31.387,
+     "e": 31.627
+    },
+    {
+     "w": "tenggelam",
+     "s": 31.647,
+     "e": 32.787,
+     "hi": true
+    }
+   ],
+   "pos": "low"
+  },
+  {
+   "start": 33.967,
+   "end": 34.227,
+   "words": [
+    {
+     "w": "Siap",
+     "s": 33.967,
+     "e": 34.207
+    }
+   ],
+   "pos": "low"
+  },
+  {
+   "start": 34.227,
+   "end": 36.637,
+   "words": [
+    {
+     "w": "Stok",
+     "s": 34.227,
+     "e": 34.467
+    },
+    {
+     "w": "barli",
+     "s": 34.487,
+     "e": 34.727,
+     "hi": true
+    },
+    {
+     "w": "madu",
+     "s": 34.747,
+     "e": 36.387,
+     "hi": true
+    }
+   ],
+   "pos": "low"
+  },
+  {
+   "start": 37.1,
+   "end": 37.62,
+   "words": [
+    {
+     "w": "Nak",
+     "s": 37.1,
+     "e": 37.34
+    },
+    {
+     "w": "minum",
+     "s": 37.36,
+     "e": 37.6
+    }
+   ],
+   "pos": "low"
+  },
+  {
+   "start": 37.62,
+   "end": 39.53,
+   "words": [
+    {
+     "w": "Bancuh",
+     "s": 37.62,
+     "e": 37.86
+    },
+    {
+     "w": "dengan",
+     "s": 37.88,
+     "e": 38.12
+    },
+    {
+     "w": "air",
+     "s": 38.14,
+     "e": 39.28
+    }
+   ],
+   "pos": "low"
+  },
+  {
+   "start": 42.783,
+   "end": 44.433,
+   "words": [
+    {
+     "w": "Kacau",
+     "s": 42.783,
+     "e": 43.023
+    },
+    {
+     "w": "siap",
+     "s": 43.043,
+     "e": 44.183
+    }
+   ],
+   "pos": "low"
   }
  ],
  "overlays": [
   {
    "type": "hook",
-   "at": 0.06,
-   "dur": 2.5,
+   "at": 0.05,
+   "dur": 2.4,
    "props": {
     "lines": [
-     "AIR",
-     "BARLI MADU",
-     "5 MINIT PREP"
+     "MALAS REBUS",
+     "BARLI",
+     "HARI-HARI?"
     ],
     "accent": 1
    },
    "slot": "top"
   },
   {
-   "type": "step",
-   "at": 3.16,
-   "dur": 1.98,
-   "props": {
-    "n": 1,
-    "label": "Rebus barli"
-   },
-   "slot": "topLeft"
-  },
-  {
-   "type": "timer",
-   "at": 3.56,
-   "dur": 1.58,
-   "props": {
-    "minutes": 30
-   },
-   "slot": "topRight"
+   "type": "flash",
+   "at": 2.5,
+   "dur": 0.3,
+   "props": {}
   },
   {
    "type": "ingredients",
-   "at": 1.26,
-   "dur": 3,
+   "at": 2.7,
+   "dur": 2.15,
    "props": {
     "items": [
      {
       "emoji": "🌾",
       "name": "Barli",
-      "qty": "1 cawan"
-     },
-     {
-      "emoji": "💧",
-      "name": "Air",
-      "qty": "2 liter"
+      "at": 0.1
      },
      {
       "emoji": "🍯",
       "name": "Madu",
-      "qty": "3 sudu besar"
+      "at": 0.45
+     },
+     {
+      "emoji": "💧",
+      "name": "Air",
+      "at": 0.8
      }
     ]
    },
-   "slot": "midRight"
+   "slot": "midLeft"
+  },
+  {
+   "type": "step",
+   "at": 4.95,
+   "dur": 2.4,
+   "props": {
+    "n": 1,
+    "label": "Basuh barli"
+   },
+   "slot": "topLeft"
+  },
+  {
+   "type": "step",
+   "at": 9.35,
+   "dur": 2.6,
+   "props": {
+    "n": 2,
+    "label": "Masak"
+   },
+   "slot": "topLeft"
+  },
+  {
+   "type": "timer",
+   "at": 12.4,
+   "dur": 2.0,
+   "props": {
+    "minutes": 0,
+    "label": "SABAR..."
+   },
+   "slot": "topRight"
   },
   {
    "type": "sticker",
-   "at": 1.76,
-   "dur": 2,
+   "at": 15.1,
+   "dur": 2.4,
    "props": {
-    "emoji": "🍯",
-    "x": 780,
-    "y": 900
+    "emoji": "✨",
+    "x": 760,
+    "y": 600,
+    "size": 120
    }
   },
   {
+   "type": "step",
+   "at": 17.95,
+   "dur": 2.4,
+   "props": {
+    "n": 3,
+    "label": "Tuang madu"
+   },
+   "slot": "topLeft"
+  },
+  {
+   "type": "sticker",
+   "at": 20.967,
+   "dur": 3.2,
+   "props": {
+    "emoji": "🍯",
+    "x": 780,
+    "y": 720,
+    "size": 140
+   }
+  },
+  {
+   "type": "step",
+   "at": 24.617,
+   "dur": 2.4,
+   "props": {
+    "n": 4,
+    "label": "Gaul rata"
+   },
+   "slot": "topLeft"
+  },
+  {
+   "type": "step",
+   "at": 27.617,
+   "dur": 2.4,
+   "props": {
+    "n": 5,
+    "label": "Isi balang"
+   },
+   "slot": "topLeft"
+  },
+  {
+   "type": "tip",
+   "at": 30.967,
+   "dur": 2.6,
+   "props": {
+    "title": "TIPS",
+    "text": "Madu mesti tutup barli",
+    "emoji": "💡"
+   },
+   "slot": "top"
+  },
+  {
+   "type": "label",
+   "at": 33.667,
+   "dur": 3.1,
+   "props": {
+    "text": "SIAP! 🍯✨",
+    "size": 110
+   },
+   "slot": "top"
+  },
+  {
+   "type": "step",
+   "at": 36.95,
+   "dur": 2.4,
+   "props": {
+    "n": 6,
+    "label": "Bancuh & minum"
+   },
+   "slot": "topLeft"
+  },
+  {
+   "type": "flash",
+   "at": 45.483,
+   "dur": 0.3,
+   "props": {}
+  },
+  {
    "type": "cta",
-   "at": 3.14,
-   "dur": 2,
-   "props": {},
-   "slot": "bottom"
+   "at": 45.733,
+   "dur": 3.75,
+   "props": {
+    "line1": "SAVE RESEPI NI",
+    "line2": "Follow untuk Tasty Tuesday seterusnya!"
+   },
+   "slot": "top"
   }
  ],
  "sfx": [
   {
    "name": "whoosh",
-   "at": 0.01,
+   "at": 0,
    "vol": 0.35
   },
   {
    "name": "impact",
-   "at": 0.06,
+   "at": 0.05,
    "vol": 0.55
   },
   {
    "name": "whoosh-fast",
-   "at": 1.26,
+   "at": 2.38,
+   "vol": 0.22
+  },
+  {
+   "name": "whoosh-fast",
+   "at": 2.42,
+   "vol": 0.35
+  },
+  {
+   "name": "whoosh-fast",
+   "at": 2.7,
    "vol": 0.35
   },
   {
    "name": "pop",
-   "at": 1.26,
+   "at": 2.8,
+   "vol": 0.35
+  },
+  {
+   "name": "sparkle",
+   "at": 2.8,
+   "vol": 0.28
+  },
+  {
+   "name": "pop",
+   "at": 3.15,
    "vol": 0.35
   },
   {
    "name": "pop",
-   "at": 1.61,
+   "at": 3.5,
+   "vol": 0.35
+  },
+  {
+   "name": "whoosh-fast",
+   "at": 4.78,
+   "vol": 0.22
+  },
+  {
+   "name": "swipe",
+   "at": 4.95,
+   "vol": 0.45
+  },
+  {
+   "name": "pop",
+   "at": 5.15,
+   "vol": 0.4
+  },
+  {
+   "name": "swipe",
+   "at": 9.35,
+   "vol": 0.45
+  },
+  {
+   "name": "pop",
+   "at": 9.55,
+   "vol": 0.4
+  },
+  {
+   "name": "bubbles",
+   "at": 12.3,
+   "vol": 0.45
+  },
+  {
+   "name": "tick",
+   "at": 12.4,
+   "vol": 0.4
+  },
+  {
+   "name": "riser",
+   "at": 13.6,
+   "vol": 0.3
+  },
+  {
+   "name": "whoosh-fast",
+   "at": 14.18,
+   "vol": 0.22
+  },
+  {
+   "name": "sparkle",
+   "at": 15.0,
    "vol": 0.35
   },
   {
    "name": "drip",
-   "at": 1.76,
+   "at": 15.1,
+   "vol": 0.4
+  },
+  {
+   "name": "whoosh-fast",
+   "at": 17.78,
+   "vol": 0.22
+  },
+  {
+   "name": "swipe",
+   "at": 17.95,
+   "vol": 0.45
+  },
+  {
+   "name": "pop",
+   "at": 18.15,
+   "vol": 0.4
+  },
+  {
+   "name": "drip",
+   "at": 20.967,
+   "vol": 0.4
+  },
+  {
+   "name": "drip",
+   "at": 21.467,
+   "vol": 0.35
+  },
+  {
+   "name": "drip",
+   "at": 22.667,
+   "vol": 0.3
+  },
+  {
+   "name": "swipe",
+   "at": 24.617,
+   "vol": 0.45
+  },
+  {
+   "name": "pop",
+   "at": 24.817,
+   "vol": 0.4
+  },
+  {
+   "name": "swipe",
+   "at": 27.617,
+   "vol": 0.45
+  },
+  {
+   "name": "pop",
+   "at": 27.817,
+   "vol": 0.4
+  },
+  {
+   "name": "ding",
+   "at": 30.967,
+   "vol": 0.32
+  },
+  {
+   "name": "drip",
+   "at": 31.767,
+   "vol": 0.3
+  },
+  {
+   "name": "pop-high",
+   "at": 33.667,
+   "vol": 0.35
+  },
+  {
+   "name": "sparkle",
+   "at": 33.667,
+   "vol": 0.35
+  },
+  {
+   "name": "swipe",
+   "at": 36.95,
+   "vol": 0.45
+  },
+  {
+   "name": "pop",
+   "at": 37.15,
    "vol": 0.4
   },
   {
    "name": "pop",
-   "at": 1.96,
+   "at": 42.983,
+   "vol": 0.3
+  },
+  {
+   "name": "whoosh-fast",
+   "at": 45.363,
+   "vol": 0.22
+  },
+  {
+   "name": "whoosh-fast",
+   "at": 45.403,
    "vol": 0.35
   },
   {
    "name": "whoosh",
-   "at": 3.09,
+   "at": 45.683,
    "vol": 0.3
   },
   {
    "name": "success",
-   "at": 3.14,
+   "at": 45.733,
    "vol": 0.45
-  },
-  {
-   "name": "swipe",
-   "at": 3.16,
-   "vol": 0.45
-  },
-  {
-   "name": "pop",
-   "at": 3.36,
-   "vol": 0.4
-  },
-  {
-   "name": "tick",
-   "at": 3.56,
-   "vol": 0.4
   }
  ],
  "speech": [
   [
-   0.06,
-   5.02
+   0.0,
+   1.2
   ]
  ],
  "music": {
   "src": "music/bgm.wav",
-  "vol": 0.16,
-  "duck": 0.05
+  "vol": 0.34,
+  "duck": 0.12
  }
 }

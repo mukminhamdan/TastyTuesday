@@ -26,6 +26,7 @@ const ClipView: React.FC<{c: Clip; proxy: boolean}> = ({c, proxy}) => {
         endAt={Math.round(c.to * fps)}
         playbackRate={c.speed ?? 1}
         muted={c.muted}
+        volume={c.volume ?? 1}
         style={{width: '100%', height: '100%', objectFit: 'cover'}}
       />
     </AbsoluteFill>

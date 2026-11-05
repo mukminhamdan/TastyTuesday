@@ -66,11 +66,29 @@ for c in cuts["clips"]:
         timeline_clips.append({
             "clip": c["clip"], "from": round(a, 3), "to": round(b, 3), "at": round(t, 3),
             "zoom": round(base, 3), "punch": bool(c.get("punch", i > 0)), "focus": focus,
-            "speed": speed, "muted": bool(c.get("muted", False)), "_broll": bool(c.get("broll")),
+            "speed": speed, "muted": bool(c.get("muted", False)), "volume": c.get("volume", 1.0), "_broll": bool(c.get("broll")),
             "_id": c.get("id"),
         })
         t += (b - a) / speed
 duration = round(t, 3)
+
+
+CLIP_START = {}
+for tc in timeline_clips:
+    if tc.get("_id") and tc["_id"] not in CLIP_START:
+        CLIP_START[tc["_id"]] = tc["at"]
+
+
+def anchor(o):
+    """Resolve an item's timeline time from at / src / on+off."""
+    if "on" in o:
+        return CLIP_START[o["on"]] + o.get("off", 0)
+    if "src" in o:
+        return src_to_tl(o["src"][0], o["src"][1])
+    at = o.get("at")
+    if at is not None and at < 0:
+        at = duration + at
+    return at
 
 
 def src_to_tl(clip, sec):
@@ -81,7 +99,12 @@ def src_to_tl(clip, sec):
     return None
 
 
+IGNORE_FACES = cuts.get("ignore_faces", False)
+
+
 def faces_at(tl):
+    if IGNORE_FACES:
+        return []
     for tc in timeline_clips:
         dur = (tc["to"] - tc["from"]) / tc["speed"]
         if tc["at"] <= tl < tc["at"] + dur:
@@ -167,6 +190,18 @@ for tc in timeline_clips:
             e = tc["at"] + (min(w["end"], tc["to"]) - tc["from"]) / tc["speed"]
             txt = FIX.get(w["word"].lower().strip(".,!?"), w["word"])
             words_tl.append({"w": txt, "s": round(s, 3), "e": round(e, 3)})
+NARR = []
+for gi, n in enumerate(cuts.get("narration", [])):
+    at = anchor(n)
+    toks = n["text"].split()
+    step = n.get("pace", 0.26)
+    for i, tok in enumerate(toks):
+        NARR.append({"w": tok, "s": round(at + i * step, 3), "e": round(at + (i + 1) * step - 0.02, 3), "_hold": n.get("hold", 0.9), "g": gi})
+    if NARR:
+        NARR[-1]["w"] = NARR[-1]["w"] if re.search(r"[.!?]$", NARR[-1]["w"]) else NARR[-1]["w"] + "."
+        NARR[-1]["e"] = round(NARR[-1]["e"] + n.get("hold", 0.9), 3)
+VOICE = [dict(w) for w in words_tl]
+words_tl += [{k: v for k, v in w.items() if not k.startswith("_")} for w in NARR]
 words_tl.sort(key=lambda x: x["s"])
 
 pages, cur = [], []
@@ -175,13 +210,17 @@ for w in words_tl:
     if not clean:
         continue
     item = {"w": clean, "s": w["s"], "e": w["e"]}
+    grp = w.get("g")
     if re.sub(r"[^A-Z0-9]", "", clean.upper()) in EMPH:
         item["hi"] = True
-    if cur and (w["s"] - cur[-1]["e"] > 0.35 or len(cur) >= 3 or sum(len(x["w"]) for x in cur) + len(clean) > 15):
+    same_phrase = grp is not None and cur and cur[-1].get("_g") == grp
+    if cur and not same_phrase and (w["s"] - cur[-1]["e"] > 0.35 or len(cur) >= 4 or sum(len(x["w"]) + 1 for x in cur) + len(clean) > 22):
         pages.append(cur)
         cur = []
+    if grp is not None:
+        item["_g"] = grp
     cur.append(item)
-    if re.search(r"[.!?]$", w["w"]):
+    if re.search(r"[.!?]$", w["w"]) and not (grp is not None and re.search(r"\.\.\.$", w["w"])):
         pages.append(cur)
         cur = []
 if cur:
@@ -193,6 +232,7 @@ for i, p in enumerate(pages):
     end = p[-1]["e"] + 0.25
     if i + 1 < len(pages):
         end = min(end, pages[i + 1][0]["s"])
+    p = [{k: v for k, v in x.items() if k != "_g"} for x in p]
     caption_pages.append({"start": round(start, 3), "end": round(end, 3), "words": p, "pos": "low"})
 
 # ------------------------------------------------------------------ overlays & sfx
@@ -211,17 +251,10 @@ AUTO_SFX = {
 
 overlays, sfx = [], []
 for o in cuts.get("overlays", []):
-    at = o.get("at")
-    if "src" in o:
-        at = src_to_tl(o["src"][0], o["src"][1])
-        if at is None:
-            print("WARN overlay source time not in edit:", o)
-            continue
+    at = anchor(o)
     if at is None:
-        print("WARN overlay without time", o)
+        print("WARN overlay time not in edit:", o)
         continue
-    if at < 0:
-        at = duration + at
     dur = min(o.get("dur", 2.5), duration - at)
     out = {"type": o["type"], "at": round(at, 3), "dur": round(dur, 3), "props": o.get("props", {})}
     if o["type"] in PREF:
@@ -240,9 +273,7 @@ for o in cuts.get("overlays", []):
                 sfx.append({"name": "pop-high", "at": round(at + i * 0.2, 3), "vol": 0.3})
 
 for s in cuts.get("sfx", []):
-    at = s.get("at")
-    if "src" in s:
-        at = src_to_tl(s["src"][0], s["src"][1])
+    at = anchor(s)
     if at is None:
         continue
     sfx.append({"name": s["name"], "at": round(at, 3), "vol": s.get("vol", 0.4)})
@@ -267,7 +298,7 @@ for cp in caption_pages:
 
 # ------------------------------------------------------------------ speech (ducking)
 speech = []
-for w in words_tl:
+for w in VOICE:
     if speech and w["s"] - speech[-1][1] < 0.5:
         speech[-1][1] = w["e"]
     else:
