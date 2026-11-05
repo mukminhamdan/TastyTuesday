@@ -237,8 +237,15 @@
   },
   {
    "on": "cook1",
-   "off": 0.4,
-   "text": "Masuk periuk, mode steam"
+   "off": 0.35,
+   "text": "Masuk pot dalam food engine",
+   "hold": 0.3
+  },
+  {
+   "on": "cook1",
+   "off": 1.95,
+   "text": "Mode steam",
+   "hold": 0.9
   },
   {
    "on": "cook2",
