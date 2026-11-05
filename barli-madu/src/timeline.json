@@ -676,10 +676,10 @@
    "at": 37.0,
    "dur": 3.75,
    "props": {
-    "line1": "SAVE RESEPI NI",
-    "line2": "Follow untuk resepi seterusnya!"
+    "line1": "SAVE RESIPI NI",
+    "line2": "Follow untuk resipi seterusnya!"
    },
-   "slot": "top"
+   "slot": "center"
   }
  ],
  "sfx": [

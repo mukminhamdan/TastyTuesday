@@ -336,31 +336,63 @@ export const Flash: React.FC<{o: Overlay}> = ({o}) => {
 /* --------------------------------------------------------------- CTA end card */
 export const CTA: React.FC<{o: Overlay}> = ({o}) => {
   const {frame, fps, vis} = useLocal(o.dur);
-  const line1 = (o.props?.line1 as string) ?? 'SAVE RESEPI NI';
-  const line2 = (o.props?.line2 as string) ?? 'Follow untuk resepi seterusnya!';
-  const s1 = spring({frame, fps, config: {damping: 10, stiffness: 200}});
-  const s2 = spring({frame: frame - 8, fps, config: {damping: 12}});
-  const pulse = 1;
+  const line1 = (o.props?.line1 as string) ?? 'SAVE RESIPI NI';
+  const line2 = (o.props?.line2 as string) ?? 'Follow untuk resipi seterusnya!';
+  const s1 = spring({frame, fps, config: {damping: 14, stiffness: 180}});
+  const s2 = spring({frame: frame - 8, fps, config: {damping: 14}});
+  // Centred in the TikTok/IG safe zone (both axes).
   return (
-    <div style={{position: 'absolute', ...slotStyle(o.slot ?? 'top'), display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 18, opacity: vis}}>
+    <div
+      style={{
+        position: 'absolute',
+        left: SAFE.left,
+        width: SAFE_W,
+        top: SAFE.top,
+        height: SAFE.bottom - SAFE.top,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 34,
+        opacity: vis,
+      }}
+    >
+      <div style={{fontSize: 110, lineHeight: 1, transform: `scale(${s1})`, filter: 'drop-shadow(0 8px 12px rgba(0,0,0,0.35))'}}>📌</div>
       <div
         style={{
           fontFamily: FONT_TITLE,
           fontWeight: 900,
-          fontSize: 70,
+          fontSize: 92,
+          lineHeight: 1,
           whiteSpace: 'nowrap',
           color: C.ink,
           background: `linear-gradient(180deg, ${C.honey}, ${C.honeyDeep})`,
-          padding: '10px 30px 16px',
-          borderRadius: 26,
-          border: `6px solid ${C.ink}`,
-          transform: `scale(${s1 * pulse}) rotate(-2deg)`,
-          boxShadow: '0 12px 0 rgba(0,0,0,0.3)',
+          padding: '18px 34px 24px',
+          borderRadius: 28,
+          border: `7px solid ${C.ink}`,
+          transform: `scale(${s1}) rotate(-1.5deg)`,
+          boxShadow: '0 14px 0 rgba(0,0,0,0.3)',
         }}
       >
-        📌 {line1}
+        {line1}
       </div>
-      <div style={{fontFamily: FONT_BODY, fontWeight: 800, fontSize: 44, color: C.white, textAlign: 'center', ...textStroke(10), opacity: s2, transform: `translateY(${(1 - s2) * 30}px)`}}>{line2}</div>
+      <div
+        style={{
+          fontFamily: FONT_BODY,
+          fontWeight: 800,
+          fontSize: 64,
+          lineHeight: 1.15,
+          color: C.white,
+          textAlign: 'center',
+          maxWidth: SAFE_W - 40,
+          ...textStroke(14),
+          textShadow: '0 8px 24px rgba(0,0,0,0.5)',
+          opacity: s2,
+          transform: `translateY(${(1 - s2) * 30}px)`,
+        }}
+      >
+        {line2}
+      </div>
     </div>
   );
 };
