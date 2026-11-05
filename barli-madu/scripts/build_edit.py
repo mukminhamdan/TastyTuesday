@@ -299,6 +299,9 @@ for w in VOICE:
     else:
         speech.append([w["s"], w["e"]])
 
+if cuts.get("mute_voice"):
+    speech = []  # no voice in the mix -> no ducking
+
 timeline = {
     "duration": duration,
     "clips": [{k: v for k, v in c.items() if not k.startswith("_")} for c in timeline_clips],

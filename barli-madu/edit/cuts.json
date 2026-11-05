@@ -436,12 +436,6 @@
  ],
  "sfx": [
   {
-   "name": "voice-hook",
-   "on": "hook",
-   "off": 0.0,
-   "vol": 1.0
-  },
-  {
    "name": "steam",
    "on": "cook2",
    "off": 0.0,
@@ -453,5 +447,6 @@
    "off": 0.7,
    "vol": 0.22
   }
- ]
+ ],
+ "mute_voice": true
 }

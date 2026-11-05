@@ -906,11 +906,6 @@
  ],
  "sfx": [
   {
-   "name": "voice-hook",
-   "at": 0.0,
-   "vol": 1.0
-  },
-  {
    "name": "impact",
    "at": 0.05,
    "vol": 0.28
@@ -961,12 +956,7 @@
    "vol": 0.25
   }
  ],
- "speech": [
-  [
-   0.0,
-   1.2
-  ]
- ],
+ "speech": [],
  "music": {
   "src": "music/bgm.wav",
   "vol": 0.34,
