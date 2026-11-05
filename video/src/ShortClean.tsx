@@ -61,7 +61,7 @@ export const ShortClean: React.FC<{data: Timeline; menuKey: string; preview?: bo
         }}
       />
       {/* light colour grade in the same hue, so each video reads as its own */}
-      <AbsoluteFill style={{background: rgba(tint, 0.5), mixBlendMode: 'soft-light', opacity: 0.35}} />
+      <AbsoluteFill style={{background: rgba(tint, 0.5), mixBlendMode: 'soft-light', opacity: 0.14}} />
       {data.overlays.map((o, i) => {
         const G = CLEAN_GRAPHICS[o.type];
         if (!G) return null;
