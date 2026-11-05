@@ -327,8 +327,10 @@ def ttl(key, t):
 
 
 def cta45(key):
-    (a, b, o), = cta(DISHES[key])
-    return (a, 3352.0, o)  # "...nak tahu lagi resipi-resipi yang kita orang buat"
+    """Silent close on the finished dish (music only): no host voice on the chef shorts."""
+    spec = DISHES[key]
+    t = spec[0] if isinstance(spec, tuple) else spec
+    return (t, t + 3.4, dict(tag="cta", silent=True, broll=spec, zoom=1.06, push=0.05, ov=[("cta", t, {})]))
 
 
 def hook45(a, b, headline, **kw):
@@ -341,7 +343,7 @@ CLEAN45 = {
     "roll": [
         hook45(3075.3, 3079.6, "Goreng tanpa risau hangus", align="right"),
         (1094.6, 1099.8, dict(ov=[ttl("roll", 1094.65)])),
-        (1118.4, 1123.0, dict(ov=[st(1118.5, 1, "Gulung roti dengan inti sardin")])),
+        (1118.4, 1122.95, dict(ov=[st(1118.5, 1, "Gulung roti dengan inti sardin")])),
         (1133.4, 1135.6, dict(ov=[st(1133.5, 2, "Sapu telur supaya melekat")])),
         (1143.1, 1144.4, {}),
         (1156.2, 1159.0, dict(ov=[st(1156.3, 3, "Celup telur, terus goreng")])),
@@ -409,8 +411,17 @@ CLEAN_MUSIC = dict(roll=("m_080_02", 20), wrap=("m_151_06", 120), puff=("m_192_0
                    sambal=("m_157_03", 0), pizza=("m_003_05", 0))
 
 
+# clips that continue a recipe step started in the clip before (they keep its captions)
+STEP_CONT = {("roll", 1143.1), ("sambal", 2104.4), ("sambal", 2363.0)}
+
+
 def clean_short(key):
+    out = []
     for a, b, o in CLEAN45[key]:
         for typ, t, _ in o.get("ov", []):
             assert a - 0.05 <= t < b, (key, typ, t, a, b)
-    return CLEAN45[key]
+        o = dict(o)
+        # captions only while a cooking step is being explained
+        o["cap"] = (key, a) in STEP_CONT or any(x[0] == "cstep" and x[2]["n"] for x in o.get("ov", []))
+        out.append((a, b, o))
+    return out

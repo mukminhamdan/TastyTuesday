@@ -3,6 +3,8 @@ import {AbsoluteFill, Audio, Img, OffthreadVideo, Sequence, getInputProps, inter
 
 // `--props='{"lo":true}'` renders previews from the 540px proxy (4x faster)
 const PROXY = (getInputProps() as {lo?: boolean}).lo ? 'media/proxy_lo.mp4' : 'media/proxy.mp4';
+// sharpened proxy for soft footage (pieces carry `alt` = its start, seconds after T0)
+const PROXY_SHARP = (getInputProps() as {lo?: boolean}).lo ? 'media/proxy_pz_lo.mp4' : 'media/proxy_pz.mp4';
 import {Piece} from '../theme';
 
 export const FW = 1080; // short frame width
@@ -89,8 +91,8 @@ const PieceVideo: React.FC<{p: Piece; enter: boolean; whip: boolean; punchAt: nu
         }}
       >
         <OffthreadVideo
-          src={staticFile(PROXY)}
-          trimBefore={Math.round((p.vsrc ?? p.src) * 30)}
+          src={staticFile(p.alt !== undefined ? PROXY_SHARP : PROXY)}
+          trimBefore={Math.round(((p.vsrc ?? p.src) - (p.alt ?? 0)) * 30)}
           muted
           style={{width: '100%', height: '100%'}}
           pauseWhenBuffering
@@ -120,7 +122,7 @@ export const Footage: React.FC<{pieces: Piece[]; look?: Look; punch?: number[]; 
 
 export const Voice: React.FC<{pieces: Piece[]}> = ({pieces}) => (
   <>
-    {pieces.map((p, i) => (
+    {pieces.map((p, i) => p.mute ? null : (
       <Sequence key={i} from={p.frm} durationInFrames={p.dur} layout="none">
         <Audio
           src={staticFile('media/voice.wav')}

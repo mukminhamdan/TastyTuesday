@@ -170,6 +170,9 @@ def face_for(a, b):
     return dict(x=round(float(p[0]), 3), y=round(float(p[1]), 3), w=round(float(p[2]), 3), h=round(float(p[3]), 3))
 
 
+# sharpened proxy (public/media/proxy_pz*.mp4) for soft footage: video -> its start (s after T0)
+SHARP = {"pizza": 2440.0 - T0}
+
 # ------------------------------------------------------------------ core
 OV_DUR = dict(cstep=None, cnote=2.6, hook=2.6, title=2.6, chip=2.2, step=2.4, tip=2.8, stat=2.3, reveal=2.4, cta=None,
               chapter=3.0, bigtitle=3.4, menutag=None, sticker=1.9, bloopertitle=1.8, lineup=6.5, recap=6.0, endcard=None, quote=2.6)
@@ -183,6 +186,24 @@ def build(vid, clips, layout, music_plan, style=None):
     zflip = 0
     prev_src_end = None
     for ci, (a, b, o) in enumerate(clips):
+        if o.get("silent"):
+            # picture only (dish B-roll), no voice: music carries it
+            nf = int(round((b - a) * FPS))
+            spec = o.get("broll", a)
+            t_, bz, cy = (spec, None, None) if not isinstance(spec, (tuple, list)) else (tuple(spec) + (None, None))[:3]
+            pc = dict(src=round(t_ - T0, 3), vsrc=round(t_ - T0, 3), dur=nf, frm=cur, zoom=o.get("zoom", 1.0),
+                      push=o.get("push", 0.02), face=None, clip=ci, tag=o.get("tag", "body"), mute=True)
+            if cy is not None:
+                pc["zoom"], pc["cy"] = bz or 1.0, cy
+            else:
+                pc["face"] = face_for(t_, b)
+            pieces.append(pc)
+            for typ, t, props in o.get("ov", []):
+                d = OV_DUR.get(typ)
+                overlays.append(dict(type=typ, frm=cur, dur=int(d * FPS) if d else None, props=props, clip=ci))
+            cur += nf
+            prev_src_end = None
+            continue
         ws = [w for w in WORDS if w["s"] >= a - 0.05 and w["s"] < b]
         if not ws:
             print("WARN no words", vid, a, b)
@@ -361,6 +382,9 @@ def build(vid, clips, layout, music_plan, style=None):
             dur = int(d * FPS) if d else (1 if typ == "cstep" else None)
             overlays.append(dict(type=typ, frm=f, dur=dur, props=props, clip=ci))
     total = cur
+    if vid in SHARP:  # soft source camera: read these pieces from the sharpened proxy
+        for pc in pieces:
+            pc["alt"] = SHARP[vid]
 
     # graphics never stack: trim an overlay when the next one arrives
     BIGT = {"hook", "title", "cta", "chapter", "bigtitle", "lineup", "recap", "endcard"}
@@ -394,7 +418,7 @@ def build(vid, clips, layout, music_plan, style=None):
             p_ = out[-1] if out else None
             if p_ and p_["clip"] == c["clip"] and (len(c["words"]) == 1 or len(p_["words"]) == 1) \
                     and c["frm"] - p_["end"] < 30 and not re.search(r"[.?!]$", p_["words"][-1]["t"]) \
-                    and len(" ".join(w["t"] for w in p_["words"] + c["words"])) <= 34:
+                    and len(" ".join(w["t"] for w in p_["words"] + c["words"])) <= 40:
                 off = c["frm"] - p_["frm"]
                 p_["words"] += [dict(w, f=w["f"] + off) for w in c["words"]]
                 p_["end"] = c["end"]
@@ -402,10 +426,15 @@ def build(vid, clips, layout, music_plan, style=None):
                 out.append(c)
         captions[:] = out
         # sentence case across phrases: capital only where a sentence (or a new clip) starts
-        start, last_clip = True, None
+        step_clips = {o_["clip"] for o_ in overlays if o_["type"] == "cstep"}
+        start, last_clip, last_end = True, None, -999
         for c in captions:
             if c["clip"] != last_clip:
-                start, last_clip = True, c["clip"]
+                # a new clip starts a sentence unless it carries straight on from the last caption
+                if c["frm"] - last_end > 45 or c["clip"] in step_clips:
+                    start = True
+                last_clip = c["clip"]
+            last_end = c["end"]
             for w in c["words"]:
                 t_ = w["t"]
                 keep = t_.rstrip(".,?!") in KEEP_CAPS or (t_.isupper() and len(t_) > 1)
