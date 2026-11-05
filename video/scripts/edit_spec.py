@@ -396,8 +396,9 @@ CLEAN45 = {
     ],
 }
 # fresh music beds for the v2 shorts (track, offset seconds)
-CLEAN_MUSIC = dict(roll=("m_080_02", 20), wrap=("m_151_06", 120), puff=("m_192_05", 100),
-                   sambal=("m_157_03", 0), pizza=("m_003_05", 0))
+# (new CC0 tracks, not used in any other video: cc0-music-captioned 405/1, 406/12, 415/8, 434/7)
+CLEAN_MUSIC = dict(roll=("m_080_02", 20), wrap=("m_405_01", 8), puff=("m_406_12", 0),
+                   sambal=("m_415_08", 0), pizza=("m_434_07", 4))
 
 
 # clips that continue a recipe step started in the clip before (they keep its captions)

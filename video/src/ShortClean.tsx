@@ -138,7 +138,7 @@ export const ShortClean: React.FC<{data: Timeline; menuKey: string; preview?: bo
       <CleanCaptions caps={data.captions} pieces={data.pieces} hidden={hidden} capY={capY} />
       {preview && <PreviewBug />}
       <Voice pieces={data.pieces} />
-      <Music src={data.music} speech={data.speech} total={data.total} under={0.12} open={0.32} />
+      <Music src={data.music} speech={data.speech} total={data.total} under={0.1} open={0.3} />
       <SfxTrack sfx={data.sfx} />
     </AbsoluteFill>
   );
