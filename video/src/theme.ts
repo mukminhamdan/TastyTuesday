@@ -56,7 +56,7 @@ export type Timeline = {
   id: string;
   fps: number;
   layout: 'short' | 'wide';
-  style?: 'snappy' | 'cinema';
+  style?: 'snappy' | 'cinema' | 'clean';
   punch?: number[];
   whips?: number[];
   total: number;

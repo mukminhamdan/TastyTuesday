@@ -36,10 +36,12 @@ def cta(broll):
     return [(3347.4, 3352.7, dict(tag="cta", broll=broll, zoom=1.06, push=0.05, ov=[("cta", 3347.5, {})]))]
 
 
-def hook(a, b, headline, sub=None, align=None, **kw):
+def hook(a, b, headline, sub=None, align=None, pos=None, **kw):
     props = dict(text=headline, sub=sub)
     if align:
         props["align"] = align
+    if pos:  # "low": force the headline into the lower band (clean shorts)
+        props["pos"] = pos
     return (a, b, dict(tag="hook", zoom=1.12, push=0.07, ov=[("hook", a + 0.05, props)], **kw))
 
 
@@ -76,7 +78,7 @@ SHORTS["roll"] = [
 
 # ---------------------------------------------------------------- 2. TORTILLA
 SHORTS["wrap"] = [
-    hook(1955.7, 1957.5, "Wrap ala cafe dalam 4 minit", sub="Tortilla Spicy Tuna"),
+    hook(1955.7, 1957.5, "Wrap ala cafe dalam 4 minit", sub="Tortilla Spicy Tuna", pos="low"),
     (1974.6, 1977.6, k(zoom=1.08)),
     title("wrap", 1385.3, 1395.8, ov2=[("chip", 1393.2, dict(text="Mode Grill", icon="grill"))]),
     (1420.3, 1426.6, {}),
@@ -303,3 +305,68 @@ TEASERS["pizza"] = [
     joke(3547.6, 3553.2, "Pizza besar sangat", 3551.5),
     joke(3283.4, 3294.0, "Habis dah?!", 3292.0),
 ] + part2(DISHES["pizza"])
+
+
+# ================================================================ CLEAN SHORTS (v2 look)
+# Same clips as SHORTS (so caption edits still line up), but a calmer graphic layer:
+# hook / chef title / numbered recipe steps (+ progress bar) / max two facts / CTA.
+# (type, source_time, props) — each time must fall inside one of the short's clips.
+CLEAN = {
+    "roll": [
+        ("cstep", 1118.5, dict(n=1, text="Gulung roti dengan inti sardin")),
+        ("cstep", 1133.5, dict(n=2, text="Sapu telur supaya melekat")),
+        ("cstep", 1156.3, dict(n=3, text="Celup telur, terus goreng")),
+        ("cnote", 1340.6, dict(big="180°C", label="Deep Fry · tak hangit")),
+        ("cstep", 3067.9, dict(n=0, text="Siap dihidang")),
+        ("cnote", 3069.9, dict(big="< 20 min", label="Satu buku roti")),
+    ],
+    "wrap": [
+        ("cstep", 1390.5, dict(n=1, text="Balut inti spicy tuna")),
+        ("cnote", 1446.9, dict(big="8 min", label="Mode Grill · Medium")),
+        ("cstep", 1456.3, dict(n=2, text="Sapu sedikit minyak")),
+        ("cstep", 1502.3, dict(n=3, text="Terbalikkan separuh masa")),
+        ("cstep", 3103.4, dict(n=0, text="Siap dihidang")),
+    ],
+    "puff": [
+        ("cstep", 1672.1, dict(n=1, text="Puff pastry + inti sardin")),
+        ("cstep", 1686.6, dict(n=2, text="Bentuk ikut suka")),
+        ("cstep", 1728.1, dict(n=3, text="Sapu kuning telur")),
+        ("cnote", 1766.9, dict(big="180°C", label="10 minit · Mode Oven")),
+        ("cstep", 2425.9, dict(n=0, text="Siap dihidang")),
+        ("cnote", 3179.9, dict(big="7 min", label="Half-cook, simpan beku")),
+    ],
+    "sambal": [
+        ("cnote", 2058.0, dict(big="140°C", label="Mode Cooker · 15 min")),
+        ("cstep", 2100.6, dict(n=1, text="Tumis bawang")),
+        ("cstep", 2271.0, dict(n=2, text="Masuk ibu sambal")),
+        ("cnote", 2294.9, dict(big="8 liter", label="Masak stok berbulan")),
+        ("cstep", 2357.2, dict(n=3, text="Air & sardin")),
+        ("cstep", 3240.6, dict(n=0, text="Siap dihidang")),
+    ],
+    "pizza": [
+        ("cstep", 2482.4, dict(n=1, text="Masuk bila keluar ‘Add Food’")),
+        ("cnote", 2643.7, dict(big="6 min", label="Mode Pizza · oven biasa 15 min")),
+        ("cstep", 2659.9, dict(n=2, text="Minit ke-3: tabur cheese")),
+        ("cstep", 3274.3, dict(n=0, text="Siap dihidang")),
+    ],
+}
+# fresh music beds for the v2 shorts (track, offset seconds)
+CLEAN_MUSIC = dict(roll=("m_080_02", 20), wrap=("m_151_06", 120), puff=("m_192_05", 100),
+                   sambal=("m_157_03", 0), pizza=("m_003_05", 0))
+
+
+def clean_short(key):
+    """SHORTS[key] with the old chips/tips/stats/reveals swapped for the CLEAN layer."""
+    out = []
+    for a, b, o in SHORTS[key]:
+        o = dict(o)
+        o["ov"] = [x for x in o.get("ov", []) if x[0] in ("hook", "title", "cta")]
+        o.pop("ov2", None)
+        if o.get("tag") == "hook":
+            o["zoom"], o["push"] = 1.06, 0.04
+        out.append([a, b, o])
+    for typ, t, props in CLEAN[key]:
+        hit = [c for c in out if c[0] - 0.05 <= t < c[1]]
+        assert hit, (key, typ, t)
+        hit[0][2]["ov"] = hit[0][2]["ov"] + [(typ, t, props)]
+    return [tuple(c) for c in out]

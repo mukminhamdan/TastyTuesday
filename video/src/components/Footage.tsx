@@ -58,10 +58,11 @@ export const pieceAt = (pieces: Piece[], f: number) => {
   return pieces[Math.max(0, Math.min(pieces.length - 1, lo))];
 };
 
-export type Look = 'snappy' | 'cinema';
+export type Look = 'snappy' | 'cinema' | 'clean';
 const FILTER: Record<Look, string> = {
   snappy: 'saturate(1.2) contrast(1.05) brightness(1.05)',
   cinema: 'saturate(1.04) contrast(1.1) brightness(0.99)',
+  clean: 'saturate(1.06) contrast(1.02) brightness(1.04)',
 };
 
 const PieceVideo: React.FC<{p: Piece; enter: boolean; whip: boolean; punchAt: number | null; look: Look}> = ({p, enter, whip, punchAt, look}) => {
@@ -143,6 +144,8 @@ export const Grade: React.FC<{look?: Look}> = ({look = 'snappy'}) => {
           background:
             look === 'cinema'
               ? 'radial-gradient(ellipse 78% 68% at 50% 42%, rgba(0,0,0,0) 50%, rgba(6,4,2,0.55) 100%)'
+              : look === 'clean'
+              ? 'radial-gradient(ellipse 90% 80% at 50% 45%, rgba(0,0,0,0) 65%, rgba(10,6,2,0.14) 100%)'
               : 'radial-gradient(ellipse 85% 75% at 50% 42%, rgba(0,0,0,0) 60%, rgba(10,6,2,0.22) 100%)',
         }}
       />

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Composition} from 'remotion';
 import {Short} from './Short';
+import {ShortClean} from './ShortClean';
 import {Full} from './Full';
 import {Timeline} from './theme';
 import roll from './data/roll.json';
@@ -38,7 +39,7 @@ export const RemotionRoot: React.FC = () => (
       <Composition
         key={id}
         id={id}
-        component={Short as any}
+        component={(data.style === 'clean' ? ShortClean : Short) as any}
         durationInFrames={data.total}
         fps={30}
         width={1080}

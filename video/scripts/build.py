@@ -171,12 +171,12 @@ def face_for(a, b):
 
 
 # ------------------------------------------------------------------ core
-OV_DUR = dict(hook=2.6, title=2.6, chip=2.2, step=2.4, tip=2.8, stat=2.3, reveal=2.4, cta=None,
+OV_DUR = dict(cstep=None, cnote=2.6, hook=2.6, title=2.6, chip=2.2, step=2.4, tip=2.8, stat=2.3, reveal=2.4, cta=None,
               chapter=3.0, bigtitle=3.4, menutag=None, sticker=1.9, bloopertitle=1.8, lineup=6.5, recap=6.0, endcard=None, quote=2.6)
 
 
-def build(vid, clips, layout, music_plan):
-    style = "cinema" if layout == "wide" else "snappy"
+def build(vid, clips, layout, music_plan, style=None):
+    style = style or ("cinema" if layout == "wide" else "snappy")
     pieces = []  # output pieces
     captions, overlays, sfx, speech = [], [], [], []
     cur = 0  # frames
@@ -233,6 +233,9 @@ def build(vid, clips, layout, music_plan):
                 zflip ^= 1
             if style == "cinema":
                 z, push = base_zoom, o.get("push", 0.035)  # no jump-zoom; slow push-in everywhere
+            elif style == "clean":
+                z = base_zoom * (1.0 + 0.035 * zflip) if o.get("tag") != "hook" else base_zoom
+                push = o.get("push", 0.02)  # gentle drift, no punch / whip
             else:
                 z = base_zoom * (1.0 + 0.06 * zflip) if o.get("tag") not in ("hook", "cold") else base_zoom
                 push = o.get("push", 0.0)
@@ -298,6 +301,13 @@ def build(vid, clips, layout, music_plan):
 
         def flush():
             if chunk:
+                if style == "clean":  # sentence case: only the first word and names keep capitals
+                    for j, c in enumerate(chunk):
+                        t_ = c["t"] if c["t"] in KEEP_CAPS or c["t"].isupper() and len(c["t"]) > 1 else c["t"].lower()
+                        c["t"] = t_[:1].upper() + t_[1:] if j == 0 else t_
+                    for j, c in enumerate(chunk):  # product name keeps its capitals
+                        if c["t"].lower().startswith("engine") and j and chunk[j - 1]["t"].lower() == "food":
+                            chunk[j - 1]["t"], c["t"] = "Food", "Engine" + c["t"][6:]
                 captions.append(dict(frm=chunk[0]["f0"], end=chunk[-1]["f1"], clip=ci,
                                      words=[dict(t=c["t"], f=c["f0"] - chunk[0]["f0"],
                                                  hl=bool(HL_WORDS.match(c["t"]))) for c in chunk]))
@@ -325,7 +335,8 @@ def build(vid, clips, layout, music_plan):
             if chunk and w["t"][:1].isupper() and w["t"] not in KEEP_CAPS:
                 flush()
             txt = " ".join(c["t"] for c in chunk + [w])
-            if chunk and (len(chunk) >= 3 or len(txt) > 17 or w["f0"] - chunk[-1]["f1"] > 8):
+            mx_w, mx_c = (5, 26) if style == "clean" else (3, 17)
+            if chunk and (len(chunk) >= mx_w or len(txt) > mx_c or w["f0"] - chunk[-1]["f1"] > 8):
                 flush()
             chunk.append(w)
             if re.search(r"[.?!,]$", w["t"]):
@@ -345,13 +356,23 @@ def build(vid, clips, layout, music_plan):
                 d = max(2.6, (clip_end - f) / FPS)
             if typ == "menutag":
                 d = max(2.0, (clip_end - f) / FPS)
-            dur = int(d * FPS) if d else None
+            dur = int(d * FPS) if d else (1 if typ == "cstep" else None)
             overlays.append(dict(type=typ, frm=f, dur=dur, props=props, clip=ci))
     total = cur
 
     # graphics never stack: trim an overlay when the next one arrives
     BIGT = {"hook", "title", "cta", "chapter", "bigtitle", "lineup", "recap", "endcard"}
-    small = sorted([o for o in overlays if o["type"] not in BIGT], key=lambda o: o["frm"])
+    if style == "clean":
+        BIGT = {"hook", "cta"}
+        top = sorted([o for o in overlays if o["type"] in ("title", "cstep")], key=lambda o: o["frm"])
+        cta_f = min([o["frm"] for o in overlays if o["type"] == "cta"] or [total])
+        for i, o_ in enumerate(top):
+            nxt = top[i + 1]["frm"] if i + 1 < len(top) else cta_f
+            if o_["type"] == "cstep" or o_["frm"] + o_["dur"] > nxt - 2:
+                o_["dur"] = max(15, nxt - 2 - o_["frm"])
+        small = sorted([o for o in overlays if o["type"] == "cnote"], key=lambda o: o["frm"])
+    else:
+        small = sorted([o for o in overlays if o["type"] not in BIGT], key=lambda o: o["frm"])
     for i in range(len(small) - 1):
         a_, b_ = small[i], small[i + 1]
         if a_["frm"] + (a_["dur"] or 0) > b_["frm"] - 2:
@@ -390,8 +411,17 @@ def build(vid, clips, layout, music_plan):
             f = 0
         sfx.append(dict(name=name, frm=f, vol=vol))
 
+    CLEAN_SFX = dict(hook=[("whoosh-fast-soft", 2, 0.28)], title=[("whoosh-fast-soft", 1, 0.22)],
+                     cstep=[("pop-small-in", 3, 0.28)], cnote=[("click-toggle-on-soft", 3, 0.32)],
+                     cta=[("notification-success-sparkle", 10, 0.28)])
     for ov in overlays:
         f, t = ov["frm"], ov["type"]
+        if style == "clean":
+            for nm, df, vol in CLEAN_SFX.get(t, []):
+                if t == "cstep" and ov["props"].get("n") == 0:
+                    nm, vol = "shimmer-short-sparkle", 0.32
+                add(nm, f + df, vol)
+            continue
         if t == "hook":
             add("boom-hit-medium", f + 1, 0.55)
             add("whoosh-fast-hard", f + 2, 0.35)
@@ -529,5 +559,6 @@ if __name__ == "__main__":
             build(key, SPEC.TEASERS[m], "short", short_plan(m))
         elif key == "full":
             build("full", SPEC.FULL, "wide", full_plan)
-        else:
-            build(key, SPEC.SHORTS[key], "short", short_plan(key))
+        else:  # v2 shorts: clean recipe look, fresh music
+            tr, off = SPEC.CLEAN_MUSIC[key]
+            build(key, SPEC.clean_short(key), "short", lambda p, o, t, tr=tr, off=off: [(0, t / FPS, tr, off)], style="clean")
