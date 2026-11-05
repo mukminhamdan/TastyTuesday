@@ -1,7 +1,7 @@
 node_modules/
 out/
 public/proxy/
-public/raw/
+public/raw
 analysis/*.wav
 out/
 analysis/test.json
