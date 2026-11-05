@@ -1,0 +1,288 @@
+{
+ "duration": 5.14,
+ "clips": [
+  {
+   "clip": "test",
+   "from": 0.24,
+   "to": 3.38,
+   "at": 0.0,
+   "zoom": 1.12,
+   "punch": false,
+   "focus": [
+    0.5,
+    0.695
+   ],
+   "speed": 1,
+   "muted": false
+  },
+  {
+   "clip": "test",
+   "from": 4.18,
+   "to": 6.18,
+   "at": 3.14,
+   "zoom": 1.0,
+   "punch": true,
+   "focus": [
+    0.5,
+    0.695
+   ],
+   "speed": 1,
+   "muted": false
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.06,
+   "end": 1.2,
+   "words": [
+    {
+     "w": "Ini",
+     "s": 0.06,
+     "e": 0.36
+    },
+    {
+     "w": "cara",
+     "s": 0.44,
+     "e": 0.74
+    },
+    {
+     "w": "paling",
+     "s": 0.82,
+     "e": 1.12
+    }
+   ],
+   "pos": "mid"
+  },
+  {
+   "start": 1.2,
+   "end": 2.34,
+   "words": [
+    {
+     "w": "senang",
+     "s": 1.2,
+     "e": 1.5
+    },
+    {
+     "w": "buat",
+     "s": 1.58,
+     "e": 1.88
+    },
+    {
+     "w": "air",
+     "s": 1.96,
+     "e": 2.26
+    }
+   ],
+   "pos": "high"
+  },
+  {
+   "start": 2.34,
+   "end": 3.2,
+   "words": [
+    {
+     "w": "barli",
+     "s": 2.34,
+     "e": 2.64,
+     "hi": true
+    },
+    {
+     "w": "madu",
+     "s": 2.72,
+     "e": 3.02,
+     "hi": true
+    }
+   ],
+   "pos": "high"
+  },
+  {
+   "start": 3.2,
+   "end": 3.96,
+   "words": [
+    {
+     "w": "Pertama",
+     "s": 3.2,
+     "e": 3.5
+    },
+    {
+     "w": "rebus",
+     "s": 3.58,
+     "e": 3.88
+    }
+   ],
+   "pos": "high"
+  },
+  {
+   "start": 3.96,
+   "end": 5.27,
+   "words": [
+    {
+     "w": "barli",
+     "s": 3.96,
+     "e": 4.26,
+     "hi": true
+    },
+    {
+     "w": "dengan",
+     "s": 4.34,
+     "e": 4.64
+    },
+    {
+     "w": "air",
+     "s": 4.72,
+     "e": 5.02
+    }
+   ],
+   "pos": "high"
+  }
+ ],
+ "overlays": [
+  {
+   "type": "hook",
+   "at": 0.06,
+   "dur": 2.5,
+   "props": {
+    "lines": [
+     "AIR",
+     "BARLI MADU",
+     "5 MINIT PREP"
+    ],
+    "accent": 1
+   },
+   "slot": "top"
+  },
+  {
+   "type": "step",
+   "at": 3.16,
+   "dur": 1.98,
+   "props": {
+    "n": 1,
+    "label": "Rebus barli"
+   },
+   "slot": "topLeft"
+  },
+  {
+   "type": "timer",
+   "at": 3.56,
+   "dur": 1.58,
+   "props": {
+    "minutes": 30
+   },
+   "slot": "topRight"
+  },
+  {
+   "type": "ingredients",
+   "at": 1.26,
+   "dur": 3,
+   "props": {
+    "items": [
+     {
+      "emoji": "🌾",
+      "name": "Barli",
+      "qty": "1 cawan"
+     },
+     {
+      "emoji": "💧",
+      "name": "Air",
+      "qty": "2 liter"
+     },
+     {
+      "emoji": "🍯",
+      "name": "Madu",
+      "qty": "3 sudu besar"
+     }
+    ]
+   },
+   "slot": "midRight"
+  },
+  {
+   "type": "sticker",
+   "at": 1.76,
+   "dur": 2,
+   "props": {
+    "emoji": "🍯",
+    "x": 780,
+    "y": 900
+   }
+  },
+  {
+   "type": "cta",
+   "at": 3.14,
+   "dur": 2,
+   "props": {},
+   "slot": "bottom"
+  }
+ ],
+ "sfx": [
+  {
+   "name": "whoosh",
+   "at": 0.01,
+   "vol": 0.35
+  },
+  {
+   "name": "impact",
+   "at": 0.06,
+   "vol": 0.55
+  },
+  {
+   "name": "whoosh-fast",
+   "at": 1.26,
+   "vol": 0.35
+  },
+  {
+   "name": "pop",
+   "at": 1.26,
+   "vol": 0.35
+  },
+  {
+   "name": "pop",
+   "at": 1.61,
+   "vol": 0.35
+  },
+  {
+   "name": "drip",
+   "at": 1.76,
+   "vol": 0.4
+  },
+  {
+   "name": "pop",
+   "at": 1.96,
+   "vol": 0.35
+  },
+  {
+   "name": "whoosh",
+   "at": 3.09,
+   "vol": 0.3
+  },
+  {
+   "name": "success",
+   "at": 3.14,
+   "vol": 0.45
+  },
+  {
+   "name": "swipe",
+   "at": 3.16,
+   "vol": 0.45
+  },
+  {
+   "name": "pop",
+   "at": 3.36,
+   "vol": 0.4
+  },
+  {
+   "name": "tick",
+   "at": 3.56,
+   "vol": 0.4
+  }
+ ],
+ "speech": [
+  [
+   0.06,
+   5.02
+  ]
+ ],
+ "music": {
+  "src": "music/bgm.wav",
+  "vol": 0.16,
+  "duck": 0.05
+ }
+}
