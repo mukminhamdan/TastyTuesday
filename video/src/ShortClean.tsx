@@ -11,6 +11,16 @@ loadFonts();
 
 const HIDE_CAPS = new Set(['hook', 'cta']);
 
+// every short gets its own background colour (scrims, tint, closing card): [r, g, b]
+const TINT: Record<string, [number, number, number]> = {
+  roll: [122, 46, 18], // terracotta
+  wrap: [14, 77, 74], // teal
+  puff: [107, 74, 18], // gold
+  sambal: [94, 16, 35], // wine
+  pizza: [18, 48, 90], // navy
+};
+const rgba = ([r, g, b]: [number, number, number], a: number) => `rgba(${r},${g},${b},${a})`;
+
 // full frame, but framed higher on the chef so the food and the Cooven stay in shot
 export const CARD: Box = {x: 0, y: 0, w: 1080, h: 1920, r: 0, ty: 0.3};
 
@@ -24,6 +34,7 @@ const capY = (p: Piece | undefined) => {
 /** v2 menu shorts: "clean recipe" look (see components/Clean.tsx). */
 export const ShortClean: React.FC<{data: Timeline; menuKey: string; preview?: boolean}> = ({data, menuKey, preview}) => {
   const m = MENUS[menuKey];
+  const tint = TINT[menuKey] ?? [0, 0, 0];
   const accent = m.accent;
   // no show branding or chef names on the v2 shorts: just the menu and its mode
   const kicker = `${m.menu} · Mode ${m.mode}`;
@@ -46,9 +57,11 @@ export const ShortClean: React.FC<{data: Timeline; menuKey: string; preview?: bo
           width: CARD.w,
           height: CARD.h,
           borderRadius: CARD.r,
-          background: 'linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 17%, rgba(0,0,0,0) 34%, rgba(0,0,0,0) 56%, rgba(0,0,0,0.34) 70%, rgba(0,0,0,0.34) 80%, rgba(0,0,0,0.1) 100%)',
+          background: `linear-gradient(180deg, ${rgba(tint, 0.62)} 0%, ${rgba(tint, 0.34)} 17%, ${rgba(tint, 0)} 34%, ${rgba(tint, 0)} 56%, ${rgba(tint, 0.42)} 70%, ${rgba(tint, 0.42)} 80%, ${rgba(tint, 0.16)} 100%)`,
         }}
       />
+      {/* light colour grade in the same hue, so each video reads as its own */}
+      <AbsoluteFill style={{background: rgba(tint, 0.5), mixBlendMode: 'soft-light', opacity: 0.35}} />
       <StepProgress overlays={data.overlays} accent={accent} total={data.total} />
       {data.overlays.map((o, i) => {
         const G = CLEAN_GRAPHICS[o.type];
@@ -68,7 +81,7 @@ export const ShortClean: React.FC<{data: Timeline; menuKey: string; preview?: bo
           }
           return (
             <Sequence key={i} from={o.frm} durationInFrames={o.dur} layout="none">
-              <G props={o.props} dur={o.dur} accent={accent} extra={{top, card: CARD}} />
+              <G props={o.props} dur={o.dur} accent={accent} extra={{top, card: CARD, tint: rgba(tint, 0.58)}} />
             </Sequence>
           );
         }

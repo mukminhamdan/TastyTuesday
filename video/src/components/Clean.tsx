@@ -228,7 +228,7 @@ export const CleanCta: React.FC<CP> = ({accent, extra}) => {
   return (
     <AbsoluteFill>
       {extra?.card ? (
-        <div style={{position: 'absolute', left: extra.card.x, top: extra.card.y, width: extra.card.w, height: extra.card.h, borderRadius: extra.card.r, background: 'rgba(12,8,5,0.45)', opacity: op}} />
+        <div style={{position: 'absolute', left: extra.card.x, top: extra.card.y, width: extra.card.w, height: extra.card.h, borderRadius: extra.card.r, background: extra?.tint ?? 'rgba(12,8,5,0.45)', opacity: op}} />
       ) : (
         <AbsoluteFill style={{background: 'rgba(12,8,5,0.45)', opacity: op}} />
       )}
