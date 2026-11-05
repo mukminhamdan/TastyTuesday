@@ -15,7 +15,9 @@ const HIDE_CAPS = new Set(['hook', 'cta']);
 export const ShortClean: React.FC<{data: Timeline; menuKey: string; preview?: boolean}> = ({data, menuKey, preview}) => {
   const m = MENUS[menuKey];
   const accent = m.accent;
-  const kicker = `Resepi ${m.chef}`; // chef-first: no show branding on the v2 shorts
+  // no show branding or chef names on the v2 shorts: just the menu and its mode
+  const kicker = `${m.menu} · Mode ${m.mode}`;
+  const kickerShort = m.menu;
   const steps = data.overlays.filter((o) => o.type === 'cstep' && o.props.n).length;
   const hideRanges = useMemo(
     () => data.overlays.filter((o) => HIDE_CAPS.has(o.type)).map((o) => [o.frm, o.frm + o.dur] as [number, number]),
@@ -46,7 +48,7 @@ export const ShortClean: React.FC<{data: Timeline; menuKey: string; preview?: bo
           }
           return (
             <Sequence key={i} from={o.frm} durationInFrames={o.dur} layout="none">
-              <G props={o.props} dur={o.dur} accent={accent} extra={{chef: m.chef, top}} />
+              <G props={o.props} dur={o.dur} accent={accent} extra={{top}} />
             </Sequence>
           );
         }
@@ -95,7 +97,7 @@ export const ShortClean: React.FC<{data: Timeline; menuKey: string; preview?: bo
         return (
           <Sequence key={i} from={o.frm} durationInFrames={o.dur} layout="none">
             <div style={{position: 'absolute', ...pos}}>
-              <G props={o.props} dur={o.dur} accent={accent} align={align} extra={{kicker, steps, narrow}} />
+              <G props={o.props} dur={o.dur} accent={accent} align={align} extra={{kicker, kickerShort, steps, narrow, noSub: true}} />
             </div>
           </Sequence>
         );

@@ -55,7 +55,7 @@ export const CleanHook: React.FC<CP> = ({props, dur, accent, align, extra}) => {
   const ta = align === 'right' ? 'right' : 'left';
   return (
     <div style={{opacity: interpolate(f, [dur - 8, dur - 1], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}), textAlign: ta}}>
-      <Kicker text={extra?.kicker ?? ''} accent={accent} align={ta} />
+      <Kicker text={narrow ? extra?.kickerShort ?? '' : extra?.kicker ?? ''} accent={accent} align={ta} />
       <div
         style={{
           marginTop: 18,
@@ -86,7 +86,7 @@ export const CleanHook: React.FC<CP> = ({props, dur, accent, align, extra}) => {
           );
         })}
       </div>
-      {props.sub && (
+      {props.sub && !extra?.noSub && (
         <div
           style={{
             marginTop: 16,
@@ -106,26 +106,13 @@ export const CleanHook: React.FC<CP> = ({props, dur, accent, align, extra}) => {
   );
 };
 
-/* ------------------------------------------------------------------ CHEF TITLE */
+/* ------------------------------------------------------------------ MENU TITLE */
 export const CleanTitle: React.FC<CP> = ({props, dur, accent}) => {
   const f = useCurrentFrame();
   return (
     <div style={{opacity: fade(f, dur, 8, 8), transform: `translateX(${-rise(f, 0, 18)}px)`}}>
-      <Kicker text={`Chef · Mode ${props.mode}`} accent={accent} />
+      <Kicker text={`Mode ${props.mode}`} accent={accent} />
       <div style={{marginTop: 10, fontFamily: F.serif, fontStyle: 'italic', fontSize: 84, lineHeight: 1, color: CREAM, textShadow: SHADOW}}>
-        {props.chef}
-      </div>
-      <div
-        style={{
-          marginTop: 8,
-          fontFamily: F.sans,
-          fontWeight: 600,
-          fontSize: 32,
-          color: CREAM,
-          opacity: interpolate(f, [6, 16], [0, 0.88], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}),
-          textShadow: SHADOW,
-        }}
-      >
         {props.menu}
       </div>
     </div>
@@ -234,16 +221,15 @@ const CtaIcon: React.FC<{kind: 'comment' | 'follow'; color: string}> = ({kind, c
 export const CleanCta: React.FC<CP> = ({accent, extra}) => {
   const f = useCurrentFrame();
   const op = interpolate(f, [0, 10], [0, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const chef = extra?.chef ?? '';
   const rows: [('comment' | 'follow'), string, number][] = [
     ['comment', 'Komen menu yang korang nak', 12],
-    ['follow', `Follow untuk resepi ${chef} seterusnya`, 18],
+    ['follow', 'Follow untuk resepi seterusnya', 18],
   ];
   return (
     <AbsoluteFill>
       <AbsoluteFill style={{background: 'rgba(12,8,5,0.45)', opacity: op}} />
       <div style={{position: 'absolute', top: extra?.top ?? 700, left: 70, right: 140, textAlign: 'center', opacity: op}}>
-        <Kicker text={`Suka resepi ${chef}?`} accent={accent} align="center" line={false} />
+        <Kicker text="Suka resepi ni?" accent={accent} align="center" line={false} />
         <div
           style={{
             marginTop: 18,
