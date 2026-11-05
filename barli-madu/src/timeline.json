@@ -1,5 +1,5 @@
 {
- "duration": 49.483,
+ "duration": 51.733,
  "clips": [
   {
    "clip": "VID_20261105_204259",
@@ -198,26 +198,11 @@
   },
   {
    "clip": "video_20261105_184910",
-   "from": 424.5,
-   "to": 428.5,
+   "from": 448.5,
+   "to": 451.5,
    "at": 36.9,
    "zoom": 1.0,
    "punch": true,
-   "focus": [
-    0.5,
-    0.45
-   ],
-   "speed": 1.5,
-   "muted": true,
-   "volume": 1.0
-  },
-  {
-   "clip": "video_20261105_184910",
-   "from": 448.0,
-   "to": 451.5,
-   "at": 39.567,
-   "zoom": 1.0,
-   "punch": false,
    "focus": [
     0.412,
     0.827
@@ -228,9 +213,39 @@
   },
   {
    "clip": "video_20261105_184910",
+   "from": 424.5,
+   "to": 428.5,
+   "at": 39.4,
+   "zoom": 1.0,
+   "punch": false,
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "speed": 1.5,
+   "muted": true,
+   "volume": 1.0
+  },
+  {
+   "clip": "video_20261105_184910",
+   "from": 437.0,
+   "to": 445.0,
+   "at": 42.067,
+   "zoom": 1.0,
+   "punch": false,
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "speed": 3.0,
+   "muted": true,
+   "volume": 1.0
+  },
+  {
+   "clip": "video_20261105_184910",
    "from": 457.0,
    "to": 460.0,
-   "at": 42.483,
+   "at": 44.733,
    "zoom": 1.0,
    "punch": false,
    "focus": [
@@ -245,7 +260,7 @@
    "clip": "VID_20261105_204259",
    "from": 2.5,
    "to": 6.5,
-   "at": 45.483,
+   "at": 47.733,
    "zoom": 1.0,
    "punch": true,
    "focus": [
@@ -304,8 +319,7 @@
     {
      "w": "sendiri",
      "s": 3.43,
-     "e": 4.57,
-     "hi": true
+     "e": 4.57
     }
    ],
    "pos": "low"
@@ -601,56 +615,147 @@
   },
   {
    "start": 37.1,
-   "end": 37.62,
+   "end": 38.14,
    "words": [
     {
-     "w": "Nak",
+     "w": "Botol",
      "s": 37.1,
      "e": 37.34
     },
     {
-     "w": "minum",
+     "w": "madu",
      "s": 37.36,
-     "e": 37.6
-    }
-   ],
-   "pos": "low"
-  },
-  {
-   "start": 37.62,
-   "end": 39.53,
-   "words": [
+     "e": 37.6,
+     "hi": true
+    },
     {
-     "w": "Bancuh",
+     "w": "dah",
      "s": 37.62,
      "e": 37.86
     },
     {
-     "w": "dengan",
+     "w": "kosong",
      "s": 37.88,
      "e": 38.12
-    },
-    {
-     "w": "air",
-     "s": 38.14,
-     "e": 39.28
     }
    ],
    "pos": "low"
   },
   {
-   "start": 42.783,
-   "end": 44.433,
+   "start": 38.14,
+   "end": 39.6,
+   "words": [
+    {
+     "w": "Jangan",
+     "s": 38.14,
+     "e": 38.38
+    },
+    {
+     "w": "buang",
+     "s": 38.4,
+     "e": 39.54
+    }
+   ],
+   "pos": "low"
+  },
+  {
+   "start": 39.6,
+   "end": 42.03,
+   "words": [
+    {
+     "w": "Tambah",
+     "s": 39.6,
+     "e": 39.84
+    },
+    {
+     "w": "air",
+     "s": 39.86,
+     "e": 40.1
+    },
+    {
+     "w": "suam",
+     "s": 40.12,
+     "e": 40.36,
+     "hi": true
+    },
+    {
+     "w": "dalam",
+     "s": 40.38,
+     "e": 40.62
+    },
+    {
+     "w": "botol",
+     "s": 40.64,
+     "e": 41.78
+    }
+   ],
+   "pos": "low"
+  },
+  {
+   "start": 42.267,
+   "end": 44.437,
    "words": [
     {
      "w": "Kacau",
-     "s": 42.783,
-     "e": 43.023
+     "s": 42.267,
+     "e": 42.507
     },
     {
-     "w": "siap",
-     "s": 43.043,
-     "e": 44.183
+     "w": "sampai",
+     "s": 42.527,
+     "e": 42.767
+    },
+    {
+     "w": "madu",
+     "s": 42.787,
+     "e": 43.027,
+     "hi": true
+    },
+    {
+     "w": "larut",
+     "s": 43.047,
+     "e": 44.187
+    }
+   ],
+   "pos": "low"
+  },
+  {
+   "start": 45.033,
+   "end": 45.293,
+   "words": [
+    {
+     "w": "Siap",
+     "s": 45.033,
+     "e": 45.273
+    }
+   ],
+   "pos": "low"
+  },
+  {
+   "start": 45.293,
+   "end": 47.763,
+   "words": [
+    {
+     "w": "Tak",
+     "s": 45.293,
+     "e": 45.533
+    },
+    {
+     "w": "bazir",
+     "s": 45.553,
+     "e": 45.793,
+     "hi": true
+    },
+    {
+     "w": "madu",
+     "s": 45.813,
+     "e": 46.053,
+     "hi": true
+    },
+    {
+     "w": "langsung",
+     "s": 46.073,
+     "e": 47.513
     }
    ],
    "pos": "low"
@@ -670,12 +775,6 @@
     "accent": 1
    },
    "slot": "top"
-  },
-  {
-   "type": "flash",
-   "at": 2.5,
-   "dur": 0.3,
-   "props": {}
   },
   {
    "type": "ingredients",
@@ -733,17 +832,6 @@
    "slot": "topRight"
   },
   {
-   "type": "sticker",
-   "at": 15.1,
-   "dur": 2.4,
-   "props": {
-    "emoji": "✨",
-    "x": 760,
-    "y": 600,
-    "size": 120
-   }
-  },
-  {
    "type": "step",
    "at": 17.95,
    "dur": 2.4,
@@ -752,17 +840,6 @@
     "label": "Tuang madu"
    },
    "slot": "topLeft"
-  },
-  {
-   "type": "sticker",
-   "at": 20.967,
-   "dur": 3.2,
-   "props": {
-    "emoji": "🍯",
-    "x": 780,
-    "y": 720,
-    "size": 140
-   }
   },
   {
    "type": "step",
@@ -785,59 +862,27 @@
    "slot": "topLeft"
   },
   {
-   "type": "tip",
-   "at": 30.967,
-   "dur": 2.6,
-   "props": {
-    "title": "TIPS",
-    "text": "Madu mesti tutup barli",
-    "emoji": "💡"
-   },
-   "slot": "top"
-  },
-  {
-   "type": "label",
-   "at": 33.667,
-   "dur": 3.1,
-   "props": {
-    "text": "SIAP! 🍯✨",
-    "size": 110
-   },
-   "slot": "top"
-  },
-  {
    "type": "step",
    "at": 36.95,
    "dur": 2.4,
    "props": {
     "n": 6,
-    "label": "Bancuh & minum"
+    "label": "Jangan bazir madu"
    },
    "slot": "topLeft"
   },
   {
-   "type": "flash",
-   "at": 45.483,
-   "dur": 0.3,
-   "props": {}
-  },
-  {
    "type": "cta",
-   "at": 45.733,
+   "at": 47.833,
    "dur": 3.75,
    "props": {
     "line1": "SAVE RESEPI NI",
-    "line2": "Follow untuk Tasty Tuesday seterusnya!"
+    "line2": "Follow untuk resepi seterusnya!"
    },
    "slot": "top"
   }
  ],
  "sfx": [
-  {
-   "name": "whoosh",
-   "at": 0,
-   "vol": 0.14
-  },
   {
    "name": "voice-hook",
    "at": 0.0,
@@ -846,202 +891,52 @@
   {
    "name": "impact",
    "at": 0.05,
-   "vol": 0.42
-  },
-  {
-   "name": "whoosh-fast",
-   "at": 2.38,
-   "vol": 0.22
-  },
-  {
-   "name": "whoosh-fast",
-   "at": 2.42,
-   "vol": 0.35
-  },
-  {
-   "name": "whoosh-fast",
-   "at": 2.7,
-   "vol": 0.35
-  },
-  {
-   "name": "pop",
-   "at": 2.8,
-   "vol": 0.35
-  },
-  {
-   "name": "sparkle",
-   "at": 2.8,
    "vol": 0.28
-  },
-  {
-   "name": "pop",
-   "at": 3.15,
-   "vol": 0.35
-  },
-  {
-   "name": "pop",
-   "at": 3.5,
-   "vol": 0.35
-  },
-  {
-   "name": "whoosh-fast",
-   "at": 4.78,
-   "vol": 0.22
   },
   {
    "name": "swipe",
    "at": 4.95,
-   "vol": 0.45
-  },
-  {
-   "name": "pop",
-   "at": 5.15,
-   "vol": 0.4
+   "vol": 0.22
   },
   {
    "name": "swipe",
    "at": 9.35,
-   "vol": 0.45
-  },
-  {
-   "name": "pop",
-   "at": 9.55,
-   "vol": 0.4
+   "vol": 0.22
   },
   {
    "name": "steam",
    "at": 12.3,
-   "vol": 0.4
-  },
-  {
-   "name": "tick",
-   "at": 12.4,
-   "vol": 0.4
-  },
-  {
-   "name": "riser",
-   "at": 13.6,
-   "vol": 0.3
-  },
-  {
-   "name": "whoosh-fast",
-   "at": 14.18,
-   "vol": 0.22
+   "vol": 0.28
   },
   {
    "name": "sparkle",
    "at": 15.0,
-   "vol": 0.35
-  },
-  {
-   "name": "drip",
-   "at": 15.1,
-   "vol": 0.4
-  },
-  {
-   "name": "whoosh-fast",
-   "at": 17.78,
    "vol": 0.22
   },
   {
    "name": "swipe",
    "at": 17.95,
-   "vol": 0.45
-  },
-  {
-   "name": "pop",
-   "at": 18.15,
-   "vol": 0.4
-  },
-  {
-   "name": "drip",
-   "at": 20.967,
-   "vol": 0.4
-  },
-  {
-   "name": "drip",
-   "at": 21.467,
-   "vol": 0.35
-  },
-  {
-   "name": "drip",
-   "at": 22.667,
-   "vol": 0.3
+   "vol": 0.22
   },
   {
    "name": "swipe",
    "at": 24.617,
-   "vol": 0.45
-  },
-  {
-   "name": "pop",
-   "at": 24.817,
-   "vol": 0.4
+   "vol": 0.22
   },
   {
    "name": "swipe",
    "at": 27.617,
-   "vol": 0.45
-  },
-  {
-   "name": "pop",
-   "at": 27.817,
-   "vol": 0.4
-  },
-  {
-   "name": "ding",
-   "at": 30.967,
-   "vol": 0.32
-  },
-  {
-   "name": "drip",
-   "at": 31.767,
-   "vol": 0.3
-  },
-  {
-   "name": "pop-high",
-   "at": 33.667,
-   "vol": 0.35
-  },
-  {
-   "name": "sparkle",
-   "at": 33.667,
-   "vol": 0.35
+   "vol": 0.22
   },
   {
    "name": "swipe",
    "at": 36.95,
-   "vol": 0.45
-  },
-  {
-   "name": "pop",
-   "at": 37.15,
-   "vol": 0.4
-  },
-  {
-   "name": "pop",
-   "at": 42.983,
-   "vol": 0.3
-  },
-  {
-   "name": "whoosh-fast",
-   "at": 45.363,
    "vol": 0.22
   },
   {
-   "name": "whoosh-fast",
-   "at": 45.403,
-   "vol": 0.35
-  },
-  {
-   "name": "whoosh",
-   "at": 45.683,
-   "vol": 0.3
-  },
-  {
    "name": "success",
-   "at": 45.733,
-   "vol": 0.45
+   "at": 47.833,
+   "vol": 0.25
   }
  ],
  "speech": [

@@ -41,7 +41,7 @@ export const HookTitle: React.FC<{o: Overlay}> = ({o}) => {
   return (
     <div style={{position: 'absolute', ...slotStyle(o.slot ?? 'top'), display: 'flex', flexDirection: 'column', alignItems: 'center', opacity: vis}}>
       {lines.map((l, i) => {
-        const s = spring({frame: frame - i * 5, fps, config: {damping: 9, stiffness: 260, mass: 0.6}});
+        const s = spring({frame: frame - i * 4, fps, config: {damping: 16, stiffness: 180, mass: 0.6}});
         const isAccent = i === accent;
         return (
           <div
@@ -57,7 +57,7 @@ export const HookTitle: React.FC<{o: Overlay}> = ({o}) => {
               padding: isAccent ? '6px 26px 12px' : '0 10px',
               borderRadius: 22,
               margin: '6px 0',
-              transform: `scale(${interpolate(s, [0, 1], [2.2, 1])}) rotate(${isAccent ? -2.5 : 0}deg)`,
+              transform: `scale(${interpolate(s, [0, 1], [1.25, 1])}) rotate(${isAccent ? -1.5 : 0}deg)`,
               opacity: s,
               boxShadow: isAccent ? '0 14px 0 rgba(58,34,14,0.85), 0 22px 40px rgba(0,0,0,0.35)' : undefined,
               ...(isAccent ? {} : textStroke(14)),
@@ -337,10 +337,10 @@ export const Flash: React.FC<{o: Overlay}> = ({o}) => {
 export const CTA: React.FC<{o: Overlay}> = ({o}) => {
   const {frame, fps, vis} = useLocal(o.dur);
   const line1 = (o.props?.line1 as string) ?? 'SAVE RESEPI NI';
-  const line2 = (o.props?.line2 as string) ?? 'Follow untuk Tasty Tuesday seterusnya!';
+  const line2 = (o.props?.line2 as string) ?? 'Follow untuk resepi seterusnya!';
   const s1 = spring({frame, fps, config: {damping: 10, stiffness: 200}});
   const s2 = spring({frame: frame - 8, fps, config: {damping: 12}});
-  const pulse = 1 + Math.sin(frame / 5) * 0.03;
+  const pulse = 1;
   return (
     <div style={{position: 'absolute', ...slotStyle(o.slot ?? 'top'), display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 18, opacity: vis}}>
       <div

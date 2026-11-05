@@ -31,7 +31,7 @@ export const Captions: React.FC<{pages: CaptionPage[]}> = ({pages}) => {
         justifyContent: 'center',
         alignContent: 'center',
         gap: '4px 36px',
-        transform: `translateY(${interpolate(enter, [0, 1], [30, 0])}px) scale(${interpolate(enter, [0, 1], [0.85, 1])})`,
+        transform: `translateY(${interpolate(enter, [0, 1], [14, 0])}px)`,
         opacity: enter,
       }}
     >
@@ -39,7 +39,7 @@ export const Captions: React.FC<{pages: CaptionPage[]}> = ({pages}) => {
         const active = t >= w.s && t < Math.max(w.e, w.s + 0.12);
         const spoken = t >= w.s;
         const pop = spring({frame: frame - Math.round(w.s * fps), fps, config: {damping: 10, stiffness: 300, mass: 0.5}});
-        const scale = active ? interpolate(pop, [0, 1], [1, 1.12]) : 1;
+        const scale = active ? interpolate(pop, [0, 1], [1, 1.05]) : 1;
         return (
           <span
             key={i}
@@ -53,7 +53,7 @@ export const Captions: React.FC<{pages: CaptionPage[]}> = ({pages}) => {
               color: active || w.hi ? C.honey : spoken ? C.white : 'rgba(255,255,255,0.88)',
               ...textStroke(14),
               textShadow: '0 6px 18px rgba(0,0,0,0.45)',
-              transform: `scale(${scale}) rotate(${active ? -2 : 0}deg)`,
+              transform: `scale(${scale})`,
               display: 'inline-block',
               transformOrigin: '50% 60%',
             }}

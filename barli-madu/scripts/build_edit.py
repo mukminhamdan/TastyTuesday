@@ -236,17 +236,17 @@ for i, p in enumerate(pages):
     caption_pages.append({"start": round(start, 3), "end": round(end, 3), "words": p, "pos": "low"})
 
 # ------------------------------------------------------------------ overlays & sfx
-AUTO_SFX = {
-    "hook": [("impact", 0.0, 0.42), ("whoosh", -0.05, 0.14)],
-    "step": [("swipe", 0.0, 0.45), ("pop", 0.2, 0.4)],
-    "ingredients": [("whoosh-fast", 0.0, 0.35)],
-    "timer": [("tick", 0.0, 0.4)],
-    "tip": [("ding", 0.0, 0.32)],
-    "label": [("pop-high", 0.0, 0.35)],
+AUTO_SFX = {  # simple style: one soft accent per graphic, nothing on decoration
+    "hook": [("impact", 0.0, 0.28)],
+    "step": [("swipe", 0.0, 0.22)],
+    "ingredients": [],
+    "timer": [],
+    "tip": [],
+    "label": [],
     "benefits": [],
-    "sticker": [("drip", 0.0, 0.4)],
-    "cta": [("success", 0.0, 0.45), ("whoosh", -0.05, 0.3)],
-    "flash": [("whoosh-fast", -0.08, 0.35)],
+    "sticker": [],
+    "cta": [("success", 0.0, 0.25)],
+    "flash": [],
 }
 
 overlays, sfx = [], []
@@ -265,12 +265,6 @@ for o in cuts.get("overlays", []):
     if o.get("sfx", True):
         for name, off, vol in AUTO_SFX.get(o["type"], []):
             sfx.append({"name": name, "at": round(max(0, at + off), 3), "vol": vol})
-        if o["type"] == "ingredients":
-            for i, it in enumerate(out["props"].get("items", [])):
-                sfx.append({"name": "pop", "at": round(at + it.get("at", i * 0.35), 3), "vol": 0.35})
-        if o["type"] == "benefits":
-            for i, _ in enumerate(out["props"].get("items", [])):
-                sfx.append({"name": "pop-high", "at": round(at + i * 0.2, 3), "vol": 0.3})
 
 for s in cuts.get("sfx", []):
     at = anchor(s)
@@ -278,11 +272,12 @@ for s in cuts.get("sfx", []):
         continue
     sfx.append({"name": s["name"], "at": round(at, 3), "vol": s.get("vol", 0.4)})
 
-# whoosh on every b-roll entry / section change
-for i, tc in enumerate(timeline_clips[1:], 1):
-    prev = timeline_clips[i - 1]
-    if tc["_broll"] != prev["_broll"] or tc["clip"] != prev["clip"]:
-        sfx.append({"name": "whoosh-fast", "at": round(max(0, tc["at"] - 0.12), 3), "vol": 0.22})
+# optional whoosh on section changes (off in the simple style)
+if cuts.get("cut_whoosh", False):
+    for i, tc in enumerate(timeline_clips[1:], 1):
+        prev = timeline_clips[i - 1]
+        if tc["_broll"] != prev["_broll"] or tc["clip"] != prev["clip"]:
+            sfx.append({"name": "whoosh-fast", "at": round(max(0, tc["at"] - 0.12), 3), "vol": 0.22})
 
 # caption bands: low (default) / high / mid -- avoid face and active graphics
 CAP_BANDS = {"low": (0.06, 0.62, 0.83, 0.75), "high": (0.06, 0.125, 0.83, 0.245), "mid": (0.06, 0.43, 0.83, 0.55)}

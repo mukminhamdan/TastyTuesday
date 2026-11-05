@@ -12,7 +12,7 @@ export const Root: React.FC = () => (
     width={W}
     height={H}
     fps={FPS}
-    durationInFrames={Math.ceil((timeline as Timeline).duration * FPS)}
-    defaultProps={{proxy: true, safeGuides: false, timeline: timeline as Timeline} satisfies MainProps}
+    durationInFrames={Math.ceil((timeline as unknown as Timeline).duration * FPS)}
+    defaultProps={{proxy: true, safeGuides: false, timeline: timeline as unknown as Timeline} satisfies MainProps}
   />
 );

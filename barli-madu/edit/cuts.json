@@ -3,12 +3,13 @@
  "emphasis": [
   "20",
   "BARLI",
+  "BAZIR",
   "LEMBUT",
   "MADU",
   "P2",
   "RATA",
-  "SENDIRI",
   "STEAM",
+  "SUAM",
   "TENGGELAM"
  ],
  "music": {
@@ -168,21 +169,30 @@
    ]
   },
   {
+   "id": "scrape",
+   "clip": "video_20261105_184910",
+   "from": 448.5,
+   "to": 451.5,
+   "speed": 1.2,
+   "broll": true,
+   "muted": true,
+   "punch": true
+  },
+  {
    "id": "water",
    "clip": "video_20261105_184910",
    "from": 424.5,
    "to": 428.5,
    "speed": 1.5,
    "broll": true,
-   "muted": true,
-   "punch": true
+   "muted": true
   },
   {
-   "id": "spoon",
+   "id": "stir",
    "clip": "video_20261105_184910",
-   "from": 448.0,
-   "to": 451.5,
-   "speed": 1.2,
+   "from": 437.0,
+   "to": 445.0,
+   "speed": 3.0,
    "broll": true,
    "muted": true
   },
@@ -272,14 +282,25 @@
    "hold": 1.4
   },
   {
+   "on": "scrape",
+   "off": 0.2,
+   "text": "Botol madu dah kosong? Jangan buang!"
+  },
+  {
    "on": "water",
    "off": 0.2,
-   "text": "Nak minum? Bancuh dengan air"
+   "text": "Tambah air suam dalam botol"
+  },
+  {
+   "on": "stir",
+   "off": 0.2,
+   "text": "Kacau sampai madu larut"
   },
   {
    "on": "glass",
    "off": 0.3,
-   "text": "Kacau, siap!"
+   "text": "Siap! Tak bazir madu langsung",
+   "hold": 1.2
   }
  ],
  "overlays": [
@@ -297,12 +318,6 @@
     ],
     "accent": 1
    }
-  },
-  {
-   "type": "flash",
-   "on": "tease",
-   "off": 0.0,
-   "dur": 0.3
   },
   {
    "type": "ingredients",
@@ -361,18 +376,6 @@
    }
   },
   {
-   "type": "sticker",
-   "on": "reveal",
-   "off": 0.8,
-   "dur": 2.4,
-   "props": {
-    "emoji": "✨",
-    "x": 760,
-    "y": 600,
-    "size": 120
-   }
-  },
-  {
    "type": "step",
    "on": "bowl",
    "off": 0.05,
@@ -380,18 +383,6 @@
    "props": {
     "n": 3,
     "label": "Tuang madu"
-   }
-  },
-  {
-   "type": "sticker",
-   "on": "honey1",
-   "off": 0.4,
-   "dur": 3.2,
-   "props": {
-    "emoji": "🍯",
-    "x": 780,
-    "y": 720,
-    "size": 140
    }
   },
   {
@@ -415,53 +406,24 @@
    }
   },
   {
-   "type": "tip",
-   "on": "top",
-   "off": 0.4,
-   "dur": 2.6,
-   "slot": "top",
-   "props": {
-    "title": "TIPS",
-    "text": "Madu mesti tutup barli",
-    "emoji": "💡"
-   }
-  },
-  {
-   "type": "label",
-   "on": "jars",
-   "off": 0.1,
-   "dur": 3.1,
-   "slot": "top",
-   "props": {
-    "text": "SIAP! 🍯✨",
-    "size": 110
-   }
-  },
-  {
    "type": "step",
-   "on": "water",
+   "on": "scrape",
    "off": 0.05,
    "dur": 2.4,
    "props": {
     "n": 6,
-    "label": "Bancuh & minum"
+    "label": "Jangan bazir madu"
    }
-  },
-  {
-   "type": "flash",
-   "on": "end",
-   "off": 0.0,
-   "dur": 0.3
   },
   {
    "type": "cta",
    "on": "end",
-   "off": 0.25,
+   "off": 0.1,
    "dur": 3.75,
    "slot": "top",
    "props": {
     "line1": "SAVE RESEPI NI",
-    "line2": "Follow untuk Tasty Tuesday seterusnya!"
+    "line2": "Follow untuk resepi seterusnya!"
    }
   }
  ],
@@ -476,55 +438,13 @@
    "name": "steam",
    "on": "cook2",
    "off": 0.0,
-   "vol": 0.4
-  },
-  {
-   "name": "riser",
-   "on": "cook2",
-   "off": 1.3,
-   "vol": 0.3
+   "vol": 0.28
   },
   {
    "name": "sparkle",
    "on": "reveal",
    "off": 0.7,
-   "vol": 0.35
-  },
-  {
-   "name": "sparkle",
-   "on": "tease",
-   "off": 0.3,
-   "vol": 0.28
-  },
-  {
-   "name": "drip",
-   "on": "honey1",
-   "off": 0.9,
-   "vol": 0.35
-  },
-  {
-   "name": "drip",
-   "on": "honey1",
-   "off": 2.1,
-   "vol": 0.3
-  },
-  {
-   "name": "drip",
-   "on": "top",
-   "off": 1.2,
-   "vol": 0.3
-  },
-  {
-   "name": "sparkle",
-   "on": "jars",
-   "off": 0.1,
-   "vol": 0.35
-  },
-  {
-   "name": "pop",
-   "on": "glass",
-   "off": 0.5,
-   "vol": 0.3
+   "vol": 0.22
   }
  ]
 }
