@@ -340,69 +340,60 @@ def hook45(a, b, headline, **kw):
 
 
 CLEAN45 = {
+    # only the steps done on the Food Engine Cooven (no ingredient prep)
     "roll": [
         hook45(3075.3, 3079.6, "Goreng tanpa risau hangus", align="right"),
-        (1094.6, 1099.8, dict(ov=[ttl("roll", 1094.65)])),
-        (1118.4, 1122.95, dict(ov=[st(1118.5, 1, "Gulung roti dengan inti sardin")])),
-        (1133.4, 1135.6, dict(ov=[st(1133.5, 2, "Sapu telur supaya melekat")])),
-        (1143.1, 1144.4, {}),
-        (1156.2, 1159.0, dict(ov=[st(1156.3, 3, "Celup telur, terus goreng")])),
-        (1198.1, 1202.3, K),
-        (1207.0, 1214.9, K),
-        (1340.0, 1345.4, dict(ov=[nt(1340.6, "180°C", "Deep Fry · tak hangit")])),
-        (3067.8, 3071.4, k(ov=[st(3067.9, 0, "Siap dihidang"), nt(3069.9, "< 20 min", "Satu buku roti")])),
+        (1106.5, 1110.1, dict(ov=[st(1106.6, 1, "Pilih Mode Deep Fry")])),
+        (1338.4, 1345.4, dict(ov=[st(1338.5, 2, "Goreng pada 180°C")])),
+        (1198.1, 1202.3, dict(ov=[st(1198.2, 3, "Biarkan, suhu kekal stabil")])),
+        (1207.0, 1214.9, {}),
+        (3067.8, 3071.4, dict(ov=[st(3067.9, 0, "Siap dihidang"), nt(3069.9, "< 20 min", "Satu buku roti")])),
         cta45("roll"),
     ],
     "wrap": [
         hook45(1955.7, 1957.5, "Wrap ala cafe dalam 4 minit", pos="low"),
-        (1974.6, 1977.6, k(zoom=1.08)),
-        (1385.3, 1390.2, dict(ov=[ttl("wrap", 1385.35)])),
-        (1391.3, 1395.8, dict(ov=[st(1391.4, 1, "Balut inti spicy tuna")])),
-        (1443.3, 1449.5, dict(ov=[nt(1446.9, "8 min", "Mode Grill · Medium")])),
-        (1456.2, 1459.6, dict(ov=[st(1456.3, 2, "Sapu sedikit minyak")])),
-        (1509.0, 1512.3, k(ov=[st(1509.1, 3, "Terbalikkan separuh masa")])),
-        (1958.8, 1960.7, K),
-        (1963.9, 1965.5, K),
+        (1974.6, 1977.6, dict(zoom=1.08)),
+        (1385.3, 1388.0, dict(ov=[ttl("wrap", 1385.35)])),
+        (1420.3, 1426.4, dict(ov=[st(1420.4, 1, "Mode Grill, guna grill pot")])),
+        (1443.3, 1449.5, dict(ov=[st(1443.4, 2, "Set 8 minit · Medium")])),
+        (1509.0, 1512.3, dict(ov=[st(1509.1, 3, "Terbalikkan bila mesin beri isyarat")])),
+        (1958.8, 1960.7, {}),
+        (1963.9, 1965.5, {}),
         (3103.3, 3106.5, dict(ov=[st(3103.4, 0, "Siap dihidang")])),
-        (3119.2, 3122.6, K),
+        (3119.2, 3122.6, {}),
         cta45("wrap"),
     ],
     "puff": [
         hook45(3160.7, 3163.3, "Sardin puff siap 10 minit"),
-        (1672.0, 1679.0, dict(ov=[ttl("puff", 1672.05), st(1675.4, 1, "Puff pastry + inti sardin")])),
-        (1686.5, 1690.3, dict(ov=[st(1686.6, 2, "Bentuk ikut suka")])),
-        (1728.0, 1733.0, dict(ov=[st(1728.1, 3, "Sapu kuning telur")])),
-        (1765.1, 1769.9, k(ov=[nt(1766.9, "180°C", "10 minit · Mode Oven")])),
+        (1719.1, 1723.4, dict(ov=[ttl("puff", 1719.15), st(1720.9, 1, "Pilih function Oven")])),
+        (1765.1, 1769.9, dict(ov=[st(1765.2, 2, "Bake 180°C · 10 minit")])),
         (2425.8, 2427.6, dict(ov=[st(2425.9, 0, "Siap dihidang")])),
-        (3200.6, 3203.0, {}),
-        (3178.9, 3182.2, k(ov=[nt(3179.9, "7 min", "Half-cook, simpan beku")])),
-        (3186.3, 3187.6, K),
+        (3178.9, 3182.2, dict(ov=[nt(3179.9, "7 min", "Half-cook, simpan beku")])),
+        (3186.3, 3187.6, {}),
         cta45("puff"),
     ],
     "sambal": [
         hook45(3233.6, 3235.9, "Sambal tak merecik ke dinding"),
-        (2329.0, 2333.0, k(zoom=1.06)),
-        (2058.0, 2063.2, dict(ov=[ttl("sambal", 2058.05), nt(2060.9, "140°C", "Mode Cooker · 15 min")])),
-        (2100.5, 2101.95, dict(ov=[st(2100.6, 1, "Tumis bawang")])),
-        (2104.4, 2106.2, {}),  # "...masukkan bawang | besar dengan bawang putih"
-        (2270.9, 2275.0, dict(ov=[st(2271.0, 2, "Masuk ibu sambal")])),
-        (2291.4, 2295.7, k(ov=[nt(2294.9, "8 liter", "Masak stok berbulan")])),
-        (2357.1, 2358.7, dict(ov=[st(2357.2, 3, "Air & sardin")])),
-        (2363.0, 2365.0, {}),
-        (2385.4, 2387.7, K),
+        (2329.0, 2333.0, dict(zoom=1.06)),
+        (2048.5, 2051.9, dict(ov=[st(2048.6, 1, "Pilih function Cooker")])),
+        (2058.0, 2063.2, dict(ov=[st(2058.1, 2, "Default 140°C · 15 minit")])),
+        (2165.0, 2169.5, dict(ov=[st(2165.1, 3, "Nak tumis laju? Mode Deep Fry")])),
+        (2270.9, 2275.0, dict(ov=[st(2271.0, 4, "Kembali ke 140°C")])),
+        (2291.4, 2295.7, dict(ov=[nt(2294.9, "8 liter", "Masak stok berbulan")])),
+        (2385.4, 2387.7, {}),
         (3240.5, 3243.2, dict(ov=[st(3240.6, 0, "Siap dihidang")])),
         cta45("sambal"),
     ],
     "pizza": [
-        hook45(2742.4, 2749.1, "\u201cPizza ni beli eh?\u201d", brolls=PIZZA_BROLL),
-        (2474.7, 2476.6, dict(ov=[ttl("pizza", 2474.75)])),
-        (2482.3, 2485.5, dict(ov=[st(2482.4, 1, "Masuk bila keluar \u2018Add Food\u2019")])),
-        (2641.5, 2644.7, k(ov=[nt(2643.7, "6 min", "Mode Pizza · oven biasa 15 min")])),
-        (2898.0, 2900.8, {}),
-        (2659.8, 2663.9, dict(ov=[st(2659.9, 2, "Minit ke-3: tabur cheese")])),
-        (2836.0, 2839.9, K),
+        hook45(2641.5, 2644.7, "Pizza siap 6 minit", brolls=PIZZA_BROLL),
+        (2460.5, 2462.9, dict(ov=[ttl("pizza", 2460.55)])),
+        (2631.9, 2637.7, dict(ov=[st(2632.0, 1, "Pilih Mode Pizza")])),
+        (2898.0, 2900.8, dict(ov=[st(2898.1, 2, "Suhu 220°C")])),
+        (2482.3, 2485.5, dict(ov=[st(2482.4, 3, "Masuk pizza bila keluar \u2018Add Food\u2019")])),
+        (2659.8, 2663.9, dict(ov=[st(2659.9, 4, "Minit ke-3: buka, masuk cheese")])),
+        (2836.0, 2839.9, {}),
         (3274.2, 3275.7, dict(ov=[st(3274.3, 0, "Siap dihidang")])),
-        (3283.4, 3289.0, K),
+        (3283.4, 3289.0, {}),
         cta45("pizza"),
     ],
 }
@@ -412,7 +403,26 @@ CLEAN_MUSIC = dict(roll=("m_080_02", 20), wrap=("m_151_06", 120), puff=("m_192_0
 
 
 # clips that continue a recipe step started in the clip before (they keep its captions)
-STEP_CONT = {("roll", 1143.1), ("sambal", 2104.4), ("sambal", 2363.0)}
+STEP_CONT = set()
+# one short caption per cooking step (spread over the chef's own words)
+CAPTXT = {
+    ("roll", 1106.5): "Guna mode deep fry",
+    ("roll", 1338.4): "Biar dalam suhu 180, hasil elok",
+    ("roll", 1198.1): "Suhu takkan naik, dia maintain",
+    ("wrap", 1420.3): "Grill mode guna grill pot",
+    ("wrap", 1443.3): "Set 8 minit, medium mode",
+    ("wrap", 1509.0): "Masa 4 minit, mesin suruh kita click",
+    ("puff", 1719.1): "Guna function oven untuk bake",
+    ("puff", 1765.1): "Bake 180 degree, 10 minit",
+    ("sambal", 2048.5): "Guna function cooker",
+    ("sambal", 2058.0): "Default 140 degree, 15 minit",
+    ("sambal", 2165.0): "Nak laju, guna mode deep fry",
+    ("sambal", 2270.9): "Guna balik suhu 140",
+    ("pizza", 2631.9): "Cooven ada special mode pizza",
+    ("pizza", 2898.0): "220 darjah, perfect untuk pizza",
+    ("pizza", 2482.3): "Add food maksudnya dah ready",
+    ("pizza", 2659.8): "Lepas 3 minit, buka dan masuk cheese",
+}
 
 
 def clean_short(key):
@@ -423,5 +433,7 @@ def clean_short(key):
         o = dict(o)
         # captions only while a cooking step is being explained
         o["cap"] = (key, a) in STEP_CONT or any(x[0] == "cstep" and x[2]["n"] for x in o.get("ov", []))
+        if (key, a) in CAPTXT:
+            o["captxt"] = CAPTXT[(key, a)]
         out.append((a, b, o))
     return out

@@ -51,7 +51,7 @@ export const CleanHook: React.FC<CP> = ({props, dur, accent, align, extra}) => {
   const words: string[] = String(props.text).split(' ');
   const len = String(props.text).length;
   const narrow = align === 'right' || extra?.narrow;
-  const size = Math.min(len <= 18 ? 136 : len <= 26 ? 120 : 104, narrow ? 104 : 999);
+  const size = Math.min(len <= 14 ? 136 : len <= 22 ? 108 : len <= 26 ? 118 : 104, narrow ? 104 : 999); // short lines stay on one line
   const ta = align === 'right' ? 'right' : 'left';
   return (
     <div style={{opacity: interpolate(f, [dur - 8, dur - 1], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}), textAlign: ta}}>

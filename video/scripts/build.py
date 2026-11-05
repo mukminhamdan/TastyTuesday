@@ -335,7 +335,7 @@ def build(vid, clips, layout, music_plan, style=None):
                 chunk.clear()
 
         show_caps = o.get("cap") or o.get("tag") == "hook"
-        ov_txt = OVERRIDES.get(vid, {}).get(str(ci))
+        ov_txt = o.get("captxt") or OVERRIDES.get(vid, {}).get(str(ci))
         if ov_txt is not None and out_words:
             if ov_txt.strip().upper() == "BUANG":
                 show_caps = False
