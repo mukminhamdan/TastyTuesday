@@ -307,47 +307,101 @@ TEASERS["pizza"] = [
 ] + part2(DISHES["pizza"])
 
 
-# ================================================================ CLEAN SHORTS (v2 look)
-# Same clips as SHORTS (so caption edits still line up), but a calmer graphic layer:
-# hook / chef title / numbered recipe steps (+ progress bar) / max two facts / CTA.
-# (type, source_time, props) — each time must fall inside one of the short's clips.
-CLEAN = {
+# ================================================================ CLEAN SHORTS (v2 look, < 45 s)
+# Tighter cut of each menu with a calmer graphic layer: hook / menu + mode title /
+# numbered recipe steps (+ progress bar) / max two facts / comment & follow CTA.
+# Overlays are (type, source_time, props); each time sits inside its own clip.
+
+
+def st(t, n, text):
+    return ("cstep", t, dict(n=n, text=text))
+
+
+def nt(t, big, label):
+    return ("cnote", t, dict(big=big, label=label))
+
+
+def ttl(key, t):
+    c = CHEFS[key]
+    return ("title", t, dict(menu=c["menu"], mode=c["mode"]))
+
+
+def cta45(key):
+    (a, b, o), = cta(DISHES[key])
+    return (a, 3352.0, o)  # "...nak tahu lagi resipi-resipi yang kita orang buat"
+
+
+def hook45(a, b, headline, **kw):
+    a_, b_, o = hook(a, b, headline, **kw)
+    o.update(zoom=1.06, push=0.04)
+    return (a_, b_, o)
+
+
+CLEAN45 = {
     "roll": [
-        ("cstep", 1118.5, dict(n=1, text="Gulung roti dengan inti sardin")),
-        ("cstep", 1133.5, dict(n=2, text="Sapu telur supaya melekat")),
-        ("cstep", 1156.3, dict(n=3, text="Celup telur, terus goreng")),
-        ("cnote", 1340.6, dict(big="180°C", label="Deep Fry · tak hangit")),
-        ("cstep", 3067.9, dict(n=0, text="Siap dihidang")),
-        ("cnote", 3069.9, dict(big="< 20 min", label="Satu buku roti")),
+        hook45(3075.3, 3079.6, "Goreng tanpa risau hangus", align="right"),
+        (1094.6, 1099.8, dict(ov=[ttl("roll", 1094.65)])),
+        (1118.4, 1123.0, dict(ov=[st(1118.5, 1, "Gulung roti dengan inti sardin")])),
+        (1133.4, 1135.6, dict(ov=[st(1133.5, 2, "Sapu telur supaya melekat")])),
+        (1143.1, 1144.4, {}),
+        (1156.2, 1159.0, dict(ov=[st(1156.3, 3, "Celup telur, terus goreng")])),
+        (1198.1, 1202.3, K),
+        (1207.0, 1214.9, K),
+        (1340.0, 1345.4, dict(ov=[nt(1340.6, "180°C", "Deep Fry · tak hangit")])),
+        (3067.8, 3071.4, k(ov=[st(3067.9, 0, "Siap dihidang"), nt(3069.9, "< 20 min", "Satu buku roti")])),
+        cta45("roll"),
     ],
     "wrap": [
-        ("cstep", 1390.5, dict(n=1, text="Balut inti spicy tuna")),
-        ("cnote", 1446.9, dict(big="8 min", label="Mode Grill · Medium")),
-        ("cstep", 1456.3, dict(n=2, text="Sapu sedikit minyak")),
-        ("cstep", 1502.3, dict(n=3, text="Terbalikkan separuh masa")),
-        ("cstep", 3103.4, dict(n=0, text="Siap dihidang")),
+        hook45(1955.7, 1957.5, "Wrap ala cafe dalam 4 minit", pos="low"),
+        (1974.6, 1977.6, k(zoom=1.08)),
+        (1385.3, 1390.2, dict(ov=[ttl("wrap", 1385.35)])),
+        (1391.3, 1395.8, dict(ov=[st(1391.4, 1, "Balut inti spicy tuna")])),
+        (1443.3, 1449.5, dict(ov=[nt(1446.9, "8 min", "Mode Grill · Medium")])),
+        (1456.2, 1459.6, dict(ov=[st(1456.3, 2, "Sapu sedikit minyak")])),
+        (1509.0, 1512.3, k(ov=[st(1509.1, 3, "Terbalikkan separuh masa")])),
+        (1958.8, 1960.7, K),
+        (1963.9, 1965.5, K),
+        (3103.3, 3106.5, dict(ov=[st(3103.4, 0, "Siap dihidang")])),
+        (3119.2, 3122.6, K),
+        cta45("wrap"),
     ],
     "puff": [
-        ("cstep", 1672.1, dict(n=1, text="Puff pastry + inti sardin")),
-        ("cstep", 1686.6, dict(n=2, text="Bentuk ikut suka")),
-        ("cstep", 1728.1, dict(n=3, text="Sapu kuning telur")),
-        ("cnote", 1766.9, dict(big="180°C", label="10 minit · Mode Oven")),
-        ("cstep", 2425.9, dict(n=0, text="Siap dihidang")),
-        ("cnote", 3179.9, dict(big="7 min", label="Half-cook, simpan beku")),
+        hook45(3160.7, 3163.3, "Sardin puff siap 10 minit"),
+        (1672.0, 1679.0, dict(ov=[ttl("puff", 1672.05), st(1675.4, 1, "Puff pastry + inti sardin")])),
+        (1686.5, 1690.3, dict(ov=[st(1686.6, 2, "Bentuk ikut suka")])),
+        (1728.0, 1733.0, dict(ov=[st(1728.1, 3, "Sapu kuning telur")])),
+        (1765.1, 1769.9, k(ov=[nt(1766.9, "180°C", "10 minit · Mode Oven")])),
+        (2425.8, 2427.6, dict(ov=[st(2425.9, 0, "Siap dihidang")])),
+        (3200.6, 3203.0, {}),
+        (3178.9, 3182.2, k(ov=[nt(3179.9, "7 min", "Half-cook, simpan beku")])),
+        (3186.3, 3187.6, K),
+        cta45("puff"),
     ],
     "sambal": [
-        ("cnote", 2058.0, dict(big="140°C", label="Mode Cooker · 15 min")),
-        ("cstep", 2100.6, dict(n=1, text="Tumis bawang")),
-        ("cstep", 2271.0, dict(n=2, text="Masuk ibu sambal")),
-        ("cnote", 2294.9, dict(big="8 liter", label="Masak stok berbulan")),
-        ("cstep", 2357.2, dict(n=3, text="Air & sardin")),
-        ("cstep", 3240.6, dict(n=0, text="Siap dihidang")),
+        hook45(3233.6, 3235.9, "Sambal tak merecik ke dinding"),
+        (2329.0, 2333.0, k(zoom=1.06)),
+        (2058.0, 2063.2, dict(ov=[ttl("sambal", 2058.05), nt(2060.9, "140°C", "Mode Cooker · 15 min")])),
+        (2100.5, 2101.95, dict(ov=[st(2100.6, 1, "Tumis bawang")])),
+        (2104.4, 2106.2, {}),  # "...masukkan bawang | besar dengan bawang putih"
+        (2270.9, 2275.0, dict(ov=[st(2271.0, 2, "Masuk ibu sambal")])),
+        (2291.4, 2295.7, k(ov=[nt(2294.9, "8 liter", "Masak stok berbulan")])),
+        (2357.1, 2358.7, dict(ov=[st(2357.2, 3, "Air & sardin")])),
+        (2363.0, 2365.0, {}),
+        (2385.4, 2387.7, K),
+        (3240.5, 3243.2, dict(ov=[st(3240.6, 0, "Siap dihidang")])),
+        cta45("sambal"),
     ],
     "pizza": [
-        ("cstep", 2482.4, dict(n=1, text="Masuk bila keluar ‘Add Food’")),
-        ("cnote", 2643.7, dict(big="6 min", label="Mode Pizza · oven biasa 15 min")),
-        ("cstep", 2659.9, dict(n=2, text="Minit ke-3: tabur cheese")),
-        ("cstep", 3274.3, dict(n=0, text="Siap dihidang")),
+        hook45(2742.4, 2749.1, "\u201cPizza ni beli eh?\u201d", brolls=PIZZA_BROLL),
+        (2474.7, 2476.6, dict(ov=[ttl("pizza", 2474.75)])),
+        (2482.3, 2485.5, dict(ov=[st(2482.4, 1, "Masuk bila keluar \u2018Add Food\u2019")])),
+        (2641.5, 2644.7, k(ov=[nt(2643.7, "6 min", "Mode Pizza · oven biasa 15 min")])),
+        (2898.0, 2900.8, {}),
+        (2659.8, 2663.9, dict(ov=[st(2659.9, 2, "Minit ke-3: tabur cheese")])),
+        (2836.0, 2839.9, K),
+        (3274.2, 3275.7, dict(ov=[st(3274.3, 0, "Siap dihidang")])),
+        (3283.4, 3289.0, K),
+        cta45("pizza"),
     ],
 }
 # fresh music beds for the v2 shorts (track, offset seconds)
@@ -356,17 +410,7 @@ CLEAN_MUSIC = dict(roll=("m_080_02", 20), wrap=("m_151_06", 120), puff=("m_192_0
 
 
 def clean_short(key):
-    """SHORTS[key] with the old chips/tips/stats/reveals swapped for the CLEAN layer."""
-    out = []
-    for a, b, o in SHORTS[key]:
-        o = dict(o)
-        o["ov"] = [x for x in o.get("ov", []) if x[0] in ("hook", "title", "cta")]
-        o.pop("ov2", None)
-        if o.get("tag") == "hook":
-            o["zoom"], o["push"] = 1.06, 0.04
-        out.append([a, b, o])
-    for typ, t, props in CLEAN[key]:
-        hit = [c for c in out if c[0] - 0.05 <= t < c[1]]
-        assert hit, (key, typ, t)
-        hit[0][2]["ov"] = hit[0][2]["ov"] + [(typ, t, props)]
-    return [tuple(c) for c in out]
+    for a, b, o in CLEAN45[key]:
+        for typ, t, _ in o.get("ov", []):
+            assert a - 0.05 <= t < b, (key, typ, t, a, b)
+    return CLEAN45[key]

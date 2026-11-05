@@ -336,7 +336,9 @@ def build(vid, clips, layout, music_plan, style=None):
                 flush()
             txt = " ".join(c["t"] for c in chunk + [w])
             mx_w, mx_c = (5, 26) if style == "clean" else (3, 17)
-            if chunk and (len(chunk) >= mx_w or len(txt) > mx_c or w["f0"] - chunk[-1]["f1"] > 8):
+            if chunk and chunk[-1]["t"].lower() == "food" and w["t"].lower().startswith("engine"):
+                pass  # never split the product name
+            elif chunk and (len(chunk) >= mx_w or len(txt) > mx_c or w["f0"] - chunk[-1]["f1"] > 8):
                 flush()
             chunk.append(w)
             if re.search(r"[.?!,]$", w["t"]):
@@ -384,8 +386,32 @@ def build(vid, clips, layout, music_plan, style=None):
     for ov in overlays:
         if ov["dur"] is None:
             ov["dur"] = total - ov["frm"]
-    # close captions so they don't overlap
     captions.sort(key=lambda c: c["frm"])
+    if style == "clean":
+        # no orphan one-word captions: fold them into the neighbouring phrase of the same clip
+        out = []
+        for c in captions:
+            p_ = out[-1] if out else None
+            if p_ and p_["clip"] == c["clip"] and (len(c["words"]) == 1 or len(p_["words"]) == 1) \
+                    and c["frm"] - p_["end"] < 30 and not re.search(r"[.?!]$", p_["words"][-1]["t"]) \
+                    and len(" ".join(w["t"] for w in p_["words"] + c["words"])) <= 34:
+                off = c["frm"] - p_["frm"]
+                p_["words"] += [dict(w, f=w["f"] + off) for w in c["words"]]
+                p_["end"] = c["end"]
+            else:
+                out.append(c)
+        captions[:] = out
+        # sentence case across phrases: capital only where a sentence (or a new clip) starts
+        start, last_clip = True, None
+        for c in captions:
+            if c["clip"] != last_clip:
+                start, last_clip = True, c["clip"]
+            for w in c["words"]:
+                t_ = w["t"]
+                keep = t_.rstrip(".,?!") in KEEP_CAPS or (t_.isupper() and len(t_) > 1)
+                w["t"] = t_[:1].upper() + t_[1:] if start else (t_ if keep else t_[:1].lower() + t_[1:])
+                start = bool(re.search(r"[.?!]$", t_))
+    # close captions so they don't overlap
     for i in range(len(captions) - 1):
         nxt = captions[i + 1]["frm"]
         captions[i]["end"] = min(max(captions[i]["end"] + 4, captions[i]["frm"] + 8), nxt) if nxt - captions[i]["end"] < 10 else captions[i]["end"] + 4
