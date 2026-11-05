@@ -3,13 +3,11 @@
  "emphasis": [
   "20",
   "BARLI",
-  "BAZIR",
   "LEMBUT",
   "MADU",
   "P2",
   "RATA",
   "STEAM",
-  "SUAM",
   "TENGGELAM"
  ],
  "music": {
@@ -169,43 +167,6 @@
    ]
   },
   {
-   "id": "scrape",
-   "clip": "video_20261105_184910",
-   "from": 448.5,
-   "to": 451.5,
-   "speed": 1.2,
-   "broll": true,
-   "muted": true,
-   "punch": true
-  },
-  {
-   "id": "water",
-   "clip": "video_20261105_184910",
-   "from": 424.5,
-   "to": 428.5,
-   "speed": 1.5,
-   "broll": true,
-   "muted": true
-  },
-  {
-   "id": "stir",
-   "clip": "video_20261105_184910",
-   "from": 437.0,
-   "to": 445.0,
-   "speed": 3.0,
-   "broll": true,
-   "muted": true
-  },
-  {
-   "id": "glass",
-   "clip": "video_20261105_184910",
-   "from": 457.0,
-   "to": 460.0,
-   "speed": 1.0,
-   "broll": true,
-   "muted": true
-  },
-  {
    "id": "end",
    "clip": "VID_20261105_204259",
    "from": 2.5,
@@ -287,27 +248,6 @@
    "off": 0.4,
    "text": "Siap! Stok barli madu",
    "hold": 1.4
-  },
-  {
-   "on": "scrape",
-   "off": 0.2,
-   "text": "Botol madu dah kosong? Jangan buang!"
-  },
-  {
-   "on": "water",
-   "off": 0.2,
-   "text": "Tambah air suam dalam botol"
-  },
-  {
-   "on": "stir",
-   "off": 0.2,
-   "text": "Kacau sampai madu larut"
-  },
-  {
-   "on": "glass",
-   "off": 0.3,
-   "text": "Siap! Tak bazir madu langsung",
-   "hold": 1.2
   }
  ],
  "overlays": [
@@ -405,16 +345,6 @@
    "props": {
     "n": 5,
     "label": "Isi balang"
-   }
-  },
-  {
-   "type": "step",
-   "on": "scrape",
-   "off": 0.05,
-   "dur": 2.4,
-   "props": {
-    "n": 6,
-    "label": "Jangan bazir madu"
    }
   },
   {
