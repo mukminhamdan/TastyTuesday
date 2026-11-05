@@ -13,7 +13,7 @@
     0.45
    ],
    "speed": 1,
-   "muted": false,
+   "muted": true,
    "volume": 1.0
   },
   {
@@ -824,12 +824,17 @@
   {
    "name": "whoosh",
    "at": 0,
-   "vol": 0.35
+   "vol": 0.14
+  },
+  {
+   "name": "voice-hook",
+   "at": 0.0,
+   "vol": 1.0
   },
   {
    "name": "impact",
    "at": 0.05,
-   "vol": 0.55
+   "vol": 0.42
   },
   {
    "name": "whoosh-fast",
@@ -1036,6 +1041,6 @@
  "music": {
   "src": "music/bgm.wav",
   "vol": 0.34,
-  "duck": 0.12
+  "duck": 0.06
  }
 }

@@ -11,7 +11,7 @@
  "music": {
   "src": "music/bgm.wav",
   "vol": 0.34,
-  "duck": 0.12
+  "duck": 0.06
  },
  "clips": [
   {
@@ -27,7 +27,8 @@
     0.45
    ],
    "volume": 1.0,
-   "tighten": false
+   "tighten": false,
+   "muted": true
   },
   {
    "id": "tease",
@@ -462,6 +463,12 @@
   }
  ],
  "sfx": [
+  {
+   "name": "voice-hook",
+   "on": "hook",
+   "off": 0.0,
+   "vol": 1.0
+  },
   {
    "name": "bubbles",
    "on": "cook2",

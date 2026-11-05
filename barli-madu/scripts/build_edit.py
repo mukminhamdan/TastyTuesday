@@ -181,7 +181,7 @@ EMPH = set(w.upper() for w in cuts.get("emphasis", []))
 FIX = cuts.get("word_fixes", {})
 words_tl = []
 for tc in timeline_clips:
-    if tc["muted"] or tc["_broll"]:
+    if tc["_broll"]:
         continue
     for w in A(tc["clip"])["words"]:
         mid = (w["start"] + w["end"]) / 2
@@ -237,7 +237,7 @@ for i, p in enumerate(pages):
 
 # ------------------------------------------------------------------ overlays & sfx
 AUTO_SFX = {
-    "hook": [("impact", 0.0, 0.55), ("whoosh", -0.05, 0.35)],
+    "hook": [("impact", 0.0, 0.42), ("whoosh", -0.05, 0.14)],
     "step": [("swipe", 0.0, 0.45), ("pop", 0.2, 0.4)],
     "ingredients": [("whoosh-fast", 0.0, 0.35)],
     "timer": [("tick", 0.0, 0.4)],
