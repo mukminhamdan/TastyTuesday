@@ -55,7 +55,7 @@ export const CleanHook: React.FC<CP> = ({props, dur, accent, align, extra}) => {
   const ta = align === 'right' ? 'right' : 'left';
   return (
     <div style={{opacity: interpolate(f, [dur - 8, dur - 1], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}), textAlign: ta}}>
-      <Kicker text={narrow ? String(extra?.kicker ?? 'Tasty Tuesday').split(' · ')[0] : extra?.kicker ?? 'Tasty Tuesday'} accent={accent} align={ta} />
+      <Kicker text={extra?.kicker ?? ''} accent={accent} align={ta} />
       <div
         style={{
           marginTop: 18,
@@ -218,41 +218,68 @@ export const CleanNote: React.FC<CP> = ({props, dur, accent, align}) => {
 };
 
 /* ------------------------------------------------------------------ CTA */
-export const CleanCta: React.FC<CP> = ({dur, accent}) => {
+const CtaIcon: React.FC<{kind: 'comment' | 'follow'; color: string}> = ({kind, color}) => (
+  <svg viewBox="0 0 24 24" style={{width: 46, height: 46, flexShrink: 0}} fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+    {kind === 'comment' ? (
+      <path d="M4 5h16v11H9l-5 4z" />
+    ) : (
+      <>
+        <circle cx="10" cy="8" r="4" />
+        <path d="M3 20c0-3.5 3-6 7-6s7 2.5 7 6M19 8v6M16 11h6" />
+      </>
+    )}
+  </svg>
+);
+
+export const CleanCta: React.FC<CP> = ({accent, extra}) => {
   const f = useCurrentFrame();
   const op = interpolate(f, [0, 10], [0, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const chef = extra?.chef ?? '';
+  const rows: [('comment' | 'follow'), string, number][] = [
+    ['comment', 'Komen menu yang korang nak', 12],
+    ['follow', `Follow untuk resepi ${chef} seterusnya`, 18],
+  ];
   return (
-    <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center'}}>
-      <AbsoluteFill style={{background: 'rgba(12,8,5,0.42)', opacity: op}} />
-      <div style={{position: 'absolute', top: 760, left: 70, right: 140, textAlign: 'center', opacity: op}}>
-        <Kicker text="Nak resepi lain?" accent={accent} align="center" line={false} />
+    <AbsoluteFill>
+      <AbsoluteFill style={{background: 'rgba(12,8,5,0.45)', opacity: op}} />
+      <div style={{position: 'absolute', top: extra?.top ?? 700, left: 70, right: 140, textAlign: 'center', opacity: op}}>
+        <Kicker text={`Suka resepi ${chef}?`} accent={accent} align="center" line={false} />
         <div
           style={{
             marginTop: 18,
             fontFamily: F.serif,
             fontStyle: 'italic',
-            fontSize: 118,
+            fontSize: 126,
             lineHeight: 0.98,
             color: CREAM,
             textShadow: SHADOW,
             transform: `translateY(${rise(f, 2, 24)}px)`,
           }}
         >
-          Follow Tasty Tuesday
+          Komen & follow
         </div>
-        <div style={{margin: '28px auto 0', width: 64, height: 3, borderRadius: 2, background: accent}} />
-        <div
-          style={{
-            marginTop: 24,
-            fontFamily: F.sans,
-            fontWeight: 600,
-            fontSize: 34,
-            color: CREAM,
-            textShadow: SHADOW,
-            opacity: interpolate(f, [10, 20], [0, 0.92], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}),
-          }}
-        >
-          Menu baru setiap Selasa
+        <div style={{margin: '30px auto 0', width: 64, height: 3, borderRadius: 2, background: accent}} />
+        <div style={{marginTop: 30, display: 'inline-flex', flexDirection: 'column', gap: 18, alignItems: 'flex-start'}}>
+          {rows.map(([kind, text, d]) => (
+            <div
+              key={kind}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 18,
+                fontFamily: F.sans,
+                fontWeight: 600,
+                fontSize: 36,
+                color: CREAM,
+                textShadow: SHADOW,
+                opacity: interpolate(f - d, [0, 8], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}),
+                transform: `translateY(${rise(f, d, 12)}px)`,
+              }}
+            >
+              <CtaIcon kind={kind} color={CREAM} />
+              <span>{text}</span>
+            </div>
+          ))}
         </div>
       </div>
     </AbsoluteFill>

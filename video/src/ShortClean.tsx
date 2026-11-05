@@ -15,7 +15,7 @@ const HIDE_CAPS = new Set(['hook', 'cta']);
 export const ShortClean: React.FC<{data: Timeline; menuKey: string; preview?: boolean}> = ({data, menuKey, preview}) => {
   const m = MENUS[menuKey];
   const accent = m.accent;
-  const kicker = `Menu ${String(m.n).padStart(2, '0')} · ${m.menu}`;
+  const kicker = `Resepi ${m.chef}`; // chef-first: no show branding on the v2 shorts
   const steps = data.overlays.filter((o) => o.type === 'cstep' && o.props.n).length;
   const hideRanges = useMemo(
     () => data.overlays.filter((o) => HIDE_CAPS.has(o.type)).map((o) => [o.frm, o.frm + o.dur] as [number, number]),
@@ -37,9 +37,16 @@ export const ShortClean: React.FC<{data: Timeline; menuKey: string; preview?: bo
         let align: 'left' | 'right' = 'left';
         let narrow = false;
         if (o.type === 'cta') {
+          // block is ~400px tall: sit under the face, or above it when the face is low
+          let top = 700;
+          for (const q of data.pieces.filter((q) => q.frm + q.dur > o.frm && q.frm < o.frm + o.dur)) {
+            const b = faceBox(q);
+            if (!b) continue;
+            top = (b.y0 + b.y1) / 2 < 1000 ? Math.max(top, Math.min(1090, b.y1 + 40)) : Math.min(top, Math.max(300, b.y0 - 440));
+          }
           return (
             <Sequence key={i} from={o.frm} durationInFrames={o.dur} layout="none">
-              <G props={o.props} dur={o.dur} accent={accent} />
+              <G props={o.props} dur={o.dur} accent={accent} extra={{chef: m.chef, top}} />
             </Sequence>
           );
         }
