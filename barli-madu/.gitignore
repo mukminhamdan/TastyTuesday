@@ -7,3 +7,4 @@ out/
 analysis/test.json
 analysis/*.log
 analysis/*_sheet.jpg
+public/master/

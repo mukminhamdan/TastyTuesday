@@ -17,7 +17,7 @@ const ClipView: React.FC<{c: Clip; proxy: boolean}> = ({c, proxy}) => {
   const durF = Math.round(((c.to - c.from) / (c.speed ?? 1)) * fps);
   const drift = interpolate(frame, [0, durF], [1, 1.035]);
   const [fx, fy] = c.focus ?? [0.5, 0.4];
-  const src = proxy ? staticFile(`proxy/${c.clip}.mp4`) : staticFile(`raw/${c.clip}.mp4`);
+  const src = proxy ? staticFile(`proxy/${c.clip}.mp4`) : staticFile(`master/${c.clip}.mp4`);
   return (
     <AbsoluteFill style={{transform: `scale(${base * punch * drift})`, transformOrigin: `${fx * 100}% ${fy * 100}%`}}>
       <OffthreadVideo
