@@ -124,18 +124,16 @@ export const CleanStep: React.FC<CP> = ({props, dur, accent, extra}) => {
   const f = useCurrentFrame();
   const done = !props.n;
   const total = extra?.steps ?? 3;
-  // settle: full size on entry, then shrinks to a quiet label for the rest of the step
-  const settle = interpolate(f, [70, 84], [1, 0.74], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.cubic)});
   return (
-    <div style={{opacity: fade(f, dur, 8, 6), transform: `scale(${settle})`, transformOrigin: '0% 0%'}}>
-      <Kicker text={done ? '✓  Siap' : `Langkah ${props.n} / ${total}`} accent={accent} />
+    <div style={{opacity: fade(f, dur, 8, 10)}}>
+      <div style={{width: 56, height: 4, borderRadius: 2, background: accent, opacity: done ? 1 : 0.9}} />
       <div
         style={{
-          marginTop: 10,
+          marginTop: 14,
           fontFamily: F.serif,
           fontStyle: 'italic',
-          fontSize: 66,
-          lineHeight: 1.02,
+          fontSize: 62,
+          lineHeight: 1.04,
           color: CREAM,
           textShadow: SHADOW,
           maxWidth: 820,
@@ -247,29 +245,6 @@ export const CleanCta: React.FC<CP> = ({accent, extra}) => {
           }}
         >
           Komen & follow
-        </div>
-        <div style={{margin: '30px auto 0', width: 64, height: 3, borderRadius: 2, background: accent}} />
-        <div style={{marginTop: 30, display: 'inline-flex', flexDirection: 'column', gap: 18, alignItems: 'flex-start'}}>
-          {rows.map(([kind, text, d]) => (
-            <div
-              key={kind}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 18,
-                fontFamily: F.sans,
-                fontWeight: 600,
-                fontSize: 36,
-                color: CREAM,
-                textShadow: SHADOW,
-                opacity: interpolate(f - d, [0, 8], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}),
-                transform: `translateY(${rise(f, d, 12)}px)`,
-              }}
-            >
-              <CtaIcon kind={kind} color={CREAM} />
-              <span>{text}</span>
-            </div>
-          ))}
         </div>
       </div>
     </AbsoluteFill>

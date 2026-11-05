@@ -390,12 +390,14 @@ def build(vid, clips, layout, music_plan, style=None):
     BIGT = {"hook", "title", "cta", "chapter", "bigtitle", "lineup", "recap", "endcard"}
     if style == "clean":
         BIGT = {"hook", "cta"}
+        # less on screen: no title card, no side notes; a step line shows briefly then clears
+        overlays[:] = [o for o in overlays if o["type"] not in ("title", "cnote")]
         top = sorted([o for o in overlays if o["type"] in ("title", "cstep")], key=lambda o: o["frm"])
         cta_f = min([o["frm"] for o in overlays if o["type"] == "cta"] or [total])
         for i, o_ in enumerate(top):
             nxt = top[i + 1]["frm"] if i + 1 < len(top) else cta_f
             if o_["type"] == "cstep" or o_["frm"] + o_["dur"] > nxt - 2:
-                o_["dur"] = max(15, nxt - 2 - o_["frm"])
+                o_["dur"] = max(15, min(105, nxt - 2 - o_["frm"]))
         small = sorted([o for o in overlays if o["type"] == "cnote"], key=lambda o: o["frm"])
     else:
         small = sorted([o for o in overlays if o["type"] not in BIGT], key=lambda o: o["frm"])

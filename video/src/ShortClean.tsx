@@ -2,7 +2,7 @@ import React, {useMemo} from 'react';
 import {AbsoluteFill, Sequence} from 'remotion';
 import {Box, Footage, Voice, faceBox, pieceAt} from './components/Footage';
 import {Piece} from './theme';
-import {CLEAN_GRAPHICS, CleanCaptions, StepProgress} from './components/Clean';
+import {CLEAN_GRAPHICS} from './components/Clean';
 import {Music, SfxTrack} from './components/AudioBed';
 import {PreviewBug} from './Short';
 import {C, MENUS, Timeline, loadFonts} from './theme';
@@ -62,7 +62,6 @@ export const ShortClean: React.FC<{data: Timeline; menuKey: string; preview?: bo
       />
       {/* light colour grade in the same hue, so each video reads as its own */}
       <AbsoluteFill style={{background: rgba(tint, 0.5), mixBlendMode: 'soft-light', opacity: 0.35}} />
-      <StepProgress overlays={data.overlays} accent={accent} total={data.total} />
       {data.overlays.map((o, i) => {
         const G = CLEAN_GRAPHICS[o.type];
         if (!G) return null;
@@ -135,7 +134,6 @@ export const ShortClean: React.FC<{data: Timeline; menuKey: string; preview?: bo
           </Sequence>
         );
       })}
-      <CleanCaptions caps={data.captions} pieces={data.pieces} hidden={hidden} capY={capY} />
       {preview && <PreviewBug />}
       <Voice pieces={data.pieces} />
       <Music src={data.music} speech={data.speech} total={data.total} under={0.1} open={0.3} />
