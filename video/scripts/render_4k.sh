@@ -5,7 +5,8 @@ cd "$(dirname "$0")/.." || exit 1
 OUT=out/final_4k; mkdir -p "$OUT/chunks"; LOG="$OUT/final.log"
 STEP=450
 for id in "$@"; do
-  n=$(npx remotion compositions --log=error 2>/dev/null | awk -v id="$id" '$1==id{print $4}')
+  n=$(node -e "const d=require('./src/data/'+process.argv[1]+'.json');console.log(d.total)" "$(node -e "const m={'Short-2-TortillaTuna':'wrap','Short-3-SardinPuff':'puff','Short-4-SambalSardin':'sambal','Short-5-PizzaTuna':'pizza'};console.log(m[process.argv[1]])" "$id")")
+  [ -n "$n" ] || { echo "NOFRAMES $id" >> "$LOG"; continue; }
   rm -rf /tmp/remotion-webpack-bundle-* /tmp/remotion-v4*-assets*
   : > "$OUT/chunks/$id.txt"
   for ((a=0; a<n; a+=STEP)); do
