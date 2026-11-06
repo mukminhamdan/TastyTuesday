@@ -19,6 +19,15 @@ const TINT: Record<string, [number, number, number]> = {
   sambal: [94, 16, 35], // wine
   pizza: [18, 48, 90], // navy
 };
+// border colour per video
+const FRAME: Record<string, string> = {
+  roll: '#9A3B1C', // terracotta
+  wrap: '#17706A', // teal
+  puff: '#C08A22', // gold
+  sambal: '#7C1C35', // wine
+  pizza: '#1D4F8E', // navy
+};
+const BORDER = 26;
 const rgba = ([r, g, b]: [number, number, number], a: number) => `rgba(${r},${g},${b},${a})`;
 
 // full frame, but framed higher on the chef so the food and the Cooven stay in shot
@@ -36,6 +45,7 @@ export const ShortClean: React.FC<{data: Timeline; menuKey: string; preview?: bo
   const m = MENUS[menuKey];
   const tint = TINT[menuKey] ?? [0, 0, 0];
   const accent = m.accent;
+  const frame = FRAME[menuKey] ?? '#222';
   // no show branding or chef names on the v2 shorts: just the menu and its mode
   const kicker = `${m.menu} · Mode ${m.mode}`;
   const kickerShort = m.menu;
@@ -61,6 +71,20 @@ export const ShortClean: React.FC<{data: Timeline; menuKey: string; preview?: bo
           background: 'linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.26) 16%, rgba(0,0,0,0) 32%, rgba(0,0,0,0) 58%, rgba(0,0,0,0.3) 72%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0.1) 100%)',
         }}
       />
+      {/* framed border in each menu's own colour (no colour filter on the footage) */}
+      <AbsoluteFill style={{overflow: 'hidden', pointerEvents: 'none'}}>
+        <div
+          style={{
+            position: 'absolute',
+            left: BORDER,
+            top: BORDER,
+            right: BORDER,
+            bottom: BORDER,
+            borderRadius: 36,
+            boxShadow: `0 0 0 ${BORDER * 3}px ${frame}, inset 0 0 0 2px rgba(255,246,234,0.45)`,
+          }}
+        />
+      </AbsoluteFill>
       {data.overlays.map((o, i) => {
         const G = CLEAN_GRAPHICS[o.type];
         if (!G) return null;
