@@ -71,7 +71,7 @@ export type Look = 'snappy' | 'cinema' | 'clean';
 const FILTER: Record<Look, string> = {
   snappy: 'saturate(1.2) contrast(1.05) brightness(1.05)',
   cinema: 'saturate(1.04) contrast(1.1) brightness(0.99)',
-  clean: 'url(#tt-premium) saturate(1.1)', // filmic editorial grade (see GradeDefs)
+  clean: 'url(#tt-premium) saturate(1.06)', // filmic editorial grade (see GradeDefs)
 };
 
 const PieceVideo: React.FC<{p: Piece; enter: boolean; whip: boolean; punchAt: number | null; look: Look; box: Box}> = ({p, enter, whip, punchAt, look, box}) => {
@@ -160,9 +160,9 @@ export const Voice: React.FC<{pieces: Piece[]}> = ({pieces}) => (
  * rolled-off highlights, warm highs / slightly cool shadows (keeps skin natural).
  */
 const CURVE = {
-  r: '0.03 0.105 0.235 0.378 0.522 0.668 0.802 0.912 0.975',
-  g: '0.025 0.098 0.222 0.358 0.5 0.645 0.784 0.896 0.965',
-  b: '0.045 0.118 0.232 0.352 0.482 0.622 0.756 0.87 0.945',
+  r: '0.02 0.098 0.224 0.36 0.5 0.642 0.78 0.895 0.97',
+  g: '0.02 0.098 0.224 0.36 0.5 0.642 0.78 0.895 0.97',
+  b: '0.02 0.098 0.224 0.36 0.5 0.642 0.78 0.895 0.97',
 };
 export const GradeDefs: React.FC = () => (
   <svg width={0} height={0} style={{position: 'absolute'}}>
@@ -191,20 +191,20 @@ export const Grade: React.FC<{look?: Look}> = ({look = 'snappy'}) => {
             look === 'cinema'
               ? 'radial-gradient(ellipse 78% 68% at 50% 42%, rgba(0,0,0,0) 50%, rgba(6,4,2,0.55) 100%)'
               : look === 'clean'
-              ? 'radial-gradient(ellipse 88% 76% at 50% 44%, rgba(0,0,0,0) 58%, rgba(8,5,3,0.30) 100%)'
+              ? 'radial-gradient(ellipse 88% 76% at 50% 44%, rgba(0,0,0,0) 62%, rgba(0,0,0,0.18) 100%)'
               : 'radial-gradient(ellipse 85% 75% at 50% 42%, rgba(0,0,0,0) 60%, rgba(10,6,2,0.22) 100%)',
         }}
       />
       {look === 'cinema' ? (
         <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(255,160,80,0.10), rgba(0,0,0,0) 45%, rgba(0,60,80,0.14))', mixBlendMode: 'soft-light'}} />
-      ) : (
+      ) : look === 'clean' ? null : (
         <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(255,190,110,0.07), rgba(0,0,0,0) 50%)', mixBlendMode: 'soft-light'}} />
       )}
       <AbsoluteFill
         style={{
           backgroundImage: `url(${staticFile('noise.png')})`,
           backgroundPosition: `${ox}px ${oy}px`,
-          opacity: look === 'cinema' ? 0.05 : look === 'clean' ? 0.03 : 0,
+          opacity: look === 'cinema' ? 0.05 : 0,
           mixBlendMode: 'overlay',
         }}
       />

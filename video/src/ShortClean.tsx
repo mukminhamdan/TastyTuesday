@@ -11,7 +11,7 @@ loadFonts();
 
 const HIDE_CAPS = new Set(['hook', 'cta']);
 
-// every short gets its own background colour (scrims, tint, closing card): [r, g, b]
+// per-menu colours (no longer applied: the v2 shorts now use a neutral, filter-free grade)
 const TINT: Record<string, [number, number, number]> = {
   roll: [122, 46, 18], // terracotta
   wrap: [14, 77, 74], // teal
@@ -57,11 +57,10 @@ export const ShortClean: React.FC<{data: Timeline; menuKey: string; preview?: bo
           width: CARD.w,
           height: CARD.h,
           borderRadius: CARD.r,
-          background: `linear-gradient(180deg, ${rgba(tint, 0.62)} 0%, ${rgba(tint, 0.34)} 17%, ${rgba(tint, 0)} 34%, ${rgba(tint, 0)} 56%, ${rgba(tint, 0.42)} 70%, ${rgba(tint, 0.42)} 80%, ${rgba(tint, 0.16)} 100%)`,
+          // neutral (no colour cast): just enough shade behind the type
+          background: 'linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.26) 16%, rgba(0,0,0,0) 32%, rgba(0,0,0,0) 58%, rgba(0,0,0,0.3) 72%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0.1) 100%)',
         }}
       />
-      {/* light colour grade in the same hue, so each video reads as its own */}
-      <AbsoluteFill style={{background: rgba(tint, 0.5), mixBlendMode: 'soft-light', opacity: 0.14}} />
       {data.overlays.map((o, i) => {
         const G = CLEAN_GRAPHICS[o.type];
         if (!G) return null;
@@ -80,7 +79,7 @@ export const ShortClean: React.FC<{data: Timeline; menuKey: string; preview?: bo
           }
           return (
             <Sequence key={i} from={o.frm} durationInFrames={o.dur} layout="none">
-              <G props={o.props} dur={o.dur} accent={accent} extra={{top, card: CARD, tint: rgba(tint, 0.58)}} />
+              <G props={o.props} dur={o.dur} accent={accent} extra={{top, card: CARD, tint: 'rgba(0,0,0,0.5)'}} />
             </Sequence>
           );
         }
