@@ -107,7 +107,7 @@ Muzik: orkestra moden + perkusi tradisional (rebana/gambus), 88–92 BPM, hangat
 
 ## 6. Perlu daripada anda sebelum render
 
-1. **Nama pengantin** untuk end card (sekarang: "Nama Pengantin & Pasangan").
+1. **Nama pengantin** untuk end card: **Marsya & Finn** ✓.
 2. **Muzik:** pilih satu trek bagi setiap reel (atau satu untuk ketiga-tiganya). Pilihan bebas royalti: YouTube Audio Library, Pixabay Music, Artlist, Epidemic Sound. Saya akan ukur BPM sebenar dan titik downbeat, dan semua cut akan disesuaikan secara automatik.
    - Kalau anda nak guna lagu trending dalam Instagram/TikTok, beritahu tajuknya. Saya sync cut ikut lagu tu dan export tanpa muzik, kemudian anda tambah lagu dalam app.
 3. **Lulus/ubah storyboard** (`storyboard/*.jpg`): tukar shot, susunan, atau teks.

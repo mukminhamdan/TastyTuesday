@@ -1,7 +1,7 @@
 {
   "_note": "Timeline untuk 3 reels. 'in' = saat dalam klip sumber, 'beats' = panjang shot dalam beat muzik, 'speed' = 1.0 normal / <1 slow motion. Masa output = beats x 60/bpm. Semua cut jatuh tepat pada beat.",
   "output": {"w": 1080, "h": 1920, "fps": 30},
-  "names": "Nama Pengantin & Pasangan",
+  "names": "Marsya & Finn",
   "date": "11 . 10 . 2026",
   "sources": {
     "HALL":      {"file": "VID_20261107_232731_694.mp4", "desc": "Dewan luas, chandelier, rombongan masuk (720p)"},
