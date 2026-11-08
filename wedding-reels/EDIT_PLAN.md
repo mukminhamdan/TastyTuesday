@@ -39,80 +39,86 @@ Status: **muzik dipilih, timeline disync ikut beat, preview 540p siap. Render fi
 
 ---
 
-## 3. Reel 1: "Hari Bahagia" (44.2s · 92.5 BPM)
+## 3. Reel 1: "Hari Bahagia" (42.2s · 97.1 BPM)
 *Highlight penuh: suasana > perarakan > ketibaan pengantin > kemeriahan > bersanding*
 
-Muzik: **Wedding - TRG Banks (CC0)**, mula pada saat 67.44 dalam lagu. Cut disesuaikan dengan beat sebenar lagu.
+Muzik: **Instrumental Melayu #7 (@DHMUSICART20)**, mula pada saat 2.76 dalam lagu. Cut disesuaikan dengan beat sebenar lagu.
 
 | # | Masa | Beat | Laju | Shot | Transition | Babak |
 |---|---|---|---|---|---|---|
-| 1 | 0:00.0–0:03.9 | 6 | 80% | HALL @0.0s · teks *Hari Bahagia* | fadein | PEMBUKA |
-| 2 | 0:03.9–0:05.2 | 2 | 100% | KOMPANG @6.0s | cut |  |
-| 3 | 0:05.2–0:06.4 | 2 | 100% | KOMPANG @1.5s | cut |  |
-| 4 | 0:06.4–0:10.4 | 6 | 60% | PENGAPIT @4.5s | dissolve | PERARAKAN |
-| 5 | 0:10.4–0:13.0 | 4 | 75% | PENGIRING @1.0s | cut |  |
-| 6 | 0:13.0–0:15.6 | 4 | 70% | PENGIRING @11.5s | cut |  |
-| 7 | 0:15.6–0:18.8 | 5 | 60% | ARRIVE @0.2s | dissolve | KEMUNCAK |
-| 8 | 0:18.8–0:25.3 | 10 | 50% | HERO @0.3s | cut |  |
-| 9 | 0:25.3–0:27.8 | 4 | 100% | GUEST @0.5s | cut |  |
-| 10 | 0:27.8–0:29.8 | 3 | 100% | SILAT @4.0s | cut | KEMERIAHAN |
-| 11 | 0:29.8–0:32.4 | 4 | 70% | DANCE @17.5s | cut |  |
-| 12 | 0:32.4–0:34.3 | 3 | 70% | DANCE @29.6s | cut |  |
-| 13 | 0:34.3–0:36.3 | 3 | 70% | DANCE @41.0s | cut |  |
-| 14 | 0:36.3–0:41.0 | 7 | 53% | SILAT @23.6s (dibingkai) · teks *Selamat Pengantin Baru* | dissolve | PENUTUP |
-| 15 | 0:41.0–0:44.2 | 5 | — | Hitam, **Marsya & Finn** + tarikh | dissolve |  |
+| 1 | 0:00.0–0:03.3 | 6 | 80% | HALL @0.0s · teks *Hari Bahagia* | fadein | PEMBUKA |
+| 2 | 0:03.3–0:04.8 | 2 | 100% | KOMPANG @6.0s | cut |  |
+| 3 | 0:04.8–0:06.1 | 2 | 100% | KOMPANG @1.5s | cut |  |
+| 4 | 0:06.1–0:09.9 | 6 | 60% | PENGAPIT @4.5s | dissolve | PERARAKAN |
+| 5 | 0:09.9–0:12.5 | 4 | 75% | PENGIRING @1.0s | cut |  |
+| 6 | 0:12.5–0:15.0 | 4 | 70% | PENGIRING @11.5s | cut |  |
+| 7 | 0:15.0–0:18.1 | 5 | 60% | ARRIVE @0.2s | dissolve | KEMUNCAK |
+| 8 | 0:18.1–0:24.5 | 10 | 50% | HERO @0.3s | cut |  |
+| 9 | 0:24.5–0:27.0 | 4 | 100% | GUEST @0.5s | cut |  |
+| 10 | 0:27.0–0:28.9 | 3 | 100% | SILAT @4.0s | cut | KEMERIAHAN |
+| 11 | 0:28.9–0:31.4 | 4 | 70% | DANCE @17.5s | cut |  |
+| 12 | 0:31.4–0:33.3 | 3 | 70% | DANCE @29.6s | cut |  |
+| 13 | 0:33.3–0:35.1 | 3 | 70% | DANCE @41.0s | cut |  |
+| 14 | 0:35.1–0:39.6 | 7 | 55% | SILAT @23.6s (dibingkai) · teks *Selamat Pengantin Baru* | dissolve | PENUTUP |
+| 15 | 0:39.6–0:42.2 | 5 | — | Hitam, **Marsya & Finn** + tarikh | dissolve |  |
 
-## 4. Reel 2: "Raja Sehari" (38.6s · 85.7 BPM)
+## 4. Reel 2: "Raja Sehari" (40.0s · 120.1 BPM)
 *Fokus pengantin: teaser senyuman > perarakan membina debaran > pendedahan pengantin > bersanding*
 
-Muzik: **Lullabies For The End Of The World #5 - HoliznaCC0 (CC0)**, mula pada saat 19.32 dalam lagu. Cut disesuaikan dengan beat sebenar lagu.
+Muzik: **Instrumental Melayu #2 (@DHMUSICART20)**, mula pada saat 97.77 dalam lagu. Cut disesuaikan dengan beat sebenar lagu.
 
 | # | Masa | Beat | Laju | Shot | Transition | Babak |
 |---|---|---|---|---|---|---|
-| 1 | 0:00.0–0:02.9 | 4 | 35% | HERO @3.7s · teks *Raja Sehari* | fadein | TEASER |
-| 2 | 0:02.9–0:03.6 | 1 | — | Hitam, **Marsya & Finn** + tarikh | dissolve |  |
-| 3 | 0:03.6–0:06.4 | 4 | 100% | KOMPANG @0.3s | dissolve | PERARAKAN |
-| 4 | 0:06.4–0:10.0 | 5 | 70% | PENGAPIT @0.5s | cut |  |
-| 5 | 0:10.0–0:12.9 | 4 | 70% | PENGIRING @4.5s | cut |  |
-| 6 | 0:12.9–0:15.0 | 3 | 60% | PENGAPIT @10.4s | cut |  |
-| 7 | 0:15.0–0:18.6 | 5 | 55% | ARRIVE @0.2s | dissolve | KEMUNCAK |
-| 8 | 0:18.6–0:26.4 | 12 | 45% | HERO @0.2s | cut |  |
-| 9 | 0:26.4–0:29.3 | 4 | 70% | SCREEN @4.0s | dissolve |  |
-| 10 | 0:29.3–0:31.4 | 3 | 100% | GUEST @6.0s | cut |  |
-| 11 | 0:31.4–0:35.7 | 6 | 55% | SILAT @23.6s (dibingkai) · teks *Selamat Pengantin Baru* | dissolve | PENUTUP |
-| 12 | 0:35.7–0:38.6 | 4 | — | Hitam, **Marsya & Finn** + tarikh | dissolve |  |
+| 1 | 0:00.0–0:03.0 | 6 | 35% | HERO @3.7s · teks *Raja Sehari* | fadein | TEASER |
+| 2 | 0:03.0–0:03.9 | 2 | — | Hitam, **Marsya & Finn** + tarikh | dissolve |  |
+| 3 | 0:03.9–0:06.9 | 6 | 100% | KOMPANG @0.3s | dissolve | PERARAKAN |
+| 4 | 0:06.9–0:11.0 | 8 | 70% | PENGAPIT @0.5s | cut |  |
+| 5 | 0:11.0–0:13.9 | 6 | 70% | PENGIRING @4.5s | cut |  |
+| 6 | 0:13.9–0:15.9 | 4 | 60% | PENGAPIT @10.4s | cut |  |
+| 7 | 0:15.9–0:19.9 | 8 | 55% | ARRIVE @0.2s | dissolve | KEMUNCAK |
+| 8 | 0:19.9–0:28.0 | 16 | 45% | HERO @0.2s | cut |  |
+| 9 | 0:28.0–0:31.0 | 6 | 70% | SCREEN @4.0s | dissolve |  |
+| 10 | 0:31.0–0:33.0 | 4 | 100% | GUEST @6.0s | cut |  |
+| 11 | 0:33.0–0:36.9 | 8 | 55% | SILAT @23.6s (dibingkai) · teks *Selamat Pengantin Baru* | dissolve | PENUTUP |
+| 12 | 0:36.9–0:40.0 | 6 | — | Hitam, **Marsya & Finn** + tarikh | dissolve |  |
 
-## 5. Reel 3: "Meriah" (40.0s · 90.0 BPM)
+## 5. Reel 3: "Meriah" (43.0s · 120.0 BPM)
 *Adat & kemeriahan: kompang, tetamu, silat, tarian - ditutup dengan pengantin*
 
-Muzik: **Street Lights Passing By - HoliznaCC0 (CC0)**, mula pada saat 96.71 dalam lagu. Cut disesuaikan dengan beat sebenar lagu.
+Muzik: **Instrumental Melayu #8 (@DHMUSICART20)**, mula pada saat 91.60 dalam lagu. Cut disesuaikan dengan beat sebenar lagu.
 
 | # | Masa | Beat | Laju | Shot | Transition | Babak |
 |---|---|---|---|---|---|---|
-| 1 | 0:00.0–0:02.7 | 4 | 100% | HALL @3.0s · teks *Meriah* | fadein | PEMBUKA |
-| 2 | 0:02.7–0:05.3 | 4 | 100% | KOMPANG @6.0s | cut |  |
-| 3 | 0:05.3–0:08.0 | 4 | 100% | GUEST @0.0s | cut |  |
-| 4 | 0:08.0–0:10.7 | 4 | 100% | KOMPANG @9.6s | cut |  |
-| 5 | 0:10.7–0:13.3 | 4 | 60% | SILAT @4.0s | cut | ADAT |
-| 6 | 0:13.3–0:15.3 | 3 | 100% | SILAT @7.0s | cut |  |
-| 7 | 0:15.3–0:17.3 | 3 | 100% | DANCE @1.0s | cut | TARIAN |
-| 8 | 0:17.3–0:19.3 | 3 | 100% | DANCE @10.0s | cut |  |
-| 9 | 0:19.3–0:22.0 | 4 | 50% | DANCE @17.8s | cut |  |
-| 10 | 0:22.0–0:24.0 | 3 | 60% | DANCE @29.5s | cut |  |
-| 11 | 0:24.0–0:26.0 | 3 | 100% | DANCE @49.5s | cut |  |
-| 12 | 0:26.0–0:28.0 | 3 | 100% | DANCE @55.5s | cut |  |
-| 13 | 0:28.0–0:30.7 | 4 | 60% | DANCE @41.6s | cut |  |
-| 14 | 0:30.7–0:34.6 | 6 | 50% | HERO @0.5s | dissolve | PENUTUP |
-| 15 | 0:34.6–0:37.3 | 4 | 60% | SILAT @24.0s (dibingkai) · teks *Selamat Pengantin Baru* | dissolve |  |
-| 16 | 0:37.3–0:40.0 | 4 | — | Hitam, **Marsya & Finn** + tarikh | dissolve |  |
+| 1 | 0:00.0–0:03.0 | 6 | 100% | HALL @3.0s · teks *Meriah* | fadein | PEMBUKA |
+| 2 | 0:03.0–0:06.0 | 6 | 100% | KOMPANG @6.0s | cut |  |
+| 3 | 0:06.0–0:09.0 | 6 | 100% | GUEST @0.0s | cut |  |
+| 4 | 0:09.0–0:12.0 | 6 | 100% | KOMPANG @9.2s | cut |  |
+| 5 | 0:12.0–0:15.0 | 6 | 60% | SILAT @4.0s | cut | ADAT |
+| 6 | 0:15.0–0:17.0 | 4 | 100% | SILAT @7.0s | cut |  |
+| 7 | 0:17.0–0:19.0 | 4 | 100% | DANCE @1.0s | cut | TARIAN |
+| 8 | 0:19.0–0:21.0 | 4 | 100% | DANCE @10.0s | cut |  |
+| 9 | 0:21.0–0:24.0 | 6 | 50% | DANCE @17.8s | cut |  |
+| 10 | 0:24.0–0:26.0 | 4 | 60% | DANCE @29.5s | cut |  |
+| 11 | 0:26.0–0:28.0 | 4 | 100% | DANCE @49.5s | cut |  |
+| 12 | 0:28.0–0:30.0 | 4 | 100% | DANCE @55.5s | cut |  |
+| 13 | 0:30.0–0:33.0 | 6 | 60% | DANCE @41.6s | cut |  |
+| 14 | 0:33.0–0:37.0 | 8 | 50% | HERO @0.5s | dissolve | PENUTUP |
+| 15 | 0:37.0–0:40.0 | 6 | 60% | SILAT @24.0s (dibingkai) · teks *Selamat Pengantin Baru* | dissolve |  |
+| 16 | 0:40.0–0:43.0 | 6 | — | Hitam, **Marsya & Finn** + tarikh | dissolve |  |
 
-### Muzik (CC0, tak perlu kredit)
-Semua lagu dari Free Music Archive dengan lesen CC0 1.0. Butiran dan pautan ada dalam `music_preview/MUSIC.md`. Fail penuh ada dalam `music/`.
+### Muzik: instrumental lagu Melayu (dibekalkan oleh pengguna)
+Sumber: fail "Easy Listening !!! Kumpulan Musik Instrumen Melayu @DHMUSICART20.mp3" (kompilasi 13 lagu, 64.6 minit) dalam folder Drive.
+- Reel 1: lagu #7 (96 BPM) · Reel 2: lagu #2 (120 BPM, cut half-time) · Reel 3: lagu #8 (120 BPM)
+- Lagu #5 dan #10 tidak digunakan kerana ada bahagian rosak (kosong) dalam fail.
+- Fail audio disimpan dalam `music_local/` dan **tidak di-commit** ke repo, kerana muzik ini berhak cipta.
+- Kekuatan bunyi dinormalkan ke -14 LUFS (standard Instagram/TikTok).
+- Hak cipta: untuk Instagram, guna versi `_TANPA-MUZIK` dan tambah lagu dari library Instagram, atau terima risiko di-mute.
+- Muzik CC0 sebelum ini (Wedding / Lullabies #5 / Street Lights) masih ada dalam `music/` sebagai sandaran.
 
 ## 6. Status & langkah seterusnya
 
 1. Nama pengantin: **Marsya & Finn** ✓
-2. Muzik CC0 dipilih dan disync ✓ (R1 Wedding · R2 Lullabies #5 · R3 Street Lights)
+2. Muzik instrumental Melayu disync ✓ (lagu #7 / #2 / #8 dari kompilasi @DHMUSICART20)
 3. Preview 540p siap ✓ (`out/*_preview.mp4`, tidak di-commit kerana fail video)
 4. **Menunggu:** kelulusan preview, atau senarai perubahan. Selepas itu baru render final 1080×1920.
 5. (Pilihan) Klip tambahan: bersalaman, merenjis, pelamin yang dirakam terus.

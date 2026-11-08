@@ -336,7 +336,8 @@ def render_video(cfg, reel, bpm, src_dir, out_dir, tmp, mode, music, music_offse
                       f"volume={e['nat']},adelay={d}|{d}[n{k}]")
             amix.append(f"[n{k}]")
             k += 1
-    fg.append(f"{''.join(amix)}amix=inputs={len(amix)}:normalize=0,atrim=duration={total:.3f}[aout]")
+    fg.append(f"{''.join(amix)}amix=inputs={len(amix)}:normalize=0,atrim=duration={total:.3f},"
+              f"loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[aout]")
 
     suffix = "" if music else "_CLICK"
     out = out_dir / f"{reel['id']}_{mode}{suffix}.mp4"

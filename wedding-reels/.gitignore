@@ -2,3 +2,4 @@ out/
 *.mp4
 *.mov
 __pycache__/
+music_local/

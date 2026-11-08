@@ -63,8 +63,8 @@
       "id": "reel1_hari_bahagia",
       "title": "Hari Bahagia",
       "concept": "Highlight penuh: suasana > perarakan > ketibaan pengantin > kemeriahan > bersanding",
-      "bpm": 92.55,
-      "music_brief": "Wedding - TRG Banks (CC0)",
+      "bpm": 97.13,
+      "music_brief": "Instrumental Melayu #7 (@DHMUSICART20)",
       "shots": [
         {
           "src": "HALL",
@@ -187,22 +187,22 @@
         }
       ],
       "music": {
-        "file": "music/R1_TRG-Banks_Wedding.mp3",
-        "offset": 67.437,
-        "title": "Wedding - TRG Banks (CC0)"
+        "file": "music_local/R1_melayu_T07.wav",
+        "offset": 2.763,
+        "title": "Instrumental Melayu #7 (@DHMUSICART20)"
       }
     },
     {
       "id": "reel2_raja_sehari",
       "title": "Raja Sehari",
       "concept": "Fokus pengantin: teaser senyuman > perarakan membina debaran > pendedahan pengantin > bersanding",
-      "bpm": 85.73,
-      "music_brief": "Lullabies For The End Of The World #5 - HoliznaCC0 (CC0)",
+      "bpm": 120.09,
+      "music_brief": "Instrumental Melayu #2 (@DHMUSICART20)",
       "shots": [
         {
           "src": "HERO",
           "in": 3.7,
-          "beats": 4,
+          "beats": 6,
           "speed": 0.35,
           "zoom": 1.04,
           "t": "fadein",
@@ -214,13 +214,13 @@
         },
         {
           "src": "BLACK",
-          "beats": 1,
+          "beats": 2,
           "t": "dissolve"
         },
         {
           "src": "KOMPANG",
           "in": 0.3,
-          "beats": 4,
+          "beats": 6,
           "speed": 1.0,
           "nat": 0.6,
           "t": "dissolve",
@@ -229,26 +229,26 @@
         {
           "src": "PENGAPIT",
           "in": 0.5,
-          "beats": 5,
+          "beats": 8,
           "speed": 0.7,
           "zoom": 1.05
         },
         {
           "src": "PENGIRING",
           "in": 4.5,
-          "beats": 4,
+          "beats": 6,
           "speed": 0.7
         },
         {
           "src": "PENGAPIT",
           "in": 10.4,
-          "beats": 3,
+          "beats": 4,
           "speed": 0.6
         },
         {
           "src": "ARRIVE",
           "in": 0.2,
-          "beats": 5,
+          "beats": 8,
           "speed": 0.55,
           "t": "dissolve",
           "act": "KEMUNCAK"
@@ -256,28 +256,28 @@
         {
           "src": "HERO",
           "in": 0.2,
-          "beats": 12,
+          "beats": 16,
           "speed": 0.45,
           "zoom": 1.06
         },
         {
           "src": "SCREEN",
           "in": 4.0,
-          "beats": 4,
+          "beats": 6,
           "speed": 0.7,
           "t": "dissolve"
         },
         {
           "src": "GUEST",
           "in": 6.0,
-          "beats": 3,
+          "beats": 4,
           "speed": 1.0,
           "nat": 0.25
         },
         {
           "src": "SILAT",
           "in": 23.6,
-          "beats": 6,
+          "beats": 8,
           "speed": 0.55,
           "mode": "framed",
           "t": "dissolve",
@@ -289,7 +289,7 @@
         },
         {
           "src": "BLACK",
-          "beats": 4,
+          "beats": 6,
           "t": "dissolve",
           "text": {
             "main": "{names}",
@@ -299,22 +299,22 @@
         }
       ],
       "music": {
-        "file": "music/R2_HoliznaCC0_Lullabies-5.mp3",
-        "offset": 19.325,
-        "title": "Lullabies For The End Of The World #5 - HoliznaCC0 (CC0)"
+        "file": "music_local/R2_melayu_T02.wav",
+        "offset": 97.773,
+        "title": "Instrumental Melayu #2 (@DHMUSICART20)"
       }
     },
     {
       "id": "reel3_meriah",
       "title": "Meriah",
       "concept": "Adat & kemeriahan: kompang, tetamu, silat, tarian - ditutup dengan pengantin",
-      "bpm": 90.0,
-      "music_brief": "Street Lights Passing By - HoliznaCC0 (CC0)",
+      "bpm": 119.99,
+      "music_brief": "Instrumental Melayu #8 (@DHMUSICART20)",
       "shots": [
         {
           "src": "HALL",
           "in": 3.0,
-          "beats": 4,
+          "beats": 6,
           "speed": 1.0,
           "zoom": 1.06,
           "t": "fadein",
@@ -328,28 +328,28 @@
         {
           "src": "KOMPANG",
           "in": 6.0,
-          "beats": 4,
+          "beats": 6,
           "speed": 1.0,
           "nat": 0.6
         },
         {
           "src": "GUEST",
           "in": 0.0,
-          "beats": 4,
+          "beats": 6,
           "speed": 1.0,
           "nat": 0.3
         },
         {
           "src": "KOMPANG",
-          "in": 9.6,
-          "beats": 4,
+          "in": 9.25,
+          "beats": 6,
           "speed": 1.0,
           "nat": 0.4
         },
         {
           "src": "SILAT",
           "in": 4.0,
-          "beats": 4,
+          "beats": 6,
           "speed": 0.6,
           "crop_x": 0.45,
           "act": "ADAT"
@@ -357,57 +357,57 @@
         {
           "src": "SILAT",
           "in": 7.0,
-          "beats": 3,
+          "beats": 4,
           "speed": 1.0,
           "crop_x": 0.52
         },
         {
           "src": "DANCE",
           "in": 1.0,
-          "beats": 3,
+          "beats": 4,
           "speed": 1.0,
           "act": "TARIAN"
         },
         {
           "src": "DANCE",
           "in": 10.0,
-          "beats": 3,
+          "beats": 4,
           "speed": 1.0
         },
         {
           "src": "DANCE",
           "in": 17.8,
-          "beats": 4,
+          "beats": 6,
           "speed": 0.5
         },
         {
           "src": "DANCE",
           "in": 29.5,
-          "beats": 3,
+          "beats": 4,
           "speed": 0.6
         },
         {
           "src": "DANCE",
           "in": 49.5,
-          "beats": 3,
+          "beats": 4,
           "speed": 1.0
         },
         {
           "src": "DANCE",
           "in": 55.5,
-          "beats": 3,
+          "beats": 4,
           "speed": 1.0
         },
         {
           "src": "DANCE",
           "in": 41.6,
-          "beats": 4,
+          "beats": 6,
           "speed": 0.6
         },
         {
           "src": "HERO",
           "in": 0.5,
-          "beats": 6,
+          "beats": 8,
           "speed": 0.5,
           "t": "dissolve",
           "act": "PENUTUP"
@@ -415,7 +415,7 @@
         {
           "src": "SILAT",
           "in": 24.0,
-          "beats": 4,
+          "beats": 6,
           "speed": 0.6,
           "mode": "framed",
           "t": "dissolve",
@@ -426,7 +426,7 @@
         },
         {
           "src": "BLACK",
-          "beats": 4,
+          "beats": 6,
           "t": "dissolve",
           "text": {
             "main": "{names}",
@@ -436,9 +436,9 @@
         }
       ],
       "music": {
-        "file": "music/R3_HoliznaCC0_Street-Lights.mp3",
-        "offset": 96.7,
-        "title": "Street Lights Passing By - HoliznaCC0 (CC0)"
+        "file": "music_local/R3_melayu_T08.wav",
+        "offset": 91.603,
+        "title": "Instrumental Melayu #8 (@DHMUSICART20)"
       }
     }
   ]
