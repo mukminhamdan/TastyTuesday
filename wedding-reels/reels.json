@@ -66,7 +66,7 @@
       "music": {
         "file": "music_local/R1_melayu_T07.wav",
         "title": "Instrumental Melayu #7 (@DHMUSICART20)",
-        "offset": 59.809
+        "offset": 84.329
       },
       "shots": [
         {
@@ -99,43 +99,25 @@
           "nat": 0.5
         },
         {
+          "src": "PENGAPIT",
+          "in": 4.5,
+          "beats": 8,
+          "speed": 0.6,
+          "t": "dissolve",
+          "act": "PERARAKAN"
+        },
+        {
           "src": "KOMPANG",
-          "in": 3.8,
+          "in": 4.1,
           "beats": 3,
           "speed": 1.0,
           "nat": 0.5
         },
         {
           "src": "PENGAPIT",
-          "in": 4.5,
-          "beats": 6,
-          "speed": 0.6,
-          "t": "dissolve",
-          "act": "PERARAKAN"
-        },
-        {
-          "src": "PENGAPIT",
-          "in": 7.0,
-          "beats": 4,
-          "speed": 0.7
-        },
-        {
-          "src": "PENGAPIT",
           "in": 10.4,
-          "beats": 3,
+          "beats": 6,
           "speed": 0.6
-        },
-        {
-          "src": "PENGAPIT",
-          "in": 12.0,
-          "beats": 4,
-          "speed": 0.7
-        },
-        {
-          "src": "PENGAPIT",
-          "in": 15.0,
-          "beats": 4,
-          "speed": 0.7
         },
         {
           "src": "PENGIRING",
@@ -145,33 +127,21 @@
         },
         {
           "src": "PENGAPIT",
-          "in": 18.0,
-          "beats": 3,
-          "speed": 1.0
+          "in": 15.0,
+          "beats": 4,
+          "speed": 0.7
         },
         {
           "src": "PENGIRING",
           "in": 4.5,
-          "beats": 4,
+          "beats": 8,
           "speed": 0.7
-        },
-        {
-          "src": "PENGIRING",
-          "in": 7.0,
-          "beats": 4,
-          "speed": 0.8
         },
         {
           "src": "PENGIRING",
           "in": 11.5,
-          "beats": 4,
+          "beats": 8,
           "speed": 0.7
-        },
-        {
-          "src": "PENGIRING",
-          "in": 13.5,
-          "beats": 4,
-          "speed": 0.8
         },
         {
           "src": "ARRIVE",
@@ -184,19 +154,13 @@
         {
           "src": "HERO",
           "in": 0.2,
-          "beats": 12,
-          "speed": 0.45,
-          "zoom": 1.05
+          "beats": 18,
+          "speed": 0.4,
+          "zoom": 1.06
         },
         {
           "src": "HERO",
-          "in": 3.6,
-          "beats": 6,
-          "speed": 0.35
-        },
-        {
-          "src": "HERO",
-          "in": 5.0,
+          "in": 5.6,
           "beats": 4,
           "speed": 0.7
         },
@@ -222,7 +186,7 @@
       "music": {
         "file": "music_local/R2_melayu_T09.wav",
         "title": "Instrumental Melayu #9 (@DHMUSICART20)",
-        "offset": 128.296
+        "offset": 152.271
       },
       "shots": [
         {
@@ -241,16 +205,10 @@
         },
         {
           "src": "SCREEN",
-          "in": 4.0,
-          "beats": 6,
+          "in": 4.4,
+          "beats": 10,
           "speed": 0.7,
           "act": "PENGANTIN DI SKRIN"
-        },
-        {
-          "src": "SCREEN",
-          "in": 6.5,
-          "beats": 6,
-          "speed": 0.7
         },
         {
           "src": "SILAT",
@@ -273,86 +231,51 @@
         {
           "src": "SILAT",
           "in": 0.0,
-          "beats": 6,
-          "speed": 0.7,
+          "beats": 8,
+          "speed": 0.6,
           "crop_x": 0.48
         },
         {
           "src": "SILAT",
-          "in": 2.2,
-          "beats": 4,
-          "speed": 1.0,
-          "crop_x": 0.5
-        },
-        {
-          "src": "SILAT",
-          "in": 4.2,
-          "beats": 6,
-          "speed": 0.6,
+          "in": 4.0,
+          "beats": 8,
+          "speed": 0.5,
           "crop_x": 0.43
         },
         {
           "src": "SILAT",
-          "in": 6.2,
+          "in": 7.0,
           "beats": 4,
           "speed": 1.0,
-          "crop_x": 0.38
+          "crop_x": 0.36
         },
         {
           "src": "SILAT",
-          "in": 8.3,
-          "beats": 2,
-          "speed": 1.0,
-          "crop_x": 0.45
-        },
-        {
-          "src": "SILAT",
-          "in": 9.5,
-          "beats": 4,
+          "in": 10.0,
+          "beats": 6,
           "speed": 1.0,
           "crop_x": 0.55
         },
         {
           "src": "SILAT",
-          "in": 11.6,
-          "beats": 4,
+          "in": 14.0,
+          "beats": 6,
           "speed": 1.0,
-          "crop_x": 0.57
+          "crop_x": 0.58
         },
         {
           "src": "SILAT",
-          "in": 13.7,
+          "in": 18.0,
           "beats": 4,
-          "speed": 1.0,
-          "crop_x": 0.6
-        },
-        {
-          "src": "SILAT",
-          "in": 15.8,
-          "beats": 2,
           "speed": 1.0,
           "crop_x": 0.52
         },
         {
           "src": "SILAT",
-          "in": 16.9,
-          "beats": 4,
-          "speed": 1.0,
-          "crop_x": 0.5
-        },
-        {
-          "src": "SILAT",
-          "in": 19.0,
-          "beats": 2,
-          "speed": 1.0,
-          "crop_x": 0.55
-        },
-        {
-          "src": "SILAT",
-          "in": 20.1,
+          "in": 21.0,
           "beats": 6,
           "speed": 0.7,
-          "crop_x": 0.57,
+          "crop_x": 0.58,
           "card": {
             "img": "next_part3.png",
             "in_frac": 0.25
@@ -389,19 +312,13 @@
         {
           "src": "DANCE",
           "in": 1.0,
-          "beats": 4,
+          "beats": 8,
           "speed": 1.0,
           "act": "TARIAN"
         },
         {
           "src": "DANCE",
-          "in": 3.2,
-          "beats": 4,
-          "speed": 1.0
-        },
-        {
-          "src": "DANCE",
-          "in": 5.5,
+          "in": 6.3,
           "beats": 6,
           "speed": 0.6
         },
@@ -461,7 +378,7 @@
         },
         {
           "src": "DANCE",
-          "in": 58.0,
+          "in": 59.0,
           "beats": 6,
           "speed": 0.6
         },
