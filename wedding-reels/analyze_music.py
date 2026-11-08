@@ -19,9 +19,13 @@ def main():
     a = ap.parse_args()
     y, sr = librosa.load(a.audio, sr=22050, mono=True)
     dur = len(y) / sr
-    tempo, beats = librosa.beat.beat_track(y=y, sr=sr, units="time")
-    # median beat interval is more precise than the coarse tempo estimate
-    bpm = 60.0 / float(np.median(np.diff(beats))) if len(beats) > 2 else float(np.atleast_1d(tempo)[0])
+    tempo, beats = librosa.beat.beat_track(y=y, sr=sr, hop_length=128, units="time")
+    # least-squares fit of beat times vs index: finer than the quantised tempo estimate
+    if len(beats) > 4:
+        slope = np.polyfit(np.arange(len(beats)), beats, 1)[0]
+        bpm = 60.0 / float(slope)
+    else:
+        bpm = float(np.atleast_1d(tempo)[0])
     rms = librosa.feature.rms(y=y)[0]
     t = librosa.frames_to_time(np.arange(len(rms)), sr=sr)
     best, best_t = -1, 0.0
