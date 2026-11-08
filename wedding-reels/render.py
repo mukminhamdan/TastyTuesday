@@ -316,8 +316,9 @@ def render_video(cfg, reel, bpm, src_dir, out_dir, tmp, mode, music, music_offse
         beat_times, music_offset = track_beats(music, music_offset)
     tl, total = build_timeline(cfg, reel, bpm, src_dir, beat_times)
     W, H = (1080, 1920) if mode == "final" else (540, 960)
-    crf = "16" if mode == "final" else "26"
+    crf = "19" if mode == "final" else "26"
     preset = "slow" if mode == "final" else "veryfast"
+    rate = ["-maxrate", "16M", "-bufsize", "32M"] if mode == "final" else []
     parts = []
     for e in tl:
         length = e["dur"] + e["head"] + e["tail"]
@@ -378,7 +379,7 @@ def render_video(cfg, reel, bpm, src_dir, out_dir, tmp, mode, music, music_offse
         if e.get("nat") and e["speed"] >= 0.999 and e["src"] != "BLACK":
             inputs += ["-ss", f"{e['in']:.3f}", "-t", f"{e['dur']:.3f}", "-i", str(e["file"])]
             d = int(e["start"] * 1000)
-            fg.append(f"[{k}:a]aresample=48000,afade=t=in:d=0.12,afade=t=out:st={e['dur']-0.15:.3f}:d=0.15,"
+            fg.append(f"[{k}:a]asetpts=PTS-STARTPTS,aresample=48000,afade=t=in:d=0.12,afade=t=out:st={e['dur']-0.15:.3f}:d=0.15,"
                       f"volume={e['nat']},adelay={d}|{d}[n{k}]")
             amix.append(f"[n{k}]")
             k += 1
@@ -388,7 +389,7 @@ def render_video(cfg, reel, bpm, src_dir, out_dir, tmp, mode, music, music_offse
     suffix = "" if music else "_CLICK"
     out = out_dir / f"{out_name or reel['id']}_{mode}{suffix}.mp4"
     run(["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", ";".join(fg),
-         "-map", "[vout]", "-map", "[aout]", "-c:v", "libx264", "-preset", preset, "-crf", crf,
+         "-map", "[vout]", "-map", "[aout]", "-c:v", "libx264", "-preset", preset, "-crf", crf, *rate,
          "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", str(out)])
 
     if music and mode == "final":
@@ -399,13 +400,13 @@ def render_video(cfg, reel, bpm, src_dir, out_dir, tmp, mode, music, music_offse
             if e.get("nat") and e["speed"] >= 0.999 and e["src"] != "BLACK":
                 nat_in += ["-ss", f"{e['in']:.3f}", "-t", f"{e['dur']:.3f}", "-i", str(e["file"])]
                 d = int(e["start"] * 1000)
-                nat_fg.append(f"[{j}:a]aresample=48000,afade=t=in:d=0.12,afade=t=out:st={e['dur']-0.15:.3f}:d=0.15,"
+                nat_fg.append(f"[{j}:a]asetpts=PTS-STARTPTS,aresample=48000,afade=t=in:d=0.12,afade=t=out:st={e['dur']-0.15:.3f}:d=0.15,"
                               f"volume={min(1.0, e['nat'] * 1.6):.2f},adelay={d}|{d}[n{j}]")
                 labels.append(f"[n{j}]")
                 j += 1
         nat_in += ["-f", "lavfi", "-i", f"anullsrc=r=48000:cl=stereo:d={total:.3f}"]
-        labels.append(f"[{j}:a]")
-        nat_fg.append(f"{''.join(labels)}amix=inputs={len(labels)}:normalize=0,atrim=duration={total:.3f}[aout]")
+        labels.insert(0, f"[{j}:a]")  # silence bed first: sets the full length (duration=first)
+        nat_fg.append(f"{''.join(labels)}amix=inputs={len(labels)}:duration=first:normalize=0[aout]")
         silent = out_dir / f"{out_name or reel['id']}_{mode}_TANPA-MUZIK.mp4"
         run(["ffmpeg", "-v", "error", "-y", *nat_in, "-filter_complex", ";".join(nat_fg),
              "-map", "0:v", "-map", "[aout]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
