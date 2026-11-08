@@ -343,6 +343,27 @@ def render_video(cfg, reel, bpm, src_dir, out_dir, tmp, mode, music, music_offse
     run(["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", ";".join(fg),
          "-map", "[vout]", "-map", "[aout]", "-c:v", "libx264", "-preset", preset, "-crf", crf,
          "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", str(out)])
+
+    if music and mode == "final":
+        # same picture, natural sound only: for adding a song from Instagram's music library
+        nat_in, nat_fg, labels = ["-i", str(out)], [], []
+        j = 1
+        for e in tl:
+            if e.get("nat") and e["speed"] >= 0.999 and e["src"] != "BLACK":
+                nat_in += ["-ss", f"{e['in']:.3f}", "-t", f"{e['dur']:.3f}", "-i", str(e["file"])]
+                d = int(e["start"] * 1000)
+                nat_fg.append(f"[{j}:a]aresample=48000,afade=t=in:d=0.12,afade=t=out:st={e['dur']-0.15:.3f}:d=0.15,"
+                              f"volume={min(1.0, e['nat'] * 1.6):.2f},adelay={d}|{d}[n{j}]")
+                labels.append(f"[n{j}]")
+                j += 1
+        nat_in += ["-f", "lavfi", "-i", f"anullsrc=r=48000:cl=stereo:d={total:.3f}"]
+        labels.append(f"[{j}:a]")
+        nat_fg.append(f"{''.join(labels)}amix=inputs={len(labels)}:normalize=0,atrim=duration={total:.3f}[aout]")
+        silent = out_dir / f"{reel['id']}_{mode}_TANPA-MUZIK.mp4"
+        run(["ffmpeg", "-v", "error", "-y", *nat_in, "-filter_complex", ";".join(nat_fg),
+             "-map", "0:v", "-map", "[aout]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
+             "-movflags", "+faststart", str(silent)])
+        print(f"  + {silent.name}")
     return out, total
 
 
