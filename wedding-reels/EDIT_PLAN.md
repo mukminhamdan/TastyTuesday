@@ -49,7 +49,7 @@ Tiga reel yang bersambung, untuk dimuat naik berturut-turut:
 | 2/3 | **Raja Sehari** | Pengantin di skrin dewan, bersanding, persembahan silat | Silat dipersembahkan di hadapan pelamin; berakhir dengan pesilat memberi salam + *"bersambung · Part 3"* |
 | 3/3 | **Tarian & Joget** | Persembahan tarian, kemudian joget lambak bersama tetamu (pengantin ikut berjoget) | Ditutup dengan end card *Selamat Pengantin Baru · Marsya & Finn* |
 
-**Intro setiap part:** kad tajuk emas: *PART n / 3* · **Marsya & Finn** (Great Vibes, gradient emas + glow) · **11 . 10 . 2026** (Cinzel) · nama bab. Fail `titles/*.png` dijana oleh `make_titles.py`.
+**Intro setiap part:** kad tajuk emas: *PART n / 3* · **Marsya & Finn** (Great Vibes, gradient emas + glow) · **11 . 10 . 2026** (Cinzel). Tiada caption di bawah tarikh. Fail `titles/*.png` dijana oleh `make_titles.py`.
 Tiada footage yang berulang antara part (sudah disemak secara automatik).
 
 ### Part 1/3: "Berarak Masuk" (39.4s · 97.1 BPM)

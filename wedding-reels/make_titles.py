@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Render the title cards (transparent 1080x1920 PNGs) for the 3-part series.
 
-  intro_partN.png   PART N / 3 . big gold script names . date . chapter name
+  intro_partN.png   PART N / 3 . big gold script names . date
   next_partN.png    "bersambung" + PART N / 3 >   (end of parts 1 and 2)
   end_card.png      Selamat Pengantin Baru . names . date   (end of part 3)
 
@@ -126,10 +126,7 @@ def intro(names, date, part, chapter):
     place(c, text_mask(f"PART {part} / 3", label, spacing=10), W / 2, top - 70, GOLD_LIGHT, shadow=0.6)
     ornament(c, int(top - 20))
     datef = font("Cinzel.ttf", 56, "SemiBold")
-    y0, y1 = place(c, text_mask(date, datef, spacing=12), W / 2, bot + 55, CREAM, shadow=0.6)
-    ornament(c, int(y1 + 38), half=120)
-    chap = font("Cinzel.ttf", 40, "Regular")
-    place(c, text_mask(chapter.upper(), chap, spacing=14), W / 2, y1 + 95, GOLD_LIGHT, shadow=0.6)
+    place(c, text_mask(date, datef, spacing=12), W / 2, bot + 55, CREAM, shadow=0.6)
     return c
 
 
