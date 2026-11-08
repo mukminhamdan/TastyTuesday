@@ -20,7 +20,8 @@ def main():
     y, sr = librosa.load(a.audio, sr=22050, mono=True)
     dur = len(y) / sr
     tempo, beats = librosa.beat.beat_track(y=y, sr=sr, units="time")
-    bpm = float(np.atleast_1d(tempo)[0])
+    # median beat interval is more precise than the coarse tempo estimate
+    bpm = 60.0 / float(np.median(np.diff(beats))) if len(beats) > 2 else float(np.atleast_1d(tempo)[0])
     rms = librosa.feature.rms(y=y)[0]
     t = librosa.frames_to_time(np.arange(len(rms)), sr=sr)
     best, best_t = -1, 0.0
