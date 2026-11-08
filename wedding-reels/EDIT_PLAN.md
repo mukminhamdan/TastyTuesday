@@ -43,32 +43,32 @@ Status: **muzik dipilih, timeline disync ikut beat, preview 540p siap. Render fi
 
 | Video | Tajuk | Durasi | Isi |
 |---|---|---|---|
-| Part 1/3 | **Berarak Masuk** | 47s | Ikut susunan perarakan: penari perempuan, penari lelaki, pengantin, keluarga pengantin, kompang, pesilat, kemudian kad *"bersambung · Part 2"* |
+| Part 1/3 | **Berarak Masuk** | 47s | Ikut susunan perarakan: penari perempuan, penari lelaki, keluarga pengantin, pengantin, kompang, pesilat, kemudian kad *"bersambung · Part 2"* |
 | Part 2/3 | **Raja Sehari** | 37s | Pengantin di skrin dewan, bersanding, persembahan silat, kemudian *"bersambung · Part 3"* (diluluskan, tidak diubah) |
 | Part 3/3 | **Tarian & Joget** | 43s | Persembahan tarian (momen yang jelas berbeza), joget lambak bersama tetamu, kemudian end card |
-| **Filem penuh** | **Marsya & Finn** | 71s | Edit highlight tersendiri (bawah 1:30), bukan cantuman 3 part: perarakan, pengantin, keluarga, kompang & pesilat, skrin & bersanding, silat, tarian, joget lambak, end card. Satu lagu sepanjang filem. |
+| **Filem penuh** | **Marsya & Finn** | 71s | Edit highlight tersendiri (bawah 1:30), bukan cantuman 3 part: perarakan, keluarga, pengantin, kompang & pesilat, skrin & bersanding, silat, tarian, joget lambak, end card. Satu lagu sepanjang filem. |
 
 - **Tiada shot ulangan:** setiap video disemak dengan `qa_repeats.py`: tiada footage bertindih dalam video atau antara part, dan tiada dua shot dari klip yang sama yang terlalu rapat (< 1.5s) sehingga nampak berulang.
 - **Intro:** kad emas *PART n / 3* · **Marsya & Finn** (Great Vibes) · **11 . 10 . 2026** (Cinzel). Filem penuh guna `intro_full.png` (tanpa label PART). Tiada caption di bawah tarikh.
 
-### Part 1/3: "Berarak Masuk" (46.9s · 97.1 BPM)
-*Part 1/3: perarakan masuk mengikut susunan: penari perempuan, penari lelaki, pengantin, keluarga pengantin, kompang, pesilat.*
+### Part 1/3: "Berarak Masuk" (46.7s · 97.1 BPM)
+*Part 1/3: perarakan masuk mengikut susunan: penari perempuan, penari lelaki, keluarga pengantin, pengantin, kompang, pesilat.*
 
-Muzik: **Instrumental Melayu #7 (@DHMUSICART20)**, mula pada saat 57.27. Cut disesuaikan dengan beat sebenar lagu.
+Muzik: **Instrumental Melayu #7 (@DHMUSICART20)**, mula pada saat 62.33. Cut disesuaikan dengan beat sebenar lagu.
 
 | # | Masa | Beat | Laju | Shot | Transition | Babak |
 |---|---|---|---|---|---|---|
-| 1 | 0:00.0–0:05.1 | 8 | 50% | PENGAPIT @0.0s · kad `intro_part1.png` | fadein | PENARI PEREMPUAN |
-| 2 | 0:05.1–0:09.4 | 8 | 60% | PENGAPIT @4.5s | cut |  |
+| 1 | 0:00.0–0:04.4 | 8 | 50% | PENGAPIT @0.0s · kad `intro_part1.png` | fadein | PENARI PEREMPUAN |
+| 2 | 0:04.4–0:09.4 | 8 | 60% | PENGAPIT @4.5s | cut |  |
 | 3 | 0:09.4–0:14.4 | 8 | 60% | PENGIRING @1.0s | dissolve | PENARI LELAKI |
-| 4 | 0:14.4–0:18.1 | 6 | 70% | PENGIRING @6.5s | cut |  |
-| 5 | 0:18.1–0:22.0 | 6 | 50% | ARRIVE @0.2s | dissolve | PENGANTIN |
-| 6 | 0:22.0–0:32.0 | 16 | 40% | HERO @0.2s | cut |  |
-| 7 | 0:32.0–0:34.5 | 4 | 70% | HERO @5.7s | cut | KELUARGA PENGANTIN |
-| 8 | 0:34.5–0:39.5 | 8 | 70% | PENGIRING @11.5s | cut |  |
-| 9 | 0:39.5–0:42.0 | 4 | 100% | KOMPANG @1.3s | dissolve | KOMPANG |
-| 10 | 0:42.0–0:44.4 | 4 | 100% | KOMPANG @6.0s | cut |  |
-| 11 | 0:44.4–0:46.9 | 4 | 39% | KOMPANG @11.3s · kad `next_part2.png` | cut | PESILAT |
+| 4 | 0:14.4–0:18.2 | 6 | 70% | PENGIRING @6.5s | cut |  |
+| 5 | 0:18.2–0:23.2 | 8 | 70% | PENGIRING @11.5s | cut | KELUARGA PENGANTIN |
+| 6 | 0:23.2–0:25.7 | 4 | 68% | HERO @5.7s | cut |  |
+| 7 | 0:25.7–0:29.4 | 6 | 50% | ARRIVE @0.2s | dissolve | PENGANTIN |
+| 8 | 0:29.4–0:39.4 | 16 | 40% | HERO @0.2s | cut |  |
+| 9 | 0:39.4–0:41.8 | 4 | 100% | KOMPANG @1.3s | dissolve | KOMPANG |
+| 10 | 0:41.8–0:44.3 | 4 | 100% | KOMPANG @6.0s | cut |  |
+| 11 | 0:44.3–0:46.7 | 4 | 40% | KOMPANG @11.3s · kad `next_part2.png` | cut | PESILAT |
 
 ### Part 2/3: "Raja Sehari" (36.8s · 121.7 BPM)
 *Part 2/3: pengantin di skrin dewan, bersanding, kemudian persembahan silat untuk pengantin.*
@@ -111,32 +111,32 @@ Muzik: **Instrumental Melayu #8 (@DHMUSICART20)**, mula pada saat 1.63. Cut dise
 | 13 | 0:36.0–0:39.0 | 6 | 100% | GUEST @7.0s | cut |  |
 | 14 | 0:39.0–0:43.0 | 8 | — | Hitam · kad `end_card.png` | dissolve |  |
 
-### Filem penuh: "Marsya & Finn" (70.6s · 97.1 BPM)
-*Filem penuh (bawah 1:30): highlight seluruh majlis mengikut susunan: perarakan, pengantin, kompang & pesilat, skrin & bersanding, silat, tarian, joget lambak, end card.*
+### Filem penuh: "Marsya & Finn" (70.2s · 97.1 BPM)
+*Filem penuh (bawah 1:30): highlight seluruh majlis mengikut susunan: perarakan, keluarga, pengantin, kompang & pesilat, skrin & bersanding, silat, tarian, joget lambak, end card.*
 
-Muzik: **Instrumental Melayu #7 (@DHMUSICART20)**, mula pada saat 4.78. Cut disesuaikan dengan beat sebenar lagu.
+Muzik: **Instrumental Melayu #7 (@DHMUSICART20)**, mula pada saat 2.76. Cut disesuaikan dengan beat sebenar lagu.
 
 | # | Masa | Beat | Laju | Shot | Transition | Babak |
 |---|---|---|---|---|---|---|
-| 1 | 0:00.0–0:05.3 | 8 | 50% | PENGAPIT @0.0s · kad `intro_full.png` | fadein | PERARAKAN |
-| 2 | 0:05.3–0:09.2 | 6 | 60% | PENGIRING @1.0s | cut |  |
-| 3 | 0:09.2–0:11.7 | 4 | 60% | ARRIVE @0.2s | dissolve | PENGANTIN |
-| 4 | 0:11.7–0:20.6 | 14 | 40% | HERO @0.2s | cut |  |
-| 5 | 0:20.6–0:24.4 | 6 | 70% | PENGIRING @11.5s | cut | KELUARGA |
-| 6 | 0:24.4–0:26.9 | 4 | 100% | KOMPANG @5.0s | cut | KOMPANG |
-| 7 | 0:26.9–0:29.4 | 4 | 100% | KOMPANG @9.2s | cut | PESILAT |
-| 8 | 0:29.4–0:33.1 | 6 | 70% | SCREEN @4.4s | dissolve | SKRIN |
-| 9 | 0:33.1–0:38.2 | 8 | 50% | SILAT @23.5s (dibingkai) | cut | BERSANDING |
-| 10 | 0:38.2–0:41.3 | 6 | 50% | SILAT @4.0s | dissolve | SILAT |
-| 11 | 0:41.3–0:43.7 | 4 | 100% | SILAT @10.0s | cut |  |
-| 12 | 0:43.7–0:46.2 | 4 | 70% | SILAT @19.8s | cut |  |
-| 13 | 0:46.2–0:50.0 | 6 | 50% | DANCE @10.0s | dissolve | TARIAN |
-| 14 | 0:50.0–0:53.7 | 6 | 50% | DANCE @17.8s | cut |  |
-| 15 | 0:53.7–0:56.3 | 4 | 60% | DANCE @41.6s | cut |  |
-| 16 | 0:56.3–0:58.6 | 4 | 100% | DANCE @49.5s | cut |  |
-| 17 | 0:58.6–1:01.9 | 6 | 100% | HALL @0.3s | cut | JOGET LAMBAK |
-| 18 | 1:01.9–1:05.7 | 6 | 100% | GUEST @7.0s | cut |  |
-| 19 | 1:05.7–1:10.6 | 8 | — | Hitam · kad `end_card.png` | dissolve |  |
+| 1 | 0:00.0–0:04.8 | 8 | 50% | PENGAPIT @0.0s · kad `intro_full.png` | fadein | PERARAKAN |
+| 2 | 0:04.8–0:08.6 | 6 | 60% | PENGIRING @1.0s | cut |  |
+| 3 | 0:08.6–0:12.5 | 6 | 70% | PENGIRING @11.5s | cut | KELUARGA |
+| 4 | 0:12.5–0:15.0 | 4 | 60% | ARRIVE @0.2s | dissolve | PENGANTIN |
+| 5 | 0:15.0–0:23.9 | 14 | 40% | HERO @0.2s | cut |  |
+| 6 | 0:23.9–0:26.4 | 4 | 100% | KOMPANG @5.0s | cut | KOMPANG |
+| 7 | 0:26.4–0:28.9 | 4 | 100% | KOMPANG @9.2s | cut | PESILAT |
+| 8 | 0:28.9–0:32.7 | 6 | 70% | SCREEN @4.4s | dissolve | SKRIN |
+| 9 | 0:32.7–0:37.7 | 8 | 50% | SILAT @23.5s (dibingkai) | cut | BERSANDING |
+| 10 | 0:37.7–0:41.1 | 6 | 50% | SILAT @4.0s | dissolve | SILAT |
+| 11 | 0:41.1–0:43.3 | 4 | 100% | SILAT @10.0s | cut |  |
+| 12 | 0:43.3–0:45.7 | 4 | 70% | SILAT @19.8s | cut |  |
+| 13 | 0:45.7–0:49.5 | 6 | 50% | DANCE @10.0s | dissolve | TARIAN |
+| 14 | 0:49.5–0:53.3 | 6 | 50% | DANCE @17.8s | cut |  |
+| 15 | 0:53.3–0:55.8 | 4 | 60% | DANCE @41.6s | cut |  |
+| 16 | 0:55.8–0:58.3 | 4 | 100% | DANCE @49.5s | cut |  |
+| 17 | 0:58.3–1:01.7 | 6 | 100% | HALL @0.3s | cut | JOGET LAMBAK |
+| 18 | 1:01.7–1:05.2 | 6 | 100% | GUEST @7.0s | cut |  |
+| 19 | 1:05.2–1:10.2 | 8 | — | Hitam · kad `end_card.png` | dissolve |  |
 
 ### Muzik: instrumental lagu Melayu (dibekalkan oleh pengguna)
 Sumber: fail "Easy Listening !!! Kumpulan Musik Instrumen Melayu @DHMUSICART20.mp3" (kompilasi 13 lagu, 64.6 minit) dalam folder Drive.
