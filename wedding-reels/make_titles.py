@@ -3,6 +3,7 @@
 
   intro_partN.png   PART N / 3 . big gold script names . date
   next_partN.png    "bersambung" + PART N / 3 >   (end of parts 1 and 2)
+  intro_full.png    names . date, no PART label (start of the full film)
   end_card.png      Selamat Pengantin Baru . names . date   (end of part 3)
 
 Names are drawn in Great Vibes with a champagne-to-gold gradient, a dark soft
@@ -130,6 +131,15 @@ def intro(names, date, part, chapter):
     return c
 
 
+def intro_full(names, date):
+    c = scrim(135, 0.47, 0.95, 0.45)
+    top, bot = names_block(c, names, H * 0.46)
+    ornament(c, int(top - 20), half=170)
+    datef = font("Cinzel.ttf", 56, "SemiBold")
+    place(c, text_mask(date, datef, spacing=12), W / 2, bot + 55, CREAM, shadow=0.6)
+    return c
+
+
 def next_card(nxt, chapter):
     c = scrim(120, 0.83, 0.9, 0.18)
     sc = font("GreatVibes-Regular.ttf", 110)
@@ -160,6 +170,7 @@ def main():
         intro(names, date, i, r["title"]).save(out / f"intro_part{i}.png")
         if i < len(parts):
             next_card(i + 1, parts[i]["title"]).save(out / f"next_part{i + 1}.png")
+    intro_full(names, date).save(out / "intro_full.png")
     end_card(names, date).save(out / "end_card.png")
     print("titles ->", sorted(p.name for p in out.glob("*.png")))
 

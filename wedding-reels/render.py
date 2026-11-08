@@ -17,7 +17,10 @@ Examples
 every cut lands on a beat.
 """
 import argparse
+import copy
+import hashlib
 import json
+import os
 import math
 import shutil
 import subprocess
@@ -293,7 +296,21 @@ def storyboard(cfg, reel, bpm, src_dir, out_dir, tmp):
 
 
 # ---------------------------------------------------------------- video
-def render_video(cfg, reel, bpm, src_dir, out_dir, tmp, mode, music, music_offset):
+def film_variant(reel, first):
+    """Copy of a part for the full film: no 'bersambung' cards, one intro card (no PART label) at the very start."""
+    r = copy.deepcopy(reel)
+    for s in r["shots"]:
+        card = s.get("card")
+        if not card:
+            continue
+        if card["img"].startswith("next_") or (card["img"].startswith("intro_part") and not first):
+            s.pop("card")
+        elif card["img"].startswith("intro_part"):
+            card["img"] = "intro_full.png"
+    return r
+
+
+def render_video(cfg, reel, bpm, src_dir, out_dir, tmp, mode, music, music_offset, out_name=None):
     beat_times = None
     if music:
         beat_times, music_offset = track_beats(music, music_offset)
@@ -310,8 +327,17 @@ def render_video(cfg, reel, bpm, src_dir, out_dir, tmp, mode, music, music_offse
         else:
             inp = ["-ss", f"{e['ss']:.3f}", "-t", f"{e['src_len'] + 0.2:.3f}", "-i", str(e["file"])]
         g = shot_graph(e, cfg, W, H, mode, tmp)
-        run(["ffmpeg", "-v", "error", "-y", *inp, *card_input(e, length), "-filter_complex", g, "-map", "[v]", "-an",
-             "-c:v", "libx264", "-preset", preset, "-crf", "12" if mode == "final" else "20", str(out)])
+        cmd = [*inp, *card_input(e, length), "-filter_complex", g, "-map", "[v]", "-an",
+               "-c:v", "libx264", "-preset", preset, "-crf", "12" if mode == "final" else "20"]
+        # cache rendered shots: identical shots (e.g. part vs full-film version) are only rendered once
+        stamp = [os.path.getmtime(x) for x in (e.get("file"), LUT) if x]
+        key = hashlib.sha1(json.dumps([cmd, stamp], default=str).encode()).hexdigest()[:20]
+        cache = out_dir / "cache" / f"{key}.mp4"
+        cache.parent.mkdir(parents=True, exist_ok=True)
+        if not cache.exists():
+            run(["ffmpeg", "-v", "error", "-y", *cmd, str(cache) + ".tmp.mp4"])
+            os.replace(str(cache) + ".tmp.mp4", cache)
+        out = cache
         parts.append(out)
         print(f"  shot {e['idx']:2d} {fmt(e['start'])} {e['src']}", flush=True)
 
@@ -360,7 +386,7 @@ def render_video(cfg, reel, bpm, src_dir, out_dir, tmp, mode, music, music_offse
               f"loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[aout]")
 
     suffix = "" if music else "_CLICK"
-    out = out_dir / f"{reel['id']}_{mode}{suffix}.mp4"
+    out = out_dir / f"{out_name or reel['id']}_{mode}{suffix}.mp4"
     run(["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", ";".join(fg),
          "-map", "[vout]", "-map", "[aout]", "-c:v", "libx264", "-preset", preset, "-crf", crf,
          "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", str(out)])
@@ -380,12 +406,42 @@ def render_video(cfg, reel, bpm, src_dir, out_dir, tmp, mode, music, music_offse
         nat_in += ["-f", "lavfi", "-i", f"anullsrc=r=48000:cl=stereo:d={total:.3f}"]
         labels.append(f"[{j}:a]")
         nat_fg.append(f"{''.join(labels)}amix=inputs={len(labels)}:normalize=0,atrim=duration={total:.3f}[aout]")
-        silent = out_dir / f"{reel['id']}_{mode}_TANPA-MUZIK.mp4"
+        silent = out_dir / f"{out_name or reel['id']}_{mode}_TANPA-MUZIK.mp4"
         run(["ffmpeg", "-v", "error", "-y", *nat_in, "-filter_complex", ";".join(nat_fg),
              "-map", "0:v", "-map", "[aout]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
              "-movflags", "+faststart", str(silent)])
         print(f"  + {silent.name}")
     return out, total
+
+
+def build_full(cfg, a, tmp):
+    """Render every part as a film segment and join them into one continuous film."""
+    segdir = a.out / "film_segments"
+    segdir.mkdir(parents=True, exist_ok=True)
+    segs, total = [], 0.0
+    for i, reel in enumerate(cfg["reels"]):
+        r = film_variant(reel, first=(i == 0))
+        music = HERE / r["music"]["file"]
+        out, t = render_video(cfg, r, r["bpm"], a.src, segdir, tmp, a.mode, music, r["music"]["offset"],
+                              out_name=f"seg{i + 1}_{r['id']}")
+        segs.append(out)
+        total += t
+    crf = "16" if a.mode == "final" else "26"
+    preset = "slow" if a.mode == "final" else "veryfast"
+    variants = [("", segs)]
+    if a.mode == "final":
+        variants.append(("_TANPA-MUZIK", [p.with_name(p.stem + "_TANPA-MUZIK.mp4") for p in segs]))
+    for suffix, files in variants:
+        inputs = []
+        for p in files:
+            inputs += ["-i", str(p)]
+        n = len(files)
+        streams = "".join(f"[{i}:v][{i}:a]" for i in range(n))
+        out = a.out / f"full_film_{a.mode}{suffix}.mp4"
+        run(["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", f"{streams}concat=n={n}:v=1:a=1[v][a]",
+             "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-preset", preset, "-crf", crf, "-pix_fmt", "yuv420p",
+             "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", str(out)])
+        print(f"full film: {total:.1f}s -> {out}")
 
 
 def main():
@@ -399,6 +455,8 @@ def main():
     ap.add_argument("--music-offset", type=float, default=0.0)
     ap.add_argument("--no-music", action="store_true", help="ignore the music set in reels.json (click track)")
     ap.add_argument("--config", type=Path, default=HERE / "reels.json")
+    ap.add_argument("--full", action="store_true", help="also build the full film (all parts joined, one intro, no 'bersambung' cards)")
+    ap.add_argument("--full-only", action="store_true", help="build only the full film")
     a = ap.parse_args()
     cfg = json.loads(a.config.read_text())
     if not LUT.exists():
@@ -417,9 +475,11 @@ def main():
             if a.mode == "storyboard":
                 sheet, tl, total = storyboard(cfg, reel, bpm, a.src, a.out, tmp)
                 print(f"{reel['id']}: {len(tl)} shots, {total:.1f}s @ {bpm} BPM -> {sheet}")
-            else:
+            elif not a.full_only:
                 out, total = render_video(cfg, reel, bpm, a.src, a.out, tmp, a.mode, music, offset)
                 print(f"{reel['id']}: {total:.1f}s -> {out}")
+        if (a.full or a.full_only) and a.mode != "storyboard":
+            build_full(cfg, a, tmp)
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
 
