@@ -415,15 +415,25 @@ def render_video(cfg, reel, bpm, src_dir, out_dir, tmp, mode, music, music_offse
 
 
 def build_full(cfg, a, tmp):
-    """Render every part as a film segment and join them into one continuous film."""
+    """The full film: its own highlight timeline (cfg['full']) with its own music, rendered like a part.
+    Falls back to joining the parts when no 'full' timeline is defined."""
+    full = cfg.get("full")
+    if full:
+        if a.mode == "storyboard":
+            sheet, tl, total = storyboard(cfg, full, full["bpm"], a.src, a.out, tmp)
+            print(f"{full['id']}: {len(tl)} shots, {total:.1f}s -> {sheet}")
+            return
+        out, total = render_video(cfg, full, full["bpm"], a.src, a.out, tmp, a.mode,
+                                  HERE / full["music"]["file"], full["music"]["offset"], out_name="full_film")
+        print(f"full film: {total:.1f}s -> {out}")
+        return
     segdir = a.out / "film_segments"
     segdir.mkdir(parents=True, exist_ok=True)
     segs, total = [], 0.0
     for i, reel in enumerate(cfg["reels"]):
         r = film_variant(reel, first=(i == 0))
-        music = HERE / r["music"]["file"]
-        out, t = render_video(cfg, r, r["bpm"], a.src, segdir, tmp, a.mode, music, r["music"]["offset"],
-                              out_name=f"seg{i + 1}_{r['id']}")
+        out, t = render_video(cfg, r, r["bpm"], a.src, segdir, tmp, a.mode, HERE / r["music"]["file"],
+                              r["music"]["offset"], out_name=f"seg{i + 1}_{r['id']}")
         segs.append(out)
         total += t
     crf = "16" if a.mode == "final" else "26"
@@ -472,13 +482,13 @@ def main():
             if music is None and reel.get("music") and not a.no_music:
                 music = HERE / reel["music"]["file"]
                 offset = reel["music"]["offset"]
-            if a.mode == "storyboard":
+            if a.mode == "storyboard" and not a.full_only:
                 sheet, tl, total = storyboard(cfg, reel, bpm, a.src, a.out, tmp)
                 print(f"{reel['id']}: {len(tl)} shots, {total:.1f}s @ {bpm} BPM -> {sheet}")
             elif not a.full_only:
                 out, total = render_video(cfg, reel, bpm, a.src, a.out, tmp, a.mode, music, offset)
                 print(f"{reel['id']}: {total:.1f}s -> {out}")
-        if (a.full or a.full_only) and a.mode != "storyboard":
+        if a.full or a.full_only:
             build_full(cfg, a, tmp)
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
