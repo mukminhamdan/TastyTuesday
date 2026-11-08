@@ -225,10 +225,30 @@ def shot_graph(e, cfg, W, H, mode, tmp, still=False):
     tf = text_filters(e, cfg, W, H, tmp, length, still)
     if tf:
         g += "," + ",".join(tf)
+    card = e.get("card")
+    if card:
+        # PNG title card (input 1) faded in with a small upward drift, faded out before the shot ends
+        t0 = e["head"] + (card["in_frac"] * e["dur"] if "in_frac" in card else card.get("in", 0.3))
+        t1 = e["head"] + e["dur"] - card.get("out", 0.0)
+        cg = f"[1:v]scale={W}:{H},format=rgba"
+        if not still:
+            cg += f",fade=t=in:st={t0:.3f}:d=0.7:alpha=1"
+            if card.get("out", 0.0) > 0:
+                cg += f",fade=t=out:st={t1 - 0.5:.3f}:d=0.5:alpha=1"
+        y = "0" if still else f"'{int(24 * H / 1920)}*max(0,1-(t-{t0:.3f})/1.4)'"
+        g += f"[base];{cg}[card];[base][card]overlay=0:{y}:eof_action=pass"
     tail = [] if still else [f"trim=duration={length:.4f}", "setpts=PTS-STARTPTS", "format=yuv420p", "settb=AVTB"]
     if tail:
         g += "," + ",".join(tail)
     return g + "[v]"
+
+
+def card_input(e, length, still=False):
+    card = e.get("card")
+    if not card:
+        return []
+    img = str(HERE / "titles" / card["img"])
+    return ["-loop", "1", "-framerate", "30", "-t", f"{length + 0.1:.3f}", "-i", img]
 
 
 # ---------------------------------------------------------------- storyboard
@@ -252,7 +272,7 @@ def storyboard(cfg, reel, bpm, src_dir, out_dir, tmp):
         lp.write_text(label + "\n" + label2)
         g = g[:-3] + (f",pad={W}:{H+70}:0:0:color=0x1a1410,drawtext=fontfile='{LABEL_FONT}':textfile='{lp}':expansion=none:"
                       f"fontsize=19:fontcolor=0xF2E6D0:x=10:y={H+8}:line_spacing=6[v]")
-        run(["ffmpeg", "-v", "error", "-y", *inp, "-filter_complex", g, "-map", "[v]", "-frames:v", "1", str(png)])
+        run(["ffmpeg", "-v", "error", "-y", *inp, *card_input(e, 1, still=True), "-filter_complex", g, "-map", "[v]", "-frames:v", "1", str(png)])
         frames.append(png)
     cols = 5
     rows = math.ceil(len(frames) / cols)
@@ -290,7 +310,7 @@ def render_video(cfg, reel, bpm, src_dir, out_dir, tmp, mode, music, music_offse
         else:
             inp = ["-ss", f"{e['ss']:.3f}", "-t", f"{e['src_len'] + 0.2:.3f}", "-i", str(e["file"])]
         g = shot_graph(e, cfg, W, H, mode, tmp)
-        run(["ffmpeg", "-v", "error", "-y", *inp, "-filter_complex", g, "-map", "[v]", "-an",
+        run(["ffmpeg", "-v", "error", "-y", *inp, *card_input(e, length), "-filter_complex", g, "-map", "[v]", "-an",
              "-c:v", "libx264", "-preset", preset, "-crf", "12" if mode == "final" else "20", str(out)])
         parts.append(out)
         print(f"  shot {e['idx']:2d} {fmt(e['start'])} {e['src']}", flush=True)

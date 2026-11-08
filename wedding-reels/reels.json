@@ -60,47 +60,57 @@
   },
   "reels": [
     {
-      "id": "reel1_hari_bahagia",
-      "title": "Hari Bahagia",
-      "concept": "Highlight penuh: suasana > perarakan > ketibaan pengantin > kemeriahan > bersanding",
+      "id": "part1_ketibaan",
+      "title": "Ketibaan",
+      "concept": "Part 1/3: suasana dewan, kompang, perarakan pengapit & pengiring, debaran tetamu. Berakhir dengan pengantin muncul di tangga (cliffhanger).",
+      "music": {
+        "file": "music_local/R1_melayu_T07.wav",
+        "offset": 165.907,
+        "title": "Instrumental Melayu #7 (@DHMUSICART20)"
+      },
       "bpm": 97.13,
-      "music_brief": "Instrumental Melayu #7 (@DHMUSICART20)",
       "shots": [
         {
           "src": "HALL",
           "in": 0.0,
-          "beats": 6,
-          "speed": 0.8,
+          "beats": 8,
+          "speed": 0.6,
           "zoom": 1.08,
           "t": "fadein",
           "act": "PEMBUKA",
-          "text": {
-            "main": "Hari Bahagia",
-            "sub": "{date}",
-            "style": "title"
+          "card": {
+            "img": "intro_part1.png",
+            "in": 0.3,
+            "out": 0.35
           }
         },
         {
           "src": "KOMPANG",
           "in": 6.0,
-          "beats": 2,
+          "beats": 4,
           "speed": 1.0,
-          "nat": 0.45
+          "nat": 0.5
         },
         {
           "src": "KOMPANG",
           "in": 1.5,
-          "beats": 2,
+          "beats": 4,
           "speed": 1.0,
-          "nat": 0.45
+          "nat": 0.5
+        },
+        {
+          "src": "PENGAPIT",
+          "in": 0.5,
+          "beats": 6,
+          "speed": 0.7,
+          "t": "dissolve",
+          "act": "PERARAKAN"
         },
         {
           "src": "PENGAPIT",
           "in": 4.5,
-          "beats": 6,
-          "speed": 0.6,
-          "t": "dissolve",
-          "act": "PERARAKAN"
+          "beats": 4,
+          "speed": 0.6
         },
         {
           "src": "PENGIRING",
@@ -110,155 +120,111 @@
         },
         {
           "src": "PENGIRING",
+          "in": 4.5,
+          "beats": 4,
+          "speed": 0.7
+        },
+        {
+          "src": "PENGIRING",
           "in": 11.5,
           "beats": 4,
           "speed": 0.7
         },
         {
-          "src": "ARRIVE",
-          "in": 0.2,
-          "beats": 5,
-          "speed": 0.6,
-          "t": "dissolve",
-          "act": "KEMUNCAK"
-        },
-        {
-          "src": "HERO",
-          "in": 0.3,
-          "beats": 10,
-          "speed": 0.5,
-          "zoom": 1.05
+          "src": "PENGAPIT",
+          "in": 10.4,
+          "beats": 3,
+          "speed": 0.6
         },
         {
           "src": "GUEST",
           "in": 0.5,
           "beats": 4,
           "speed": 1.0,
-          "nat": 0.25
-        },
-        {
-          "src": "SILAT",
-          "in": 4.0,
-          "beats": 3,
-          "speed": 1.0,
-          "crop_x": 0.45,
-          "act": "KEMERIAHAN"
-        },
-        {
-          "src": "DANCE",
-          "in": 17.5,
-          "beats": 4,
-          "speed": 0.7
-        },
-        {
-          "src": "DANCE",
-          "in": 29.6,
-          "beats": 3,
-          "speed": 0.7
-        },
-        {
-          "src": "DANCE",
-          "in": 41.0,
-          "beats": 3,
-          "speed": 0.7
-        },
-        {
-          "src": "SILAT",
-          "in": 23.55,
-          "beats": 7,
-          "speed": 0.55,
-          "mode": "framed",
-          "t": "dissolve",
-          "act": "PENUTUP",
-          "text": {
-            "main": "Selamat Pengantin Baru",
-            "style": "lower"
-          }
-        },
-        {
-          "src": "BLACK",
-          "beats": 5,
-          "t": "dissolve",
-          "text": {
-            "main": "{names}",
-            "sub": "{date}",
-            "style": "end"
-          }
-        }
-      ],
-      "music": {
-        "file": "music_local/R1_melayu_T07.wav",
-        "offset": 2.763,
-        "title": "Instrumental Melayu #7 (@DHMUSICART20)"
-      }
-    },
-    {
-      "id": "reel2_raja_sehari",
-      "title": "Raja Sehari",
-      "concept": "Fokus pengantin: teaser senyuman > perarakan membina debaran > pendedahan pengantin > bersanding",
-      "bpm": 120.09,
-      "music_brief": "Instrumental Melayu #2 (@DHMUSICART20)",
-      "shots": [
-        {
-          "src": "HERO",
-          "in": 3.7,
-          "beats": 6,
-          "speed": 0.35,
-          "zoom": 1.04,
-          "t": "fadein",
-          "act": "TEASER",
-          "text": {
-            "main": "Raja Sehari",
-            "style": "title_italic"
-          }
-        },
-        {
-          "src": "BLACK",
-          "beats": 2,
-          "t": "dissolve"
-        },
-        {
-          "src": "KOMPANG",
-          "in": 0.3,
-          "beats": 6,
-          "speed": 1.0,
-          "nat": 0.6,
-          "t": "dissolve",
-          "act": "PERARAKAN"
-        },
-        {
-          "src": "PENGAPIT",
-          "in": 0.5,
-          "beats": 8,
-          "speed": 0.7,
-          "zoom": 1.05
-        },
-        {
-          "src": "PENGIRING",
-          "in": 4.5,
-          "beats": 6,
-          "speed": 0.7
-        },
-        {
-          "src": "PENGAPIT",
-          "in": 10.4,
-          "beats": 4,
-          "speed": 0.6
+          "nat": 0.3,
+          "act": "DEBARAN"
         },
         {
           "src": "ARRIVE",
           "in": 0.2,
           "beats": 8,
-          "speed": 0.55,
+          "speed": 0.45,
           "t": "dissolve",
-          "act": "KEMUNCAK"
+          "act": "CLIFFHANGER",
+          "card": {
+            "img": "next_part2.png",
+            "in_frac": 0.4
+          }
+        }
+      ],
+      "music_brief": "Instrumental Melayu #7 (@DHMUSICART20)"
+    },
+    {
+      "id": "part2_raja_sehari",
+      "title": "Raja Sehari",
+      "concept": "Part 2/3: bersambung dari tangga, pengantin berjalan, masuk dewan, sambutan tetamu, bersanding. Berakhir dengan bersanding.",
+      "music": {
+        "file": "music_local/R2_melayu_T02.wav",
+        "offset": 99.741,
+        "title": "Instrumental Melayu #2 (@DHMUSICART20)"
+      },
+      "bpm": 120.09,
+      "shots": [
+        {
+          "src": "HERO",
+          "in": 3.7,
+          "beats": 8,
+          "speed": 0.3,
+          "zoom": 1.04,
+          "t": "fadein",
+          "act": "PEMBUKA",
+          "card": {
+            "img": "intro_part2.png",
+            "in": 0.3,
+            "out": 0.35
+          }
+        },
+        {
+          "src": "ARRIVE",
+          "in": 2.0,
+          "beats": 6,
+          "speed": 0.45,
+          "t": "dissolve",
+          "act": "SAMBUNGAN (dari Part 1)"
         },
         {
           "src": "HERO",
           "in": 0.2,
           "beats": 16,
           "speed": 0.45,
-          "zoom": 1.06
+          "zoom": 1.06,
+          "act": "KEMUNCAK"
+        },
+        {
+          "src": "HERO",
+          "in": 5.0,
+          "beats": 4,
+          "speed": 0.7
+        },
+        {
+          "src": "HALL",
+          "in": 3.5,
+          "beats": 4,
+          "speed": 1.0,
+          "act": "MASUK DEWAN"
+        },
+        {
+          "src": "GUEST",
+          "in": 11.0,
+          "beats": 4,
+          "speed": 0.8
+        },
+        {
+          "src": "GUEST",
+          "in": 6.0,
+          "beats": 4,
+          "speed": 1.0,
+          "nat": 0.3
         },
         {
           "src": "SCREEN",
@@ -268,81 +234,50 @@
           "t": "dissolve"
         },
         {
-          "src": "GUEST",
-          "in": 6.0,
-          "beats": 4,
-          "speed": 1.0,
-          "nat": 0.25
-        },
-        {
           "src": "SILAT",
           "in": 23.6,
-          "beats": 8,
-          "speed": 0.55,
+          "beats": 10,
+          "speed": 0.5,
           "mode": "framed",
           "t": "dissolve",
-          "act": "PENUTUP",
-          "text": {
-            "main": "Selamat Pengantin Baru",
-            "style": "lower"
-          }
-        },
-        {
-          "src": "BLACK",
-          "beats": 6,
-          "t": "dissolve",
-          "text": {
-            "main": "{names}",
-            "sub": "{date}",
-            "style": "end"
+          "act": "BERSANDING",
+          "card": {
+            "img": "next_part3.png",
+            "in_frac": 0.45
           }
         }
       ],
-      "music": {
-        "file": "music_local/R2_melayu_T02.wav",
-        "offset": 97.773,
-        "title": "Instrumental Melayu #2 (@DHMUSICART20)"
-      }
+      "music_brief": "Instrumental Melayu #2 (@DHMUSICART20)"
     },
     {
-      "id": "reel3_meriah",
-      "title": "Meriah",
-      "concept": "Adat & kemeriahan: kompang, tetamu, silat, tarian - ditutup dengan pengantin",
+      "id": "part3_raikan_cinta",
+      "title": "Raikan Cinta",
+      "concept": "Part 3/3: persembahan untuk pengantin (silat, tarian), kemeriahan tetamu, ditutup dengan pengantin dan end card.",
+      "music": {
+        "file": "music_local/R3_melayu_T08.wav",
+        "offset": 1.631,
+        "title": "Instrumental Melayu #8 (@DHMUSICART20)"
+      },
       "bpm": 119.99,
-      "music_brief": "Instrumental Melayu #8 (@DHMUSICART20)",
       "shots": [
         {
-          "src": "HALL",
-          "in": 3.0,
-          "beats": 6,
-          "speed": 1.0,
-          "zoom": 1.06,
+          "src": "DANCE",
+          "in": 10.0,
+          "beats": 8,
+          "speed": 0.5,
+          "zoom": 1.05,
           "t": "fadein",
           "act": "PEMBUKA",
-          "text": {
-            "main": "Meriah",
-            "sub": "raikan cinta",
-            "style": "title"
+          "card": {
+            "img": "intro_part3.png",
+            "in": 0.3,
+            "out": 0.35
           }
-        },
-        {
-          "src": "KOMPANG",
-          "in": 6.0,
-          "beats": 6,
-          "speed": 1.0,
-          "nat": 0.6
-        },
-        {
-          "src": "GUEST",
-          "in": 0.0,
-          "beats": 6,
-          "speed": 1.0,
-          "nat": 0.3
         },
         {
           "src": "KOMPANG",
           "in": 9.25,
-          "beats": 6,
+          "beats": 4,
           "speed": 1.0,
           "nat": 0.4
         },
@@ -362,17 +297,17 @@
           "crop_x": 0.52
         },
         {
+          "src": "HALL",
+          "in": 10.0,
+          "beats": 4,
+          "speed": 1.0
+        },
+        {
           "src": "DANCE",
           "in": 1.0,
           "beats": 4,
           "speed": 1.0,
           "act": "TARIAN"
-        },
-        {
-          "src": "DANCE",
-          "in": 10.0,
-          "beats": 4,
-          "speed": 1.0
         },
         {
           "src": "DANCE",
@@ -399,6 +334,13 @@
           "speed": 1.0
         },
         {
+          "src": "GUEST",
+          "in": 0.0,
+          "beats": 4,
+          "speed": 1.0,
+          "nat": 0.3
+        },
+        {
           "src": "DANCE",
           "in": 41.6,
           "beats": 6,
@@ -413,33 +355,16 @@
           "act": "PENUTUP"
         },
         {
-          "src": "SILAT",
-          "in": 24.0,
-          "beats": 6,
-          "speed": 0.6,
-          "mode": "framed",
-          "t": "dissolve",
-          "text": {
-            "main": "Selamat Pengantin Baru",
-            "style": "lower"
-          }
-        },
-        {
           "src": "BLACK",
-          "beats": 6,
+          "beats": 8,
           "t": "dissolve",
-          "text": {
-            "main": "{names}",
-            "sub": "{date}",
-            "style": "end"
+          "card": {
+            "img": "end_card.png",
+            "in": 0.4
           }
         }
       ],
-      "music": {
-        "file": "music_local/R3_melayu_T08.wav",
-        "offset": 91.603,
-        "title": "Instrumental Melayu #8 (@DHMUSICART20)"
-      }
+      "music_brief": "Instrumental Melayu #8 (@DHMUSICART20)"
     }
   ]
 }
