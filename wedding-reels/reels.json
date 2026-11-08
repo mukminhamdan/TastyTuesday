@@ -1,19 +1,62 @@
 {
   "_note": "Timeline untuk 3 reels. 'in' = saat dalam klip sumber, 'beats' = panjang shot dalam beat muzik, 'speed' = 1.0 normal / <1 slow motion. Masa output = beats x 60/bpm. Semua cut jatuh tepat pada beat.",
-  "output": {"w": 1080, "h": 1920, "fps": 30},
+  "output": {
+    "w": 1080,
+    "h": 1920,
+    "fps": 30
+  },
   "names": "Marsya & Finn",
   "date": "11 . 10 . 2026",
   "sources": {
-    "HALL":      {"file": "VID_20261107_232731_694.mp4", "desc": "Dewan luas, chandelier, rombongan masuk (720p)"},
-    "GUEST":     {"file": "VID_20261107_232724_650.mp4", "desc": "Tetamu bertepuk, rombongan dalam dewan (720p, ada teks lokasi di atas)", "crop_top": 0.17},
-    "PENGAPIT":  {"file": "VID_20261011_123040.mp4", "desc": "Pengapit berkebaya turun tangga, karpet merah"},
-    "PENGIRING": {"file": "VID_20261011_123104.mp4", "desc": "0-9.5s pengiring baju magenta; 10-15.5s flower girl & keluarga"},
-    "ARRIVE":    {"file": "VID_20261011_123126.mp4", "desc": "Pengantin muncul di atas tangga (jurugambar masuk frame selepas 3.5s)"},
-    "HERO":      {"file": "VID_20261011_123138.mp4", "desc": "Pengantin berjalan ke kamera, senyum - SHOT UTAMA (0-4.6s)"},
-    "KOMPANG":   {"file": "VID_20261011_123202.mp4", "desc": "0-9.5s pasukan rebana/kompang; 10-12.3s pesilat"},
-    "SCREEN":    {"file": "VID_20261011_123344.mp4", "desc": "Skrin LED paparkan pengantin berjalan (0-9.5s); crop buang papan KELUAR", "crop": [0.12, 0.0, 0.76, 0.76]},
-    "SILAT":     {"file": "VID_20261011_123809.mp4", "desc": "LANDSCAPE. 0-22.5s persembahan silat; 23.4-26.2s pengantin bersanding di skrin LED", "landscape": true},
-    "DANCE":     {"file": "Document_from_Mukmin.mov", "desc": "Tarian tradisional kuning-oren, 4K HDR (HLG) iPhone, 64s", "hdr": true}
+    "HALL": {
+      "file": "VID_20261107_232731_694.mp4",
+      "desc": "Dewan luas, chandelier, rombongan masuk (720p)"
+    },
+    "GUEST": {
+      "file": "VID_20261107_232724_650.mp4",
+      "desc": "Tetamu bertepuk, rombongan dalam dewan (720p, ada teks lokasi di atas)",
+      "crop_top": 0.17
+    },
+    "PENGAPIT": {
+      "file": "VID_20261011_123040.mp4",
+      "desc": "Pengapit berkebaya turun tangga, karpet merah"
+    },
+    "PENGIRING": {
+      "file": "VID_20261011_123104.mp4",
+      "desc": "0-9.5s pengiring baju magenta; 10-15.5s flower girl & keluarga"
+    },
+    "ARRIVE": {
+      "file": "VID_20261011_123126.mp4",
+      "desc": "Pengantin muncul di atas tangga (jurugambar masuk frame selepas 3.5s)"
+    },
+    "HERO": {
+      "file": "VID_20261011_123138.mp4",
+      "desc": "Pengantin berjalan ke kamera, senyum - SHOT UTAMA (0-4.6s)"
+    },
+    "KOMPANG": {
+      "file": "VID_20261011_123202.mp4",
+      "desc": "0-9.5s pasukan rebana/kompang; 10-12.3s pesilat"
+    },
+    "SCREEN": {
+      "file": "VID_20261011_123344.mp4",
+      "desc": "Skrin LED paparkan pengantin berjalan (0-9.5s); crop buang papan KELUAR",
+      "crop": [
+        0.12,
+        0.0,
+        0.76,
+        0.76
+      ]
+    },
+    "SILAT": {
+      "file": "VID_20261011_123809.mp4",
+      "desc": "LANDSCAPE. 0-22.5s persembahan silat; 23.4-26.2s pengantin bersanding di skrin LED",
+      "landscape": true
+    },
+    "DANCE": {
+      "file": "Document_from_Mukmin.mov",
+      "desc": "Tarian tradisional kuning-oren, 4K HDR (HLG) iPhone, 64s",
+      "hdr": true
+    }
   },
   "reels": [
     {
@@ -23,24 +66,127 @@
       "bpm": 72,
       "music_brief": "Piano + strings, emosi, 70-74 BPM, mula lembut, swell pada bar 6 (ketibaan pengantin)",
       "shots": [
-        {"src": "HALL",      "in": 0.0,  "beats": 4, "speed": 0.8, "zoom": 1.08, "t": "fadein", "act": "PEMBUKA",
-         "text": {"main": "Hari Bahagia", "sub": "{date}", "style": "title"}},
-        {"src": "KOMPANG",   "in": 6.0,  "beats": 2, "speed": 1.0, "nat": 0.45},
-        {"src": "KOMPANG",   "in": 1.5,  "beats": 2, "speed": 1.0, "nat": 0.45},
-        {"src": "PENGAPIT",  "in": 4.5,  "beats": 5, "speed": 0.6, "t": "dissolve", "act": "PERARAKAN"},
-        {"src": "PENGIRING", "in": 1.0,  "beats": 3, "speed": 0.75},
-        {"src": "PENGIRING", "in": 11.5, "beats": 3, "speed": 0.7},
-        {"src": "ARRIVE",    "in": 0.2,  "beats": 4, "speed": 0.6, "t": "dissolve", "act": "KEMUNCAK"},
-        {"src": "HERO",      "in": 0.3,  "beats": 8, "speed": 0.5, "zoom": 1.05},
-        {"src": "GUEST",     "in": 0.5,  "beats": 3, "speed": 1.0, "nat": 0.25},
-        {"src": "SILAT",     "in": 4.0,  "beats": 2, "speed": 1.0, "crop_x": 0.45, "act": "KEMERIAHAN"},
-        {"src": "DANCE",     "in": 17.5, "beats": 3, "speed": 0.7},
-        {"src": "DANCE",     "in": 29.6, "beats": 2, "speed": 0.7},
-        {"src": "DANCE",     "in": 41.0, "beats": 2, "speed": 0.7},
-        {"src": "SILAT",     "in": 23.6, "beats": 5, "speed": 0.6, "mode": "framed", "t": "dissolve", "act": "PENUTUP",
-         "text": {"main": "Selamat Pengantin Baru", "style": "lower"}},
-        {"src": "BLACK",     "beats": 3, "t": "dissolve", "text": {"main": "{names}", "sub": "{date}", "style": "end"}}
-      ]
+        {
+          "src": "HALL",
+          "in": 0.0,
+          "beats": 4,
+          "speed": 0.8,
+          "zoom": 1.08,
+          "t": "fadein",
+          "act": "PEMBUKA",
+          "text": {
+            "main": "Hari Bahagia",
+            "sub": "{date}",
+            "style": "title"
+          }
+        },
+        {
+          "src": "KOMPANG",
+          "in": 6.0,
+          "beats": 2,
+          "speed": 1.0,
+          "nat": 0.45
+        },
+        {
+          "src": "KOMPANG",
+          "in": 1.5,
+          "beats": 2,
+          "speed": 1.0,
+          "nat": 0.45
+        },
+        {
+          "src": "PENGAPIT",
+          "in": 4.5,
+          "beats": 5,
+          "speed": 0.6,
+          "t": "dissolve",
+          "act": "PERARAKAN"
+        },
+        {
+          "src": "PENGIRING",
+          "in": 1.0,
+          "beats": 3,
+          "speed": 0.75
+        },
+        {
+          "src": "PENGIRING",
+          "in": 11.5,
+          "beats": 3,
+          "speed": 0.7
+        },
+        {
+          "src": "ARRIVE",
+          "in": 0.2,
+          "beats": 4,
+          "speed": 0.6,
+          "t": "dissolve",
+          "act": "KEMUNCAK"
+        },
+        {
+          "src": "HERO",
+          "in": 0.3,
+          "beats": 8,
+          "speed": 0.5,
+          "zoom": 1.05
+        },
+        {
+          "src": "GUEST",
+          "in": 0.5,
+          "beats": 3,
+          "speed": 1.0,
+          "nat": 0.25
+        },
+        {
+          "src": "SILAT",
+          "in": 4.0,
+          "beats": 2,
+          "speed": 1.0,
+          "crop_x": 0.45,
+          "act": "KEMERIAHAN"
+        },
+        {
+          "src": "DANCE",
+          "in": 17.5,
+          "beats": 3,
+          "speed": 0.7
+        },
+        {
+          "src": "DANCE",
+          "in": 29.6,
+          "beats": 2,
+          "speed": 0.7
+        },
+        {
+          "src": "DANCE",
+          "in": 41.0,
+          "beats": 2,
+          "speed": 0.7
+        },
+        {
+          "src": "SILAT",
+          "in": 23.6,
+          "beats": 5,
+          "speed": 0.6,
+          "mode": "framed",
+          "t": "dissolve",
+          "act": "PENUTUP",
+          "text": {
+            "main": "Selamat Pengantin Baru",
+            "style": "lower"
+          }
+        },
+        {
+          "src": "BLACK",
+          "beats": 3,
+          "t": "dissolve",
+          "text": {
+            "main": "{names}",
+            "sub": "{date}",
+            "style": "end"
+          }
+        }
+      ],
+      "song": "Umpan Jinak di Air Tenang (joget). Cut half-time; ketibaan pengantin jatuh pada korus."
     },
     {
       "id": "reel2_raja_sehari",
@@ -49,21 +195,106 @@
       "bpm": 66,
       "music_brief": "Solo piano / cello yang sangat menyentuh, 64-68 BPM, ruang senyap selepas teaser",
       "shots": [
-        {"src": "HERO",      "in": 3.7,  "beats": 3, "speed": 0.35, "zoom": 1.04, "t": "fadein", "act": "TEASER",
-         "text": {"main": "Raja Sehari", "style": "title_italic"}},
-        {"src": "BLACK",     "beats": 1, "t": "dissolve"},
-        {"src": "KOMPANG",   "in": 0.3,  "beats": 3, "speed": 1.0, "nat": 0.6, "t": "dissolve", "act": "PERARAKAN"},
-        {"src": "PENGAPIT",  "in": 0.5,  "beats": 4, "speed": 0.7, "zoom": 1.05},
-        {"src": "PENGIRING", "in": 4.5,  "beats": 3, "speed": 0.7},
-        {"src": "PENGAPIT",  "in": 10.4, "beats": 2, "speed": 0.6},
-        {"src": "ARRIVE",    "in": 0.2,  "beats": 4, "speed": 0.55, "t": "dissolve", "act": "KEMUNCAK"},
-        {"src": "HERO",      "in": 0.2,  "beats": 9, "speed": 0.45, "zoom": 1.06},
-        {"src": "SCREEN",    "in": 4.0,  "beats": 3, "speed": 0.7, "t": "dissolve"},
-        {"src": "GUEST",     "in": 6.0,  "beats": 2, "speed": 1.0, "nat": 0.25},
-        {"src": "SILAT",     "in": 23.6, "beats": 5, "speed": 0.55, "mode": "framed", "t": "dissolve", "act": "PENUTUP",
-         "text": {"main": "Selamat Pengantin Baru", "style": "lower"}},
-        {"src": "BLACK",     "beats": 3, "t": "dissolve", "text": {"main": "{names}", "sub": "{date}", "style": "end"}}
-      ]
+        {
+          "src": "HERO",
+          "in": 3.7,
+          "beats": 3,
+          "speed": 0.35,
+          "zoom": 1.04,
+          "t": "fadein",
+          "act": "TEASER",
+          "text": {
+            "main": "Raja Sehari",
+            "style": "title_italic"
+          }
+        },
+        {
+          "src": "BLACK",
+          "beats": 1,
+          "t": "dissolve"
+        },
+        {
+          "src": "KOMPANG",
+          "in": 0.3,
+          "beats": 3,
+          "speed": 1.0,
+          "nat": 0.6,
+          "t": "dissolve",
+          "act": "PERARAKAN"
+        },
+        {
+          "src": "PENGAPIT",
+          "in": 0.5,
+          "beats": 4,
+          "speed": 0.7,
+          "zoom": 1.05
+        },
+        {
+          "src": "PENGIRING",
+          "in": 4.5,
+          "beats": 3,
+          "speed": 0.7
+        },
+        {
+          "src": "PENGAPIT",
+          "in": 10.4,
+          "beats": 2,
+          "speed": 0.6
+        },
+        {
+          "src": "ARRIVE",
+          "in": 0.2,
+          "beats": 4,
+          "speed": 0.55,
+          "t": "dissolve",
+          "act": "KEMUNCAK"
+        },
+        {
+          "src": "HERO",
+          "in": 0.2,
+          "beats": 9,
+          "speed": 0.45,
+          "zoom": 1.06
+        },
+        {
+          "src": "SCREEN",
+          "in": 4.0,
+          "beats": 3,
+          "speed": 0.7,
+          "t": "dissolve"
+        },
+        {
+          "src": "GUEST",
+          "in": 6.0,
+          "beats": 2,
+          "speed": 1.0,
+          "nat": 0.25
+        },
+        {
+          "src": "SILAT",
+          "in": 23.6,
+          "beats": 5,
+          "speed": 0.55,
+          "mode": "framed",
+          "t": "dissolve",
+          "act": "PENUTUP",
+          "text": {
+            "main": "Selamat Pengantin Baru",
+            "style": "lower"
+          }
+        },
+        {
+          "src": "BLACK",
+          "beats": 3,
+          "t": "dissolve",
+          "text": {
+            "main": "{names}",
+            "sub": "{date}",
+            "style": "end"
+          }
+        }
+      ],
+      "song": "Renjis-Renjis. Cut half-time; teaser pada intro, pengantin pada korus."
     },
     {
       "id": "reel3_meriah",
@@ -72,25 +303,131 @@
       "bpm": 90,
       "music_brief": "Instrumental orkestra moden + perkusi tradisional (rebana/gambus), 88-92 BPM, hangat dan bersemangat",
       "shots": [
-        {"src": "HALL",      "in": 3.0,  "beats": 4, "speed": 1.0, "zoom": 1.06, "t": "fadein", "act": "PEMBUKA",
-         "text": {"main": "Meriah", "sub": "raikan cinta", "style": "title"}},
-        {"src": "KOMPANG",   "in": 6.0,  "beats": 3, "speed": 1.0, "nat": 0.6},
-        {"src": "GUEST",     "in": 0.0,  "beats": 3, "speed": 1.0, "nat": 0.3},
-        {"src": "KOMPANG",   "in": 10.0, "beats": 3, "speed": 1.0, "nat": 0.4},
-        {"src": "SILAT",     "in": 4.0,  "beats": 4, "speed": 0.6, "crop_x": 0.45, "act": "ADAT"},
-        {"src": "SILAT",     "in": 7.0,  "beats": 3, "speed": 1.0, "crop_x": 0.52},
-        {"src": "DANCE",     "in": 1.0,  "beats": 3, "speed": 1.0, "act": "TARIAN"},
-        {"src": "DANCE",     "in": 10.0, "beats": 3, "speed": 1.0},
-        {"src": "DANCE",     "in": 17.8, "beats": 4, "speed": 0.5},
-        {"src": "DANCE",     "in": 29.5, "beats": 3, "speed": 0.6},
-        {"src": "DANCE",     "in": 49.5, "beats": 3, "speed": 1.0},
-        {"src": "DANCE",     "in": 55.5, "beats": 3, "speed": 1.0},
-        {"src": "DANCE",     "in": 41.6, "beats": 4, "speed": 0.6},
-        {"src": "HERO",      "in": 0.5,  "beats": 6, "speed": 0.5, "t": "dissolve", "act": "PENUTUP"},
-        {"src": "SILAT",     "in": 24.0, "beats": 4, "speed": 0.6, "mode": "framed", "t": "dissolve",
-         "text": {"main": "Selamat Pengantin Baru", "style": "lower"}},
-        {"src": "BLACK",     "beats": 4, "t": "dissolve", "text": {"main": "{names}", "sub": "{date}", "style": "end"}}
-      ]
+        {
+          "src": "HALL",
+          "in": 3.0,
+          "beats": 4,
+          "speed": 1.0,
+          "zoom": 1.06,
+          "t": "fadein",
+          "act": "PEMBUKA",
+          "text": {
+            "main": "Meriah",
+            "sub": "raikan cinta",
+            "style": "title"
+          }
+        },
+        {
+          "src": "KOMPANG",
+          "in": 6.0,
+          "beats": 3,
+          "speed": 1.0,
+          "nat": 0.6
+        },
+        {
+          "src": "GUEST",
+          "in": 0.0,
+          "beats": 3,
+          "speed": 1.0,
+          "nat": 0.3
+        },
+        {
+          "src": "KOMPANG",
+          "in": 10.0,
+          "beats": 3,
+          "speed": 1.0,
+          "nat": 0.4
+        },
+        {
+          "src": "SILAT",
+          "in": 4.0,
+          "beats": 4,
+          "speed": 0.6,
+          "crop_x": 0.45,
+          "act": "ADAT"
+        },
+        {
+          "src": "SILAT",
+          "in": 7.0,
+          "beats": 3,
+          "speed": 1.0,
+          "crop_x": 0.52
+        },
+        {
+          "src": "DANCE",
+          "in": 1.0,
+          "beats": 3,
+          "speed": 1.0,
+          "act": "TARIAN"
+        },
+        {
+          "src": "DANCE",
+          "in": 10.0,
+          "beats": 3,
+          "speed": 1.0
+        },
+        {
+          "src": "DANCE",
+          "in": 17.8,
+          "beats": 4,
+          "speed": 0.5
+        },
+        {
+          "src": "DANCE",
+          "in": 29.5,
+          "beats": 3,
+          "speed": 0.6
+        },
+        {
+          "src": "DANCE",
+          "in": 49.5,
+          "beats": 3,
+          "speed": 1.0
+        },
+        {
+          "src": "DANCE",
+          "in": 55.5,
+          "beats": 3,
+          "speed": 1.0
+        },
+        {
+          "src": "DANCE",
+          "in": 41.6,
+          "beats": 4,
+          "speed": 0.6
+        },
+        {
+          "src": "HERO",
+          "in": 0.5,
+          "beats": 6,
+          "speed": 0.5,
+          "t": "dissolve",
+          "act": "PENUTUP"
+        },
+        {
+          "src": "SILAT",
+          "in": 24.0,
+          "beats": 4,
+          "speed": 0.6,
+          "mode": "framed",
+          "t": "dissolve",
+          "text": {
+            "main": "Selamat Pengantin Baru",
+            "style": "lower"
+          }
+        },
+        {
+          "src": "BLACK",
+          "beats": 4,
+          "t": "dissolve",
+          "text": {
+            "main": "{names}",
+            "sub": "{date}",
+            "style": "end"
+          }
+        }
+      ],
+      "song": "Joget Lambak / Joget Gadis Melayu. Cut setiap 2 beat pada babak tarian."
     }
   ]
 }

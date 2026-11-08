@@ -105,6 +105,15 @@ Muzik: orkestra moden + perkusi tradisional (rebana/gambus), 88–92 BPM, hangat
 
 ---
 
+### Muzik dipilih (menunggu fail audio)
+| Reel | Lagu |
+|---|---|
+| 1. Hari Bahagia | Umpan Jinak di Air Tenang |
+| 2. Raja Sehari | Renjis-Renjis |
+| 3. Meriah | Joget Lambak / Joget Gadis Melayu |
+
+Lagu joget ~120–135 BPM, jadi cut akan ikut setiap 2 beat (half-time). Timeline akan disusun semula selepas BPM sebenar diukur.
+
 ## 6. Perlu daripada anda sebelum render
 
 1. **Nama pengantin** untuk end card: **Marsya & Finn** ✓.
