@@ -30,9 +30,9 @@ FONT = HERE / "fonts" / "CormorantGaramond.ttf"
 FONT_I = HERE / "fonts" / "CormorantGaramond-Italic.ttf"
 LABEL_FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 LUT = HERE / "warm_romantic.cube"
-DISSOLVE = 0.5  # seconds, centred on the beat
+DISSOLVE = 16 / 30  # seconds (16 frames), centred on the beat
 FADE_IN = 0.8
-FADE_OUT = 1.2
+FADE_OUT = 0.7
 
 
 def run(cmd):
@@ -54,12 +54,39 @@ def fmt(t):
 
 
 # ---------------------------------------------------------------- timeline
-def build_timeline(cfg, reel, bpm, src_dir):
+def beat_clock(bpm, beat_times=None):
+    """Return T(k): time of beat k from the reel start. Uses the track's real
+    (detected) beats when given, so cuts follow tempo drift; extrapolates past the end."""
     beat = 60.0 / bpm
+    if not beat_times:
+        return lambda k: k * beat
+
+    def T(k):
+        if k < len(beat_times):
+            return beat_times[k]
+        return beat_times[-1] + (k - len(beat_times) + 1) * beat
+    return T
+
+
+def track_beats(music, offset):
+    """Detected beat times of `music`, re-based so the beat nearest `offset` is 0."""
+    import librosa
+    import numpy as np
+    y, sr = librosa.load(str(music), sr=22050, mono=True)
+    _, beats = librosa.beat.beat_track(y=y, sr=sr, hop_length=128, units="time")
+    i0 = int(np.argmin(np.abs(beats - offset)))
+    return [float(b - beats[i0]) for b in beats[i0:]], float(beats[i0])
+
+
+def build_timeline(cfg, reel, bpm, src_dir, beat_times=None):
+    T = beat_clock(bpm, beat_times)
     shots = reel["shots"]
-    tl, t = [], 0.0
+    tl, t, k = [], 0.0, 0
+    q = lambda x: round(x * 30) / 30  # snap cut points to the 30fps frame grid
     for i, s in enumerate(shots):
-        dur = s["beats"] * beat
+        t = q(T(k))
+        dur = q(T(k + s["beats"])) - t
+        k += s["beats"]
         nxt = shots[i + 1] if i + 1 < len(shots) else None
         head = DISSOLVE / 2 if s.get("t") == "dissolve" else 0.0
         tail = DISSOLVE / 2 if nxt and nxt.get("t") == "dissolve" else 0.0
@@ -74,12 +101,19 @@ def build_timeline(cfg, reel, bpm, src_dir):
                 raise SystemExit(f"{reel['id']} shot {i+1}: in-point too early for dissolve handle")
             if not e["file"].exists():
                 raise SystemExit(f"missing source {e['file']}")
-            sd = probe_duration(e["file"])
+            sd = probe_duration(e["file"]) - 0.05
+            if e["ss"] + e["src_len"] > sd:
+                # real beats ran a little long: slow the shot slightly so it still fits the source
+                fit = (sd - s["in"]) / (dur + tail)
+                if fit >= e["speed"] * 0.85:
+                    print(f"  note: {reel['id']} shot {i+1} speed {e['speed']:.2f} -> {fit:.3f} to fit source", file=sys.stderr)
+                    e["speed"] = fit
+                    e["ss"] = s["in"] - head * fit
+                    e["src_len"] = (dur + head + tail) * fit
             if e["ss"] + e["src_len"] > sd + 0.02:
                 raise SystemExit(f"{reel['id']} shot {i+1}: needs {e['ss']+e['src_len']:.2f}s of {src['file']} ({sd:.2f}s)")
         tl.append(e)
-        t += dur
-    return tl, t
+    return tl, q(T(k))
 
 
 # ---------------------------------------------------------------- filters
@@ -240,7 +274,10 @@ def storyboard(cfg, reel, bpm, src_dir, out_dir, tmp):
 
 # ---------------------------------------------------------------- video
 def render_video(cfg, reel, bpm, src_dir, out_dir, tmp, mode, music, music_offset):
-    tl, total = build_timeline(cfg, reel, bpm, src_dir)
+    beat_times = None
+    if music:
+        beat_times, music_offset = track_beats(music, music_offset)
+    tl, total = build_timeline(cfg, reel, bpm, src_dir, beat_times)
     W, H = (1080, 1920) if mode == "final" else (540, 960)
     crf = "16" if mode == "final" else "26"
     preset = "slow" if mode == "final" else "veryfast"
@@ -262,14 +299,16 @@ def render_video(cfg, reel, bpm, src_dir, out_dir, tmp, mode, music, music_offse
     inputs, fg = [], []
     for p in parts:
         inputs += ["-i", str(p)]
-    cur, L = "[0:v]", tl[0]["dur"] + tl[0]["tail"]
+    for i in range(len(tl)):
+        fg.append(f"[{i}:v]fps=30,format=yuv420p,setsar=1,settb=AVTB,setpts=PTS-STARTPTS[s{i}]")
+    cur, L = "[s0]", tl[0]["dur"] + tl[0]["tail"]
     for i in range(1, len(tl)):
         e = tl[i]
         nxt = f"[x{i}]"
         if e.get("t") == "dissolve":
-            fg.append(f"{cur}[{i}:v]xfade=transition=fade:duration={DISSOLVE}:offset={L - DISSOLVE:.4f}{nxt}")
+            fg.append(f"{cur}[s{i}]xfade=transition=fade:duration={DISSOLVE:.4f}:offset={L - DISSOLVE:.4f},settb=AVTB{nxt}")
         else:
-            fg.append(f"{cur}[{i}:v]concat=n=2:v=1:a=0{nxt}")
+            fg.append(f"{cur}[s{i}]concat=n=2:v=1:a=0,settb=AVTB{nxt}")
         cur = nxt
         L = e["start"] + e["dur"] + e["tail"]
     fg.append(f"{cur}fade=t=in:st=0:d={FADE_IN},fade=t=out:st={total - FADE_OUT:.3f}:d={FADE_OUT},"
@@ -316,6 +355,7 @@ def main():
     ap.add_argument("--bpm", type=float)
     ap.add_argument("--music", type=Path)
     ap.add_argument("--music-offset", type=float, default=0.0)
+    ap.add_argument("--no-music", action="store_true", help="ignore the music set in reels.json (click track)")
     ap.add_argument("--config", type=Path, default=HERE / "reels.json")
     a = ap.parse_args()
     cfg = json.loads(a.config.read_text())
@@ -328,11 +368,15 @@ def main():
             if a.reel and reel["id"] != a.reel:
                 continue
             bpm = a.bpm or reel["bpm"]
+            music, offset = a.music, a.music_offset
+            if music is None and reel.get("music") and not a.no_music:
+                music = HERE / reel["music"]["file"]
+                offset = reel["music"]["offset"]
             if a.mode == "storyboard":
                 sheet, tl, total = storyboard(cfg, reel, bpm, a.src, a.out, tmp)
                 print(f"{reel['id']}: {len(tl)} shots, {total:.1f}s @ {bpm} BPM -> {sheet}")
             else:
-                out, total = render_video(cfg, reel, bpm, a.src, a.out, tmp, a.mode, a.music, a.music_offset)
+                out, total = render_video(cfg, reel, bpm, a.src, a.out, tmp, a.mode, music, offset)
                 print(f"{reel['id']}: {total:.1f}s -> {out}")
     finally:
         shutil.rmtree(tmp, ignore_errors=True)

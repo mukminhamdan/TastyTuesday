@@ -63,13 +63,13 @@
       "id": "reel1_hari_bahagia",
       "title": "Hari Bahagia",
       "concept": "Highlight penuh: suasana > perarakan > ketibaan pengantin > kemeriahan > bersanding",
-      "bpm": 72,
-      "music_brief": "Piano + strings, emosi, 70-74 BPM, mula lembut, swell pada bar 6 (ketibaan pengantin)",
+      "bpm": 92.55,
+      "music_brief": "Wedding - TRG Banks (CC0)",
       "shots": [
         {
           "src": "HALL",
           "in": 0.0,
-          "beats": 4,
+          "beats": 6,
           "speed": 0.8,
           "zoom": 1.08,
           "t": "fadein",
@@ -97,7 +97,7 @@
         {
           "src": "PENGAPIT",
           "in": 4.5,
-          "beats": 5,
+          "beats": 6,
           "speed": 0.6,
           "t": "dissolve",
           "act": "PERARAKAN"
@@ -105,19 +105,19 @@
         {
           "src": "PENGIRING",
           "in": 1.0,
-          "beats": 3,
+          "beats": 4,
           "speed": 0.75
         },
         {
           "src": "PENGIRING",
           "in": 11.5,
-          "beats": 3,
+          "beats": 4,
           "speed": 0.7
         },
         {
           "src": "ARRIVE",
           "in": 0.2,
-          "beats": 4,
+          "beats": 5,
           "speed": 0.6,
           "t": "dissolve",
           "act": "KEMUNCAK"
@@ -125,21 +125,21 @@
         {
           "src": "HERO",
           "in": 0.3,
-          "beats": 8,
+          "beats": 10,
           "speed": 0.5,
           "zoom": 1.05
         },
         {
           "src": "GUEST",
           "in": 0.5,
-          "beats": 3,
+          "beats": 4,
           "speed": 1.0,
           "nat": 0.25
         },
         {
           "src": "SILAT",
           "in": 4.0,
-          "beats": 2,
+          "beats": 3,
           "speed": 1.0,
           "crop_x": 0.45,
           "act": "KEMERIAHAN"
@@ -147,26 +147,26 @@
         {
           "src": "DANCE",
           "in": 17.5,
-          "beats": 3,
+          "beats": 4,
           "speed": 0.7
         },
         {
           "src": "DANCE",
           "in": 29.6,
-          "beats": 2,
+          "beats": 3,
           "speed": 0.7
         },
         {
           "src": "DANCE",
           "in": 41.0,
-          "beats": 2,
+          "beats": 3,
           "speed": 0.7
         },
         {
           "src": "SILAT",
-          "in": 23.6,
-          "beats": 5,
-          "speed": 0.6,
+          "in": 23.55,
+          "beats": 7,
+          "speed": 0.55,
           "mode": "framed",
           "t": "dissolve",
           "act": "PENUTUP",
@@ -177,7 +177,7 @@
         },
         {
           "src": "BLACK",
-          "beats": 3,
+          "beats": 5,
           "t": "dissolve",
           "text": {
             "main": "{names}",
@@ -186,19 +186,23 @@
           }
         }
       ],
-      "song": "Umpan Jinak di Air Tenang (joget). Cut half-time; ketibaan pengantin jatuh pada korus."
+      "music": {
+        "file": "music/R1_TRG-Banks_Wedding.mp3",
+        "offset": 67.437,
+        "title": "Wedding - TRG Banks (CC0)"
+      }
     },
     {
       "id": "reel2_raja_sehari",
       "title": "Raja Sehari",
       "concept": "Fokus pengantin: teaser senyuman > perarakan membina debaran > pendedahan pengantin > bersanding",
-      "bpm": 66,
-      "music_brief": "Solo piano / cello yang sangat menyentuh, 64-68 BPM, ruang senyap selepas teaser",
+      "bpm": 85.73,
+      "music_brief": "Lullabies For The End Of The World #5 - HoliznaCC0 (CC0)",
       "shots": [
         {
           "src": "HERO",
           "in": 3.7,
-          "beats": 3,
+          "beats": 4,
           "speed": 0.35,
           "zoom": 1.04,
           "t": "fadein",
@@ -216,7 +220,7 @@
         {
           "src": "KOMPANG",
           "in": 0.3,
-          "beats": 3,
+          "beats": 4,
           "speed": 1.0,
           "nat": 0.6,
           "t": "dissolve",
@@ -225,26 +229,26 @@
         {
           "src": "PENGAPIT",
           "in": 0.5,
-          "beats": 4,
+          "beats": 5,
           "speed": 0.7,
           "zoom": 1.05
         },
         {
           "src": "PENGIRING",
           "in": 4.5,
-          "beats": 3,
+          "beats": 4,
           "speed": 0.7
         },
         {
           "src": "PENGAPIT",
           "in": 10.4,
-          "beats": 2,
+          "beats": 3,
           "speed": 0.6
         },
         {
           "src": "ARRIVE",
           "in": 0.2,
-          "beats": 4,
+          "beats": 5,
           "speed": 0.55,
           "t": "dissolve",
           "act": "KEMUNCAK"
@@ -252,28 +256,28 @@
         {
           "src": "HERO",
           "in": 0.2,
-          "beats": 9,
+          "beats": 12,
           "speed": 0.45,
           "zoom": 1.06
         },
         {
           "src": "SCREEN",
           "in": 4.0,
-          "beats": 3,
+          "beats": 4,
           "speed": 0.7,
           "t": "dissolve"
         },
         {
           "src": "GUEST",
           "in": 6.0,
-          "beats": 2,
+          "beats": 3,
           "speed": 1.0,
           "nat": 0.25
         },
         {
           "src": "SILAT",
           "in": 23.6,
-          "beats": 5,
+          "beats": 6,
           "speed": 0.55,
           "mode": "framed",
           "t": "dissolve",
@@ -285,7 +289,7 @@
         },
         {
           "src": "BLACK",
-          "beats": 3,
+          "beats": 4,
           "t": "dissolve",
           "text": {
             "main": "{names}",
@@ -294,14 +298,18 @@
           }
         }
       ],
-      "song": "Renjis-Renjis. Cut half-time; teaser pada intro, pengantin pada korus."
+      "music": {
+        "file": "music/R2_HoliznaCC0_Lullabies-5.mp3",
+        "offset": 19.325,
+        "title": "Lullabies For The End Of The World #5 - HoliznaCC0 (CC0)"
+      }
     },
     {
       "id": "reel3_meriah",
       "title": "Meriah",
       "concept": "Adat & kemeriahan: kompang, tetamu, silat, tarian - ditutup dengan pengantin",
-      "bpm": 90,
-      "music_brief": "Instrumental orkestra moden + perkusi tradisional (rebana/gambus), 88-92 BPM, hangat dan bersemangat",
+      "bpm": 90.0,
+      "music_brief": "Street Lights Passing By - HoliznaCC0 (CC0)",
       "shots": [
         {
           "src": "HALL",
@@ -320,21 +328,21 @@
         {
           "src": "KOMPANG",
           "in": 6.0,
-          "beats": 3,
+          "beats": 4,
           "speed": 1.0,
           "nat": 0.6
         },
         {
           "src": "GUEST",
           "in": 0.0,
-          "beats": 3,
+          "beats": 4,
           "speed": 1.0,
           "nat": 0.3
         },
         {
           "src": "KOMPANG",
-          "in": 10.0,
-          "beats": 3,
+          "in": 9.6,
+          "beats": 4,
           "speed": 1.0,
           "nat": 0.4
         },
@@ -427,7 +435,11 @@
           }
         }
       ],
-      "song": "Joget Lambak / Joget Gadis Melayu. Cut setiap 2 beat pada babak tarian."
+      "music": {
+        "file": "music/R3_HoliznaCC0_Street-Lights.mp3",
+        "offset": 96.7,
+        "title": "Street Lights Passing By - HoliznaCC0 (CC0)"
+      }
     }
   ]
 }
