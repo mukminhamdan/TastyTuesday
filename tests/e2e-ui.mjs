@@ -26,6 +26,11 @@ const step = (s) => console.log('•', s);
 const field = (label) => page.locator('div', { has: page.locator(`label:text-is("${label}")`) }).last();
 const confirmDialog = async () => page.locator('[role=alertdialog] button').last().click();
 const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Kuala_Lumpur' }).format(new Date());
+const isoPlus = (n) => {
+  const d = new Date(today + 'T00:00:00Z');
+  d.setUTCDate(d.getUTCDate() + n);
+  return d.toISOString().slice(0, 10);
+};
 const plusDays = (n) => {
   const d = new Date(today + 'T00:00:00Z');
   d.setUTCDate(d.getUTCDate() + n);
@@ -220,7 +225,7 @@ try {
   await page.getByText('Hasil Bulanan').waitFor();
   await page.waitForTimeout(600);
   await shot('14-dashboard');
-  await page.goto(BASE + '/calendar');
+  await page.goto(BASE + `/calendar?date=${isoPlus(20)}`); // month of the test booking
   await page.getByText('Sambutan Hari Kebangsaan MBSA').first().waitFor({ state: 'attached' });
   await shot('15-calendar');
   await page.goto(BASE + '/payments');

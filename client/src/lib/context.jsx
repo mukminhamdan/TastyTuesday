@@ -36,11 +36,11 @@ const AuthCtx = createContext(null);
 export const useAuth = () => useContext(AuthCtx);
 
 export function AuthProvider({ children }) {
-  const [state, setState] = useState({ loading: true, user: null, needsSetup: false });
+  const [state, setState] = useState({ loading: true, user: null, needsSetup: false, branding: null });
   const refresh = useCallback(async () => {
     try {
       const s = await get('/auth/status');
-      setState({ loading: false, user: s.user, needsSetup: s.needsSetup });
+      setState({ loading: false, user: s.user, needsSetup: s.needsSetup, branding: s.branding });
     } catch {
       setState({ loading: false, user: null, needsSetup: false });
     }
@@ -53,15 +53,15 @@ export function AuthProvider({ children }) {
   }, [refresh]);
   const login = async (email, password) => {
     const r = await post('/auth/login', { email, password });
-    setState({ loading: false, user: r.user, needsSetup: false });
+    setState((p) => ({ ...p, loading: false, user: r.user, needsSetup: false }));
   };
   const setup = async (body) => {
     const r = await post('/auth/setup', body);
-    setState({ loading: false, user: r.user, needsSetup: false });
+    setState((p) => ({ ...p, loading: false, user: r.user, needsSetup: false }));
   };
   const logout = async () => {
     await post('/auth/logout').catch(() => {});
-    setState({ loading: false, user: null, needsSetup: false });
+    setState((p) => ({ ...p, loading: false, user: null, needsSetup: false }));
   };
   const isAdmin = state.user?.role === 'admin';
   return <AuthCtx.Provider value={{ ...state, isAdmin, login, logout, setup, refresh }}>{children}</AuthCtx.Provider>;

@@ -3,6 +3,7 @@ import bcrypt from 'bcryptjs';
 import { issueSession, clearSession, requireAuth, loginLimiter, resetLoginLimiter } from '../lib/auth.js';
 import { bad, str, isEmail, HttpError } from '../lib/http.js';
 import { logActivity } from '../lib/activity.js';
+import { getSettings } from '../db.js';
 
 export function validatePassword(pw) {
   if (typeof pw !== 'string' || pw.length < 8) {
@@ -15,7 +16,8 @@ export default function authRoutes(db) {
   const userCount = () => db.prepare('SELECT COUNT(*) AS n FROM users').get().n;
 
   r.get('/status', (req, res) => {
-    res.json({ needsSetup: userCount() === 0, user: req.user || null });
+    const s = getSettings(db);
+    res.json({ needsSetup: userCount() === 0, user: req.user || null, branding: { business_name: s.business_name, logo: s.logo } });
   });
 
   // First-run: create the initial administrator account.

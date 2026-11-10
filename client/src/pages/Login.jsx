@@ -6,17 +6,22 @@ import { LangToggle } from '../components/Layout.jsx';
 
 function Shell({ title, subtitle, children }) {
   const { t } = useT();
+  const { branding } = useAuth();
   return (
     <div className="flex min-h-full items-center justify-center bg-gradient-to-br from-slate-900 via-brand-900 to-slate-800 px-4 py-10">
       <div className="w-full max-w-md">
         <div className="mb-6 text-center text-white">
-          <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/20">
-            <svg viewBox="0 0 32 32" className="h-7 w-7">
-              <path d="M9 10h14M9 16h14M9 22h9" stroke="#fff" strokeWidth="2.6" strokeLinecap="round" />
-            </svg>
-          </div>
-          <h1 className="text-xl font-bold">{t('app.name')}</h1>
-          <p className="text-sm text-slate-300">{t('app.subtitle')}</p>
+          {branding?.logo ? (
+            <img src={branding.logo} alt="" className="mx-auto mb-3 h-24 w-24 rounded-full bg-white object-contain p-1 shadow-lg" />
+          ) : (
+            <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/20">
+              <svg viewBox="0 0 32 32" className="h-7 w-7">
+                <path d="M9 10h14M9 16h14M9 22h9" stroke="#fff" strokeWidth="2.6" strokeLinecap="round" />
+              </svg>
+            </div>
+          )}
+          <h1 className="text-xl font-bold">{branding?.business_name || t('app.name')}</h1>
+          <p className="text-sm text-slate-300">{branding?.business_name ? t('app.name') : t('app.subtitle')}</p>
         </div>
         <div className="rounded-2xl bg-white p-6 shadow-xl sm:p-8">
           <div className="mb-5 flex items-start justify-between gap-3">
@@ -72,8 +77,8 @@ export default function Login() {
 
 export function Setup() {
   const { t } = useT();
-  const { setup } = useAuth();
-  const [f, setF] = useState({ business_name: '', name: '', email: '', password: '', confirm: '' });
+  const { setup, branding } = useAuth();
+  const [f, setF] = useState({ business_name: branding?.business_name || '', name: '', email: '', password: '', confirm: '' });
   const [err, setErr] = useState('');
   const [busy, setBusy] = useState(false);
   const set = (k) => (e) => setF({ ...f, [k]: e.target.value });

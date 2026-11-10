@@ -236,20 +236,24 @@ const MIGRATIONS = [
   `,
 ];
 
+// Default business profile (Gita Gangsa Enterprise). Everything can be changed in Settings.
+const LOGO_FILE = new URL('./assets/default-logo.jpg', import.meta.url);
+const DEFAULT_LOGO = fs.existsSync(LOGO_FILE) ? `data:image/jpeg;base64,${fs.readFileSync(LOGO_FILE).toString('base64')}` : '';
+
 export const DEFAULT_SETTINGS = {
-  business_name: 'Tasty Tuesday Enterprise',
-  registration_no: '',
-  address: '',
-  phone: '',
-  email: '',
+  business_name: 'Gita Gangsa Enterprise',
+  registration_no: '003060420-A',
+  address: 'M-4-24, Blok M\nDesa Mutiara\n43000 Kajang, Selangor',
+  phone: '019 364 7782',
+  email: 'gitagangsa@gmail.com',
   website: '',
   social_media: '',
-  logo: '',
-  bank_name: '',
-  bank_account_no: '',
-  bank_account_name: '',
-  doc_template: 'modern',
-  accent_color: '#1e40af',
+  logo: DEFAULT_LOGO,
+  bank_name: 'Maybank',
+  bank_account_no: '562021651487',
+  bank_account_name: 'Gita Gangsa Enterprise',
+  doc_template: 'boxed',
+  accent_color: '#9a6b1f',
   default_language: 'ms',
   quotation_validity_days: 14,
   payment_terms_days: 14,
@@ -258,16 +262,14 @@ export const DEFAULT_SETTINGS = {
   tax_rate_default: 8,
   tax_label: 'SST',
   quotation_terms:
-    '1. Sebut harga ini sah sehingga tarikh yang dinyatakan.\n2. Tempahan hanya disahkan selepas deposit diterima.\n3. Pembatalan kurang 7 hari sebelum majlis, deposit tidak akan dikembalikan.',
-  payment_terms:
-    'Deposit 50% diperlukan untuk mengesahkan tempahan. Baki perlu dijelaskan sebelum atau pada hari majlis.',
+    'Sebut harga ini sah sehingga tarikh yang dinyatakan.\nTempahan hanya disahkan selepas bayaran deposit 50% diterima.\nDeposit tidak akan dipulangkan sekiranya pihak tuan/puan membatalkan tempahan.',
+  payment_terms: 'Untuk tempahan, bayaran deposit sebanyak 50% diperlukan. Baki hendaklah dijelaskan sehari selepas majlis berlangsung.',
   invoice_terms:
-    'Sila jelaskan bayaran sebelum tarikh akhir. Sila nyatakan nombor invois sebagai rujukan bayaran.',
-  payment_instructions:
-    'Bayaran boleh dibuat melalui pindahan bank atau DuitNow ke akaun di bawah. Sila hantar bukti bayaran selepas pembayaran.',
-  doc_footer: 'Terima kasih atas sokongan anda. Ini adalah dokumen janaan komputer.',
-  signatory_name: '',
-  signatory_title: '',
+    'Untuk tempahan, bayaran deposit sebanyak 50% diperlukan.\nDeposit tidak akan dipulangkan sekiranya pihak tuan/puan membatalkan tempahan.\nBayaran hendaklah dijelaskan sehari selepas majlis berlangsung.',
+  payment_instructions: '',
+  doc_footer: '',
+  signatory_name: 'Abdul Mukmin bin Hamdan',
+  signatory_title: 'Pengurus',
   number_include_year: true,
   prefix_customer: DEFAULT_PREFIXES.customer,
   prefix_booking: DEFAULT_PREFIXES.booking,
@@ -275,7 +277,7 @@ export const DEFAULT_SETTINGS = {
   prefix_invoice: DEFAULT_PREFIXES.invoice,
   prefix_receipt: DEFAULT_PREFIXES.receipt,
   customer_categories: ['Korporat', 'Kerajaan', 'Individu', 'Sekolah / Universiti', 'NGO / Persatuan', 'Lain-lain'],
-  event_types: ['Majlis Perkahwinan', 'Majlis Korporat', 'Hari Keluarga', 'Pelancaran Produk', 'Majlis Hari Jadi', 'Festival / Karnival', 'Lain-lain'],
+  event_types: ['Majlis Perkahwinan', 'Majlis Korporat', 'Majlis Rasmi Kerajaan', 'Persembahan Kebudayaan', 'Majlis Sekolah / Universiti', 'Festival / Karnival', 'Lain-lain'],
 };
 
 export function openDb(file = process.env.DB_FILE || path.join(DATA_DIR, 'bms.sqlite')) {
@@ -304,6 +306,13 @@ function seedSettings(db) {
   db.transaction(() => {
     for (const [k, v] of Object.entries(DEFAULT_SETTINGS)) insert.run(k, JSON.stringify(v));
     insert.run('__jwt_secret', JSON.stringify(crypto.randomBytes(48).toString('hex')));
+    // Starter service catalogue (only on a brand-new database)
+    if (!db.prepare("SELECT 1 FROM settings WHERE key = '__seeded'").get()) {
+      if (!db.prepare('SELECT COUNT(*) AS n FROM services').get().n) {
+        db.prepare("INSERT INTO services (name, description, unit, unit_price, is_package) VALUES ('Perkhidmatan Gamelan (6 Pemain)', NULL, 'pakej', 180000, 1)").run();
+      }
+      insert.run('__seeded', 'true');
+    }
   })();
 }
 
