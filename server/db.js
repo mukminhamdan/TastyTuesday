@@ -266,6 +266,9 @@ export const DEFAULT_SETTINGS = {
   payment_instructions:
     'Bayaran boleh dibuat melalui pindahan bank atau DuitNow ke akaun di bawah. Sila hantar bukti bayaran selepas pembayaran.',
   doc_footer: 'Terima kasih atas sokongan anda. Ini adalah dokumen janaan komputer.',
+  signatory_name: '',
+  signatory_title: '',
+  number_include_year: true,
   prefix_customer: DEFAULT_PREFIXES.customer,
   prefix_booking: DEFAULT_PREFIXES.booking,
   prefix_quotation: DEFAULT_PREFIXES.quotation,

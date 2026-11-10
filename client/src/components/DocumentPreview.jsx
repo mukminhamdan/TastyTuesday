@@ -8,6 +8,7 @@ import { whatsappLink } from '../lib/format.js';
 
 /** On-screen rendering of a document model (mirrors the PDF layout). */
 export default function DocumentPreview({ model: m }) {
+  if (m.template === 'boxed') return <BoxedPreview m={m} />;
   const accent = m.accent;
   const minimal = m.template === 'minimal';
   const classic = m.template === 'classic';
@@ -203,6 +204,167 @@ export default function DocumentPreview({ model: m }) {
         <div
           className="pointer-events-none absolute left-1/2 top-[45%] -translate-x-1/2 -rotate-[20deg] rounded-lg border-4 px-6 py-2 text-5xl font-black uppercase tracking-widest opacity-20 sm:text-6xl"
           style={{ color: m.stampTone === 'green' ? '#16a34a' : m.stampTone === 'red' ? '#dc2626' : accent, borderColor: 'currentColor' }}
+        >
+          {m.stamp}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/** Traditional printed-invoice layout (mirrors renderBoxed in pdf.js). */
+function BoxedPreview({ m }) {
+  const isReceipt = m.kind === 'receipt';
+  const lines = m.business.lines;
+  const contactIdx = lines.findIndex((l) => l.startsWith('Tel:') || l.includes('@'));
+  const address = contactIdx >= 0 ? lines.slice(0, contactIdx) : lines;
+  const contact = contactIdx >= 0 ? lines.slice(contactIdx) : [];
+  const filler = Math.max(0, (isReceipt ? 6 : 12) - (isReceipt ? 1 : m.items.length));
+  const cell = 'border-x border-black px-2 py-1 align-top';
+  const strip = (v) => String(v).replace('RM ', '');
+  const foot = [];
+  if (!isReceipt) {
+    const extra = m.totals.length > 1;
+    if (extra) m.totals.forEach(([l, v]) => foot.push([l, strip(v), false, false]));
+    foot.push([m.L.grandTotal, strip(m.grandTotal[1]), true, !extra]);
+    (m.afterTotals || []).forEach(([l, v]) => foot.push([l, strip(v), false, false]));
+    if (m.balance && m.afterTotals?.length) foot.push([m.balance[0].toUpperCase(), strip(m.balance[1]), true, false]);
+  } else {
+    foot.push([m.lang === 'en' ? 'AMOUNT RECEIVED' : 'JUMLAH DITERIMA', m.receiptItem.amount, true, true]);
+    foot.push([m.summary[0][0], strip(m.summary[0][1]), false, false]);
+    foot.push([m.summary[2][0], strip(m.summary[2][1]), false, false]);
+    foot.push([m.summary[3][0].toUpperCase(), strip(m.summary[3][1]), true, false]);
+  }
+  const span = isReceipt ? 2 : 4;
+  return (
+    <div className="relative mx-auto w-full max-w-[820px] overflow-hidden rounded-lg border border-slate-200 bg-white p-5 text-[13px] text-black shadow-sm sm:p-8">
+      <div className="flex items-start gap-4 border-b-[3px] border-black pb-2">
+        {m.business.logo && <img src={m.business.logo} alt="" className="h-20 w-20 shrink-0 object-contain" />}
+        <div className="min-w-0 flex-1">
+          <div className="flex flex-wrap items-baseline justify-between gap-2">
+            <div className="font-bold">
+              <span className="text-base">{m.business.name}</span> <span className="text-[10px] font-semibold">{m.business.regNo}</span>
+            </div>
+            <div className="text-lg font-bold">{m.title}</div>
+          </div>
+          <div className="mt-1 font-serif">
+            {address.map((l, i) => (
+              <div key={i}>{l}</div>
+            ))}
+            {contact.map((l, i) => (
+              <div key={i} className="whitespace-pre">
+                {l.replace('Tel: ', '').replace('  |  ', '          ')}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="mt-3 grid gap-4 sm:grid-cols-2">
+        <div className="flex gap-2">
+          <span className="shrink-0 font-bold">{isReceipt ? m.billTo.title : m.L.to} :</span>
+          <div className="font-serif">
+            <div className="font-bold">{m.billTo.name}</div>
+            {m.billTo.lines.map((l, i) => (
+              <div key={i}>{l}</div>
+            ))}
+          </div>
+        </div>
+        <dl className="space-y-0.5 sm:justify-self-end">
+          {m.boxedMeta.map(([l, v, hl]) => (
+            <div key={l} className="grid grid-cols-[110px_12px_1fr] gap-1">
+              <dt className="font-bold">{l}</dt>
+              <span>:</span>
+              <dd className={`font-serif ${hl ? 'text-red-600' : ''}`}>{v}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+      <div className="mt-6 overflow-x-auto">
+        <table className="w-full min-w-[480px] border-collapse border border-black">
+          <thead>
+            <tr>
+              <th className="w-12 border border-black px-2 py-1 font-bold">{m.L.no}</th>
+              <th className="border border-black px-2 py-1 font-bold">{m.L.item}</th>
+              {!isReceipt && <th className="w-20 border border-black px-2 py-1 font-bold">{m.L.qty}</th>}
+              {!isReceipt && <th className="w-24 border border-black px-2 py-1 font-bold">{m.L.rate}</th>}
+              <th className="w-28 border border-black px-2 py-1 font-bold">{m.L.amount}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {isReceipt ? (
+              <tr>
+                <td className={`${cell} text-center`}>1</td>
+                <td className={`${cell} whitespace-pre-line`}>
+                  {m.receiptItem.description}
+                  {'\n'}
+                  <span className="text-xs">{m.receiptItem.details}</span>
+                </td>
+                <td className={`${cell} text-center`}>{m.receiptItem.amount}</td>
+              </tr>
+            ) : (
+              m.items.map((it) => (
+                <tr key={it.no}>
+                  <td className={`${cell} text-center`}>{it.no}</td>
+                  <td className={cell}>
+                    {it.description}
+                    {it.details && <div className="whitespace-pre-line text-xs">{it.details}</div>}
+                  </td>
+                  <td className={`${cell} text-center`}>{it.qty}</td>
+                  <td className={`${cell} num text-center`}>{it.unitPrice}</td>
+                  <td className={`${cell} num text-center`}>{it.amount}</td>
+                </tr>
+              ))
+            )}
+            {Array.from({ length: filler }, (_, i) => (
+              <tr key={`f${i}`} className="h-6">
+                {Array.from({ length: span + 1 }, (_, j) => (
+                  <td key={j} className="border-x border-black" />
+                ))}
+              </tr>
+            ))}
+          </tbody>
+          <tfoot>
+            {foot.map(([l, v, bold, center]) => (
+              <tr key={l} className={bold ? 'font-bold' : ''}>
+                <td colSpan={span} className={`border border-black px-2 py-1 ${center ? 'text-center' : 'text-right'}`}>
+                  {l}
+                </td>
+                <td className="num border border-black px-2 py-1 text-center">{v}</td>
+              </tr>
+            ))}
+          </tfoot>
+        </table>
+      </div>
+      {isReceipt && <p className="mt-2 italic">{m.amountWords}</p>}
+      {m.voidReason && <p className="mt-2 font-bold text-red-600">{m.lang === 'en' ? 'Void reason' : 'Sebab dibatalkan'}: {m.voidReason}</p>}
+      <div className="mt-4 space-y-0.5">
+        {m.sections.map((sct) =>
+          String(sct.text)
+            .split('\n')
+            .filter((x) => x.trim())
+            .map((line, i) => <p key={sct.title + i}>{line}</p>),
+        )}
+        {m.bankLine && !isReceipt && (
+          <p>
+            {m.bankLine.lead} <b>{m.bankLine.strong}</b>
+          </p>
+        )}
+        {isReceipt && m.receivedBy && (
+          <p>
+            {m.lang === 'en' ? 'Received by' : 'Diterima oleh'}: {m.receivedBy}
+          </p>
+        )}
+      </div>
+      <div className="mt-8 font-bold">
+        <p>{m.L.yours}</p>
+        <p className="mt-8 uppercase">{m.signatory.name || (isReceipt ? m.receivedBy : '') || m.business.name}</p>
+        {m.signatory.title && <p className="uppercase">{m.signatory.title}</p>}
+      </div>
+      {m.footer && <div className="mt-8 border-t border-slate-200 pt-2 text-center text-[11px] text-slate-400">{m.footer}</div>}
+      {m.stamp && (
+        <div
+          className="pointer-events-none absolute left-1/2 top-[45%] -translate-x-1/2 -rotate-[20deg] rounded-lg border-4 px-6 py-2 text-5xl font-black uppercase tracking-widest opacity-20 sm:text-6xl"
+          style={{ color: m.stampTone === 'green' ? '#16a34a' : '#dc2626', borderColor: 'currentColor' }}
         >
           {m.stamp}
         </div>

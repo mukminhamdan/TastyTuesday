@@ -62,6 +62,24 @@ function eventRows(d, t) {
   return rows.length ? rows : null;
 }
 
+/** "No Invois / Tarikh / Tarikh Majlis / Masa / Lokasi" rows for the boxed template. */
+function boxedMeta(t, numberRow, dateRows, d) {
+  return [
+    [...numberRow, true],
+    ...dateRows,
+    [t('doc.boxedEventDate'), d.event_date ? fmtDate(d.event_date) : ''],
+    [t('doc.boxedTime'), fmtTimeRange(d.start_time, d.end_time)],
+    [t('doc.boxedLocation'), d.event_venue || ''],
+  ];
+}
+
+/** "Bayaran boleh dimasukkan ke <Maybank Gita Gangsa Enterprise (562021651487)>" */
+function bankLine(s, t) {
+  if (!s.bank_name && !s.bank_account_no) return null;
+  const strong = [s.bank_name, s.bank_account_name || s.business_name].filter(Boolean).join(' ') + (s.bank_account_no ? ` (${s.bank_account_no})` : '');
+  return { lead: t('doc.bankLineLead'), strong };
+}
+
 export function buildDocModel(kind, d, s, lang = 'ms') {
   const t = tr(lang);
   const base = {
@@ -71,6 +89,19 @@ export function buildDocModel(kind, d, s, lang = 'ms') {
     template: s.doc_template || 'modern',
     accent: s.accent_color || '#1e40af',
     footer: s.doc_footer || '',
+    signatory: { name: s.signatory_name || '', title: s.signatory_title || '' },
+    bankLine: bankLine(s, t),
+    // Labels used by the "boxed" (traditional) template
+    L: {
+      to: t('doc.boxedTo'),
+      no: t('doc.boxedNo'),
+      item: t('doc.boxedItem'),
+      qty: t('doc.qty'),
+      rate: t('doc.boxedRate'),
+      amount: t('doc.amountRM'),
+      grandTotal: t('doc.boxedGrandTotal'),
+      yours: t('doc.yoursTruly'),
+    },
   };
 
   if (kind === 'quotation') {
@@ -87,6 +118,7 @@ export function buildDocModel(kind, d, s, lang = 'ms') {
         ...(d.customer_no ? [[t('doc.customerId'), d.customer_no]] : []),
       ],
       billTo: { title: t('doc.to'), name: d.customer_name, lines: customerLines(d) },
+      boxedMeta: boxedMeta(t, [t('doc.quotationNo'), d.quotation_no], [[t('doc.date'), fmtDate(d.quotation_date)], [t('doc.validUntil'), fmtDate(d.valid_until)]], d),
       event: eventRows(d, t),
       items: itemRows(d.items),
       totals: totalsRows(d, t),
@@ -126,6 +158,7 @@ export function buildDocModel(kind, d, s, lang = 'ms') {
         ...(d.customer_no ? [[t('doc.customerId'), d.customer_no]] : []),
       ],
       billTo: { title: t('doc.billTo'), name: d.customer_name, lines: customerLines(d) },
+      boxedMeta: boxedMeta(t, [t('doc.invoiceNo'), d.invoice_no], [[t('doc.date'), fmtDate(d.invoice_date)], [t('doc.dueDate'), fmtDate(d.due_date)]], d),
       event: eventRows(d, t),
       items: itemRows(d.items),
       totals,
@@ -158,6 +191,20 @@ export function buildDocModel(kind, d, s, lang = 'ms') {
       ...(d.booking_no ? [[t('doc.bookingRef'), d.booking_no]] : []),
     ],
     billTo: { title: t('doc.receivedFrom'), name: d.customer_name, lines: customerLines(d) },
+    boxedMeta: [
+      [t('doc.receiptNo'), d.receipt_no, true],
+      [t('doc.date'), fmtDate(d.payment_date)],
+      [t('doc.invoiceRef'), d.invoice_no],
+      ...(d.booking_no ? [[t('doc.bookingRef'), d.booking_no]] : []),
+      ...(d.event_date ? [[t('doc.boxedEventDate'), fmtDate(d.event_date)]] : []),
+    ],
+    receiptItem: {
+      description: d.description || '-',
+      details: [`${t('doc.paymentType')}: ${t(`pt.${d.payment_type}`)}`, `${t('doc.paymentMethod')}: ${t(`pm.${d.method}`)}`, d.reference ? `${t('doc.paymentRef')}: ${d.reference}` : null]
+        .filter(Boolean)
+        .join('\n'),
+      amount: fmtRM(d.amount).replace('RM ', ''),
+    },
     amount: fmtRM(d.amount),
     amountWords: amountInWords(d.amount, lang),
     details: [

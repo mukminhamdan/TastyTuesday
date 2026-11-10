@@ -25,7 +25,7 @@ status automation and numbering rules.
 | **Receipts** | Generated **automatically** for every payment (deposit, partial, balance), amount in words, linked to invoice and booking, PDF/print/share, void with reason |
 | **Payments** | Totals invoiced/collected/outstanding/overdue, deposits received, pending payments; outstanding and overdue invoice lists; payment history filtered by customer, date, method and status |
 | **Reports** | Monthly & annual bookings, revenue, customers, outstanding (aging), payment collections, service performance, cancelled bookings, each with date range filters, charts, **PDF**, **Excel** and print |
-| **Settings** | Business info & logo, bank details, 3 document templates with accent colour, validity / payment terms / deposit %, tax defaults, terms & conditions, footer, numbering prefixes, service catalogue, option lists, users, backup & restore |
+| **Settings** | Business info & logo, bank details, 4 document templates (Modern, Classic, Minimal, and **Traditional (boxed)**, which matches a classic printed Malaysian invoice: bordered table, JUMLAH BESAR, "Yang Benar" signatory) with accent colour, signatory name & position, numbering format (with/without year or prefix) and **next number** to continue an existing paper sequence, validity / payment terms / deposit %, tax defaults, terms & conditions, footer, numbering prefixes, service catalogue, option lists, users, backup & restore |
 
 Documents can be shared by link (customers see a read-only page with a PDF download; opening a quotation
 link marks it *Viewed*), WhatsApp, email, or the device's native share sheet.

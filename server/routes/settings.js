@@ -8,16 +8,39 @@ import { getSettings, setSetting, DEFAULT_SETTINGS, TABLES, DATA_DIR } from '../
 import { logActivity } from '../lib/activity.js';
 import { validatePassword } from './auth.js';
 import { sweepStatuses } from '../lib/finance.js';
+import { peekNumbers, setNextNumber } from '../lib/numbering.js';
+import { today } from '../lib/http.js';
 
 const NUMBER_KEYS = ['quotation_validity_days', 'payment_terms_days', 'deposit_percent', 'tax_rate_default'];
-const BOOL_KEYS = ['tax_enabled_default'];
+const BOOL_KEYS = ['tax_enabled_default', 'number_include_year'];
 const LIST_KEYS = ['customer_categories', 'event_types'];
-const TEMPLATES = ['modern', 'classic', 'minimal'];
+const TEMPLATES = ['modern', 'classic', 'minimal', 'boxed'];
 
 export function settingsRoutes(db) {
   const r = Router();
 
   r.get('/', (req, res) => res.json(getSettings(db)));
+
+  // Document sequences: see the next number, or move it forward (never backwards).
+  r.get('/counters', (req, res) => res.json(peekNumbers(db, today())));
+  r.put('/counters', requireAdmin, (req, res) => {
+    const types = ['customer', 'booking', 'quotation', 'invoice', 'receipt'];
+    const updates = Object.entries(req.body || {}).filter(([k]) => types.includes(k));
+    db.transaction(() => {
+      for (const [type, value] of updates) {
+        const next = Number(value);
+        const r2 = setNextNumber(db, type, today(), next);
+        if (!r2.ok) {
+          throw bad(
+            `Nombor seterusnya untuk ${type} mestilah sekurang-kurangnya ${r2.last + 1} (nombor tidak boleh digunakan semula)`,
+            `Next ${type} number must be at least ${r2.last + 1} (numbers cannot be reused)`,
+          );
+        }
+      }
+      if (updates.length) logActivity(db, req.user, { entity_type: 'settings', action: 'updated', description: 'Nombor dokumen seterusnya dikemas kini' });
+    })();
+    res.json(peekNumbers(db, today()));
+  });
 
   r.put('/', requireAdmin, (req, res) => {
     const body = req.body || {};
@@ -44,8 +67,8 @@ export function settingsRoutes(db) {
       } else if (key === 'default_language') {
         v = v === 'en' ? 'en' : 'ms';
       } else if (key.startsWith('prefix_')) {
-        v = String(v || '').trim().toUpperCase().replace(/[^A-Z0-9-]/g, '').slice(0, 10);
-        if (!v) throw bad('Awalan nombor dokumen tidak boleh kosong', 'Document number prefix cannot be empty');
+        v = String(v || '').trim().toUpperCase().replace(/[^A-Z0-9-]/g, '').replace(/^-+|-+$/g, '').slice(0, 10);
+        if (!v && key === 'prefix_customer') throw bad('Awalan nombor pelanggan tidak boleh kosong', 'Customer number prefix cannot be empty');
       } else {
         v = str(v, 10000) ?? '';
       }

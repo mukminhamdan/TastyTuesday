@@ -331,3 +331,22 @@ test('backup and restore round-trip', async () => {
   const c = (await api('POST', '/customers', { name: 'After restore' })).data;
   assert.equal(c.customer_no, 'CUS-0002');
 });
+
+test('numbering can continue an existing paper sequence (e.g. invoice 0211)', async () => {
+  // Plain numbers without prefix or year, like the business's existing invoices (No Invois 0210)
+  const s = await api('PUT', '/settings', { prefix_invoice: '', number_include_year: false });
+  assert.equal(s.status, 200);
+  // Cannot move a sequence backwards
+  assert.equal((await api('PUT', '/settings/counters', { invoice: 0 })).status, 400);
+  const c = await api('PUT', '/settings/counters', { invoice: 211 });
+  assert.equal(c.status, 200);
+  assert.equal(c.data.invoice.preview, '0211');
+  const inv = (await api('POST', `/quotations/${ctx.quotation.id}/convert-invoice`, { force: true })).data;
+  assert.equal(inv.invoice_no, '0211');
+  const inv2 = (await api('POST', `/invoices/${inv.id}/duplicate`)).data;
+  assert.equal(inv2.invoice_no, '0212');
+  // After moving forward, going back below an issued number is refused
+  assert.equal((await api('PUT', '/settings/counters', { invoice: 212 })).status, 400);
+  // Customer prefix may not be empty
+  assert.equal((await api('PUT', '/settings', { prefix_customer: '' })).status, 400);
+});

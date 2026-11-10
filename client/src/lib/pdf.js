@@ -365,10 +365,211 @@ function receiptBody(doc, autoTable, m, y) {
   return y + 12;
 }
 
+
+// ---------------------------------------------------------------------------
+// "Boxed" template - traditional Malaysian printed invoice layout
+// (logo + company header, "Kepada :" block, bordered table, JUMLAH BESAR, "Yang Benar,")
+// ---------------------------------------------------------------------------
+const BLACK = [0, 0, 0];
+const RED = [200, 30, 30];
+
+function boxedHeader(doc, m) {
+  const b = m.business;
+  const y0 = 12;
+  const logo = drawLogo(doc, b.logo, M, y0, 30, 30);
+  const tx = M + (logo.w ? logo.w + 6 : 0);
+  doc.setFont('helvetica', 'bold').setFontSize(13).setTextColor(...BLACK);
+  doc.text(b.name, tx, y0 + 6);
+  if (b.regNo) {
+    const w = doc.getTextWidth(b.name);
+    doc.setFont('helvetica', 'normal').setFontSize(7.5);
+    doc.text(b.regNo, tx + w + 4, y0 + 6);
+  }
+  // Document title on the right
+  doc.setFont('helvetica', 'bold').setFontSize(15).setTextColor(...BLACK);
+  doc.text(m.title, PAGE_W - M, y0 + 6, { align: 'right' });
+  doc.setFont('times', 'normal').setFontSize(10).setTextColor(...BLACK);
+  // b.lines = address lines + contact line + web line (see businessBlock)
+  const lines = [...b.lines];
+  const contactIdx = lines.findIndex((l) => l.startsWith('Tel:') || l.includes('@'));
+  const address = contactIdx >= 0 ? lines.slice(0, contactIdx) : lines;
+  const rest = contactIdx >= 0 ? lines.slice(contactIdx) : [];
+  let y = y0 + 13;
+  for (const line of address) {
+    doc.text(line, tx, y);
+    y += 4.6;
+  }
+  for (const line of rest) {
+    doc.text(line.replace('Tel: ', '').replace('  |  ', '        '), tx, y);
+    y += 4.6;
+  }
+  y = Math.max(y, y0 + (logo.h || 0) + 2);
+  doc.setDrawColor(...BLACK).setLineWidth(0.7).line(M, y, PAGE_W - M, y);
+  return y + 6;
+}
+
+function boxedParty(doc, m, y) {
+  doc.setFont('helvetica', 'bold').setFontSize(9.5).setTextColor(...BLACK);
+  const toLabel = `${m.kind === 'receipt' ? m.billTo.title : m.L.to} :`;
+  doc.text(toLabel, M, y);
+  const nx = M + Math.max(18, doc.getTextWidth(toLabel) + 3);
+  doc.setFont('times', 'bold').setFontSize(10.5);
+  const nameLines = doc.splitTextToSize(m.billTo.name || '', 85);
+  doc.text(nameLines, nx, y);
+  let ly = y + nameLines.length * 4.6;
+  doc.setFont('times', 'normal').setFontSize(9.5);
+  for (const line of m.billTo.lines) {
+    const w = doc.splitTextToSize(line, 85);
+    doc.text(w, nx, ly);
+    ly += w.length * 4.2;
+  }
+  // Right: label : value
+  let ry = y;
+  const lx = 122;
+  for (const [label, value, highlight] of m.boxedMeta) {
+    doc.setFont('helvetica', 'bold').setFontSize(9).setTextColor(...BLACK);
+    doc.text(label, lx, ry);
+    doc.text(':', lx + 33, ry);
+    doc.setFont('times', 'normal').setFontSize(10).setTextColor(...(highlight ? RED : BLACK));
+    const v = doc.splitTextToSize(String(value || ''), PAGE_W - M - (lx + 37));
+    doc.text(v, lx + 37, ry);
+    ry += Math.max(1, v.length) * 4.6;
+  }
+  doc.setTextColor(...BLACK);
+  return Math.max(ly, ry) + 8;
+}
+
+function boxedTable(doc, autoTable, m, y, { head, body, foot, columnStyles, minRows = 12 }) {
+  const pad = Math.max(0, minRows - body.length);
+  const filler = Array.from({ length: pad }, () => head.map(() => ''));
+  autoTable(doc, {
+    startY: y,
+    margin: { left: M, right: M, bottom: 24 },
+    head: [head],
+    body: [...body, ...filler],
+    foot,
+    theme: 'plain',
+    showFoot: 'lastPage',
+    styles: { font: 'helvetica', fontSize: 9, textColor: BLACK, cellPadding: { top: 1.4, bottom: 1.4, left: 2, right: 2 }, lineColor: BLACK, valign: 'top' },
+    headStyles: { fontStyle: 'bold', halign: 'center', lineWidth: 0.45, fillColor: false },
+    bodyStyles: { lineWidth: { left: 0.35, right: 0.35, top: 0, bottom: 0 }, minCellHeight: 6 },
+    footStyles: { fontStyle: 'bold', lineWidth: 0.45, fillColor: false },
+    columnStyles,
+    didParseCell: (d) => {
+      // close the bottom border on the last body row
+      if (d.section === 'body' && d.row.index === body.length + pad - 1) d.cell.styles.lineWidth = { left: 0.35, right: 0.35, top: 0, bottom: 0.35 };
+    },
+  });
+  return doc.lastAutoTable.finalY;
+}
+
+function boxedFootRows(m) {
+  const rows = [];
+  const row = (label, value, bold = false, center = false) =>
+    rows.push([
+      { content: label, colSpan: 4, styles: { halign: center ? 'center' : 'right', fontStyle: bold ? 'bold' : 'normal' } },
+      { content: value, styles: { halign: 'center', fontStyle: bold ? 'bold' : 'normal' } },
+    ]);
+  const extra = m.totals.length > 1;
+  if (extra) for (const [l, v] of m.totals) row(l, v.replace('RM ', ''));
+  row(m.L.grandTotal, m.grandTotal[1].replace('RM ', ''), true, !extra);
+  for (const [l, v] of m.afterTotals || []) row(l, v.replace('RM ', ''));
+  if (m.balance && (m.afterTotals || []).some(([l]) => l)) row(m.balance[0].toUpperCase(), m.balance[1].replace('RM ', ''), true);
+  return rows;
+}
+
+function boxedClosing(doc, m, y) {
+  y += 6;
+  doc.setFont('helvetica', 'normal').setFontSize(9).setTextColor(...BLACK);
+  for (const sct of m.sections) {
+    for (const para of String(sct.text).split('\n')) {
+      for (const line of doc.splitTextToSize(para.trim(), CW)) {
+        if (!line) continue;
+        y = ensure(doc, y, 5);
+        doc.text(line, M, y);
+        y += 4.6;
+      }
+    }
+  }
+  if (m.bankLine && m.kind !== 'receipt') {
+    y = ensure(doc, y, 6);
+    const lead = m.bankLine.lead;
+    doc.setFont('helvetica', 'normal');
+    doc.text(lead, M, y);
+    const lx = M + doc.getTextWidth(lead) + 1.2;
+    doc.setFont('helvetica', 'bold');
+    doc.text(doc.splitTextToSize(m.bankLine.strong, PAGE_W - M - lx), lx, y);
+    y += 5;
+  }
+  if (m.kind === 'receipt') {
+    if (m.receivedBy) {
+      doc.setFont('helvetica', 'normal').setFontSize(9).text(`${translate(m.lang, 'doc.receivedBy')}: ${m.receivedBy}`, M, y + 1);
+      y += 5;
+    }
+    doc.setFont('helvetica', 'italic').setFontSize(8.5).text(translate(m.lang, 'doc.computerGenerated'), M, y + 1);
+    y += 5;
+  }
+  y = ensure(doc, y, 30) + 8;
+  doc.setFont('helvetica', 'bold').setFontSize(9.5);
+  doc.text(m.L.yours, M, y);
+  y += 14;
+  const name = (m.signatory.name || (m.kind === 'receipt' ? m.receivedBy : '') || m.business.name).toUpperCase();
+  doc.text(name, M, y);
+  if (m.signatory.title) doc.text(m.signatory.title.toUpperCase(), M, y + 5);
+  return y + 10;
+}
+
+function renderBoxed(doc, autoTable, m) {
+  let y = boxedHeader(doc, m);
+  y = boxedParty(doc, m, y);
+  if (m.kind === 'receipt') {
+    y = boxedTable(doc, autoTable, m, y, {
+      head: [m.L.no, m.L.item, m.L.amount],
+      body: [['1', `${m.receiptItem.description}\n${m.receiptItem.details}`, m.receiptItem.amount]],
+      foot: [
+        [{ content: translate(m.lang, 'doc.boxedReceived'), colSpan: 2, styles: { halign: 'center' } }, { content: m.receiptItem.amount, styles: { halign: 'center' } }],
+        ...m.summary.slice(0, 3).filter((_, i) => i !== 1).map(([l, v]) => [{ content: l, colSpan: 2, styles: { halign: 'right', fontStyle: 'normal' } }, { content: v.replace('RM ', ''), styles: { halign: 'center', fontStyle: 'normal' } }]),
+        [{ content: m.summary[3][0].toUpperCase(), colSpan: 2, styles: { halign: 'right' } }, { content: m.summary[3][1].replace('RM ', ''), styles: { halign: 'center' } }],
+      ],
+      columnStyles: { 0: { cellWidth: 14, halign: 'center' }, 1: { cellWidth: 'auto' }, 2: { cellWidth: 34, halign: 'center' } },
+      minRows: 6,
+    });
+    doc.setFont('helvetica', 'italic').setFontSize(9).setTextColor(...BLACK);
+    doc.text(doc.splitTextToSize(m.amountWords, CW), M, y + 6);
+    y += 8;
+    if (m.voidReason) {
+      doc.setFont('helvetica', 'bold').setTextColor(...RED).text(`${translate(m.lang, 'doc.voidReason')}: ${m.voidReason}`, M, y + 5);
+      doc.setTextColor(...BLACK);
+      y += 6;
+    }
+    boxedClosing(doc, m, y);
+    return;
+  }
+  y = boxedTable(doc, autoTable, m, y, {
+    head: [m.L.no, m.L.item, m.L.qty, m.L.rate, m.L.amount],
+    body: m.items.map((it) => [it.no, it.details ? `${it.description}\n${it.details}` : it.description, it.qty, it.unitPrice, it.amount]),
+    foot: boxedFootRows(m),
+    columnStyles: {
+      0: { cellWidth: 14, halign: 'center' },
+      1: { cellWidth: 'auto' },
+      2: { cellWidth: 23, halign: 'center' },
+      3: { cellWidth: 28, halign: 'center' },
+      4: { cellWidth: 30, halign: 'center' },
+    },
+  });
+  boxedClosing(doc, m, y);
+}
+
 export async function renderDocPdf(m) {
   const { jsPDF, autoTable } = await loadLibs();
   const doc = new jsPDF({ unit: 'mm', format: 'a4', compress: true });
   doc.setProperties({ title: `${m.title} ${m.number}`, author: m.business.name, creator: m.business.name });
+  if (m.template === 'boxed') {
+    renderBoxed(doc, autoTable, m);
+    drawStamp(doc, m);
+    drawFooters(doc, m);
+    return doc;
+  }
   let y = drawHeader(doc, m);
 
   if (m.kind === 'receipt') {

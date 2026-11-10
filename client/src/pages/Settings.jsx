@@ -57,6 +57,7 @@ export default function SettingsPage() {
       )}
       <Tabs tabs={tabs} value={tab} onChange={setTab} />
       {['business', 'documents', 'numbering', 'lists'].includes(tab) && <SettingsForm tab={tab} readOnly={!isAdmin} />}
+      {tab === 'numbering' && <NextNumbers readOnly={!isAdmin} />}
       {tab === 'services' && <ServicesTab readOnly={!isAdmin} />}
       {tab === 'users' && <UsersTab />}
       {tab === 'backup' && <BackupTab />}
@@ -201,17 +202,29 @@ function SettingsForm({ tab, readOnly }) {
           <div className="grid gap-5 xl:grid-cols-2">
             <div className="space-y-5">
               <Card title={t('settings.template')}>
-                <div className="grid grid-cols-3 gap-2">
-                  {['modern', 'classic', 'minimal'].map((tpl) => (
+                <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+                  {['modern', 'classic', 'minimal', 'boxed'].map((tpl) => (
                     <button type="button" key={tpl} onClick={() => setF({ ...f, doc_template: tpl })} className={`rounded-lg border-2 p-3 text-sm font-medium ${f.doc_template === tpl ? 'border-brand-600 bg-brand-50 text-brand-800' : 'border-slate-200 text-slate-600'}`}>
                       {t(`settings.tpl.${tpl}`)}
                     </button>
                   ))}
                 </div>
+                {f.doc_template === 'boxed' && <p className="mt-2 text-xs text-slate-500">{t('settings.tplBoxedHint')}</p>}
                 <div className="mt-4 flex items-center gap-3">
                   <label className="label mb-0">{t('settings.accent')}</label>
                   <input type="color" className="h-9 w-14 cursor-pointer rounded border border-slate-300" value={f.accent_color} onChange={set('accent_color')} />
                   <span className="font-mono text-xs text-slate-500">{f.accent_color}</span>
+                </div>
+              </Card>
+              <Card title={t('settings.signatory')}>
+                <p className="mb-3 text-xs text-slate-500">{t('settings.signatoryHint')}</p>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <Field label={t('settings.signatoryName')}>
+                    <input className="input" value={f.signatory_name || ''} onChange={set('signatory_name')} placeholder="ABDUL MUKMIN BIN HAMDAN" />
+                  </Field>
+                  <Field label={t('settings.signatoryTitle')}>
+                    <input className="input" value={f.signatory_title || ''} onChange={set('signatory_title')} placeholder="PENGURUS" />
+                  </Field>
                 </div>
               </Card>
               <Card title={t('settings.defaults')}>
@@ -272,10 +285,19 @@ function SettingsForm({ tab, readOnly }) {
         {tab === 'numbering' && (
           <Card title={t('settings.numbering')}>
             <p className="mb-4 text-sm text-slate-500">{t('settings.numberingHint')}</p>
+            <label className="mb-1 flex items-center gap-2 text-sm font-medium text-slate-700">
+              <input type="checkbox" className="h-4 w-4 rounded border-slate-300" checked={f.number_include_year !== false} onChange={set('number_include_year')} /> {t('settings.includeYear')}
+            </label>
+            <p className="mb-4 pl-6 text-xs text-slate-500">{t('settings.includeYearHint')}</p>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
               {['customer', 'booking', 'quotation', 'invoice', 'receipt'].map((k) => (
-                <Field key={k} label={t(`settings.prefix.${k}`)} hint={`${t('settings.example')}: ${(f[`prefix_${k}`] || '').toUpperCase()}${k === 'customer' ? '' : '-' + todayISO().slice(0, 4)}-0001`}>
-                  <input className="input font-mono uppercase" maxLength={10} value={f[`prefix_${k}`] || ''} onChange={(e) => setF({ ...f, [`prefix_${k}`]: e.target.value.toUpperCase().replace(/[^A-Z0-9-]/g, '') })} />
+                <Field
+                  key={k}
+                  label={t(`settings.prefix.${k}`)}
+                  hint={`${t('settings.example')}: ${[(f[`prefix_${k}`] || '').toUpperCase(), k !== 'customer' && f.number_include_year !== false ? todayISO().slice(0, 4) : null, '0001'].filter(Boolean).join('-')}`}
+                >
+                  <input className="input font-mono uppercase" maxLength={10} value={f[`prefix_${k}`] || ''} placeholder={k === 'customer' ? '' : t('settings.noPrefix')}
+                    title={k === 'customer' ? undefined : t('settings.emptyPrefixHint')} onChange={(e) => setF({ ...f, [`prefix_${k}`]: e.target.value.toUpperCase().replace(/[^A-Z0-9-]/g, '') })} />
                 </Field>
               ))}
             </div>
@@ -304,6 +326,49 @@ function SettingsForm({ tab, readOnly }) {
         )}
       </fieldset>
     </form>
+  );
+}
+
+function NextNumbers({ readOnly }) {
+  const { t } = useT();
+  const toast = useToast();
+  const { settings } = useSettings();
+  const { data, setData, reload } = useFetch('/settings/counters');
+  const [f, setF] = useState({});
+  useEffect(() => {
+    reload();
+  }, [settings, reload]);
+  useEffect(() => {
+    if (data) setF(Object.fromEntries(Object.entries(data).map(([k, v]) => [k, v.next])));
+  }, [data]);
+  if (!data) return null;
+  const save = async () => {
+    const changed = Object.fromEntries(Object.entries(f).filter(([k, v]) => Number(v) !== data[k].next).map(([k, v]) => [k, Number(v)]));
+    try {
+      setData(await put('/settings/counters', changed));
+      toast.success(t('common.saved'));
+    } catch (e) {
+      toast.error(e);
+    }
+  };
+  return (
+    <Card title={t('settings.nextNumber')} className="mt-5">
+      <p className="mb-4 text-sm text-slate-500">{t('settings.nextNumberHint')}</p>
+      <fieldset disabled={readOnly} className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        {['customer', 'booking', 'quotation', 'invoice', 'receipt'].map((k) => (
+          <Field key={k} label={t(`settings.prefix.${k}`).replace(/^Awalan /, 'No. ').replace(/ prefix$/, ' no.')} hint={`${t('settings.willBe')}: ${data[k].preview}`}>
+            <input className="input num" type="number" min={data[k].next} value={f[k] ?? ''} onChange={(e) => setF({ ...f, [k]: e.target.value })} />
+          </Field>
+        ))}
+      </fieldset>
+      {!readOnly && (
+        <div className="mt-4 flex justify-end">
+          <button type="button" className="btn-secondary" onClick={save}>
+            <Save className="h-4 w-4" /> {t('settings.saveNumbers')}
+          </button>
+        </div>
+      )}
+    </Card>
   );
 }
 

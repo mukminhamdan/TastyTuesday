@@ -9,7 +9,7 @@ import { sweepStatuses } from '../lib/finance.js';
 
 const PUBLIC_SETTINGS = [
   'business_name', 'registration_no', 'address', 'phone', 'email', 'website', 'social_media', 'logo',
-  'bank_name', 'bank_account_no', 'bank_account_name', 'doc_template', 'accent_color', 'doc_footer', 'tax_label', 'default_language',
+  'bank_name', 'bank_account_no', 'bank_account_name', 'doc_template', 'accent_color', 'doc_footer', 'tax_label', 'default_language', 'signatory_name', 'signatory_title',
 ];
 
 function strip(doc) {

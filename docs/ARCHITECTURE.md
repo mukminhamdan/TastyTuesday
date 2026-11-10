@@ -98,6 +98,8 @@ Booking status only moves forward automatically and never overrides *Completed* 
 
 `PREFIX-YYYY-NNNN`, for example BK-2026-0001, QT-2026-0001, INV-2026-0001, RC-2026-0001; customers use CUS-0001.
 The year comes from the document date and each year starts again at 0001. Prefixes are configurable in
-*Settings → Document numbering*. Counters are incremented inside the creating transaction and also checked
+*Settings → Document numbering*. The year can be switched off for one continuous sequence, prefixes
+(other than the customer prefix) may be left empty for plain numbers such as `0211`, and the *next number*
+can be moved forward to continue an existing manual sequence. It can never be moved backwards. Counters are incremented inside the creating transaction and also checked
 against existing numbers, so numbers are unique, sequential and never reused, even after deletion,
 cancellation, voiding or a prefix change.
