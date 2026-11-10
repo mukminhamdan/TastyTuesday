@@ -1,0 +1,41 @@
+{
+  "name": "tastytuesday-bms",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Business Management System - customers, bookings, quotations, invoices, receipts, payments and reports",
+  "scripts": {
+    "dev": "concurrently -k -n api,web \"node --watch server/index.js\" \"vite\"",
+    "build": "vite build",
+    "start": "node server/index.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^13.0.3",
+    "cookie-parser": "^1.4.7",
+    "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.5",
+    "@vitejs/plugin-react": "^6.3.0",
+    "chart.js": "^4.6.1",
+    "concurrently": "^10.0.7",
+    "exceljs": "^4.4.0",
+    "jspdf": "^4.2.1",
+    "jspdf-autotable": "^5.0.9",
+    "lucide-react": "^1.71.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.5",
+    "tailwindcss": "^4.3.5",
+    "vite": "^8.3.7"
+  },
+  "overrides": {
+    "uuid": "^11.1.1"
+  }
+}
