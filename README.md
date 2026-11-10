@@ -12,6 +12,19 @@ data entry.
 See **[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)** for the architecture, database design, relationships,
 status automation and numbering rules.
 
+## Cara mula (Windows / Mac), tanpa arahan
+
+1. Pasang **Node.js** versi LTS dari https://nodejs.org (sekali sahaja).
+2. Muat turun sistem ini (fail ZIP) dan ekstrak (extract) ke mana-mana folder, contohnya `Documents\SistemGitaGangsa`.
+3. Klik dua kali:
+   - **Windows:** `start-windows.bat`
+   - **Mac:** `start-mac.command` (kali pertama: klik kanan → *Open*)
+4. Pelayar akan dibuka di **http://localhost:3000**. Cipta akaun pentadbir pada skrin pertama.
+
+Kali pertama mengambil masa beberapa minit untuk memasang komponen (perlu internet). Selepas itu, sistem terus dibuka.
+Jangan tutup tetingkap hitam semasa menggunakan sistem. Semua data disimpan dalam folder `data` di dalam folder sistem;
+salin folder itu (atau gunakan *Tetapan → Sandaran*) untuk membuat sandaran.
+
 ## Modules
 
 | Module | Highlights |
