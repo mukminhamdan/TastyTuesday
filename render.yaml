@@ -1,0 +1,32 @@
+# Render Blueprint: one-click online deployment (https://render.com)
+# Dashboard → New → Blueprint → choose this repository.
+services:
+  - type: web
+    name: gita-gangsa
+    runtime: node
+    region: singapore          # closest Render region to Malaysia
+    plan: starter              # a paid plan is required for the persistent disk
+    branch: main
+    autoDeploy: true           # redeploys automatically when main changes
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    disk:
+      name: bms-data
+      mountPath: /var/data     # database + automatic backups live here
+      sizeGB: 1
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: DATA_DIR
+        value: /var/data
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: TRUST_PROXY
+        value: "1"
+      - key: APP_TZ
+        value: Asia/Kuala_Lumpur
+      - key: JWT_SECRET
+        generateValue: true
+      - key: SETUP_CODE        # you choose this during setup; needed to create the first admin
+        sync: false

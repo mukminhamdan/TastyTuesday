@@ -40,7 +40,7 @@ export function AuthProvider({ children }) {
   const refresh = useCallback(async () => {
     try {
       const s = await get('/auth/status');
-      setState({ loading: false, user: s.user, needsSetup: s.needsSetup, branding: s.branding });
+      setState({ loading: false, user: s.user, needsSetup: s.needsSetup, setupCodeRequired: s.setupCodeRequired, branding: s.branding });
     } catch {
       setState({ loading: false, user: null, needsSetup: false });
     }

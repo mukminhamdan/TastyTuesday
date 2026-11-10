@@ -151,3 +151,24 @@ test('duplicate invoice due date never falls after the event', async () => {
   const dup = (await api('POST', `/invoices/${inv.id}/duplicate`)).data;
   assert.equal(dup.due_date, plus(3));
 });
+
+test('SETUP_CODE protects first-run setup on a public server', async () => {
+  const fresh = openDb(':memory:');
+  const srv = createApp(fresh).listen(0);
+  await new Promise((r) => srv.once('listening', r));
+  const url = `http://127.0.0.1:${srv.address().port}/api`;
+  const post = (body) =>
+    fetch(url + '/auth/setup', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'BMS' }, body: JSON.stringify(body) }).then((r) => r.status);
+  process.env.SETUP_CODE = 'rahsia-gita';
+  try {
+    const status = await fetch(url + '/auth/status').then((r) => r.json());
+    assert.equal(status.setupCodeRequired, true);
+    const body = { name: 'A', email: 'a@example.com', password: 'password123' };
+    assert.equal(await post(body), 403);
+    assert.equal(await post({ ...body, setup_code: 'salah' }), 403);
+    assert.equal(await post({ ...body, setup_code: 'rahsia-gita' }), 201);
+  } finally {
+    delete process.env.SETUP_CODE;
+    srv.close();
+  }
+});

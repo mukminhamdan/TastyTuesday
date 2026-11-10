@@ -16,7 +16,8 @@ const server = app.listen(port, host, () => {
     .flat()
     .filter((i) => i && i.family === 'IPv4' && !i.internal)
     .map((i) => `http://${i.address}:${port}`);
-  if (lan.length) console.log(`Dari telefon / peranti lain dalam Wi-Fi yang sama: ${lan.join('  atau  ')}`);
+  // Only relevant when running on a local computer (not behind an HTTPS host such as Render)
+  if (lan.length && process.env.COOKIE_SECURE !== 'true') console.log(`Dari telefon / peranti lain dalam Wi-Fi yang sama: ${lan.join('  atau  ')}`);
 });
 
 // Automatic daily database snapshot (data/backups, newest 14 kept).

@@ -88,6 +88,8 @@ export const DICT = {
   'auth.passwordMismatch': ['Kata laluan tidak sepadan', 'Passwords do not match'],
   'auth.setupTitle': ['Persediaan kali pertama', 'First-time setup'],
   'auth.setupSubtitle': ['Cipta akaun pentadbir untuk perniagaan anda', 'Create the administrator account for your business'],
+  'auth.setupCode': ['Kod persediaan', 'Setup code'],
+  'auth.setupCodeHint': ['Kod yang anda tetapkan semasa memasang sistem di pelayan', 'The code you chose when installing the system on the server'],
   'auth.createAccount': ['Cipta akaun & mula', 'Create account & start'],
   'auth.changePassword': ['Tukar kata laluan', 'Change password'],
   'auth.currentPassword': ['Kata laluan semasa', 'Current password'],

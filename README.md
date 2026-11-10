@@ -93,6 +93,7 @@ Copy `.env.example` and set these as environment variables:
 | `TRUST_PROXY` | – | Set `1` behind a reverse proxy |
 | `APP_TZ` | `Asia/Kuala_Lumpur` | Timezone for "today", overdue and expiry |
 | `AUTO_BACKUP` | `true` | Daily database snapshot (newest 14 kept) |
+| `SETUP_CODE` | – | If set, creating the first admin account requires this code (recommended on public servers) |
 
 ## Deployment
 
@@ -117,6 +118,12 @@ pm2 save && pm2 startup
 
 Nginx: `location / { proxy_pass http://127.0.0.1:3000; proxy_set_header Host $host; proxy_set_header X-Forwarded-Proto $scheme; }`,
 then enable HTTPS with Certbot.
+
+### Render (recommended, one-click Blueprint)
+
+`render.yaml` sets up everything: the Singapore region, a persistent disk, HTTPS, health checks, secure cookies and a generated session secret.
+Dashboard → **New → Blueprint** → choose this repository → enter a `SETUP_CODE` → **Apply**.
+A step-by-step guide in Bahasa Melayu is in **[docs/PANDUAN-DALAM-TALIAN.md](docs/PANDUAN-DALAM-TALIAN.md)**.
 
 ### Render / Railway / Fly.io
 

@@ -17,12 +17,17 @@ export default function authRoutes(db) {
 
   r.get('/status', (req, res) => {
     const s = getSettings(db);
-    res.json({ needsSetup: userCount() === 0, user: req.user || null, branding: { business_name: s.business_name, logo: s.logo } });
+    const needsSetup = userCount() === 0;
+    res.json({ needsSetup, setupCodeRequired: needsSetup && !!process.env.SETUP_CODE, user: req.user || null, branding: { business_name: s.business_name, logo: s.logo } });
   });
 
   // First-run: create the initial administrator account.
-  r.post('/setup', (req, res) => {
+  r.post('/setup', loginLimiter, (req, res) => {
     if (userCount() > 0) throw new HttpError(409, 'Sistem sudah disediakan', 'System is already set up');
+    // On a public server, SETUP_CODE stops strangers from claiming the admin account first.
+    if (process.env.SETUP_CODE && String(req.body.setup_code || '').trim() !== process.env.SETUP_CODE) {
+      throw new HttpError(403, 'Kod persediaan tidak betul', 'Incorrect setup code');
+    }
     const name = str(req.body.name, 120);
     const email = str(req.body.email, 200);
     if (!name) throw bad('Nama diperlukan', 'Name is required');

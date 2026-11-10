@@ -77,8 +77,8 @@ export default function Login() {
 
 export function Setup() {
   const { t } = useT();
-  const { setup, branding } = useAuth();
-  const [f, setF] = useState({ business_name: branding?.business_name || '', name: '', email: '', password: '', confirm: '' });
+  const { setup, branding, setupCodeRequired } = useAuth();
+  const [f, setF] = useState({ setup_code: '', business_name: branding?.business_name || '', name: '', email: '', password: '', confirm: '' });
   const [err, setErr] = useState('');
   const [busy, setBusy] = useState(false);
   const set = (k) => (e) => setF({ ...f, [k]: e.target.value });
@@ -98,6 +98,11 @@ export function Setup() {
   return (
     <Shell title={t('auth.setupTitle')} subtitle={t('auth.setupSubtitle')}>
       <form onSubmit={submit} className="space-y-4">
+        {setupCodeRequired && (
+          <Field label={t('auth.setupCode')} required hint={t('auth.setupCodeHint')}>
+            <input className="input" value={f.setup_code} onChange={set('setup_code')} required autoComplete="off" />
+          </Field>
+        )}
         <Field label={t('settings.businessName')} required>
           <input className="input" value={f.business_name} onChange={set('business_name')} required autoFocus />
         </Field>
