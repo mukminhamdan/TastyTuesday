@@ -18,6 +18,7 @@ import {
   syncBookingPayments,
 } from '../lib/finance.js';
 import { getSettings } from '../db.js';
+import { dueDate } from './bookings.js';
 
 const fmt = rm;
 
@@ -279,15 +280,13 @@ export default function invoiceRoutes(db) {
     if (!src) throw notFound('Invois', 'Invoice');
     const s = getSettings(db);
     const date = today();
-    const due = new Date(date + 'T00:00:00Z');
-    due.setUTCDate(due.getUTCDate() + Number(s.payment_terms_days || 14));
     const inv = db.transaction(() =>
       createInvoice(db, req.user, {
         ...src,
         tax_enabled: !!src.tax_enabled,
         quotation_id: null,
         invoice_date: date,
-        due_date: due.toISOString().slice(0, 10),
+        due_date: dueDate(date, src.event_date, s.payment_terms_days),
         items: src.items,
         status: 'Draft',
       }),

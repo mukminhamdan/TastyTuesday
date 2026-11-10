@@ -9,6 +9,18 @@ import { getSettings } from '../db.js';
 import { createQuotation } from './quotations.js';
 import { createInvoice } from './invoices.js';
 
+/** Validated start / end times ('HH:MM' or null); end must be after start. */
+export function parseTimes(body) {
+  const start_time = str(body.start_time, 5);
+  const end_time = str(body.end_time, 5);
+  if (start_time && !isTime(start_time)) throw bad('Masa mula tidak sah', 'Invalid start time');
+  if (end_time && !isTime(end_time)) throw bad('Masa tamat tidak sah', 'Invalid end time');
+  if (start_time && end_time && end_time <= start_time) {
+    throw bad('Masa tamat mestilah selepas masa mula', 'End time must be after start time', { fields: ['end_time'] });
+  }
+  return { start_time, end_time };
+}
+
 export function parseBooking(row) {
   if (!row) return row;
   let services = [];
@@ -28,13 +40,7 @@ function bookingFields(db, body) {
   const event_name = str(body.event_name, 200);
   if (!event_name) throw bad('Nama acara diperlukan', 'Event name is required', { fields: ['event_name'] });
   const event_date = requireDate(body.event_date, 'Tarikh acara', 'Event date');
-  const start_time = str(body.start_time, 5);
-  const end_time = str(body.end_time, 5);
-  if (start_time && !isTime(start_time)) throw bad('Masa mula tidak sah', 'Invalid start time');
-  if (end_time && !isTime(end_time)) throw bad('Masa tamat tidak sah', 'Invalid end time');
-  if (start_time && end_time && end_time <= start_time) {
-    throw bad('Masa tamat mestilah selepas masa mula', 'End time must be after start time', { fields: ['end_time'] });
-  }
+  const { start_time, end_time } = parseTimes(body);
   const pax = body.pax === '' || body.pax == null ? null : Number(body.pax);
   if (pax !== null && (!Number.isInteger(pax) || pax < 0 || pax > 1000000)) throw bad('Bilangan peserta tidak sah', 'Invalid number of participants');
   const services = Array.isArray(body.services) ? body.services.map((s) => str(s, 200)).filter(Boolean).slice(0, 50) : [];
@@ -188,8 +194,15 @@ export default function bookingRoutes(db) {
     if (!existing) throw notFound('Tempahan', 'Booking');
     const f = bookingFields(db, req.body);
     if (f.customer_id !== existing.customer_id) {
-      const linked = db.prepare('SELECT COUNT(*) AS n FROM invoices WHERE booking_id = ?').get(id).n;
-      if (linked) throw bad('Pelanggan tidak boleh ditukar selepas invois dikeluarkan', 'Customer cannot be changed after an invoice has been issued');
+      const linked = db
+        .prepare('SELECT (SELECT COUNT(*) FROM invoices WHERE booking_id = @id) + (SELECT COUNT(*) FROM quotations WHERE booking_id = @id) AS n')
+        .get({ id }).n;
+      if (linked) {
+        throw bad(
+          'Pelanggan tidak boleh ditukar kerana tempahan ini sudah mempunyai sebut harga atau invois',
+          'Customer cannot be changed because this booking already has quotations or invoices',
+        );
+      }
     }
     const conflicts = existing.status === 'Cancelled' ? [] : findConflicts(db, { ...f, exclude_id: id });
     if (conflicts.length && !req.body.allow_overlap) {
@@ -218,8 +231,20 @@ export default function bookingRoutes(db) {
     if (status === 'Cancelled') {
       const paid = db.prepare("SELECT COUNT(*) AS n FROM payments WHERE booking_id = ? AND status = 'Valid'").get(id).n;
       const reason = str(req.body.reason, 1000);
-      db.prepare("UPDATE bookings SET status='Cancelled', cancel_reason=?, cancelled_at=datetime('now'), updated_at=datetime('now') WHERE id=?").run(reason, id);
-      logActivity(db, req.user, { entity_type: 'booking', entity_id: id, ref_no: b.booking_no, customer_id: b.customer_id, action: 'cancelled', description: `Tempahan dibatalkan${reason ? ': ' + reason : ''}${paid ? ' (bayaran telah diterima - semak bayaran balik)' : ''}` });
+      db.transaction(() => {
+        db.prepare("UPDATE bookings SET status='Cancelled', cancel_reason=?, cancelled_at=datetime('now'), updated_at=datetime('now') WHERE id=?").run(reason, id);
+        // Open invoices are no longer receivable. Payments already received (e.g. a
+        // non-refundable deposit) stay recorded and still count as collected.
+        const open = db.prepare("SELECT id, invoice_no, customer_id FROM invoices WHERE booking_id = ? AND status NOT IN ('Paid','Cancelled')").all(id);
+        for (const inv of open) {
+          db.prepare("UPDATE invoices SET status = 'Cancelled', cancelled_at = datetime('now'), cancel_reason = ?, updated_at = datetime('now') WHERE id = ?").run(
+            `Tempahan ${b.booking_no} dibatalkan${reason ? ': ' + reason : ''}`,
+            inv.id,
+          );
+          logActivity(db, req.user, { entity_type: 'invoice', entity_id: inv.id, ref_no: inv.invoice_no, customer_id: inv.customer_id, action: 'cancelled', description: `Invois dibatalkan kerana tempahan ${b.booking_no} dibatalkan` });
+        }
+        logActivity(db, req.user, { entity_type: 'booking', entity_id: id, ref_no: b.booking_no, customer_id: b.customer_id, action: 'cancelled', description: `Tempahan dibatalkan${reason ? ': ' + reason : ''}${paid ? ' (bayaran telah diterima - semak bayaran balik)' : ''}` });
+      })();
     } else {
       db.prepare(
         `UPDATE bookings SET status=?, cancel_reason=NULL, cancelled_at=NULL,

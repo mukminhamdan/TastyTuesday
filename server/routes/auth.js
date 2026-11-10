@@ -65,7 +65,9 @@ export default function authRoutes(db) {
       throw bad('Kata laluan semasa tidak betul', 'Current password is incorrect');
     }
     validatePassword(req.body.new_password);
-    db.prepare('UPDATE users SET password_hash = ? WHERE id = ?').run(bcrypt.hashSync(req.body.new_password, 10), row.id);
+    db.prepare('UPDATE users SET password_hash = ?, token_version = token_version + 1 WHERE id = ?').run(bcrypt.hashSync(req.body.new_password, 10), row.id);
+    // Other sessions are signed out; keep this one signed in with a fresh token.
+    issueSession(db, res, req.user);
     res.json({ ok: true });
   });
 

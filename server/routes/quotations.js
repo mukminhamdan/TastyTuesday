@@ -1,14 +1,14 @@
 import { Router } from 'express';
 import crypto from 'node:crypto';
 import { requireAdmin } from '../lib/auth.js';
-import { bad, notFound, conflict, str, intId, today } from '../lib/http.js';
+import { bad, notFound, conflict, str, intId, today, addDays } from '../lib/http.js';
 import { QUOTATION_STATUSES } from '../../shared/constants.js';
 import { nextNumber } from '../lib/numbering.js';
 import { logActivity, bm, rm } from '../lib/activity.js';
-import { normaliseItems, pricingFields, totalsFor, replaceItems, requireDate, advanceBooking, sweepStatuses } from '../lib/finance.js';
+import { normaliseItems, pricingFields, totalsFor, replaceItems, requireDate, advanceBooking, sweepStatuses, syncBookingPayments } from '../lib/finance.js';
 import { getSettings } from '../db.js';
 import { createInvoice } from './invoices.js';
-import { invoiceDefaults, findConflicts, loadBooking } from './bookings.js';
+import { invoiceDefaults, findConflicts, loadBooking, parseTimes } from './bookings.js';
 
 function quotationFields(db, body) {
   const customer_id = intId(body.customer_id);
@@ -175,14 +175,12 @@ export default function quotationRoutes(db) {
     if (!src) throw notFound('Sebut harga', 'Quotation');
     const s = getSettings(db);
     const date = today();
-    const valid = new Date(date + 'T00:00:00Z');
-    valid.setUTCDate(valid.getUTCDate() + Number(s.quotation_validity_days || 14));
     const q = db.transaction(() =>
       createQuotation(db, req.user, {
         ...src,
         tax_enabled: !!src.tax_enabled,
         quotation_date: date,
-        valid_until: valid.toISOString().slice(0, 10),
+        valid_until: addDays(date, s.quotation_validity_days || 14),
         items: src.items,
         status: 'Draft',
       }),
@@ -234,8 +232,7 @@ export default function quotationRoutes(db) {
     const event_date = req.body.event_date || q.event_date;
     if (!event_date) throw bad('Tarikh acara diperlukan untuk tempahan', 'An event date is required for the booking');
     requireDate(event_date, 'Tarikh acara', 'Event date');
-    const start_time = str(req.body.start_time, 5);
-    const end_time = str(req.body.end_time, 5);
+    const { start_time, end_time } = parseTimes(req.body);
     const conflicts = findConflicts(db, { event_date, start_time, end_time });
     if (conflicts.length && !req.body.allow_overlap) {
       throw conflict('Tempahan bertindih dengan tempahan lain', 'Booking overlaps with another booking', { code: 'OVERLAP', conflicts });
@@ -250,7 +247,10 @@ export default function quotationRoutes(db) {
         .run(booking_no, q.customer_id, q.event_name || 'Acara', event_date, start_time, end_time, q.event_venue, JSON.stringify(q.items.map((i) => i.description)), req.user.id);
       const bid = info.lastInsertRowid;
       db.prepare('UPDATE quotations SET booking_id = ?, event_date = COALESCE(event_date, ?) WHERE id = ?').run(bid, event_date, id);
+      // Attach invoices already issued from this quotation, and their payments, to the new booking
       db.prepare('UPDATE invoices SET booking_id = ? WHERE quotation_id = ? AND booking_id IS NULL').run(bid, id);
+      db.prepare('UPDATE payments SET booking_id = ? WHERE booking_id IS NULL AND invoice_id IN (SELECT id FROM invoices WHERE booking_id = ?)').run(bid, bid);
+      syncBookingPayments(db, bid);
       logActivity(db, req.user, { entity_type: 'booking', entity_id: bid, ref_no: booking_no, customer_id: q.customer_id, action: 'created', description: `Tempahan disahkan daripada ${q.quotation_no}` });
       return bid;
     })();

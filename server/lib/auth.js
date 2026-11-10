@@ -10,7 +10,8 @@ function secret(db) {
 }
 
 export function issueSession(db, res, user) {
-  const token = jwt.sign({ sub: user.id }, secret(db), { expiresIn: Math.floor(MAX_AGE_MS / 1000) });
+  const v = db.prepare('SELECT token_version FROM users WHERE id = ?').get(user.id)?.token_version ?? 0;
+  const token = jwt.sign({ sub: user.id, v }, secret(db), { expiresIn: Math.floor(MAX_AGE_MS / 1000) });
   res.cookie(COOKIE, token, {
     httpOnly: true,
     sameSite: 'lax',
@@ -31,8 +32,12 @@ export function loadUser(db) {
     if (token) {
       try {
         const payload = jwt.verify(token, secret(db));
-        const user = db.prepare('SELECT id, name, email, role, active FROM users WHERE id = ?').get(payload.sub);
-        if (user && user.active) req.user = user;
+        const user = db.prepare('SELECT id, name, email, role, active, token_version FROM users WHERE id = ?').get(payload.sub);
+        // A password change bumps token_version, which invalidates older sessions.
+        if (user && user.active && (payload.v ?? 0) === user.token_version) {
+          const { token_version, ...rest } = user;
+          req.user = rest;
+        }
       } catch {
         /* invalid / expired token -> anonymous */
       }

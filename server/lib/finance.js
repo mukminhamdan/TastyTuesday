@@ -143,10 +143,27 @@ export function sweepStatuses(db) {
      WHERE status IN ('Sent','Partially Paid') AND balance > 0 AND due_date < ?`,
   ).run(t);
   db.prepare(
-    `UPDATE invoices SET status = CASE WHEN amount_paid > 0 THEN 'Partially Paid' ELSE 'Sent' END
+    `UPDATE invoices SET status = CASE WHEN balance <= 0 AND total > 0 THEN 'Paid' WHEN amount_paid > 0 THEN 'Partially Paid' ELSE 'Sent' END
      WHERE status = 'Overdue' AND (due_date >= ? OR balance <= 0)`,
   ).run(t);
   db.prepare(`UPDATE quotations SET status = 'Expired' WHERE status IN ('Sent','Viewed') AND valid_until < ?`).run(t);
+}
+
+/**
+ * Recalculate balance_after and payment_type of every valid payment on an invoice,
+ * in date order. Used when a payment's date is edited so receipts stay consistent.
+ */
+export function resequencePayments(db, invoiceId) {
+  const inv = db.prepare('SELECT total FROM invoices WHERE id = ?').get(invoiceId);
+  if (!inv) return;
+  const list = db.prepare("SELECT id, amount FROM payments WHERE invoice_id = ? AND status = 'Valid' ORDER BY payment_date, id").all(invoiceId);
+  const upd = db.prepare('UPDATE payments SET balance_after = ?, payment_type = ? WHERE id = ?');
+  let paid = 0;
+  list.forEach((p, i) => {
+    paid += p.amount;
+    const balance = inv.total - paid;
+    upd.run(balance, inferPaymentType(i, balance), p.id);
+  });
 }
 
 /** Payment type label from position in the invoice's payment sequence. */

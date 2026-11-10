@@ -139,11 +139,14 @@ export function userRoutes(db) {
     if (u.role === 'admin' && u.active && (role !== 'admin' || !active) && activeAdmins() <= 1) {
       throw bad('Mesti ada sekurang-kurangnya seorang pentadbir aktif', 'There must be at least one active administrator');
     }
-    db.prepare('UPDATE users SET name = ?, role = ?, active = ? WHERE id = ?').run(name, role, active, id);
-    if (req.body.password) {
-      validatePassword(req.body.password);
-      db.prepare('UPDATE users SET password_hash = ? WHERE id = ?').run(bcrypt.hashSync(req.body.password, 10), id);
-    }
+    if (req.body.password) validatePassword(req.body.password);
+    db.transaction(() => {
+      db.prepare('UPDATE users SET name = ?, role = ?, active = ? WHERE id = ?').run(name, role, active, id);
+      if (req.body.password) {
+        // New password signs the user out everywhere
+        db.prepare('UPDATE users SET password_hash = ?, token_version = token_version + 1 WHERE id = ?').run(bcrypt.hashSync(req.body.password, 10), id);
+      }
+    })();
     res.json(list());
   });
   r.delete('/:id', (req, res) => {

@@ -4,7 +4,7 @@ import { requireAdmin } from '../lib/auth.js';
 import { bad, notFound, str, intId, today } from '../lib/http.js';
 import { PAYMENT_METHODS } from '../../shared/constants.js';
 import { logActivity, rm } from '../lib/activity.js';
-import { recomputeInvoice, requireDate, sweepStatuses } from '../lib/finance.js';
+import { recomputeInvoice, requireDate, sweepStatuses, resequencePayments } from '../lib/finance.js';
 
 export function loadPayment(db, id) {
   const p = db
@@ -104,14 +104,17 @@ export default function paymentRoutes(db) {
     if (pay.status === 'Void') throw bad('Resit yang dibatalkan tidak boleh diubah', 'Voided receipts cannot be edited');
     const method = PAYMENT_METHODS.includes(req.body.method) ? req.body.method : pay.method;
     const payment_date = req.body.payment_date ? requireDate(req.body.payment_date, 'Tarikh bayaran', 'Payment date') : pay.payment_date;
-    db.prepare('UPDATE payments SET method = ?, payment_date = ?, reference = ?, description = ?, received_by = ? WHERE id = ?').run(
-      method,
-      payment_date,
-      str(req.body.reference, 200),
-      str(req.body.description, 1000),
-      str(req.body.received_by, 120),
-      id,
-    );
+    db.transaction(() => {
+      db.prepare('UPDATE payments SET method = ?, payment_date = ?, reference = ?, description = ?, received_by = ? WHERE id = ?').run(
+        method,
+        payment_date,
+        str(req.body.reference, 200),
+        str(req.body.description, 1000),
+        str(req.body.received_by, 120),
+        id,
+      );
+      if (payment_date !== pay.payment_date) resequencePayments(db, pay.invoice_id);
+    })();
     logActivity(db, req.user, { entity_type: 'payment', entity_id: id, ref_no: pay.receipt_no, customer_id: pay.customer_id, action: 'updated', description: 'Butiran resit dikemas kini' });
     res.json(loadPayment(db, id));
   });

@@ -234,6 +234,8 @@ const MIGRATIONS = [
   );
   CREATE INDEX idx_activity_created ON activity_log(created_at);
   `,
+  // v2 - session revocation: sessions carry the user's token_version
+  `ALTER TABLE users ADD COLUMN token_version INTEGER NOT NULL DEFAULT 0;`,
 ];
 
 // Default business profile (Gita Gangsa Enterprise). Everything can be changed in Settings.

@@ -259,7 +259,10 @@ export const DICT = {
   'book.reopen': ['Buka semula', 'Reopen'],
   'book.cancelBooking': ['Batalkan tempahan', 'Cancel booking'],
   'book.cancelTitle': ['Batalkan tempahan?', 'Cancel booking?'],
-  'book.cancelMsg': ['Tempahan akan ditanda sebagai dibatalkan. Rekod kewangan dikekalkan.', 'The booking will be marked as cancelled. Financial records are kept.'],
+  'book.cancelMsg': [
+    'Tempahan akan ditanda sebagai dibatalkan. Invois yang belum dibayar penuh untuk tempahan ini juga akan dibatalkan. Bayaran yang telah diterima (cth. deposit) kekal direkodkan.',
+    'The booking will be marked as cancelled. Any invoices for it that are not fully paid will also be cancelled. Payments already received (e.g. deposits) remain recorded.',
+  ],
   'book.cancelReason': ['Sebab pembatalan', 'Cancellation reason'],
   'book.cancelledBanner': ['Tempahan ini telah dibatalkan', 'This booking has been cancelled'],
   'book.completeTitle': ['Masih ada baki tertunggak', 'Balance still outstanding'],
