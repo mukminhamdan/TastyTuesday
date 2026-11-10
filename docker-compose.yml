@@ -1,0 +1,14 @@
+services:
+  bms:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      # Set to true when served over HTTPS (recommended in production)
+      COOKIE_SECURE: "false"
+      TRUST_PROXY: "1"
+    volumes:
+      - bms-data:/data
+volumes:
+  bms-data:

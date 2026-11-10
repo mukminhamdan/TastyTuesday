@@ -4,7 +4,7 @@ import { requireAdmin } from '../lib/auth.js';
 import { bad, notFound, conflict, str, intId, today } from '../lib/http.js';
 import { QUOTATION_STATUSES } from '../../shared/constants.js';
 import { nextNumber } from '../lib/numbering.js';
-import { logActivity } from '../lib/activity.js';
+import { logActivity, bm, rm } from '../lib/activity.js';
 import { normaliseItems, pricingFields, totalsFor, replaceItems, requireDate, advanceBooking, sweepStatuses } from '../lib/finance.js';
 import { getSettings } from '../db.js';
 import { createInvoice } from './invoices.js';
@@ -59,7 +59,7 @@ export function createQuotation(db, user, body) {
   const id = info.lastInsertRowid;
   replaceItems(db, 'quotation_items', 'quotation_id', id, t.items);
   advanceBooking(db, f.booking_id, 'Pending Quotation');
-  logActivity(db, user, { entity_type: 'quotation', entity_id: id, ref_no: quotation_no, customer_id: f.customer_id, action: 'created', description: `Sebut harga dicipta (RM ${(t.total / 100).toFixed(2)})` });
+  logActivity(db, user, { entity_type: 'quotation', entity_id: id, ref_no: quotation_no, customer_id: f.customer_id, action: 'created', description: `Sebut harga dicipta (${rm(t.total)})` });
   if (body.status === 'Sent') setQuotationStatus(db, user, id, 'Sent');
   return loadQuotation(db, id);
 }
@@ -87,7 +87,7 @@ export function setQuotationStatus(db, user, id, status) {
   if (status === 'Sent') advanceBooking(db, q.booking_id, 'Quotation Sent');
   if (status === 'Viewed') advanceBooking(db, q.booking_id, 'Awaiting Confirmation');
   if (status === 'Approved') advanceBooking(db, q.booking_id, 'Confirmed');
-  logActivity(db, user, { entity_type: 'quotation', entity_id: id, ref_no: q.quotation_no, customer_id: q.customer_id, action: 'status', description: `Status sebut harga: ${status}` });
+  logActivity(db, user, { entity_type: 'quotation', entity_id: id, ref_no: q.quotation_no, customer_id: q.customer_id, action: 'status', description: `Status sebut harga: ${bm(status)}` });
 }
 
 export default function quotationRoutes(db) {

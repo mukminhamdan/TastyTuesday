@@ -3,7 +3,7 @@ import { requireAdmin } from '../lib/auth.js';
 import { bad, notFound, conflict, str, intId, isTime, today, addDays } from '../lib/http.js';
 import { BOOKING_STATUSES } from '../../shared/constants.js';
 import { nextNumber } from '../lib/numbering.js';
-import { logActivity } from '../lib/activity.js';
+import { logActivity, bm } from '../lib/activity.js';
 import { requireDate, sweepStatuses, syncBookingPayments } from '../lib/finance.js';
 import { getSettings } from '../db.js';
 import { createQuotation } from './quotations.js';
@@ -227,7 +227,7 @@ export default function bookingRoutes(db) {
       ).run(status, status, id);
       // Re-derive payment state when reopening a booking.
       if (status !== 'Completed') syncBookingPayments(db, id);
-      logActivity(db, req.user, { entity_type: 'booking', entity_id: id, ref_no: b.booking_no, customer_id: b.customer_id, action: 'status', description: `Status tempahan: ${status}` });
+      logActivity(db, req.user, { entity_type: 'booking', entity_id: id, ref_no: b.booking_no, customer_id: b.customer_id, action: 'status', description: `Status tempahan: ${bm(status)}` });
     }
     res.json(loadBooking(db, id));
   });

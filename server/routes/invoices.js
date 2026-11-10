@@ -4,7 +4,7 @@ import { requireAdmin } from '../lib/auth.js';
 import { bad, notFound, conflict, str, intId, today, sen } from '../lib/http.js';
 import { PAYMENT_METHODS, PAYMENT_TYPES } from '../../shared/constants.js';
 import { nextNumber } from '../lib/numbering.js';
-import { logActivity } from '../lib/activity.js';
+import { logActivity, bm, rm } from '../lib/activity.js';
 import {
   normaliseItems,
   pricingFields,
@@ -19,7 +19,7 @@ import {
 } from '../lib/finance.js';
 import { getSettings } from '../db.js';
 
-const fmt = (s) => `RM ${(s / 100).toFixed(2)}`;
+const fmt = rm;
 
 function invoiceFields(db, body) {
   const customer_id = intId(body.customer_id);
@@ -160,7 +160,7 @@ export function recordPayment(db, user, invoiceId, body) {
     ref_no: receipt_no,
     customer_id: inv.customer_id,
     action: 'created',
-    description: `Bayaran ${fmt(amount)} (${method}) bagi ${inv.invoice_no}. Baki: ${fmt(balance_after)}`,
+    description: `Bayaran ${fmt(amount)} (${bm(method)}) bagi ${inv.invoice_no}. Baki: ${fmt(balance_after)}`,
   });
   return info.lastInsertRowid;
 }

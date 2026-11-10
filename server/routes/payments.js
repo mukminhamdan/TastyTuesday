@@ -3,7 +3,7 @@ import crypto from 'node:crypto';
 import { requireAdmin } from '../lib/auth.js';
 import { bad, notFound, str, intId, today } from '../lib/http.js';
 import { PAYMENT_METHODS } from '../../shared/constants.js';
-import { logActivity } from '../lib/activity.js';
+import { logActivity, rm } from '../lib/activity.js';
 import { recomputeInvoice, requireDate, sweepStatuses } from '../lib/finance.js';
 
 export function loadPayment(db, id) {
@@ -133,7 +133,7 @@ export default function paymentRoutes(db) {
         ref_no: pay.receipt_no,
         customer_id: pay.customer_id,
         action: 'voided',
-        description: `Bayaran RM ${(pay.amount / 100).toFixed(2)} dibatalkan: ${reason}`,
+        description: `Bayaran ${rm(pay.amount)} dibatalkan: ${reason}`,
       });
     })();
     res.json(loadPayment(db, id));
