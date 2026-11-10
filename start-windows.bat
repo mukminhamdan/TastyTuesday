@@ -25,6 +25,7 @@ if not exist dist\index.html (
 echo.
 echo  Sistem sedang berjalan di http://localhost:3000
 echo  JANGAN tutup tetingkap ini semasa menggunakan sistem.
+echo  Untuk telefon Android dalam Wi-Fi yang sama, guna alamat "Dari telefon" yang dipaparkan di bawah.
 echo.
 start "" cmd /c "timeout /t 3 >nul & start http://localhost:3000"
 call npm start

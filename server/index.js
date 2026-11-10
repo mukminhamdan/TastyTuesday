@@ -1,3 +1,4 @@
+import os from 'node:os';
 import { openDb } from './db.js';
 import { createApp } from './app.js';
 import { fileBackup } from './routes/settings.js';
@@ -11,6 +12,11 @@ const host = process.env.HOST || '0.0.0.0';
 
 const server = app.listen(port, host, () => {
   console.log(`Business Management System running on http://localhost:${port}`);
+  const lan = Object.values(os.networkInterfaces())
+    .flat()
+    .filter((i) => i && i.family === 'IPv4' && !i.internal)
+    .map((i) => `http://${i.address}:${port}`);
+  if (lan.length) console.log(`Dari telefon / peranti lain dalam Wi-Fi yang sama: ${lan.join('  atau  ')}`);
 });
 
 // Automatic daily database snapshot (data/backups, newest 14 kept).

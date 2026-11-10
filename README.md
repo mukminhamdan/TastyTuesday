@@ -25,6 +25,24 @@ Kali pertama mengambil masa beberapa minit untuk memasang komponen (perlu intern
 Jangan tutup tetingkap hitam semasa menggunakan sistem. Semua data disimpan dalam folder `data` di dalam folder sistem;
 salin folder itu (atau gunakan *Tetapan → Sandaran*) untuk membuat sandaran.
 
+## Guna di telefon Android
+
+Sistem ini aplikasi web, jadi ia dibuka di **Chrome** pada Android dan paparannya disesuaikan untuk telefon.
+Ia boleh dipasang di skrin utama dengan logo sendiri, seperti aplikasi biasa.
+
+**Pilihan A: dalam Wi-Fi yang sama dengan komputer (percuma)**
+1. Jalankan sistem di komputer (`start-windows.bat` / `start-mac.command`). Tetingkap hitam akan memaparkan
+   alamat seperti `Dari telefon ... : http://192.168.1.23:3000`.
+2. Di telefon (Wi-Fi yang sama), buka alamat itu dalam Chrome.
+3. Menu ⋮ → **Tambah ke skrin utama**.
+   - Windows mungkin bertanya tentang *firewall* kali pertama: pilih **Allow** untuk rangkaian *Private*.
+   - Komputer mesti dihidupkan dan sistem mesti berjalan semasa telefon digunakan.
+
+**Pilihan B: dalam talian (boleh guna di mana-mana, juga untuk staf)**
+Pasang sistem di pelayan (lihat *Deployment*: Render, Railway atau VPS) dengan HTTPS. Buka alamatnya dalam
+Chrome, kemudian menu ⋮ → **Pasang aplikasi**. Aplikasi akan dibuka dalam tetingkap sendiri tanpa bar pelayar, dan
+perkongsian fail PDF terus ke WhatsApp turut berfungsi (memerlukan HTTPS).
+
 ## Modules
 
 | Module | Highlights |

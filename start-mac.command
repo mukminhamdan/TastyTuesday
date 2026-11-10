@@ -20,6 +20,7 @@ fi
 echo ""
 echo " Sistem sedang berjalan di http://localhost:3000"
 echo " JANGAN tutup tetingkap ini semasa menggunakan sistem."
+echo " Untuk telefon Android dalam Wi-Fi yang sama, guna alamat \"Dari telefon\" yang dipaparkan di bawah."
 echo ""
 (sleep 3 && open http://localhost:3000) &
 npm start

@@ -60,7 +60,7 @@ export function createApp(db) {
   // Serve the built single-page app.
   const dist = path.resolve(__dirname, '../dist');
   if (fs.existsSync(dist)) {
-    app.use(express.static(dist, { index: false, maxAge: '7d', setHeaders: (res, file) => file.endsWith('.html') && res.setHeader('Cache-Control', 'no-cache') }));
+    app.use(express.static(dist, { index: false, maxAge: '7d', setHeaders: (res, file) => (file.endsWith('.html') || file.endsWith('sw.js') || file.endsWith('.webmanifest')) && res.setHeader('Cache-Control', 'no-cache') }));
     app.get(/^\/(?!api\/).*/, (req, res) => {
       res.setHeader('Cache-Control', 'no-cache');
       res.sendFile(path.join(dist, 'index.html'));
