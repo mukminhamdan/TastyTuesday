@@ -143,7 +143,6 @@ export const pizzaEp2: Episode = {
       to: 11.3,
       enter: 'zoom',
       audio: 1,
-      asmr: true,
       zoom: {from: {s: 1.0, x: 0.5, y: 0.45}, to: {s: 1.12, x: 0.45, y: 0.45}},
       overlays: [{type: 'step', n: 6, text: 'Keluarkan & potong'}],
     },
@@ -154,7 +153,6 @@ export const pizzaEp2: Episode = {
       rate: 1.25,
       enter: 'whip',
       audio: 1,
-      asmr: true,
       zoom: {from: {s: 1.25, x: 0.45, y: 0.42}, to: {s: 1.35, x: 0.45, y: 0.42}},
     },
     {
