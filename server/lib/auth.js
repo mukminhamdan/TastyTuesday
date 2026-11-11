@@ -15,7 +15,9 @@ export function issueSession(db, res, user) {
   res.cookie(COOKIE, token, {
     httpOnly: true,
     sameSite: 'lax',
-    secure: process.env.COOKIE_SECURE === 'true',
+    // COOKIE_SECURE=true/false forces it; otherwise HTTPS-only whenever the request came over
+    // HTTPS (e.g. through a Cloudflare tunnel) while plain http://localhost keeps working.
+    secure: process.env.COOKIE_SECURE ? process.env.COOKIE_SECURE === 'true' : !!res.req?.secure,
     maxAge: MAX_AGE_MS,
     path: '/',
   });

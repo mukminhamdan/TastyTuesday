@@ -31,6 +31,10 @@ salin folder itu (atau gunakan *Tetapan → Sandaran*) untuk membuat sandaran.
 Sistem dipasang dalam Termux dengan satu arahan (`termux-install.sh`) dan menggunakan SQLite terbina dalam Node.js,
 jadi tiada modul yang perlu dibina.
 
+**Komputer + Cloudflare Tunnel (percuma, boleh dibuka dari mana-mana):** klik dua kali `start-online-windows.bat`
+(atau `start-online-mac.command`). Ia memaparkan alamat HTTPS dan kod QR untuk telefon. Untuk alamat tetap, letak token
+terowong dalam `cloudflare.txt`. Lihat **[docs/PANDUAN-CLOUDFLARE.md](docs/PANDUAN-CLOUDFLARE.md)**.
+
 ### Atau melalui komputer / pelayan
 
 
@@ -96,8 +100,8 @@ Copy `.env.example` and set these as environment variables:
 | `PORT` | `3000` | HTTP port |
 | `DATA_DIR` | `./data` | Folder for `bms.sqlite` and `backups/`. **Put this on persistent storage.** |
 | `JWT_SECRET` | auto-generated | Optional fixed session-signing secret |
-| `COOKIE_SECURE` | `false` | Set `true` when served over HTTPS |
-| `TRUST_PROXY` | – | Set `1` behind a reverse proxy |
+| `COOKIE_SECURE` | auto | `true`/`false` forces it; by default cookies are HTTPS-only when the request arrived over HTTPS |
+| `TRUST_PROXY` | `loopback` | Proxies trusted for `X-Forwarded-*`; set `1` behind a hosting proxy (Render, Nginx on another host) |
 | `APP_TZ` | `Asia/Kuala_Lumpur` | Timezone for "today", overdue and expiry |
 | `AUTO_BACKUP` | `true` | Daily database snapshot (newest 14 kept) |
 | `BACKUP_COPY_DIR` | – | Optional second folder for daily snapshots (used on Android to keep copies in shared storage) |

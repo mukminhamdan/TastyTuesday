@@ -6,3 +6,7 @@ data/
 .env
 .DS_Store
 test-results/
+
+# Cloudflare tunnel (local)
+tools/
+cloudflare.txt

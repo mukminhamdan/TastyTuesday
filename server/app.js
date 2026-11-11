@@ -21,7 +21,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export function createApp(db) {
   const app = express();
   app.disable('x-powered-by');
-  if (process.env.TRUST_PROXY) app.set('trust proxy', process.env.TRUST_PROXY);
+  // Behind a hosting proxy set TRUST_PROXY (e.g. 1). By default only a proxy on this same
+  // machine (such as cloudflared) is trusted for X-Forwarded-* headers.
+  app.set('trust proxy', process.env.TRUST_PROXY || 'loopback');
 
   app.use((req, res, next) => {
     res.setHeader('X-Content-Type-Options', 'nosniff');
