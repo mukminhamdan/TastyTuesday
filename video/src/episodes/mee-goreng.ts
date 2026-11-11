@@ -1,15 +1,14 @@
 import type {Episode} from '../lib/types';
 
 /**
- * EP2 - Mee goreng satu periuk.
+ * Standalone video - Mee goreng satu periuk.
  * Sources: v202235 (masak mee, 8.5 min), v203156 (hidang).
  */
 const MEE = 'v202235.mp4';
 
-export const ep2: Episode = {
-  id: 'Ep2-MeeGoreng',
-  ep: 2,
-  of: 3,
+export const meeGoreng: Episode = {
+  id: 'MeeGoreng',
+  series: 'MASAK MALAS',
   name: 'Mee goreng 1 periuk',
   music: 'mee.wav',
   musicBed: 0.45,
@@ -174,7 +173,8 @@ export const ep2: Episode = {
       overlays: [
         {
           type: 'endNext',
-          nextEp: 3,
+          heading: 'Video seterusnya',
+          nextEp: 'NEXT',
           nextTitle: 'Telur dadar\nTAK PAYAH terbalik!',
           peek: {src: 'v203532.mp4', from: 346.5, rate: 1, focus: {s: 1.45, x: 0.5, y: 0.32}},
         },

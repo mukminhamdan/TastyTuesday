@@ -51,7 +51,10 @@ export type Overlay =
     }
   | {
       type: 'endNext';
-      nextEp: number;
+      /** big heading, default "Bersambung" */
+      heading?: string;
+      /** sticker on the peek card, e.g. "EP 2" or "NEXT" */
+      nextEp: number | string;
       nextTitle: string;
       peek: {src: string; from: number; rate?: number; focus?: Focus};
     }
@@ -76,14 +79,19 @@ export type Shot = {
   /** ASMR moment: duck music hard so the cooking sound leads */
   asmr?: boolean;
   enter?: 'cut' | 'zoom' | 'whip' | 'glitch';
+  /** the person's face is visible on the left: move top badges to the right so nothing covers it */
+  faceLeft?: boolean;
   overlays?: Overlay[];
   sfx?: Sfx[];
 };
 
 export type Episode = {
   id: string;
-  ep: number;
-  of: number;
+  /** badge text, e.g. "SIRI PIZZA" or "MASAK MALAS" */
+  series: string;
+  /** episode number inside the series (omit for a standalone video) */
+  ep?: number;
+  of?: number;
   name: string;
   music: string;
   musicStart?: number;

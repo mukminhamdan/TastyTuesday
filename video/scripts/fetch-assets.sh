@@ -10,6 +10,8 @@ while read -r id name; do
   [ -s "$MEDIA/raw/$name.mp4" ] || curl -sSL -o "$MEDIA/raw/$name.mp4" \
     "https://drive.usercontent.google.com/download?id=$id&export=download&confirm=t"
 done <<'LIST'
+1MVNedT4h9a_xM45EwXFqsd4lTFplZiXF v132807
+1Gb8yvDUzKtMpejdkCtwojugmU4bwxVwx v195221
 1kjliGuiEZD4IzbqzXJJt-Xvab12yPCOA v195943
 1cgKw5HB0Ik3jpCWmEswkMIEWTalSB_uR v200030
 1SE-qUIg2v6z48FZOms05t6kcJc8ZAGnB v202235

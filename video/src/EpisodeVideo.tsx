@@ -12,6 +12,7 @@ export type EpisodeProps = {episode: Episode; showSafeZone?: boolean};
 
 const OverlayView: React.FC<{o: Overlay; shot: PlacedShot}> = ({o, shot}) => {
   const rest = (at = 0, dur?: number) => (dur !== undefined ? sec(dur) : shot.frames - sec(at));
+  // note: a negative `at` means the element was already on screen before this shot (no entry animation)
   switch (o.type) {
     case 'title':
       return <KineticTitle lines={o.lines} pos={o.pos} at={o.at} durFrames={rest(o.at, o.dur)} />;
@@ -39,7 +40,7 @@ const OverlayView: React.FC<{o: Overlay; shot: PlacedShot}> = ({o, shot}) => {
     case 'timer':
       return <CookTimer fromSec={o.fromSec} toSec={o.toSec} caption={o.caption} durFrames={shot.frames} />;
     case 'endNext':
-      return <EndNext nextEp={o.nextEp} nextTitle={o.nextTitle} peek={o.peek} durFrames={shot.frames} />;
+      return <EndNext heading={o.heading} nextEp={o.nextEp} nextTitle={o.nextTitle} peek={o.peek} durFrames={shot.frames} />;
     case 'finale':
       return <Finale tiles={o.tiles} durFrames={shot.frames} />;
   }
@@ -77,7 +78,14 @@ export const EpisodeVideo: React.FC<EpisodeProps> = ({episode, showSafeZone}) =>
         </Sequence>
       ))}
 
-      <SeriesChrome ep={episode.ep} of={episode.of} total={total} hideAfter={endStart} />
+      <SeriesChrome
+        series={episode.series}
+        ep={episode.ep}
+        of={episode.of}
+        total={total}
+        hideAfter={endStart}
+        rightRanges={shots.filter((s) => s.faceLeft).map((s) => [s.start, s.start + s.frames] as [number, number])}
+      />
 
       {/* ---------- audio ---------- */}
       <Audio
@@ -100,7 +108,7 @@ export const EpisodeVideo: React.FC<EpisodeProps> = ({episode, showSafeZone}) =>
               </Sequence>
             ))}
             {(s.overlays ?? []).map((o, i) =>
-              o.type === 'step' ? (
+              o.type === 'step' && (o.at ?? 0) >= 0 ? (
                 <Sequence key={`st${i}`} from={s.start + sec(o.at ?? 0) + 1} durationInFrames={sec(1)}>
                   <Audio src={staticFile('sfx/pop.wav')} volume={0.4} />
                 </Sequence>

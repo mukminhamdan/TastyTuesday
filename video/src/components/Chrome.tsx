@@ -13,16 +13,20 @@ export const Shade: React.FC = () => (
 );
 
 /** Series badge + episode progress bar, both inside the TikTok/IG safe zone. */
-export const SeriesChrome: React.FC<{ep: number; of: number; total: number; hideAfter?: number}> = ({
-  ep,
-  of,
-  total,
-  hideAfter,
-}) => {
+export const SeriesChrome: React.FC<{
+  series: string;
+  ep?: number;
+  of?: number;
+  total: number;
+  hideAfter?: number;
+  /** frame ranges where the face is on the left -> badge sits top-right */
+  rightRanges?: [number, number][];
+}> = ({series, ep, of, total, hideAfter, rightRanges = []}) => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
   const sp = spring({frame: f - 4, fps, config: {damping: 14, stiffness: 160}});
   const hidden = hideAfter !== undefined && f >= hideAfter;
+  const right = rightRanges.some(([a, b]) => f >= a && f < b);
   const prog = Math.min(1, f / Math.max(1, total - 1));
   return (
     <AbsoluteFill style={{opacity: hidden ? 0 : 1}}>
@@ -31,6 +35,7 @@ export const SeriesChrome: React.FC<{ep: number; of: number; total: number; hide
           position: 'absolute',
           left: SAFE.left,
           top: SAFE.top - 18,
+          opacity: right ? 0 : 1,
           width: SAFE_W,
           height: 8,
           borderRadius: 4,
@@ -43,7 +48,8 @@ export const SeriesChrome: React.FC<{ep: number; of: number; total: number; hide
       <div
         style={{
           position: 'absolute',
-          left: SAFE.left,
+          left: right ? undefined : SAFE.left,
+          right: right ? W - SAFE.right : undefined,
           top: SAFE.top,
           display: 'flex',
           height: 60,
@@ -58,11 +64,13 @@ export const SeriesChrome: React.FC<{ep: number; of: number; total: number; hide
         }}
       >
         <div style={{backgroundColor: C.tomato, color: C.white, padding: '0 16px', display: 'flex', alignItems: 'center'}}>
-          MASAK MALAS
+          {series}
         </div>
-        <div style={{backgroundColor: C.cream, color: C.ink, padding: '0 16px', display: 'flex', alignItems: 'center'}}>
-          EP {ep}/{of}
-        </div>
+        {ep ? (
+          <div style={{backgroundColor: C.cream, color: C.ink, padding: '0 16px', display: 'flex', alignItems: 'center'}}>
+            EP {ep}/{of}
+          </div>
+        ) : null}
       </div>
     </AbsoluteFill>
   );

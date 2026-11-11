@@ -1,16 +1,15 @@
 import type {Episode} from '../lib/types';
 
 /**
- * EP3 - Telur dadar air fryer, tak payah terbalik. Series finale.
+ * Standalone video - Telur dadar air fryer, tak payah terbalik (+ menu recap).
  * Source: v203532. Egg goes in at ~218s, comes out puffed at ~345s (~2 min).
  */
 const EGG = 'v203532.mp4';
 const POUR = 218; // source second the egg hits the pan -> timer zero
 
-export const ep3: Episode = {
-  id: 'Ep3-TelurDadar',
-  ep: 3,
-  of: 3,
+export const telurDadar: Episode = {
+  id: 'TelurDadar',
+  series: 'MASAK MALAS',
   name: 'Telur dadar tak payah terbalik',
   music: 'telur.wav',
   musicBed: 0.5,

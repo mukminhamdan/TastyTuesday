@@ -57,11 +57,12 @@ const Card: React.FC<{
 };
 
 export const EndNext: React.FC<{
-  nextEp: number;
+  heading?: string;
+  nextEp: number | string;
   nextTitle: string;
   peek: {src: string; from: number; rate?: number; focus?: Focus};
   durFrames: number;
-}> = ({nextEp, nextTitle, peek, durFrames}) => {
+}> = ({heading = 'Bersambung', nextEp, nextTitle, peek, durFrames}) => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
   const k = interpolate(f, [0, 8], [0, 1], {extrapolateRight: 'clamp'});
@@ -83,13 +84,14 @@ export const EndNext: React.FC<{
           top: SAFE.top + 40,
           textAlign: 'center',
           fontFamily: FONT_MARKER,
-          fontSize: 104,
+          fontSize: heading.length > 12 ? 82 : 104,
+          whiteSpace: 'nowrap',
           color: C.mustard,
           textShadow: outline(7),
           transform: `scale(${t1}) rotate(${-4 + (1 - t1) * -10}deg)`,
         }}
       >
-        Bersambung{dots}
+        {heading}{dots}
       </div>
       <div
         style={{
@@ -115,7 +117,7 @@ export const EndNext: React.FC<{
               color: C.white,
             }}
           >
-            EP {nextEp}
+            {typeof nextEp === 'number' ? `EP ${nextEp}` : nextEp}
           </div>
           <div
             style={{
@@ -247,7 +249,7 @@ export const Finale: React.FC<{
                     textAlign: 'center',
                   }}
                 >
-                  <span style={{color: C.mustard}}>EP{i + 1}</span> {t.label}
+                  {t.label}
                 </div>
               </Card>
             </div>

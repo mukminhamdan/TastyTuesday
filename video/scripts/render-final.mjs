@@ -5,7 +5,7 @@ import {renderMedia, selectComposition} from '@remotion/renderer';
 import path from 'node:path';
 import {normalise} from './loudnorm.mjs';
 
-const ids = process.argv.slice(2).length ? process.argv.slice(2) : ['Ep1-Pizza', 'Ep2-MeeGoreng', 'Ep3-TelurDadar'];
+const ids = process.argv.slice(2).length ? process.argv.slice(2) : ['Pizza-EP1-PrepBase', 'Pizza-EP2-ToppingBakar', 'MeeGoreng', 'TelurDadar'];
 const browserExecutable = process.env.CHROME_PATH;
 const serveUrl = process.env.BUNDLE || (await bundle({entryPoint: path.resolve('src/index.ts')}));
 for (const id of ids) {

@@ -1,14 +1,15 @@
-# Siri "Masak Malas" — projek Remotion
+# Siri Pizza Frozen + Masak Malas — projek Remotion
 
-3 episod bersambung (TikTok / IG Reels, 1080×1920, 30fps) daripada 5 klip mentah dalam folder Google Drive
+Video TikTok / IG Reels (1080×1920, 30fps) daripada 7 klip mentah dalam folder Google Drive
 `1hQPTwdVUCl9tLqPQ3KIKwpKQRrYt8DxT`.
 
 | Komposisi | Isi | Durasi |
 |---|---|---|
-| `Ep1-Pizza` | Pizza frozen dalam air fryer → potong → tarikan keju | ~30s |
-| `Ep2-MeeGoreng` | Mee goreng satu periuk | ~41s |
-| `Ep3-TelurDadar` | Telur dadar air fryer, tak payah terbalik + penutup siri | ~43s |
-| `Siri-Penuh` | Ketiga-tiga episod disambung (untuk semakan sahaja) | ~1m54s |
+| `Pizza-EP1-PrepBase` | **Siri Pizza Frozen EP1/2**: buat base, bakar sekejap, susun untuk freezer | ~35s |
+| `Pizza-EP2-ToppingBakar` | **Siri Pizza Frozen EP2/2**: base dari freezer → sos, ham, keju → air fryer → tarikan keju | ~50s |
+| `MeeGoreng` | Video berasingan: mee goreng satu periuk | ~41s |
+| `TelurDadar` | Video berasingan: telur dadar air fryer, tak payah terbalik + recap 3 menu | ~43s |
+| `Siri-Pizza-Penuh` / `Semua-Video` | Disambung untuk semakan sahaja | |
 
 ## Transkripsi
 
@@ -24,6 +25,8 @@ log visual di bawah (bukan transkrip ucapan).
 
 | Klip | Isi | Momen penting |
 |---|---|---|
+| `v132807` (22 min) | Shot lebar dapur, **muka nampak di kiri atas**, separuh bawah frame sofa | Kitaran berulang: regang doh (1089–1098, lambung doh 1094), tekan dalam loyang (166–214), keluarkan dari air fryer & susun (1070–1083); **1300–1311 timbunan base dibawa ke kamera** |
+| `v195221` (7 min) | Topping | 0–5 base dari freezer, 8–44 sapu sos, 82–222 air fryer (buang), 229–257 ham, 259–283 keju, 289–302 masuk air fryer, 306–430 bakar |
 | `v195943` (36s) | Pizza dalam air fryer | 0–14 lampu padam, 15–30 lampu menyala, keju menggelegak |
 | `v200030` (82s) | Papan potong | 0–8 papan kosong (buang), 8–58 potong, 61–66 tangan tutup pizza (buang), **74–79 tarikan keju** |
 | `v202235` (512s) | Mee dalam periuk elektrik | 0–39 minyak panas (buang), 40–44 perencah, 74–80 masuk air (desis), 82–100 masuk mee, 128–162 bertutup, 164–250 leraikan, 308–312 kicap, 320–350 gaul (putih → perang), 486–490 angkat mee |
@@ -33,20 +36,24 @@ log visual di bawah (bukan transkrip ucapan).
 Bahagian yang berulang atau statik (panaskan air fryer 2+ minit, minyak panas, penutup periuk, tangan
 menutup frame) dibuang atau dipercepatkan (badge `▶▶ 6x/8x/16x` jujur tunjuk kelajuan).
 
-## Struktur setiap episod
+## Struktur setiap video
 
-1. **Hook (0–5s)**: momen paling sedap ditunjuk dulu (tarikan keju / mee berkilat / telur kembang) +
-   tajuk kinetik.
-2. **Rewind glitch** → langkah bernombor (`01`, `02`…) dengan zoom ke bahagian penting.
+1. **Hook (0–5s)**: momen paling sedap ditunjuk dulu (timbunan base / tarikan keju / mee berkilat /
+   telur kembang) + tajuk kinetik.
+2. **Rewind glitch** → langkah bernombor (`01`, `02`…) dengan zoom ke bahagian penting. Kitaran prep
+   base yang berulang dipadatkan jadi montaj ("Ulang sampai habis doh").
 3. **Payoff** semula dengan sparkle + SFX.
-4. **Kad "Bersambung…"** dengan peek video episod seterusnya (EP3 tutup dengan kolaj 3 menu + CTA
-   komen).
+4. **Kad penutup**: Pizza EP1 → "Bersambung… EP2" (peek tarikan keju); Pizza EP2 → Mee → Telur
+   ("Video seterusnya…"); Telur tutup dengan kolaj 3 menu + CTA komen.
 
 ## Safe zone TikTok + IG
 
 Semua teks/grafik berada dalam kotak `x 80–920, y 250–1480` (`src/lib/theme.ts → SAFE`): elak bar
-atas, lajur butang kanan, dan kapsyen/nama pengguna bawah. Tiada muka dalam footage (tangan sahaja);
-grafik diletak di atas/bawah supaya tak tutup makanan semasa momen penting.
+atas, lajur butang kanan, dan kapsyen/nama pengguna bawah.
+
+**Muka**: hanya `v132807` tunjuk muka (kiri atas). Shot lebar ditanda `faceLeft: true`, jadi badge siri
+pindah ke kanan dan progress bar disembunyikan, manakala tajuk diletak di bawah (atas sofa). Shot
+close-up di-zoom ke meja, jadi muka berada di luar frame dan tiada grafik di atasnya.
 Tukar `showSafeZone: true` dalam props untuk lihat panduan.
 
 ## Audio
