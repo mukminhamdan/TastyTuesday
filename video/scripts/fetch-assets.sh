@@ -24,7 +24,7 @@ for f in "$MEDIA"/raw/*.mp4; do
   b=$(basename "$f")
   [ -s "$MEDIA/proxy/$b" ] || ffmpeg -nostdin -v error -y -i "$f" \
     -vf "scale=1080:1920,fps=30" -c:v libx264 -preset veryfast -crf 20 -g 30 -pix_fmt yuv420p \
-    -af "highpass=f=90,afftdn=nr=14:nf=-40:tn=1,loudnorm=I=-20:TP=-2:LRA=14" -c:a aac -b:a 192k -ar 48000 \
+    -af "highpass=f=90,afftdn=nr=14:nf=-40:tn=1,loudnorm=I=-15:TP=-1.5:LRA=11,alimiter=limit=0.89" -c:a aac -b:a 192k -ar 48000 \
     "$MEDIA/proxy/$b"
   ln -f "$MEDIA/proxy/$b" "public/footage/$b"   # hard link: the bundler does not follow symlinks
 done
