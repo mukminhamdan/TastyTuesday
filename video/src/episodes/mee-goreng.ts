@@ -11,6 +11,7 @@ export const meeGoreng: Episode = {
   series: 'MASAK MALAS',
   name: 'Mee goreng 1 periuk',
   music: 'mee.wav',
+  musicStart: 22,
   musicBed: 0.45,
   shots: [
     // HOOK: glossy toss

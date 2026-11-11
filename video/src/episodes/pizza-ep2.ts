@@ -13,7 +13,8 @@ export const pizzaEp2: Episode = {
   ep: 2,
   of: 2,
   name: 'Topping & bakar pizza frozen',
-  music: 'pizza.wav',
+  music: 'alt-funk.wav',
+  musicStart: 1,
   musicBed: 0.5,
   shots: [
     // HOOK: payoff first - slow-mo cheese pull

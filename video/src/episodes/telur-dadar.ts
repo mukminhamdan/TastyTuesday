@@ -12,6 +12,7 @@ export const telurDadar: Episode = {
   series: 'MASAK MALAS',
   name: 'Telur dadar tak payah terbalik',
   music: 'telur.wav',
+  musicStart: 15,
   musicBed: 0.5,
   shots: [
     // HOOK: puffed-up omelette, nobody flipped it
