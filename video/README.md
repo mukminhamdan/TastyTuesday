@@ -6,9 +6,9 @@ Video TikTok / IG Reels (1080×1920, 30fps) daripada 7 klip mentah dalam folder 
 | Komposisi | Isi | Durasi |
 |---|---|---|
 | `Pizza-EP1-PrepBase` | **Siri Pizza Frozen EP1/2**: buat base, bakar sekejap, susun untuk freezer | ~35s |
-| `Pizza-EP2-ToppingBakar` | **Siri Pizza Frozen EP2/2**: base dari freezer → sos, ham, keju → air fryer → tarikan keju | ~50s |
+| `Pizza-EP2-ToppingBakar` | **Siri Pizza Frozen EP2/2**: base dari freezer → sos, topping, keju → Food Engine Cooven → tarikan keju | ~50s |
 | `MeeGoreng` | Video berasingan: mee goreng satu periuk | ~41s |
-| `TelurDadar` | Video berasingan: telur dadar air fryer, tak payah terbalik + recap 3 menu | ~43s |
+| `TelurDadar` | Video berasingan: telur dadar Food Engine Cooven, tak payah terbalik + recap 3 menu | ~43s |
 | `Siri-Pizza-Penuh` / `Semua-Video` | Disambung untuk semakan sahaja | |
 
 ## Transkripsi
@@ -16,7 +16,7 @@ Video TikTok / IG Reels (1080×1920, 30fps) daripada 7 klip mentah dalam folder 
 Semua klip ditranskrip dengan Whisper `large-v3-turbo` (bahasa Melayu, dengan dan tanpa VAD).
 **Tiada ucapan dikesan dalam mana-mana klip**: VAD tidak jumpa suara, dan output tanpa VAD cuma
 halusinasi biasa Whisper atas bunyi bising ("Terima kasih kerana menonton!"). Audio sebenar ialah
-bunyi kipas air fryer / periuk, desis minyak, pisau.
+bunyi kipas Food Engine Cooven / periuk, desis minyak, pisau.
 
 Jadi cerita disampaikan dengan teks di skrin + bunyi ASMR masakan, dan potongan dibuat berdasarkan
 log visual di bawah (bukan transkrip ucapan).
@@ -25,15 +25,15 @@ log visual di bawah (bukan transkrip ucapan).
 
 | Klip | Isi | Momen penting |
 |---|---|---|
-| `v132807` (22 min) | Shot lebar dapur, **muka nampak di kiri atas**, separuh bawah frame sofa | Kitaran berulang: regang doh (1089–1098, lambung doh 1094), tekan dalam loyang (166–214), keluarkan dari air fryer & susun (1070–1083); **1300–1311 timbunan base dibawa ke kamera** |
-| `v195221` (7 min) | Topping | 0–5 base dari freezer, 8–44 sapu sos, 82–222 air fryer (buang), 229–257 ham, 259–283 keju, 289–302 masuk air fryer, 306–430 bakar |
-| `v195943` (36s) | Pizza dalam air fryer | 0–14 lampu padam, 15–30 lampu menyala, keju menggelegak |
+| `v132807` (22 min) | Shot lebar dapur, **muka nampak di kiri atas**, separuh bawah frame sofa | Kitaran berulang: regang doh (1089–1098, lambung doh 1094), tekan dalam loyang (166–214), keluarkan dari Food Engine Cooven & susun (1070–1083); **1300–1311 timbunan base dibawa ke kamera** |
+| `v195221` (7 min) | Topping | 0–5 base dari freezer, 8–44 sapu sos, 82–222 Food Engine Cooven (buang), 229–257 susun topping, 259–283 keju, 289–302 masuk Food Engine Cooven, 306–430 bakar |
+| `v195943` (36s) | Pizza dalam Food Engine Cooven | 0–14 lampu padam, 15–30 lampu menyala, keju menggelegak |
 | `v200030` (82s) | Papan potong | 0–8 papan kosong (buang), 8–58 potong, 61–66 tangan tutup pizza (buang), **74–79 tarikan keju** |
 | `v202235` (512s) | Mee dalam periuk elektrik | 0–39 minyak panas (buang), 40–44 perencah, 74–80 masuk air (desis), 82–100 masuk mee, 128–162 bertutup, 164–250 leraikan, 308–312 kicap, 320–350 gaul (putih → perang), 486–490 angkat mee |
 | `v203156` (52s) | Hidang mee | 15–19 pinggan penuh, 35–37 close-up |
-| `v203532` (435s) | Telur dadar air fryer | 0–140 panaskan (diulang, buang hampir semua), 148–152 pukul telur, 211–216 masuk loyang, 218–222 tuang telur, 226–335 masak (intai pada 294 & 329, buang), **345 keluar kembang**, 387–420 pindah ke pinggan |
+| `v203532` (435s) | Telur dadar Food Engine Cooven | 0–140 panaskan (diulang, buang hampir semua), 148–152 pukul telur, 211–216 masuk loyang, 218–222 tuang telur, 226–335 masak (intai pada 294 & 329, buang), **345 keluar kembang**, 387–420 pindah ke pinggan |
 
-Bahagian yang berulang atau statik (panaskan air fryer 2+ minit, minyak panas, penutup periuk, tangan
+Bahagian yang berulang atau statik (panaskan Food Engine Cooven 2+ minit, minyak panas, penutup periuk, tangan
 menutup frame) dibuang atau dipercepatkan (badge `▶▶ 6x/8x/16x` jujur tunjuk kelajuan).
 
 ## Struktur setiap video

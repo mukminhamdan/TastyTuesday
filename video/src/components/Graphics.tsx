@@ -165,7 +165,7 @@ export const StepCard: React.FC<{n: number; text: string; at?: number; durFrames
           boxShadow: `0 8px 0 ${C.ink}`,
           fontFamily: FONT_BOLD,
           fontWeight: 800,
-          fontSize: 52,
+          fontSize: text.length > 24 ? 38 : text.length > 18 ? 44 : 52,
           color: C.ink,
           maxWidth: SAFE_W - 120,
           whiteSpace: 'nowrap',

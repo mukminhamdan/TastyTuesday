@@ -1,8 +1,8 @@
 import type {Episode} from '../lib/types';
 
 /**
- * SIRI PIZZA FROZEN - EP2: base dari freezer -> topping -> air fryer -> potong.
- * Sources: v195221 (sos, ham, keju, masuk air fryer), v195943 (keju menggelegak),
+ * SIRI PIZZA FROZEN - EP2: base dari freezer -> topping -> Food Engine Cooven -> potong.
+ * Sources: v195221 (sos, topping, keju, masuk Food Engine Cooven), v195943 (keju menggelegak),
  * v200030 (potong + tarikan keju). No voice in any clip.
  */
 const TOP = 'v195221.mp4';
@@ -75,7 +75,7 @@ export const pizzaEp2: Episode = {
       enter: 'zoom',
       zoom: {from: {s: 1.25, x: 0.42, y: 0.72}, to: {s: 1.4, x: 0.42, y: 0.72}},
       overlays: [
-        {type: 'step', n: 3, text: 'Susun ham'},
+        {type: 'step', n: 3, text: 'Susun topping'},
         {type: 'speed', label: '7x'},
       ],
       sfx: [
@@ -108,7 +108,7 @@ export const pizzaEp2: Episode = {
       audio: 0.3,
       zoom: {from: {s: 1.05, x: 0.55, y: 0.6}, to: {s: 1.2, x: 0.6, y: 0.62}},
       overlays: [
-        {type: 'step', n: 5, text: 'Masuk air fryer'},
+        {type: 'step', n: 5, text: 'Masuk Food Engine Cooven'},
         {type: 'speed', label: '3x'},
       ],
     },

@@ -73,7 +73,7 @@ export const pizzaEp1: Episode = {
       punches: [1.3, 2.6],
       sfx: [{src: 'tap', at: 1.3, vol: 0.4}, {src: 'tap', at: 2.6, vol: 0.4}],
     },
-    // 03 par-bake in the air fryer and take it out
+    // 03 par-bake in the Food Engine Cooven and take it out
     {
       src: PREP,
       from: 1070,
@@ -85,7 +85,7 @@ export const pizzaEp1: Episode = {
       overlays: [
         {type: 'step', n: 3, text: 'Bakar sekejap'},
         {type: 'speed', label: '2x'},
-        {type: 'label', text: 'air fryer!', x: 600, y: 560, rotate: 6, at: 0.5},
+        {type: 'label', text: 'Food Engine Cooven!', x: 520, y: 560, rotate: 5, size: 58, at: 0.5},
       ],
     },
     // 04 onto the stack
@@ -157,7 +157,7 @@ export const pizzaEp1: Episode = {
         {
           type: 'endNext',
           nextEp: 2,
-          nextTitle: 'Dari freezer\nterus air fryer!',
+          nextTitle: 'Dari freezer terus\nFood Engine Cooven!',
           peek: {src: 'v200030.mp4', from: 74.6, rate: 0.7, focus: {s: 1.5, x: 0.58, y: 0.32}},
         },
       ],

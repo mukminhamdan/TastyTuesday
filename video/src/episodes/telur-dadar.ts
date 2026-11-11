@@ -1,7 +1,7 @@
 import type {Episode} from '../lib/types';
 
 /**
- * Standalone video - Telur dadar air fryer, tak payah terbalik (+ menu recap).
+ * Standalone video - Telur dadar Food Engine Cooven, tak payah terbalik (+ menu recap).
  * Source: v203532. Egg goes in at ~218s, comes out puffed at ~345s (~2 min).
  */
 const EGG = 'v203532.mp4';
@@ -28,7 +28,7 @@ export const telurDadar: Episode = {
           type: 'title',
           pos: 'bottom',
           at: 0.1,
-          lines: [{t: 'TELUR DADAR', size: 86}, {t: 'TAK PAYAH TERBALIK!', hl: true, size: 62}, {t: 'air fryer buat kerja', marker: true, size: 62}],
+          lines: [{t: 'TELUR DADAR', size: 86}, {t: 'TAK PAYAH TERBALIK!', hl: true, size: 62}, {t: 'Food Engine Cooven buat kerja', marker: true, size: 54}],
         },
         {type: 'sparkles', x: 540, y: 560, at: 0.5, count: 10},
       ],
@@ -46,7 +46,7 @@ export const telurDadar: Episode = {
       enter: 'glitch',
       zoom: {from: {s: 1.0, x: 0.5, y: 0.5}, to: {s: 1.15, x: 0.5, y: 0.5}},
       overlays: [
-        {type: 'step', n: 1, text: 'Panaskan air fryer'},
+        {type: 'step', n: 1, text: 'Panaskan Food Engine Cooven'},
         {type: 'speed', label: '6x'},
       ],
     },
