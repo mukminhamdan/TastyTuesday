@@ -6,7 +6,7 @@
 |---|---|---|
 | Runtime | **Node.js 20+** | One language (JavaScript) across server, client and shared business logic. |
 | API server | **Express 5** | Small, well-known, easy to host anywhere. |
-| Database | **SQLite** via **better-sqlite3** (WAL mode, foreign keys ON) | A real relational database in a single file: ACID transactions, foreign keys and zero administration. It suits a small or medium business with a few concurrent users, and backups are just a file copy. |
+| Database | **SQLite** via **better-sqlite3** (WAL mode, foreign keys ON), falling back to Node's built-in **node:sqlite** where native modules can't be installed (Android/Termux); see `server/sqlite.js` | A real relational database in a single file: ACID transactions, foreign keys and zero administration. It suits a small or medium business with a few concurrent users, and backups are just a file copy. |
 | Auth | **bcrypt** password hashes + **JWT in an httpOnly, SameSite cookie** | No tokens are exposed to JavaScript. A custom-header check blocks CSRF, and logins are rate-limited. |
 | UI | **React 19 + React Router 7 + Tailwind CSS 4**, built with **Vite** | Fast, responsive single-page app that works on desktop, tablet and mobile. |
 | Charts | **Chart.js** | Light, accessible canvas charts. |

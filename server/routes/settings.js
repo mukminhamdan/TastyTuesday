@@ -216,6 +216,19 @@ export async function fileBackup(db, keep = 14) {
   await db.backup(file);
   const files = fs.readdirSync(BACKUP_DIR).filter((f) => f.endsWith('.sqlite')).sort();
   for (const f of files.slice(0, Math.max(0, files.length - keep))) fs.unlinkSync(path.join(BACKUP_DIR, f));
+  // Optional second copy, e.g. the phone's shared storage on Android, so data survives
+  // even if the app folder is removed.
+  if (process.env.BACKUP_COPY_DIR) {
+    try {
+      const dir = process.env.BACKUP_COPY_DIR;
+      fs.mkdirSync(dir, { recursive: true });
+      fs.copyFileSync(file, path.join(dir, path.basename(file)));
+      const copies = fs.readdirSync(dir).filter((f) => /^bms-.*\.sqlite$/.test(f)).sort();
+      for (const f of copies.slice(0, Math.max(0, copies.length - keep))) fs.unlinkSync(path.join(dir, f));
+    } catch (e) {
+      console.error('Backup copy failed:', e.message);
+    }
+  }
   return file;
 }
 

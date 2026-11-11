@@ -1,4 +1,4 @@
-import Database from 'better-sqlite3';
+import { openSqlite } from './sqlite.js';
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -284,7 +284,7 @@ export const DEFAULT_SETTINGS = {
 
 export function openDb(file = process.env.DB_FILE || path.join(DATA_DIR, 'bms.sqlite')) {
   if (file !== ':memory:') fs.mkdirSync(path.dirname(file), { recursive: true });
-  const db = new Database(file);
+  const db = openSqlite(file);
   db.pragma('journal_mode = WAL');
   db.pragma('foreign_keys = ON');
   db.pragma('busy_timeout = 5000');

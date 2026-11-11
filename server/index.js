@@ -11,8 +11,14 @@ const port = Number(process.env.PORT || 3000);
 const host = process.env.HOST || '0.0.0.0';
 
 const server = app.listen(port, host, () => {
-  console.log(`Business Management System running on http://localhost:${port}`);
-  const lan = Object.values(os.networkInterfaces())
+  console.log(`Business Management System running on http://localhost:${port} (${db.driver})`);
+  let ifaces = {};
+  try {
+    ifaces = os.networkInterfaces();
+  } catch {
+    /* not permitted on some Android versions */
+  }
+  const lan = Object.values(ifaces)
     .flat()
     .filter((i) => i && i.family === 'IPv4' && !i.internal)
     .map((i) => `http://${i.address}:${port}`);

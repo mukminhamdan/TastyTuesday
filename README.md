@@ -27,6 +27,13 @@ salin folder itu (atau gunakan *Tetapan → Sandaran*) untuk membuat sandaran.
 
 ## Guna di telefon Android
 
+**Terus di dalam telefon, percuma, tanpa komputer:** lihat **[docs/PANDUAN-ANDROID.md](docs/PANDUAN-ANDROID.md)**.
+Sistem dipasang dalam Termux dengan satu arahan (`termux-install.sh`) dan menggunakan SQLite terbina dalam Node.js,
+jadi tiada modul yang perlu dibina.
+
+### Atau melalui komputer / pelayan
+
+
 Sistem ini aplikasi web, jadi ia dibuka di **Chrome** pada Android dan paparannya disesuaikan untuk telefon.
 Ia boleh dipasang di skrin utama dengan logo sendiri, seperti aplikasi biasa.
 
@@ -93,6 +100,8 @@ Copy `.env.example` and set these as environment variables:
 | `TRUST_PROXY` | – | Set `1` behind a reverse proxy |
 | `APP_TZ` | `Asia/Kuala_Lumpur` | Timezone for "today", overdue and expiry |
 | `AUTO_BACKUP` | `true` | Daily database snapshot (newest 14 kept) |
+| `BACKUP_COPY_DIR` | – | Optional second folder for daily snapshots (used on Android to keep copies in shared storage) |
+| `BMS_SQLITE` | auto | `node` forces the built-in `node:sqlite` driver; by default better-sqlite3 is used when installed |
 | `SETUP_CODE` | – | If set, creating the first admin account requires this code (recommended on public servers) |
 
 ## Deployment
@@ -147,7 +156,8 @@ A step-by-step guide in Bahasa Melayu is in **[docs/PANDUAN-DALAM-TALIAN.md](doc
 ## Testing
 
 ```bash
-npm test             # API workflow tests (node:test, in-memory database)
+npm test                       # API workflow tests (node:test, in-memory database)
+npm run test:builtin-sqlite    # same tests on Node's built-in SQLite driver (used on Android)
 ```
 
 `tests/workflow.test.js` runs the full acceptance scenario: register a customer → booking (with overlap
