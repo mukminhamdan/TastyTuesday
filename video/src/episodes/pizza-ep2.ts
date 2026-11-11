@@ -123,7 +123,7 @@ export const pizzaEp2: Episode = {
     },
     {
       src: 'v195943.mp4',
-      from: 15,
+      from: 16,
       to: 27,
       rate: 4,
       enter: 'cut',

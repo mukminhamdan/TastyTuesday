@@ -43,7 +43,7 @@ export const musicCurve = (ep: Episode) => {
   const target = new Float32Array(total);
   for (const s of shots) {
     const a = s.audio ?? 0;
-    const v = s.asmr ? bed * 0.32 : a >= 0.5 ? bed * 0.7 : bed;
+    const v = s.asmr ? bed * 0.5 : a >= 0.5 ? bed * 0.75 : bed;
     for (let f = s.start; f < s.start + s.frames; f++) target[f] = v;
   }
   // smooth with a 12-frame moving average
