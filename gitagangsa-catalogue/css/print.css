@@ -1,0 +1,259 @@
+/* =====================================================================
+   GITA GANGSA — GAYA CETAKAN / PDF (A4 POTRET)
+   Setiap <section class="page"> = satu halaman A4 (210 × 297 mm).
+   Gunakan Chrome / Edge → Cetak → "Save as PDF", Margin: Default/None,
+   tandakan "Background graphics".
+   ===================================================================== */
+
+@page { size: A4 portrait; margin: 0; }
+
+* { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+html { font-size: 11.4px; scroll-behavior: auto; }
+html, body { width: 210mm; background: var(--black); }
+body { overflow: visible; }
+
+:root {
+  --fs-display: 6.7rem;
+  --fs-title: 3.05rem;
+  --fs-perf: 4.5rem;
+  --fs-lead: 1.2rem;
+  --fs-body: 1rem;
+  --fs-eyebrow: .66rem;
+  --gutter: 0px;
+  --topbar-h: 0px;
+}
+
+/* Elemen skrin sahaja */
+.topbar, .contents, .fab-wa, .modal, .lightbox, .toast,
+.gallery__note, .btn, .btn-row, .svc__more { display: none !important; }
+.print-only { display: block !important; }
+
+/* Animasi dimatikan */
+.rv, .js-anim .rv { opacity: 1 !important; transform: none !important; transition: none !important; }
+.js-anim .cover__center > * { animation: none !important; }
+.ph img { transition: none !important; }
+
+/* ---------- Bingkai halaman A4 ---------- */
+.page {
+  width: 210mm; height: 297mm; min-height: 0; margin: 0;
+  padding: 12mm 15mm 10mm;
+  display: flex; flex-direction: column;
+  overflow: hidden;
+  break-after: page; page-break-after: always;
+  break-inside: avoid; page-break-inside: avoid;
+}
+.page:last-child { break-after: auto; page-break-after: auto; }
+.page__body { flex: 1; min-height: 0; max-width: none; margin: 0; padding: 0; width: 100%; }
+.pg-head, .pg-foot { max-width: none; margin-left: 0; margin-right: 0; padding: 0; width: 100%; flex: none; }
+.pg-head { margin-bottom: 7mm; }
+.pg-foot { margin-top: 5mm; padding-top: 3mm; border-top: 1px solid var(--rule); }
+.folio { font-size: 1.25rem; }
+
+/* Imej tidak dipecahkan antara halaman */
+figure, .ph, .g-item, .event, .svc, .pkg, .steps li, .why-grid li { break-inside: avoid; page-break-inside: avoid; }
+
+/* Tipografi cetakan */
+.kicker { margin-bottom: 3.5mm; }
+.kicker__no { min-width: 28px; height: 28px; }
+.title { margin-bottom: 4mm; }
+.lead { line-height: 1.5; margin-bottom: .7em; }
+p { margin-bottom: .75em; }
+.mini { margin: 4.5mm 0 2.5mm; }
+.list-orn li { margin-bottom: .4em; line-height: 1.5; }
+.list-num li { padding: .38em 0; }
+.chips { gap: 5px; }
+.chips li { padding: 3px 9px; font-size: .7rem; }
+
+/* Teks CTA cetakan (dijana oleh JS) */
+.cta-print { margin: 0 !important; font-size: .78rem !important; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent) !important; display: flex !important; align-items: center; gap: 8px; }
+.cta-print svg { width: 14px; height: 14px; }
+.cta-print .placeholder-val, .cta-print a { text-transform: none; letter-spacing: .02em; font-weight: 600; text-decoration: none; }
+
+/* ---------- 1. Cover ---------- */
+.cover { padding: 16mm 16mm 18mm; display: grid; grid-template-rows: auto 1fr auto; min-height: 0; }
+.cover__frame { inset: 7mm; }
+.cover__title { background: none !important; -webkit-text-fill-color: #F3E6C8 !important; color: #F3E6C8 !important; }
+.cover__logo { width: 52mm !important; }
+.cover__top { padding: 0 4mm; font-size: .64rem; }
+.cover__center { padding: 0; }
+.cover__logo { width: 46mm; margin-bottom: 9mm; }
+.cover__subtitle { margin-top: 6mm; font-size: .82rem; }
+.cover__tagline { font-size: 1.85rem; }
+.cover__disciplines { font-size: .64rem; padding-bottom: 6mm; }
+.cover__bg.is-empty .ph__info { padding-top: 40mm; }
+.band-rebung--bottom { bottom: 7mm; left: 7mm; right: 7mm; }
+
+/* ---------- 2. Pengenalan ---------- */
+.intro .page__body { display: flex; flex-direction: column; }
+.intro__grid { grid-template-columns: 1.1fr .9fr; gap: 9mm; }
+.intro__img { aspect-ratio: auto; height: 138mm; }
+.pullquote { margin: -18mm 0 0 -10mm; padding: 6mm 6mm 5mm; max-width: 90%; }
+.pullquote p { font-size: 1.35rem; }
+.pullquote__orn { width: 20px; height: 20px; margin-bottom: 6px; }
+.intro .title { font-size: 3.3rem; }
+.intro .lead { font-size: 1.3rem; }
+.intro p { font-size: 1.07rem; line-height: 1.66; }
+.dropcap::first-letter { font-size: 4.2em; }
+.facts { margin-top: auto; }
+.facts > div { padding: 5mm 4mm; }
+.facts dt { font-size: 2.3rem; }
+.facts dd { font-size: .62rem; }
+.name-note { margin-top: 8mm; margin-bottom: 2mm; }
+
+/* ---------- 3. Perjalanan ---------- */
+.journey .page__body { display: flex; flex-direction: column; }
+.journey .lead { font-size: 1.2rem; }
+.journey .timeline { margin-top: auto; margin-bottom: 4mm; }
+.journey .timeline h3 { font-size: .8rem; }
+.radial { width: 168mm; max-width: none; margin: 8mm auto 12mm; }
+.radial__node { width: 34mm; }
+.radial__node svg { width: 15mm; height: 15mm; padding: 3mm; }
+.radial__node span { font-size: 1.1rem; }
+.radial__core strong { font-size: 1.45rem; }
+.timeline { gap: 6mm; padding-top: 9mm; }
+.timeline li::before { top: -8.6mm; }
+.timeline__mark { font-size: 1.45rem; }
+.timeline p { font-size: 1rem; line-height: 1.55; }
+
+/* ---------- 4. Visi & Misi ---------- */
+.vm__top { margin-bottom: 6mm; }
+.vm__vision { padding: 7mm 0 8mm; }
+.vm__vision-text { font-size: 2.15rem; }
+.vm__grid { grid-template-columns: 1.35fr .65fr; gap: 9mm; margin-top: 6mm; }
+.vm__img { min-height: 0; height: auto; }
+.mission-list li { padding: 3mm 0; }
+.mission-list strong { font-size: 1.22rem; }
+.mission-list span { font-size: .9rem; line-height: 1.45; }
+.values { margin-top: 7mm; }
+.values ul { gap: 4mm; }
+.values li { padding: 4mm; }
+
+/* ---------- 5. Perkhidmatan ---------- */
+.services__head { grid-template-columns: 1.1fr .9fr; gap: 4mm 10mm; margin-bottom: 7mm; }
+.services__head .lead { font-size: 1rem; }
+.svc-grid { grid-template-columns: repeat(3, 1fr); gap: 5mm; }
+.svc .ph { aspect-ratio: auto; height: 62mm; }
+.svc__body { padding: 5mm 4.5mm 4.5mm; }
+.svc__no { font-size: 2.2rem; top: -6mm; right: 4mm; }
+.svc h3 { font-size: 1.55rem; }
+.svc p { font-size: .88rem; margin: 0; }
+
+/* ---------- 6–11. Persembahan ---------- */
+.perf__intro { margin-bottom: 6mm; }
+.perf__sub { margin-top: 2mm; font-size: 1.35rem; }
+.perf p { font-size: 1.02rem; line-height: 1.62; }
+.perf .lead { font-size: 1.16rem; line-height: 1.45; }
+.perf__cta { margin-top: 5mm; padding: 4mm 4.5mm; }
+.perf__cta p:not(.cta-print) { font-size: .82rem; margin-bottom: 2.5mm; }
+
+.perf--a .perf__media { height: 104mm; gap: 3mm; grid-template-columns: 2fr 1fr; grid-template-rows: repeat(2, 1fr); }
+.perf--a.perf--4 .perf__media { grid-template-rows: repeat(3, 1fr); }
+.perf--a .perf__media > :first-child { grid-row: 1 / -1; grid-column: auto; aspect-ratio: auto; }
+.perf--a .perf__media > :not(:first-child) { aspect-ratio: auto; }
+.perf--a .perf__content { grid-template-columns: 1.3fr 1fr; gap: 9mm; margin-top: 7mm; }
+
+.perf--b .page__body { display: grid; grid-template-columns: 70mm 1fr; gap: 9mm; align-items: stretch; }
+.perf--b .perf__media { position: static; order: 0; grid-template-columns: repeat(6, 1fr); grid-template-rows: 1fr auto; gap: 3mm; height: 100%; align-content: stretch; }
+.perf--b .perf__main { order: 0; display: flex; flex-direction: column; }
+.perf--b .perf__cta { margin-top: auto; }
+.perf--b .perf__main > .chips { margin-bottom: 6mm; }
+.perf--b p { font-size: 1.08rem; line-height: 1.66; }
+.perf--b .lead { font-size: 1.28rem; }
+.perf--b .list-orn li, .perf--b .list-num li { font-size: 1.02rem; }
+.perf--b .mini { margin-top: 6mm; }
+.perf--b .perf__media > :first-child { grid-column: 1 / -1; aspect-ratio: auto; min-height: 0; }
+.perf--b .perf__media > :not(:first-child) { grid-column: 1 / -1; aspect-ratio: auto; height: 46mm; }
+.perf--b.perf--4 .perf__media > :not(:first-child) { grid-column: 1 / -1; height: 36mm; }
+.perf--b .perf__title { font-size: 4.1rem; }
+.perf__cols { grid-template-columns: 1fr 1fr; gap: 6mm; }
+.perf .ph figcaption { font-size: .54rem; padding: 1.6mm 2.6mm; }
+
+/* ---------- 12–13. Jenis Majlis ---------- */
+.events__head { grid-template-columns: 1.1fr .9fr; gap: 4mm 10mm; margin-bottom: 7mm; }
+.events__head .lead { font-size: 1rem; }
+.events__head--cont { margin-bottom: 6mm; }
+.event-grid { grid-template-columns: repeat(3, 1fr); gap: 7mm 5mm; }
+.event .ph { aspect-ratio: auto; height: 62mm; margin-bottom: 3.5mm; }
+.events--cont .event .ph { height: 74mm; }
+.events--cont .event-grid { row-gap: 10mm; }
+.event h3 { font-size: 1.4rem; margin-bottom: 1.5mm; }
+.event p { font-size: .94rem; line-height: 1.48; margin-bottom: 2.5mm; }
+.event__rec { font-size: .74rem !important; padding-top: 2.2mm; }
+
+/* ---------- 14. Pakej ---------- */
+.packages .page__body { display: flex; flex-direction: column; justify-content: center; }
+.packages__head { margin-bottom: 9mm; }
+.pkg-grid { grid-template-columns: repeat(3, 1fr); gap: 4.5mm; }
+.pkg-grid .pkg:last-child { grid-column: auto; }
+.pkg { padding: 6mm 5mm; }
+.pkg__top { gap: 3mm; padding-bottom: 3.5mm; }
+.pkg__letter { width: 13mm; height: 13mm; font-size: 1.7rem; }
+.pkg h3 { font-size: 1.5rem; }
+.pkg__intro { font-size: 1.05rem; margin: 4mm 0 2mm; }
+.pkg__spec > div { padding: 3.2mm 0; }
+.pkg__spec dt { font-size: .62rem; }
+.pkg__spec dd { font-size: .94rem; line-height: 1.5; }
+.pkg-note { margin-top: 12mm; }
+.pkg-note p { font-size: 1.7rem; }
+.pkg-cta { margin-top: 5mm; gap: 3mm; }
+.pkg-cta p { font-size: 1.08rem; }
+
+/* ---------- 15–16. Galeri ---------- */
+.gallery__head { margin-bottom: 6mm; }
+.g-grid { gap: 5mm; }
+.g-item .ph { flex: none; }
+.g-grid--1 .g-item:nth-child(1) { grid-column: span 4; grid-row: span 2; }
+.g-grid--1 .g-item:nth-child(1) .ph { aspect-ratio: auto; min-height: 0; height: 128mm; }
+.g-grid--1 .g-item:nth-child(2), .g-grid--1 .g-item:nth-child(3) { grid-column: span 2; }
+.g-grid--1 .g-item:nth-child(2) .ph, .g-grid--1 .g-item:nth-child(3) .ph { aspect-ratio: auto; height: 44mm; }
+.g-grid--1 .g-item:nth-child(4) { grid-column: 1 / -1; }
+.g-grid--1 .g-item:nth-child(4) .ph { aspect-ratio: auto; height: 50mm; }
+.g-grid--2 .g-item:nth-child(1) { grid-column: 1 / -1; }
+.g-grid--2 .g-item:nth-child(1) .ph { aspect-ratio: auto; height: 96mm; }
+.g-grid--2 .g-item:nth-child(n+2) { grid-column: span 2; }
+.g-grid--2 .g-item:nth-child(n+2) .ph { aspect-ratio: auto; height: 92mm; }
+.cap { padding-top: 2.6mm; }
+.cap__event { font-size: 1.15rem; }
+.cap__meta, .cap__kind { font-size: .76rem; }
+
+/* ---------- 17. Kenapa ---------- */
+.why__head { margin-bottom: 6mm; }
+.why__badge { width: 32mm; height: 32mm; }
+.why__badge strong { font-size: 2.6rem; }
+.why-grid li { padding: 6mm 5mm 5.5mm 0; }
+.why-grid li:not(:nth-child(3n+1)) { padding-left: 5mm; }
+.why-grid svg { width: 10mm; height: 10mm; margin-bottom: 3mm; }
+.why-grid h3 { font-size: 1.32rem; }
+.why-grid p { font-size: .9rem; line-height: 1.5; }
+.why__img { aspect-ratio: auto; height: 70mm; margin-top: 9mm; }
+
+/* ---------- 18. Proses ---------- */
+.process .lead { font-size: 1.12rem; }
+.process .page__body { display: flex; flex-direction: column; }
+.steps { --dot: 16mm; --gap: 4mm; grid-template-columns: repeat(5, 1fr); gap: 4mm; margin: 10mm 0 10mm; }
+.steps__no { width: 16mm; height: 16mm; font-size: 1.5rem; margin-bottom: 5mm; }
+.steps h3 { font-size: 1.3rem; }
+.steps p { font-size: .88rem; line-height: 1.5; }
+.checklist { grid-template-columns: .9fr 1.4fr; gap: 6mm 9mm; padding: 7mm; }
+.checklist h3 { font-size: 1.4rem; }
+.checklist .cta-print { grid-column: 1 / -1; }
+.process__img { display: block !important; flex: 1; min-height: 0; margin-top: 8mm; aspect-ratio: auto !important; }
+
+/* ---------- 19. Hubungi ---------- */
+.contact .page__body { display: flex; flex-direction: column; justify-content: center; gap: 12mm; min-height: 0; }
+.contact__title { font-size: 4.3rem; margin-bottom: 6mm; }
+.contact__text { font-size: 1.15rem; margin-bottom: 0; }
+.contact__card { padding: 7mm; -webkit-backdrop-filter: none; backdrop-filter: none; background: rgba(14,12,10,.82); }
+.contact-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 8mm; }
+.contact-list li { grid-template-columns: 20px 70px 1fr; padding: 3.2mm 0; }
+.contact-list li:nth-last-child(2) { border-bottom: 0; }
+
+/* ---------- 20. Cover belakang ---------- */
+.back { padding: 0; height: 297mm; display: flex; }
+.back__inner { padding: 20mm 16mm; }
+.back__logo { width: 44mm; margin-bottom: 8mm; }
+.back__tagline { margin-bottom: 12mm; }
+.qr .ph { width: 36mm; height: 36mm; }
+.back__legal { padding: 0 16mm 16mm; }
+.band-rebung--top { margin: 7mm 7mm 0; }
