@@ -25,7 +25,7 @@ log visual di bawah (bukan transkrip ucapan).
 
 | Klip | Isi | Momen penting |
 |---|---|---|
-| `v132807` (22 min) | Shot lebar dapur, **muka nampak di kiri atas**, separuh bawah frame sofa | Kitaran berulang: regang doh (1089–1098, lambung doh 1094), tekan dalam loyang (166–214), keluarkan dari Food Engine Cooven & susun (1070–1083); **1300–1311 timbunan base dibawa ke kamera** |
+| `v132807` (22 min) | Shot lebar dapur, **muka nampak di kiri atas**, separuh bawah frame sofa | Kitaran berulang: bentuk doh dengan tangan (281–307), tekan dalam loyang (166–214), keluarkan dari Food Engine Cooven & susun (1070–1083); **1300–1311 timbunan base dibawa ke kamera** |
 | `v195221` (7 min) | Topping | 0–5 base dari freezer, 8–44 sapu sos, 82–222 Food Engine Cooven (buang), 229–257 susun topping, 259–283 keju, 289–302 masuk Food Engine Cooven, 306–430 bakar |
 | `v195943` (36s) | Pizza dalam Food Engine Cooven | 0–14 lampu padam, 15–30 lampu menyala, keju menggelegak |
 | `v200030` (82s) | Papan potong | 0–8 papan kosong (buang), 8–58 potong, 61–66 tangan tutup pizza (buang), **74–79 tarikan keju** |
