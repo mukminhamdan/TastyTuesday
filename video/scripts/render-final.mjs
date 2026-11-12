@@ -13,7 +13,7 @@ for (const id of ids) {
   const outputLocation = `out/final/${id}.mp4`;
   await renderMedia({
     serveUrl, composition, codec: 'h264', outputLocation, browserExecutable,
-    crf: 17, jpegQuality: 95, x264Preset: 'slow', pixelFormat: 'yuv420p',
+    crf: 17, jpegQuality: 95, x264Preset: 'medium', pixelFormat: 'yuv420p',
     concurrency: Number(process.env.CONCURRENCY || 4), audioBitrate: '192k',
     chromiumOptions: {gl: 'swangle'},
     onProgress: ({progress}) => process.stdout.write(`\r${id} ${Math.round(progress * 100)}%   `),
