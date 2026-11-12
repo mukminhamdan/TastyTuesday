@@ -43,22 +43,51 @@ export const pizzaEp1: Episode = {
         {src: 'shimmer', at: 0.8, vol: 0.4},
       ],
     },
-    // 01 stretch the dough (it gets tossed in the air at ~1094)
+    // 01 shape the dough by hand in front of the Cooven (pinch the edge, rotate, let it hang)
+    {
+      src: PREP,
+      from: 281,
+      to: 301,
+      rate: 5,
+      enter: 'glitch',
+      audio: 0.3,
+      zoom: {from: {s: 1.9, x: 0.02, y: 0.42}, to: {s: 2.0, x: 0.02, y: 0.42}},
+      overlays: [
+        {type: 'step', n: 1, text: 'Bentuk doh'},
+        {type: 'speed', label: '5x'},
+      ],
+    },
+    // ...and the shaped disc is lifted up
+    {
+      src: PREP,
+      from: 303,
+      to: 307,
+      rate: 1.25,
+      enter: 'cut',
+      audio: 0.3,
+      zoom: {from: {s: 1.7, x: 0.4, y: 0.42}, to: {s: 1.85, x: 0.4, y: 0.42}},
+      overlays: [
+        {type: 'step', n: 1, text: 'Bentuk doh', at: -2},
+        {type: 'label', text: 'bulat dah!', x: 640, y: 560, rotate: 6, at: 0.4},
+      ],
+      sfx: [{src: 'pop-bubble', at: 0.4, vol: 0.4}],
+    },
+    // 02 stretch the dough (it gets tossed in the air at ~1094)
     {
       src: PREP,
       from: 1089,
       to: 1098,
-      rate: 2,
-      enter: 'glitch',
+      rate: 2.5,
+      enter: 'zoom',
       audio: 0.3,
       zoom: {from: {s: 1.6, x: 0.42, y: 0.42}, to: {s: 1.8, x: 0.42, y: 0.42}},
       overlays: [
-        {type: 'step', n: 1, text: 'Regangkan doh'},
-        {type: 'speed', label: '2x'},
+        {type: 'step', n: 2, text: 'Regangkan doh'},
+        {type: 'speed', label: '2.5x'},
       ],
-      sfx: [{src: 'swish', at: 2.6, vol: 0.4}],
+      sfx: [{src: 'swish', at: 2.1, vol: 0.4}],
     },
-    // 02 press into the pan
+    // 03 press into the pan
     {
       src: PREP,
       from: 166,
@@ -67,13 +96,13 @@ export const pizzaEp1: Episode = {
       enter: 'zoom',
       zoom: {from: {s: 1.7, x: 0.4, y: 0.55}, to: {s: 1.9, x: 0.4, y: 0.55}},
       overlays: [
-        {type: 'step', n: 2, text: 'Tekan dalam loyang'},
+        {type: 'step', n: 3, text: 'Tekan dalam loyang'},
         {type: 'speed', label: '12x'},
       ],
       punches: [1.3, 2.6],
       sfx: [{src: 'tap', at: 1.3, vol: 0.4}, {src: 'tap', at: 2.6, vol: 0.4}],
     },
-    // 03 par-bake in the Food Engine Cooven and take it out
+    // 04 par-bake in the Food Engine Cooven and take it out
     {
       src: PREP,
       from: 1070,
@@ -83,12 +112,12 @@ export const pizzaEp1: Episode = {
       audio: 0.3,
       zoom: {from: {s: 1.6, x: 0.47, y: 0.4}, to: {s: 1.75, x: 0.47, y: 0.42}},
       overlays: [
-        {type: 'step', n: 3, text: 'Bakar sekejap'},
+        {type: 'step', n: 4, text: 'Bakar sekejap'},
         {type: 'speed', label: '2x'},
         {type: 'label', text: 'Food Engine Cooven!', x: 520, y: 560, rotate: 5, size: 58, at: 0.5},
       ],
     },
-    // 04 onto the stack
+    // 05 onto the stack
     {
       src: PREP,
       from: 1078,
@@ -97,7 +126,7 @@ export const pizzaEp1: Episode = {
       enter: 'whip',
       audio: 0.4,
       zoom: {from: {s: 1.6, x: 0.5, y: 0.5}, to: {s: 1.75, x: 0.52, y: 0.5}},
-      overlays: [{type: 'step', n: 4, text: 'Keluarkan & susun'}],
+      overlays: [{type: 'step', n: 5, text: 'Keluarkan & susun'}],
     },
     // montage: the cycle repeats, stack grows (step card carries across the cuts)
     {
@@ -108,7 +137,7 @@ export const pizzaEp1: Episode = {
       enter: 'zoom',
       zoom: {from: {s: 1.55, x: 0.45, y: 0.47}, to: {s: 1.6, x: 0.45, y: 0.47}},
       overlays: [
-        {type: 'step', n: 5, text: 'Ulang sampai habis doh'},
+        {type: 'step', n: 6, text: 'Ulang sampai habis doh'},
         {type: 'speed', label: '12x'},
       ],
       sfx: [{src: 'clock-fast', at: 0, vol: 0.2}],
@@ -122,7 +151,7 @@ export const pizzaEp1: Episode = {
       zoom: {from: {s: 1.55, x: 0.47, y: 0.5}, to: {s: 1.65, x: 0.5, y: 0.52}},
       overlays: [
         // negative `at` = already on screen, no re-entry animation
-        {type: 'step', n: 5, text: 'Ulang sampai habis doh', at: -2},
+        {type: 'step', n: 6, text: 'Ulang sampai habis doh', at: -2},
         {type: 'speed', label: '12x'},
       ],
       sfx: [{src: 'pop-bubble', at: 1.2, vol: 0.4}],
