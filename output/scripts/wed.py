@@ -42,10 +42,13 @@ enc.stdin.close(); enc.wait(); main.kill()
 G=("eq=contrast=1.04:saturation=0.90:gamma=0.98,colorbalance=rs=0.02:bs=-0.03:rm=0.03:gm=0.005:bm=-0.025:rh=0.025:bh=-0.035,"
    "curves=all='0/0.035 0.25/0.235 0.5/0.5 0.75/0.765 1/0.965',vignette=angle=PI/6:mode=forward,"
    f"fade=t=in:st=0:d=1.0,fade=t=out:st={T-1.8}:d=1.8,format=yuv420p")
-A=("highpass=f=90,afftdn=nr=10:nf=-38:tn=1,equalizer=f=250:t=q:w=1.2:g=-3,equalizer=f=3200:t=q:w=1.0:g=3.5,highshelf=f=9000:g=1.5,"
+A=("highpass=f=90,equalizer=f=250:t=q:w=1.2:g=-3,equalizer=f=3200:t=q:w=1.0:g=3.5,highshelf=f=9000:g=1.5,"
    "acompressor=threshold=-22dB:ratio=2.5:attack=15:release=200:makeup=2,"
    f"loudnorm=I=-14:TP=-1.5:LRA=9,afade=t=in:st=0:d=1.5,afade=t=out:st={T-3}:d=3,aresample=48000")
-r=subprocess.run(["ffmpeg","-v","error","-y","-i",raw,"-ss",str(M0),"-t",str(T),"-i",f"{SRC}/{MC}.mp4","-map","0:v","-map","1:a","-vf",G,"-af",A,
+aw=f"{S}/wa_{C['tag']}.wav"; an=f"{S}/wan_{C['tag']}.wav"
+subprocess.run(["ffmpeg","-v","error","-y","-ss",str(M0),"-t",str(T),"-i",f"{SRC}/{MC}.mp4","-vn","-c:a","pcm_s16le","-ar","48000",aw],check=True)
+subprocess.run(["python3","-I",f"{S}/scripts/denoise.py",aw,an,str(C.get("nr",0.7))],check=True)
+r=subprocess.run(["ffmpeg","-v","error","-y","-i",raw,"-i",an,"-map","0:v","-map","1:a","-vf",G,"-af",A,
   "-c:v","libx264","-preset","slow","-crf","18","-profile:v","high","-color_range","tv","-colorspace","bt709","-color_primaries","bt709","-color_trc","bt709",
   "-c:a","aac","-b:a","256k","-movflags","+faststart","-t",str(T),C["out"]],capture_output=True,text=True)
 print("final",C["tag"],r.returncode,r.stderr[-500:],flush=True)
