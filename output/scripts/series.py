@@ -15,7 +15,7 @@ try:
     r=json.load(open(f"{S}/track_{MC}.json"))
     def clean(a):
         a=np.array([np.nan if v is None else v for v in a],float); i=np.arange(len(a)); ok=~np.isnan(a)
-        return gaussian_filter1d(median_filter(np.interp(i,i[ok],a[ok]),C.get("trackmed",9)),7)
+        return gaussian_filter1d(median_filter(np.interp(i,i[ok],a[ok]),C.get("trackmed",9)),C.get("tracksig",14))
     CX=clean([v[0] for v in r])*W; TOP=clean([v[1] for v in r])*H
 except FileNotFoundError: pass
 def zval(z,t,t0,t1):
@@ -25,7 +25,7 @@ def rect(shot,t):
     t0,t1,kind=shot[0],shot[1],shot[2]; a=shot[3]; z=zval(a["z"],t,t0,t1)
     h=H/z; w=h*9/16
     if kind=="track" and CX is not None:
-        k=min(int((M0+t)*10),len(CX)-1); cx=CX[k]; top=TOP[k]
+        kf=(M0+t)*10; ii=np.arange(len(CX)); cx=float(np.interp(kf,ii,CX)); top=float(np.interp(kf,ii,TOP))
         if "clamp" in C: cx=np.clip(cx,C["clamp"][0]*W,C["clamp"][1]*W); top=np.clip(top,C["clamp"][2]*H,C["clamp"][3]*H)
         cx+=a.get("dx",0)*W; y0=top-a.get("frac",0.34)*h; x0=cx-w/2
     else:
@@ -38,7 +38,9 @@ def rect(shot,t):
 def crop(img,R):
     x0,y0,w,h=R; M=np.array([[OW/w,0,-x0*OW/w],[0,OH/h,-y0*OH/h]],np.float32)
     return cv2.warpAffine(img,M,(OW,OH),flags=cv2.INTER_AREA if w>OW*1.3 else cv2.INTER_LANCZOS4,borderMode=cv2.BORDER_REFLECT)
-main=subprocess.Popen(["ffmpeg","-v","error","-ss",str(M0),"-t",str(T+0.5),"-i",f"{SRC}/{MC}.mp4","-vf",f"fps=30,scale={W}:{H}:flags=lanczos","-f","rawvideo","-pix_fmt","bgr24","-"],stdout=subprocess.PIPE)
+trf=f"{S}/trf_{C['tag']}.trf"
+subprocess.run(["ffmpeg","-v","error","-y","-ss",str(M0),"-t",str(T+0.5),"-i",f"{SRC}/{MC}.mp4","-vf",f"fps=30,scale={W}:{H},vidstabdetect=shakiness=7:accuracy=15:stepsize=6:result={trf}","-f","null","-"],check=True)
+main=subprocess.Popen(["ffmpeg","-v","error","-ss",str(M0),"-t",str(T+0.5),"-i",f"{SRC}/{MC}.mp4","-vf",f"fps=30,scale={W}:{H}:flags=lanczos,format=yuv420p,vidstabtransform=input={trf}:smoothing={C.get('smooth',40)}:optzoom=1:interpol=bicubic","-f","rawvideo","-pix_fmt","bgr24","-"],stdout=subprocess.PIPE)
 raw=f"{S}/sraw_{C['tag']}.mp4"
 enc=subprocess.Popen(["ffmpeg","-v","error","-y","-f","rawvideo","-pix_fmt","bgr24","-s",f"{OW}x{OH}","-r","30","-i","-","-c:v","libx264","-preset","veryfast","-crf","10","-pix_fmt","yuv420p",raw],stdin=subprocess.PIPE)
 SH=C["shots"]; act={}; img=None
@@ -64,10 +66,10 @@ G=("eq=contrast=1.04:saturation=0.90:gamma=0.98,colorbalance=rs=0.02:bs=-0.03:rm
    f"fade=t=in:st=0:d=0.8,fade=t=out:st={T-1.5}:d=1.5,format=yuv420p")
 aw=f"{S}/sa_{C['tag']}.wav"; an=f"{S}/san_{C['tag']}.wav"
 subprocess.run(["ffmpeg","-v","error","-y","-ss",str(M0),"-t",str(T),"-i",f"{SRC}/{MC}.mp4","-vn","-c:a","pcm_s16le","-ar","48000",aw],check=True)
-subprocess.run(["python3","-I",f"{S}/scripts/denoise.py",aw,an,str(C.get("nr",0.7))],check=True)
-A=("highpass=f=90,equalizer=f=250:t=q:w=1.2:g=-3,equalizer=f=3200:t=q:w=1.0:g=3,highshelf=f=9000:g=1.5,"
-   "acompressor=threshold=-22dB:ratio=2.5:attack=15:release=200:makeup=2,"
-   f"loudnorm=I=-14:TP=-1.5:LRA=9,afade=t=in:st=0:d=1.0,afade=t=out:st={T-2}:d=2,aresample=48000")
+subprocess.run(["python3","-I",f"{S}/scripts/denoise2.py",aw,an,str(C.get("nr",0.85)),"0.3"],check=True)
+A=("highpass=f=100,equalizer=f=300:t=q:w=1.0:g=-3.5,equalizer=f=3000:t=q:w=0.9:g=4,highshelf=f=8500:g=2,"
+   "agate=threshold=0.015:ratio=2:range=0.35:attack=10:release=300,acompressor=threshold=-24dB:ratio=3:attack=10:release=180:makeup=3,"
+   f"loudnorm=I=-12:TP=-1.0:LRA=7,afade=t=in:st=0:d=1.0,afade=t=out:st={T-2}:d=2,aresample=48000")
 r=subprocess.run(["ffmpeg","-v","error","-y","-i",raw,"-i",an,"-map","0:v","-map","1:a","-vf",G,"-af",A,
   "-c:v","libx264","-preset","slow","-crf","18","-profile:v","high","-color_range","tv","-colorspace","bt709","-color_primaries","bt709","-color_trc","bt709",
   "-c:a","aac","-b:a","256k","-movflags","+faststart","-t",str(T),C["out"]],capture_output=True,text=True)
