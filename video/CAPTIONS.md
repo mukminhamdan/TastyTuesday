@@ -5,28 +5,6 @@ TikTok: guna 3–5 hashtag sahaja. IG: boleh tampal semua hashtag.
 
 ---
 
-## 0. Siri Pizza Frozen EP 0 — Cara buat doh pizza (`Pizza-EP0-Doh.mp4`)
-
-```
-Doh pizza buat sendiri, 4 bahan je 🍕 (EP 0)
-
-🧾 Bahan:
-300g tepung roti
-180g air
-1 tsp garam
-1 tsp yis
-
-Timbang → gaul → uli sampai licin → bahagi → bulat-bulatkan → tutup & proof.
-
-⏰ Proof:
-Dalam chiller 12–18 jam
-Nak bakar terus: 1–2 jam (ikut suhu bilik)
-
-Save resepi ni! EP1: bentuk base untuk freezer 👉
-
-#dohpizza #pizzahomemade #resepipizza #pizzafrozen #foodenginecooven #resepimudah #fyp
-```
-
 ## 1. Siri Pizza Frozen EP1/2 — Prep base (`Pizza-EP1-PrepBase.mp4`)
 
 ```
@@ -77,6 +55,31 @@ Pukul telur, tuang dalam loyang, tutup Food Engine Cooven ± 2 minit… dia kemb
 Komen "NAK" kalau nak siri masak malas seterusnya 👇
 
 #telurdadar #foodenginecooven #resepimudah #masakmalas #hacksdapur #telur #fyp
+```
+
+## 5. Resipi doh pizza — jawapan kepada yang tanya (`Resepi-DohPizza.mp4`)
+
+Post guna **"Reply to comment / Balas dengan video"** pada komen yang tanya resipi. TikTok/IG letak sticker komen
+tu sendiri; boleh letak di tengah-bawah (kawasan bola doh), bukan atas tajuk.
+
+```
+Ni dia resipi doh pizza yang korang minta 🍕 4 bahan je!
+
+🧾 Bahan:
+300g tepung roti
+180g air
+1 tsp garam
+1 tsp yis
+
+Timbang → gaul → uli sampai licin → bahagi → bulat-bulatkan → tutup & proof.
+
+⏰ Proof:
+Dalam chiller 12–18 jam
+Nak bakar terus: 1–2 jam (ikut suhu bilik)
+
+Save dulu, nanti senang cari 📌
+
+#dohpizza #resipipizza #pizzahomemade #resepimudah #masakmalas #fyp
 ```
 
 ---

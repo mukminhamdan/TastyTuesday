@@ -1,7 +1,8 @@
 import type {Episode} from '../lib/types';
 
 /**
- * SIRI PIZZA FROZEN - EP 0 (prequel): cara buat doh pizza.
+ * Standalone video: resepi doh pizza, made as a reply to viewers who asked for the recipe.
+ * No series badge and no 'bersambung' card; it ends on a save-able recipe recap.
  * Sources (recorded 18 Nov):
  *  - v192604 (14.5 min, top-down on the counter, hands only):
  *      8-56 weigh 300g bread flour, 90-116 pour 180g water, 122-140 1 tsp salt + 1 tsp yeast,
@@ -14,11 +15,10 @@ import type {Episode} from '../lib/types';
 const D = 'v192604.mp4';
 const T = 'v194042.mp4';
 
-export const pizzaEp0: Episode = {
-  id: 'Pizza-EP0-Doh',
-  series: 'SIRI PIZZA FROZEN',
-  epLabel: 'EP 0',
-  name: 'Cara buat doh pizza',
+export const resepiDohPizza: Episode = {
+  id: 'Resepi-DohPizza',
+  series: 'MASAK MALAS',
+  name: 'Resepi doh pizza',
   music: 'alt-funk.wav',
   musicStart: 20,
   musicBed: 0.5,
@@ -37,7 +37,7 @@ export const pizzaEp0: Episode = {
           type: 'title',
           pos: 'top',
           at: 0.1,
-          lines: [{t: 'DOH PIZZA'}, {t: 'BUAT SENDIRI', hl: true}, {t: 'senang je!', marker: true, size: 68}],
+          lines: [{t: 'RESIPI DOH PIZZA', size: 84}, {t: 'YANG KORANG MINTA!', hl: true, size: 58}, {t: '4 bahan je', marker: true, size: 68}],
         },
         {type: 'sparkles', x: 540, y: 1000, at: 0.9, count: 10, spread: 300},
       ],
@@ -241,7 +241,7 @@ export const pizzaEp0: Episode = {
       enter: 'zoom',
       zoom: {from: {s: 1.4, x: 0.45, y: 0.45}, to: {s: 1.6, x: 0.45, y: 0.45}},
       overlays: [
-        {type: 'title', pos: 'bottom', at: 0.4, lines: [{t: 'SIAP UNTUK'}, {t: 'JADI BASE!', hl: true, size: 110}]},
+        {type: 'title', pos: 'bottom', at: 0.4, lines: [{t: 'DOH PIZZA'}, {t: 'SIAP!', hl: true, size: 120}]},
         {type: 'sparkles', x: 540, y: 820, at: 0.6, count: 12, spread: 300},
       ],
       sfx: [
@@ -249,26 +249,32 @@ export const pizzaEp0: Episode = {
         {src: 'ding-sparkle', at: 0.6, vol: 0.4},
       ],
     },
-    // END CARD -> EP1
+    // END: save-able recipe recap (no "bersambung")
     {
       src: T,
       from: 2,
       to: 5,
-      rate: 0.75,
+      rate: 0.6,
       enter: 'cut',
       zoom: {from: {s: 1.3, x: 0.5, y: 0.45}, to: {s: 1.4, x: 0.5, y: 0.45}},
       overlays: [
         {
-          type: 'endNext',
-          nextEp: 1,
-          nextTitle: 'Bentuk base\nuntuk freezer!',
-          peek: {src: 'v132807.mp4', from: 1307, rate: 0.75, focus: {s: 1.3, x: 0.5, y: 0.62}},
+          type: 'recipe',
+          title: 'SAVE RESIPI NI!',
+          items: [
+            {qty: '300g', name: 'Tepung roti'},
+            {qty: '180g', name: 'Air'},
+            {qty: '1 tsp', name: 'Garam'},
+            {qty: '1 tsp', name: 'Yis'},
+            {qty: '12–18 jam', name: 'Proof chiller'},
+            {qty: '1–2 jam', name: 'Bakar terus*'},
+          ],
+          note: '*ikut suhu bilik',
         },
       ],
       sfx: [
         {src: 'whoosh-med', at: 0, vol: 0.4},
-        {src: 'sting-warm', at: 0.25, vol: 0.45},
-        {src: 'pop-bubble', at: 0.75, vol: 0.4},
+        {src: 'sting-warm', at: 0.2, vol: 0.45},
       ],
     },
   ],

@@ -9,6 +9,7 @@ Video TikTok / IG Reels (1080×1920, 30fps) daripada 7 klip mentah dalam folder 
 | `Pizza-EP2-ToppingBakar` | **Siri Pizza Frozen EP2/2**: base dari freezer → sos, topping, keju → Food Engine Cooven → tarikan keju | ~50s |
 | `MeeGoreng` | Video berasingan: mee goreng satu periuk | ~41s |
 | `TelurDadar` | Video berasingan: telur dadar Food Engine Cooven, tak payah terbalik + recap 3 menu | ~43s |
+| `Resepi-DohPizza` | Video berasingan (jawapan kepada yang tanya resipi): doh pizza 4 bahan + masa proof, tutup dengan kad recap | ~58s |
 | `Siri-Pizza-Penuh` / `Semua-Video` | Disambung untuk semakan sahaja | |
 
 ## Transkripsi
