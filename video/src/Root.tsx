@@ -2,6 +2,7 @@ import React from 'react';
 import {Composition, Series, staticFile} from 'remotion';
 import {loadFont} from '@remotion/fonts';
 import {EpisodeVideo, episodeFrames} from './EpisodeVideo';
+import {pizzaEp0} from './episodes/pizza-ep0-doh';
 import {pizzaEp1} from './episodes/pizza-ep1';
 import {pizzaEp2} from './episodes/pizza-ep2';
 import {meeGoreng} from './episodes/mee-goreng';
@@ -12,9 +13,9 @@ loadFont({family: FONT_BOLD, url: staticFile('fonts/poppins-latin-800-normal.wof
 loadFont({family: FONT_BOLD, url: staticFile('fonts/poppins-latin-900-normal.woff2'), weight: '900'});
 loadFont({family: FONT_MARKER, url: staticFile('fonts/permanent-marker-latin-400-normal.woff2'), weight: '400'});
 
-export const EPISODES = [pizzaEp1, pizzaEp2, meeGoreng, telurDadar];
+export const EPISODES = [pizzaEp0, pizzaEp1, pizzaEp2, meeGoreng, telurDadar];
 
-const PIZZA_SERIES = [pizzaEp1, pizzaEp2];
+const PIZZA_SERIES = [pizzaEp0, pizzaEp1, pizzaEp2];
 
 const AllEpisodes: React.FC<{showSafeZone?: boolean; only?: 'pizza'}> = ({showSafeZone, only}) => (
   <Series>

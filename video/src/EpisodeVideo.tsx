@@ -82,6 +82,7 @@ export const EpisodeVideo: React.FC<EpisodeProps> = ({episode, showSafeZone}) =>
         series={episode.series}
         ep={episode.ep}
         of={episode.of}
+        epLabel={episode.epLabel}
         total={total}
         hideAfter={endStart}
         rightRanges={shots.filter((s) => s.faceLeft).map((s) => [s.start, s.start + s.frames] as [number, number])}

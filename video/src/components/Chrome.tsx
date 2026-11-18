@@ -17,11 +17,12 @@ export const SeriesChrome: React.FC<{
   series: string;
   ep?: number;
   of?: number;
+  epLabel?: string;
   total: number;
   hideAfter?: number;
   /** frame ranges where the face is on the left -> badge sits top-right */
   rightRanges?: [number, number][];
-}> = ({series, ep, of, total, hideAfter, rightRanges = []}) => {
+}> = ({series, ep, of, epLabel, total, hideAfter, rightRanges = []}) => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
   const sp = spring({frame: f - 4, fps, config: {damping: 14, stiffness: 160}});
@@ -66,9 +67,9 @@ export const SeriesChrome: React.FC<{
         <div style={{backgroundColor: C.tomato, color: C.white, padding: '0 16px', display: 'flex', alignItems: 'center'}}>
           {series}
         </div>
-        {ep ? (
+        {epLabel || ep ? (
           <div style={{backgroundColor: C.cream, color: C.ink, padding: '0 16px', display: 'flex', alignItems: 'center'}}>
-            EP {ep}/{of}
+            {epLabel ?? `EP ${ep}/${of}`}
           </div>
         ) : null}
       </div>

@@ -92,6 +92,8 @@ export type Episode = {
   /** episode number inside the series (omit for a standalone video) */
   ep?: number;
   of?: number;
+  /** overrides the "EP n/of" chip, e.g. "EP 0" for a prequel */
+  epLabel?: string;
   name: string;
   music: string;
   musicStart?: number;
