@@ -1,3 +1,6 @@
+/** Channel brand shown on the badge of every new standalone video. */
+export const BRAND = 'MUKMIN MASAK';
+
 export const FPS = 30;
 export const W = 1080;
 export const H = 1920;

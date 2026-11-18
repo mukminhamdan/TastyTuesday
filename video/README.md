@@ -68,6 +68,10 @@ Tukar `showSafeZone: true` dalam props untuk lihat panduan.
 - **SFX**: CC0 `wyzowl/sfx-kit` (whoosh, pop, sparkle, riser, sting, clock, inflate…), peak -3 dBFS.
 - **Loudness akhir**: 2-pass EBU R128 ke **-14 LUFS / -1.5 dBTP** (standard TikTok/Reels).
 
+## Ketetapan
+
+Lihat `CLAUDE.md`: video baru guna jenama **MUKMIN MASAK** (`BRAND` dalam `src/lib/theme.ts`).
+
 ## Arahan
 
 ```bash

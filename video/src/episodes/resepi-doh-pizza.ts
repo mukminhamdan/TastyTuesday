@@ -1,3 +1,4 @@
+import {BRAND} from '../lib/theme';
 import type {Episode} from '../lib/types';
 
 /**
@@ -17,7 +18,7 @@ const T = 'v194042.mp4';
 
 export const resepiDohPizza: Episode = {
   id: 'Resepi-DohPizza',
-  series: 'MUKMIN MASAK',
+  series: BRAND,
   name: 'Resepi doh pizza',
   music: 'alt-funk.wav',
   musicStart: 20,
