@@ -1,4 +1,4 @@
-import {BRAND} from '../lib/theme';
+import {BRAND, MUSIC} from '../lib/theme';
 import type {Episode} from '../lib/types';
 
 /**
@@ -20,8 +20,8 @@ export const resepiDohPizza: Episode = {
   id: 'Resepi-DohPizza',
   series: BRAND,
   name: 'Resepi doh pizza',
-  music: 'alt-funk.wav',
-  musicStart: 20,
+  music: MUSIC.ukuleleCeria.file,
+  musicStart: MUSIC.ukuleleCeria.start,
   musicBed: 0.5,
   shots: [
     // HOOK: close-up of the finished dough balls

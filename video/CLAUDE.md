@@ -2,6 +2,8 @@
 
 - **Jenama**: semua video baru guna badge `BRAND` (`src/lib/theme.ts`) = **"MUKMIN MASAK"** dan hashtag `#mukminmasak`.
   Video lama (Mee, Telur, siri pizza) kekal seperti yang sudah di-post; jangan ubah kecuali diminta.
+- **Muzik**: guna pustaka `MUSIC` dalam `src/lib/theme.ts`. Lalai = **A `ukuleleCeria`**; alternatif = **D `ukuleleIklan`**
+  (mula dari 25s). Salinan MP3 disimpan dalam `assets/music-library/` (CC0); `scripts/fetch-assets.sh` menyediakan WAV-nya.
 - **Peralatan**: sebut **"Food Engine Cooven"**, bukan "air fryer".
 - **Siri vs video berasingan**: hanya letak "EP" dan kad "Bersambung" bila pengguna minta siri. Video jawapan
   komen / video tunggal berakhir dengan kad recap (contoh `resepi-doh-pizza.ts`).
