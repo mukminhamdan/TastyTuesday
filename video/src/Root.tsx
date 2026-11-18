@@ -1,13 +1,14 @@
 import React from 'react';
-import {Composition, Series, staticFile} from 'remotion';
+import {Composition, Series, Still, staticFile} from 'remotion';
 import {loadFont} from '@remotion/fonts';
 import {EpisodeVideo, episodeFrames} from './EpisodeVideo';
+import {Thumbnail} from './Thumbnail';
 import {resepiDohPizza} from './episodes/resepi-doh-pizza';
 import {pizzaEp1} from './episodes/pizza-ep1';
 import {pizzaEp2} from './episodes/pizza-ep2';
 import {meeGoreng} from './episodes/mee-goreng';
 import {telurDadar} from './episodes/telur-dadar';
-import {FONT_BOLD, FONT_MARKER, FPS, H, W} from './lib/theme';
+import {BRAND, FONT_BOLD, FONT_MARKER, FPS, H, W} from './lib/theme';
 
 loadFont({family: FONT_BOLD, url: staticFile('fonts/poppins-latin-800-normal.woff2'), weight: '800'});
 loadFont({family: FONT_BOLD, url: staticFile('fonts/poppins-latin-900-normal.woff2'), weight: '900'});
@@ -41,6 +42,36 @@ export const RemotionRoot: React.FC = () => (
         defaultProps={{episode: e, showSafeZone: false}}
       />
     ))}
+    {/* thumbnails / covers */}
+    <Still
+      id="Thumb-DohPizza-A"
+      component={Thumbnail}
+      width={W}
+      height={H}
+      defaultProps={{
+        bg: 'thumbs/doh-866.jpg',
+        kicker: 'Resipi',
+        title: 'DOH\nPIZZA',
+        sticker: '4 BAHAN JE!',
+        brand: BRAND,
+        zoom: {s: 1.12, x: 0.5, y: 0.72},
+      }}
+    />
+    <Still
+      id="Thumb-DohPizza-B"
+      component={Thumbnail}
+      width={W}
+      height={H}
+      defaultProps={{
+        bg: 'thumbs/doh-866.jpg',
+        kicker: 'Resipi',
+        title: 'DOH\nPIZZA',
+        sticker: '4 BAHAN JE!',
+        brand: BRAND,
+        chips: ['300g tepung roti', '180g air', '1 tsp garam', '1 tsp yis'],
+        zoom: {s: 1.12, x: 0.5, y: 0.72},
+      }}
+    />
     <Composition
       id="Siri-Pizza-Penuh"
       component={AllEpisodes}
