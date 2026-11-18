@@ -4,7 +4,7 @@ import type {Episode} from '../lib/types';
  * SIRI PIZZA FROZEN - EP 0 (prequel): cara buat doh pizza.
  * Sources (recorded 18 Nov):
  *  - v192604 (14.5 min, top-down on the counter, hands only):
- *      8-56 weigh flour, 90-116 pour liquid from a measuring jug, 122-140 small additions,
+ *      8-56 weigh 300g bread flour, 90-116 pour 180g water, 122-140 1 tsp salt + 1 tsp yeast,
  *      176-576 mix + knead (449-470 / 503-548 kneading in the hands), 616-634 dough on the scale,
  *      692-764 divide into pieces, 770-857 roll into balls, 864-870 close-up of the balls.
  *  - v194042 (60 s): 4 balls on trays, covered with a container (18-40).
@@ -46,16 +46,37 @@ export const pizzaEp0: Episode = {
         {src: 'shimmer', at: 0.9, vol: 0.4},
       ],
     },
+    // ingredient card (recipe from the cook)
+    {
+      src: D,
+      from: 1,
+      to: 8,
+      rate: 2,
+      enter: 'glitch',
+      overlays: [
+        {
+          type: 'recipe',
+          title: 'BAHAN',
+          items: [
+            {qty: '300g', name: 'Tepung roti'},
+            {qty: '180g', name: 'Air'},
+            {qty: '1 tsp', name: 'Garam'},
+            {qty: '1 tsp', name: 'Yis'},
+          ],
+        },
+      ],
+      sfx: [{src: 'whoosh-med', at: 0, vol: 0.35}],
+    },
     // 01 weigh the flour
     {
       src: D,
       from: 10,
       to: 50,
       rate: 10,
-      enter: 'glitch',
-      zoom: {from: {s: 1.45, x: 0.4, y: 0.45}, to: {s: 1.6, x: 0.4, y: 0.45}},
+      enter: 'zoom',
+      zoom: {from: {s: 1.45, x: 0.4, y: 0.8}, to: {s: 1.55, x: 0.4, y: 0.8}},
       overlays: [
-        {type: 'step', n: 1, text: 'Timbang tepung'},
+        {type: 'step', n: 1, text: '300g tepung roti'},
         {type: 'speed', label: '10x'},
       ],
     },
@@ -67,22 +88,22 @@ export const pizzaEp0: Episode = {
       rate: 5,
       enter: 'zoom',
       audio: 0.3,
-      zoom: {from: {s: 1.45, x: 0.4, y: 0.42}, to: {s: 1.6, x: 0.4, y: 0.42}},
+      zoom: {from: {s: 1.45, x: 0.4, y: 0.8}, to: {s: 1.55, x: 0.4, y: 0.8}},
       overlays: [
-        {type: 'step', n: 2, text: 'Masuk air'},
+        {type: 'step', n: 2, text: '180g air'},
         {type: 'speed', label: '5x'},
       ],
     },
-    // 03 the small additions (spoon + bottle)
+    // 03 salt + yeast (spoon + bottle)
     {
       src: D,
       from: 122,
       to: 140,
       rate: 6,
       enter: 'zoom',
-      zoom: {from: {s: 1.45, x: 0.4, y: 0.42}, to: {s: 1.55, x: 0.4, y: 0.42}},
+      zoom: {from: {s: 1.45, x: 0.4, y: 0.8}, to: {s: 1.55, x: 0.4, y: 0.8}},
       overlays: [
-        {type: 'step', n: 3, text: 'Masuk bahan lain'},
+        {type: 'step', n: 3, text: '1 tsp garam + 1 tsp yis'},
         {type: 'speed', label: '6x'},
       ],
       sfx: [{src: 'pop-small', at: 0.7, vol: 0.4}, {src: 'pop-small', at: 2.3, vol: 0.4}],

@@ -5,6 +5,23 @@ TikTok: guna 3–5 hashtag sahaja. IG: boleh tampal semua hashtag.
 
 ---
 
+## 0. Siri Pizza Frozen EP 0 — Cara buat doh pizza (`Pizza-EP0-Doh.mp4`)
+
+```
+Doh pizza buat sendiri, 4 bahan je 🍕 (EP 0)
+
+🧾 Bahan:
+300g tepung roti
+180g air
+1 tsp garam
+1 tsp yis
+
+Timbang → gaul → uli sampai licin → bahagi → bulat-bulatkan → tutup & rehatkan.
+Save resepi ni! EP1: bentuk base untuk freezer 👉
+
+#dohpizza #pizzahomemade #resepipizza #pizzafrozen #foodenginecooven #resepimudah #fyp
+```
+
 ## 1. Siri Pizza Frozen EP1/2 — Prep base (`Pizza-EP1-PrepBase.mp4`)
 
 ```

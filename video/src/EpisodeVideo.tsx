@@ -1,7 +1,7 @@
 import React, {useMemo} from 'react';
 import {AbsoluteFill, Audio, Sequence, staticFile} from 'remotion';
 import {Shade, SafeZoneGuide, SeriesChrome} from './components/Chrome';
-import {EndNext, Finale} from './components/EndCards';
+import {EndNext, Finale, RecipeCard} from './components/EndCards';
 import {CookTimer, KineticTitle, MarkerCircle, MarkerLabel, Sparkles, SpeedBadge, StepCard} from './components/Graphics';
 import {ShotView} from './components/ShotView';
 import {FPS} from './lib/theme';
@@ -43,6 +43,8 @@ const OverlayView: React.FC<{o: Overlay; shot: PlacedShot}> = ({o, shot}) => {
       return <EndNext heading={o.heading} nextEp={o.nextEp} nextTitle={o.nextTitle} peek={o.peek} durFrames={shot.frames} />;
     case 'finale':
       return <Finale tiles={o.tiles} durFrames={shot.frames} />;
+    case 'recipe':
+      return <RecipeCard title={o.title} items={o.items} durFrames={shot.frames} />;
   }
 };
 
@@ -109,7 +111,15 @@ export const EpisodeVideo: React.FC<EpisodeProps> = ({episode, showSafeZone}) =>
               </Sequence>
             ))}
             {(s.overlays ?? []).map((o, i) =>
-              o.type === 'step' && (o.at ?? 0) >= 0 ? (
+              o.type === 'recipe' ? (
+                <React.Fragment key={`rc${i}`}>
+                  {o.items.map((_, j) => (
+                    <Sequence key={j} from={s.start + 10 + j * 6} durationInFrames={sec(1)}>
+                      <Audio src={staticFile('sfx/pop-med-bubble.wav')} volume={0.45} />
+                    </Sequence>
+                  ))}
+                </React.Fragment>
+              ) : o.type === 'step' && (o.at ?? 0) >= 0 ? (
                 <Sequence key={`st${i}`} from={s.start + sec(o.at ?? 0) + 1} durationInFrames={sec(1)}>
                   <Audio src={staticFile('sfx/pop.wav')} volume={0.4} />
                 </Sequence>

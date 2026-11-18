@@ -59,6 +59,12 @@ export type Overlay =
       peek: {src: string; from: number; rate?: number; focus?: Focus};
     }
   | {
+      /** full-screen ingredient card over a blurred shot */
+      type: 'recipe';
+      title: string;
+      items: {qty: string; name: string}[];
+    }
+  | {
       type: 'finale';
       tiles: {src: string; from: number; rate?: number; label: string; focus?: Focus}[];
     };

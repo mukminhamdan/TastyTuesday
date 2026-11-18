@@ -288,3 +288,90 @@ export const Finale: React.FC<{
     </AbsoluteFill>
   );
 };
+
+export const RecipeCard: React.FC<{title: string; items: {qty: string; name: string}[]; durFrames: number}> = ({
+  title,
+  items,
+  durFrames,
+}) => {
+  const f = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const k = interpolate(f, [0, 6, durFrames - 6, durFrames], [0, 1, 1, 0], {extrapolateRight: 'clamp'});
+  const card = spring({frame: f - 2, fps, config: {damping: 13, stiffness: 150}});
+  return (
+    <AbsoluteFill>
+      <Backdrop k={k} />
+      <div
+        style={{
+          position: 'absolute',
+          left: SAFE.left + 20,
+          width: SAFE_W - 40,
+          top: SAFE.top + 140,
+          padding: '36px 40px 40px',
+          backgroundColor: C.cream,
+          border: `8px solid ${C.ink}`,
+          borderRadius: 36,
+          boxShadow: `0 14px 0 ${C.ink}`,
+          opacity: k,
+          transform: `translateY(${(1 - card) * 500}px) rotate(${-1.5 * card}deg)`,
+        }}
+      >
+        <div
+          style={{
+            position: 'absolute',
+            top: -46,
+            left: '50%',
+            transform: 'translateX(-50%) rotate(-3deg)',
+            padding: '6px 34px 10px',
+            backgroundColor: C.tomato,
+            border: `6px solid ${C.ink}`,
+            borderRadius: 18,
+            fontFamily: FONT_BOLD,
+            fontWeight: 900,
+            fontSize: 56,
+            color: C.white,
+            whiteSpace: 'nowrap',
+          }}
+        >
+          {title}
+        </div>
+        <div style={{display: 'flex', flexDirection: 'column', gap: 22, marginTop: 30}}>
+          {items.map((it, i) => {
+            const sp = spring({frame: f - 10 - i * 6, fps, config: {damping: 12, stiffness: 200}});
+            return (
+              <div
+                key={i}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 26,
+                  opacity: Math.min(1, sp * 1.5),
+                  transform: `translateX(${(1 - sp) * -120}px)`,
+                }}
+              >
+                <div
+                  style={{
+                    minWidth: 210,
+                    padding: '8px 18px',
+                    textAlign: 'center',
+                    backgroundColor: C.mustard,
+                    border: `5px solid ${C.ink}`,
+                    borderRadius: 16,
+                    fontFamily: FONT_BOLD,
+                    fontWeight: 900,
+                    fontSize: 54,
+                    color: C.ink,
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  {it.qty}
+                </div>
+                <div style={{fontFamily: FONT_BOLD, fontWeight: 800, fontSize: 58, color: C.ink, whiteSpace: 'nowrap'}}>{it.name}</div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </AbsoluteFill>
+  );
+};
