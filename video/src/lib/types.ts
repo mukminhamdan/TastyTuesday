@@ -63,6 +63,8 @@ export type Overlay =
       type: 'recipe';
       title: string;
       items: {qty: string; name: string}[];
+      /** small footnote under the list */
+      note?: string;
     }
   | {
       type: 'finale';

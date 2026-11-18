@@ -16,7 +16,12 @@ Doh pizza buat sendiri, 4 bahan je 🍕 (EP 0)
 1 tsp garam
 1 tsp yis
 
-Timbang → gaul → uli sampai licin → bahagi → bulat-bulatkan → tutup & rehatkan.
+Timbang → gaul → uli sampai licin → bahagi → bulat-bulatkan → tutup & proof.
+
+⏰ Proof:
+Dalam chiller 12–18 jam
+Nak bakar terus: 1–2 jam (ikut suhu bilik)
+
 Save resepi ni! EP1: bentuk base untuk freezer 👉
 
 #dohpizza #pizzahomemade #resepipizza #pizzafrozen #foodenginecooven #resepimudah #fyp

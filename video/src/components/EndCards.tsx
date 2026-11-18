@@ -289,11 +289,15 @@ export const Finale: React.FC<{
   );
 };
 
-export const RecipeCard: React.FC<{title: string; items: {qty: string; name: string}[]; durFrames: number}> = ({
+export const RecipeCard: React.FC<{title: string; items: {qty: string; name: string}[]; note?: string; durFrames: number}> = ({
   title,
   items,
+  note,
   durFrames,
 }) => {
+  // shrink a little when the lines are long so they never overflow the card
+  const longest = Math.max(...items.map((it) => it.qty.length + it.name.length));
+  const fs = longest > 16 ? 0.84 : 1;
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
   const k = interpolate(f, [0, 6, durFrames - 6, durFrames], [0, 1, 1, 0], {extrapolateRight: 'clamp'});
@@ -359,18 +363,34 @@ export const RecipeCard: React.FC<{title: string; items: {qty: string; name: str
                     borderRadius: 16,
                     fontFamily: FONT_BOLD,
                     fontWeight: 900,
-                    fontSize: 54,
+                    fontSize: 54 * fs,
                     color: C.ink,
                     whiteSpace: 'nowrap',
                   }}
                 >
                   {it.qty}
                 </div>
-                <div style={{fontFamily: FONT_BOLD, fontWeight: 800, fontSize: 58, color: C.ink, whiteSpace: 'nowrap'}}>{it.name}</div>
+                <div style={{fontFamily: FONT_BOLD, fontWeight: 800, fontSize: 58 * fs, color: C.ink, whiteSpace: 'nowrap'}}>{it.name}</div>
               </div>
             );
           })}
         </div>
+        {note ? (
+          <div
+            style={{
+              marginTop: 26,
+              fontFamily: FONT_MARKER,
+              fontSize: 44,
+              color: C.tomato,
+              opacity: interpolate(f, [10 + items.length * 6, 20 + items.length * 6], [0, 1], {
+                extrapolateLeft: 'clamp',
+                extrapolateRight: 'clamp',
+              }),
+            }}
+          >
+            {note}
+          </div>
+        ) : null}
       </div>
     </AbsoluteFill>
   );

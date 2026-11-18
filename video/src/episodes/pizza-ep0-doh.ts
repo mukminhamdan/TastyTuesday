@@ -7,7 +7,8 @@ import type {Episode} from '../lib/types';
  *      8-56 weigh 300g bread flour, 90-116 pour 180g water, 122-140 1 tsp salt + 1 tsp yeast,
  *      176-576 mix + knead (449-470 / 503-548 kneading in the hands), 616-634 dough on the scale,
  *      692-764 divide into pieces, 770-857 roll into balls, 864-870 close-up of the balls.
- *  - v194042 (60 s): 4 balls on trays, covered with a container (18-40).
+ *  - v194042 (60 s): 4 balls on trays, covered with a container (18-40), stack close-up (42).
+ * Proofing (from the cook): 12-18 h in the chiller, or 1-2 h at room temperature to bake straight away.
  * No voice in either clip.
  */
 const D = 'v192604.mp4';
@@ -206,9 +207,30 @@ export const pizzaEp0: Episode = {
       enter: 'zoom',
       zoom: {from: {s: 1.35, x: 0.45, y: 0.5}, to: {s: 1.5, x: 0.45, y: 0.5}},
       overlays: [
-        {type: 'step', n: 9, text: 'Tutup & rehatkan'},
+        {type: 'step', n: 9, text: 'Tutup & proof'},
         {type: 'speed', label: '6x'},
       ],
+    },
+    // proofing times (from the cook), over the covered container stack
+    {
+      src: T,
+      from: 41.5,
+      to: 44,
+      rate: 0.6,
+      enter: 'zoom',
+      zoom: {from: {s: 1.1, x: 0.5, y: 0.45}, to: {s: 1.25, x: 0.5, y: 0.45}},
+      overlays: [
+        {
+          type: 'recipe',
+          title: 'MASA PROOF',
+          items: [
+            {qty: '12–18 jam', name: 'Dalam chiller'},
+            {qty: '1–2 jam', name: 'Nak bakar terus*'},
+          ],
+          note: '*ikut suhu bilik',
+        },
+      ],
+      sfx: [{src: 'whoosh-med', at: 0, vol: 0.35}, {src: 'clock-fast', at: 0.4, vol: 0.2}],
     },
     // PAYOFF: balls lined up on the trays
     {
