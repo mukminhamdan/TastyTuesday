@@ -83,6 +83,20 @@ Follow saya untuk resipi lagi! 🙌
 #dohpizza #resipipizza #pizzahomemade #resepimudah #mukminmasak #fyp
 ```
 
+Versi pendek (TikTok; resipi penuh dah ada dalam video):
+
+```
+Resipi doh pizza yang korang minta 🍕 4 bahan je! Resipi penuh + masa proof kat hujung video, save dulu 📌 Follow saya untuk resipi lagi 🙌
+
+#dohpizza #resipipizza #mukminmasak #resepimudah #fyp
+```
+
+Komen untuk di-pin:
+
+```
+Proof dalam chiller 12–18 jam, atau 1–2 jam kalau nak bakar terus (ikut suhu bilik) 👍
+```
+
 ---
 
 ### Tip post
