@@ -9,7 +9,7 @@ const POUR = 218; // source second the egg hits the pan -> timer zero
 
 export const telurDadar: Episode = {
   id: 'TelurDadar',
-  series: 'MASAK MALAS',
+  series: 'MUKMIN MASAK',
   name: 'Telur dadar tak payah terbalik',
   music: 'telur.wav',
   musicStart: 15,

@@ -17,7 +17,7 @@ const T = 'v194042.mp4';
 
 export const resepiDohPizza: Episode = {
   id: 'Resepi-DohPizza',
-  series: 'MASAK MALAS',
+  series: 'MUKMIN MASAK',
   name: 'Resepi doh pizza',
   music: 'alt-funk.wav',
   musicStart: 20,

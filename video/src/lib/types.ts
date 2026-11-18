@@ -95,7 +95,7 @@ export type Shot = {
 
 export type Episode = {
   id: string;
-  /** badge text, e.g. "SIRI PIZZA" or "MASAK MALAS" */
+  /** badge text, e.g. "SIRI PIZZA FROZEN" or "MUKMIN MASAK" */
   series: string;
   /** episode number inside the series (omit for a standalone video) */
   ep?: number;

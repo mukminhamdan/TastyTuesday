@@ -16,7 +16,7 @@ Bila malas masak, keluarkan je dari freezer.
 EP2 esok: dari freezer terus jadi pizza meleleh 🧀
 Follow supaya tak terlepas!
 
-#pizzafrozen #pizzahomemade #foodenginecooven #mealprep #resepimudah #masakmalas #fyp
+#pizzafrozen #pizzahomemade #foodenginecooven #mealprep #resepimudah #mukminmasak #fyp
 ```
 
 ## 2. Siri Pizza Frozen EP2/2 — Topping & bakar (`Pizza-EP2-ToppingBakar.mp4`)
@@ -29,7 +29,7 @@ Tengok tarikan keju dia sampai habis!
 
 Belum tengok EP1 (cara buat base)? Ada kat profile 👆
 
-#pizzafrozen #pizzahomemade #cheesepull #foodenginecooven #resepimudah #masakmalas #fyp
+#pizzafrozen #pizzahomemade #cheesepull #foodenginecooven #resepimudah #mukminmasak #fyp
 ```
 
 ## 3. Mee goreng 1 periuk (`MeeGoreng.mp4`)
@@ -42,7 +42,7 @@ Basuh satu periuk je lepas makan 😌
 
 Save dulu untuk malam yang malas masak!
 
-#meegoreng #resepimudah #masakmalas #satuperiuk #resipiringkas #makanmalam #fyp
+#meegoreng #resepimudah #mukminmasak #satuperiuk #resipiringkas #makanmalam #fyp
 ```
 
 ## 4. Telur dadar Food Engine Cooven (`TelurDadar.mp4`)
@@ -52,9 +52,9 @@ Telur dadar yang TAK PAYAH terbalik 🍳✨
 
 Pukul telur, tuang dalam loyang, tutup Food Engine Cooven ± 2 minit… dia kembang gebu sendiri!
 
-Komen "NAK" kalau nak siri masak malas seterusnya 👇
+Komen "NAK" kalau nak resipi seterusnya 👇
 
-#telurdadar #foodenginecooven #resepimudah #masakmalas #hacksdapur #telur #fyp
+#telurdadar #foodenginecooven #resepimudah #mukminmasak #hacksdapur #telur #fyp
 ```
 
 ## 5. Resipi doh pizza — jawapan kepada yang tanya (`Resepi-DohPizza.mp4`)
@@ -79,7 +79,7 @@ Nak bakar terus: 1–2 jam (ikut suhu bilik)
 
 Save dulu, nanti senang cari 📌
 
-#dohpizza #resipipizza #pizzahomemade #resepimudah #masakmalas #fyp
+#dohpizza #resipipizza #pizzahomemade #resepimudah #mukminmasak #fyp
 ```
 
 ---

@@ -8,7 +8,7 @@ const MEE = 'v202235.mp4';
 
 export const meeGoreng: Episode = {
   id: 'MeeGoreng',
-  series: 'MASAK MALAS',
+  series: 'MUKMIN MASAK',
   name: 'Mee goreng 1 periuk',
   music: 'mee.wav',
   musicStart: 22,

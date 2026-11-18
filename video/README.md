@@ -1,4 +1,4 @@
-# Siri Pizza Frozen + Masak Malas — projek Remotion
+# Siri Pizza Frozen + Mukmin Masak — projek Remotion
 
 Video TikTok / IG Reels (1080×1920, 30fps) daripada 7 klip mentah dalam folder Google Drive
 `1hQPTwdVUCl9tLqPQ3KIKwpKQRrYt8DxT`.
