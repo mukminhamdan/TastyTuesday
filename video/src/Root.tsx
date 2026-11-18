@@ -41,6 +41,22 @@ export const RemotionRoot: React.FC = () => (
         defaultProps={{episode: e, showSafeZone: false}}
       />
     ))}
+    {/* music comparison for the dough recipe video (A = ukulele ceria, D = ukulele iklan) */}
+    {[
+      {id: 'Resepi-DohPizza-LaguA', music: 'ukulele-ceria.wav', musicStart: 1},
+      {id: 'Resepi-DohPizza-LaguD', music: 'ukulele-iklan.wav', musicStart: 25},
+    ].map((v) => (
+      <Composition
+        key={v.id}
+        id={v.id}
+        component={EpisodeVideo}
+        durationInFrames={episodeFrames(resepiDohPizza)}
+        fps={FPS}
+        width={W}
+        height={H}
+        defaultProps={{episode: {...resepiDohPizza, id: v.id, music: v.music, musicStart: v.musicStart}, showSafeZone: false}}
+      />
+    ))}
     <Composition
       id="Siri-Pizza-Penuh"
       component={AllEpisodes}
