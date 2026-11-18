@@ -57,13 +57,14 @@ Komen "NAK" kalau nak siri masak malas seterusnya 👇
 #telurdadar #foodenginecooven #resepimudah #masakmalas #hacksdapur #telur #fyp
 ```
 
-## 5. Resipi doh pizza — jawapan kepada yang tanya (`Resepi-DohPizza.mp4`)
+## 5. Resipi doh pizza (`Resepi-DohPizza.mp4`)
 
-Post guna **"Reply to comment / Balas dengan video"** pada komen yang tanya resipi. TikTok/IG letak sticker komen
-tu sendiri; boleh letak di tengah-bawah (kawasan bola doh), bukan atas tajuk.
+### 5a. Instagram: balasan komen ("Reply with Reel" pada komen yang tanya resipi)
+
+IG tunjuk komen asal pada Reel; letak sticker komen di tengah-bawah (kawasan bola doh), bukan atas tajuk.
 
 ```
-Ni dia resipi doh pizza yang korang minta 🍕 4 bahan je!
+Ni dia resipi doh pizza yang awak tanya hari tu 🍕 4 bahan je!
 
 🧾 Bahan:
 300g tepung roti
@@ -71,27 +72,34 @@ Ni dia resipi doh pizza yang korang minta 🍕 4 bahan je!
 1 tsp garam
 1 tsp yis
 
-Timbang → gaul → uli sampai licin → bahagi → bulat-bulatkan → tutup & proof.
+👩‍🍳 Cara:
+Timbang → gaul → uli sampai licin → bahagi → bulat-bulatkan → tutup & proof
 
 ⏰ Proof:
 Dalam chiller 12–18 jam
 Nak bakar terus: 1–2 jam (ikut suhu bilik)
 
-Save dulu, nanti senang cari 📌
-Follow saya untuk resipi lagi! 🙌
+Terima kasih sebab tanya! Ada soalan lagi, tinggal je kat komen 👇
+Save resipi ni 📌 dan follow untuk resipi lagi 🙌
 
-#dohpizza #resipipizza #pizzahomemade #resepimudah #mukminmasak #fyp
+#dohpizza #resipipizza #pizzahomemade #resepimudah #mukminmasak #homebaking #pizzamalaysia
 ```
 
-Versi pendek (TikTok; resipi penuh dah ada dalam video):
+### 5b. TikTok: post biasa
 
 ```
-Resipi doh pizza yang korang minta 🍕 4 bahan je! Resipi penuh + masa proof kat hujung video, save dulu 📌 Follow saya untuk resipi lagi 🙌
+Ramai tanya resipi doh pizza, ni dia! 🍕 4 bahan je 👇
+
+300g tepung roti • 180g air • 1 tsp garam • 1 tsp yis
+
+Proof dalam chiller 12–18 jam, atau 1–2 jam kalau nak bakar terus (ikut suhu bilik) ⏰
+
+Save dulu 📌 Follow saya untuk resipi lagi!
 
 #dohpizza #resipipizza #mukminmasak #resepimudah #fyp
 ```
 
-Komen untuk di-pin:
+Komen untuk di-pin (kedua-dua platform):
 
 ```
 Proof dalam chiller 12–18 jam, atau 1–2 jam kalau nak bakar terus (ikut suhu bilik) 👍
