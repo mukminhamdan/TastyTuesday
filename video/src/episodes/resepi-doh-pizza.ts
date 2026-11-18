@@ -255,7 +255,7 @@ export const resepiDohPizza: Episode = {
       src: T,
       from: 2,
       to: 5,
-      rate: 0.6,
+      rate: 0.55,
       enter: 'cut',
       zoom: {from: {s: 1.3, x: 0.5, y: 0.45}, to: {s: 1.4, x: 0.5, y: 0.45}},
       overlays: [
@@ -271,11 +271,13 @@ export const resepiDohPizza: Episode = {
             {qty: '1–2 jam', name: 'Bakar terus*'},
           ],
           note: '*ikut suhu bilik',
+          cta: 'Follow saya untuk resipi lagi!',
         },
       ],
       sfx: [
         {src: 'whoosh-med', at: 0, vol: 0.4},
         {src: 'sting-warm', at: 0.2, vol: 0.45},
+        {src: 'ding-sparkle', at: 2.0, vol: 0.4},
       ],
     },
   ],

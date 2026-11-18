@@ -65,6 +65,8 @@ export type Overlay =
       items: {qty: string; name: string}[];
       /** small footnote under the list */
       note?: string;
+      /** pulsing call-to-action pill under the card, e.g. "Follow saya!" */
+      cta?: string;
     }
   | {
       type: 'finale';

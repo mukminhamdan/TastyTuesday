@@ -44,7 +44,7 @@ const OverlayView: React.FC<{o: Overlay; shot: PlacedShot}> = ({o, shot}) => {
     case 'finale':
       return <Finale tiles={o.tiles} durFrames={shot.frames} />;
     case 'recipe':
-      return <RecipeCard title={o.title} items={o.items} note={o.note} durFrames={shot.frames} />;
+      return <RecipeCard title={o.title} items={o.items} note={o.note} cta={o.cta} durFrames={shot.frames} />;
   }
 };
 

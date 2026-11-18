@@ -78,6 +78,7 @@ Dalam chiller 12–18 jam
 Nak bakar terus: 1–2 jam (ikut suhu bilik)
 
 Save dulu, nanti senang cari 📌
+Follow saya untuk resipi lagi! 🙌
 
 #dohpizza #resipipizza #pizzahomemade #resepimudah #mukminmasak #fyp
 ```

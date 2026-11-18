@@ -289,12 +289,13 @@ export const Finale: React.FC<{
   );
 };
 
-export const RecipeCard: React.FC<{title: string; items: {qty: string; name: string}[]; note?: string; durFrames: number}> = ({
-  title,
-  items,
-  note,
-  durFrames,
-}) => {
+export const RecipeCard: React.FC<{
+  title: string;
+  items: {qty: string; name: string}[];
+  note?: string;
+  cta?: string;
+  durFrames: number;
+}> = ({title, items, note, cta, durFrames}) => {
   // shrink a little when the lines are long so they never overflow the card
   const longest = Math.max(...items.map((it) => it.qty.length + it.name.length));
   const fs = longest > 16 ? 0.84 : 1;
@@ -392,6 +393,37 @@ export const RecipeCard: React.FC<{title: string; items: {qty: string; name: str
           </div>
         ) : null}
       </div>
+      {cta ? (
+        <div
+          style={{
+            position: 'absolute',
+            left: SAFE.left,
+            width: SAFE_W,
+            top: SAFE.bottom - 120,
+            display: 'flex',
+            justifyContent: 'center',
+            opacity: k,
+            transform: `scale(${spring({frame: f - 22 - items.length * 6, fps, config: {damping: 11, stiffness: 170}}) * (1 + 0.045 * Math.sin((f / fps) * Math.PI * 3))})`,
+          }}
+        >
+          <div
+            style={{
+              padding: '18px 44px',
+              borderRadius: 60,
+              backgroundColor: C.tomato,
+              border: `6px solid ${C.ink}`,
+              boxShadow: `0 8px 0 ${C.ink}`,
+              fontFamily: FONT_BOLD,
+              fontWeight: 900,
+              fontSize: cta.length > 20 ? 40 : 54,
+              color: C.white,
+              whiteSpace: 'nowrap',
+            }}
+          >
+            {cta}
+          </div>
+        </div>
+      ) : null}
     </AbsoluteFill>
   );
 };
