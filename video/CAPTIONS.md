@@ -105,6 +105,58 @@ Komen untuk di-pin (kedua-dua platform):
 Proof dalam chiller 12–18 jam, atau 1–2 jam kalau nak bakar terus (ikut suhu bilik) 👍
 ```
 
+## 6. Siri Roti Manis (`RotiManis-P1-Doh`, `-P2-Bentuk`, `-P3-Bakar`, `-Bonus-Freezer`)
+
+Resipi penuh akan jadi video berasingan, jadi setiap part ajak penonton **follow & komen "RESIPI"**.
+
+### Part 1/3: Buat doh
+```
+Roti manis gebu buat sendiri 🍞 Part 1: buat doh!
+
+Gaul semua bahan → uli sampai licin → tutup & proof.
+Proof pertama: 15 minit atau sampai naik double ⏰
+
+Nak resipi? Follow & komen "RESIPI" 👇 Part 2 seterusnya!
+
+#rotimanis #rotigebu #homebaking #mukminmasak #fyp
+```
+
+### Part 2/3: Bentukkan
+```
+Part 2: bentukkan roti manis 🍞
+
+Keluarkan doh → bulat-bulatkan → susun dalam loyang → tutup & proof.
+Proof kedua: 30–45 minit. Bila naik double, boleh bakar! ⏰
+
+Nak resipi? Follow & komen "RESIPI" 👇 Part 3: bakar dalam Food Engine Cooven!
+
+#rotimanis #rotigebu #homebaking #mukminmasak #fyp
+```
+
+### Part 3/3: Bakar
+```
+Part 3: bakar guna mode oven Food Engine Cooven 🔥🍞
+
+Keluar keemasan, sapu, carik… gebuuu! 🤤
+
+Nak resipi? Follow & komen "RESIPI" 👇 Bonus: lebihan doh jangan buang!
+
+#rotimanis #rotigebu #foodenginecooven #homebaking #mukminmasak #fyp
+```
+
+### Bonus: Lebihan doh
+```
+Lebihan doh? Jangan buang! ❄️
+
+Bulatkan, masuk bekas, bekukan. Nak makan nanti, terus bakar 🍞
+
+Nak resipi roti manis ni? Follow & komen "RESIPI" 👇
+
+#rotimanis #tipsdapur #mealprep #mukminmasak #fyp
+```
+
+Komen pin (semua part): `Resipi penuh coming soon! Komen "RESIPI" & follow supaya tak terlepas 🙌`
+
 ---
 
 ### Tip post
