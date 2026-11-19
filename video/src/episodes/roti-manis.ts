@@ -684,7 +684,7 @@ export const rotiResipi: Episode = {
   series: BRAND,
   name: 'Resipi roti manis',
   music: MUSIC.ukuleleCeria.file,
-  musicStart: 60,
+  musicStart: 20, // track A has a quiet break at 96-115 s; 20-92 s is steady
   musicBed: 0.5,
   shots: [
     {

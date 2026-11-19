@@ -6,7 +6,7 @@ export const BRAND = 'MUKMIN MASAK';
  * `start` skips the quiet intro so the hook lands on an energetic part.
  */
 export const MUSIC = {
-  /** A: ukulele + gitar ceria, ~99 BPM, steady energy (default) */
+  /** A: ukulele + gitar ceria, ~99 BPM, steady energy (default). Quiet break at 96-115 s: avoid it. */
   ukuleleCeria: {file: 'ukulele-ceria.wav', start: 1},
   /** D: ukulele pop-folk gaya iklan, ~89 BPM, builds up */
   ukuleleIklan: {file: 'ukulele-iklan.wav', start: 25},
