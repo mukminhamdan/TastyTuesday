@@ -46,7 +46,7 @@ export const FramedVideo: React.FC<{
   );
 };
 
-export const ShotView: React.FC<{shot: Shot & {frames: number}}> = ({shot}) => {
+export const ShotView: React.FC<{shot: Shot & {frames: number}; clipGain?: number}> = ({shot, clipGain = 1}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const p = frame / Math.max(1, shot.frames - 1);
@@ -106,7 +106,7 @@ export const ShotView: React.FC<{shot: Shot & {frames: number}}> = ({shot}) => {
           rate={shot.rate}
           focus={focus}
           extraScale={extra}
-          volume={shot.audio ?? 0}
+          volume={(shot.audio ?? 0) * clipGain}
         />
       </AbsoluteFill>
       {flash > 0 ? <AbsoluteFill style={{backgroundColor: `rgba(255,246,229,${flash})`}} /> : null}

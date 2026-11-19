@@ -30,6 +30,10 @@ const BRUSH = 'r193013.mp4';
 const PULL = 'r193101.mp4';
 const FREEZE = 'r191436.mp4';
 
+/** Cook's preference: keep the kitchen sound low so it doesn't fight the music. */
+const CLIP_GAIN = 0.3;
+const ASMR_DUCK = 0.85;
+
 /** End-of-video CTA for the whole series (the recipe gets its own video later). */
 const CTA = 'Nak resipi?\nFollow & komen "RESIPI"';
 
@@ -68,6 +72,8 @@ export const rotiPart1: Episode = {
   music: MUSIC.ukuleleCeria.file,
   musicStart: MUSIC.ukuleleCeria.start,
   musicBed: 0.5,
+  clipGain: CLIP_GAIN,
+  asmrDuck: ASMR_DUCK,
   shots: [
     PULL_HOOK('part 1: buat doh'),
     {
@@ -233,6 +239,8 @@ export const rotiPart2: Episode = {
   music: MUSIC.ukuleleIklan.file,
   musicStart: MUSIC.ukuleleIklan.start,
   musicBed: 0.5,
+  clipGain: CLIP_GAIN,
+  asmrDuck: ASMR_DUCK,
   shots: [
     {
       ...RISEN,
@@ -397,6 +405,8 @@ export const rotiPart3: Episode = {
   music: MUSIC.ukuleleCeria.file,
   musicStart: 30,
   musicBed: 0.5,
+  clipGain: CLIP_GAIN,
+  asmrDuck: ASMR_DUCK,
   shots: [
     PULL_HOOK('part 3: bakar'),
     {
@@ -538,6 +548,8 @@ export const rotiBonus: Episode = {
   music: MUSIC.ukuleleIklan.file,
   musicStart: 40,
   musicBed: 0.5,
+  clipGain: CLIP_GAIN,
+  asmrDuck: ASMR_DUCK,
   // Process (from the cook): shape on the black pan -> freeze on the pan first -> once frozen
   // (tapped together at r191436 ~7-8.3 s to show they are hard) -> move into a box -> back in the freezer.
   shots: [
@@ -686,6 +698,8 @@ export const rotiResipi: Episode = {
   music: MUSIC.ukuleleCeria.file,
   musicStart: 20, // track A has a quiet break at 96-115 s; 20-92 s is steady
   musicBed: 0.5,
+  clipGain: CLIP_GAIN,
+  asmrDuck: ASMR_DUCK,
   shots: [
     {
       ...PULL_HOOK(''),

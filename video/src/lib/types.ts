@@ -111,5 +111,9 @@ export type Episode = {
   musicStart?: number;
   /** music level when nothing else is going on */
   musicBed?: number;
+  /** multiplier on every clip's own audio (default 1). Lower = music leads, kitchen noise stays in the background. */
+  clipGain?: number;
+  /** how far the music dips under ASMR shots (fraction of the bed, default 0.5) */
+  asmrDuck?: number;
   shots: Shot[];
 };
