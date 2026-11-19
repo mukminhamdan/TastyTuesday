@@ -181,6 +181,16 @@ Save resipi ni 📌 Follow saya untuk resipi lagi!
 #rotimanis #resipirotimanis #rotigebu #foodenginecooven #homebaking #mukminmasak #fyp
 ```
 
+### Versi ringkas: IG / TikTok / Threads
+
+| Video | Instagram | TikTok | Threads |
+|---|---|---|---|
+| Part 1 | Roti manis gebu, part 1: buat doh 🍞 Nak resipi? Komen "RESIPI" & follow! #rotimanis #homebaking #mukminmasak | Roti manis gebu part 1 🍞 Komen "RESIPI" 👇 #rotimanis #mukminmasak #fyp | Buat roti manis sendiri, part 1: doh dulu 🍞 Siapa nak resipi, komen "RESIPI"! |
+| Part 2 | Part 2: bentuk & proof sampai naik double 🍞 Komen "RESIPI" & follow untuk part 3! #rotimanis #homebaking #mukminmasak | Part 2: bentukkan roti manis 🍞 Komen "RESIPI" 👇 #rotimanis #mukminmasak #fyp | Part 2 roti manis: bulat-bulatkan, susun, tunggu naik double 🍞 |
+| Part 3 | Part 3: bakar dalam Food Engine Cooven, gebuuu! 🔥🍞 Komen "RESIPI" & follow! #rotimanis #foodenginecooven #mukminmasak | Part 3: bakar guna Cooven, gebu gila 🤤 Komen "RESIPI" 👇 #rotimanis #foodenginecooven #fyp | Roti manis siap! Bakar guna Food Engine Cooven, sapu butter, terus carik 🤤 |
+| Bonus | Lebihan doh? Jangan buang, bekukan je ❄️ Komen "RESIPI" & follow! #tipsdapur #rotimanis #mukminmasak | Lebihan doh jangan buang! Bekukan je ❄️ #tipsdapur #mukminmasak #fyp | Tip: lebihan doh roti, bekukan atas pan dulu, baru masuk bekas ❄️ |
+| Resipi | Ni resipi roti manis yang korang minta 🍞 Bahan penuh dalam video, save dulu 📌 #resipirotimanis #rotimanis #mukminmasak | Resipi roti manis yang korang minta! Save dulu 📌 #resipirotimanis #mukminmasak #fyp | Resipi roti manis gebu, 7 bahan je 🍞 Bahan & cara penuh dalam video, save dulu! |
+
 Komen pin (semua part): `Resipi penuh coming soon! Komen "RESIPI" & follow supaya tak terlepas 🙌`
 
 ---
