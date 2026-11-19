@@ -15,6 +15,14 @@ loadFont({family: FONT_BOLD, url: staticFile('fonts/poppins-latin-800-normal.wof
 loadFont({family: FONT_BOLD, url: staticFile('fonts/poppins-latin-900-normal.woff2'), weight: '900'});
 loadFont({family: FONT_MARKER, url: staticFile('fonts/permanent-marker-latin-400-normal.woff2'), weight: '400'});
 
+const ROTI_THUMBS = [
+  {id: 'Thumb-Roti-P1', props: {bg: 'thumbs/roti-p1.jpg', kicker: 'Roti Manis', title: 'BUAT\nDOH', sticker: 'PART 1', zoom: {s: 2, x: 0.22, y: 0.62}}},
+  {id: 'Thumb-Roti-P2', props: {bg: 'thumbs/roti-p2.jpg', kicker: 'Roti Manis', title: 'BENTUK\nROTI', sticker: 'PART 2', zoom: {s: 1.08, x: 0.5, y: 0.75}}},
+  {id: 'Thumb-Roti-P3', props: {bg: 'thumbs/roti-p3.jpg', kicker: 'Roti Manis', title: 'BAKAR\nCOOVEN', sticker: 'PART 3', zoom: {s: 1.08, x: 0.5, y: 0.6}}},
+  {id: 'Thumb-Roti-Bonus', props: {bg: 'thumbs/roti-bonus.jpg', kicker: 'Bonus', title: 'LEBIHAN\nDOH?', sticker: 'JANGAN BUANG!', zoom: {s: 1.1, x: 0.5, y: 0.8}}},
+  {id: 'Thumb-Roti-Resipi', props: {bg: 'thumbs/roti-resipi.jpg', kicker: 'Resipi', title: 'ROTI\nMANIS', sticker: 'GEBU GILA!', chips: ['7 bahan je', 'Cooven 150°C'], zoom: {s: 1.08, x: 0.5, y: 0.6}}},
+];
+
 export const EPISODES = [pizzaEp1, pizzaEp2, meeGoreng, telurDadar, resepiDohPizza, ...ROTI_MANIS];
 
 const PIZZA_SERIES = [pizzaEp1, pizzaEp2];
@@ -44,6 +52,9 @@ export const RemotionRoot: React.FC = () => (
       />
     ))}
     {/* thumbnails / covers */}
+    {ROTI_THUMBS.map((t) => (
+      <Still key={t.id} id={t.id} component={Thumbnail} width={W} height={H} defaultProps={{...t.props, brand: BRAND}} />
+    ))}
     <Still
       id="Thumb-DohPizza-A"
       component={Thumbnail}

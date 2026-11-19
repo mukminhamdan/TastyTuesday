@@ -3,7 +3,7 @@ import {bundle} from '@remotion/bundler';
 import {renderStill, selectComposition} from '@remotion/renderer';
 import path from 'node:path';
 import fs from 'node:fs';
-const ids = process.argv.slice(2).length ? process.argv.slice(2) : ['Thumb-DohPizza-A', 'Thumb-DohPizza-B'];
+const ids = process.argv.slice(2).length ? process.argv.slice(2) : ['Thumb-Roti-P1', 'Thumb-Roti-P2', 'Thumb-Roti-P3', 'Thumb-Roti-Bonus', 'Thumb-Roti-Resipi'];
 const browserExecutable = process.env.CHROME_PATH;
 const serveUrl = process.env.BUNDLE || (await bundle({entryPoint: path.resolve('src/index.ts')}));
 fs.mkdirSync('out/thumbs', {recursive: true});
