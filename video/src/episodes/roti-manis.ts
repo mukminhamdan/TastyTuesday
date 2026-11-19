@@ -16,7 +16,7 @@ import type {Episode} from '../lib/types';
  *  - r193101 (23 s): pulling a bun apart (fluffy inside).  r191436 (60 s): leftover balls into a box -> freezer.
  *
  * Proofing (from the cook): proof 1 = 15 min or until doubled; proof 2 = 30-45 min, bake once doubled.
- * Baking (confirmed by the cook): Food Engine Cooven oven mode, 150°C, 20 min. Butter brushed on after baking.
+ * Baking (confirmed by the cook): Food Engine Cooven oven mode, 150°C, 15-20 min. Butter brushed on after baking.
  * Conventional oven (for the later recipe video, not shown here): 170°C, 15-20 min.
  */
 const DOUGH = 'r173751.mp4';
@@ -408,7 +408,7 @@ export const rotiPart3: Episode = {
         {type: 'step', n: 1, text: 'Set mode oven'},
         {type: 'speed', label: '2x'},
         {type: 'label', text: 'Food Engine Cooven', x: 540, y: 430, rotate: -4, size: 58, at: 0.4},
-        {type: 'label', text: '150°C · 20 minit', x: 540, y: 1180, rotate: 3, size: 70, at: 1.2},
+        {type: 'label', text: '150°C · 15–20 minit', x: 530, y: 1180, rotate: 3, size: 62, at: 1.2},
       ],
       sfx: [{src: 'tap', at: 0.5, vol: 0.45}, {src: 'tap', at: 1.6, vol: 0.45}, {src: 'tap', at: 2.8, vol: 0.45}],
     },

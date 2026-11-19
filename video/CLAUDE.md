@@ -17,5 +17,5 @@
 ## Nota untuk video akan datang
 
 - **Video resipi roti manis** (belum dibuat): pengguna akan beri bahan & sukatan. Masukkan juga:
-  Food Engine Cooven mode oven **150°C, 20 min**; oven biasa **170°C, 15–20 min**; proof 1 = 15 min / naik double,
+  Food Engine Cooven mode oven **150°C, 15–20 min**; oven biasa **170°C, 15–20 min**; proof 1 = 15 min / naik double,
   proof 2 = 30–45 min sampai naik double; sapu **butter** lepas bakar.
