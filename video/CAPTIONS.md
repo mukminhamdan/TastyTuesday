@@ -136,8 +136,9 @@ Nak resipi? Follow & komen "RESIPI" 👇 Part 3: bakar dalam Food Engine Cooven!
 ### Part 3/3: Bakar
 ```
 Part 3: bakar guna mode oven Food Engine Cooven 🔥🍞
+150°C, 20 minit ⏰
 
-Keluar keemasan, sapu, carik… gebuuu! 🤤
+Keluar keemasan, sapu butter, carik… gebuuu! 🤤
 
 Nak resipi? Follow & komen "RESIPI" 👇 Bonus: lebihan doh jangan buang!
 
