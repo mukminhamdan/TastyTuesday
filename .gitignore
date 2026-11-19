@@ -10,3 +10,5 @@ test-results/
 # Cloudflare tunnel (local)
 tools/
 cloudflare.txt
+__pycache__/
+*.pyc
