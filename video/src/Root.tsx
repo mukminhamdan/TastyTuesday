@@ -4,6 +4,7 @@ import {loadFont} from '@remotion/fonts';
 import {EpisodeVideo, episodeFrames} from './EpisodeVideo';
 import {Thumbnail} from './Thumbnail';
 import {resepiDohPizza} from './episodes/resepi-doh-pizza';
+import {ROTI_MANIS} from './episodes/roti-manis';
 import {pizzaEp1} from './episodes/pizza-ep1';
 import {pizzaEp2} from './episodes/pizza-ep2';
 import {meeGoreng} from './episodes/mee-goreng';
@@ -14,7 +15,7 @@ loadFont({family: FONT_BOLD, url: staticFile('fonts/poppins-latin-800-normal.wof
 loadFont({family: FONT_BOLD, url: staticFile('fonts/poppins-latin-900-normal.woff2'), weight: '900'});
 loadFont({family: FONT_MARKER, url: staticFile('fonts/permanent-marker-latin-400-normal.woff2'), weight: '400'});
 
-export const EPISODES = [pizzaEp1, pizzaEp2, meeGoreng, telurDadar, resepiDohPizza];
+export const EPISODES = [pizzaEp1, pizzaEp2, meeGoreng, telurDadar, resepiDohPizza, ...ROTI_MANIS];
 
 const PIZZA_SERIES = [pizzaEp1, pizzaEp2];
 
