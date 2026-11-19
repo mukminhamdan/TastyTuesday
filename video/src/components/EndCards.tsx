@@ -61,8 +61,10 @@ export const EndNext: React.FC<{
   nextEp: number | string;
   nextTitle: string;
   peek: {src: string; from: number; rate?: number; focus?: Focus};
+  /** call-to-action pill text; use \n for two lines */
+  ctaText?: string;
   durFrames: number;
-}> = ({heading = 'Bersambung', nextEp, nextTitle, peek, durFrames}) => {
+}> = ({heading = 'Bersambung', nextEp, nextTitle, peek, ctaText = 'Follow, jangan terlepas!', durFrames}) => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
   const k = interpolate(f, [0, 8], [0, 1], {extrapolateRight: 'clamp'});
@@ -145,7 +147,7 @@ export const EndNext: React.FC<{
           position: 'absolute',
           left: SAFE.left,
           width: SAFE_W,
-          top: SAFE.bottom - 120,
+          top: SAFE.bottom - (ctaText.includes('\n') ? 175 : 120),
           display: 'flex',
           justifyContent: 'center',
           transform: `scale(${cta * pulse})`,
@@ -161,11 +163,13 @@ export const EndNext: React.FC<{
             fontFamily: FONT_BOLD,
             fontWeight: 900,
             fontSize: 48,
+            lineHeight: 1.12,
             color: C.ink,
-            whiteSpace: 'nowrap',
+            whiteSpace: 'pre-line',
+            textAlign: 'center',
           }}
         >
-          Follow, jangan terlepas!
+          {ctaText}
         </div>
       </div>
     </AbsoluteFill>
@@ -399,7 +403,7 @@ export const RecipeCard: React.FC<{
             position: 'absolute',
             left: SAFE.left,
             width: SAFE_W,
-            top: SAFE.bottom - 120,
+            top: SAFE.bottom - (cta.includes('\n') ? 165 : 120),
             display: 'flex',
             justifyContent: 'center',
             opacity: k,
@@ -415,9 +419,11 @@ export const RecipeCard: React.FC<{
               boxShadow: `0 8px 0 ${C.ink}`,
               fontFamily: FONT_BOLD,
               fontWeight: 900,
-              fontSize: cta.length > 20 ? 40 : 54,
+              fontSize: Math.max(...cta.split('\n').map((l) => l.length)) > 20 ? 40 : 50,
+              lineHeight: 1.12,
               color: C.white,
-              whiteSpace: 'nowrap',
+              whiteSpace: 'pre-line',
+              textAlign: 'center',
             }}
           >
             {cta}

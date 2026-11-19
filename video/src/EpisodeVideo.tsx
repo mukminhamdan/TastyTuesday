@@ -40,7 +40,7 @@ const OverlayView: React.FC<{o: Overlay; shot: PlacedShot}> = ({o, shot}) => {
     case 'timer':
       return <CookTimer fromSec={o.fromSec} toSec={o.toSec} caption={o.caption} durFrames={shot.frames} />;
     case 'endNext':
-      return <EndNext heading={o.heading} nextEp={o.nextEp} nextTitle={o.nextTitle} peek={o.peek} durFrames={shot.frames} />;
+      return <EndNext heading={o.heading} ctaText={o.cta} nextEp={o.nextEp} nextTitle={o.nextTitle} peek={o.peek} durFrames={shot.frames} />;
     case 'finale':
       return <Finale tiles={o.tiles} durFrames={shot.frames} />;
     case 'recipe':

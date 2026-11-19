@@ -57,6 +57,8 @@ export type Overlay =
       nextEp: number | string;
       nextTitle: string;
       peek: {src: string; from: number; rate?: number; focus?: Focus};
+      /** CTA pill text (default "Follow, jangan terlepas!"); \n for two lines */
+      cta?: string;
     }
   | {
       /** full-screen ingredient card over a blurred shot */

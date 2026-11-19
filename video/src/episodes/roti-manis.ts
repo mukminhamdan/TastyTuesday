@@ -27,6 +27,9 @@ const BRUSH = 'r193013.mp4';
 const PULL = 'r193101.mp4';
 const FREEZE = 'r191436.mp4';
 
+/** End-of-video CTA for the whole series (the recipe gets its own video later). */
+const CTA = 'Nak resipi?\nFollow & komen "RESIPI"';
+
 const PULL_HOOK = (part: string) => ({
   src: PULL,
   from: 5,
@@ -194,6 +197,7 @@ export const rotiPart1: Episode = {
       overlays: [
         {
           type: 'endNext',
+          cta: CTA,
           nextEp: 'PART 2',
           nextTitle: 'Bentukkan\nroti manis',
           peek: {src: SHAPE, from: 60, rate: 6, focus: {s: 1.8, x: 0.25, y: 0.42}},
@@ -364,6 +368,7 @@ export const rotiPart2: Episode = {
       overlays: [
         {
           type: 'endNext',
+          cta: CTA,
           nextEp: 'PART 3',
           nextTitle: 'Bakar dalam\nFood Engine Cooven!',
           peek: {src: GOLD, from: 3, rate: 1, focus: {s: 1.25, x: 0.5, y: 0.4}},
@@ -502,6 +507,7 @@ export const rotiPart3: Episode = {
       overlays: [
         {
           type: 'endNext',
+          cta: CTA,
           heading: 'Bonus',
           nextEp: 'BONUS',
           nextTitle: 'Lebihan doh?\nJangan buang!',
@@ -610,7 +616,7 @@ export const rotiBonus: Episode = {
             {qty: '1', name: 'Bekukan lebihan doh'},
             {qty: '2', name: 'Bakar bila nak'},
           ],
-          cta: 'Follow saya untuk resipi lagi!',
+          cta: CTA,
         },
       ],
       sfx: [{src: 'whoosh-med', at: 0, vol: 0.4}, {src: 'sting-warm', at: 0.2, vol: 0.45}],
