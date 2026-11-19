@@ -54,6 +54,19 @@ Pasang sistem di pelayan (lihat *Deployment*: Render, Railway atau VPS) dengan H
 Chrome, kemudian menu ⋮ → **Pasang aplikasi**. Aplikasi akan dibuka dalam tetingkap sendiri tanpa bar pelayar, dan
 perkongsian fail PDF terus ke WhatsApp turut berfungsi (memerlukan HTTPS).
 
+## Edisi Excel (tanpa pemasangan)
+
+Folder **`excel/`** mengandungi versi sistem dalam satu fail Excel. Ia berfungsi di Microsoft Excel
+(komputer, Android, iPhone) dan Google Sheets, tanpa makro:
+
+- **`SistemGitaGangsa.xlsx`**: fail kosong, sedia digunakan
+- **`SistemGitaGangsa-Contoh.xlsx`**: dengan data contoh, untuk belajar
+
+Helaian disediakan untuk Pelanggan, Tempahan, Sebut Harga, Invois, Item dan Bayaran/Resit. Formula mengira nombor
+dokumen, jumlah, baki, status dan amaran tempahan bertindih. Templat cetak invois, sebut harga dan resit
+mengikut gaya Gita Gangsa, dan ada juga Papan Pemuka (dengan kalendar) serta Laporan. Fail dijana oleh
+`python3 excel/build_excel.py`.
+
 ## Modules
 
 | Module | Highlights |
