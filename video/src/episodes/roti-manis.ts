@@ -626,4 +626,238 @@ export const rotiBonus: Episode = {
   ],
 };
 
-export const ROTI_MANIS = [rotiPart1, rotiPart2, rotiPart3, rotiBonus];
+/* ------------------------------------------------------------------ */
+/* RESIPI (separate video, recipe from the cook)                       */
+/* ------------------------------------------------------------------ */
+export const rotiResipi: Episode = {
+  id: 'RotiManis-Resipi',
+  series: BRAND,
+  name: 'Resipi roti manis',
+  music: MUSIC.ukuleleCeria.file,
+  musicStart: 60,
+  musicBed: 0.5,
+  shots: [
+    {
+      ...PULL_HOOK(''),
+      overlays: [
+        {
+          type: 'title',
+          pos: 'bottom',
+          at: 0.1,
+          lines: [{t: 'RESIPI ROTI MANIS', size: 80}, {t: 'YANG KORANG MINTA!', hl: true, size: 58}, {t: 'gebu gila!', marker: true, size: 64}],
+        },
+        {type: 'sparkles', x: 540, y: 700, at: 1.2, count: 10, spread: 300},
+      ],
+    },
+    {
+      src: DOUGH,
+      from: 1,
+      to: 8,
+      rate: 1.3,
+      enter: 'glitch',
+      overlays: [
+        {
+          type: 'recipe',
+          title: 'BAHAN',
+          items: [
+            {qty: '400g', name: 'Tepung roti*'},
+            {qty: '100g', name: 'Tepung gandum'},
+            {qty: '300g', name: 'Air'},
+            {qty: '60g', name: 'Gula kastor'},
+            {qty: '60g', name: 'Mentega masin**'},
+            {qty: '10g', name: 'Yis kering'},
+            {qty: '1 s/k', name: 'Garam'},
+          ],
+          note: '*protein tinggi\n**kiub 2 cm · s/k = sudu kecil',
+        },
+      ],
+      sfx: [{src: 'whoosh-med', at: 0, vol: 0.35}],
+    },
+    {
+      src: DOUGH,
+      from: 30,
+      to: 56,
+      rate: 7,
+      enter: 'zoom',
+      zoom: {from: {s: 1.75, x: 0.22, y: 0.47}, to: {s: 1.9, x: 0.22, y: 0.47}},
+      overlays: [
+        {type: 'step', n: 1, text: '300g air'},
+        {type: 'speed', label: '7x'},
+      ],
+    },
+    {
+      src: DOUGH,
+      from: 105,
+      to: 160,
+      rate: 14,
+      enter: 'zoom',
+      zoom: {from: {s: 1.75, x: 0.22, y: 0.47}, to: {s: 1.9, x: 0.22, y: 0.47}},
+      overlays: [
+        {type: 'step', n: 2, text: '60g mentega masin'},
+        {type: 'speed', label: '14x'},
+      ],
+    },
+    {
+      src: DOUGH,
+      from: 195,
+      to: 250,
+      rate: 14,
+      enter: 'zoom',
+      zoom: {from: {s: 1.75, x: 0.22, y: 0.47}, to: {s: 1.9, x: 0.22, y: 0.47}},
+      overlays: [
+        {type: 'step', n: 3, text: 'Gula, yis & garam'},
+        {type: 'speed', label: '14x'},
+      ],
+      sfx: [{src: 'pop-small', at: 0.6, vol: 0.4}, {src: 'pop-small', at: 2.4, vol: 0.4}],
+    },
+    {
+      src: DOUGH,
+      from: 328,
+      to: 410,
+      rate: 20,
+      enter: 'zoom',
+      zoom: {from: {s: 1.7, x: 0.22, y: 0.45}, to: {s: 1.85, x: 0.22, y: 0.45}},
+      overlays: [
+        {type: 'step', n: 4, text: '400g tepung roti + 100g gandum'},
+        {type: 'speed', label: '20x'},
+      ],
+    },
+    {
+      src: DOUGH,
+      from: 450,
+      to: 665,
+      rate: 50,
+      enter: 'zoom',
+      zoom: {from: {s: 1.75, x: 0.22, y: 0.47}, to: {s: 1.95, x: 0.22, y: 0.47}},
+      punches: [1.4, 2.8],
+      overlays: [
+        {type: 'step', n: 5, text: 'Uli sampai licin'},
+        {type: 'speed', label: '50x'},
+      ],
+      sfx: [{src: 'tap', at: 1.4, vol: 0.4}, {src: 'tap', at: 2.8, vol: 0.4}],
+    },
+    {
+      src: DOUGH,
+      from: 668,
+      to: 690,
+      rate: 5.5,
+      enter: 'zoom',
+      zoom: {from: {s: 1.7, x: 0.22, y: 0.47}, to: {s: 1.85, x: 0.22, y: 0.47}},
+      overlays: [
+        {type: 'step', n: 6, text: 'Proof 15 min / naik double'},
+        {type: 'speed', label: '5.5x'},
+      ],
+    },
+    {
+      src: SHAPE,
+      from: 46,
+      to: 88,
+      rate: 11,
+      enter: 'zoom',
+      zoom: {from: {s: 1.75, x: 0.25, y: 0.4}, to: {s: 1.9, x: 0.25, y: 0.4}},
+      overlays: [
+        {type: 'step', n: 7, text: 'Bulat-bulatkan'},
+        {type: 'speed', label: '11x'},
+      ],
+    },
+    {
+      src: SHAPE,
+      from: 120,
+      to: 300,
+      rate: 45,
+      enter: 'zoom',
+      zoom: {from: {s: 1.7, x: 0.2, y: 0.9}, to: {s: 1.85, x: 0.2, y: 0.9}},
+      overlays: [
+        {type: 'step', n: 8, text: 'Susun & proof 30–45 min'},
+        {type: 'speed', label: '45x'},
+      ],
+    },
+    {
+      ...RISEN,
+      enter: 'zoom',
+      audio: 0.2,
+      zoom: {from: {s: 1.1, x: 0.5, y: 0.3}, to: {s: 1.25, x: 0.5, y: 0.3}},
+      overlays: [{type: 'label', text: 'naik double!', x: 540, y: 1180, rotate: -4, at: 0.2}],
+      sfx: [{src: 'inflate', at: 0.2, vol: 0.4}],
+    },
+    {
+      src: PANEL,
+      from: 9,
+      to: 18,
+      rate: 2.2,
+      enter: 'zoom',
+      zoom: {from: {s: 1.15, x: 0.5, y: 0.45}, to: {s: 1.3, x: 0.5, y: 0.45}},
+      overlays: [
+        {type: 'step', n: 9, text: 'Cooven mode oven'},
+        {type: 'label', text: '150°C · 15–20 minit', x: 530, y: 1180, rotate: 3, size: 62, at: 0.6},
+      ],
+      sfx: [{src: 'tap', at: 0.5, vol: 0.45}, {src: 'tap', at: 1.6, vol: 0.45}],
+    },
+    {
+      src: PROOF,
+      from: 148,
+      to: 324,
+      rate: 45,
+      enter: 'zoom',
+      zoom: {from: {s: 1.1, x: 0.5, y: 0.6}, to: {s: 1.3, x: 0.5, y: 0.6}},
+      overlays: [
+        {type: 'step', n: 9, text: 'Cooven mode oven', at: -2},
+        {type: 'speed', label: '45x'},
+      ],
+      sfx: [{src: 'clock-fast', at: 0, vol: 0.2}],
+    },
+    {
+      src: BRUSH,
+      from: 0,
+      to: 17,
+      rate: 3.4,
+      enter: 'zoom',
+      audio: 0.3,
+      zoom: {from: {s: 1.05, x: 0.5, y: 0.45}, to: {s: 1.2, x: 0.5, y: 0.45}},
+      overlays: [
+        {type: 'step', n: 10, text: 'Sapu butter'},
+        {type: 'speed', label: '3.4x'},
+      ],
+    },
+    {
+      src: PULL,
+      from: 4,
+      to: 14,
+      rate: 1.4,
+      enter: 'zoom',
+      audio: 1,
+      asmr: true,
+      zoom: {from: {s: 1.05, x: 0.5, y: 0.4}, to: {s: 1.3, x: 0.5, y: 0.38}},
+      overlays: [
+        {type: 'title', pos: 'bottom', at: 1.6, lines: [{t: 'GEBUUU!', hl: true, size: 124}]},
+        {type: 'sparkles', x: 540, y: 700, at: 1.8, count: 12, spread: 320},
+      ],
+      sfx: [{src: 'boom', at: 1.6, vol: 0.45}, {src: 'ding-sparkle', at: 1.8, vol: 0.4}],
+    },
+    {
+      src: PULL,
+      from: 19,
+      to: 22,
+      rate: 0.55,
+      enter: 'cut',
+      zoom: {from: {s: 1.2, x: 0.5, y: 0.5}, to: {s: 1.3, x: 0.5, y: 0.5}},
+      overlays: [
+        {
+          type: 'recipe',
+          title: 'SAVE RESIPI NI!',
+          items: [
+            {qty: '15 min', name: 'Proof 1'},
+            {qty: '30–45 min', name: 'Proof 2'},
+            {qty: '150°C', name: 'Cooven 15–20 min'},
+            {qty: '170°C', name: 'Oven 15–20 min'},
+          ],
+          note: 'proof sampai naik double\nsapu butter lepas bakar',
+          cta: 'Follow saya untuk resipi lagi!',
+        },
+      ],
+      sfx: [{src: 'whoosh-med', at: 0, vol: 0.4}, {src: 'sting-warm', at: 0.2, vol: 0.45}, {src: 'ding-sparkle', at: 2.0, vol: 0.4}],
+    },
+  ],
+};
+
+export const ROTI_MANIS = [rotiPart1, rotiPart2, rotiPart3, rotiBonus, rotiResipi];

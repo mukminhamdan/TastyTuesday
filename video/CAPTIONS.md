@@ -156,6 +156,30 @@ Nak resipi roti manis ni? Follow & komen "RESIPI" 👇
 #rotimanis #tipsdapur #mealprep #mukminmasak #fyp
 ```
 
+### Resipi roti manis (video berasingan, `RotiManis-Resipi`)
+```
+Ni dia resipi roti manis yang korang minta 🍞 gebu gila!
+
+🧾 Bahan:
+400g tepung roti (protein tinggi)
+100g tepung gandum
+300g air
+60g gula kastor
+60g mentega masin (potong kiub 2 cm)
+10g yis kering
+1 sudu kecil garam
+
+⏰ Proof 1: 15 minit atau sampai naik double
+⏰ Proof 2: 30–45 minit sampai naik double
+🔥 Food Engine Cooven mode oven 150°C, 15–20 minit
+🔥 Oven biasa 170°C, 15–20 minit
+🧈 Sapu butter lepas bakar
+
+Save resipi ni 📌 Follow saya untuk resipi lagi!
+
+#rotimanis #resipirotimanis #rotigebu #foodenginecooven #homebaking #mukminmasak #fyp
+```
+
 Komen pin (semua part): `Resipi penuh coming soon! Komen "RESIPI" & follow supaya tak terlepas 🙌`
 
 ---

@@ -17,6 +17,7 @@
 
 ## Nota untuk video akan datang
 
-- **Video resipi roti manis** (belum dibuat): pengguna akan beri bahan & sukatan. Masukkan juga:
+- **Video resipi roti manis**: dah dibuat (`RotiManis-Resipi`). Bahan: 400g tepung roti, 100g tepung gandum, 300g air,
+  60g gula kastor, 60g mentega masin (kiub 2 cm), 10g yis kering, 1 s/k garam. Juga:
   Food Engine Cooven mode oven **150°C, 15–20 min**; oven biasa **170°C, 15–20 min**; proof 1 = 15 min / naik double,
   proof 2 = 30–45 min sampai naik double; sapu **butter** lepas bakar.

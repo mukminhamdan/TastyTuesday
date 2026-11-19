@@ -302,7 +302,9 @@ export const RecipeCard: React.FC<{
 }> = ({title, items, note, cta, durFrames}) => {
   // shrink a little when the lines are long so they never overflow the card
   const longest = Math.max(...items.map((it) => it.qty.length + it.name.length));
-  const fs = longest > 16 ? 0.84 : 1;
+  // long or many lines -> smaller type and tighter rows, so up to ~8 items fit
+  const fs = longest > 22 ? 0.72 : items.length > 5 ? 0.78 : longest > 16 ? 0.84 : 1;
+  const rowGap = items.length > 5 ? 12 : 22;
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
   const k = interpolate(f, [0, 6, durFrames - 6, durFrames], [0, 1, 1, 0], {extrapolateRight: 'clamp'});
@@ -344,7 +346,7 @@ export const RecipeCard: React.FC<{
         >
           {title}
         </div>
-        <div style={{display: 'flex', flexDirection: 'column', gap: 22, marginTop: 30}}>
+        <div style={{display: 'flex', flexDirection: 'column', gap: rowGap, marginTop: 30}}>
           {items.map((it, i) => {
             const sp = spring({frame: f - 10 - i * 6, fps, config: {damping: 12, stiffness: 200}});
             return (
@@ -360,7 +362,7 @@ export const RecipeCard: React.FC<{
               >
                 <div
                   style={{
-                    minWidth: it.qty.length <= 2 ? 90 : 210,
+                    minWidth: (it.qty.length <= 2 ? 90 : 210) * fs,
                     padding: '8px 18px',
                     textAlign: 'center',
                     backgroundColor: C.mustard,
@@ -383,7 +385,9 @@ export const RecipeCard: React.FC<{
         {note ? (
           <div
             style={{
-              marginTop: 26,
+              marginTop: 22,
+              whiteSpace: 'pre-line',
+              lineHeight: 1.15,
               fontFamily: FONT_MARKER,
               fontSize: 44,
               color: C.tomato,
