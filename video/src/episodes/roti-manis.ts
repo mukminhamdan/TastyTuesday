@@ -13,7 +13,9 @@ import type {Episode} from '../lib/types';
  *  - r190828 (5.5 min): 0-100 tray proofing, 88-91 risen-tray close-up, 138-146 tray into Cooven, 148-324 baking.
  *      (102-112 the camera swings round: skipped.)
  *  - r192617 (30 s): golden buns in the Cooven.  r193013 (24 s): brushing, glossy close-up.
- *  - r193101 (23 s): pulling a bun apart (fluffy inside).  r191436 (60 s): leftover balls into a box -> freezer.
+ *  - r193101 (23 s): pulling a bun apart (fluffy inside).
+ *  - r191436 (60 s): leftover balls already frozen on the black pan; 6.5-8.5 two balls knocked together (hard),
+ *      9-22 lifted off the pan, 24-46 into a box, 48-55 lid on.
  *
  * Proofing (from the cook): proof 1 = 15 min or until doubled; proof 2 = 30-45 min, bake once doubled.
  * Baking (confirmed by the cook): Food Engine Cooven oven mode, 150°C, 15-20 min. Butter brushed on after baking.
@@ -536,25 +538,34 @@ export const rotiBonus: Episode = {
   music: MUSIC.ukuleleIklan.file,
   musicStart: 40,
   musicBed: 0.5,
+  // Process (from the cook): shape on the black pan -> freeze on the pan first -> once frozen
+  // (tapped together at r191436 ~7-8.3 s to show they are hard) -> move into a box -> back in the freezer.
   shots: [
+    // HOOK: knocking two frozen dough balls together
     {
       src: FREEZE,
-      from: 44,
-      to: 48,
-      rate: 0.8,
+      from: 6.4,
+      to: 8.6,
+      rate: 0.6,
       enter: 'cut',
-      audio: 0.2,
-      zoom: {from: {s: 1.05, x: 0.5, y: 0.5}, to: {s: 1.25, x: 0.5, y: 0.5}},
+      audio: 0.6,
+      zoom: {from: {s: 1.15, x: 0.5, y: 0.3}, to: {s: 1.35, x: 0.5, y: 0.3}},
       overlays: [
         {
           type: 'title',
-          pos: 'top',
+          pos: 'bottom',
           at: 0.1,
-          lines: [{t: 'LEBIHAN DOH?'}, {t: 'JANGAN BUANG!', hl: true, size: 84}],
+          lines: [{t: 'LEBIHAN DOH?'}, {t: 'JANGAN BUANG!', hl: true, size: 84}, {t: 'bekukan je', marker: true, size: 64}],
         },
       ],
-      sfx: [{src: 'sting', at: 0, vol: 0.5}, {src: 'impact', at: 0, vol: 0.45}],
+      sfx: [
+        {src: 'sting', at: 0, vol: 0.5},
+        {src: 'impact', at: (7.1 - 6.4) / 0.6, vol: 0.4},
+        {src: 'impact', at: (7.7 - 6.4) / 0.6, vol: 0.4},
+        {src: 'impact', at: (8.2 - 6.4) / 0.6, vol: 0.4},
+      ],
     },
+    // 01 arrange the leftover balls on the black pan
     {
       src: SHAPE,
       from: 330,
@@ -563,23 +574,60 @@ export const rotiBonus: Episode = {
       enter: 'glitch',
       zoom: {from: {s: 1.7, x: 0.15, y: 1.0}, to: {s: 1.85, x: 0.15, y: 1.0}},
       overlays: [
-        {type: 'step', n: 1, text: 'Bulatkan atas pan'},
+        {type: 'step', n: 1, text: 'Susun atas pan'},
         {type: 'speed', label: '40x'},
       ],
     },
+    // 02 freeze on the pan first
+    {
+      src: SHAPE,
+      from: 515.5,
+      to: 518.5,
+      rate: 0.75,
+      enter: 'zoom',
+      audio: 0.2,
+      zoom: {from: {s: 1.05, x: 0.3, y: 0.6}, to: {s: 1.2, x: 0.3, y: 0.6}},
+      overlays: [
+        {type: 'step', n: 2, text: 'Bekukan atas pan dulu'},
+        {type: 'label', text: 'masuk freezer!', x: 520, y: 470, rotate: -4, at: 0.5},
+      ],
+      sfx: [{src: 'whoosh-soft', at: 0.5, vol: 0.35}],
+    },
+    // 03 once frozen: knock them together, hard!
     {
       src: FREEZE,
-      from: 2,
-      to: 16,
+      from: 6.4,
+      to: 8.6,
+      rate: 0.8,
+      enter: 'zoom',
+      audio: 0.8,
+      asmr: true,
+      zoom: {from: {s: 1.15, x: 0.5, y: 0.3}, to: {s: 1.3, x: 0.5, y: 0.3}},
+      overlays: [
+        {type: 'step', n: 3, text: 'Dah beku? Ketuk!'},
+        {type: 'label', text: 'keras!', x: 640, y: 1150, rotate: 6, size: 84, at: (7.1 - 6.4) / 0.8},
+      ],
+      sfx: [
+        {src: 'impact', at: (7.1 - 6.4) / 0.8, vol: 0.45},
+        {src: 'impact', at: (7.7 - 6.4) / 0.8, vol: 0.45},
+        {src: 'impact', at: (8.2 - 6.4) / 0.8, vol: 0.45},
+      ],
+    },
+    // 04 lift them off the pan
+    {
+      src: FREEZE,
+      from: 9,
+      to: 22,
       rate: 3.5,
-      enter: 'cut',
+      enter: 'zoom',
       audio: 0.3,
       zoom: {from: {s: 1.05, x: 0.5, y: 0.5}, to: {s: 1.15, x: 0.5, y: 0.5}},
       overlays: [
-        {type: 'step', n: 1, text: 'Bulatkan atas pan', at: -2},
+        {type: 'step', n: 4, text: 'Keluarkan dari pan'},
         {type: 'speed', label: '3.5x'},
       ],
     },
+    // 05 into the box
     {
       src: FREEZE,
       from: 24,
@@ -588,11 +636,12 @@ export const rotiBonus: Episode = {
       enter: 'zoom',
       zoom: {from: {s: 1.05, x: 0.5, y: 0.5}, to: {s: 1.15, x: 0.5, y: 0.5}},
       overlays: [
-        {type: 'step', n: 2, text: 'Masuk bekas'},
+        {type: 'step', n: 5, text: 'Susun dalam bekas'},
         {type: 'speed', label: '5.5x'},
       ],
       sfx: [{src: 'pop-small', at: 1.5, vol: 0.4}, {src: 'pop-small', at: 2.5, vol: 0.4}],
     },
+    // 06 lid on, back in the freezer
     {
       src: FREEZE,
       from: 48,
@@ -600,14 +649,14 @@ export const rotiBonus: Episode = {
       rate: 1.75,
       enter: 'zoom',
       zoom: {from: {s: 1.05, x: 0.5, y: 0.5}, to: {s: 1.2, x: 0.5, y: 0.5}},
-      overlays: [{type: 'step', n: 3, text: 'Tutup & bekukan'}],
+      overlays: [{type: 'step', n: 6, text: 'Tutup & simpan freezer'}],
       sfx: [{src: 'shutter', at: 2.2, vol: 0.4}],
     },
     {
       src: FREEZE,
       from: 55,
       to: 58,
-      rate: 0.6,
+      rate: 0.55,
       enter: 'cut',
       zoom: {from: {s: 1.2, x: 0.5, y: 0.5}, to: {s: 1.3, x: 0.5, y: 0.5}},
       overlays: [
@@ -615,8 +664,9 @@ export const rotiBonus: Episode = {
           type: 'recipe',
           title: 'TIP',
           items: [
-            {qty: '1', name: 'Bekukan lebihan doh'},
-            {qty: '2', name: 'Bakar bila nak'},
+            {qty: '1', name: 'Bekukan atas pan dulu'},
+            {qty: '2', name: 'Dah keras, masuk bekas'},
+            {qty: '3', name: 'Bakar bila nak'},
           ],
           cta: CTA,
         },

@@ -149,7 +149,8 @@ Nak resipi? Follow & komen "RESIPI" 👇 Bonus: lebihan doh jangan buang!
 ```
 Lebihan doh? Jangan buang! ❄️
 
-Bulatkan, masuk bekas, bekukan. Nak makan nanti, terus bakar 🍞
+Susun atas pan → bekukan dulu → bila dah keras (ketuk pun berbunyi 😆), pindah ke bekas → simpan dalam freezer.
+Nak makan nanti, terus bakar 🍞
 
 Nak resipi roti manis ni? Follow & komen "RESIPI" 👇
 
