@@ -11,7 +11,7 @@ import {
   useVideoConfig,
 } from 'remotion';
 import {focusAt} from '../lib/timeline';
-import {FPS, W, H} from '../lib/theme';
+import {FPS, LOOKS, W, H, type Look} from '../lib/theme';
 import type {Focus, Shot} from '../lib/types';
 
 /** Plain zoomed / panned video, reused by shots, peeks and finale tiles. */
@@ -23,7 +23,8 @@ export const FramedVideo: React.FC<{
   volume?: number;
   extraScale?: number;
   style?: React.CSSProperties;
-}> = ({src, from, rate = 1, focus, volume = 0, extraScale = 0, style}) => {
+  look?: Look;
+}> = ({src, from, rate = 1, focus, volume = 0, extraScale = 0, style, look = 'default'}) => {
   const s = focus.s * (1 + extraScale);
   return (
     <AbsoluteFill style={{overflow: 'hidden', ...style}}>
@@ -39,14 +40,14 @@ export const FramedVideo: React.FC<{
           objectFit: 'cover',
           transformOrigin: `${focus.x * 100}% ${focus.y * 100}%`,
           transform: `scale(${s})`,
-          filter: 'saturate(1.14) contrast(1.06) brightness(1.02)',
+          filter: LOOKS[look],
         }}
       />
     </AbsoluteFill>
   );
 };
 
-export const ShotView: React.FC<{shot: Shot & {frames: number}; clipGain?: number}> = ({shot, clipGain = 1}) => {
+export const ShotView: React.FC<{shot: Shot & {frames: number}; clipGain?: number; look?: Look}> = ({shot, clipGain = 1, look}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const p = frame / Math.max(1, shot.frames - 1);
@@ -107,6 +108,7 @@ export const ShotView: React.FC<{shot: Shot & {frames: number}; clipGain?: numbe
           focus={focus}
           extraScale={extra}
           volume={(shot.audio ?? 0) * clipGain}
+          look={look}
         />
       </AbsoluteFill>
       {flash > 0 ? <AbsoluteFill style={{backgroundColor: `rgba(255,246,229,${flash})`}} /> : null}

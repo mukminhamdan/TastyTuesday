@@ -73,6 +73,7 @@ export const rotiPart1: Episode = {
   musicStart: MUSIC.ukuleleCeria.start,
   musicBed: 0.5,
   clipGain: CLIP_GAIN,
+  look: 'warm',
   asmrDuck: ASMR_DUCK,
   shots: [
     PULL_HOOK('part 1: buat doh'),
@@ -240,6 +241,7 @@ export const rotiPart2: Episode = {
   musicStart: MUSIC.ukuleleIklan.start,
   musicBed: 0.5,
   clipGain: CLIP_GAIN,
+  look: 'warm',
   asmrDuck: ASMR_DUCK,
   shots: [
     {
@@ -406,6 +408,7 @@ export const rotiPart3: Episode = {
   musicStart: 30,
   musicBed: 0.5,
   clipGain: CLIP_GAIN,
+  look: 'warm',
   asmrDuck: ASMR_DUCK,
   shots: [
     PULL_HOOK('part 3: bakar'),
@@ -549,6 +552,7 @@ export const rotiBonus: Episode = {
   musicStart: 40,
   musicBed: 0.5,
   clipGain: CLIP_GAIN,
+  look: 'warm',
   asmrDuck: ASMR_DUCK,
   // Process (from the cook): shape on the black pan -> freeze on the pan first -> once frozen
   // (tapped together at r191436 ~7-8.3 s to show they are hard) -> move into a box -> back in the freezer.
@@ -699,6 +703,7 @@ export const rotiResipi: Episode = {
   musicStart: 20, // track A has a quiet break at 96-115 s; 20-92 s is steady
   musicBed: 0.5,
   clipGain: CLIP_GAIN,
+  look: 'warm',
   asmrDuck: ASMR_DUCK,
   shots: [
     {

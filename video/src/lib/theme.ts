@@ -12,6 +12,13 @@ export const MUSIC = {
   ukuleleIklan: {file: 'ukulele-iklan.wav', start: 25},
 } as const;
 
+/** Colour looks applied to footage (CSS filter). `warm` = food-friendly, a bit punchier and golden. */
+export const LOOKS = {
+  default: 'saturate(1.14) contrast(1.06) brightness(1.02)',
+  warm: 'saturate(1.24) contrast(1.1) brightness(1.04) sepia(0.08)',
+} as const;
+export type Look = keyof typeof LOOKS;
+
 export const FPS = 30;
 export const W = 1080;
 export const H = 1920;
