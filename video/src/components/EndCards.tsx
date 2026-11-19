@@ -356,7 +356,7 @@ export const RecipeCard: React.FC<{
               >
                 <div
                   style={{
-                    minWidth: 210,
+                    minWidth: it.qty.length <= 2 ? 90 : 210,
                     padding: '8px 18px',
                     textAlign: 'center',
                     backgroundColor: C.mustard,

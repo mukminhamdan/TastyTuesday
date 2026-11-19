@@ -278,7 +278,7 @@ export const rotiPart2: Episode = {
       to: 300,
       rate: 40,
       enter: 'zoom',
-      zoom: {from: {s: 1.7, x: 0.2, y: 0.58}, to: {s: 1.85, x: 0.2, y: 0.58}},
+      zoom: {from: {s: 1.7, x: 0.2, y: 0.9}, to: {s: 1.85, x: 0.2, y: 0.9}},
       overlays: [
         {type: 'step', n: 3, text: 'Susun dalam loyang'},
         {type: 'speed', label: '40x'},
@@ -298,7 +298,7 @@ export const rotiPart2: Episode = {
       enter: 'whip',
       audio: 0.2,
       zoom: {from: {s: 1.05, x: 0.3, y: 0.6}, to: {s: 1.2, x: 0.3, y: 0.6}},
-      overlays: [{type: 'label', text: 'lebihan doh? tunggu bonus!', x: 540, y: 470, rotate: -4, size: 62, at: 0.3}],
+      overlays: [{type: 'label', text: 'lebihan doh? tunggu bonus!', x: 500, y: 470, rotate: -4, size: 52, at: 0.3}],
       sfx: [{src: 'pop-bubble', at: 0.3, vol: 0.4}],
     },
     {
@@ -553,7 +553,7 @@ export const rotiBonus: Episode = {
       to: 500,
       rate: 40,
       enter: 'glitch',
-      zoom: {from: {s: 1.7, x: 0.15, y: 0.62}, to: {s: 1.85, x: 0.15, y: 0.62}},
+      zoom: {from: {s: 1.7, x: 0.15, y: 1.0}, to: {s: 1.85, x: 0.15, y: 1.0}},
       overlays: [
         {type: 'step', n: 1, text: 'Bulatkan atas pan'},
         {type: 'speed', label: '40x'},
