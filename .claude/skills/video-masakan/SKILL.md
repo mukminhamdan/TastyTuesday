@@ -20,8 +20,9 @@ istilah) dan nota resipi/setting yang dah disahkan. Komunikasi dengan pengguna d
 - **Muka**: jangan tutup dengan grafik. Shot lebar yang ada muka: `faceLeft: true` + tajuk `pos: 'bottom'`;
   close-up: zoom ke meja supaya muka keluar frame.
 - **Audio**: bunyi asal klip rendah (`clipGain: 0.3`, `asmrDuck: 0.85`), lagu di depan, akhir -14 LUFS.
-- **Lagu**: bergilir `MUSIC.ukuleleCeria` (A) -> `ukuleleIklan` (D, mula 25s) -> `ukuleleRiang` (3) ->
-  `ukuleleLoceng` (4) antara video; lagu A ada break senyap 96-115s, jangan terkena. Sampel lain boleh dicari dari dataset CC0 (`scripts/get-music.py`).
+- **Lagu**: bergilir `MUSIC` A `ukuleleCeria` -> D `ukuleleIklan` -> 3 `ukuleleRiang` -> 4 `ukuleleFolk` ->
+  5 `ukuleleSiulTepuk` (video <=37s sahaja) -> 6 `ukuleleSiulan`. Guna `start` lagu itu dan pastikan
+  `musicStart + durasi <= safeUntil` (lagu A ada break senyap 96-115s). Sampel lain boleh dicari dari dataset CC0 (`scripts/get-music.py`).
 - **Visual**: `look: 'warm'` untuk makanan; final dengan `SHARPEN=1`.
 - **Durasi**: part ±30-50s; video resipi **bawah 1 minit** (resipi + langkah + hasil bakar).
 - **Preview dulu** (540x960), tunggu kelulusan, baru final. Hantar setiap fail dengan SendUserFile sebaik siap.

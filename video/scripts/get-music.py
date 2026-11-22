@@ -12,6 +12,9 @@ TRACKS = {
     (111, 2): "ukulele-ceria",  # "A positive instrumental tune featuring ukulele, guitar, and percussion."
     (77, 13): "ukulele-iklan",  # "Instrumental pop-folk track with a ukulele playing lead, ... advertising and summer"
     (151, 2): "ukulele-riang",  # "A lively instrumental piece featuring ukulele, guitar, and percussion."
+    (408, 1): "ukulele-folk",       # "A lively, instrumental folk piece featuring a ukulele and an acoustic guitar."
+    (266, 3): "ukulele-siul-tepuk", # "A happy, uplifting instrumental track featuring ukulele, whistling, and claps."
+    (31, 1): "ukulele-siulan",      # "Positive instrumental tune featuring ukulele, whistling, and percussion"
 }
 fs = fsspec.filesystem("https", client_kwargs={"trust_env": True})
 for (shard, row), name in TRACKS.items():
