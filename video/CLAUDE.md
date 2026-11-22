@@ -4,8 +4,8 @@ Aliran kerja penuh: skill **`video-masakan`** (`.claude/skills/video-masakan/SKI
 
 - **Jenama**: semua video baru guna badge `BRAND` (`src/lib/theme.ts`) = **"MUKMIN MASAK"** dan hashtag `#mukminmasak`.
   Video lama (Mee, Telur, siri pizza) kekal seperti yang sudah di-post; jangan ubah kecuali diminta.
-- **Muzik**: guna pustaka `MUSIC` dalam `src/lib/theme.ts`: **A `ukuleleCeria`** dan **D `ukuleleIklan`** (mula dari 25s).
-  **Selang-selikan A dan D** antara video (part 1 = A, part 2 = D, part 3 = A, ...); bila lagu sama diguna semula dalam
+- **Muzik**: guna pustaka `MUSIC` dalam `src/lib/theme.ts`: **A `ukuleleCeria`**, **D `ukuleleIklan`** (mula dari 25s),
+  **3 `ukuleleRiang`**, **4 `ukuleleLoceng`**. **Bergilir A → D → 3 → 4** antara video (part 1 = A, part 2 = D, ...); bila lagu sama diguna semula dalam
   siri yang sama, mula dari bahagian lain (`musicStart`) supaya tak bunyi berulang. Lagu A ada *break* senyap pada
   96–115s: pastikan `musicStart + durasi video` tak terkena bahagian tu. Salinan MP3 disimpan dalam `assets/music-library/` (CC0); `scripts/fetch-assets.sh` menyediakan WAV-nya.
 - **Peralatan**: sebut **"Food Engine Cooven"**, bukan "air fryer".

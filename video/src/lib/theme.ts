@@ -5,11 +5,16 @@ export const BRAND = 'MUKMIN MASAK';
  * Saved music library for new videos (CC0, instrumental). Chosen by the cook.
  * `start` skips the quiet intro so the hook lands on an energetic part.
  */
+/** Rotate between videos in this order: ukuleleCeria (A) -> ukuleleIklan (D) -> ukuleleRiang (3) -> ukuleleLoceng (4). */
 export const MUSIC = {
   /** A: ukulele + gitar ceria, ~99 BPM, steady energy (default). Quiet break at 96-115 s: avoid it. */
   ukuleleCeria: {file: 'ukulele-ceria.wav', start: 1},
   /** D: ukulele pop-folk gaya iklan, ~89 BPM, builds up */
   ukuleleIklan: {file: 'ukulele-iklan.wav', start: 25},
+  /** 3: ukulele + gitar + perkusi, riang, steady to the end (167 s) */
+  ukuleleRiang: {file: 'ukulele-riang.wav', start: 1},
+  /** 4: ukulele + gitar + glockenspiel (loceng), ~89 BPM, steady to the end (130 s) */
+  ukuleleLoceng: {file: 'ukulele-loceng.wav', start: 1},
 } as const;
 
 /** Colour looks applied to footage (CSS filter). `warm` = food-friendly, a bit punchier and golden. */

@@ -20,8 +20,8 @@ istilah) dan nota resipi/setting yang dah disahkan. Komunikasi dengan pengguna d
 - **Muka**: jangan tutup dengan grafik. Shot lebar yang ada muka: `faceLeft: true` + tajuk `pos: 'bottom'`;
   close-up: zoom ke meja supaya muka keluar frame.
 - **Audio**: bunyi asal klip rendah (`clipGain: 0.3`, `asmrDuck: 0.85`), lagu di depan, akhir -14 LUFS.
-- **Lagu**: selang-seli `MUSIC.ukuleleCeria` (A) dan `MUSIC.ukuleleIklan` (D, mula 25s); lagu A ada break
-  senyap 96-115s, jangan terkena. Sampel lain boleh dicari dari dataset CC0 (`scripts/get-music.py`).
+- **Lagu**: bergilir `MUSIC.ukuleleCeria` (A) -> `ukuleleIklan` (D, mula 25s) -> `ukuleleRiang` (3) ->
+  `ukuleleLoceng` (4) antara video; lagu A ada break senyap 96-115s, jangan terkena. Sampel lain boleh dicari dari dataset CC0 (`scripts/get-music.py`).
 - **Visual**: `look: 'warm'` untuk makanan; final dengan `SHARPEN=1`.
 - **Durasi**: part ±30-50s; video resipi **bawah 1 minit** (resipi + langkah + hasil bakar).
 - **Preview dulu** (540x960), tunggu kelulusan, baru final. Hantar setiap fail dengan SendUserFile sebaik siap.
@@ -58,7 +58,7 @@ python3 -I scripts/transcribe.py ~/media/transcripts ~/media/audio/*.wav   # pip
   -> langkah `step` bernombor (2.8-4.5s setiap satu, `speed` badge jujur) -> kad `recipe` (BAHAN / PROOF / TIP,
   `note` dengan `\n`, `cta`) -> **payoff** -> kad akhir (`endNext` untuk siri, `recipe` recap untuk tunggal).
 - Durasi shot = `(to - from) / rate`. Step yang bersambung merentas potongan: ulang step dengan `at: -2`.
-- Episod baru: `series: BRAND`, `music`/`musicStart` ikut selang-seli, `musicBed: 0.5`, `clipGain: 0.3`,
+- Episod baru: `series: BRAND`, `music`/`musicStart` ikut giliran lagu, `musicBed: 0.5`, `clipGain: 0.3`,
   `asmrDuck: 0.85`, `look: 'warm'`.
 - **Zoom**: `transform-origin` = fokus. Titik sumber `p` jatuh di skrin `fx + (p - fx) * s`. Untuk letak objek
   di skrin, selesaikan `fx`; fokus 0..1 (guna 0 atau 1 di tepi untuk elak jalur hitam). Zoom > 2x jadi lembut.
