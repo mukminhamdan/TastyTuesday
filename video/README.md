@@ -70,6 +70,10 @@ Tukar `showSafeZone: true` dalam props untuk lihat panduan.
 
 ## Ketetapan
 
+Skill Claude Code `video-masakan` (`../.claude/skills/video-masakan/SKILL.md`) menerangkan aliran kerja penuh.
+Skrip bantuan: `make-proxy.sh`, `transcribe.py`, `contact-sheet.sh`, `audio-profile.py`, `stills.mjs`,
+`render-preview.mjs`, `render-final.mjs` (`SHARPEN=1`), `render-thumbs.mjs`, `make-public.sh`.
+
 Lihat `CLAUDE.md`: video baru guna jenama **MUKMIN MASAK** (`BRAND` dalam `src/lib/theme.ts`).
 
 ## Arahan

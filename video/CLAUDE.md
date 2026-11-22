@@ -1,5 +1,7 @@
 # Ketetapan projek video (Remotion)
 
+Aliran kerja penuh: skill **`video-masakan`** (`.claude/skills/video-masakan/SKILL.md` di akar repo).
+
 - **Jenama**: semua video baru guna badge `BRAND` (`src/lib/theme.ts`) = **"MUKMIN MASAK"** dan hashtag `#mukminmasak`.
   Video lama (Mee, Telur, siri pizza) kekal seperti yang sudah di-post; jangan ubah kecuali diminta.
 - **Muzik**: guna pustaka `MUSIC` dalam `src/lib/theme.ts`: **A `ukuleleCeria`** dan **D `ukuleleIklan`** (mula dari 25s).
