@@ -30,12 +30,16 @@ const SMART_CARD = {
   cta: CTA,
 };
 
+/** cook's request: no face, only the cooking. These keep the visible source to x >= 0.32, y >= 0.4. */
+const HANDS = {from: {s: 1.85, x: 0.68, y: 0.85}, to: {s: 1.95, x: 0.68, y: 0.85}};
+const BROIL_ON = {from: {s: 1.85, x: 0.6, y: 0.9}, to: {s: 1.95, x: 0.6, y: 0.9}};
 const CHAR = POT_DONE;
 const BRAISE = {from: {s: 1.18, x: 0.55, y: 1.0}, to: {s: 1.25, x: 0.55, y: 1.0}};
 const GLOW = {from: {s: 1.5, x: 0.35, y: 0.6}, to: {s: 1.6, x: 0.35, y: 0.6}};
 const POT = {from: {s: 1.3, x: 0.45, y: 0.62}, to: {s: 1.4, x: 0.45, y: 0.62}};
 const POT_SIDE = {from: {s: 1.25, x: 0.45, y: 0.62}, to: {s: 1.32, x: 0.45, y: 0.62}}; // 3725-3731, whole pot + Cooven
-const END_SHOT = {src: L, from: 3725, to: 3729, rate: 0.8, enter: 'cut' as const, zoom: POT_SIDE};
+// 3725+ starts with the cook's face in frame -> end cards sit on the face-free wide pot view instead
+const END_SHOT = {src: L, from: 3612, to: 3616, rate: 0.8, enter: 'cut' as const, zoom: POT_DONE};
 
 
 export const ayamPercik: Episode = {
@@ -75,25 +79,12 @@ export const ayamPercik: Episode = {
     },
     {
       src: L,
-      from: 711,
-      to: 718,
-      rate: 1.75,
-      enter: 'glitch',
-      faceLeft: true,
-      zoom: {from: {s: 1.55, x: 0.3, y: 0.55}, to: {s: 1.7, x: 0.3, y: 0.55}},
-      overlays: [{type: 'step', n: 1, text: '1 ekor ayam, belah tengah'}],
-    },
-    {
-      src: L,
-      from: 721,
+      from: 723,
       to: 729,
-      rate: 2,
-      enter: 'zoom',
+      rate: 1.5,
+      enter: 'glitch',
       zoom: POT,
-      overlays: [
-        {type: 'step', n: 2, text: 'Masuk Food Engine Cooven'},
-        {type: 'speed', label: '2x'},
-      ],
+      overlays: [{type: 'step', n: 1, text: 'Ayam belah tengah, masuk Cooven'}],
     },
     {
       src: L,
@@ -101,10 +92,9 @@ export const ayamPercik: Episode = {
       to: 770,
       rate: 5,
       enter: 'zoom',
-      faceLeft: true,
-      zoom: {from: {s: 1.55, x: 0.35, y: 0.6}, to: {s: 1.7, x: 0.35, y: 0.62}},
+      zoom: HANDS,
       overlays: [
-        {type: 'step', n: 3, text: 'Tuang kuah percik'},
+        {type: 'step', n: 2, text: 'Tuang kuah percik'},
         {type: 'speed', label: '5x'},
       ],
       sfx: [{src: 'pop-bubble', at: 1.5, vol: 0.35}],
@@ -115,10 +105,9 @@ export const ayamPercik: Episode = {
       to: 813,
       rate: 10,
       enter: 'zoom',
-      faceLeft: true,
-      zoom: {from: {s: 1.6, x: 0.35, y: 0.62}, to: {s: 1.75, x: 0.35, y: 0.62}},
+      zoom: HANDS,
       overlays: [
-        {type: 'step', n: 4, text: 'Ratakan kuah'},
+        {type: 'step', n: 3, text: 'Ratakan kuah'},
         {type: 'speed', label: '10x'},
         {type: 'label', text: 'Smart Cook', x: 520, y: 470, rotate: -4, size: 66, at: 0.6},
       ],
@@ -129,10 +118,9 @@ export const ayamPercik: Episode = {
       to: 930,
       rate: 4.5,
       enter: 'zoom',
-      faceLeft: true,
-      zoom: {from: {s: 1.55, x: 0.35, y: 0.6}, to: {s: 1.7, x: 0.35, y: 0.6}},
+      zoom: HANDS,
       overlays: [
-        {type: 'step', n: 5, text: 'Tutup & biar masak'},
+        {type: 'step', n: 4, text: 'Tutup & biar masak'},
         {type: 'speed', label: '4.5x'},
       ],
       sfx: [{src: 'clock-fast', at: 0, vol: 0.2}],
@@ -147,20 +135,19 @@ export const ayamPercik: Episode = {
       audio: 0.3,
       zoom: BRAISE,
       overlays: [
-        {type: 'step', n: 6, text: 'Siram kuah atas ayam'},
+        {type: 'step', n: 5, text: 'Siram kuah atas ayam'},
         {type: 'speed', label: '5x'},
       ],
     },
     {
       src: L,
-      from: 2935,
-      to: 2951,
-      rate: 3,
+      from: 2936,
+      to: 2945,
+      rate: 2,
       enter: 'zoom',
-      faceLeft: true,
-      zoom: {from: {s: 1.5, x: 0.35, y: 0.6}, to: {s: 1.6, x: 0.35, y: 0.6}},
+      zoom: BROIL_ON,
       overlays: [
-        {type: 'step', n: 7, text: 'Tukar tudung, broil'},
+        {type: 'step', n: 6, text: 'Tukar tudung, broil'},
         {type: 'label', text: 'auto broil', x: 520, y: 470, rotate: -4, size: 64, at: 1.2},
       ],
       sfx: [{src: 'whoosh-soft', at: 0.8, vol: 0.35}],
@@ -181,11 +168,11 @@ export const ayamPercik: Episode = {
     },
     {
       src: L,
-      from: 3725,
-      to: 3731,
-      rate: 1.2,
+      from: 3612,
+      to: 3616.5,
+      rate: 0.9,
       enter: 'cut',
-      zoom: POT_SIDE,
+      zoom: POT_DONE,
       overlays: [
         SMART_CARD,
       ],
@@ -230,8 +217,7 @@ export const ayamBeforeAfter: Episode = {
       to: 770,
       rate: 10,
       enter: 'zoom',
-      faceLeft: true,
-      zoom: {from: {s: 1.55, x: 0.35, y: 0.6}, to: {s: 1.7, x: 0.35, y: 0.62}},
+      zoom: HANDS,
       overlays: [
         {type: 'speed', label: '10x'},
         {type: 'label', text: 'kuah percik', x: 520, y: 470, rotate: -4, at: 0.2},
@@ -251,13 +237,12 @@ export const ayamBeforeAfter: Episode = {
     },
     {
       src: L,
-      from: 2945,
-      to: 2952,
+      from: 2938,
+      to: 2945,
       rate: 1.5,
       enter: 'zoom',
-      faceLeft: true,
-      zoom: GLOW,
-      overlays: [{type: 'label', text: 'broil', x: 580, y: 1150, rotate: -4, size: 72, at: 0.2}],
+      zoom: BROIL_ON,
+      overlays: [{type: 'label', text: 'broil', x: 520, y: 470, rotate: -4, size: 72, at: 0.2}],
       sfx: [{src: 'riser-1s', at: 3.4, vol: 0.35}],
     },
     {
@@ -276,7 +261,7 @@ export const ayamBeforeAfter: Episode = {
     {
       ...END_SHOT,
       rate: 0.75,
-      to: 3728,
+      to: 3615,
       overlays: [
         SMART_CARD,
       ],
@@ -571,4 +556,6 @@ export const ayamSoalan: Episode = {
   ],
 };
 
-export const AYAM_PERCIK = [ayamPercik, ayamBeforeAfter, ayamSmartCook, ayamBroil, ayamSoalan];
+/** Cook's request: cooking method only, no face -> the talking videos (SmartCook, Broil, SoalanLive) are not used. */
+export const AYAM_PERCIK = [ayamPercik, ayamBeforeAfter];
+export const AYAM_PERCIK_TALKING = [ayamSmartCook, ayamBroil, ayamSoalan];
