@@ -26,3 +26,6 @@ Aliran kerja penuh: skill **`video-masakan`** (`.claude/skills/video-masakan/SKI
   60g gula kastor, 60g mentega masin (kiub 2 cm), 10g yis kering, 1 s/k garam. Juga:
   Food Engine Cooven mode oven **150°C, 15–20 min**; oven biasa **170°C, 15–20 min**; proof 1 = 15 min / naik double,
   proof 2 = 30–45 min sampai naik double; sapu **butter** lepas bakar.
+- **Ayam percik** (dari live, kata-kata pengguna sendiri): 1 ayam belah tengah + kuah percik blend (cili kering, halia,
+  lengkuas, serai, buah keras, santan, gula melaka, garam, minyak) + daun kunyit & asam keping; Smart Cook 30 min
+  (25 braise + 5 broil), siram kuah, tudung air fryer, broil 10 min. Perap: tak perlu, boleh kalau nak. Sukatan belum diberi.

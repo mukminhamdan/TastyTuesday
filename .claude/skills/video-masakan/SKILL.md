@@ -25,6 +25,10 @@ istilah) dan nota resipi/setting yang dah disahkan. Komunikasi dengan pengguna d
   `musicStart + durasi <= safeUntil` (lagu A ada break senyap 96-115s). Sampel lain boleh dicari dari dataset CC0 (`scripts/get-music.py`).
 - **Visual**: `look: 'warm'` untuk makanan; final dengan `SHARPEN=1`.
 - **Durasi**: part ±30-50s; video resipi **bawah 1 minit** (resipi + langkah + hasil bakar).
+- **Satu rakaman panjang (contoh live)**: setiap video **bawah 1 minit** dan keluarkan **seberapa banyak video**
+  yang boleh: cara penuh, before->after, dan video **suara** bila tukang masak menerangkan/menjawab soalan
+  (`subs` + `vo`, contoh `ayam-percik.ts`). Video suara: `clipGain: 1`, `musicBed: 0.35`, `asmrDuck: 0.22`.
+  Tetingkap peserta lain (picture-in-picture) mesti dikeluarkan dengan zoom.
 - **Preview dulu** (540x960), tunggu kelulusan, baru final. Hantar setiap fail dengan SendUserFile sebaik siap.
 
 ## Aliran kerja

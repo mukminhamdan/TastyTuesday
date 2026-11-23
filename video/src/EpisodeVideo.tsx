@@ -2,7 +2,7 @@ import React, {useMemo} from 'react';
 import {AbsoluteFill, Audio, Sequence, staticFile} from 'remotion';
 import {Shade, SafeZoneGuide, SeriesChrome} from './components/Chrome';
 import {EndNext, Finale, RecipeCard} from './components/EndCards';
-import {CookTimer, KineticTitle, MarkerCircle, MarkerLabel, Sparkles, SpeedBadge, StepCard} from './components/Graphics';
+import {CookTimer, KineticTitle, MarkerCircle, MarkerLabel, Sparkles, SpeedBadge, StepCard, Subtitles} from './components/Graphics';
 import {ShotView} from './components/ShotView';
 import {FPS} from './lib/theme';
 import {layout, musicCurve, sec, type PlacedShot} from './lib/timeline';
@@ -43,6 +43,8 @@ const OverlayView: React.FC<{o: Overlay; shot: PlacedShot}> = ({o, shot}) => {
       return <EndNext heading={o.heading} ctaText={o.cta} nextEp={o.nextEp} nextTitle={o.nextTitle} peek={o.peek} durFrames={shot.frames} />;
     case 'finale':
       return <Finale tiles={o.tiles} durFrames={shot.frames} />;
+    case 'subs':
+      return <Subtitles items={o.items} origin={shot.vo ? shot.vo.from : shot.from} />;
     case 'recipe':
       return <RecipeCard title={o.title} items={o.items} note={o.note} cta={o.cta} durFrames={shot.frames} />;
   }
@@ -103,6 +105,15 @@ export const EpisodeVideo: React.FC<EpisodeProps> = ({episode, showSafeZone}) =>
             {enter && s.index > 0 ? (
               <Sequence from={Math.max(0, s.start - 3)} durationInFrames={sec(1.5)}>
                 <Audio src={staticFile(`sfx/${enter.src}.wav`)} volume={enter.vol} />
+              </Sequence>
+            ) : null}
+            {s.vo ? (
+              <Sequence from={s.start} durationInFrames={s.frames}>
+                <Audio
+                  src={staticFile(`footage/${s.vo.src ?? s.src}`)}
+                  trimBefore={Math.round(s.vo.from * FPS)}
+                  volume={(s.vo.vol ?? 1) * (episode.clipGain ?? 1)}
+                />
               </Sequence>
             ) : null}
             {(s.sfx ?? []).map((x, i) => (

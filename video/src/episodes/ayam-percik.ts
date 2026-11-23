@@ -179,3 +179,406 @@ export const ayamPercik: Episode = {
     },
   ],
 };
+
+/* ------------------------------------------------------------------ */
+/* Short videos cut from the same live (each under 1 minute)           */
+/* ------------------------------------------------------------------ */
+const FACE = {s: 1.45, x: 0.15, y: 0.35}; // talking shots: whole face + Cooven, PiP (x > 0.8) out of frame
+const FACE2 = {s: 1.55, x: 0.15, y: 0.35};
+const CHAR = {from: {s: 1.4, x: 0.25, y: 0.45}, to: {s: 1.6, x: 0.25, y: 0.4}};
+const BRAISE = {from: {s: 1.45, x: 0.3, y: 1.0}, to: {s: 1.6, x: 0.3, y: 1.0}};
+const GLOW = {from: {s: 1.5, x: 0.35, y: 0.6}, to: {s: 1.6, x: 0.35, y: 0.6}};
+const POT = {from: {s: 1.6, x: 0.35, y: 0.62}, to: {s: 1.8, x: 0.35, y: 0.62}};
+const END_SHOT = {src: L, from: 3725, to: 3729, rate: 0.8, enter: 'cut' as const, zoom: {from: {s: 1.4, x: 0.3, y: 0.55}, to: {s: 1.5, x: 0.3, y: 0.55}}};
+const VOICE = {clipGain: 1, musicBed: 0.35, asmrDuck: 0.22, look: 'warm' as const};
+
+/** 2. Before -> after transformation (music only, <= 37 s for track 5) */
+export const ayamBeforeAfter: Episode = {
+  id: 'AyamPercik-BeforeAfter',
+  series: BRAND,
+  name: 'Ayam percik before after',
+  music: MUSIC.ukuleleSiulTepuk.file,
+  musicStart: MUSIC.ukuleleSiulTepuk.start,
+  musicBed: 0.5,
+  clipGain: 0.3,
+  asmrDuck: 0.85,
+  look: 'warm',
+  shots: [
+    {
+      src: L,
+      from: 721,
+      to: 727,
+      rate: 1.5,
+      enter: 'cut',
+      zoom: POT,
+      overlays: [{type: 'title', pos: 'bottom', at: 0.1, lines: [{t: 'DARI NI…', size: 110}]}],
+      sfx: [{src: 'sting', at: 0, vol: 0.45}],
+    },
+    {
+      src: L,
+      from: 744,
+      to: 770,
+      rate: 10,
+      enter: 'zoom',
+      faceLeft: true,
+      zoom: {from: {s: 1.55, x: 0.35, y: 0.6}, to: {s: 1.7, x: 0.35, y: 0.62}},
+      overlays: [
+        {type: 'speed', label: '10x'},
+        {type: 'label', text: 'kuah percik', x: 520, y: 470, rotate: -4, at: 0.2},
+      ],
+    },
+    {
+      src: L,
+      from: 2901,
+      to: 2916,
+      rate: 3,
+      enter: 'zoom',
+      zoom: BRAISE,
+      overlays: [
+        {type: 'speed', label: '3x'},
+        {type: 'label', text: 'Smart Cook 30 min', x: 520, y: 470, rotate: -4, size: 64, at: 0.2},
+      ],
+    },
+    {
+      src: L,
+      from: 2945,
+      to: 2952,
+      rate: 1.5,
+      enter: 'zoom',
+      faceLeft: true,
+      zoom: GLOW,
+      overlays: [{type: 'label', text: 'broil 10 min', x: 580, y: 1150, rotate: -4, size: 64, at: 0.2}],
+      sfx: [{src: 'riser-1s', at: 3.4, vol: 0.35}],
+    },
+    {
+      src: L,
+      from: 3599,
+      to: 3612,
+      rate: 1.3,
+      enter: 'zoom',
+      zoom: CHAR,
+      overlays: [
+        {type: 'title', pos: 'bottom', at: 0.1, lines: [{t: 'JADI NI!', hl: true, size: 120}, {t: 'tak payah arang', marker: true, size: 64}]},
+        {type: 'sparkles', x: 520, y: 700, at: 0.3, count: 12, spread: 320},
+      ],
+      sfx: [{src: 'boom', at: 0.1, vol: 0.45}, {src: 'ding-sparkle', at: 0.3, vol: 0.4}],
+    },
+    {
+      ...END_SHOT,
+      rate: 0.75,
+      to: 3728,
+      overlays: [
+        {
+          type: 'recipe',
+          title: 'CARA',
+          items: [
+            {qty: '30 min', name: 'Smart Cook'},
+            {qty: '10 min', name: 'Broil'},
+          ],
+          cta: CTA,
+        },
+      ],
+      sfx: [{src: 'whoosh-med', at: 0, vol: 0.4}],
+    },
+  ],
+};
+
+/** 3. "Apa itu Smart Cook?" - the cook explaining, with subtitles */
+export const ayamSmartCook: Episode = {
+  id: 'AyamPercik-SmartCook',
+  series: BRAND,
+  name: 'Apa itu Smart Cook',
+  music: MUSIC.ukuleleFolk.file,
+  musicStart: MUSIC.ukuleleFolk.start,
+  ...VOICE,
+  shots: [
+    {
+      src: L,
+      from: 3600,
+      to: 3603,
+      enter: 'cut',
+      zoom: CHAR,
+      overlays: [{type: 'title', pos: 'bottom', at: 0.1, lines: [{t: 'APA ITU'}, {t: 'SMART COOK?', hl: true, size: 96}, {t: 'Food Engine Cooven', marker: true, size: 60}]}],
+      sfx: [{src: 'sting', at: 0, vol: 0.45}, {src: 'impact', at: 0, vol: 0.4}],
+    },
+    {
+      src: L,
+      from: 669.3,
+      to: 691.0,
+      enter: 'glitch',
+      audio: 1,
+      asmr: true,
+      faceLeft: true,
+      zoom: {from: FACE, to: FACE2},
+      overlays: [
+        {
+          type: 'subs',
+          items: [
+            {t: 'Tapi dengan Cooven Food Engine…', s: 669.3, e: 672.4},
+            {t: 'ada satu function: Smart Cook', s: 672.5, e: 676.0},
+            {t: 'Smart Cook ni gabungkan dua mode', s: 676.6, e: 683.2},
+            {t: 'BRAISE + BROIL', s: 683.4, e: 685.2},
+            {t: 'Tak perlu lagi asing-asing bekas', s: 685.4, e: 688.5},
+            {t: 'tukar-tukar tempat', s: 688.6, e: 691.0},
+          ],
+        },
+      ],
+      sfx: [{src: 'pop', at: 683.4 - 669.3, vol: 0.4}],
+    },
+    {
+      src: L,
+      from: 723,
+      to: 727.3,
+      enter: 'zoom',
+      zoom: POT,
+      asmr: true,
+      vo: {from: 691.1},
+      overlays: [{type: 'subs', items: [{t: 'Masak ayam dengan kuah dalam ni', s: 691.1, e: 693.5}, {t: 'terus bakar dalam ni juga', s: 693.5, e: 695.4}]}],
+    },
+    {
+      src: L,
+      from: 2901,
+      to: 2902.1,
+      enter: 'zoom',
+      zoom: BRAISE,
+      asmr: true,
+      vo: {from: 929.0},
+      overlays: [{type: 'subs', items: [{t: '30 minit', s: 929.0, e: 930.1}]}],
+    },
+    {
+      src: L,
+      from: 2902,
+      to: 2906.9,
+      enter: 'cut',
+      zoom: BRAISE,
+      asmr: true,
+      vo: {from: 933.3},
+      overlays: [{type: 'subs', items: [{t: '25 minit,', s: 933.3, e: 936.0}, {t: 'lepas tu 5 minit terakhir…', s: 936.0, e: 938.3}]}],
+    },
+    {
+      src: L,
+      from: 2945,
+      to: 2948,
+      enter: 'zoom',
+      faceLeft: true,
+      zoom: GLOW,
+      asmr: true,
+      vo: {from: 938.2},
+      overlays: [{type: 'subs', items: [{t: '…dia akan broil', s: 938.4, e: 941.1}]}],
+    },
+    {
+      src: L,
+      from: 3603,
+      to: 3609.7,
+      enter: 'zoom',
+      zoom: CHAR,
+      asmr: true,
+      vo: {from: 941.2},
+      overlays: [{type: 'subs', items: [{t: 'Char tak cantik?', s: 941.2, e: 944.4}, {t: 'tambah lagi masa broil', s: 944.4, e: 947.9}]}],
+    },
+    {
+      ...END_SHOT,
+      overlays: [
+        {
+          type: 'recipe',
+          title: 'SMART COOK',
+          items: [
+            {qty: '25 min', name: 'Braise'},
+            {qty: '5 min', name: 'Broil'},
+          ],
+          note: 'auto, semua dalam 1 periuk',
+          cta: CTA,
+        },
+      ],
+      sfx: [{src: 'whoosh-med', at: 0, vol: 0.4}, {src: 'sting-warm', at: 0.2, vol: 0.4}],
+    },
+  ],
+};
+
+/** 4. "Broil tu apa?" - explanation over the broil + char shots */
+export const ayamBroil: Episode = {
+  id: 'AyamPercik-Broil',
+  series: BRAND,
+  name: 'Broil tu apa',
+  music: MUSIC.ukuleleSiulan.file,
+  musicStart: MUSIC.ukuleleSiulan.start,
+  ...VOICE,
+  shots: [
+    {
+      src: L,
+      from: 3599,
+      to: 3602,
+      enter: 'cut',
+      zoom: CHAR,
+      overlays: [{type: 'title', pos: 'bottom', at: 0.1, lines: [{t: 'BROIL', size: 110}, {t: 'TU APA?', hl: true, size: 96}]}],
+      sfx: [{src: 'sting', at: 0, vol: 0.45}, {src: 'impact', at: 0, vol: 0.4}],
+    },
+    {
+      src: L,
+      from: 953.2,
+      to: 964.1,
+      enter: 'glitch',
+      audio: 1,
+      asmr: true,
+      faceLeft: true,
+      zoom: {from: FACE, to: FACE2},
+      overlays: [
+        {
+          type: 'subs',
+          items: [
+            {t: 'Broil = pembakaran dari atas', s: 953.2, e: 956.8},
+            {t: 'Selain Smart Cook,', s: 957.2, e: 960.3},
+            {t: 'Food Engine ada function broil juga', s: 960.4, e: 964.1},
+          ],
+        },
+      ],
+    },
+    {
+      src: L,
+      from: 2945,
+      to: 2951.4,
+      enter: 'zoom',
+      faceLeft: true,
+      zoom: GLOW,
+      asmr: true,
+      vo: {from: 964.6},
+      overlays: [{type: 'subs', items: [{t: 'Pembakaran dari atas', s: 964.6, e: 965.4}, {t: 'macam lasagna, bakar layer atas je', s: 965.4, e: 971.0}]}],
+    },
+    {
+      src: L,
+      from: 974.3,
+      to: 981.1,
+      enter: 'zoom',
+      audio: 1,
+      asmr: true,
+      faceLeft: true,
+      zoom: {from: FACE, to: FACE2},
+      overlays: [{type: 'subs', items: [{t: 'Smart Cook = gabungan dua function', s: 974.3, e: 977.9}, {t: 'broil pun ada berasingan', s: 978.0, e: 981.1}]}],
+    },
+    {
+      src: L,
+      from: 3603,
+      to: 3612.8,
+      enter: 'zoom',
+      zoom: CHAR,
+      asmr: true,
+      vo: {from: 981.4},
+      overlays: [
+        {type: 'subs', items: [{t: 'Nak bakar roti?', s: 981.4, e: 984.9}, {t: 'roti, letak cheese atas', s: 984.9, e: 989.3}, {t: 'pembakaran di atas sahaja', s: 989.5, e: 991.2}]},
+        {type: 'sparkles', x: 520, y: 700, at: 0.5, count: 10, spread: 300},
+      ],
+      sfx: [{src: 'shimmer', at: 0.5, vol: 0.3}],
+    },
+    {
+      ...END_SHOT,
+      overlays: [
+        {
+          type: 'recipe',
+          title: 'BROIL',
+          items: [{qty: '10 min', name: 'Ayam percik'}],
+          note: 'bakar dari atas\nchar cantik tanpa arang',
+          cta: CTA,
+        },
+      ],
+      sfx: [{src: 'whoosh-med', at: 0, vol: 0.4}, {src: 'sting-warm', at: 0.2, vol: 0.4}],
+    },
+  ],
+};
+
+/** 5. Questions from the live: perap? + bahan blend */
+export const ayamSoalan: Episode = {
+  id: 'AyamPercik-SoalanLive',
+  series: BRAND,
+  name: 'Soalan live ayam percik',
+  music: MUSIC.ukuleleCeria.file,
+  musicStart: MUSIC.ukuleleCeria.start,
+  ...VOICE,
+  shots: [
+    {
+      src: L,
+      from: 3725,
+      to: 3728,
+      enter: 'cut',
+      zoom: {from: {s: 1.4, x: 0.3, y: 0.55}, to: {s: 1.55, x: 0.3, y: 0.55}},
+      overlays: [{type: 'title', pos: 'bottom', at: 0.1, lines: [{t: 'SOALAN LIVE'}, {t: 'AYAM PERCIK', hl: true, size: 92}]}],
+      sfx: [{src: 'sting', at: 0, vol: 0.45}],
+    },
+    {
+      src: L,
+      from: 795.2,
+      to: 800.0,
+      enter: 'glitch',
+      audio: 1,
+      asmr: true,
+      faceLeft: true,
+      zoom: {from: FACE, to: FACE2},
+      overlays: [
+        {type: 'subs', items: [{t: '"Ayam kena perap dulu tak?"', s: 795.2, e: 796.8}, {t: 'Tak perlu.', s: 797.3, e: 798.3}, {t: 'Nak perap dulu pun boleh', s: 798.4, e: 800.0}]},
+      ],
+      sfx: [{src: 'pop', at: 0.1, vol: 0.4}],
+    },
+    {
+      src: L,
+      from: 807.5,
+      to: 813.5,
+      enter: 'cut',
+      audio: 1,
+      asmr: true,
+      faceLeft: true,
+      zoom: {from: FACE2, to: FACE},
+      overlays: [{type: 'subs', items: [{t: 'bahan perapan meresap dalam ayam', s: 807.5, e: 811.3}, {t: 'perap siap-siap pun tak apa', s: 811.4, e: 813.5}]}],
+    },
+    {
+      src: L,
+      from: 822.0,
+      to: 839.0,
+      enter: 'zoom',
+      audio: 1,
+      asmr: true,
+      faceLeft: true,
+      zoom: {from: FACE, to: FACE2},
+      overlays: [
+        {
+          type: 'subs',
+          items: [
+            {t: '"Apa bahan blend tu?"', s: 822.0, e: 824.9},
+            {t: 'Bahan blend saya:', s: 825.2, e: 826.2},
+            {t: 'cili kering, halia', s: 826.3, e: 829.2},
+            {t: 'lengkuas, serai', s: 829.2, e: 831.3},
+            {t: 'buah keras, santan', s: 831.3, e: 833.9},
+            {t: 'gula melaka', s: 833.9, e: 835.8},
+            {t: 'garam, minyak', s: 835.8, e: 838.0},
+            {t: 'itu sahaja!', s: 838.1, e: 839.0},
+          ],
+        },
+      ],
+      sfx: [{src: 'pop', at: 0.1, vol: 0.4}],
+    },
+    {
+      src: L,
+      from: 3600,
+      to: 3604,
+      rate: 0.8,
+      enter: 'cut',
+      zoom: CHAR,
+      overlays: [
+        {
+          type: 'recipe',
+          title: 'BAHAN BLEND',
+          items: [
+            {qty: '•', name: 'Cili kering, halia'},
+            {qty: '•', name: 'Lengkuas, serai'},
+            {qty: '•', name: 'Buah keras, santan'},
+            {qty: '•', name: 'Gula melaka'},
+            {qty: '•', name: 'Garam, minyak'},
+          ],
+          note: '+ daun kunyit & asam keping',
+          cta: CTA,
+        },
+      ],
+      sfx: [{src: 'whoosh-med', at: 0, vol: 0.4}, {src: 'sting-warm', at: 0.2, vol: 0.4}],
+    },
+  ],
+};
+
+export const AYAM_PERCIK = [ayamPercik, ayamBeforeAfter, ayamSmartCook, ayamBroil, ayamSoalan];

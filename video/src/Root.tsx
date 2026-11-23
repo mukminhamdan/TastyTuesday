@@ -5,7 +5,7 @@ import {EpisodeVideo, episodeFrames} from './EpisodeVideo';
 import {Thumbnail} from './Thumbnail';
 import {resepiDohPizza} from './episodes/resepi-doh-pizza';
 import {ROTI_MANIS} from './episodes/roti-manis';
-import {ayamPercik} from './episodes/ayam-percik';
+import {AYAM_PERCIK} from './episodes/ayam-percik';
 import {pizzaEp1} from './episodes/pizza-ep1';
 import {pizzaEp2} from './episodes/pizza-ep2';
 import {meeGoreng} from './episodes/mee-goreng';
@@ -24,7 +24,7 @@ const ROTI_THUMBS = [
   {id: 'Thumb-Roti-Resipi', props: {bg: 'thumbs/roti-resipi.jpg', kicker: 'Resipi', title: 'ROTI\nMANIS', sticker: 'GEBU GILA!', chips: ['7 bahan je', 'Cooven 150°C'], zoom: {s: 1.08, x: 0.5, y: 0.6}}},
 ];
 
-export const EPISODES = [pizzaEp1, pizzaEp2, meeGoreng, telurDadar, resepiDohPizza, ...ROTI_MANIS, ayamPercik];
+export const EPISODES = [pizzaEp1, pizzaEp2, meeGoreng, telurDadar, resepiDohPizza, ...ROTI_MANIS, ...AYAM_PERCIK];
 
 const PIZZA_SERIES = [pizzaEp1, pizzaEp2];
 

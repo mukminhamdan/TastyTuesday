@@ -71,6 +71,11 @@ export type Overlay =
       cta?: string;
     }
   | {
+      /** spoken subtitles; s/e are SOURCE seconds of the voice (the shot's vo, or the clip itself) */
+      type: 'subs';
+      items: {t: string; s: number; e: number}[];
+    }
+  | {
       type: 'finale';
       tiles: {src: string; from: number; rate?: number; label: string; focus?: Focus}[];
     };
@@ -90,6 +95,8 @@ export type Shot = {
   audio?: number;
   /** ASMR moment: duck music hard so the cooking sound leads */
   asmr?: boolean;
+  /** voice-over: play this audio (rate 1) instead of the clip's own sound, e.g. the cook talking over B-roll */
+  vo?: {src?: string; from: number; vol?: number};
   enter?: 'cut' | 'zoom' | 'whip' | 'glitch';
   /** the person's face is visible on the left: move top badges to the right so nothing covers it */
   faceLeft?: boolean;

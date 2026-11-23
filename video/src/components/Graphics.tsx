@@ -420,3 +420,46 @@ export const CookTimer: React.FC<{fromSec: number; toSec: number; durFrames: num
     </div>
   );
 };
+
+/* ------------------------------------------------------- */
+/* Spoken subtitles (big, outlined, pop in per line)       */
+/* ------------------------------------------------------- */
+export const Subtitles: React.FC<{items: {t: string; s: number; e: number}[]; origin: number}> = ({items, origin}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const now = origin + frame / fps;
+  const cur = items.find((it) => now >= it.s && now < it.e + 0.15);
+  if (!cur) return null;
+  const f = Math.round((now - cur.s) * fps);
+  const sp = spring({frame: f, fps, config: {damping: 13, stiffness: 240, mass: 0.6}});
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        left: SAFE.left,
+        width: SAFE_W,
+        top: SAFE.bottom - 330,
+        height: 230,
+        display: 'flex',
+        alignItems: 'flex-end',
+        justifyContent: 'center',
+      }}
+    >
+      <div
+        style={{
+          fontFamily: FONT_BOLD,
+          fontWeight: 900,
+          fontSize: 66,
+          lineHeight: 1.12,
+          color: C.white,
+          textAlign: 'center',
+          textShadow: outline(7),
+          opacity: Math.min(1, sp * 1.5),
+          transform: `translateY(${(1 - sp) * 24}px) scale(${0.9 + 0.1 * sp})`,
+        }}
+      >
+        {cur.t}
+      </div>
+    </div>
+  );
+};
