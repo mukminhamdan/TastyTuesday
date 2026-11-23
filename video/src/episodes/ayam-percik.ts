@@ -1,5 +1,5 @@
 import {BRAND, MUSIC} from '../lib/theme';
-import type {Episode} from '../lib/types';
+import type {Episode, Shot} from '../lib/types';
 
 /**
  * Standalone video: Ayam percik dalam Food Engine Cooven (Smart Cook).
@@ -42,6 +42,33 @@ const POT = {from: {s: 1.5, x: 0.3, y: 0.62}, to: {s: 1.58, x: 0.3, y: 0.62}};
 const POT_SIDE = {from: {s: 1.25, x: 0.45, y: 0.62}, to: {s: 1.32, x: 0.45, y: 0.62}}; // 3725-3731, whole pot + Cooven
 // 3725+ starts with the cook's face in frame -> end cards sit on the face-free wide pot view instead
 const END_SHOT = {src: L, from: 3612, to: 3616, rate: 0.8, enter: 'cut' as const, zoom: POT_DONE};
+
+
+/**
+ * Close "camera tour" over the finished ayam percik (source 3608-3615.5, steady top-down view):
+ * left half skin -> left leg char -> bubbling kuah between the halves -> right half.
+ * Every point and every interpolated step keeps the PiP (x > 0.785 where y > 0.57) out of frame.
+ */
+const TOUR_PTS = [
+  {s: 1.3, x: 0, y: 0.6}, // whole pot
+  {s: 2.3, x: 0.25, y: 0.55}, // left half: wing + skin
+  {s: 2.3, x: 0.22, y: 0.75}, // left half: charred leg
+  {s: 2.5, x: 0.45, y: 0.78}, // bubbling kuah between the halves
+  {s: 2.3, x: 0.6, y: 0.55}, // right half (inner side; its outer edge sits under the PiP)
+];
+const TOUR_T = [3608, 3609.8, 3611.6, 3613.4, 3615.4];
+const tour = (first: Partial<Shot> = {}): Shot[] =>
+  TOUR_T.slice(0, -1).map((t, i) => ({
+    src: L,
+    from: t,
+    to: TOUR_T[i + 1],
+    rate: 0.75,
+    enter: i === 0 ? ('zoom' as const) : ('cut' as const),
+    audio: 0.3,
+    zoom: {from: TOUR_PTS[i], to: TOUR_PTS[i + 1]},
+    sfx: [{src: 'whoosh-soft', at: 0.1, vol: 0.22}],
+    ...(i === 0 ? first : {}),
+  }));
 
 
 export const ayamPercik: Episode = {
@@ -153,19 +180,20 @@ export const ayamPercik: Episode = {
       ],
       sfx: [{src: 'whoosh-soft', at: 0.8, vol: 0.35}],
     },
-    // PAYOFF
+    // PAYOFF: close camera tour over the cooked chicken, then the wide view with the title
+    ...tour({sfx: [{src: 'riser-1s', at: 0.4, vol: 0.3}]}),
     {
       src: L,
       from: 3610,
-      to: 3616.5,
+      to: 3613,
       enter: 'zoom',
       audio: 0.3,
       zoom: POT_DONE,
       overlays: [
-        {type: 'title', pos: 'bottom', at: 0.4, lines: [{t: 'AYAM PERCIK'}, {t: 'SIAP!', hl: true, size: 120}]},
-        {type: 'sparkles', x: 520, y: 700, at: 0.6, count: 12, spread: 320},
+        {type: 'title', pos: 'bottom', at: 0.1, lines: [{t: 'AYAM PERCIK'}, {t: 'SIAP!', hl: true, size: 120}]},
+        {type: 'sparkles', x: 400, y: 700, at: 0.3, count: 12, spread: 320},
       ],
-      sfx: [{src: 'boom', at: 0.4, vol: 0.45}, {src: 'ding-sparkle', at: 0.6, vol: 0.4}],
+      sfx: [{src: 'boom', at: 0.1, vol: 0.45}, {src: 'ding-sparkle', at: 0.3, vol: 0.4}],
     },
     {
       src: L,
@@ -245,19 +273,13 @@ export const ayamBeforeAfter: Episode = {
       overlays: [{type: 'label', text: 'broil', x: 520, y: 470, rotate: -4, size: 72, at: 0.2}],
       sfx: [{src: 'riser-1s', at: 3.4, vol: 0.35}],
     },
-    {
-      src: L,
-      from: 3608,
-      to: 3616.5,
-      rate: 0.85,
-      enter: 'zoom',
-      zoom: CHAR,
-      overlays: [
-        {type: 'title', pos: 'bottom', at: 0.1, lines: [{t: 'JADI NI!', hl: true, size: 120}, {t: 'tak payah arang', marker: true, size: 64}]},
-        {type: 'sparkles', x: 520, y: 700, at: 0.3, count: 12, spread: 320},
-      ],
-      sfx: [{src: 'boom', at: 0.1, vol: 0.45}, {src: 'ding-sparkle', at: 0.3, vol: 0.4}],
-    },
+    ...tour({
+        overlays: [
+          {type: 'title', pos: 'bottom', at: 0.1, lines: [{t: 'JADI NI!', hl: true, size: 120}, {t: 'tak payah arang', marker: true, size: 64}]},
+          {type: 'sparkles', x: 520, y: 700, at: 0.3, count: 12, spread: 320},
+        ],
+        sfx: [{src: 'boom', at: 0.1, vol: 0.45}, {src: 'ding-sparkle', at: 0.3, vol: 0.4}],
+    }),
     {
       ...END_SHOT,
       rate: 0.75,
