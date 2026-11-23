@@ -16,9 +16,14 @@ export type ThumbProps = {
   chips?: string[];
   /** background zoom + focus */
   zoom?: {s: number; x: number; y: number};
+  /** y of the kicker/title block (default 440) and of the chips row (default 1250) */
+  titleTop?: number;
+  chipsTop?: number;
+  /** CSS filter on the background photo */
+  filter?: string;
 };
 
-export const Thumbnail: React.FC<ThumbProps> = ({bg, kicker, title, sticker, brand, chips, zoom = {s: 1.08, x: 0.5, y: 0.5}}) => (
+export const Thumbnail: React.FC<ThumbProps> = ({bg, kicker, title, sticker, brand, chips, zoom = {s: 1.08, x: 0.5, y: 0.5}, titleTop = 440, chipsTop = 1250, filter = 'saturate(1.15) contrast(1.08) brightness(1.03)'}) => (
   <AbsoluteFill style={{backgroundColor: C.ink}}>
     <Img
       src={staticFile(bg)}
@@ -28,7 +33,7 @@ export const Thumbnail: React.FC<ThumbProps> = ({bg, kicker, title, sticker, bra
         objectFit: 'cover',
         transformOrigin: `${zoom.x * 100}% ${zoom.y * 100}%`,
         transform: `scale(${zoom.s})`,
-        filter: 'saturate(1.15) contrast(1.08) brightness(1.03)',
+        filter,
       }}
     />
     <AbsoluteFill
@@ -67,7 +72,7 @@ export const Thumbnail: React.FC<ThumbProps> = ({bg, kicker, title, sticker, bra
         position: 'absolute',
         left: SAFE.left,
         width: SAFE_W,
-        top: 440,
+        top: titleTop,
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -128,7 +133,7 @@ export const Thumbnail: React.FC<ThumbProps> = ({bg, kicker, title, sticker, bra
           position: 'absolute',
           left: SAFE.left,
           width: SAFE_W,
-          top: 1250,
+          top: chipsTop,
           display: 'flex',
           flexWrap: 'wrap',
           justifyContent: 'center',

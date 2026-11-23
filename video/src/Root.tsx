@@ -24,6 +24,13 @@ const ROTI_THUMBS = [
   {id: 'Thumb-Roti-Resipi', props: {bg: 'thumbs/roti-resipi.jpg', kicker: 'Resipi', title: 'ROTI\nMANIS', sticker: 'GEBU GILA!', chips: ['7 bahan je', 'Cooven 150°C'], zoom: {s: 1.08, x: 0.5, y: 0.6}}},
 ];
 
+/** ayam percik: cooler grade (cook found the kitchen too orange); zoom keeps the live PiP windows (x > 0.785) out */
+const AYAM_FILTER = 'contrast(1.14) saturate(1.0) brightness(1.03) hue-rotate(-4deg)';
+const AYAM_THUMBS = [
+  {id: 'Thumb-AyamPercik', props: {bg: 'thumbs/ayam-siap.jpg', kicker: 'Smart Cook', title: 'AYAM\nPERCIK', sticker: 'TANPA ARANG!', chips: ['Braise + Broil'], zoom: {s: 1.3, x: 0, y: 0.62}, titleTop: 330, chipsTop: 1330, filter: AYAM_FILTER}},
+  {id: 'Thumb-AyamPercik-BA', props: {bg: 'thumbs/ayam-ba.jpg', kicker: 'Ayam Percik', title: 'DARI NI…\nJADI NI!', sticker: '1 PERIUK JE!', zoom: {s: 1, x: 0.5, y: 0.5}, titleTop: 700, filter: AYAM_FILTER}},
+];
+
 export const EPISODES = [pizzaEp1, pizzaEp2, meeGoreng, telurDadar, resepiDohPizza, ...ROTI_MANIS, ...AYAM_PERCIK];
 
 const PIZZA_SERIES = [pizzaEp1, pizzaEp2];
@@ -53,7 +60,7 @@ export const RemotionRoot: React.FC = () => (
       />
     ))}
     {/* thumbnails / covers */}
-    {ROTI_THUMBS.map((t) => (
+    {[...ROTI_THUMBS, ...AYAM_THUMBS].map((t) => (
       <Still key={t.id} id={t.id} component={Thumbnail} width={W} height={H} defaultProps={{...t.props, brand: BRAND}} />
     ))}
     <Still
