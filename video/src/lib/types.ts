@@ -88,7 +88,8 @@ export type Shot = {
   from: number;
   to: number;
   rate?: number;
-  zoom?: {from: Focus; to: Focus};
+  /** camera move; `path` (keyframes incl. first/last) makes one smooth spline move instead of from -> to */
+  zoom?: {from: Focus; to: Focus; path?: Focus[]};
   /** quick zoom "punches" (seconds within shot) */
   punches?: number[];
   /** original clip audio volume (0 = muted) */

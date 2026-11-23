@@ -9,7 +9,7 @@ Aliran kerja penuh: skill **`video-masakan`** (`.claude/skills/video-masakan/SKI
   **Bergilir A → D → 3 → 4 → 5 → 6** antara video (part 1 = A, part 2 = D, ...); patuhi `safeUntil` setiap lagu; bila lagu sama diguna semula dalam
   siri yang sama, mula dari bahagian lain (`musicStart`) supaya tak bunyi berulang. Lagu A ada *break* senyap pada
   96–115s: pastikan `musicStart + durasi video` tak terkena bahagian tu. Salinan MP3 disimpan dalam `assets/music-library/` (CC0); `scripts/fetch-assets.sh` menyediakan WAV-nya.
-- **Grade warna**: `look: 'cinematic'` (kontras, warna kaya, bayang teal, cahaya hangat, vignette) bila pengguna
+- **Grade warna**: `look: 'cinematic'` (kontras, bayang teal, sedikit neutral/sejuk supaya tak terlalu oren, vignette) bila pengguna
   mahu rupa lebih menarik/cinematic; `look: 'warm'` untuk grade ringan.
 - **Peralatan**: sebut **"Food Engine Cooven"**, bukan "air fryer".
 - **Siri vs video berasingan**: hanya letak "EP" dan kad "Bersambung" bila pengguna minta siri. Video jawapan
@@ -32,4 +32,4 @@ Aliran kerja penuh: skill **`video-masakan`** (`.claude/skills/video-masakan/SKI
   lengkuas, serai, buah keras, santan, gula melaka, garam, minyak) + daun kunyit & asam keping; Smart Cook 30 min
   (25 braise + 5 broil), siram kuah, tudung air fryer, broil 10 min. Perap: tak perlu, boleh kalau nak. Sukatan belum diberi.
   **Jangan tunjuk masa memasak** dan **jangan tunjuk muka** (fokus cara masak sahaja: zoom ke periuk/tangan) dalam video ayam percik; **tiada kotak blur**: zoom supaya tetingkap peserta live (x > 0.785) di luar frame; mesej: Smart Cook = braise + broil, 2 fungsi dalam 1,
-  tak perlu alat memasak lain.
+  tak perlu alat memasak lain. **Muzik sahaja** (`clipGain: 0`, tiada bunyi live); payoff = satu pergerakan kamera licin (`zoom.path`) ke setiap bahagian ayam + kuah menggelegak.

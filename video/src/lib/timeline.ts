@@ -22,9 +22,22 @@ export const sec = (s: number) => Math.round(s * FPS);
 
 const ease = Easing.bezier(0.45, 0, 0.25, 1);
 
-export const focusAt = (z: {from: Focus; to: Focus} | undefined, p: number): Focus => {
+const catmull = (p0: number, p1: number, p2: number, p3: number, t: number) =>
+  0.5 * (2 * p1 + (-p0 + p2) * t + (2 * p0 - 5 * p1 + 4 * p2 - p3) * t * t + (-p0 + 3 * p1 - 3 * p2 + p3) * t * t * t);
+
+export const focusAt = (z: {from: Focus; to: Focus; path?: Focus[]} | undefined, p: number): Focus => {
   if (!z) return {s: 1, x: 0.5, y: 0.5};
   const k = ease(Math.min(1, Math.max(0, p)));
+  if (z.path && z.path.length > 2) {
+    // one continuous camera move through every keyframe (Catmull-Rom), eased only at the very start and end
+    const pts = z.path;
+    const u = k * (pts.length - 1);
+    const i = Math.min(pts.length - 2, Math.floor(u));
+    const t = u - i;
+    const P = (j: number) => pts[Math.max(0, Math.min(pts.length - 1, j))];
+    const f = (key: keyof Focus) => catmull(P(i - 1)[key], P(i)[key], P(i + 1)[key], P(i + 2)[key], t);
+    return {s: f('s'), x: f('x'), y: f('y')};
+  }
   return {
     s: interpolate(k, [0, 1], [z.from.s, z.to.s]),
     x: interpolate(k, [0, 1], [z.from.x, z.to.x]),

@@ -51,25 +51,23 @@ const END_SHOT = {src: L, from: 3612, to: 3616, rate: 0.8, enter: 'cut' as const
  */
 const TOUR_PTS = [
   {s: 1.3, x: 0, y: 0.6}, // whole pot
-  {s: 2.3, x: 0.25, y: 0.55}, // left half: wing + skin
-  {s: 2.3, x: 0.22, y: 0.75}, // left half: charred leg
-  {s: 2.5, x: 0.45, y: 0.78}, // bubbling kuah between the halves
-  {s: 2.3, x: 0.6, y: 0.55}, // right half (inner side; its outer edge sits under the PiP)
+  {s: 2.2, x: 0.25, y: 0.55}, // left half: wing + skin
+  {s: 2.2, x: 0.22, y: 0.74}, // left half: charred leg
+  {s: 2.4, x: 0.45, y: 0.78}, // bubbling kuah between the halves
+  {s: 2.2, x: 0.58, y: 0.56}, // right half (inner side; its outer edge sits under the PiP)
+  {s: 1.3, x: 0, y: 0.6}, // ease back out to the whole pot
 ];
-const TOUR_T = [3608, 3609.8, 3611.6, 3613.4, 3615.4];
-const tour = (first: Partial<Shot> = {}): Shot[] =>
-  TOUR_T.slice(0, -1).map((t, i) => ({
-    src: L,
-    from: t,
-    to: TOUR_T[i + 1],
-    rate: 0.75,
-    enter: i === 0 ? ('zoom' as const) : ('cut' as const),
-    audio: 0.3,
-    zoom: {from: TOUR_PTS[i], to: TOUR_PTS[i + 1]},
-    sfx: [{src: 'whoosh-soft', at: 0.1, vol: 0.22}],
-    ...(i === 0 ? first : {}),
-  }));
-
+/** one continuous move over 3608-3615.9 (camera steady), rate 0.7 -> ~11.3 s */
+const tour = (extra: Partial<Shot> = {}): Shot => ({
+  src: L,
+  from: 3608,
+  to: 3615.9,
+  rate: 0.7,
+  enter: 'zoom',
+  zoom: {from: TOUR_PTS[0], to: TOUR_PTS[TOUR_PTS.length - 1], path: TOUR_PTS},
+  sfx: [{src: 'riser-1s', at: 0.3, vol: 0.25}],
+  ...extra,
+});
 
 export const ayamPercik: Episode = {
   id: 'AyamPercik',
@@ -78,8 +76,8 @@ export const ayamPercik: Episode = {
   music: MUSIC.ukuleleRiang.file,
   musicStart: MUSIC.ukuleleRiang.start,
   musicBed: 0.5,
-  clipGain: 0.3,
-  asmrDuck: 0.85,
+  clipGain: 0, // cook: music only, no live sound
+  asmrDuck: 1,
   look: 'cinematic',
   shots: [
     // HOOK: finished, charred ayam percik
@@ -181,20 +179,13 @@ export const ayamPercik: Episode = {
       sfx: [{src: 'whoosh-soft', at: 0.8, vol: 0.35}],
     },
     // PAYOFF: close camera tour over the cooked chicken, then the wide view with the title
-    ...tour({sfx: [{src: 'riser-1s', at: 0.4, vol: 0.3}]}),
-    {
-      src: L,
-      from: 3610,
-      to: 3613,
-      enter: 'zoom',
-      audio: 0.3,
-      zoom: POT_DONE,
+    tour({
       overlays: [
-        {type: 'title', pos: 'bottom', at: 0.1, lines: [{t: 'AYAM PERCIK'}, {t: 'SIAP!', hl: true, size: 120}]},
-        {type: 'sparkles', x: 400, y: 700, at: 0.3, count: 12, spread: 320},
+        {type: 'title', pos: 'bottom', at: 9.0, lines: [{t: 'AYAM PERCIK'}, {t: 'SIAP!', hl: true, size: 120}]},
+        {type: 'sparkles', x: 400, y: 700, at: 9.2, count: 12, spread: 320},
       ],
-      sfx: [{src: 'boom', at: 0.1, vol: 0.45}, {src: 'ding-sparkle', at: 0.3, vol: 0.4}],
-    },
+      sfx: [{src: 'riser-1s', at: 0.3, vol: 0.25}, {src: 'boom', at: 9.0, vol: 0.45}, {src: 'ding-sparkle', at: 9.2, vol: 0.4}],
+    }),
     {
       src: L,
       from: 3612,
@@ -225,8 +216,8 @@ export const ayamBeforeAfter: Episode = {
   music: MUSIC.ukuleleSiulTepuk.file,
   musicStart: MUSIC.ukuleleSiulTepuk.start,
   musicBed: 0.5,
-  clipGain: 0.3,
-  asmrDuck: 0.85,
+  clipGain: 0, // cook: music only, no live sound
+  asmrDuck: 1,
   look: 'cinematic',
   shots: [
     {
@@ -273,7 +264,7 @@ export const ayamBeforeAfter: Episode = {
       overlays: [{type: 'label', text: 'broil', x: 520, y: 470, rotate: -4, size: 72, at: 0.2}],
       sfx: [{src: 'riser-1s', at: 3.4, vol: 0.35}],
     },
-    ...tour({
+    tour({
         overlays: [
           {type: 'title', pos: 'bottom', at: 0.1, lines: [{t: 'JADI NI!', hl: true, size: 120}, {t: 'tak payah arang', marker: true, size: 64}]},
           {type: 'sparkles', x: 520, y: 700, at: 0.3, count: 12, spread: 320},

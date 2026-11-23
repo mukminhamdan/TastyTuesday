@@ -30,7 +30,7 @@ export const LOOKS = {
   default: 'saturate(1.14) contrast(1.06) brightness(1.02)',
   warm: 'saturate(1.24) contrast(1.1) brightness(1.04) sepia(0.08)',
   /** film look: punchy contrast + rich colour; ShotView adds teal shadows, warm soft-light and a vignette on top */
-  cinematic: 'contrast(1.24) saturate(1.34) brightness(0.98) sepia(0.06)',
+  cinematic: 'contrast(1.18) saturate(1.0) brightness(1.01)',
 } as const;
 export type Look = keyof typeof LOOKS;
 
