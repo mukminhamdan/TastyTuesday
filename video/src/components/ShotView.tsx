@@ -24,8 +24,17 @@ export const FramedVideo: React.FC<{
   extraScale?: number;
   style?: React.CSSProperties;
   look?: Look;
-}> = ({src, from, rate = 1, focus, volume = 0, extraScale = 0, style, look = 'default'}) => {
+  /** source-fraction rectangle to blur (e.g. other people's picture-in-picture in a screen recording) */
+  blurBox?: {x: number; y: number; w: number; h: number};
+}> = ({src, from, rate = 1, focus, volume = 0, extraScale = 0, style, look = 'default', blurBox}) => {
   const s = focus.s * (1 + extraScale);
+  const videoStyle: React.CSSProperties = {
+    width: W,
+    height: H,
+    objectFit: 'cover',
+    transformOrigin: `${focus.x * 100}% ${focus.y * 100}%`,
+    transform: `scale(${s})`,
+  };
   return (
     <AbsoluteFill style={{overflow: 'hidden', ...style}}>
       <OffthreadVideo
@@ -34,20 +43,29 @@ export const FramedVideo: React.FC<{
         playbackRate={rate}
         muted={volume <= 0}
         volume={volume}
-        style={{
-          width: W,
-          height: H,
-          objectFit: 'cover',
-          transformOrigin: `${focus.x * 100}% ${focus.y * 100}%`,
-          transform: `scale(${s})`,
-          filter: LOOKS[look],
-        }}
+        style={{...videoStyle, filter: LOOKS[look]}}
       />
+      {blurBox ? (
+        <AbsoluteFill>
+          <OffthreadVideo
+            src={staticFile(`footage/${src}`)}
+            trimBefore={Math.round(from * FPS)}
+            playbackRate={rate}
+            muted
+            style={{
+              ...videoStyle,
+              // clip in the element's own (pre-transform) space, so the box follows the zoom
+              clipPath: `inset(${blurBox.y * 100}% ${(1 - blurBox.x - blurBox.w) * 100}% ${(1 - blurBox.y - blurBox.h) * 100}% ${blurBox.x * 100}% round 18px)`,
+              filter: `${LOOKS[look]} blur(28px) brightness(1.05)`,
+            }}
+          />
+        </AbsoluteFill>
+      ) : null}
     </AbsoluteFill>
   );
 };
 
-export const ShotView: React.FC<{shot: Shot & {frames: number}; clipGain?: number; look?: Look}> = ({shot, clipGain = 1, look}) => {
+export const ShotView: React.FC<{shot: Shot & {frames: number}; clipGain?: number; look?: Look; blurBox?: {x: number; y: number; w: number; h: number}}> = ({shot, clipGain = 1, look, blurBox}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const p = frame / Math.max(1, shot.frames - 1);
@@ -109,6 +127,7 @@ export const ShotView: React.FC<{shot: Shot & {frames: number}; clipGain?: numbe
           extraScale={extra}
           volume={(shot.audio ?? 0) * clipGain}
           look={look}
+          blurBox={blurBox}
         />
       </AbsoluteFill>
       {flash > 0 ? <AbsoluteFill style={{backgroundColor: `rgba(255,246,229,${flash})`}} /> : null}

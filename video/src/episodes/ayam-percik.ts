@@ -8,12 +8,23 @@ import type {Episode} from '../lib/types';
  *   771-814 spread the kuah, 912-930 lid on, 2899-2930 mid-cook close-up + spoon kuah over,
  *   2935-2951 swap to the air fryer lid -> broil, 3599-3614 / 3725-3731 finished close-ups.
  * Other participants' picture-in-picture windows sit at the right edge (x > 0.8, y 0.6-0.92):
- * every zoom keeps the visible source x below ~0.78 so they never show.
+ * that box is blurred on every shot (blurBox), so pot shots can stay wide and show the whole pot.
  * Method, from the cook in the live: 1 ayam belah tengah + kuah percik (blend), daun kunyit, asam keping;
  * Smart Cook 30 min (braise, last 5 min broil); then spoon kuah on top, air fryer lid, broil 10 min.
  */
 const L = 'a123324.mp4';
+/** other participants' picture-in-picture (screen recording of a live call): blurred on every shot */
+const PIP = {x: 0.785, y: 0.57, w: 0.215, h: 0.37};
+/** whole pot, finished (3608-3616.5 is the steady wide view after the lid opens) */
+const POT_DONE = {from: {s: 1.06, x: 0.5, y: 0.62}, to: {s: 1.14, x: 0.5, y: 0.62}};
 const CTA = 'Nak resipi?\nFollow & komen "RESIPI"';
+const CHAR = POT_DONE;
+const BRAISE = {from: {s: 1.18, x: 0.55, y: 1.0}, to: {s: 1.25, x: 0.55, y: 1.0}};
+const GLOW = {from: {s: 1.5, x: 0.35, y: 0.6}, to: {s: 1.6, x: 0.35, y: 0.6}};
+const POT = {from: {s: 1.3, x: 0.45, y: 0.62}, to: {s: 1.4, x: 0.45, y: 0.62}};
+const POT_SIDE = {from: {s: 1.25, x: 0.45, y: 0.62}, to: {s: 1.32, x: 0.45, y: 0.62}}; // 3725-3731, whole pot + Cooven
+const END_SHOT = {src: L, from: 3725, to: 3729, rate: 0.8, enter: 'cut' as const, zoom: POT_SIDE};
+
 
 export const ayamPercik: Episode = {
   id: 'AyamPercik',
@@ -25,15 +36,16 @@ export const ayamPercik: Episode = {
   clipGain: 0.3,
   asmrDuck: 0.85,
   look: 'warm',
+  blurBox: PIP,
   shots: [
     // HOOK: finished, charred ayam percik
     {
       src: L,
-      from: 3600,
-      to: 3605,
+      from: 3608,
+      to: 3613,
       enter: 'cut',
       audio: 0.3,
-      zoom: {from: {s: 1.4, x: 0.25, y: 0.45}, to: {s: 1.6, x: 0.25, y: 0.42}},
+      zoom: POT_DONE,
       overlays: [
         {
           type: 'title',
@@ -65,7 +77,7 @@ export const ayamPercik: Episode = {
       to: 729,
       rate: 2,
       enter: 'zoom',
-      zoom: {from: {s: 1.6, x: 0.35, y: 0.62}, to: {s: 1.8, x: 0.35, y: 0.62}},
+      zoom: POT,
       overlays: [
         {type: 'step', n: 2, text: 'Masuk Food Engine Cooven'},
         {type: 'speed', label: '2x'},
@@ -121,7 +133,7 @@ export const ayamPercik: Episode = {
       rate: 5,
       enter: 'zoom',
       audio: 0.3,
-      zoom: {from: {s: 1.45, x: 0.3, y: 1.0}, to: {s: 1.6, x: 0.3, y: 1.0}},
+      zoom: BRAISE,
       overlays: [
         {type: 'step', n: 6, text: 'Siram kuah atas ayam'},
         {type: 'speed', label: '5x'},
@@ -144,12 +156,11 @@ export const ayamPercik: Episode = {
     // PAYOFF
     {
       src: L,
-      from: 3603,
-      to: 3611,
-      rate: 1.2,
+      from: 3610,
+      to: 3616.5,
       enter: 'zoom',
       audio: 0.3,
-      zoom: {from: {s: 1.4, x: 0.25, y: 0.45}, to: {s: 1.6, x: 0.25, y: 0.4}},
+      zoom: POT_DONE,
       overlays: [
         {type: 'title', pos: 'bottom', at: 0.4, lines: [{t: 'AYAM PERCIK'}, {t: 'SIAP!', hl: true, size: 120}]},
         {type: 'sparkles', x: 520, y: 700, at: 0.6, count: 12, spread: 320},
@@ -162,7 +173,7 @@ export const ayamPercik: Episode = {
       to: 3731,
       rate: 1.2,
       enter: 'cut',
-      zoom: {from: {s: 1.4, x: 0.3, y: 0.55}, to: {s: 1.5, x: 0.3, y: 0.55}},
+      zoom: POT_SIDE,
       overlays: [
         {
           type: 'recipe',
@@ -185,12 +196,7 @@ export const ayamPercik: Episode = {
 /* ------------------------------------------------------------------ */
 const FACE = {s: 1.45, x: 0.15, y: 0.35}; // talking shots: whole face + Cooven, PiP (x > 0.8) out of frame
 const FACE2 = {s: 1.55, x: 0.15, y: 0.35};
-const CHAR = {from: {s: 1.4, x: 0.25, y: 0.45}, to: {s: 1.6, x: 0.25, y: 0.4}};
-const BRAISE = {from: {s: 1.45, x: 0.3, y: 1.0}, to: {s: 1.6, x: 0.3, y: 1.0}};
-const GLOW = {from: {s: 1.5, x: 0.35, y: 0.6}, to: {s: 1.6, x: 0.35, y: 0.6}};
-const POT = {from: {s: 1.6, x: 0.35, y: 0.62}, to: {s: 1.8, x: 0.35, y: 0.62}};
-const END_SHOT = {src: L, from: 3725, to: 3729, rate: 0.8, enter: 'cut' as const, zoom: {from: {s: 1.4, x: 0.3, y: 0.55}, to: {s: 1.5, x: 0.3, y: 0.55}}};
-const VOICE = {clipGain: 1, musicBed: 0.35, asmrDuck: 0.22, look: 'warm' as const};
+const VOICE = {clipGain: 1, musicBed: 0.35, asmrDuck: 0.22, look: 'warm' as const, blurBox: PIP};
 
 /** 2. Before -> after transformation (music only, <= 37 s for track 5) */
 export const ayamBeforeAfter: Episode = {
@@ -203,6 +209,7 @@ export const ayamBeforeAfter: Episode = {
   clipGain: 0.3,
   asmrDuck: 0.85,
   look: 'warm',
+  blurBox: PIP,
   shots: [
     {
       src: L,
@@ -252,9 +259,9 @@ export const ayamBeforeAfter: Episode = {
     },
     {
       src: L,
-      from: 3599,
-      to: 3612,
-      rate: 1.3,
+      from: 3608,
+      to: 3616.5,
+      rate: 0.85,
       enter: 'zoom',
       zoom: CHAR,
       overlays: [
@@ -294,8 +301,8 @@ export const ayamSmartCook: Episode = {
   shots: [
     {
       src: L,
-      from: 3600,
-      to: 3603,
+      from: 3608,
+      to: 3611,
       enter: 'cut',
       zoom: CHAR,
       overlays: [{type: 'title', pos: 'bottom', at: 0.1, lines: [{t: 'APA ITU'}, {t: 'SMART COOK?', hl: true, size: 96}, {t: 'Food Engine Cooven', marker: true, size: 60}]}],
@@ -368,8 +375,8 @@ export const ayamSmartCook: Episode = {
     },
     {
       src: L,
-      from: 3603,
-      to: 3609.7,
+      from: 3609.8,
+      to: 3616.5,
       enter: 'zoom',
       zoom: CHAR,
       asmr: true,
@@ -406,8 +413,8 @@ export const ayamBroil: Episode = {
   shots: [
     {
       src: L,
-      from: 3599,
-      to: 3602,
+      from: 3612,
+      to: 3615,
       enter: 'cut',
       zoom: CHAR,
       overlays: [{type: 'title', pos: 'bottom', at: 0.1, lines: [{t: 'BROIL', size: 110}, {t: 'TU APA?', hl: true, size: 96}]}],
@@ -457,17 +464,27 @@ export const ayamBroil: Episode = {
     },
     {
       src: L,
-      from: 3603,
-      to: 3612.8,
+      from: 3608,
+      to: 3614,
       enter: 'zoom',
       zoom: CHAR,
       asmr: true,
       vo: {from: 981.4},
       overlays: [
-        {type: 'subs', items: [{t: 'Nak bakar roti?', s: 981.4, e: 984.9}, {t: 'roti, letak cheese atas', s: 984.9, e: 989.3}, {t: 'pembakaran di atas sahaja', s: 989.5, e: 991.2}]},
+        {type: 'subs', items: [{t: 'Nak bakar roti?', s: 981.4, e: 984.9}, {t: 'roti, letak cheese atas', s: 984.9, e: 989.3}]},
         {type: 'sparkles', x: 520, y: 700, at: 0.5, count: 10, spread: 300},
       ],
       sfx: [{src: 'shimmer', at: 0.5, vol: 0.3}],
+    },
+    {
+      src: L,
+      from: 3726,
+      to: 3729.8,
+      enter: 'cut',
+      zoom: POT_SIDE,
+      asmr: true,
+      vo: {from: 987.4},
+      overlays: [{type: 'subs', items: [{t: 'roti, letak cheese atas', s: 984.9, e: 989.3}, {t: 'pembakaran di atas sahaja', s: 989.5, e: 991.2}]}],
     },
     {
       ...END_SHOT,
@@ -499,7 +516,7 @@ export const ayamSoalan: Episode = {
       from: 3725,
       to: 3728,
       enter: 'cut',
-      zoom: {from: {s: 1.4, x: 0.3, y: 0.55}, to: {s: 1.55, x: 0.3, y: 0.55}},
+      zoom: POT_SIDE,
       overlays: [{type: 'title', pos: 'bottom', at: 0.1, lines: [{t: 'SOALAN LIVE'}, {t: 'AYAM PERCIK', hl: true, size: 92}]}],
       sfx: [{src: 'sting', at: 0, vol: 0.45}],
     },
@@ -556,8 +573,8 @@ export const ayamSoalan: Episode = {
     },
     {
       src: L,
-      from: 3600,
-      to: 3604,
+      from: 3608,
+      to: 3612,
       rate: 0.8,
       enter: 'cut',
       zoom: CHAR,

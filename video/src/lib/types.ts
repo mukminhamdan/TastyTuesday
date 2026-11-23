@@ -118,6 +118,8 @@ export type Episode = {
   musicStart?: number;
   /** music level when nothing else is going on */
   musicBed?: number;
+  /** blur this source-fraction box on every shot (picture-in-picture of other people in a live recording) */
+  blurBox?: {x: number; y: number; w: number; h: number};
   /** colour look for the footage (see LOOKS in theme.ts), default 'default' */
   look?: 'default' | 'warm';
   /** multiplier on every clip's own audio (default 1). Lower = music leads, kitchen noise stays in the background. */

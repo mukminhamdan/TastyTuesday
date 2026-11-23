@@ -66,7 +66,7 @@ export const EpisodeVideo: React.FC<EpisodeProps> = ({episode, showSafeZone}) =>
     <AbsoluteFill style={{backgroundColor: '#000'}}>
       {shots.map((s) => (
         <Sequence key={`v${s.index}`} from={s.start} durationInFrames={s.frames} premountFor={FPS}>
-          <ShotView shot={s} clipGain={episode.clipGain} look={episode.look} />
+          <ShotView shot={s} clipGain={episode.clipGain} look={episode.look} blurBox={episode.blurBox} />
         </Sequence>
       ))}
 
