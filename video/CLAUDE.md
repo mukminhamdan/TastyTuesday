@@ -31,5 +31,5 @@ Aliran kerja penuh: skill **`video-masakan`** (`.claude/skills/video-masakan/SKI
 - **Ayam percik** (dari live, kata-kata pengguna sendiri): 1 ayam belah tengah + kuah percik blend (cili kering, halia,
   lengkuas, serai, buah keras, santan, gula melaka, garam, minyak) + daun kunyit & asam keping; Smart Cook 30 min
   (25 braise + 5 broil), siram kuah, tudung air fryer, broil 10 min. Perap: tak perlu, boleh kalau nak. Sukatan belum diberi.
-  **Jangan tunjuk masa memasak** dan **jangan tunjuk muka** (fokus cara masak sahaja: zoom ke periuk/tangan) dalam video ayam percik; mesej: Smart Cook = braise + broil, 2 fungsi dalam 1,
+  **Jangan tunjuk masa memasak** dan **jangan tunjuk muka** (fokus cara masak sahaja: zoom ke periuk/tangan) dalam video ayam percik; **tiada kotak blur**: zoom supaya tetingkap peserta live (x > 0.785) di luar frame; mesej: Smart Cook = braise + broil, 2 fungsi dalam 1,
   tak perlu alat memasak lain.

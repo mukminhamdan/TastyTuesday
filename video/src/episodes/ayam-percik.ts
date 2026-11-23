@@ -16,7 +16,9 @@ const L = 'a123324.mp4';
 /** other participants' picture-in-picture (screen recording of a live call): blurred on every shot */
 const PIP = {x: 0.785, y: 0.57, w: 0.215, h: 0.37};
 /** whole pot, finished (3608-3616.5 is the steady wide view after the lid opens) */
-const POT_DONE = {from: {s: 1.06, x: 0.5, y: 0.62}, to: {s: 1.14, x: 0.5, y: 0.62}};
+// Cook's choice: no blur box -> every framing keeps the visible source right edge <= 0.78 so the other
+// participants' picture-in-picture (x > 0.785) stays out of frame. Right edge = x + (1 - x) / s.
+const POT_DONE = {from: {s: 1.3, x: 0, y: 0.6}, to: {s: 1.38, x: 0, y: 0.6}};
 const CTA = 'Nak resipi?\nFollow & komen "RESIPI"';
 /** End card used by every ayam percik video: the Smart Cook message, no cooking times (cook's request). */
 const SMART_CARD = {
@@ -31,12 +33,12 @@ const SMART_CARD = {
 };
 
 /** cook's request: no face, only the cooking. These keep the visible source to x >= 0.32, y >= 0.4. */
-const HANDS = {from: {s: 1.85, x: 0.68, y: 0.85}, to: {s: 1.95, x: 0.68, y: 0.85}};
-const BROIL_ON = {from: {s: 1.85, x: 0.6, y: 0.9}, to: {s: 1.95, x: 0.6, y: 0.9}};
+const HANDS = {from: {s: 2.0, x: 0.55, y: 0.95}, to: {s: 2.08, x: 0.55, y: 0.95}}; // visible x 0.28-0.78, y >= 0.47 (no face)
+const BROIL_ON = HANDS;
 const CHAR = POT_DONE;
-const BRAISE = {from: {s: 1.18, x: 0.55, y: 1.0}, to: {s: 1.25, x: 0.55, y: 1.0}};
+const BRAISE = {from: {s: 1.32, x: 0, y: 1.0}, to: {s: 1.4, x: 0, y: 1.0}};
 const GLOW = {from: {s: 1.5, x: 0.35, y: 0.6}, to: {s: 1.6, x: 0.35, y: 0.6}};
-const POT = {from: {s: 1.3, x: 0.45, y: 0.62}, to: {s: 1.4, x: 0.45, y: 0.62}};
+const POT = {from: {s: 1.5, x: 0.3, y: 0.62}, to: {s: 1.58, x: 0.3, y: 0.62}};
 const POT_SIDE = {from: {s: 1.25, x: 0.45, y: 0.62}, to: {s: 1.32, x: 0.45, y: 0.62}}; // 3725-3731, whole pot + Cooven
 // 3725+ starts with the cook's face in frame -> end cards sit on the face-free wide pot view instead
 const END_SHOT = {src: L, from: 3612, to: 3616, rate: 0.8, enter: 'cut' as const, zoom: POT_DONE};
@@ -52,7 +54,6 @@ export const ayamPercik: Episode = {
   clipGain: 0.3,
   asmrDuck: 0.85,
   look: 'cinematic',
-  blurBox: PIP,
   shots: [
     // HOOK: finished, charred ayam percik
     {
@@ -199,7 +200,6 @@ export const ayamBeforeAfter: Episode = {
   clipGain: 0.3,
   asmrDuck: 0.85,
   look: 'cinematic',
-  blurBox: PIP,
   shots: [
     {
       src: L,
