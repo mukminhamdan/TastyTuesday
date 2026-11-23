@@ -23,7 +23,8 @@ istilah) dan nota resipi/setting yang dah disahkan. Komunikasi dengan pengguna d
 - **Lagu**: bergilir `MUSIC` A `ukuleleCeria` -> D `ukuleleIklan` -> 3 `ukuleleRiang` -> 4 `ukuleleFolk` ->
   5 `ukuleleSiulTepuk` (video <=37s sahaja) -> 6 `ukuleleSiulan`. Guna `start` lagu itu dan pastikan
   `musicStart + durasi <= safeUntil` (lagu A ada break senyap 96-115s). Sampel lain boleh dicari dari dataset CC0 (`scripts/get-music.py`).
-- **Visual**: `look: 'warm'` untuk makanan; final dengan `SHARPEN=1`.
+- **Visual**: `look: 'cinematic'` (grade filem: kontras, bayang teal, hangat, vignette; pilihan terkini pengguna) atau
+  `look: 'warm'` untuk grade ringan; final dengan `SHARPEN=1`.
 - **Durasi**: part ±30-50s; video resipi **bawah 1 minit** (resipi + langkah + hasil bakar).
 - **Satu rakaman panjang (contoh live)**: setiap video **bawah 1 minit** dan keluarkan **seberapa banyak video**
   yang boleh: cara penuh, before->after, dan video **suara** bila tukang masak menerangkan/menjawab soalan

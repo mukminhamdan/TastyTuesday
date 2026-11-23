@@ -51,7 +51,7 @@ export const ayamPercik: Episode = {
   musicBed: 0.5,
   clipGain: 0.3,
   asmrDuck: 0.85,
-  look: 'warm',
+  look: 'cinematic',
   blurBox: PIP,
   shots: [
     // HOOK: finished, charred ayam percik
@@ -198,7 +198,7 @@ export const ayamBeforeAfter: Episode = {
   musicBed: 0.5,
   clipGain: 0.3,
   asmrDuck: 0.85,
-  look: 'warm',
+  look: 'cinematic',
   blurBox: PIP,
   shots: [
     {

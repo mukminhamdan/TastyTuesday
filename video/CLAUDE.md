@@ -9,6 +9,8 @@ Aliran kerja penuh: skill **`video-masakan`** (`.claude/skills/video-masakan/SKI
   **Bergilir A → D → 3 → 4 → 5 → 6** antara video (part 1 = A, part 2 = D, ...); patuhi `safeUntil` setiap lagu; bila lagu sama diguna semula dalam
   siri yang sama, mula dari bahagian lain (`musicStart`) supaya tak bunyi berulang. Lagu A ada *break* senyap pada
   96–115s: pastikan `musicStart + durasi video` tak terkena bahagian tu. Salinan MP3 disimpan dalam `assets/music-library/` (CC0); `scripts/fetch-assets.sh` menyediakan WAV-nya.
+- **Grade warna**: `look: 'cinematic'` (kontras, warna kaya, bayang teal, cahaya hangat, vignette) bila pengguna
+  mahu rupa lebih menarik/cinematic; `look: 'warm'` untuk grade ringan.
 - **Peralatan**: sebut **"Food Engine Cooven"**, bukan "air fryer".
 - **Siri vs video berasingan**: hanya letak "EP" dan kad "Bersambung" bila pengguna minta siri. Video jawapan
   komen / video tunggal berakhir dengan kad recap (contoh `resepi-doh-pizza.ts`).

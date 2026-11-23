@@ -15,6 +15,18 @@ import {FPS, LOOKS, W, H, type Look} from '../lib/theme';
 import type {Focus, Shot} from '../lib/types';
 
 /** Plain zoomed / panned video, reused by shots, peeks and finale tiles. */
+/** Colour-grade layers over the footage (blend modes, so it costs no extra video decode). */
+const CinematicGrade: React.FC = () => (
+  <AbsoluteFill style={{pointerEvents: 'none'}}>
+    {/* lift the blacks towards teal (classic film shadows) */}
+    <AbsoluteFill style={{backgroundColor: 'rgb(8, 34, 40)', mixBlendMode: 'lighten', opacity: 0.75}} />
+    {/* warm, golden tone through the mids and highlights */}
+    <AbsoluteFill style={{backgroundColor: 'rgb(255, 150, 70)', mixBlendMode: 'soft-light', opacity: 0.32}} />
+    {/* gentle vignette to pull the eye to the food */}
+    <AbsoluteFill style={{background: 'radial-gradient(ellipse 75% 60% at 50% 55%, rgba(0,0,0,0) 45%, rgba(0,0,0,0.55) 100%)'}} />
+  </AbsoluteFill>
+);
+
 export const FramedVideo: React.FC<{
   src: string;
   from: number;
@@ -45,6 +57,7 @@ export const FramedVideo: React.FC<{
         volume={volume}
         style={{...videoStyle, filter: LOOKS[look]}}
       />
+      {look === 'cinematic' ? <CinematicGrade /> : null}
       {blurBox ? (
         <AbsoluteFill>
           <OffthreadVideo
