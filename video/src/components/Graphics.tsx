@@ -182,7 +182,8 @@ export const StepCard: React.FC<{n: number; text: string; at?: number; durFrames
 /* ---------------------------------------- */
 /* Fast-forward badge for time-lapse shots  */
 /* ---------------------------------------- */
-export const SpeedBadge: React.FC<{label: string}> = ({label}) => {
+/** `below`: the series badge sits top-right on faceLeft shots, so drop the speed badge under it. */
+export const SpeedBadge: React.FC<{label: string; below?: boolean}> = ({label, below}) => {
   const {f, fps} = useLocal(0);
   const sp = spring({frame: f - 3, fps, config: {damping: 12, stiffness: 220}});
   const blink = 0.75 + 0.25 * Math.sin(f / 3);
@@ -191,7 +192,7 @@ export const SpeedBadge: React.FC<{label: string}> = ({label}) => {
       style={{
         position: 'absolute',
         right: W - SAFE.right,
-        top: SAFE.top,
+        top: SAFE.top + (below ? 80 : 0),
         height: 60,
         padding: '0 22px',
         borderRadius: 30,

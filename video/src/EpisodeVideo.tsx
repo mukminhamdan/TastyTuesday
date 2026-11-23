@@ -19,7 +19,7 @@ const OverlayView: React.FC<{o: Overlay; shot: PlacedShot}> = ({o, shot}) => {
     case 'step':
       return <StepCard n={o.n} text={o.text} at={o.at} durFrames={rest(o.at, o.dur)} />;
     case 'speed':
-      return <SpeedBadge label={o.label} />;
+      return <SpeedBadge label={o.label} below={shot.faceLeft} />;
     case 'label':
       return (
         <MarkerLabel

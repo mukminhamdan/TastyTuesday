@@ -8,7 +8,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {normalise} from './loudnorm.mjs';
 
-const ids = process.argv.slice(2).length ? process.argv.slice(2) : ['RotiManis-P1-Doh', 'RotiManis-P2-Bentuk', 'RotiManis-P3-Bakar', 'RotiManis-Bonus-Freezer', 'RotiManis-Resipi'];
+const ids = process.argv.slice(2).length ? process.argv.slice(2) : ['AyamPercik'];
 const browserExecutable = process.env.CHROME_PATH;
 const serveUrl = process.env.BUNDLE || (await bundle({entryPoint: path.resolve('src/index.ts')}));
 const sharpen = process.env.SHARPEN === '1';

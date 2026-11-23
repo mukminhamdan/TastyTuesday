@@ -193,6 +193,23 @@ Save resipi ni 📌 Follow saya untuk resipi lagi!
 
 Komen pin (semua part): `Resipi penuh coming soon! Komen "RESIPI" & follow supaya tak terlepas 🙌`
 
+## 7. Ayam percik Smart Cook (`AyamPercik.mp4`)
+
+```
+Ayam percik tak payah bakar atas arang 🔥🍗
+
+1 ekor ayam belah tengah + kuah percik → Smart Cook 30 minit → siram kuah → broil 10 minit.
+Semua dalam 1 periuk Food Engine Cooven!
+
+Nak resipi? Follow & komen "RESIPI" 👇
+
+#ayampercik #foodenginecooven #resepimudah #mukminmasak #fyp
+```
+
+| | Instagram | TikTok | Threads |
+|---|---|---|---|
+| Ayam percik | Ayam percik 1 periuk, tak payah arang 🔥 Smart Cook 30 min + broil 10 min. Komen "RESIPI" & follow! #ayampercik #foodenginecooven #mukminmasak | Ayam percik tak payah arang 🔥 Komen "RESIPI" 👇 #ayampercik #mukminmasak #fyp | Ayam percik siap dalam 1 periuk, tak payah bakar atas arang 🔥 Siapa nak resipi? |
+
 ---
 
 ### Tip post
