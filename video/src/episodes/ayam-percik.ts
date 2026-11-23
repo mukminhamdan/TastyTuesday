@@ -10,7 +10,7 @@ import type {Episode} from '../lib/types';
  * Other participants' picture-in-picture windows sit at the right edge (x > 0.8, y 0.6-0.92):
  * that box is blurred on every shot (blurBox), so pot shots can stay wide and show the whole pot.
  * Method, from the cook in the live: 1 ayam belah tengah + kuah percik (blend), daun kunyit, asam keping;
- * Smart Cook 30 min (braise, last 5 min broil); then spoon kuah on top, air fryer lid, broil 10 min.
+ * Smart Cook = braise + broil in one pot. Cook's request: do NOT show cooking times in these videos.
  */
 const L = 'a123324.mp4';
 /** other participants' picture-in-picture (screen recording of a live call): blurred on every shot */
@@ -18,6 +18,18 @@ const PIP = {x: 0.785, y: 0.57, w: 0.215, h: 0.37};
 /** whole pot, finished (3608-3616.5 is the steady wide view after the lid opens) */
 const POT_DONE = {from: {s: 1.06, x: 0.5, y: 0.62}, to: {s: 1.14, x: 0.5, y: 0.62}};
 const CTA = 'Nak resipi?\nFollow & komen "RESIPI"';
+/** End card used by every ayam percik video: the Smart Cook message, no cooking times (cook's request). */
+const SMART_CARD = {
+  type: 'recipe' as const,
+  title: 'SMART COOK',
+  items: [
+    {qty: 'BRAISE', name: 'reneh dengan kuah'},
+    {qty: 'BROIL', name: 'bakar dari atas'},
+  ],
+  note: '2 fungsi dalam 1 periuk\ntak perlu alat memasak lain',
+  cta: CTA,
+};
+
 const CHAR = POT_DONE;
 const BRAISE = {from: {s: 1.18, x: 0.55, y: 1.0}, to: {s: 1.25, x: 0.55, y: 1.0}};
 const GLOW = {from: {s: 1.5, x: 0.35, y: 0.6}, to: {s: 1.6, x: 0.35, y: 0.6}};
@@ -108,7 +120,7 @@ export const ayamPercik: Episode = {
       overlays: [
         {type: 'step', n: 4, text: 'Ratakan kuah'},
         {type: 'speed', label: '10x'},
-        {type: 'label', text: 'Smart Cook · 30 minit', x: 520, y: 470, rotate: -4, size: 60, at: 0.6},
+        {type: 'label', text: 'Smart Cook', x: 520, y: 470, rotate: -4, size: 66, at: 0.6},
       ],
     },
     {
@@ -149,7 +161,7 @@ export const ayamPercik: Episode = {
       zoom: {from: {s: 1.5, x: 0.35, y: 0.6}, to: {s: 1.6, x: 0.35, y: 0.6}},
       overlays: [
         {type: 'step', n: 7, text: 'Tukar tudung, broil'},
-        {type: 'label', text: 'broil 10 minit', x: 520, y: 470, rotate: -4, size: 64, at: 1.2},
+        {type: 'label', text: 'auto broil', x: 520, y: 470, rotate: -4, size: 64, at: 1.2},
       ],
       sfx: [{src: 'whoosh-soft', at: 0.8, vol: 0.35}],
     },
@@ -175,16 +187,7 @@ export const ayamPercik: Episode = {
       enter: 'cut',
       zoom: POT_SIDE,
       overlays: [
-        {
-          type: 'recipe',
-          title: 'CARA',
-          items: [
-            {qty: '30 min', name: 'Smart Cook'},
-            {qty: '10 min', name: 'Broil'},
-          ],
-          note: 'semua dalam 1 periuk\ntak payah bakar atas arang',
-          cta: CTA,
-        },
+        SMART_CARD,
       ],
       sfx: [{src: 'whoosh-med', at: 0, vol: 0.4}, {src: 'sting-warm', at: 0.2, vol: 0.45}],
     },
@@ -243,7 +246,7 @@ export const ayamBeforeAfter: Episode = {
       zoom: BRAISE,
       overlays: [
         {type: 'speed', label: '3x'},
-        {type: 'label', text: 'Smart Cook 30 min', x: 520, y: 470, rotate: -4, size: 64, at: 0.2},
+        {type: 'label', text: 'braise', x: 520, y: 470, rotate: -4, size: 72, at: 0.2},
       ],
     },
     {
@@ -254,7 +257,7 @@ export const ayamBeforeAfter: Episode = {
       enter: 'zoom',
       faceLeft: true,
       zoom: GLOW,
-      overlays: [{type: 'label', text: 'broil 10 min', x: 580, y: 1150, rotate: -4, size: 64, at: 0.2}],
+      overlays: [{type: 'label', text: 'broil', x: 580, y: 1150, rotate: -4, size: 72, at: 0.2}],
       sfx: [{src: 'riser-1s', at: 3.4, vol: 0.35}],
     },
     {
@@ -275,15 +278,7 @@ export const ayamBeforeAfter: Episode = {
       rate: 0.75,
       to: 3728,
       overlays: [
-        {
-          type: 'recipe',
-          title: 'CARA',
-          items: [
-            {qty: '30 min', name: 'Smart Cook'},
-            {qty: '10 min', name: 'Broil'},
-          ],
-          cta: CTA,
-        },
+        SMART_CARD,
       ],
       sfx: [{src: 'whoosh-med', at: 0, vol: 0.4}],
     },
@@ -345,57 +340,41 @@ export const ayamSmartCook: Episode = {
     {
       src: L,
       from: 2901,
-      to: 2902.1,
+      to: 2909,
+      rate: 2,
       enter: 'zoom',
       zoom: BRAISE,
-      asmr: true,
-      vo: {from: 929.0},
-      overlays: [{type: 'subs', items: [{t: '30 minit', s: 929.0, e: 930.1}]}],
-    },
-    {
-      src: L,
-      from: 2902,
-      to: 2906.9,
-      enter: 'cut',
-      zoom: BRAISE,
-      asmr: true,
-      vo: {from: 933.3},
-      overlays: [{type: 'subs', items: [{t: '25 minit,', s: 933.3, e: 936.0}, {t: 'lepas tu 5 minit terakhir…', s: 936.0, e: 938.3}]}],
+      overlays: [{type: 'title', pos: 'bottom', at: 0.1, lines: [{t: 'BRAISE', hl: true, size: 110}, {t: 'reneh dengan kuah', marker: true, size: 62}]}],
+      sfx: [{src: 'pop-large', at: 0.1, vol: 0.4}],
     },
     {
       src: L,
       from: 2945,
-      to: 2948,
-      enter: 'zoom',
+      to: 2951,
+      rate: 1.5,
+      enter: 'whip',
       faceLeft: true,
       zoom: GLOW,
-      asmr: true,
-      vo: {from: 938.2},
-      overlays: [{type: 'subs', items: [{t: '…dia akan broil', s: 938.4, e: 941.1}]}],
+      overlays: [{type: 'title', pos: 'bottom', at: 0.1, lines: [{t: '+ BROIL', hl: true, size: 110}, {t: 'bakar dari atas', marker: true, size: 62}]}],
+      sfx: [{src: 'pop-large', at: 0.1, vol: 0.4}],
     },
     {
       src: L,
-      from: 3609.8,
-      to: 3616.5,
+      from: 3610,
+      to: 3615,
+      rate: 1.1,
       enter: 'zoom',
       zoom: CHAR,
-      asmr: true,
-      vo: {from: 941.2},
-      overlays: [{type: 'subs', items: [{t: 'Char tak cantik?', s: 941.2, e: 944.4}, {t: 'tambah lagi masa broil', s: 944.4, e: 947.9}]}],
+      overlays: [
+        {type: 'title', pos: 'bottom', at: 0.2, lines: [{t: '2 FUNGSI'}, {t: '1 PERIUK!', hl: true, size: 104}]},
+        {type: 'sparkles', x: 520, y: 700, at: 0.4, count: 12, spread: 320},
+      ],
+      sfx: [{src: 'boom', at: 0.2, vol: 0.45}, {src: 'ding-sparkle', at: 0.4, vol: 0.4}],
     },
     {
       ...END_SHOT,
       overlays: [
-        {
-          type: 'recipe',
-          title: 'SMART COOK',
-          items: [
-            {qty: '25 min', name: 'Braise'},
-            {qty: '5 min', name: 'Broil'},
-          ],
-          note: 'auto, semua dalam 1 periuk',
-          cta: CTA,
-        },
+        SMART_CARD,
       ],
       sfx: [{src: 'whoosh-med', at: 0, vol: 0.4}, {src: 'sting-warm', at: 0.2, vol: 0.4}],
     },
@@ -489,13 +468,7 @@ export const ayamBroil: Episode = {
     {
       ...END_SHOT,
       overlays: [
-        {
-          type: 'recipe',
-          title: 'BROIL',
-          items: [{qty: '10 min', name: 'Ayam percik'}],
-          note: 'bakar dari atas\nchar cantik tanpa arang',
-          cta: CTA,
-        },
+        SMART_CARD,
       ],
       sfx: [{src: 'whoosh-med', at: 0, vol: 0.4}, {src: 'sting-warm', at: 0.2, vol: 0.4}],
     },

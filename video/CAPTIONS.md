@@ -198,8 +198,8 @@ Komen pin (semua part): `Resipi penuh coming soon! Komen "RESIPI" & follow supay
 ```
 Ayam percik tak payah bakar atas arang 🔥🍗
 
-1 ekor ayam belah tengah + kuah percik → Smart Cook 30 minit → siram kuah → broil 10 minit.
-Semua dalam 1 periuk Food Engine Cooven!
+Food Engine Cooven ada function Smart Cook: braise + broil dalam 1 periuk.
+Masak dengan kuah, terus bakar. Tak perlu alat memasak lain!
 
 Nak resipi? Follow & komen "RESIPI" 👇
 
@@ -208,9 +208,9 @@ Nak resipi? Follow & komen "RESIPI" 👇
 
 | | Instagram | TikTok | Threads |
 |---|---|---|---|
-| Ayam percik | Ayam percik 1 periuk, tak payah arang 🔥 Smart Cook 30 min + broil 10 min. Komen "RESIPI" & follow! #ayampercik #foodenginecooven #mukminmasak | Ayam percik tak payah arang 🔥 Komen "RESIPI" 👇 #ayampercik #mukminmasak #fyp | Ayam percik siap dalam 1 periuk, tak payah bakar atas arang 🔥 Siapa nak resipi? |
+| Ayam percik | Ayam percik 1 periuk, tak payah arang 🔥 Smart Cook = braise + broil. Komen "RESIPI" & follow! #ayampercik #foodenginecooven #mukminmasak | Ayam percik tak payah arang 🔥 Komen "RESIPI" 👇 #ayampercik #mukminmasak #fyp | Ayam percik siap dalam 1 periuk, tak payah bakar atas arang 🔥 Siapa nak resipi? |
 | Before → After | Dari ayam mentah jadi ayam percik berbakar 🔥 1 periuk je! Komen "RESIPI" & follow! #ayampercik #foodenginecooven #mukminmasak | Dari ni… jadi ni 🔥 #ayampercik #mukminmasak #fyp | Dari ayam mentah ke ayam percik berbakar, tanpa arang 🔥 |
-| Apa itu Smart Cook? | Smart Cook = braise + broil dalam 1 periuk. Masak & bakar terus, tak tukar bekas 🔥 #foodenginecooven #smartcook #mukminmasak | Apa itu Smart Cook? Braise + broil sekali gus 🔥 #foodenginecooven #mukminmasak #fyp | Smart Cook ni gabung braise dan broil, ayam masak dan terus bakar dalam periuk yang sama. |
+| Apa itu Smart Cook? | Kenapa Smart? Sebab gabungkan 2 fungsi: braise + broil. Tak perlu alat memasak lain 🔥 #foodenginecooven #smartcook #mukminmasak | Apa itu Smart Cook? Braise + broil sekali gus 🔥 #foodenginecooven #mukminmasak #fyp | Smart Cook ni gabung braise dan broil, ayam masak dan terus bakar dalam periuk yang sama. |
 | Broil tu apa? | Broil = pembakaran dari atas. Ayam percik, lasagna, roti cheese 🔥 #foodenginecooven #broil #mukminmasak | Broil tu apa sebenarnya? 🔥 #foodenginecooven #mukminmasak #fyp | Broil tu bakar dari atas je. Sesuai untuk char ayam percik, lasagna, roti cheese. |
 | Soalan live | Perlu perap ayam? Bahan blend apa? Jawapan dari live 👇 Komen "RESIPI" & follow! #ayampercik #mukminmasak | Soalan live: ayam percik 🔥 Komen "RESIPI" 👇 #ayampercik #mukminmasak #fyp | Ramai tanya masa live: perlu perap ayam ke? Bahan blend apa? Ni jawapannya. |
 
