@@ -22,6 +22,8 @@ for (const id of ids) {
     serveUrl, composition, codec: 'h264', outputLocation, browserExecutable,
     crf: sharpen ? 14 : 17, jpegQuality: 100, x264Preset: 'medium', pixelFormat: 'yuv420p',
     concurrency: Number(process.env.CONCURRENCY || 4), audioBitrate: '192k',
+    // 4K phone clips + the long live recording: frame extraction can take longer than the 28 s default
+    timeoutInMilliseconds: Number(process.env.TIMEOUT || 120000),
     chromiumOptions: {gl: 'swangle'},
     onProgress: ({progress}) => process.stdout.write(`\r${id} ${Math.round(progress * 100)}%   `),
   });
