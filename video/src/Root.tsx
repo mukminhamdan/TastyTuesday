@@ -27,7 +27,7 @@ const ROTI_THUMBS = [
 /** ayam percik: cooler grade (cook found the kitchen too orange); zoom keeps the live PiP windows (x > 0.785) out */
 const AYAM_FILTER = 'contrast(1.14) saturate(1.0) brightness(1.03) hue-rotate(-4deg)';
 const AYAM_THUMBS = [
-  {id: 'Thumb-AyamPercik', props: {bg: 'thumbs/ayam-siap.jpg', kicker: 'Smart Cook', title: 'AYAM\nPERCIK', sticker: 'TANPA ARANG!', chips: ['Braise + Broil'], zoom: {s: 1.3, x: 0, y: 0.62}, titleTop: 330, chipsTop: 1330, filter: AYAM_FILTER}},
+  {id: 'Thumb-AyamPercik', props: {bg: 'thumbs/ayam-siap.jpg', kicker: 'Smart Cook', title: 'AYAM\nPERCIK', sticker: 'TANPA ARANG!', chips: ['Braise + Broil'], zoom: {s: 1.06, x: 0.5, y: 0.6}, titleTop: 330, chipsTop: 1400, filter: AYAM_FILTER}},
   {id: 'Thumb-AyamPercik-BA', props: {bg: 'thumbs/ayam-ba.jpg', kicker: 'Ayam Percik', title: 'DARI NI…\nJADI NI!', sticker: '1 PERIUK JE!', zoom: {s: 1, x: 0.5, y: 0.5}, titleTop: 700, filter: AYAM_FILTER}},
 ];
 

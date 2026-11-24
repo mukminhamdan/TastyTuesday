@@ -69,6 +69,44 @@ const tour = (extra: Partial<Shot> = {}): Shot => ({
   ...extra,
 });
 
+/**
+ * Extra 4K phone clips (cook's upload, 2160x3840, no live PiP, no sound used):
+ *   b171139: lid lifts 0-1 s, camera moves in 1-3.6 s, steady top-down of the finished, charred chicken 3.6-7.7 s
+ *            (b171139slow = 3.6-7.7 s frame-interpolated to half speed, 8.2 s long, for the smooth payoff tour)
+ *   b170347: Cooven panel, SMART COOK selected 0.25-1.75 s (digits on the right are zoomed out)
+ *   b170842: through the lid, chicken simmering in bubbling kuah (braise)
+ *   b173145: 0-2.1 s chicken covered in kuah; 2.2-4.5 s the screen shows temp/time (never used); 4.5 s+ broil glow
+ */
+const B_DONE = 'b171139.mp4';
+const B_SLOW = 'b171139slow.mp4';
+const REVEAL = {from: {s: 1.04, x: 0.5, y: 0.5}, to: {s: 1.12, x: 0.5, y: 0.55}};
+const MENU = {from: {s: 1.8, x: 0.35, y: 0.6}, to: {s: 1.9, x: 0.35, y: 0.6}}; // menu list only, digits (x > 0.8) out
+const GLASS = {from: {s: 1.12, x: 0.3, y: 0.2}, to: {s: 1.2, x: 0.3, y: 0.2}};
+const SAUCED = {from: {s: 1.35, x: 0.5, y: 0.25}, to: {s: 1.42, x: 0.5, y: 0.25}}; // screen (y > 0.82) out
+const BROIL_GLOW = {from: {s: 1.2, x: 0.3, y: 0}, to: {s: 1.28, x: 0.3, y: 0}}; // screen (y > 0.86) out
+const STEADY = {from: {s: 1.06, x: 0.5, y: 0.55}, to: {s: 1.1, x: 0.5, y: 0.55}};
+
+/** smooth close tour over the finished 4K chicken: left skin -> charred leg -> bubbling kuah -> right half -> back out */
+const TOUR4K = [
+  {s: 1.08, x: 0.5, y: 0.55},
+  {s: 1.9, x: 0.2, y: 0.45},
+  {s: 1.9, x: 0.1, y: 0.78},
+  {s: 2.1, x: 0.75, y: 0.85},
+  {s: 1.9, x: 0.9, y: 0.35},
+  {s: 1.08, x: 0.5, y: 0.55},
+];
+const tour4k = (extra: Partial<Shot> = {}): Shot => ({
+  src: B_SLOW,
+  from: 0.4,
+  to: 8.15,
+  rate: 0.8,
+  enter: 'zoom',
+  zoom: {from: TOUR4K[0], to: TOUR4K[TOUR4K.length - 1], path: TOUR4K},
+  sfx: [{src: 'riser-1s', at: 0.3, vol: 0.25}],
+  ...extra,
+});
+const END_4K = {src: B_SLOW, from: 3.0, to: 8.1, rate: 1.2, enter: 'cut' as const, zoom: STEADY};
+
 export const ayamPercik: Episode = {
   id: 'AyamPercik',
   series: BRAND,
@@ -80,27 +118,26 @@ export const ayamPercik: Episode = {
   asmrDuck: 1,
   look: 'cinematic',
   shots: [
-    // HOOK: finished, charred ayam percik
+    // HOOK: lid lifts on the finished, charred ayam percik (4K)
     {
-      src: L,
-      from: 3608,
-      to: 3613,
+      src: B_DONE,
+      from: 0.3,
+      to: 4.3,
       enter: 'cut',
-      audio: 0.3,
-      zoom: POT_DONE,
+      zoom: REVEAL,
       overlays: [
         {
           type: 'title',
           pos: 'bottom',
-          at: 0.1,
+          at: 0.6,
           lines: [{t: 'AYAM PERCIK'}, {t: 'TAK PAYAH ARANG!', hl: true, size: 74}, {t: 'Food Engine Cooven', marker: true, size: 60}],
         },
-        {type: 'sparkles', x: 520, y: 700, at: 1.0, count: 10, spread: 300},
+        {type: 'sparkles', x: 520, y: 700, at: 1.2, count: 10, spread: 300},
       ],
       sfx: [
         {src: 'sting', at: 0, vol: 0.5},
-        {src: 'impact', at: 0, vol: 0.45},
-        {src: 'shimmer', at: 1.0, vol: 0.4},
+        {src: 'impact', at: 0.6, vol: 0.45},
+        {src: 'shimmer', at: 1.2, vol: 0.4},
       ],
     },
     {
@@ -135,67 +172,78 @@ export const ayamPercik: Episode = {
       overlays: [
         {type: 'step', n: 3, text: 'Ratakan kuah'},
         {type: 'speed', label: '10x'},
-        {type: 'label', text: 'Smart Cook', x: 520, y: 470, rotate: -4, size: 66, at: 0.6},
       ],
     },
     {
-      src: L,
-      from: 912,
-      to: 930,
-      rate: 4.5,
+      src: 'b170347.mp4',
+      from: 0.2,
+      to: 1.85,
+      rate: 0.6,
       enter: 'zoom',
-      zoom: HANDS,
+      zoom: MENU,
       overlays: [
-        {type: 'step', n: 4, text: 'Tutup & biar masak'},
-        {type: 'speed', label: '4.5x'},
+        {type: 'step', n: 4, text: 'Tutup, pilih Smart Cook'},
+        {type: 'label', text: 'braise + broil', x: 520, y: 470, rotate: -4, size: 64, at: 0.5},
       ],
-      sfx: [{src: 'clock-fast', at: 0, vol: 0.2}],
+      sfx: [{src: 'pop-bubble', at: 0.4, vol: 0.35}],
+    },
+    {
+      src: 'b170842.mp4',
+      from: 34,
+      to: 42,
+      rate: 2,
+      enter: 'zoom',
+      zoom: GLASS,
+      overlays: [
+        {type: 'step', n: 5, text: 'Braise: reneh dengan kuah'},
+        {type: 'speed', label: '2x'},
+      ],
     },
     // half way: spoon kuah over the chicken
     {
       src: L,
       from: 2901,
       to: 2929,
-      rate: 5,
+      rate: 6,
       enter: 'zoom',
-      audio: 0.3,
       zoom: BRAISE,
       overlays: [
-        {type: 'step', n: 5, text: 'Siram kuah atas ayam'},
-        {type: 'speed', label: '5x'},
+        {type: 'step', n: 6, text: 'Siram kuah atas ayam'},
+        {type: 'speed', label: '6x'},
       ],
     },
     {
-      src: L,
-      from: 2936,
-      to: 2945,
-      rate: 2,
+      src: 'b173145.mp4',
+      from: 0,
+      to: 2.1,
       enter: 'zoom',
-      zoom: BROIL_ON,
-      overlays: [
-        {type: 'step', n: 6, text: 'Tukar tudung, broil'},
-        {type: 'label', text: 'auto broil', x: 520, y: 470, rotate: -4, size: 64, at: 1.2},
-      ],
-      sfx: [{src: 'whoosh-soft', at: 0.8, vol: 0.35}],
+      zoom: SAUCED,
+      overlays: [{type: 'step', n: 7, text: 'Tukar tudung, broil'}],
+      sfx: [{src: 'whoosh-soft', at: 1.8, vol: 0.35}],
     },
-    // PAYOFF: close camera tour over the cooked chicken, then the wide view with the title
-    tour({
+    {
+      src: 'b173145.mp4',
+      from: 4.5,
+      to: 9.0,
+      rate: 1.5,
+      enter: 'cut',
+      zoom: BROIL_GLOW,
       overlays: [
-        {type: 'title', pos: 'bottom', at: 9.0, lines: [{t: 'AYAM PERCIK'}, {t: 'SIAP!', hl: true, size: 120}]},
-        {type: 'sparkles', x: 400, y: 700, at: 9.2, count: 12, spread: 320},
+        {type: 'step', n: 7, text: 'Tukar tudung, broil', at: -2},
+        {type: 'label', text: 'broil', x: 520, y: 470, rotate: -4, size: 72, at: 0.3},
       ],
-      sfx: [{src: 'riser-1s', at: 0.3, vol: 0.25}, {src: 'boom', at: 9.0, vol: 0.45}, {src: 'ding-sparkle', at: 9.2, vol: 0.4}],
+    },
+    // PAYOFF: smooth slow-motion camera tour over the finished chicken (4K), ends wide with the title
+    tour4k({
+      overlays: [
+        {type: 'title', pos: 'bottom', at: 7.4, lines: [{t: 'AYAM PERCIK'}, {t: 'SIAP!', hl: true, size: 120}]},
+        {type: 'sparkles', x: 520, y: 700, at: 7.6, count: 12, spread: 320},
+      ],
+      sfx: [{src: 'riser-1s', at: 0.3, vol: 0.25}, {src: 'boom', at: 7.4, vol: 0.45}, {src: 'ding-sparkle', at: 7.6, vol: 0.4}],
     }),
     {
-      src: L,
-      from: 3612,
-      to: 3616.5,
-      rate: 0.9,
-      enter: 'cut',
-      zoom: POT_DONE,
-      overlays: [
-        SMART_CARD,
-      ],
+      ...END_4K,
+      overlays: [SMART_CARD],
       sfx: [{src: 'whoosh-med', at: 0, vol: 0.4}, {src: 'sting-warm', at: 0.2, vol: 0.45}],
     },
   ],
@@ -243,41 +291,45 @@ export const ayamBeforeAfter: Episode = {
       ],
     },
     {
-      src: L,
-      from: 2901,
-      to: 2916,
-      rate: 3,
+      src: 'b170842.mp4',
+      from: 34,
+      to: 42,
+      rate: 2.5,
       enter: 'zoom',
-      zoom: BRAISE,
+      zoom: GLASS,
       overlays: [
-        {type: 'speed', label: '3x'},
+        {type: 'speed', label: '2.5x'},
         {type: 'label', text: 'braise', x: 520, y: 470, rotate: -4, size: 72, at: 0.2},
       ],
     },
     {
-      src: L,
-      from: 2938,
-      to: 2945,
+      src: 'b173145.mp4',
+      from: 4.5,
+      to: 9.0,
       rate: 1.5,
       enter: 'zoom',
-      zoom: BROIL_ON,
+      zoom: BROIL_GLOW,
       overlays: [{type: 'label', text: 'broil', x: 520, y: 470, rotate: -4, size: 72, at: 0.2}],
-      sfx: [{src: 'riser-1s', at: 3.4, vol: 0.35}],
+      sfx: [{src: 'riser-1s', at: 2.0, vol: 0.35}],
     },
-    tour({
-        overlays: [
-          {type: 'title', pos: 'bottom', at: 0.1, lines: [{t: 'JADI NI!', hl: true, size: 120}, {t: 'tak payah arang', marker: true, size: 64}]},
-          {type: 'sparkles', x: 520, y: 700, at: 0.3, count: 12, spread: 320},
-        ],
-        sfx: [{src: 'boom', at: 0.1, vol: 0.45}, {src: 'ding-sparkle', at: 0.3, vol: 0.4}],
-    }),
+    // the lid lifts: JADI NI!
     {
-      ...END_SHOT,
-      rate: 0.75,
-      to: 3615,
+      src: B_DONE,
+      from: 0.3,
+      to: 3.6,
+      enter: 'cut',
+      zoom: REVEAL,
       overlays: [
-        SMART_CARD,
+        {type: 'title', pos: 'bottom', at: 0.5, lines: [{t: 'JADI NI!', hl: true, size: 120}, {t: 'tak payah arang', marker: true, size: 64}]},
+        {type: 'sparkles', x: 520, y: 700, at: 0.7, count: 12, spread: 320},
       ],
+      sfx: [{src: 'boom', at: 0.5, vol: 0.45}, {src: 'ding-sparkle', at: 0.7, vol: 0.4}],
+    },
+    tour4k({enter: 'cut', sfx: []}),
+    {
+      ...END_4K,
+      rate: 1.3,
+      overlays: [SMART_CARD],
       sfx: [{src: 'whoosh-med', at: 0, vol: 0.4}],
     },
   ],
