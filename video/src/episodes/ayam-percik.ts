@@ -72,7 +72,7 @@ const tour = (extra: Partial<Shot> = {}): Shot => ({
 /**
  * Extra 4K phone clips (cook's upload, 2160x3840, no live PiP, no sound used):
  *   b171139: lid lifts 0-1 s, camera moves in 1-3.6 s, steady top-down of the finished, charred chicken 3.6-7.7 s
- *            (b171139slow = 3.6-7.7 s frame-interpolated to half speed, 8.2 s long, for the smooth payoff tour)
+ *            (b171139slow = 3.6-7.6 s frame-interpolated to half speed, 8.0 s long, for the smooth payoff tour)
  *   b170347: Cooven panel, SMART COOK selected 0.25-1.75 s (digits on the right are zoomed out)
  *   b170842: through the lid, chicken simmering in bubbling kuah (braise)
  *   b173145: 0-2.1 s chicken covered in kuah; 2.2-4.5 s the screen shows temp/time (never used); 4.5 s+ broil glow
@@ -98,14 +98,14 @@ const TOUR4K = [
 const tour4k = (extra: Partial<Shot> = {}): Shot => ({
   src: B_SLOW,
   from: 0.4,
-  to: 8.15,
+  to: 7.95,
   rate: 0.8,
   enter: 'zoom',
   zoom: {from: TOUR4K[0], to: TOUR4K[TOUR4K.length - 1], path: TOUR4K},
   sfx: [{src: 'riser-1s', at: 0.3, vol: 0.25}],
   ...extra,
 });
-const END_4K = {src: B_SLOW, from: 3.0, to: 8.1, rate: 1.2, enter: 'cut' as const, zoom: STEADY};
+const END_4K = {src: B_SLOW, from: 3.0, to: 7.95, rate: 1.2, enter: 'cut' as const, zoom: STEADY};
 
 export const ayamPercik: Episode = {
   id: 'AyamPercik',
