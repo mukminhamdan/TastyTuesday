@@ -33,3 +33,7 @@ Aliran kerja penuh: skill **`video-masakan`** (`.claude/skills/video-masakan/SKI
   (25 braise + 5 broil), siram kuah, tudung air fryer, broil 10 min. Perap: tak perlu, boleh kalau nak. Sukatan belum diberi.
   **Jangan tunjuk masa memasak** dan **jangan tunjuk muka** (fokus cara masak sahaja: zoom ke periuk/tangan) dalam video ayam percik; **tiada kotak blur**: zoom supaya tetingkap peserta live (x > 0.785) di luar frame; mesej: Smart Cook = braise + broil, 2 fungsi dalam 1,
   tak perlu alat memasak lain. **Muzik sahaja** (`clipGain: 0`, tiada bunyi live); payoff = satu pergerakan kamera licin (`zoom.path`) ke setiap bahagian ayam + kuah menggelegak.
+- **Ikan bawal stim tofu** (`ikan-bawal.ts`, 3 video): sos = kicap cair, sos tiram, sos ikan, minyak bijan; halia hiris;
+  tofu disusun keliling ikan; Food Engine Cooven **mode steam** (preheat dulu); tabur **bawang putih goreng**.
+  Tiada sukatan/masa diberi. Pengguna: **jangan letak langkah "cek isi dengan garfu"**; label "siap stim!" ok.
+  Gambar hasil (img*.jpg) dipusing 90° dan dijadikan pembuka. `look: 'premium'` + `light` setiap shot untuk betulkan cahaya.

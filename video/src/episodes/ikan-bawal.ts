@@ -53,15 +53,16 @@ const photoTour = (extra: Partial<Shot> = {}): Shot => ({
   ...extra,
 });
 
-/** recap card: method only (no amounts or times until the cook gives them) */
+/** recap card (from the cook): kicap cair, sos tiram, sos ikan, minyak bijan; mode steam; bawang putih goreng. No amounts/times. */
 const RECAP: Overlay = {
   type: 'recipe',
   title: 'IKAN BAWAL STIM TOFU',
   items: [
-    {qty: 'SOS', name: 'bancuh & lumur ikan'},
+    {qty: 'SOS', name: 'kicap cair + sos tiram'},
+    {qty: 'SOS', name: 'sos ikan + minyak bijan'},
     {qty: 'TOFU', name: 'susun keliling ikan'},
-    {qty: 'STIM', name: 'Food Engine Cooven'},
-    {qty: 'TABUR', name: 'topping'},
+    {qty: 'STIM', name: 'mode steam Cooven'},
+    {qty: 'TABUR', name: 'bawang putih goreng'},
   ],
   cta: CTA,
 };
@@ -117,6 +118,17 @@ export const ikanBawal: Episode = {
       overlays: [
         {type: 'step', n: 1, text: 'Bancuh sos'},
         {type: 'speed', label: '20x'},
+        {
+          type: 'title',
+          pos: 'top',
+          at: 0.3,
+          lines: [
+            {t: 'kicap cair', marker: true, size: 62},
+            {t: 'sos tiram', marker: true, size: 62},
+            {t: 'sos ikan', marker: true, size: 62},
+            {t: 'minyak bijan', marker: true, size: 62},
+          ],
+        },
       ],
       sfx: [{src: 'pop-bubble', at: 1.2, vol: 0.3}],
     },
@@ -169,7 +181,7 @@ export const ikanBawal: Episode = {
       light: 1.05,
       zoom: PANEL,
       overlays: [
-        {type: 'step', n: 5, text: 'Preheat Cooven'},
+        {type: 'step', n: 5, text: 'Preheat, mode steam'},
         {type: 'speed', label: '2x'},
       ],
     },
@@ -200,16 +212,6 @@ export const ikanBawal: Episode = {
     },
     {
       src: B,
-      from: 13.5,
-      to: 18,
-      rate: 1.2,
-      enter: 'zoom',
-      light: 1.05,
-      zoom: HAND4K,
-      overlays: [{type: 'step', n: 7, text: 'Cek isi dengan garfu'}],
-    },
-    {
-      src: B,
       from: 42,
       to: 58,
       rate: 3,
@@ -217,7 +219,7 @@ export const ikanBawal: Episode = {
       light: 1.05,
       zoom: HAND4K,
       overlays: [
-        {type: 'step', n: 8, text: 'Angkat, tabur topping'},
+        {type: 'step', n: 7, text: 'Tabur bawang putih goreng'},
         {type: 'speed', label: '3x'},
       ],
       sfx: [{src: 'pop-bubble', at: 1.5, vol: 0.3}],
@@ -293,7 +295,7 @@ export const ikanBawalBeforeAfter: Episode = {
       zoom: HAND4K,
       overlays: [
         {type: 'speed', label: '3.5x'},
-        {type: 'label', text: 'tabur topping', x: 520, y: 470, rotate: -4, size: 64, at: 0.2},
+        {type: 'label', text: 'bawang putih goreng', x: 520, y: 470, rotate: -4, size: 60, at: 0.2},
       ],
       sfx: [{src: 'riser-1s', at: 3.0, vol: 0.35}],
     },
@@ -359,7 +361,7 @@ export const ikanBawal3Langkah: Episode = {
       light: 1.05,
       zoom: HAND4K,
       overlays: [
-        {type: 'step', n: 2, text: 'Stim dalam Cooven'},
+        {type: 'step', n: 2, text: 'Mode steam Cooven'},
         {type: 'speed', label: '3.5x'},
       ],
     },
@@ -370,7 +372,7 @@ export const ikanBawal3Langkah: Episode = {
       enter: 'cut',
       light: 1.05,
       zoom: HAND4K,
-      overlays: [{type: 'step', n: 2, text: 'Stim dalam Cooven', at: -2}],
+      overlays: [{type: 'step', n: 2, text: 'Mode steam Cooven', at: -2}],
       sfx: [{src: 'whoosh-med', at: 0, vol: 0.4}],
     },
     {
@@ -382,7 +384,7 @@ export const ikanBawal3Langkah: Episode = {
       light: 1.05,
       zoom: HAND4K,
       overlays: [
-        {type: 'step', n: 3, text: 'Tabur topping'},
+        {type: 'step', n: 3, text: 'Tabur bawang putih goreng'},
         {type: 'speed', label: '3x'},
       ],
     },
