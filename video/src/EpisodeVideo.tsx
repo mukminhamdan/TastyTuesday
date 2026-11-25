@@ -2,7 +2,7 @@ import React, {useMemo} from 'react';
 import {AbsoluteFill, Audio, Sequence, staticFile} from 'remotion';
 import {Shade, SafeZoneGuide, SeriesChrome} from './components/Chrome';
 import {EndNext, Finale, RecipeCard} from './components/EndCards';
-import {CookTimer, KineticTitle, MarkerCircle, MarkerLabel, Sparkles, SpeedBadge, StepCard, Subtitles} from './components/Graphics';
+import {CookTimer, KineticTitle, MarkerCircle, MarkerLabel, QuoteText, Sparkles, SpeedBadge, StepCard, Subtitles} from './components/Graphics';
 import {ShotView} from './components/ShotView';
 import {FPS} from './lib/theme';
 import {layout, musicCurve, sec, type PlacedShot} from './lib/timeline';
@@ -45,6 +45,8 @@ const OverlayView: React.FC<{o: Overlay; shot: PlacedShot}> = ({o, shot}) => {
       return <Finale tiles={o.tiles} durFrames={shot.frames} />;
     case 'subs':
       return <Subtitles items={o.items} origin={shot.vo ? shot.vo.from : shot.from} />;
+    case 'quote':
+      return <QuoteText lines={o.lines} at={o.at} shown={o.shown} by={o.by} />;
     case 'recipe':
       return <RecipeCard title={o.title} items={o.items} note={o.note} cta={o.cta} durFrames={shot.frames} />;
   }

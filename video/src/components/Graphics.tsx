@@ -463,3 +463,103 @@ export const Subtitles: React.FC<{items: {t: string; s: number; e: number}[]; or
     </div>
   );
 };
+
+/* ------------------------------------------------------------------ */
+/* Quote: calm, premium text over B-roll. Words drift in one by one.   */
+/* `shown` leading lines are already on screen (quote continues from    */
+/* the previous shot), the rest animate from `at`.                      */
+/* ------------------------------------------------------------------ */
+export const QuoteText: React.FC<{
+  lines: {t: string; accent?: boolean}[];
+  at?: number;
+  shown?: number;
+  by?: string;
+}> = ({lines, at = 0, shown = 0, by}) => {
+  const {f} = useLocal(at);
+  const bg = shown > 0 ? 1 : interpolate(f, [0, 12], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  let wordIndex = 0;
+  const anim = (idx: number) => {
+    const k = interpolate(f - idx * 4, [0, 12], [0, 1], {
+      extrapolateLeft: 'clamp',
+      extrapolateRight: 'clamp',
+      easing: Easing.out(Easing.cubic),
+    });
+    return {opacity: k, transform: `translateY(${(1 - k) * 26}px)`, filter: k < 0.98 ? `blur(${((1 - k) * 10).toFixed(1)}px)` : undefined};
+  };
+  const total = lines.slice(shown).reduce((n, l) => n + l.t.split(' ').length, 0);
+  // one size per style, fitted so the longest line stays on one row
+  const maxLen = (acc: boolean) => Math.max(1, ...lines.filter((l) => !!l.accent === acc).map((l) => l.t.length));
+  const bodySize = Math.min(74, Math.floor(800 / (maxLen(false) * 0.6)));
+  const accentSize = Math.min(100, Math.floor(800 / (maxLen(true) * 0.6)));
+  return (
+    <AbsoluteFill style={{pointerEvents: 'none'}}>
+      <AbsoluteFill
+        style={{
+          opacity: bg,
+          background: 'radial-gradient(ellipse 95% 42% at 50% 47%, rgba(10,8,6,0.62) 0%, rgba(10,8,6,0.32) 55%, rgba(10,8,6,0) 100%)',
+        }}
+      />
+      <div
+        style={{
+          position: 'absolute',
+          left: SAFE.left + 20,
+          width: SAFE_W - 40,
+          top: 0,
+          bottom: 0,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          paddingBottom: 140,
+          gap: 4,
+        }}
+      >
+        {lines.map((line, li) => {
+          const words = line.t.split(' ');
+          const animated = li >= shown;
+          const start = wordIndex;
+          if (animated) wordIndex += words.length;
+          const size = line.accent ? accentSize : bodySize;
+          return (
+            <div key={li} style={{display: 'flex', flexWrap: 'nowrap', justifyContent: 'center', columnGap: size * 0.26, marginTop: line.accent ? 8 : 0}}>
+              {words.map((w, wi) => (
+                <span
+                  key={wi}
+                  style={{
+                    fontFamily: line.accent ? FONT_MARKER : FONT_BOLD,
+                    fontWeight: line.accent ? 400 : 800,
+                    fontSize: size,
+                    lineHeight: 1.12,
+                    letterSpacing: line.accent ? 0 : -1,
+                    color: line.accent ? C.mustard : C.white,
+                    textShadow: '0 4px 18px rgba(0,0,0,0.55), 0 2px 4px rgba(0,0,0,0.5)',
+                    display: 'inline-block',
+                    ...(animated ? anim(start + wi) : {}),
+                  }}
+                >
+                  {w}
+                </span>
+              ))}
+            </div>
+          );
+        })}
+        {by ? (
+          <div
+            style={{
+              marginTop: 26,
+              fontFamily: FONT_BOLD,
+              fontWeight: 800,
+              fontSize: 34,
+              letterSpacing: 4,
+              color: C.cream,
+              opacity: interpolate(f - total * 4, [4, 18], [0, 0.9], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}),
+              textShadow: '0 2px 10px rgba(0,0,0,0.6)',
+            }}
+          >
+            {by}
+          </div>
+        ) : null}
+      </div>
+    </AbsoluteFill>
+  );
+};

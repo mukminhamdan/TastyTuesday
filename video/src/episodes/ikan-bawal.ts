@@ -26,22 +26,23 @@ const IMG2 = 'img202847.jpg';
 const CTA = 'Nak resipi?\nFollow & komen "RESIPI"';
 
 // framings (source fractions). L: keep the cloth (y > 0.88) out -> bottom edge y + (1 - y) / s < 0.88
-const SAUCE = {from: {s: 1.6, x: 0.3, y: 0.62}, to: {s: 1.68, x: 0.3, y: 0.62}};
-const GINGER = {from: {s: 2.0, x: 0.2, y: 0.55}, to: {s: 2.1, x: 0.2, y: 0.55}}; // the slicing on the left of the board
-const BENCH = {from: {s: 1.5, x: 0.25, y: 0.6}, to: {s: 1.58, x: 0.25, y: 0.6}};
-const PLATE_RAW = {from: {s: 1.45, x: 0.35, y: 0.58}, to: {s: 1.55, x: 0.35, y: 0.58}};
-const HAND4K = {from: {s: 1.06, x: 0.5, y: 0.5}, to: {s: 1.14, x: 0.5, y: 0.5}};
+const SAUCE = {from: {s: 1.3, x: 0.3, y: 0.45}, to: {s: 1.35, x: 0.3, y: 0.45}};
+const GINGER = {from: {s: 1.6, x: 0.15, y: 0.55}, to: {s: 1.65, x: 0.15, y: 0.55}}; // the slicing on the left of the board
+const BENCH = {from: {s: 1.25, x: 0.25, y: 0.38}, to: {s: 1.3, x: 0.25, y: 0.4}};
+const PLATE_RAW = {from: {s: 1.3, x: 0.35, y: 0.46}, to: {s: 1.36, x: 0.35, y: 0.46}};
+const HAND4K = {from: {s: 1.02, x: 0.5, y: 0.5}, to: {s: 1.07, x: 0.5, y: 0.5}};
+const DRIFT = {from: {s: 1.0, x: 0.5, y: 0.5}, to: {s: 1.05, x: 0.5, y: 0.5}}; // quote videos: barely moving
 const PANEL = {from: {s: 1.1, x: 0.5, y: 0.4}, to: {s: 1.2, x: 0.5, y: 0.4}};
 const PHOTO_IN = {from: {s: 1.0, x: 0.5, y: 0.5}, to: {s: 1.12, x: 0.5, y: 0.42}};
 const PHOTO_END = {from: {s: 1.05, x: 0.5, y: 0.5}, to: {s: 1.1, x: 0.5, y: 0.5}};
 
 /** smooth tour over the cook's photo: whole dish -> head -> tofu + halia -> tail -> back out */
 const PHOTO_TOUR = [
-  {s: 1.02, x: 0.5, y: 0.5},
-  {s: 1.9, x: 0.5, y: 0.2},
-  {s: 1.9, x: 0.3, y: 0.5},
-  {s: 1.8, x: 0.6, y: 0.88},
-  {s: 1.02, x: 0.5, y: 0.5},
+  {s: 1.0, x: 0.5, y: 0.5},
+  {s: 1.4, x: 0.5, y: 0.22},
+  {s: 1.4, x: 0.35, y: 0.5},
+  {s: 1.35, x: 0.55, y: 0.85},
+  {s: 1.0, x: 0.5, y: 0.5},
 ];
 const photoTour = (extra: Partial<Shot> = {}): Shot => ({
   src: IMG2,
@@ -244,13 +245,67 @@ export const ikanBawal: Episode = {
   ],
 };
 
-/** 2. Before -> after (music only) */
-export const ikanBawalBeforeAfter: Episode = {
+const BY = '— MUKMIN MASAK';
+
+/** 2. Quote video: "Tak perlu ke restoran untuk makan ikan stim sedap. Masak je kat rumah." (~18 s) */
+export const ikanBawalQuote1: Episode = {
   ...COMMON,
-  id: 'IkanBawal-BeforeAfter',
-  name: 'Ikan bawal before after',
+  id: 'IkanBawal-Quote1',
+  name: 'Ikan bawal quote restoran',
   music: MUSIC.ukuleleCeria.file,
   musicStart: MUSIC.ukuleleCeria.start,
+  shots: [
+    {
+      src: C,
+      from: 0,
+      to: 3.6,
+      enter: 'cut',
+      light: 1.05,
+      zoom: DRIFT,
+      overlays: [{type: 'quote', at: 0.5, lines: [{t: 'Tak perlu ke restoran'}]}],
+      sfx: [{src: 'whoosh-soft', at: 0, vol: 0.35}],
+    },
+    {
+      src: B,
+      from: 42,
+      to: 54,
+      rate: 2.4,
+      enter: 'cut',
+      light: 1.05,
+      zoom: DRIFT,
+      overlays: [
+        {type: 'quote', at: 0.2, shown: 1, lines: [{t: 'Tak perlu ke restoran'}, {t: 'untuk makan'}, {t: 'ikan stim sedap.', accent: true}]},
+      ],
+      sfx: [{src: 'shimmer', at: 1.2, vol: 0.3}],
+    },
+    {
+      src: IMG2,
+      from: 0,
+      to: 5,
+      enter: 'cut',
+      zoom: DRIFT,
+      overlays: [{type: 'quote', at: 0.3, lines: [{t: 'Masak je kat rumah.'}, {t: 'Ikan Bawal Stim Tofu', accent: true}], by: BY}],
+      sfx: [{src: 'whoosh-soft', at: 0, vol: 0.3}, {src: 'ding-sparkle', at: 1.2, vol: 0.3}],
+    },
+    {
+      src: IMG1,
+      from: 0,
+      to: 4,
+      enter: 'cut',
+      zoom: PHOTO_END,
+      overlays: [RECAP],
+      sfx: [{src: 'whoosh-med', at: 0, vol: 0.35}],
+    },
+  ],
+};
+
+/** 3. Quote video: "Masakan paling sedap bukan yang paling mahal, tapi yang dimasak dengan sepenuh hati." (~20 s) */
+export const ikanBawalQuote2: Episode = {
+  ...COMMON,
+  id: 'IkanBawal-Quote2',
+  name: 'Ikan bawal quote sepenuh hati',
+  music: MUSIC.ukuleleIklan.file,
+  musicStart: MUSIC.ukuleleIklan.start,
   shots: [
     {
       src: L,
@@ -260,142 +315,53 @@ export const ikanBawalBeforeAfter: Episode = {
       enter: 'cut',
       light: 1.08,
       zoom: PLATE_RAW,
-      overlays: [{type: 'title', pos: 'bottom', at: 0.1, lines: [{t: 'DARI NI…', size: 110}]}],
-      sfx: [{src: 'sting', at: 0, vol: 0.45}],
+      overlays: [{type: 'quote', at: 0.4, lines: [{t: 'Masakan paling sedap'}]}],
+      sfx: [{src: 'whoosh-soft', at: 0, vol: 0.35}],
     },
     {
       src: A,
       from: 117,
       to: 131,
-      rate: 4,
-      enter: 'zoom',
+      rate: 3.5,
+      enter: 'cut',
       light: 1.05,
-      zoom: HAND4K,
-      overlays: [
-        {type: 'speed', label: '4x'},
-        {type: 'label', text: 'stim', x: 520, y: 470, rotate: -4, size: 72, at: 0.2},
-      ],
+      zoom: DRIFT,
+      overlays: [{type: 'quote', at: 0.2, shown: 1, lines: [{t: 'Masakan paling sedap'}, {t: 'bukan yang paling mahal,'}]}],
     },
     {
       src: C,
       from: 0,
-      to: 3.2,
+      to: 3.6,
       enter: 'cut',
       light: 1.05,
-      zoom: HAND4K,
-      sfx: [{src: 'whoosh-med', at: 0, vol: 0.4}],
-    },
-    {
-      src: B,
-      from: 42,
-      to: 56,
-      rate: 3.5,
-      enter: 'zoom',
-      light: 1.05,
-      zoom: HAND4K,
+      zoom: DRIFT,
       overlays: [
-        {type: 'speed', label: '3.5x'},
-        {type: 'label', text: 'bawang putih goreng', x: 520, y: 470, rotate: -4, size: 60, at: 0.2},
+        {
+          type: 'quote',
+          at: 0.2,
+          shown: 2,
+          lines: [{t: 'Masakan paling sedap'}, {t: 'bukan yang paling mahal,'}, {t: 'tapi yang dimasak'}, {t: 'dengan sepenuh hati.', accent: true}],
+        },
       ],
-      sfx: [{src: 'riser-1s', at: 3.0, vol: 0.35}],
+      sfx: [{src: 'shimmer', at: 1.6, vol: 0.3}],
     },
-    photoTour({
-      enter: 'cut',
-      overlays: [
-        {type: 'title', pos: 'bottom', at: 0.2, lines: [{t: 'JADI NI!', hl: true, size: 120}, {t: 'ikan bawal stim tofu', marker: true, size: 60}]},
-        {type: 'sparkles', x: 520, y: 760, at: 0.4, count: 12, spread: 320},
-      ],
-      sfx: [{src: 'boom', at: 0.2, vol: 0.45}, {src: 'ding-sparkle', at: 0.4, vol: 0.4}],
-    }),
-    {
-      src: IMG1,
-      from: 0,
-      to: 4,
-      enter: 'cut',
-      zoom: PHOTO_END,
-      overlays: [RECAP],
-      sfx: [{src: 'whoosh-med', at: 0, vol: 0.4}],
-    },
-  ],
-};
-
-/** 3. "3 langkah je" - quick version */
-export const ikanBawal3Langkah: Episode = {
-  ...COMMON,
-  id: 'IkanBawal-3Langkah',
-  name: 'Ikan bawal stim 3 langkah',
-  music: MUSIC.ukuleleIklan.file,
-  musicStart: MUSIC.ukuleleIklan.start,
-  shots: [
     {
       src: IMG2,
       from: 0,
-      to: 2.8,
+      to: 4.5,
       enter: 'cut',
-      zoom: PHOTO_IN,
+      zoom: DRIFT,
       overlays: [
-        hookTitle([{t: 'IKAN STIM'}, {t: '3 LANGKAH JE!', hl: true, size: 96}, {t: 'Food Engine Cooven', marker: true, size: 60}]),
-        {type: 'sparkles', x: 520, y: 760, at: 0.8, count: 10, spread: 300},
+        {
+          type: 'quote',
+          at: -1,
+          shown: 4,
+          lines: [{t: 'Masakan paling sedap'}, {t: 'bukan yang paling mahal,'}, {t: 'tapi yang dimasak'}, {t: 'dengan sepenuh hati.', accent: true}],
+          by: BY,
+        },
       ],
-      sfx: [{src: 'sting', at: 0, vol: 0.5}, {src: 'impact', at: 0.2, vol: 0.4}],
+      sfx: [{src: 'whoosh-soft', at: 0, vol: 0.3}],
     },
-    {
-      src: L,
-      from: 540,
-      to: 618,
-      rate: 18,
-      enter: 'glitch',
-      light: 1.08,
-      zoom: BENCH,
-      overlays: [
-        {type: 'step', n: 1, text: 'Susun ikan & tofu'},
-        {type: 'speed', label: '18x'},
-      ],
-    },
-    {
-      src: A,
-      from: 117,
-      to: 131,
-      rate: 3.5,
-      enter: 'zoom',
-      light: 1.05,
-      zoom: HAND4K,
-      overlays: [
-        {type: 'step', n: 2, text: 'Mode steam Cooven'},
-        {type: 'speed', label: '3.5x'},
-      ],
-    },
-    {
-      src: C,
-      from: 0,
-      to: 3.2,
-      enter: 'cut',
-      light: 1.05,
-      zoom: HAND4K,
-      overlays: [{type: 'step', n: 2, text: 'Mode steam Cooven', at: -2}],
-      sfx: [{src: 'whoosh-med', at: 0, vol: 0.4}],
-    },
-    {
-      src: B,
-      from: 42,
-      to: 58,
-      rate: 3.2,
-      enter: 'zoom',
-      light: 1.05,
-      zoom: HAND4K,
-      overlays: [
-        {type: 'step', n: 3, text: 'Tabur bawang putih goreng'},
-        {type: 'speed', label: '3x'},
-      ],
-    },
-    photoTour({
-      to: 6,
-      overlays: [
-        {type: 'title', pos: 'bottom', at: 4.4, lines: [{t: 'SIAP!', hl: true, size: 120}]},
-        {type: 'sparkles', x: 520, y: 760, at: 4.6, count: 12, spread: 320},
-      ],
-      sfx: [{src: 'riser-1s', at: 0.2, vol: 0.25}, {src: 'boom', at: 4.4, vol: 0.45}, {src: 'ding-sparkle', at: 4.6, vol: 0.4}],
-    }),
     {
       src: IMG1,
       from: 0,
@@ -403,9 +369,9 @@ export const ikanBawal3Langkah: Episode = {
       enter: 'cut',
       zoom: PHOTO_END,
       overlays: [RECAP],
-      sfx: [{src: 'whoosh-med', at: 0, vol: 0.4}],
+      sfx: [{src: 'whoosh-med', at: 0, vol: 0.35}],
     },
   ],
 };
 
-export const IKAN_BAWAL = [ikanBawal, ikanBawalBeforeAfter, ikanBawal3Langkah];
+export const IKAN_BAWAL = [ikanBawal, ikanBawalQuote1, ikanBawalQuote2];

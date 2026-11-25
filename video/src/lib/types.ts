@@ -76,6 +76,15 @@ export type Overlay =
       items: {t: string; s: number; e: number}[];
     }
   | {
+      /** calm quote over B-roll; `shown` = leading lines already on screen (continuing from the previous shot) */
+      type: 'quote';
+      lines: {t: string; accent?: boolean}[];
+      at?: number;
+      shown?: number;
+      /** small signature under the quote, e.g. "— MUKMIN MASAK" */
+      by?: string;
+    }
+  | {
       type: 'finale';
       tiles: {src: string; from: number; rate?: number; label: string; focus?: Focus}[];
     };
