@@ -27,8 +27,9 @@ const CTA = 'Nak resipi?\nFollow & komen "RESIPI"';
 
 // framings (source fractions). L: keep the cloth (y > 0.88) out -> bottom edge y + (1 - y) / s < 0.88
 const SAUCE = {from: {s: 1.6, x: 0.3, y: 0.62}, to: {s: 1.68, x: 0.3, y: 0.62}};
+const GINGER = {from: {s: 2.0, x: 0.2, y: 0.55}, to: {s: 2.1, x: 0.2, y: 0.55}}; // the slicing on the left of the board
 const BENCH = {from: {s: 1.5, x: 0.25, y: 0.6}, to: {s: 1.58, x: 0.25, y: 0.6}};
-const PLATE_RAW = {from: {s: 1.7, x: 0.35, y: 0.58}, to: {s: 1.85, x: 0.35, y: 0.58}};
+const PLATE_RAW = {from: {s: 1.45, x: 0.35, y: 0.58}, to: {s: 1.55, x: 0.35, y: 0.58}};
 const HAND4K = {from: {s: 1.06, x: 0.5, y: 0.5}, to: {s: 1.14, x: 0.5, y: 0.5}};
 const PANEL = {from: {s: 1.1, x: 0.5, y: 0.4}, to: {s: 1.2, x: 0.5, y: 0.4}};
 const PHOTO_IN = {from: {s: 1.0, x: 0.5, y: 0.5}, to: {s: 1.12, x: 0.5, y: 0.42}};
@@ -121,15 +122,15 @@ export const ikanBawal: Episode = {
     },
     {
       src: L,
-      from: 360,
+      from: 370,
       to: 392,
-      rate: 8,
+      rate: 6,
       enter: 'zoom',
       light: 1.08,
-      zoom: BENCH,
+      zoom: GINGER,
       overlays: [
         {type: 'step', n: 2, text: 'Hiris halia'},
-        {type: 'speed', label: '8x'},
+        {type: 'speed', label: '6x'},
       ],
     },
     {
