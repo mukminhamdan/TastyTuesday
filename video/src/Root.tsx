@@ -6,6 +6,7 @@ import {Thumbnail} from './Thumbnail';
 import {resepiDohPizza} from './episodes/resepi-doh-pizza';
 import {ROTI_MANIS} from './episodes/roti-manis';
 import {AYAM_PERCIK} from './episodes/ayam-percik';
+import {IKAN_BAWAL} from './episodes/ikan-bawal';
 import {pizzaEp1} from './episodes/pizza-ep1';
 import {pizzaEp2} from './episodes/pizza-ep2';
 import {meeGoreng} from './episodes/mee-goreng';
@@ -31,7 +32,7 @@ const AYAM_THUMBS = [
   {id: 'Thumb-AyamPercik-BA', props: {bg: 'thumbs/ayam-ba.jpg', kicker: 'Ayam Percik', title: 'DARI NI…\nJADI NI!', sticker: '1 PERIUK JE!', zoom: {s: 1, x: 0.5, y: 0.5}, titleTop: 700, filter: AYAM_FILTER}},
 ];
 
-export const EPISODES = [pizzaEp1, pizzaEp2, meeGoreng, telurDadar, resepiDohPizza, ...ROTI_MANIS, ...AYAM_PERCIK];
+export const EPISODES = [pizzaEp1, pizzaEp2, meeGoreng, telurDadar, resepiDohPizza, ...ROTI_MANIS, ...AYAM_PERCIK, ...IKAN_BAWAL];
 
 const PIZZA_SERIES = [pizzaEp1, pizzaEp2];
 

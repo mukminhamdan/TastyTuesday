@@ -4,7 +4,7 @@ import {bundle} from '@remotion/bundler';
 import {renderMedia, selectComposition} from '@remotion/renderer';
 import path from 'node:path';
 import {normalise} from './loudnorm.mjs';
-const ids = process.argv.slice(2).length ? process.argv.slice(2) : ['AyamPercik', 'AyamPercik-BeforeAfter'];
+const ids = process.argv.slice(2).length ? process.argv.slice(2) : ['IkanBawal', 'IkanBawal-BeforeAfter', 'IkanBawal-3Langkah'];
 const browserExecutable = process.env.CHROME_PATH;
 const serveUrl = process.env.BUNDLE || (await bundle({entryPoint: path.resolve('src/index.ts')}));
 for (const id of ids) {

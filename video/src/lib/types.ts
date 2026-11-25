@@ -99,6 +99,8 @@ export type Shot = {
   /** voice-over: play this audio (rate 1) instead of the clip's own sound, e.g. the cook talking over B-roll */
   vo?: {src?: string; from: number; vol?: number};
   enter?: 'cut' | 'zoom' | 'whip' | 'glitch';
+  /** lighting fix for this shot: brightness multiplier on top of the look (e.g. 1.1 for a dim clip) */
+  light?: number;
   /** the person's face is visible on the left: move top badges to the right so nothing covers it */
   faceLeft?: boolean;
   overlays?: Overlay[];
@@ -122,7 +124,7 @@ export type Episode = {
   /** blur this source-fraction box on every shot (picture-in-picture of other people in a live recording) */
   blurBox?: {x: number; y: number; w: number; h: number};
   /** colour look for the footage (see LOOKS in theme.ts), default 'default' */
-  look?: 'default' | 'warm' | 'cinematic';
+  look?: 'default' | 'warm' | 'cinematic' | 'premium';
   /** multiplier on every clip's own audio (default 1). Lower = music leads, kitchen noise stays in the background. */
   clipGain?: number;
   /** how far the music dips under ASMR shots (fraction of the bed, default 0.5) */

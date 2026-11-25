@@ -2,6 +2,7 @@ import React from 'react';
 import {
   AbsoluteFill,
   Easing,
+  Img,
   OffthreadVideo,
   interpolate,
   random,
@@ -27,6 +28,21 @@ const CinematicGrade: React.FC = () => (
   </AbsoluteFill>
 );
 
+/** 'premium' look: clean, bright food grade - gentle warm highlights, soft shadows, light vignette */
+const PremiumGrade: React.FC = () => (
+  <AbsoluteFill style={{pointerEvents: 'none'}}>
+    {/* soft lift so the blacks are rich but never crushed */}
+    <AbsoluteFill style={{backgroundColor: 'rgb(16, 22, 28)', mixBlendMode: 'lighten', opacity: 0.6}} />
+    {/* a touch of golden warmth for the food, kept light */}
+    <AbsoluteFill style={{backgroundColor: 'rgb(255, 214, 170)', mixBlendMode: 'soft-light', opacity: 0.18}} />
+    {/* soft top light, like a window over the bench */}
+    <AbsoluteFill style={{background: 'radial-gradient(ellipse 80% 55% at 50% 40%, rgba(255,250,240,0.16) 0%, rgba(255,250,240,0) 70%)', mixBlendMode: 'screen'}} />
+    <AbsoluteFill style={{background: 'radial-gradient(ellipse 80% 65% at 50% 52%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.42) 100%)'}} />
+  </AbsoluteFill>
+);
+
+const isImage = (src: string) => /\.(jpe?g|png|webp)$/i.test(src);
+
 export const FramedVideo: React.FC<{
   src: string;
   from: number;
@@ -38,7 +54,9 @@ export const FramedVideo: React.FC<{
   look?: Look;
   /** source-fraction rectangle to blur (e.g. other people's picture-in-picture in a screen recording) */
   blurBox?: {x: number; y: number; w: number; h: number};
-}> = ({src, from, rate = 1, focus, volume = 0, extraScale = 0, style, look = 'default', blurBox}) => {
+  /** per-shot lighting fix: brightness multiplier (1 = as graded) */
+  light?: number;
+}> = ({src, from, rate = 1, focus, volume = 0, extraScale = 0, style, look = 'default', blurBox, light = 1}) => {
   const s = focus.s * (1 + extraScale);
   const videoStyle: React.CSSProperties = {
     width: W,
@@ -49,15 +67,20 @@ export const FramedVideo: React.FC<{
   };
   return (
     <AbsoluteFill style={{overflow: 'hidden', ...style}}>
-      <OffthreadVideo
-        src={staticFile(`footage/${src}`)}
-        trimBefore={Math.round(from * FPS)}
-        playbackRate={rate}
-        muted={volume <= 0}
-        volume={volume}
-        style={{...videoStyle, filter: LOOKS[look]}}
-      />
+      {isImage(src) ? (
+        <Img src={staticFile(`footage/${src}`)} style={{...videoStyle, filter: `${LOOKS[look]} brightness(${light})`}} />
+      ) : (
+        <OffthreadVideo
+          src={staticFile(`footage/${src}`)}
+          trimBefore={Math.round(from * FPS)}
+          playbackRate={rate}
+          muted={volume <= 0}
+          volume={volume}
+          style={{...videoStyle, filter: `${LOOKS[look]}${light !== 1 ? ` brightness(${light})` : ''}`}}
+        />
+      )}
       {look === 'cinematic' ? <CinematicGrade /> : null}
+      {look === 'premium' ? <PremiumGrade /> : null}
       {blurBox ? (
         <AbsoluteFill>
           <OffthreadVideo
@@ -141,6 +164,7 @@ export const ShotView: React.FC<{shot: Shot & {frames: number}; clipGain?: numbe
           volume={(shot.audio ?? 0) * clipGain}
           look={look}
           blurBox={blurBox}
+          light={shot.light}
         />
       </AbsoluteFill>
       {flash > 0 ? <AbsoluteFill style={{backgroundColor: `rgba(255,246,229,${flash})`}} /> : null}
