@@ -32,6 +32,14 @@ const AYAM_THUMBS = [
   {id: 'Thumb-AyamPercik-BA', props: {bg: 'thumbs/ayam-ba.jpg', kicker: 'Ayam Percik', title: 'DARI NI…\nJADI NI!', sticker: '1 PERIUK JE!', zoom: {s: 1, x: 0.5, y: 0.5}, titleTop: 700, filter: AYAM_FILTER}},
 ];
 
+/** ikan bawal stim tofu: premium food look, same as the videos */
+const IKAN_FILTER = 'contrast(1.1) saturate(1.12) brightness(1.06)';
+const IKAN_THUMBS = [
+  {id: 'Thumb-IkanBawal', props: {bg: 'thumbs/ikan-202844.jpg', kicker: 'Mode Steam', title: 'IKAN\nBAWAL', sticker: 'STIM TOFU', chips: ['4 sos je', 'Food Engine Cooven'], zoom: {s: 1.04, x: 0.5, y: 0.5}, titleTop: 380, chipsTop: 1330, filter: IKAN_FILTER}},
+  {id: 'Thumb-IkanBawal-Quote1', props: {bg: 'thumbs/ikan-stim.jpg', kicker: 'Ikan Stim', title: 'TAK PERLU\nKE RESTORAN', titleSize: 116, sticker: 'MASAK SENDIRI!', zoom: {s: 1.04, x: 0.5, y: 0.55}, titleTop: 380, filter: IKAN_FILTER}},
+  {id: 'Thumb-IkanBawal-Quote2', props: {bg: 'thumbs/ikan-202847.jpg', kicker: 'Masak dengan', title: 'SEPENUH\nHATI', sticker: 'IKAN BAWAL STIM', zoom: {s: 1.55, x: 0.5, y: 0.3}, titleTop: 380, filter: IKAN_FILTER}},
+];
+
 export const EPISODES = [pizzaEp1, pizzaEp2, meeGoreng, telurDadar, resepiDohPizza, ...ROTI_MANIS, ...AYAM_PERCIK, ...IKAN_BAWAL];
 
 const PIZZA_SERIES = [pizzaEp1, pizzaEp2];
@@ -61,7 +69,7 @@ export const RemotionRoot: React.FC = () => (
       />
     ))}
     {/* thumbnails / covers */}
-    {[...ROTI_THUMBS, ...AYAM_THUMBS].map((t) => (
+    {[...ROTI_THUMBS, ...AYAM_THUMBS, ...IKAN_THUMBS].map((t) => (
       <Still key={t.id} id={t.id} component={Thumbnail} width={W} height={H} defaultProps={{...t.props, brand: BRAND}} />
     ))}
     <Still

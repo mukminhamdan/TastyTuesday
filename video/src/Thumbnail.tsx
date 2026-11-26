@@ -21,9 +21,11 @@ export type ThumbProps = {
   chipsTop?: number;
   /** CSS filter on the background photo */
   filter?: string;
+  /** title font size (default 150; lower it for long titles) */
+  titleSize?: number;
 };
 
-export const Thumbnail: React.FC<ThumbProps> = ({bg, kicker, title, sticker, brand, chips, zoom = {s: 1.08, x: 0.5, y: 0.5}, titleTop = 440, chipsTop = 1250, filter = 'saturate(1.15) contrast(1.08) brightness(1.03)'}) => (
+export const Thumbnail: React.FC<ThumbProps> = ({bg, kicker, title, sticker, brand, chips, zoom = {s: 1.08, x: 0.5, y: 0.5}, titleTop = 440, chipsTop = 1250, filter = 'saturate(1.15) contrast(1.08) brightness(1.03)', titleSize = 150}) => (
   <AbsoluteFill style={{backgroundColor: C.ink}}>
     <Img
       src={staticFile(bg)}
@@ -95,7 +97,7 @@ export const Thumbnail: React.FC<ThumbProps> = ({bg, kicker, title, sticker, bra
         style={{
           fontFamily: FONT_BOLD,
           fontWeight: 900,
-          fontSize: 150,
+          fontSize: titleSize,
           lineHeight: 0.98,
           letterSpacing: -3,
           color: C.white,
