@@ -6,8 +6,8 @@ import type {Episode, Overlay, Shot} from '../lib/types';
  *
  * L  g110453 (42 min, fixed camera looking into the Cooven pot; pot y 0.17-0.82, counter below):
  *    70-118 minyak + rempah 4 sekawan, 132-140 tuang bawang kisar, 144-330 tumis (wap),
- *    338-380 tuang serbuk dari plastik + kacau, 528-582 tudung, 584-596 picit cili dari bungkus,
- *    616-619 tuang air asam, 600-684 kacau, 690-2166 tudung tertutup (masak lama), 2166-2184 tudung dibuka: pecah minyak,
+ *    338-380 tuang rempah gulai kawah (serbuk) + kacau, 384-396 air asam dari mangkuk hijau, 528-582 tudung, 584-596 picit cili dari bungkus,
+ *    600-684 kacau (616-619 baki cili boh dari plastik), 690-2166 tudung tertutup (masak lama), 2166-2184 tudung dibuka: pecah minyak,
  *    2182-2195 tabur garam & perasa (sudu), 2201-2203 tuang gula nisan, 2210-2224 kacau, 2228-2500 tudung tertutup (percikan minyak), 2504-2517 hasil akhir.
  * M  g104831 (6 min): 0-56 bawang ke dalam pengisar kecil + kisar, 174-198 tambah bahan, 336-360 tuang ke mangkuk.
  * S  g114659 (12 s): close-up pes menggelegak, pecah minyak (0-10.5), then the lid at 11 s.
@@ -166,6 +166,20 @@ export const pesGulai: Episode = {
     },
     {
       src: L,
+      from: 384,
+      to: 396,
+      rate: 3,
+      enter: 'zoom',
+      light: 1.06,
+      zoom: POT,
+      overlays: [
+        {type: 'step', n: 5, text: 'Masuk air asam'},
+        {type: 'speed', label: '3x'},
+      ],
+      sfx: [{src: 'pop-bubble', at: 0.8, vol: 0.3}],
+    },
+    {
+      src: L,
       from: 584,
       to: 604,
       rate: 5,
@@ -173,24 +187,10 @@ export const pesGulai: Episode = {
       light: 1.06,
       zoom: POT,
       overlays: [
-        {type: 'step', n: 5, text: 'Masuk cili boh'},
+        {type: 'step', n: 6, text: 'Masuk cili boh'},
         {type: 'speed', label: '5x'},
       ],
       sfx: [{src: 'pop-bubble', at: 0.6, vol: 0.3}],
-    },
-    {
-      src: L,
-      from: 615,
-      to: 621,
-      rate: 2,
-      enter: 'zoom',
-      light: 1.06,
-      zoom: POT,
-      overlays: [
-        {type: 'step', n: 6, text: 'Masuk air asam'},
-        {type: 'speed', label: '2x'},
-      ],
-      sfx: [{src: 'pop-bubble', at: 0.5, vol: 0.3}],
     },
     {
       src: L,

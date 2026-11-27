@@ -38,6 +38,6 @@ Aliran kerja penuh: skill **`video-masakan`** (`.claude/skills/video-masakan/SKI
   Tiada sukatan/masa diberi. Pengguna: **jangan letak langkah "cek isi dengan garfu"**; label "siap stim!" ok.
   Gambar hasil (img*.jpg) dipusing 90° dan dijadikan pembuka. `look: 'premium'` + `light` setiap shot untuk betulkan cahaya.
 - **Pes gulai kawah** (`pes-gulai.ts`, 1 video memasak + 2 quote): kisar bawang merah, bawang putih, halia, lengkuas;
-  tumis **rempah 4 sekawan**; masuk **rempah gulai kawah**; masuk **cili boh**, **air asam**; tutup, masak sampai pecah minyak;
+  tumis **rempah 4 sekawan**; masuk **rempah gulai kawah**; **air asam** (mangkuk hijau, 386 s, sebelum cili boh dalam rakaman); masuk **cili boh**; tutup, masak sampai pecah minyak;
   masuk **gula nisan, garam, perasa** (dalam rakaman: selepas tudung dibuka). Render panjang meninggalkan /tmp/remotion-v4*-assets* yang besar: buang selepas render.
   **Jangan sebut mode atau masa** Cooven. Tiada sukatan diberi. Format pilihan pengguna terkini: **1 video memasak + 1 video quote**; video quote **tanpa kad resipi**.
