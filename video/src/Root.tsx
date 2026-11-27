@@ -48,6 +48,12 @@ const GULAI_THUMBS = [
   {id: 'Thumb-PesGulai-Quote', props: {bg: 'thumbs/gulai-macro.jpg', kicker: 'Gulai Kawah', title: 'JANGAN\nTERGESA-GESA', titleSize: 108, sticker: 'PECAH MINYAK', zoom: {s: 1.04, x: 0.5, y: 0.5}, titleTop: 380, filter: IKAN_FILTER}},
 ];
 
+/** ikan bakar */
+const BAKAR_THUMBS = [
+  {id: 'Thumb-IkanBakar', props: {bg: 'thumbs/bakar-photo.jpg', kicker: 'Simple je', title: 'IKAN\nBAKAR', sticker: 'GUNA PES JE!', chips: ['Food Engine Cooven'], zoom: {s: 1.04, x: 0.5, y: 0.5}, titleTop: 380, chipsTop: 1360, filter: IKAN_FILTER}},
+  {id: 'Thumb-IkanBakar-Quote', props: {bg: 'thumbs/bakar-macro.jpg', kicker: 'Resipi', title: 'SIMPLE\nTAPI SEDAP', titleSize: 130, sticker: 'IKAN BAKAR', zoom: {s: 1.04, x: 0.5, y: 0.5}, titleTop: 380, filter: IKAN_FILTER}},
+];
+
 export const EPISODES = [pizzaEp1, pizzaEp2, meeGoreng, telurDadar, resepiDohPizza, ...ROTI_MANIS, ...AYAM_PERCIK, ...IKAN_BAWAL, ...PES_GULAI, ...IKAN_BAKAR];
 
 const PIZZA_SERIES = [pizzaEp1, pizzaEp2];
@@ -77,7 +83,7 @@ export const RemotionRoot: React.FC = () => (
       />
     ))}
     {/* thumbnails / covers */}
-    {[...ROTI_THUMBS, ...AYAM_THUMBS, ...IKAN_THUMBS, ...GULAI_THUMBS].map((t) => (
+    {[...ROTI_THUMBS, ...AYAM_THUMBS, ...IKAN_THUMBS, ...GULAI_THUMBS, ...BAKAR_THUMBS].map((t) => (
       <Still key={t.id} id={t.id} component={Thumbnail} width={W} height={H} defaultProps={{...t.props, brand: BRAND}} />
     ))}
     <Still

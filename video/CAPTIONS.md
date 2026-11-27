@@ -5,25 +5,24 @@ TikTok: guna 3–5 hashtag sahaja. IG: boleh tampal semua hashtag.
 
 ---
 
-## Pes gulai kawah (`PesGulai.mp4`, video memasak)
+## Ikan bakar (`IkanBakar.mp4`, video memasak)
 
 ```
-Pes gulai kawah, masak sampai pecah minyak 🔥
+Ikan bakar simple, pes ikan bakar je 🔥🐟
 
-Kisar bawang merah, bawang putih, halia, lengkuas.
-Tumis rempah 4 sekawan, masuk rempah gulai kawah, air asam, cili boh.
-Tutup, masak perlahan. Perasakan dengan gula nisan, garam & perasa.
+Alas foil & daun pisang, sapu pes ikan bakar kedua-dua belah,
+balut foil, terus bakar dalam Food Engine Cooven. Siap!
 
 Nak resipi? Follow & komen "RESIPI" 👇
 
-#gulaikawah #pesgulai #foodenginecooven #resepimudah #mukminmasak #fyp
+#ikanbakar #pesikanbakar #foodenginecooven #resepimudah #mukminmasak #fyp
 ```
 
 | | Instagram | TikTok | Threads |
 |---|---|---|---|
-| Video memasak | Pes gulai kawah, masak sampai pecah minyak 🔥 Guna Food Engine Cooven. Komen "RESIPI" & follow! #gulaikawah #pesgulai #mukminmasak | Pes gulai kawah sampai pecah minyak 🔥 Komen "RESIPI" 👇 #gulaikawah #mukminmasak #fyp | Masak pes gulai kawah hari ni. Rempah 4 sekawan, cili boh, air asam, masak sampai pecah minyak 🔥 |
-| Quote | Jangan tergesa-gesa. Masak sampai pecah minyak 🔥 #gulaikawah #mukminmasak | Jangan tergesa-gesa 🔥 #gulaikawah #mukminmasak #fyp | Jangan tergesa-gesa. Masak sampai pecah minyak. Itu je rahsianya 🔥 |
+| Video memasak | Ikan bakar simple, pes ikan bakar je 🔥 Bakar guna Food Engine Cooven. Komen "RESIPI" & follow! #ikanbakar #foodenginecooven #mukminmasak | Ikan bakar, pes ikan bakar je 🔥 Komen "RESIPI" 👇 #ikanbakar #mukminmasak #fyp | Ikan bakar malam ni. Sapu pes, balut foil dengan daun pisang, bakar. Itu je 🔥 |
+| Quote | Resipi paling simple, kadang-kadang paling sedap 🔥 #ikanbakar #mukminmasak | Simple tapi sedap 🔥 #ikanbakar #mukminmasak #fyp | Resipi paling simple, kadang-kadang paling sedap 🐟 |
 
 ### Komen pin (video memasak)
 
-`Nak resipi pes gulai kawah? Komen "RESIPI" & follow 🙌`
+`Nak resipi ikan bakar? Komen "RESIPI" & follow 🙌`
