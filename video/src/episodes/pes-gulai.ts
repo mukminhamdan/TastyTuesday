@@ -79,7 +79,7 @@ export const pesGulai: Episode = {
           type: 'title',
           pos: 'bottom',
           at: 0.2,
-          lines: [{t: 'PES GULAI KAWAH'}, {t: 'PECAH MINYAK!', hl: true, size: 96}, {t: 'Food Engine Cooven', marker: true, size: 60}],
+          lines: [{t: 'PES GULAI KAWAH', size: 80}, {t: 'PECAH MINYAK!', hl: true, size: 78}, {t: 'Food Engine Cooven', marker: true, size: 60}],
         },
         {type: 'sparkles', x: 520, y: 760, at: 0.8, count: 10, spread: 300},
       ],
@@ -236,7 +236,7 @@ export const pesGulai: Episode = {
       enter: 'zoom',
       zoom: {from: {s: 1.12, x: 0.5, y: 0.5}, to: {s: 1.0, x: 0.5, y: 0.5}},
       overlays: [
-        {type: 'title', pos: 'bottom', at: 1.2, lines: [{t: 'PES GULAI KAWAH'}, {t: 'SIAP!', hl: true, size: 120}]},
+        {type: 'title', pos: 'bottom', at: 1.2, lines: [{t: 'PES GULAI KAWAH', size: 80}, {t: 'SIAP!', hl: true, size: 120}]},
         {type: 'sparkles', x: 520, y: 760, at: 1.4, count: 12, spread: 320},
       ],
       sfx: [{src: 'riser-1s', at: 0.2, vol: 0.25}, {src: 'boom', at: 1.2, vol: 0.45}, {src: 'ding-sparkle', at: 1.4, vol: 0.4}],
