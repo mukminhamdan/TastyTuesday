@@ -7,8 +7,8 @@ import type {Episode, Overlay, Shot} from '../lib/types';
  * L  g110453 (42 min, fixed camera looking into the Cooven pot; pot y 0.17-0.82, counter below):
  *    70-118 minyak + rempah 4 sekawan, 132-140 tuang bawang kisar, 144-330 tumis (wap),
  *    338-380 tuang serbuk dari plastik + kacau, 528-582 tudung, 584-596 picit cili dari bungkus,
- *    600-684 kacau, 690-2166 tudung tertutup (masak lama), 2166-2184 tudung dibuka: pecah minyak,
- *    2196-2224 kacau, 2228-2500 tudung tertutup (percikan minyak), 2504-2517 hasil akhir.
+ *    616-619 tuang air asam, 600-684 kacau, 690-2166 tudung tertutup (masak lama), 2166-2184 tudung dibuka: pecah minyak,
+ *    2182-2195 tabur garam & perasa (sudu), 2201-2203 tuang gula nisan, 2210-2224 kacau, 2228-2500 tudung tertutup (percikan minyak), 2504-2517 hasil akhir.
  * M  g104831 (6 min): 0-56 bawang ke dalam pengisar kecil + kisar, 174-198 tambah bahan, 336-360 tuang ke mangkuk.
  * S  g114659 (12 s): close-up pes menggelegak, pecah minyak (0-10.5), then the lid at 11 s.
  */
@@ -34,9 +34,11 @@ const RECAP: Overlay = {
     {qty: 'KISAR', name: 'halia & lengkuas'},
     {qty: 'TUMIS', name: 'rempah 4 sekawan'},
     {qty: 'MASUK', name: 'rempah gulai kawah'},
-    {qty: 'MASUK', name: 'cili boh'},
-    {qty: 'MASAK', name: 'sampai pecah minyak'},
+    {qty: 'MASUK', name: 'cili boh & air asam'},
+    {qty: 'MASUK', name: 'gula nisan & garam'},
+    {qty: 'MASUK', name: 'perasa'},
   ],
+  note: 'masak sampai pecah minyak',
   cta: CTA,
 };
 
@@ -178,6 +180,20 @@ export const pesGulai: Episode = {
     },
     {
       src: L,
+      from: 615,
+      to: 621,
+      rate: 2,
+      enter: 'zoom',
+      light: 1.06,
+      zoom: POT,
+      overlays: [
+        {type: 'step', n: 6, text: 'Masuk air asam'},
+        {type: 'speed', label: '2x'},
+      ],
+      sfx: [{src: 'pop-bubble', at: 0.5, vol: 0.3}],
+    },
+    {
+      src: L,
       from: 690,
       to: 2160,
       rate: 300,
@@ -185,7 +201,7 @@ export const pesGulai: Episode = {
       light: 1.06,
       zoom: LID,
       overlays: [
-        {type: 'step', n: 6, text: 'Tutup, masak perlahan'},
+        {type: 'step', n: 7, text: 'Tutup, masak perlahan'},
         {type: 'speed', label: '300x'},
       ],
       sfx: [{src: 'clock-fast', at: 0, vol: 0.2}],
@@ -194,8 +210,8 @@ export const pesGulai: Episode = {
     {
       src: L,
       from: 2166,
-      to: 2181,
-      rate: 3.75,
+      to: 2180,
+      rate: 4.7,
       enter: 'cut',
       light: 1.06,
       zoom: POT,
@@ -204,28 +220,42 @@ export const pesGulai: Episode = {
     },
     {
       src: L,
-      from: 2196,
-      to: 2222,
-      rate: 8.7,
+      from: 2180,
+      to: 2205,
+      rate: 6.25,
       enter: 'zoom',
       light: 1.06,
       zoom: POT,
       overlays: [
-        {type: 'step', n: 7, text: 'Kacau, masak lagi'},
-        {type: 'speed', label: '9x'},
+        {type: 'step', n: 8, text: 'Gula nisan, garam & perasa'},
+        {type: 'speed', label: '6x'},
+      ],
+      sfx: [{src: 'pop-bubble', at: 0.4, vol: 0.3}, {src: 'pop-bubble', at: 2.3, vol: 0.3}],
+    },
+    {
+      src: L,
+      from: 2210,
+      to: 2224,
+      rate: 4.7,
+      enter: 'zoom',
+      light: 1.06,
+      zoom: POT,
+      overlays: [
+        {type: 'step', n: 9, text: 'Kacau, masak lagi'},
+        {type: 'speed', label: '5x'},
       ],
     },
     {
       src: L,
       from: 2230,
       to: 2500,
-      rate: 90,
+      rate: 135,
       enter: 'cut',
       light: 1.06,
       zoom: LID,
       overlays: [
-        {type: 'step', n: 7, text: 'Kacau, masak lagi', at: -2},
-        {type: 'speed', label: '90x'},
+        {type: 'step', n: 9, text: 'Kacau, masak lagi', at: -2},
+        {type: 'speed', label: '135x'},
       ],
     },
     // PAYOFF
