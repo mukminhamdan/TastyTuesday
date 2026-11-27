@@ -247,63 +247,13 @@ export const pesGulai: Episode = {
 
 const BY = '— MUKMIN MASAK';
 
-/** 2. Quote: "Gulai kawah yang sedap bermula dengan pes yang dimasak dengan sabar." (~17 s) */
-export const pesGulaiQuote1: Episode = {
+/** 2. Quote (no recipe card, cook's request): "Jangan tergesa-gesa. Masak sampai pecah minyak." (~17 s) */
+export const pesGulaiQuote: Episode = {
   ...COMMON,
-  id: 'PesGulai-Quote1',
-  name: 'Pes gulai quote sabar',
+  id: 'PesGulai-Quote',
+  name: 'Pes gulai quote pecah minyak',
   music: MUSIC.ukuleleFolk.file,
   musicStart: MUSIC.ukuleleFolk.start,
-  shots: [
-    {
-      src: L,
-      from: 2166,
-      to: 2178,
-      rate: 3,
-      enter: 'cut',
-      light: 1.06,
-      zoom: DRIFT,
-      overlays: [{type: 'quote', at: 0.6, lines: [{t: 'Gulai kawah yang sedap'}]}],
-      sfx: [{src: 'whoosh-soft', at: 0, vol: 0.35}],
-    },
-    {
-      src: L,
-      from: 584,
-      to: 600,
-      rate: 4,
-      enter: 'cut',
-      light: 1.06,
-      zoom: DRIFT,
-      overlays: [{type: 'quote', at: 0.2, shown: 1, lines: [{t: 'Gulai kawah yang sedap'}, {t: 'bermula dengan pes'}]}],
-    },
-    {
-      src: S,
-      from: 1,
-      to: 5.5,
-      enter: 'cut',
-      zoom: DRIFT,
-      overlays: [
-        {
-          type: 'quote',
-          at: 0.2,
-          shown: 2,
-          lines: [{t: 'Gulai kawah yang sedap'}, {t: 'bermula dengan pes'}, {t: 'yang dimasak dengan sabar.', accent: true}],
-          by: BY,
-        },
-      ],
-      sfx: [{src: 'shimmer', at: 1.4, vol: 0.3}],
-    },
-    endCard({sfx: [{src: 'whoosh-med', at: 0, vol: 0.35}]}),
-  ],
-};
-
-/** 3. Quote: "Jangan tergesa-gesa. Masak sampai pecah minyak." (~20 s) */
-export const pesGulaiQuote2: Episode = {
-  ...COMMON,
-  id: 'PesGulai-Quote2',
-  name: 'Pes gulai quote pecah minyak',
-  music: MUSIC.ukuleleSiulTepuk.file,
-  musicStart: MUSIC.ukuleleSiulTepuk.start,
   shots: [
     {
       src: L,
@@ -348,9 +298,9 @@ export const pesGulaiQuote2: Episode = {
       overlays: [
         {type: 'quote', at: -1, shown: 3, lines: [{t: 'Jangan tergesa-gesa.'}, {t: 'Masak sampai'}, {t: 'pecah minyak.', accent: true}], by: BY},
       ],
+      sfx: [{src: 'sting-warm', at: 0.3, vol: 0.35}],
     },
-    endCard({sfx: [{src: 'whoosh-med', at: 0, vol: 0.35}]}),
   ],
 };
 
-export const PES_GULAI = [pesGulai, pesGulaiQuote1, pesGulaiQuote2];
+export const PES_GULAI = [pesGulai, pesGulaiQuote];
