@@ -23,7 +23,8 @@ const CTA = 'Nak resipi?\nFollow & komen "RESIPI"';
 
 // gentle framings
 const WIDE = {from: {s: 1.0, x: 0.5, y: 0.5}, to: {s: 1.05, x: 0.5, y: 0.45}};
-const BENCH = {from: {s: 1.35, x: 0.5, y: 0.62}, to: {s: 1.4, x: 0.5, y: 0.62}};
+const BENCH = {from: {s: 1.35, x: 0.15, y: 0.62}, to: {s: 1.4, x: 0.15, y: 0.62}}; // the fish sits on the left of the bench
+const COOVEN = {from: {s: 1.3, x: 0.5, y: 0.0}, to: {s: 1.36, x: 0.5, y: 0.0}}; // glowing lid at the top
 const HAND = {from: {s: 1.03, x: 0.5, y: 0.5}, to: {s: 1.08, x: 0.5, y: 0.5}};
 const DRIFT = {from: {s: 1.0, x: 0.5, y: 0.5}, to: {s: 1.05, x: 0.5, y: 0.5}};
 
@@ -95,7 +96,7 @@ export const ikanBakar: Episode = {
       to: 61,
       rate: 15,
       enter: 'glitch',
-      zoom: WIDE,
+      zoom: COOVEN,
       overlays: step(1, 'Panaskan Cooven', '15x'),
     },
     {
