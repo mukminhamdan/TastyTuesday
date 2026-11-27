@@ -23,6 +23,8 @@ export const MUSIC = {
   ukuleleSiulTepuk: {file: 'ukulele-siul-tepuk.wav', start: 2, safeUntil: 39},
   /** 6 (Z): ukulele + siulan (also used in the old telur dadar video). Small dips 7-14 s. */
   ukuleleSiulan: {file: 'ukulele-siulan.wav', start: 15, safeUntil: 118},
+  /** cook's own upload "Kampung Malam" (179 s, steady; short dips at 90 s and 126 s). Not in the CC0 library: keep the source mp3. */
+  kampungMalam: {file: 'kampung-malam.wav', start: 1, safeUntil: 88},
 } as const;
 
 /** Colour looks applied to footage (CSS filter). `warm` = food-friendly, a bit punchier and golden. */

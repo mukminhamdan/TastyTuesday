@@ -66,8 +66,8 @@ export const pesGulai: Episode = {
   ...COMMON,
   id: 'PesGulai',
   name: 'Pes gulai kawah',
-  music: MUSIC.ukuleleRiang.file,
-  musicStart: MUSIC.ukuleleRiang.start,
+  music: MUSIC.kampungMalam.file, // cook's choice
+  musicStart: MUSIC.kampungMalam.start,
   shots: [
     // HOOK: bubbling paste, oil separating
     {
@@ -282,8 +282,8 @@ export const pesGulaiQuote: Episode = {
   ...COMMON,
   id: 'PesGulai-Quote',
   name: 'Pes gulai quote pecah minyak',
-  music: MUSIC.ukuleleFolk.file,
-  musicStart: MUSIC.ukuleleFolk.start,
+  music: MUSIC.kampungMalam.file, // cook's choice; a later part of the song than the cooking video
+  musicStart: 60,
   shots: [
     {
       src: L,
