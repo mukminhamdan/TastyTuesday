@@ -282,8 +282,8 @@ export const pesGulaiQuote: Episode = {
   ...COMMON,
   id: 'PesGulai-Quote',
   name: 'Pes gulai quote pecah minyak',
-  music: MUSIC.kampungMalam.file, // cook's choice; a later part of the song than the cooking video
-  musicStart: 60,
+  music: MUSIC.kampungMalam2.file, // cook's second upload; 50 s in = 94 s of the first file, far from the cooking video's 1-57 s
+  musicStart: MUSIC.kampungMalam2.start,
   shots: [
     {
       src: L,

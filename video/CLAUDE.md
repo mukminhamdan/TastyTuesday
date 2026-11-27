@@ -40,4 +40,4 @@ Aliran kerja penuh: skill **`video-masakan`** (`.claude/skills/video-masakan/SKI
 - **Pes gulai kawah** (`pes-gulai.ts`, 1 video memasak + 2 quote): kisar bawang merah, bawang putih, halia, lengkuas;
   tumis **rempah 4 sekawan**; masuk **rempah gulai kawah**; **air asam** (mangkuk hijau, 386 s, sebelum cili boh dalam rakaman); masuk **cili boh**; tutup, masak sampai pecah minyak;
   masuk **gula nisan, garam, perasa** (dalam rakaman: selepas tudung dibuka). Render panjang meninggalkan /tmp/remotion-v4*-assets* yang besar: buang selepas render.
-  **Jangan sebut mode atau masa** Cooven. Lagu: **"Kampung Malam"** (muat naik pengguna, `MUSIC.kampungMalam`; video memasak dari 1s, quote dari 60s). Tiada sukatan diberi. Format pilihan pengguna terkini: **1 video memasak + 1 video quote**; video quote **tanpa kad resipi**.
+  **Jangan sebut mode atau masa** Cooven. Lagu: **"Kampung Malam"** (muat naik pengguna, `MUSIC.kampungMalam`; video memasak dari 1s; quote guna muat naik kedua `MUSIC.kampungMalam2` = lagu sama dari 44s, mula 50s). Tiada sukatan diberi. Format pilihan pengguna terkini: **1 video memasak + 1 video quote**; video quote **tanpa kad resipi**.

@@ -25,6 +25,8 @@ export const MUSIC = {
   ukuleleSiulan: {file: 'ukulele-siulan.wav', start: 15, safeUntil: 118},
   /** cook's own upload "Kampung Malam" (179 s, steady; short dips at 90 s and 126 s). Not in the CC0 library: keep the source mp3. */
   kampungMalam: {file: 'kampung-malam.wav', start: 1, safeUntil: 88},
+  /** cook's second upload = the same song from 44 s (135 s long; dips at 46 s and 81 s). Used for the pes gulai quote from 50 s. */
+  kampungMalam2: {file: 'kampung-malam-2.wav', start: 50, safeUntil: 80},
 } as const;
 
 /** Colour looks applied to footage (CSS filter). `warm` = food-friendly, a bit punchier and golden. */
