@@ -37,3 +37,6 @@ Aliran kerja penuh: skill **`video-masakan`** (`.claude/skills/video-masakan/SKI
   tofu disusun keliling ikan; Food Engine Cooven **mode steam** (preheat dulu); tabur **bawang putih goreng**.
   Tiada sukatan/masa diberi. Pengguna: **jangan letak langkah "cek isi dengan garfu"**; label "siap stim!" ok.
   Gambar hasil (img*.jpg) dipusing 90° dan dijadikan pembuka. `look: 'premium'` + `light` setiap shot untuk betulkan cahaya.
+- **Pes gulai kawah** (`pes-gulai.ts`, 1 video memasak + 2 quote): kisar bawang merah, bawang putih, halia, lengkuas;
+  tumis **rempah 4 sekawan**; masuk **rempah gulai kawah**; masuk **cili boh**; tutup, masak sampai pecah minyak.
+  **Jangan sebut mode atau masa** Cooven. Tiada sukatan diberi. Format pilihan pengguna: 1 video memasak + 2 video quote.

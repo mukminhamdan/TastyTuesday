@@ -5,7 +5,7 @@ import type {Episode, Overlay, Shot} from '../lib/types';
  * Pes gulai kawah dalam Food Engine Cooven. No speech in any clip (VAD found none): text + music + SFX only.
  *
  * L  g110453 (42 min, fixed camera looking into the Cooven pot; pot y 0.17-0.82, counter below):
- *    70-118 minyak + rempah dalam periuk, 132-140 tuang bawang kisar, 144-330 tumis (wap),
+ *    70-118 minyak + rempah 4 sekawan, 132-140 tuang bawang kisar, 144-330 tumis (wap),
  *    338-380 tuang serbuk dari plastik + kacau, 528-582 tudung, 584-596 picit cili dari bungkus,
  *    600-684 kacau, 690-2166 tudung tertutup (masak lama), 2166-2184 tudung dibuka: pecah minyak,
  *    2196-2224 kacau, 2228-2500 tudung tertutup (percikan minyak), 2504-2517 hasil akhir.
@@ -25,14 +25,16 @@ const CHOP = {from: {s: 1.3, x: 0.35, y: 0.42}, to: {s: 1.36, x: 0.35, y: 0.42}}
 const MACRO = {from: {s: 1.0, x: 0.5, y: 0.5}, to: {s: 1.06, x: 0.5, y: 0.5}};
 const DRIFT = {from: {s: 1.0, x: 0.5, y: 0.5}, to: {s: 1.04, x: 0.5, y: 0.5}};
 
-/** recap card: method only (no amounts/times until the cook gives them) */
+/** recap card (from the cook): bawang merah, bawang putih, halia, lengkuas (kisar); rempah 4 sekawan; rempah gulai kawah; cili boh. No mode/times. */
 const RECAP: Overlay = {
   type: 'recipe',
   title: 'PES GULAI KAWAH',
   items: [
-    {qty: 'KISAR', name: 'bawang'},
-    {qty: 'TUMIS', name: 'rempah & bawang kisar'},
-    {qty: 'MASUK', name: 'serbuk rempah & cili'},
+    {qty: 'KISAR', name: 'bawang merah & putih'},
+    {qty: 'KISAR', name: 'halia & lengkuas'},
+    {qty: 'TUMIS', name: 'rempah 4 sekawan'},
+    {qty: 'MASUK', name: 'rempah gulai kawah'},
+    {qty: 'MASUK', name: 'cili boh'},
     {qty: 'MASAK', name: 'sampai pecah minyak'},
   ],
   cta: CTA,
@@ -92,8 +94,19 @@ export const pesGulai: Episode = {
       light: 1.05,
       zoom: CHOP,
       overlays: [
-        {type: 'step', n: 1, text: 'Kisar bawang'},
+        {type: 'step', n: 1, text: 'Kisar bahan'},
         {type: 'speed', label: '9x'},
+        {
+          type: 'title',
+          pos: 'top',
+          at: 0.3,
+          lines: [
+            {t: 'bawang merah', marker: true, size: 62},
+            {t: 'bawang putih', marker: true, size: 62},
+            {t: 'halia', marker: true, size: 62},
+            {t: 'lengkuas', marker: true, size: 62},
+          ],
+        },
       ],
     },
     {
@@ -105,7 +118,7 @@ export const pesGulai: Episode = {
       light: 1.06,
       zoom: POT,
       overlays: [
-        {type: 'step', n: 2, text: 'Panaskan minyak & rempah'},
+        {type: 'step', n: 2, text: 'Tumis rempah 4 sekawan'},
         {type: 'speed', label: '16x'},
       ],
     },
@@ -118,7 +131,7 @@ export const pesGulai: Episode = {
       light: 1.06,
       zoom: POT,
       overlays: [
-        {type: 'step', n: 3, text: 'Tumis bawang kisar'},
+        {type: 'step', n: 3, text: 'Tumis bahan kisar'},
         {type: 'speed', label: '5x'},
       ],
       sfx: [{src: 'pop-bubble', at: 0.8, vol: 0.3}],
@@ -132,7 +145,7 @@ export const pesGulai: Episode = {
       light: 1.06,
       zoom: POT,
       overlays: [
-        {type: 'step', n: 3, text: 'Tumis bawang kisar', at: -2},
+        {type: 'step', n: 3, text: 'Tumis bahan kisar', at: -2},
         {type: 'speed', label: '33x'},
       ],
     },
@@ -145,7 +158,7 @@ export const pesGulai: Episode = {
       light: 1.06,
       zoom: POT,
       overlays: [
-        {type: 'step', n: 4, text: 'Masuk serbuk rempah'},
+        {type: 'step', n: 4, text: 'Masuk rempah gulai kawah'},
         {type: 'speed', label: '10x'},
       ],
     },
@@ -158,7 +171,7 @@ export const pesGulai: Episode = {
       light: 1.06,
       zoom: POT,
       overlays: [
-        {type: 'step', n: 5, text: 'Masuk cili'},
+        {type: 'step', n: 5, text: 'Masuk cili boh'},
         {type: 'speed', label: '5x'},
       ],
       sfx: [{src: 'pop-bubble', at: 0.6, vol: 0.3}],
