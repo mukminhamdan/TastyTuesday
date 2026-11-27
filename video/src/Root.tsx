@@ -7,6 +7,7 @@ import {resepiDohPizza} from './episodes/resepi-doh-pizza';
 import {ROTI_MANIS} from './episodes/roti-manis';
 import {AYAM_PERCIK} from './episodes/ayam-percik';
 import {IKAN_BAWAL} from './episodes/ikan-bawal';
+import {PES_GULAI} from './episodes/pes-gulai';
 import {pizzaEp1} from './episodes/pizza-ep1';
 import {pizzaEp2} from './episodes/pizza-ep2';
 import {meeGoreng} from './episodes/mee-goreng';
@@ -40,7 +41,7 @@ const IKAN_THUMBS = [
   {id: 'Thumb-IkanBawal-Quote2', props: {bg: 'thumbs/ikan-202847.jpg', kicker: 'Masak dengan', title: 'SEPENUH\nHATI', sticker: 'IKAN BAWAL STIM', zoom: {s: 1.55, x: 0.5, y: 0.3}, titleTop: 380, filter: IKAN_FILTER}},
 ];
 
-export const EPISODES = [pizzaEp1, pizzaEp2, meeGoreng, telurDadar, resepiDohPizza, ...ROTI_MANIS, ...AYAM_PERCIK, ...IKAN_BAWAL];
+export const EPISODES = [pizzaEp1, pizzaEp2, meeGoreng, telurDadar, resepiDohPizza, ...ROTI_MANIS, ...AYAM_PERCIK, ...IKAN_BAWAL, ...PES_GULAI];
 
 const PIZZA_SERIES = [pizzaEp1, pizzaEp2];
 
