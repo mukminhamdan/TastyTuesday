@@ -5,26 +5,25 @@ TikTok: guna 3–5 hashtag sahaja. IG: boleh tampal semua hashtag.
 
 ---
 
-## Ikan bawal stim tofu (`IkanBawal.mp4`, video memasak)
+## Pes gulai kawah (`PesGulai.mp4`, video memasak)
 
 ```
-Ikan bawal stim tofu, siap guna Food Engine Cooven 🐟
+Pes gulai kawah, masak sampai pecah minyak 🔥
 
-Sos: kicap cair, sos tiram, sos ikan, minyak bijan.
-Lumur atas ikan, susun tofu keliling, stim guna mode steam.
-Tabur bawang putih goreng, siap!
+Kisar bawang merah, bawang putih, halia, lengkuas.
+Tumis rempah 4 sekawan, masuk rempah gulai kawah, air asam, cili boh.
+Tutup, masak perlahan. Perasakan dengan gula nisan, garam & perasa.
 
 Nak resipi? Follow & komen "RESIPI" 👇
 
-#ikanstim #ikanbawal #foodenginecooven #resepimudah #mukminmasak #fyp
+#gulaikawah #pesgulai #foodenginecooven #resepimudah #mukminmasak #fyp
 ```
 
 | | Instagram | TikTok | Threads |
 |---|---|---|---|
-| Video memasak | Ikan bawal stim tofu guna mode steam Food Engine Cooven 🐟 Komen "RESIPI" & follow! #ikanstim #foodenginecooven #mukminmasak | Ikan bawal stim tofu 🐟 Komen "RESIPI" 👇 #ikanstim #mukminmasak #fyp | Ikan bawal stim tofu malam ni. Kicap, sos tiram, sos ikan, minyak bijan, tabur bawang putih goreng 🐟 |
-| Quote 1 (restoran) | Tak perlu ke restoran untuk makan ikan stim sedap 🐟 Masak je kat rumah. #ikanstim #mukminmasak | Tak perlu ke restoran pun 🐟 #ikanstim #mukminmasak #fyp | Tak perlu ke restoran untuk makan ikan stim sedap. Masak je kat rumah 🐟 |
-| Quote 2 (sepenuh hati) | Masakan paling sedap bukan yang paling mahal, tapi yang dimasak dengan sepenuh hati 🤍 #ikanstim #mukminmasak | Dimasak dengan sepenuh hati 🤍 #ikanstim #mukminmasak #fyp | Masakan paling sedap bukan yang paling mahal, tapi yang dimasak dengan sepenuh hati 🤍 |
+| Video memasak | Pes gulai kawah, masak sampai pecah minyak 🔥 Guna Food Engine Cooven. Komen "RESIPI" & follow! #gulaikawah #pesgulai #mukminmasak | Pes gulai kawah sampai pecah minyak 🔥 Komen "RESIPI" 👇 #gulaikawah #mukminmasak #fyp | Masak pes gulai kawah hari ni. Rempah 4 sekawan, cili boh, air asam, masak sampai pecah minyak 🔥 |
+| Quote | Jangan tergesa-gesa. Masak sampai pecah minyak 🔥 #gulaikawah #mukminmasak | Jangan tergesa-gesa 🔥 #gulaikawah #mukminmasak #fyp | Jangan tergesa-gesa. Masak sampai pecah minyak. Itu je rahsianya 🔥 |
 
-### Komen pin
+### Komen pin (video memasak)
 
-`Nak resipi ikan bawal stim tofu? Komen "RESIPI" & follow 🙌`
+`Nak resipi pes gulai kawah? Komen "RESIPI" & follow 🙌`
