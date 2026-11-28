@@ -86,7 +86,8 @@ def frame_path(cfg, v, frames_dir, n):
 
 
 def frame_time(v, n):
-    return v["frame_start"] + n * v["frame_step"]
+    # the fps filter samples the middle of each step-long interval
+    return v["frame_start"] + n * v["frame_step"] + v["frame_step"] / 2
 
 
 def grab(src, t, out):
