@@ -6,7 +6,7 @@ Look (clean, rich, crisp; built for black-and-gold costumes on a beige stage):
   * filmic contrast: deep (not crushed) blacks, firm mids, soft highlight shoulder
   * gold / brass / yellow embroidery pushed richer and slightly brighter
   * skin tones protected; low-saturation beige backdrop calmed down
-  * subtle split tone: neutral-cool shadows, warm golden highlights
+  * subtle split tone: near-neutral shadows, warm golden highlights
 
 The .cube also works in Premiere / DaVinci / CapCut / VN / Lightroom.
 """
@@ -58,7 +58,7 @@ def grade(rgb):
     luma = rgb @ np.array([0.2126, 0.7152, 0.0722])
     sh = (1 - smoothstep(0.0, 0.4, luma))[..., None]
     hi = smoothstep(0.55, 1.0, luma)[..., None]
-    rgb = rgb + sh * np.array([-0.010, 0.002, 0.012]) + hi * np.array([0.018, 0.008, -0.016])
+    rgb = rgb + sh * np.array([-0.004, 0.000, 0.004]) + hi * np.array([0.018, 0.008, -0.016])
 
     # 4) filmic tone curve: firm S, deep blacks (0.012), soft shoulder (0.975)
     x = np.clip(rgb, 0, 1)
