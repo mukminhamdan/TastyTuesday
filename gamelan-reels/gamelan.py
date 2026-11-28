@@ -43,7 +43,11 @@ def load():
 # ------------------------------------------------------------------ beats / timeline
 def beats_in(src, a, b):
     import librosa
-    y, sr = librosa.load(str(src), sr=22050, offset=a, duration=b - a)
+    with tempfile.TemporaryDirectory() as td:
+        wav = Path(td) / "a.wav"
+        run(["ffmpeg", "-v", "error", "-y", "-ss", f"{a:.3f}", "-t", f"{b - a:.3f}", "-i", str(src),
+             "-vn", "-ac", "1", "-ar", "22050", str(wav)])
+        y, sr = librosa.load(str(wav), sr=22050)
     o = librosa.onset.onset_strength(y=y, sr=sr, hop_length=256)
     _, fr = librosa.beat.beat_track(onset_envelope=o, sr=sr, hop_length=256)
     return librosa.frames_to_time(fr, sr=sr, hop_length=256) + a
