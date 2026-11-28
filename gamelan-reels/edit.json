@@ -1,0 +1,528 @@
+{
+  "fps": 26,
+  "lut": "../wedding-reels/warm_romantic.cube",
+  "videos": {
+    "gamelan_1": {
+      "src": "video_20261128_115835.mp4",
+      "frames": "115835",
+      "frame_start": 150,
+      "frame_step": 6,
+      "start": 829.2,
+      "final_hit": 879.21,
+      "tail": 3.0,
+      "crops": {
+        "wide": {
+          "framed": true
+        },
+        "group": {
+          "cx": 1000,
+          "y": 280,
+          "h": 720
+        },
+        "saron": {
+          "cx": 1200,
+          "y": 0,
+          "h": 1080
+        },
+        "hands": {
+          "cx": 1380,
+          "y": 470,
+          "h": 610
+        },
+        "gendang": {
+          "cx": 340,
+          "y": 360,
+          "h": 700
+        },
+        "kenong": {
+          "cx": 905,
+          "y": 330,
+          "h": 560
+        },
+        "gambang": {
+          "cx": 1500,
+          "y": 370,
+          "h": 640
+        }
+      },
+      "snaps": {
+        "saron_a": {
+          "frame": 187,
+          "box": [
+            920,
+            330,
+            1500,
+            1055
+          ]
+        },
+        "saron_b": {
+          "frame": 264,
+          "box": [
+            920,
+            330,
+            1500,
+            1055
+          ]
+        },
+        "saron_c": {
+          "frame": 165,
+          "box": [
+            920,
+            330,
+            1500,
+            1055
+          ]
+        },
+        "gendang_a": {
+          "frame": 107,
+          "box": [
+            150,
+            380,
+            550,
+            880
+          ]
+        },
+        "gendang_b": {
+          "frame": 19,
+          "box": [
+            150,
+            380,
+            550,
+            880
+          ]
+        },
+        "gendang_c": {
+          "frame": 153,
+          "box": [
+            150,
+            380,
+            550,
+            880
+          ]
+        },
+        "kenong_a": {
+          "frame": 175,
+          "box": [
+            740,
+            330,
+            1060,
+            730
+          ]
+        },
+        "kenong_b": {
+          "frame": 184,
+          "box": [
+            740,
+            330,
+            1060,
+            730
+          ]
+        },
+        "kenong_c": {
+          "frame": 249,
+          "box": [
+            740,
+            330,
+            1060,
+            730
+          ]
+        },
+        "gong_a": {
+          "frame": 99,
+          "box": [
+            900,
+            330,
+            1220,
+            730
+          ]
+        },
+        "gong_b": {
+          "frame": 220,
+          "box": [
+            900,
+            330,
+            1220,
+            730
+          ]
+        },
+        "gambang_a": {
+          "frame": 155,
+          "box": [
+            1340,
+            370,
+            1680,
+            795
+          ]
+        },
+        "gambang_b": {
+          "frame": 2,
+          "box": [
+            1340,
+            370,
+            1680,
+            795
+          ]
+        }
+      },
+      "shots": [
+        {
+          "live": "hands",
+          "beats": 4,
+          "zoom": 1.05,
+          "fade_in": 0.6
+        },
+        {
+          "live": "gendang",
+          "beats": 4,
+          "zoom": 1.05
+        },
+        {
+          "live": "gambang",
+          "beats": 4,
+          "zoom": 1.05
+        },
+        {
+          "live": "wide",
+          "beats": 6
+        },
+        {
+          "live": "saron",
+          "beats": 4,
+          "zoom": 1.06
+        },
+        {
+          "snap": "saron_a",
+          "beats": 3
+        },
+        {
+          "live": "kenong",
+          "beats": 4,
+          "zoom": 1.05
+        },
+        {
+          "snap": "kenong_a",
+          "beats": 3
+        },
+        {
+          "live": "gendang",
+          "beats": 4,
+          "zoom": 1.05
+        },
+        {
+          "snap": "gendang_a",
+          "beats": 3
+        },
+        {
+          "live": "gambang",
+          "beats": 4,
+          "zoom": 1.05
+        },
+        {
+          "snap": "gambang_a",
+          "beats": 3
+        },
+        {
+          "live": "group",
+          "beats": 4,
+          "zoom": 1.04
+        },
+        {
+          "snap": "gong_a",
+          "beats": 3
+        },
+        {
+          "live": "hands",
+          "beats": 2
+        },
+        {
+          "live": "kenong",
+          "beats": 2
+        },
+        {
+          "live": "gendang",
+          "beats": 2
+        },
+        {
+          "live": "gambang",
+          "beats": 2
+        },
+        {
+          "live": "saron",
+          "beats": 4,
+          "zoom": 1.05
+        },
+        {
+          "snap": "saron_b",
+          "beats": 3
+        },
+        {
+          "live": "gendang",
+          "beats": 4,
+          "zoom": 1.04
+        },
+        {
+          "live": "group",
+          "fill": true,
+          "zoom": 1.04
+        },
+        {
+          "live": "wide",
+          "final": true,
+          "fade_out": 1.6
+        }
+      ]
+    },
+    "gamelan_2": {
+      "src": "video_20261128_130000.mp4",
+      "frames": "130000",
+      "frame_start": 380,
+      "frame_step": 6,
+      "start": 1071.1,
+      "final_hit": 1121.11,
+      "tail": 3.0,
+      "crops": {
+        "wide": {
+          "framed": true
+        },
+        "group": {
+          "cx": 860,
+          "y": 300,
+          "h": 700
+        },
+        "saron": {
+          "cx": 1120,
+          "y": 0,
+          "h": 1080
+        },
+        "hands": {
+          "cx": 1290,
+          "y": 470,
+          "h": 610
+        },
+        "gendang": {
+          "cx": 240,
+          "y": 360,
+          "h": 700
+        },
+        "kenong": {
+          "cx": 830,
+          "y": 340,
+          "h": 580
+        },
+        "gambang": {
+          "cx": 1400,
+          "y": 330,
+          "h": 620
+        }
+      },
+      "snaps": {
+        "saron_a": {
+          "frame": 131,
+          "box": [
+            800,
+            355,
+            1380,
+            1080
+          ]
+        },
+        "saron_b": {
+          "frame": 221,
+          "box": [
+            800,
+            355,
+            1380,
+            1080
+          ]
+        },
+        "saron_c": {
+          "frame": 126,
+          "box": [
+            800,
+            355,
+            1380,
+            1080
+          ]
+        },
+        "gendang_a": {
+          "frame": 83,
+          "box": [
+            40,
+            380,
+            440,
+            880
+          ]
+        },
+        "gendang_b": {
+          "frame": 101,
+          "box": [
+            40,
+            380,
+            440,
+            880
+          ]
+        },
+        "kenong_a": {
+          "frame": 13,
+          "box": [
+            660,
+            340,
+            980,
+            740
+          ]
+        },
+        "kenong_b": {
+          "frame": 159,
+          "box": [
+            660,
+            340,
+            980,
+            740
+          ]
+        },
+        "gong_a": {
+          "frame": 37,
+          "box": [
+            720,
+            350,
+            1000,
+            700
+          ]
+        },
+        "gong_b": {
+          "frame": 229,
+          "box": [
+            720,
+            350,
+            1000,
+            700
+          ]
+        },
+        "gambang_a": {
+          "frame": 131,
+          "box": [
+            1160,
+            330,
+            1600,
+            880
+          ]
+        },
+        "gambang_b": {
+          "frame": 226,
+          "box": [
+            1160,
+            330,
+            1600,
+            880
+          ]
+        }
+      },
+      "shots": [
+        {
+          "live": "hands",
+          "beats": 6,
+          "zoom": 1.05,
+          "fade_in": 0.6
+        },
+        {
+          "live": "kenong",
+          "beats": 4,
+          "zoom": 1.05
+        },
+        {
+          "live": "gambang",
+          "beats": 4,
+          "zoom": 1.05
+        },
+        {
+          "live": "wide",
+          "beats": 8
+        },
+        {
+          "live": "saron",
+          "beats": 6,
+          "zoom": 1.06
+        },
+        {
+          "snap": "saron_a",
+          "beats": 4
+        },
+        {
+          "live": "gendang",
+          "beats": 6,
+          "zoom": 1.05
+        },
+        {
+          "snap": "gendang_a",
+          "beats": 4
+        },
+        {
+          "live": "kenong",
+          "beats": 6,
+          "zoom": 1.05
+        },
+        {
+          "snap": "kenong_a",
+          "beats": 4
+        },
+        {
+          "live": "gambang",
+          "beats": 6,
+          "zoom": 1.05
+        },
+        {
+          "snap": "gambang_a",
+          "beats": 4
+        },
+        {
+          "live": "group",
+          "beats": 6,
+          "zoom": 1.04
+        },
+        {
+          "snap": "gong_a",
+          "beats": 4
+        },
+        {
+          "live": "hands",
+          "beats": 3
+        },
+        {
+          "live": "gendang",
+          "beats": 3
+        },
+        {
+          "live": "kenong",
+          "beats": 3
+        },
+        {
+          "live": "gambang",
+          "beats": 3
+        },
+        {
+          "live": "saron",
+          "beats": 6,
+          "zoom": 1.05
+        },
+        {
+          "snap": "saron_b",
+          "beats": 4
+        },
+        {
+          "live": "gendang",
+          "beats": 5,
+          "zoom": 1.04
+        },
+        {
+          "live": "group",
+          "fill": true,
+          "zoom": 1.04
+        },
+        {
+          "live": "wide",
+          "final": true,
+          "fade_out": 1.6
+        }
+      ]
+    }
+  }
+}
