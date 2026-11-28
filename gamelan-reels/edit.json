@@ -1,6 +1,6 @@
 {
   "fps": 26,
-  "lut": "../wedding-reels/warm_romantic.cube",
+  "lut": "premium_gold.cube",
   "videos": {
     "gamelan_1": {
       "src": "video_20261128_115835.mp4",

@@ -94,11 +94,14 @@ def grab(src, t, out):
 
 
 def candid_image(img, box):
-    """4:5 crop, upscaled with mild sharpening (no grade yet)."""
+    """4:5 crop: non-local-means denoise, lanczos upscale to 1080 wide, sharpen (no grade yet)."""
     c = img.crop(box)
-    w = 1080
-    c = c.resize((w, int(w * c.height / c.width)), Image.LANCZOS)
-    return c.filter(ImageFilter.UnsharpMask(radius=2, percent=60, threshold=2))
+    with tempfile.TemporaryDirectory() as td:
+        a, b = Path(td) / "a.png", Path(td) / "b.png"
+        c.save(a)
+        run(["ffmpeg", "-v", "error", "-y", "-i", str(a), "-vf",
+             f"nlmeans=s=2.2:p=5:r=11,scale=1080:-2:flags=lanczos,{','.join(SHARP)}", str(b)])
+        return Image.open(b).convert("RGB")
 
 
 def snap_card(img, box, tilt):
@@ -126,13 +129,13 @@ def snap_card(img, box, tilt):
 
 
 # ------------------------------------------------------------------ filters
-def grade(cfg, noise=True):
-    f = [f"lut3d=file='{cfg['lut_path']}':interp=tetrahedral",
-         "split[g0][g1];[g1]gblur=sigma=14[g2];[g0][g2]blend=all_mode=screen:all_opacity=0.10",
-         "vignette=angle=PI/5:mode=forward"]
-    if noise:
-        f.append("noise=alls=4:allf=t")
-    return f
+SHARP = ["cas=0.75", "unsharp=lx=13:ly=13:la=0.32:cx=5:cy=5:ca=0"]  # detail + clarity
+DENOISE = "hqdn3d=1.5:1.5:3:3"
+
+
+def grade(cfg, noise=False):
+    """Premium Gold LUT + soft vignette. No glow or grain: keeps the image crisp."""
+    return [f"lut3d=file='{cfg['lut_path']}':interp=tetrahedral", "vignette=angle=PI/7:mode=forward"]
 
 
 def push(z, n, fps):
@@ -143,7 +146,7 @@ def push(z, n, fps):
 def live_graph(cfg, crop, n, zoom, fade_in, fade_out, dur):
     fps = cfg["fps"]
     if crop.get("framed"):
-        g = (f"[0:v]fps={fps},setsar=1,split[a][b];"
+        g = (f"[0:v]fps={fps},{DENOISE},setsar=1,split[a][b];"
              f"[a]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},gblur=sigma=30,"
              f"eq=brightness=-0.10:saturation=0.8[bg];[b]scale={W-80}:-2:flags=lanczos[fg];"
              f"[bg][fg]overlay=(W-w)/2:(H-h)/2")
@@ -151,11 +154,12 @@ def live_graph(cfg, crop, n, zoom, fade_in, fade_out, dur):
         h = crop["h"]
         w = round(h * 9 / 16 / 2) * 2
         x = int(max(0, min(1920 - w, crop["cx"] - w / 2)))
-        g = (f"[0:v]fps={fps},crop={w}:{h}:{x}:{crop['y']},"
-             f"scale={W}:{H}:flags=lanczos,unsharp=5:5:0.5,setsar=1")
+        g = f"[0:v]fps={fps},crop={w}:{h}:{x}:{crop['y']},{DENOISE},setsar=1"
+        if not zoom:
+            g += f",scale={W}:{H}:flags=lanczos"
     if zoom:
         g += "," + ",".join(push(zoom, n, fps))
-    g += "," + ",".join(grade(cfg))
+    g += "," + ",".join(SHARP + grade(cfg))
     if fade_in:
         g += f",fade=t=in:st=0:d={fade_in}"
     if fade_out:
@@ -166,7 +170,7 @@ def live_graph(cfg, crop, n, zoom, fade_in, fade_out, dur):
 def snap_graph(cfg, n):
     fps = cfg["fps"]
     g = f"[0:v]fps={fps},setsar=1," + ",".join(push(1.035, n, fps))
-    g += "," + ",".join(grade(cfg))
+    g += ",cas=0.4," + ",".join(grade(cfg))
     g += ",fade=t=in:st=0:d=0.22:color=white"
     return g + f",trim=end_frame={n},setpts=PTS-STARTPTS,format=yuv420p[v]"
 
