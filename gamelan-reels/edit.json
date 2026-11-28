@@ -531,6 +531,11 @@
           "zoom": 1.04
         },
         {
+          "live": "hands",
+          "beats": 5,
+          "zoom": 1.05
+        },
+        {
           "live": "gendang",
           "fill": true,
           "zoom": 1.04
