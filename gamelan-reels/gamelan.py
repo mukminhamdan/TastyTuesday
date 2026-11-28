@@ -171,7 +171,7 @@ def snap_graph(cfg, n):
     return g + f",trim=end_frame={n},setpts=PTS-STARTPTS,format=yuv420p[v]"
 
 
-ENC = ["-c:v", "libx264", "-preset", "slow", "-crf", "18", "-pix_fmt", "yuv420p"]
+ENC = ["-c:v", "libx264", "-preset", "slow", "-crf", "19", "-maxrate", "16M", "-bufsize", "32M", "-pix_fmt", "yuv420p"]
 
 
 # ------------------------------------------------------------------ commands
