@@ -4,8 +4,9 @@
 The source is a single static wide camera, so every "live" shot is a virtual camera
 (a 9:16 crop on one player) taken at the SAME moment as the audio under it: the edit
 behaves like a synced multi-cam and every mallet hit stays in sync. "Snap" shots are
-candid freeze-frames of each player (from any moment of the performance) shown as a
-photo print with a shutter flash; the music keeps running underneath.
+candid freeze-frames shown as a photo print (optional); "slow" shots are 0.5x
+motion-interpolated slow motion of each player around their best candid moment. The
+music keeps running underneath both.
 
 The soundtrack is the ensemble's own playing: one continuous window that ends on the
 piece's final gong. Cuts land on detected beats; the last shot starts on the gong.
@@ -143,8 +144,12 @@ def push(z, n, fps):
             f"zoompan=z='1+{z-1}*on/{n}':d=1:x='iw/2-iw/zoom/2':y='ih/2-ih/zoom/2':s={W}x{H}:fps={fps}"]
 
 
-def live_graph(cfg, crop, n, zoom, fade_in, fade_out, dur):
+def live_graph(cfg, crop, n, zoom, fade_in, fade_out, dur, speed=1.0):
     fps = cfg["fps"]
+    slow = ""
+    if speed < 0.999:  # motion-interpolated slow motion
+        slow = (f",setpts=PTS/{speed},minterpolate=fps={fps}:mi_mode=mci:mc_mode=aobmc:"
+                f"me_mode=bidir:vsbmc=1")
     if crop.get("framed"):
         g = (f"[0:v]fps={fps},{DENOISE},setsar=1,split[a][b];"
              f"[a]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},gblur=sigma=30,"
@@ -154,7 +159,7 @@ def live_graph(cfg, crop, n, zoom, fade_in, fade_out, dur):
         h = crop["h"]
         w = round(h * 9 / 16 / 2) * 2
         x = int(max(0, min(1920 - w, crop["cx"] - w / 2)))
-        g = f"[0:v]fps={fps},crop={w}:{h}:{x}:{crop['y']},{DENOISE},setsar=1"
+        g = f"[0:v]fps={fps},crop={w}:{h}:{x}:{crop['y']},{DENOISE}{slow},setsar=1"
         if not zoom:
             g += f",scale={W}:{H}:flags=lanczos"
     if zoom:
@@ -245,9 +250,18 @@ def cmd_render(cfg, a):
             n = f1 - f0
             dur = n / fps
             seg = work / f"s{i:02d}.mp4"
-            label = s.get("live") or s.get("snap")
+            label = s.get("live") or s.get("snap") or "slow:" + s.get("slow", "")
             print(f"  {i:2d} {label:10s} {s['t0'] - start:6.2f}s  {dur:5.2f}s" + (f"  (fill {s['nb']} beats)" if s.get("fill") else ""))
-            if "snap" in s:
+            if "slow" in s:
+                # slow motion around the player's best candid moment (from anywhere in the
+                # performance); the music keeps running underneath, as in a multi-cam edit
+                sn = v["snaps"][s["slow"]]
+                sp = s.get("speed", 0.5)
+                t_mid = frame_time(v, sn["frame"])
+                g = live_graph(cfg, v["crops"][s["slow"].split("_")[0]], n, s.get("zoom"), None, None, dur, sp)
+                cmd = ["ffmpeg", "-v", "error", "-y", "-ss", f"{t_mid - dur * sp / 2:.4f}", "-t",
+                       f"{dur * sp + 0.6:.3f}", "-i", str(src), "-filter_complex", g, "-map", "[v]"]
+            elif "snap" in s:
                 sn = v["snaps"][s["snap"]]
                 png = work / f"snap_{s['snap']}.png"
                 snap_card(Image.open(frame_path(cfg, v, a.frames, sn["frame"])).convert("RGB"), sn["box"], tilt).save(png)

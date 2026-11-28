@@ -43,6 +43,11 @@
           "cx": 1500,
           "y": 370,
           "h": 640
+        },
+        "gong": {
+          "cx": 1010,
+          "y": 330,
+          "h": 560
         }
       },
       "snaps": {
@@ -191,17 +196,10 @@
           "zoom": 1.06
         },
         {
-          "snap": "saron_a",
-          "beats": 3
-        },
-        {
-          "live": "kenong",
+          "slow": "kenong_a",
           "beats": 4,
-          "zoom": 1.05
-        },
-        {
-          "snap": "kenong_a",
-          "beats": 3
+          "speed": 0.5,
+          "zoom": 1.04
         },
         {
           "live": "gendang",
@@ -209,8 +207,10 @@
           "zoom": 1.05
         },
         {
-          "snap": "gendang_a",
-          "beats": 3
+          "slow": "saron_a",
+          "beats": 4,
+          "speed": 0.5,
+          "zoom": 1.04
         },
         {
           "live": "gambang",
@@ -218,8 +218,21 @@
           "zoom": 1.05
         },
         {
-          "snap": "gambang_a",
-          "beats": 3
+          "slow": "gong_a",
+          "beats": 4,
+          "speed": 0.5,
+          "zoom": 1.04
+        },
+        {
+          "live": "kenong",
+          "beats": 4,
+          "zoom": 1.05
+        },
+        {
+          "slow": "gambang_a",
+          "beats": 4,
+          "speed": 0.5,
+          "zoom": 1.04
         },
         {
           "live": "group",
@@ -227,8 +240,10 @@
           "zoom": 1.04
         },
         {
-          "snap": "gong_a",
-          "beats": 3
+          "slow": "gendang_a",
+          "beats": 4,
+          "speed": 0.5,
+          "zoom": 1.04
         },
         {
           "live": "hands",
@@ -247,17 +262,14 @@
           "beats": 2
         },
         {
-          "live": "saron",
-          "beats": 4,
-          "zoom": 1.05
-        },
-        {
-          "snap": "saron_b",
-          "beats": 3
-        },
-        {
           "live": "gendang",
           "beats": 4,
+          "zoom": 1.04
+        },
+        {
+          "slow": "saron_b",
+          "beats": 4,
+          "speed": 0.5,
           "zoom": 1.04
         },
         {
@@ -313,6 +325,11 @@
           "cx": 1400,
           "y": 330,
           "h": 620
+        },
+        "gong": {
+          "cx": 880,
+          "y": 340,
+          "h": 560
         }
       },
       "snaps": {
@@ -443,17 +460,10 @@
           "zoom": 1.06
         },
         {
-          "snap": "saron_a",
-          "beats": 4
-        },
-        {
-          "live": "gendang",
-          "beats": 6,
-          "zoom": 1.05
-        },
-        {
-          "snap": "gendang_a",
-          "beats": 4
+          "slow": "gendang_a",
+          "beats": 5,
+          "speed": 0.5,
+          "zoom": 1.04
         },
         {
           "live": "kenong",
@@ -461,8 +471,10 @@
           "zoom": 1.05
         },
         {
-          "snap": "kenong_a",
-          "beats": 4
+          "slow": "saron_a",
+          "beats": 5,
+          "speed": 0.5,
+          "zoom": 1.04
         },
         {
           "live": "gambang",
@@ -470,17 +482,26 @@
           "zoom": 1.05
         },
         {
-          "snap": "gambang_a",
-          "beats": 4
-        },
-        {
-          "live": "group",
-          "beats": 6,
+          "slow": "gong_a",
+          "beats": 5,
+          "speed": 0.5,
           "zoom": 1.04
         },
         {
-          "snap": "gong_a",
-          "beats": 4
+          "live": "gendang",
+          "beats": 6,
+          "zoom": 1.05
+        },
+        {
+          "slow": "gambang_a",
+          "beats": 5,
+          "speed": 0.5,
+          "zoom": 1.04
+        },
+        {
+          "live": "group",
+          "beats": 4,
+          "zoom": 1.04
         },
         {
           "live": "hands",
@@ -504,16 +525,13 @@
           "zoom": 1.05
         },
         {
-          "snap": "saron_b",
-          "beats": 4
-        },
-        {
-          "live": "gendang",
+          "slow": "kenong_a",
           "beats": 5,
+          "speed": 0.5,
           "zoom": 1.04
         },
         {
-          "live": "group",
+          "live": "gendang",
           "fill": true,
           "zoom": 1.04
         },
